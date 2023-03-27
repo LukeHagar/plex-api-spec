@@ -1,0 +1,54 @@
+get:
+  tags:
+    - Log
+  summary: Logging a single-line message to the Plex Media Server log.
+  description: |
+    This endpoint will write a single-line log message, including a level and source to the main Plex Media Server log.
+  operationId: logaLine
+  parameters:
+    - name: level
+      description: |
+        An integer log level to write to the PMS log with.  
+        (0: Error, 1: Warning, 2: Info, 3: Debug, 4: Verbose)
+      in: query
+      schema:
+        type: number
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+      required: true
+    - name: message
+      description: The text of the message to write to the log.
+      in: query
+      schema:
+        type: string
+        example: ""
+      required: true
+    - name: source
+      description: a string indicating the source of the message.
+      in: query
+      schema:
+        type: string
+        example: ""
+      required: true
+  responses:
+    "200":
+      description: Log Line submitted successfully
+    "401":
+      $ref: "../responses/401.yaml"
+
+post:
+  tags:
+    - Log
+  summary: Logging a multi-line message to the Plex Media Server log
+  description: |
+    This endpoint will write multiple lines to the main Plex Media Server log in a single request. It takes a set of query strings as would normally sent to the above GET endpoint as a linefeed-separated block of POST data. The parameters for each query string match as above.
+  operationId: logMultipleLines
+  responses:
+    "200":
+      description: Multi-Line Log Message Posted successfully
+    "401":
+      $ref: "../responses/401.yaml"

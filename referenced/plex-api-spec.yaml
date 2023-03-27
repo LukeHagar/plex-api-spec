@@ -1,9 +1,10 @@
-openapi: 3.0.1
+openapi: 3.1.1
 
 info:
   title: Plex-API
+  summary: A Plex Media Server API Map
   description: An Open API Spec for interacting with Plex.tv and Plex Servers
-  version: "0.0.1"
+  version: "0.0.2"
   contact:
     name: Luke Hagar
     email: Lukeslakemail@gmail.com
@@ -52,6 +53,8 @@ paths:
     $ref: "./paths/butler.yaml"
   /butler/{taskName}:
     $ref: "./paths/butler-task.yaml"
+  /log:
+    $ref: "./paths/log.yaml"
 
 tags:
   - name: Activities
@@ -73,3 +76,6 @@ tags:
     description: |
       This describes the API for searching and applying updates to the Plex Media Server.
       Updates to the status can be observed via the Event API.
+  - name: Log
+    description: |
+      Submit logs to the Log Handler for Plex Media Server
