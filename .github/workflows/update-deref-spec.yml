@@ -27,7 +27,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'plex-api-spec-dereferenced.yaml'
-        destination_repo: 'lukehara/plex-docs'
+        destination_repo: 'lukehagar/plex-docs'
         destination_folder: 'static'
         user_email: 'lukeslakemail@gmail.com'
         user_name: 'lukehagar'
