@@ -1,0 +1,75 @@
+openapi: 3.0.1
+
+info:
+  title: Plex-API
+  description: An Open API Spec for interacting with Plex.tv and Plex Servers
+  version: "0.0.1"
+  contact:
+    name: Luke Hagar
+    email: Lukeslakemail@gmail.com
+    url: "https://www.LukeHagar.com"
+
+servers:
+  - url: "{Protocol}://{Local IP}:{Port}"
+    variables:
+      Protocol:
+        enum:
+          - http
+          - https
+        default: http
+        description: The protocl to use with your plex server
+      Local IP:
+        default: 10.10.10.47
+        description: The Local IP Address of your plex server
+      Port:
+        default: "32400"
+        description: The port to access your plex server
+
+security:
+  - PlexToken: []
+
+components:
+  securitySchemes:
+    PlexToken: # arbitrary name for the security scheme
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Token # name of the header, query parameter or cookie
+
+paths:
+  /:
+    $ref: "./paths/root.yaml"
+  /activities:
+    $ref: "./paths/activities.yaml"
+  /activities/{activityUUID}:
+    $ref: "./paths/activities-cancel.yaml"
+  /updater/status:
+    $ref: "./paths/updater-status.yaml"
+  /updater/check:
+    $ref: "./paths/updater-check.yaml"
+  /updater/apply:
+    $ref: "./paths/updater-apply.yaml"
+  /butler:
+    $ref: "./paths/butler.yaml"
+  /butler/{taskName}:
+    $ref: "./paths/butler-task.yaml"
+
+tags:
+  - name: Activities
+    description: |
+      Activities are awesome. They provide a way to monitor and control asynchronous operations on the server. In order to receive real-time updates for activities, a client would normally subscribe via either EventSource or Websocket endpoints.
+      Activities are associated with HTTP replies via a special `X-Plex-Activity` header which contains the UUID of the activity.
+      Activities are optional cancellable. If cancellable, they may be cancelled via the `DELETE` endpoint. Other details:
+      - They can contain a `progress` (from 0 to 100) marking the percent completion of the activity.
+      - They must contain an `type` which is used by clients to distinguish the specific activity.
+      - They may contain a `Context` object with attributes which associate the activity with various specific entities (items, libraries, etc.)
+      - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
+  - name: Butler
+    description: |
+      Butler is the task manager of the Plex Media Server Ecosystem.
+  - name: Server
+    description: |
+      Operations against the Plex Media Server System.
+  - name: Updater
+    description: |
+      This describes the API for searching and applying updates to the Plex Media Server.
+      Updates to the status can be observed via the Event API.

@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Activities
+  summary: Server Activities
+  description: Server Activities
+  operationId: serverActivities
+  responses:
+    "200":
+      description: The Server Activities
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/ServerActivities.yaml"
+    "401":
+      $ref: "../responses/401.yaml"

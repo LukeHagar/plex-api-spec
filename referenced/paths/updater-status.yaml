@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Updater
+  summary: Querying status of updates
+  description: Querying status of updates
+  operationId: queryingUpdateStatus
+  responses:
+    "200":
+      description: The Server Updates
+    "401":
+      $ref: "../responses/401.yaml"

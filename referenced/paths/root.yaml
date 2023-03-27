@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Server
+  summary: Server Capabilities
+  description: Server Capabilities
+  operationId: serverCapabilities
+  responses:
+    "200":
+      description: The Server Capabilities
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/ServerCapabilities.yaml"
+    "401":
+      $ref: "../responses/401.yaml"

@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "redocly bundle ./referenced/plex-api-spec.yaml -o ./plex-api-spec-dereferenced.yaml -d"
+  }
+}

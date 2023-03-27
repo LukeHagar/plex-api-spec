@@ -1,0 +1,440 @@
+openapi: 3.0.1
+info:
+  title: Plex-API
+  description: An Open API Spec for interacting with Plex.tv and Plex Servers
+  version: 0.0.1
+  contact:
+    name: Luke Hagar
+    email: Lukeslakemail@gmail.com
+    url: https://www.LukeHagar.com
+servers:
+  - url: '{Protocol}://{Local IP}:{Port}'
+    variables:
+      Protocol:
+        enum:
+          - http
+          - https
+        default: http
+        description: The protocl to use with your plex server
+      Local IP:
+        default: 10.10.10.47
+        description: The Local IP Address of your plex server
+      Port:
+        default: '32400'
+        description: The port to access your plex server
+  - url: https://plex.tv/api/v2
+security:
+  - PlexToken: []
+components:
+  securitySchemes:
+    PlexToken:
+      type: apiKey
+      in: header
+      name: X-Plex-Token
+  schemas:
+    ServerCapabilities:
+      type: object
+      properties: &ref_0
+        MediaContainer:
+          type: object
+          properties:
+            size:
+              type: number
+            allowCameraUpload:
+              type: boolean
+            allowChannelAccess:
+              type: boolean
+            allowMediaDeletion:
+              type: boolean
+            allowSharing:
+              type: boolean
+            allowSync:
+              type: boolean
+            allowTuners:
+              type: boolean
+            backgroundProcessing:
+              type: boolean
+            certificate:
+              type: boolean
+            companionProxy:
+              type: boolean
+            countryCode:
+              type: string
+            diagnostics:
+              type: string
+            eventStream:
+              type: boolean
+            friendlyName:
+              type: string
+            hubSearch:
+              type: boolean
+            itemClusters:
+              type: boolean
+            livetv:
+              type: number
+            machineIdentifier:
+              type: string
+            mediaProviders:
+              type: boolean
+            multiuser:
+              type: boolean
+            musicAnalysis:
+              type: number
+            myPlex:
+              type: boolean
+            myPlexMappingState:
+              type: string
+            myPlexSigninState:
+              type: string
+            myPlexSubscription:
+              type: boolean
+            myPlexUsername:
+              type: string
+            offlineTranscode:
+              type: number
+            ownerFeatures:
+              type: string
+            photoAutoTag:
+              type: boolean
+            platform:
+              type: string
+            platformVersion:
+              type: string
+            pluginHost:
+              type: boolean
+            pushNotifications:
+              type: boolean
+            readOnlyLibraries:
+              type: boolean
+            streamingBrainABRVersion:
+              type: number
+            streamingBrainVersion:
+              type: number
+            sync:
+              type: boolean
+            transcoderActiveVideoSessions:
+              type: number
+            transcoderAudio:
+              type: boolean
+            transcoderLyrics:
+              type: boolean
+            transcoderPhoto:
+              type: boolean
+            transcoderSubtitles:
+              type: boolean
+            transcoderVideo:
+              type: boolean
+            transcoderVideoBitrates:
+              type: string
+            transcoderVideoQualities:
+              type: string
+            transcoderVideoResolutions:
+              type: string
+            updatedAt:
+              type: number
+            updater:
+              type: boolean
+            version:
+              type: string
+            voiceSearch:
+              type: boolean
+            Directory:
+              type: array
+              items:
+                type: object
+                properties:
+                  count:
+                    type: number
+                  key:
+                    type: string
+                  title:
+                    type: string
+    ServerActivities:
+      type: object
+      properties: &ref_1
+        MediaContainer:
+          type: object
+          properties:
+            size:
+              type: number
+            Activity:
+              type: array
+              items:
+                type: object
+                properties:
+                  uuid:
+                    type: string
+                  type:
+                    type: string
+                  cancellable:
+                    type: boolean
+                  userID:
+                    type: number
+                  title:
+                    type: string
+                  subtitle:
+                    type: string
+                  progress:
+                    type: number
+                  Context:
+                    type: object
+                    properties:
+                      librarySectionID:
+                        type: string
+  responses:
+    '401':
+      description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+paths:
+  /:
+    get:
+      tags:
+        - Server
+      summary: Server Capabilities
+      description: Server Capabilities
+      operationId: serverCapabilities
+      responses:
+        '200':
+          description: The Server Capabilities
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: *ref_0
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /activities:
+    get:
+      tags:
+        - Activities
+      summary: Server Activities
+      description: Server Activities
+      operationId: serverActivities
+      responses:
+        '200':
+          description: The Server Activities
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: *ref_1
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /activities/{activityUUID}:
+    delete:
+      tags:
+        - Activities
+      summary: Cancel Server Activities
+      description: Cancel Server Activities
+      operationId: cancelServerActivities
+      parameters:
+        - name: activityUUID
+          description: The UUID of the activity to cancel.
+          in: path
+          schema:
+            type: string
+          example: 25b71ed5-0f9d-461c-baa7-d404e9e10d3e
+          required: true
+      responses:
+        '200':
+          description: The Server Activity was canceled
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: *ref_1
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /updater/status:
+    get:
+      tags:
+        - Updater
+      summary: Querying status of updates
+      description: Querying status of updates
+      operationId: queryingUpdateStatus
+      responses:
+        '200':
+          description: The Server Updates
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /updater/check:
+    put:
+      tags:
+        - Updater
+      summary: Checking for updates
+      description: Checking for updates
+      operationId: checkingforUpdates
+      parameters:
+        - name: download
+          description: Indicate that you want to start download any updates found.
+          required: false
+          in: query
+          schema:
+            enum:
+              - 0
+              - 1
+          example: 1
+      responses:
+        '200':
+          description: ''
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /updater/apply:
+    put:
+      tags:
+        - Updater
+      summary: Applying updates
+      description: |
+        Note that these two parameters are effectively mutually exclusive. The `tonight` parameter takes precedence and `skip` will be ignored if `tonight` is also passed
+      operationId: applyingUpdates
+      parameters:
+        - name: tonight
+          description: Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install
+          required: false
+          in: query
+          schema:
+            enum:
+              - 0
+              - 1
+          example: 1
+        - name: skip
+          description: Indicate that the latest version should be marked as skipped. The <Release> entry for this version will have the `state` set to `skipped`.
+          required: false
+          in: query
+          schema:
+            enum:
+              - 0
+              - 1
+          example: 1
+      responses:
+        '200':
+          description: If the update process started correctly
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+        '500':
+          description: If the update process failed to start
+  /butler:
+    post:
+      tags:
+        - Butler
+      summary: Start all Butler tasks
+      description: |
+        This endpoint will attempt to start all Butler tasks that are enabled in the settings. Butler tasks normally run automatically during a time window configured on the server's Settings page but can be manually started using this endpoint. Tasks will run with the following criteria:
+        1. Any tasks not scheduled to run on the current day will be skipped.
+        2. If a task is configured to run at a random time during the configured window and we are outside that window, the task will start immediately.
+        3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
+        4. If we are outside the configured window, the task will start immediately.
+      operationId: startAllButlerTasks
+      responses:
+        '200':
+          description: All tasks were started
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+    delete:
+      tags:
+        - Butler
+      summary: Stop all Butler tasks
+      description: |
+        This endpoint will stop all currently running tasks and remove any scheduled tasks from the queue.
+      operationId: stopAllButlerTasks
+      responses:
+        '200':
+          description: All tasks were stopped
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /butler/{taskName}:
+    post:
+      tags:
+        - Butler
+      summary: Start a single Butler task
+      description: |
+        This endpoint will attempt to start a single Butler task that is enabled in the settings. Butler tasks normally run automatically during a time window configured on the server's Settings page but can be manually started using this endpoint. Tasks will run with the following criteria:
+        1. Any tasks not scheduled to run on the current day will be skipped.
+        2. If a task is configured to run at a random time during the configured window and we are outside that window, the task will start immediately.
+        3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
+        4. If we are outside the configured window, the task will start immediately.
+      operationId: startAButlerTasks
+      parameters:
+        - name: taskName
+          description: the name of the task to be started.
+          in: path
+          schema:
+            type: string
+            enum:
+              - BackupDatabase
+              - BuildGracenoteCollections
+              - CheckForUpdates
+              - CleanOldBundles
+              - CleanOldCacheFiles
+              - DeepMediaAnalysis
+              - GenerateAutoTags
+              - GenerateChapterThumbs
+              - GenerateMediaIndexFiles
+              - OptimizeDatabase
+              - RefreshLibraries
+              - RefreshLocalMedia
+              - RefreshPeriodicMetadata
+              - UpgradeMediaAnalysis
+          required: true
+      responses:
+        '200':
+          description: The task was started successfully
+        '202':
+          description: The task was already running.
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+    delete:
+      tags:
+        - Butler
+      summary: Stop a single Butler task
+      description: |
+        This endpoint will stop a currently running task by name, or remove it from the list of scheduled tasks if it exists. See the section above for a list of task names for this endpoint.
+      operationId: stopAButlerTasks
+      parameters:
+        - name: taskName
+          description: The name of the task to be started.
+          in: path
+          schema:
+            type: string
+            enum:
+              - BackupDatabase
+              - BuildGracenoteCollections
+              - CheckForUpdates
+              - CleanOldBundles
+              - CleanOldCacheFiles
+              - DeepMediaAnalysis
+              - GenerateAutoTags
+              - GenerateChapterThumbs
+              - GenerateMediaIndexFiles
+              - OptimizeDatabase
+              - RefreshLibraries
+              - RefreshLocalMedia
+              - RefreshPeriodicMetadata
+              - UpgradeMediaAnalysis
+          required: true
+      responses:
+        '200':
+          description: The task was stopped
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+        '404':
+          description: The task was not running
+tags:
+  - name: Activities
+    description: |
+      Activities are awesome. They provide a way to monitor and control asynchronous operations on the server. In order to receive real-time updates for activities, a client would normally subscribe via either EventSource or Websocket endpoints.
+      Activities are associated with HTTP replies via a special `X-Plex-Activity` header which contains the UUID of the activity.
+      Activities are optional cancellable. If cancellable, they may be cancelled via the `DELETE` endpoint. Other details:
+      - They can contain a `progress` (from 0 to 100) marking the percent completion of the activity.
+      - They must contain an `type` which is used by clients to distinguish the specific activity.
+      - They may contain a `Context` object with attributes which associate the activity with various specific entities (items, libraries, etc.)
+      - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
+  - name: Butler
+    description: |
+      Butler is the task manager of the plex ecosystem.
+  - name: Server
+    description: |
+      Operations against the Plex Media Server System.
+  - name: Updater
+    description: |
+      This describes the API for searching and applying updates to the Plex Media Server.
+      Updates to the status can be observed via the Event API.
