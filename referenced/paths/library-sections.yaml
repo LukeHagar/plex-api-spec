@@ -11,7 +11,7 @@ get:
       in: path
       schema:
         type: number
-      required: true
+      required: false
     - name: category
       description: the Id of the library to query
       in: path
@@ -20,7 +20,7 @@ get:
         enum:
           - all
           - latest
-      required: true
+      required: false
     - name: type
       description: item type
       in: query
