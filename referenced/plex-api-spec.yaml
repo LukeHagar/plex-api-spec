@@ -55,6 +55,8 @@ paths:
     $ref: "./paths/butler-task.yaml"
   /log:
     $ref: "./paths/log.yaml"
+  /log/networked:
+    $ref: "./paths/log-networked.yaml"
 
 tags:
   - name: Activities

@@ -476,6 +476,21 @@ paths:
           description: Multi-Line Log Message Posted successfully
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /log/networked:
+    get:
+      tags:
+        - Log
+      summary: Enabling Papertrail
+      description: |
+        This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail networked logging site for a period of time.
+      operationId: enablePaperTrail
+      responses:
+        '200':
+          description: Papertrail enabled successfully
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+        '403':
+          description: the user was not signed in
 tags:
   - name: Activities
     description: |
