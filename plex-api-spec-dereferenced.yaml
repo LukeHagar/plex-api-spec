@@ -430,10 +430,10 @@ paths:
         - name: level
           description: |
             An integer log level to write to the PMS log with.  
-            0: Error
-            1: Warning
-            2: Info
-            3: Debug
+            0: Error  
+            1: Warning  
+            2: Info 
+            3: Debug  
             4: Verbose
           in: query
           schema:
@@ -491,6 +491,60 @@ paths:
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
         '403':
           description: the user was not signed in
+  /security/token:
+    get:
+      tags:
+        - Security
+      summary: Get a Transient Token.
+      description: |
+        This endpoint provides the caller with a temporary token with the same access level as the caller's token. These tokens are valid for up to 48 hours and are destroyed if the server instance is restarted.
+      operationId: getTransientToken
+      parameters:
+        - name: type
+          description: '`delegation` - This is the only supported `type` parameter.'
+          in: query
+          schema:
+            type: string
+            enum:
+              - delegation
+          required: true
+        - name: scope
+          description: '`all` - This is the only supported `scope` parameter.'
+          in: query
+          schema:
+            type: string
+            enum:
+              - all
+          required: true
+      responses:
+        '200':
+          description: A Transient Token
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /security/resources:
+    get:
+      tags:
+        - Security
+      summary: Get Source Connection Information
+      description: |
+        If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.
+        Note: requires Plex Media Server >= 1.15.4.
+      operationId: getConnectionInformation
+      parameters:
+        - name: source
+          description: The source identifier with an included prefix.
+          in: query
+          schema:
+            type: string
+            example:
+              - server://client-identifier
+              - provider://provider-identifier
+          required: true
+      responses:
+        '200':
+          description: Source Connection Information
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
   - name: Activities
     description: |
@@ -514,3 +568,6 @@ tags:
   - name: Log
     description: |
       Submit logs to the Log Handler for Plex Media Server
+  - name: Security
+    description: |
+      API Calls against Security for Plex Media Server
