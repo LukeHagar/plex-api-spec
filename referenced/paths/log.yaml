@@ -1,7 +1,7 @@
 get:
   tags:
     - Log
-  summary: Logging a single-line message to the Plex Media Server log.
+  summary: Logging a single line message.
   description: |
     This endpoint will write a single-line log message, including a level and source to the main Plex Media Server log.
   operationId: logaLine
@@ -9,7 +9,11 @@ get:
     - name: level
       description: |
         An integer log level to write to the PMS log with.  
-        (0: Error, 1: Warning, 2: Info, 3: Debug, 4: Verbose)
+        0: Error
+        1: Warning
+        2: Info
+        3: Debug
+        4: Verbose
       in: query
       schema:
         type: number
@@ -43,7 +47,7 @@ get:
 post:
   tags:
     - Log
-  summary: Logging a multi-line message to the Plex Media Server log
+  summary: Logging a multi-line message
   description: |
     This endpoint will write multiple lines to the main Plex Media Server log in a single request. It takes a set of query strings as would normally sent to the above GET endpoint as a linefeed-separated block of POST data. The parameters for each query string match as above.
   operationId: logMultipleLines
