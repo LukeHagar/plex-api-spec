@@ -4,7 +4,7 @@ get:
   summary: Get Library Items
   description: |
     This endpoint will return a list of library items filtered by the filter and type provided
-  operationId: startAButlerTasks
+  operationId: getLibraryItems
   parameters:
     - name: sectionId
       description: the Id of the library to query
