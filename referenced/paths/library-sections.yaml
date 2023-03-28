@@ -18,6 +18,7 @@ get:
       schema:
         type: string
         enum:
+          - ""
           - all
           - latest
       required: false

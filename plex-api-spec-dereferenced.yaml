@@ -571,6 +571,7 @@ paths:
           schema:
             type: string
             enum:
+              - ''
               - all
               - latest
           required: false
