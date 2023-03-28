@@ -545,6 +545,47 @@ paths:
           description: Source Connection Information
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /library/sections/{sectionId}/{category}:
+    get:
+      tags:
+        - Library
+      summary: Get Library Items
+      description: |
+        This endpoint will return a list of library items filtered by the filter and type provided
+      operationId: startAButlerTasks
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: category
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: string
+            enum:
+              - all
+              - latest
+          required: true
+        - name: type
+          description: item type
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
   - name: Activities
     description: |
@@ -571,3 +612,6 @@ tags:
   - name: Security
     description: |
       API Calls against Security for Plex Media Server
+  - name: Library
+    description: |
+      API Calls interacting with Plex Media Server Libraries
