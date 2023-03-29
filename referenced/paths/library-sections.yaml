@@ -11,17 +11,16 @@ get:
       in: path
       schema:
         type: number
-      required: false
+      required: true
     - name: category
       description: the Id of the library to query
       in: path
       schema:
         type: string
         enum:
-          - ""
           - all
           - latest
-      required: false
+      required: true
     - name: type
       description: item type
       in: query

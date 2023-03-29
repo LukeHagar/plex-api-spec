@@ -27,18 +27,13 @@ servers:
         description: The port to access your plex server
 
 security:
-  - PlexTokenHeader: []
-  - PlexTokenQuery: []
+  - PlexToken: []
 
 components:
   securitySchemes:
     PlexTokenHeader: # arbitrary name for the security scheme
       type: apiKey
       in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Token # name of the header, query parameter or cookie
-    PlexTokenQuery: # arbitrary name for the security scheme
-      type: apiKey
-      in: query # can be "header", "query" or "cookie"
       name: X-Plex-Token # name of the header, query parameter or cookie
 
 paths:
@@ -68,6 +63,8 @@ paths:
     $ref: "./paths/security-resources.yaml"
   /library/sections/{sectionId}/{category}:
     $ref: "./paths/library-sections.yaml"
+  /library/sections:
+    $ref: "./paths/all-libraries.yaml"
 
 tags:
   - name: Activities

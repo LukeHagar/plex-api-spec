@@ -1,0 +1,12 @@
+get:
+  tags:
+    - Library
+  summary: Get All Libraries
+  description: |
+    This endpoint will return a list of libraries
+  operationId: getLibraries
+  responses:
+    "200":
+      description: The libraries available on the Server
+    "401":
+      $ref: "../responses/401.yaml"

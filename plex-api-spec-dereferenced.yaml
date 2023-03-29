@@ -24,17 +24,12 @@ servers:
         default: '32400'
         description: The port to access your plex server
 security:
-  - PlexTokenHeader: []
-  - PlexTokenQuery: []
+  - PlexToken: []
 components:
   securitySchemes:
     PlexTokenHeader:
       type: apiKey
       in: header
-      name: X-Plex-Token
-    PlexTokenQuery:
-      type: apiKey
-      in: query
       name: X-Plex-Token
   schemas:
     ServerCapabilities:
@@ -564,17 +559,16 @@ paths:
           in: path
           schema:
             type: number
-          required: false
+          required: true
         - name: category
           description: the Id of the library to query
           in: path
           schema:
             type: string
             enum:
-              - ''
               - all
               - latest
-          required: false
+          required: true
         - name: type
           description: item type
           in: query
@@ -590,6 +584,19 @@ paths:
       responses:
         '200':
           description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /library/sections:
+    get:
+      tags:
+        - Library
+      summary: Get All Libraries
+      description: |
+        This endpoint will return a list of libraries
+      operationId: getLibraries
+      responses:
+        '200':
+          description: The libraries available on the Server
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
