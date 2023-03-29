@@ -13,7 +13,7 @@ get:
         type: number
       required: true
     - name: category
-      description: the Id of the library to query
+      description: the category to retrieve from the library
       in: path
       schema:
         type: string
