@@ -16,7 +16,7 @@ servers:
           - http
           - https
         default: http
-        description: The protocl to use with your plex server
+        description: The protocol to use with your plex server
       Local IP:
         default: 10.10.10.47
         description: The Local IP Address of your plex server
