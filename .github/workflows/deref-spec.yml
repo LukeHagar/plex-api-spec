@@ -23,5 +23,5 @@ jobs:
           npm install -g swagger-cli
       - name: Dereference Plex API Specification
         run: |
-          swagger-cli bundle --dereference referenced\plex-api-spec.yaml -t yaml -o plex-api-spec-dereferenced.yaml
+          swagger-cli bundle --dereference referenced/plex-api-spec.yaml -t yaml -o plex-api-spec-dereferenced.yaml
       - uses: stefanzweifel/git-auto-commit-action@v4
