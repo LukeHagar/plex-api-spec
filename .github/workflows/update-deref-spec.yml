@@ -6,29 +6,29 @@ name: CI - Push File
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches:
+      - main
     paths:
-      - "plex-api-spec-dereferenced.yaml"
+      - plex-api-spec-dereferenced.yaml
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 
 jobs:
   copy-file:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Pushes test file
-      uses: dmnemec/copy_file_to_another_repo_action@main
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      with:
-        source_file: 'plex-api-spec-dereferenced.yaml'
-        destination_repo: 'lukehagar/plex-docs'
-        destination_folder: 'static'
-        user_email: 'lukeslakemail@gmail.com'
-        user_name: 'lukehagar'
-        commit_message: 'Updating OpenAPI Spec'
+      - name: Pushes Dereferenced Specification File
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: "plex-api-spec-dereferenced.yaml"
+          destination_repo: "lukehagar/plex-docs"
+          destination_folder: "static"
+          user_email: "lukeslakemail@gmail.com"
+          user_name: "lukehagar"
+          commit_message: "Updating OpenAPI Spec"
