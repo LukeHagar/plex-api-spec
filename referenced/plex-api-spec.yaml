@@ -4,7 +4,7 @@ info:
   title: Plex-API
   summary: A Plex Media Server API Map
   description: An Open API Spec for interacting with Plex.tv and Plex Servers
-  version: "0.0.2"
+  version: 0.0.3
   contact:
     name: Luke Hagar
     email: Lukeslakemail@gmail.com
