@@ -10,6 +10,36 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../schemas/ServerActivities.yaml"
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: number
+                  Activity:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        uuid:
+                          type: string
+                        type:
+                          type: string
+                        cancellable:
+                          type: boolean
+                        userID:
+                          type: number
+                        title:
+                          type: string
+                        subtitle:
+                          type: string
+                        progress:
+                          type: number
+                        Context:
+                          type: object
+                          properties:
+                            librarySectionID:
+                              type: string
     "401":
       $ref: "../responses/401.yaml"
