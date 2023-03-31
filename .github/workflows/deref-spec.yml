@@ -24,4 +24,11 @@ jobs:
       - name: Dereference Plex API Specification
         run: |
           swagger-cli bundle --dereference referenced/plex-api-spec.yaml -t yaml -o plex-api-spec-dereferenced.yaml
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "LukeHagar"
+          git config --global user.email "Lukeslakemail@gmail.com"
+
+          git add -A
+          git commit -m "Automated Commit: Dereferencing Plex API Specification"
+          git push
