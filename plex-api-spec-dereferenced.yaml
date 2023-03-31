@@ -1,4 +1,4 @@
-openapi: 3.1.1
+openapi: 3.1.0
 info:
   title: Plex-API
   summary: A Plex Media Server API Map
@@ -7,7 +7,7 @@ info:
   contact:
     name: Luke Hagar
     email: Lukeslakemail@gmail.com
-    url: https://www.LukeHagar.com
+    url: 'https://www.LukeHagar.com'
 servers:
   - url: '{Protocol}://{Local IP}:{Port}'
     variables:
@@ -31,159 +31,6 @@ components:
       type: apiKey
       in: header
       name: X-Plex-Token
-  schemas:
-    ServerCapabilities:
-      type: object
-      properties: &ref_0
-        MediaContainer:
-          type: object
-          properties:
-            size:
-              type: number
-            allowCameraUpload:
-              type: boolean
-            allowChannelAccess:
-              type: boolean
-            allowMediaDeletion:
-              type: boolean
-            allowSharing:
-              type: boolean
-            allowSync:
-              type: boolean
-            allowTuners:
-              type: boolean
-            backgroundProcessing:
-              type: boolean
-            certificate:
-              type: boolean
-            companionProxy:
-              type: boolean
-            countryCode:
-              type: string
-            diagnostics:
-              type: string
-            eventStream:
-              type: boolean
-            friendlyName:
-              type: string
-            hubSearch:
-              type: boolean
-            itemClusters:
-              type: boolean
-            livetv:
-              type: number
-            machineIdentifier:
-              type: string
-            mediaProviders:
-              type: boolean
-            multiuser:
-              type: boolean
-            musicAnalysis:
-              type: number
-            myPlex:
-              type: boolean
-            myPlexMappingState:
-              type: string
-            myPlexSigninState:
-              type: string
-            myPlexSubscription:
-              type: boolean
-            myPlexUsername:
-              type: string
-            offlineTranscode:
-              type: number
-            ownerFeatures:
-              type: string
-            photoAutoTag:
-              type: boolean
-            platform:
-              type: string
-            platformVersion:
-              type: string
-            pluginHost:
-              type: boolean
-            pushNotifications:
-              type: boolean
-            readOnlyLibraries:
-              type: boolean
-            streamingBrainABRVersion:
-              type: number
-            streamingBrainVersion:
-              type: number
-            sync:
-              type: boolean
-            transcoderActiveVideoSessions:
-              type: number
-            transcoderAudio:
-              type: boolean
-            transcoderLyrics:
-              type: boolean
-            transcoderPhoto:
-              type: boolean
-            transcoderSubtitles:
-              type: boolean
-            transcoderVideo:
-              type: boolean
-            transcoderVideoBitrates:
-              type: string
-            transcoderVideoQualities:
-              type: string
-            transcoderVideoResolutions:
-              type: string
-            updatedAt:
-              type: number
-            updater:
-              type: boolean
-            version:
-              type: string
-            voiceSearch:
-              type: boolean
-            Directory:
-              type: array
-              items:
-                type: object
-                properties:
-                  count:
-                    type: number
-                  key:
-                    type: string
-                  title:
-                    type: string
-    ServerActivities:
-      type: object
-      properties: &ref_1
-        MediaContainer:
-          type: object
-          properties:
-            size:
-              type: number
-            Activity:
-              type: array
-              items:
-                type: object
-                properties:
-                  uuid:
-                    type: string
-                  type:
-                    type: string
-                  cancellable:
-                    type: boolean
-                  userID:
-                    type: number
-                  title:
-                    type: string
-                  subtitle:
-                    type: string
-                  progress:
-                    type: number
-                  Context:
-                    type: object
-                    properties:
-                      librarySectionID:
-                        type: string
-  responses:
-    '401':
-      description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 paths:
   /:
     get:
@@ -199,7 +46,121 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: *ref_0
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                      allowCameraUpload:
+                        type: boolean
+                      allowChannelAccess:
+                        type: boolean
+                      allowMediaDeletion:
+                        type: boolean
+                      allowSharing:
+                        type: boolean
+                      allowSync:
+                        type: boolean
+                      allowTuners:
+                        type: boolean
+                      backgroundProcessing:
+                        type: boolean
+                      certificate:
+                        type: boolean
+                      companionProxy:
+                        type: boolean
+                      countryCode:
+                        type: string
+                      diagnostics:
+                        type: string
+                      eventStream:
+                        type: boolean
+                      friendlyName:
+                        type: string
+                      hubSearch:
+                        type: boolean
+                      itemClusters:
+                        type: boolean
+                      livetv:
+                        type: number
+                      machineIdentifier:
+                        type: string
+                      mediaProviders:
+                        type: boolean
+                      multiuser:
+                        type: boolean
+                      musicAnalysis:
+                        type: number
+                      myPlex:
+                        type: boolean
+                      myPlexMappingState:
+                        type: string
+                      myPlexSigninState:
+                        type: string
+                      myPlexSubscription:
+                        type: boolean
+                      myPlexUsername:
+                        type: string
+                      offlineTranscode:
+                        type: number
+                      ownerFeatures:
+                        type: string
+                      photoAutoTag:
+                        type: boolean
+                      platform:
+                        type: string
+                      platformVersion:
+                        type: string
+                      pluginHost:
+                        type: boolean
+                      pushNotifications:
+                        type: boolean
+                      readOnlyLibraries:
+                        type: boolean
+                      streamingBrainABRVersion:
+                        type: number
+                      streamingBrainVersion:
+                        type: number
+                      sync:
+                        type: boolean
+                      transcoderActiveVideoSessions:
+                        type: number
+                      transcoderAudio:
+                        type: boolean
+                      transcoderLyrics:
+                        type: boolean
+                      transcoderPhoto:
+                        type: boolean
+                      transcoderSubtitles:
+                        type: boolean
+                      transcoderVideo:
+                        type: boolean
+                      transcoderVideoBitrates:
+                        type: string
+                      transcoderVideoQualities:
+                        type: string
+                      transcoderVideoResolutions:
+                        type: string
+                      updatedAt:
+                        type: number
+                      updater:
+                        type: boolean
+                      version:
+                        type: string
+                      voiceSearch:
+                        type: boolean
+                      Directory:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            count:
+                              type: number
+                            key:
+                              type: string
+                            title:
+                              type: string
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /activities:
@@ -216,10 +177,39 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: *ref_1
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                      Activity:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            uuid:
+                              type: string
+                            type:
+                              type: string
+                            cancellable:
+                              type: boolean
+                            userID:
+                              type: number
+                            title:
+                              type: string
+                            subtitle:
+                              type: string
+                            progress:
+                              type: number
+                            Context:
+                              type: object
+                              properties:
+                                librarySectionID:
+                                  type: string
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-  /activities/{activityUUID}:
+  '/activities/{activityUUID}':
     delete:
       tags:
         - Activities
@@ -237,11 +227,6 @@ paths:
       responses:
         '200':
           description: The Server Activity was canceled
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: *ref_1
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /updater/status:
@@ -341,7 +326,7 @@ paths:
           description: All tasks were stopped
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-  /butler/{taskName}:
+  '/butler/{taskName}':
     post:
       tags:
         - Butler
@@ -537,15 +522,15 @@ paths:
           schema:
             type: string
             example:
-              - server://client-identifier
-              - provider://provider-identifier
+              - 'server://client-identifier'
+              - 'provider://provider-identifier'
           required: true
       responses:
         '200':
           description: Source Connection Information
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-  /library/sections/{sectionId}/{category}:
+  '/library/sections/{sectionId}/{category}':
     get:
       tags:
         - Library
