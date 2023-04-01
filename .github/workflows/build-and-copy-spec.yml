@@ -1,4 +1,4 @@
-name: "Build Dereferenced Plex API Spec"
+name: Build and Copy Dereferenced Plex API Spec
 
 on:
   push:
@@ -24,4 +24,15 @@ jobs:
       - name: Dereference Plex API Specification
         run: |
           swagger-cli bundle --dereference referenced/plex-api-spec.yaml -t yaml -o plex-api-spec-dereferenced.yaml
+      - name: Pushes Dereferenced Specification File
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: plex-api-spec-dereferenced.yaml
+          destination_repo: lukehagar/plex-docs
+          destination_folder: static
+          user_email: lukeslakemail@gmail.com
+          user_name: lukehagar
+          commit_message: Updating OpenAPI Spec
       - uses: stefanzweifel/git-auto-commit-action@v4
