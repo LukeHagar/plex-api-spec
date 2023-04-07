@@ -602,7 +602,10 @@ paths:
           description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
           in: query
           schema:
-            type: boolean
+            type: number
+            enum:
+              - 0
+              - 1
           required: false
       responses:
         '200':
@@ -634,11 +637,119 @@ paths:
           description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
           in: query
           schema:
-            type: boolean
+            type: number
+            enum:
+              - 0
+              - 1
           required: false
       responses:
         '200':
           description: The hubs specific to the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /playlists/all:
+    get:
+      tags:
+        - Playlists
+      summary: Retrieve Playlists
+      description: ''
+      operationId: getAllPlaylists
+      parameters:
+        - name: playlistType
+          description: limit to a type of playlist.
+          in: query
+          schema:
+            type: string
+            enum:
+              - audio
+              - video
+              - photo
+          required: false
+        - name: smart
+          description: type of playlists to return (default is all).
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: false
+      responses:
+        '200':
+          description: returns all playlists
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /playlists:
+    post:
+      tags:
+        - Playlists
+      summary: Create a Playlist
+      description: |
+        Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
+        - `uri` - The content URI for what we're playing (e.g. `library://...`).
+        - `playQueueID` - To create a playlist from an existing play queue.
+      operationId: createAPlaylist
+      parameters:
+        - name: title
+          description: name of the playlist
+          in: query
+          schema:
+            type: string
+          required: true
+        - name: type
+          description: type of playlist to create
+          in: query
+          schema:
+            type: string
+            enum:
+              - audio
+              - video
+              - photo
+          required: true
+        - name: smart
+          description: whether the playlist is smart or not
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: true
+        - name: uri
+          description: the content URI for the playlist
+          in: query
+          schema:
+            type: string
+          required: false
+        - name: playQueueID
+          description: the play queue to copy to a playlist
+          in: query
+          schema:
+            type: number
+          required: false
+      responses:
+        '200':
+          description: returns all playlists
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/playlists/{playlistID}':
+    get:
+      tags:
+        - Playlist
+      summary: Retrieve Playlist
+      description: |
+        This endpoint will return a playlist
+      operationId: getPlaylist
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
