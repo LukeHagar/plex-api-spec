@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Playlists
+  summary: Retrieve Playlists
+  description: ""
+  operationId: getAllPlaylists
+  parameters:
+    - name: playlistType
+      description: limit to a type of playlist.
+      in: query
+      schema:
+        type: string
+        enum:
+          - audio
+          - video
+          - photo
+      required: false
+    - name: smart
+      description: type of playlists to return (default is all).
+      in: query
+      schema:
+        type: number
+        enum:
+          - 0
+          - 1
+      required: false  
+  responses:
+    "200":
+      description: returns all playlists
+    "401":
+      $ref: "../responses/401.yaml"

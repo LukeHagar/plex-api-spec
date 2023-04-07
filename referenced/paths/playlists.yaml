@@ -1,0 +1,52 @@
+post:
+  tags:
+    - Playlists
+  summary: Create a Playlist
+  description: |
+    Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
+    - `uri` - The content URI for what we're playing (e.g. `library://...`).
+    - `playQueueID` - To create a playlist from an existing play queue.
+  operationId: createAPlaylist
+  parameters:
+    - name: title
+      description: name of the playlist
+      in: query
+      schema:
+        type: string
+      required: true
+    - name: type
+      description: type of playlist to create
+      in: query
+      schema:
+        type: string
+        enum:
+          - audio
+          - video
+          - photo 
+      required: true
+    - name: smart
+      description: whether the playlist is smart or not
+      in: query
+      schema:
+        type: number
+        enum:
+          - 0
+          - 1
+      required: true  
+    - name: uri
+      description: the content URI for the playlist
+      in: query
+      schema:
+        type: string
+      required: false  
+    - name: playQueueID
+      description: the play queue to copy to a playlist
+      in: query
+      schema:
+        type: number
+      required: false  
+  responses:
+    "200":
+      description: returns all playlists
+    "401":
+      $ref: "../responses/401.yaml"

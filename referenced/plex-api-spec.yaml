@@ -69,6 +69,12 @@ paths:
     $ref: "./paths/hubs.yaml"
   /hubs/sections/{sectionId}:
     $ref: "./paths/hubs-section.yaml"
+  /playlists/all:
+    $ref: "./paths/all-playlists.yaml"
+  /playlists:
+    $ref: "./paths/playlists.yaml"
+  /playlists/{playlistID}:
+    $ref: "./paths/playlist-id.yaml"
 
 tags:
   - name: Activities

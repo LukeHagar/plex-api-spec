@@ -1,0 +1,19 @@
+get:
+  tags:
+    - Playlist
+  summary: Retrieve Playlist
+  description: |
+    This endpoint will return a playlist
+  operationId: getPlaylist
+  parameters:
+    - name: playlistID
+      description: the ID of the playlist
+      in: path
+      schema:
+        type: number
+      required: true
+  responses:
+    "200":
+      description: The playlist
+    "401":
+      $ref: "../responses/401.yaml"
