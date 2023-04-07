@@ -591,12 +591,25 @@ paths:
       summary: Get Global Hubs
       description: ''
       operationId: getGlobalHubs
+      parameters:
+        - name: count
+          description: The number of items to return with each hub.
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: onlyTransient
+          description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
+          in: query
+          schema:
+            type: boolean
+          required: false
       responses:
         '200':
           description: returns global hubs
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-  '/hubs/sections/{section}':
+  '/hubs/sections/{sectionId}':
     get:
       tags:
         - Hubs
@@ -611,11 +624,17 @@ paths:
           schema:
             type: number
           required: true
-        - name: filter
-          description: the filter parameter
+        - name: count
+          description: The number of items to return with each hub.
           in: query
           schema:
-            type: string
+            type: number
+          required: false
+        - name: onlyTransient
+          description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
+          in: query
+          schema:
+            type: boolean
           required: false
       responses:
         '200':
