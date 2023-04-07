@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Hubs
+  summary: Get Global Hubs
+  description: ""
+  operationId: getGlobalHubs
+  responses:
+    "200":
+      description: returns global hubs
+    "401":
+      $ref: "../responses/401.yaml"

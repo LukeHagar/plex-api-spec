@@ -65,6 +65,10 @@ paths:
     $ref: "./paths/library-sections.yaml"
   /library/sections:
     $ref: "./paths/all-libraries.yaml"
+  /hubs:
+    $ref: "./paths/hubs.yaml"
+  /hubs/sections/{section}:
+    $ref: "./paths/hubs-section.yaml"
 
 tags:
   - name: Activities
@@ -95,3 +99,6 @@ tags:
   - name: Library
     description: |
       API Calls interacting with Plex Media Server Libraries
+  - name: Hubs
+    description: |
+      Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
