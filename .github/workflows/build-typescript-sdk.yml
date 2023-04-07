@@ -18,7 +18,7 @@ jobs:
       - name: Checkout API Specs Repo
         uses: actions/checkout@v3
         with:
-          repository: lukehagar/plexjs
+          repository: LukeHagar/plexjs
           path: sdk-ts
           ref: main
 
@@ -53,6 +53,6 @@ jobs:
           git add .
           git commit -m "Automated build '${{ github.event.head_commit.message }}' typescript-axios sdk: ${{ github.run_id }}"
           git status
-          git remote set-url origin https://${{secrets.API_SPEC_PAT}}@github.com/lukehagar/plexjs.git
+          git remote set-url origin https://${{secrets.API_SPEC_PAT}}@github.com/LukeHagar/plexjs.git
           git remote -v
           git push
