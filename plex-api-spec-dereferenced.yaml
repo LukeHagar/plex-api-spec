@@ -651,7 +651,7 @@ paths:
     get:
       tags:
         - Playlists
-      summary: Retrieve Playlists
+      summary: Get All Playlists
       description: ''
       operationId: getAllPlaylists
       parameters:
