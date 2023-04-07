@@ -1,0 +1,58 @@
+name: "Build and Push Plex TypeScript SDK"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push_spec_workflow:
+    name: Build and push typescript SDK
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the master branch request to run rsync
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      # Checkout the main branch of api-specs
+      - name: Checkout API Specs Repo
+        uses: actions/checkout@v3
+        with:
+          repository: lukehagar/plexjs
+          path: sdk-ts
+          ref: main
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      
+      - name: Build TS SDK
+        id: buildTS
+        run: |
+          cd sdk-ts
+          wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.3.0/openapi-generator-cli-6.3.0.jar -O openapi-generator-cli.jar
+          rm -rf sdk-output/
+          java -jar openapi-generator-cli.jar generate -i ../referenced/plex-api-spec.yaml -g typescript-axios -o sdk-output/ --global-property skipFormModel=false --config sdk-resources/config.yaml
+          
+      - name: Run npm install and build Typescript SDK
+        id: buildSDK
+        if: steps.buildTS.outcome == 'success'
+        run: |
+          cd sdk-ts/sdk-output
+          npm install
+          npm run build
+      
+      - name: After SDK Build
+        if: steps.buildSDK.outcome == 'success'
+        run: |
+          cd sdk-ts
+          git config --unset-all http.https://github.com/.extraheader
+          git config --local user.email "Lukeslakemail@gmail"
+          git config --local user.name "GitHub Action Bot"
+          git add .
+          git commit -m "Automated build '${{ github.event.head_commit.message }}' typescript-axios sdk: ${{ github.run_id }}"
+          git status
+          git remote set-url origin https://${{secrets.API_SPEC_PAT}}@github.com/lukehagar/plexjs.git
+          git remote -v
+          git push
