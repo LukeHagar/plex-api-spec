@@ -1,6 +1,6 @@
 get:
   tags:
-    - Playlist
+    - Playlists
   summary: Retrieve Playlist
   description: |
     This endpoint will return a playlist
