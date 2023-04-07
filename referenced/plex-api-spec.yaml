@@ -67,7 +67,7 @@ paths:
     $ref: "./paths/all-libraries.yaml"
   /hubs:
     $ref: "./paths/hubs.yaml"
-  /hubs/sections/{section}:
+  /hubs/sections/{sectionId}:
     $ref: "./paths/hubs-section.yaml"
 
 tags:
