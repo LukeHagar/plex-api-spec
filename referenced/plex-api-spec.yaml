@@ -23,7 +23,7 @@ servers:
         default: 10.10.10.47
         description: The Local IP Address of your plex server
       Port:
-        default: "32400"
+        default: 32400
         description: The port to access your plex server
 
 security:
@@ -31,7 +31,7 @@ security:
 
 components:
   securitySchemes:
-    PlexTokenHeader: # arbitrary name for the security scheme
+    PlexToken: # arbitrary name for the security scheme
       type: apiKey
       in: header # can be "header", "query" or "cookie"
       name: X-Plex-Token # name of the header, query parameter or cookie
