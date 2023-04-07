@@ -584,6 +584,44 @@ paths:
           description: The libraries available on the Server
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /hubs:
+    get:
+      tags:
+        - Hubs
+      summary: Get Global Hubs
+      description: ''
+      operationId: getGlobalHubs
+      responses:
+        '200':
+          description: returns global hubs
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/hubs/sections/{section}':
+    get:
+      tags:
+        - Hubs
+      summary: Get library specific hubs
+      description: |
+        This endpoint will return a list of library specific hubs
+      operationId: getLibraryHubs
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The hubs specific to the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
   - name: Activities
     description: |
@@ -613,3 +651,6 @@ tags:
   - name: Library
     description: |
       API Calls interacting with Plex Media Server Libraries
+  - name: Hubs
+    description: |
+      Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
