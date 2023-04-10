@@ -3,7 +3,12 @@ get:
     - Library
   summary: Get All Libraries
   description: |
-    This endpoint will return a list of libraries
+    A library section (commonly referred to as just a library) is a collection of media. 
+    Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
+    For example, a music library has an artist > albums > tracks structure, whereas a movie library is flat.
+
+    Libraries have features beyond just being a collection of media; for starters, they include information about supported types, filters and sorts. 
+    \This allows a client to provide a rich interface around the media (e.g. allow sorting movies by release year).
   operationId: getLibraries
   responses:
     "200":
