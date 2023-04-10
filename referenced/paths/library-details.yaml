@@ -42,7 +42,7 @@ get:
           - 0
           - 1
         default: 0
-      required: fallse
+      required: false
   responses:
     "200":
       description: The details of the library
