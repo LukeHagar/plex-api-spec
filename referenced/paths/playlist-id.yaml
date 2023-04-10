@@ -3,7 +3,8 @@ get:
     - Playlists
   summary: Retrieve Playlist
   description: |
-    This endpoint will return a playlist
+    Gets detailed metadata for a playlist. A playlist for many purposes (rating, editing metadata, tagging), can be treated like a regular metadata item:
+    Smart playlist details contain the `content` attribute. This is the content URI for the generator. This can then be parsed by a client to provide smart playlist editing.
   operationId: getPlaylist
   parameters:
     - name: playlistID
@@ -21,7 +22,7 @@ get:
 delete:
   tags:
     - Playlists
-  summary: Delete a Playlist
+  summary: Deletes a Playlist
   description: |
     This endpoint will delete a playlist
   operationId: deletePlaylist
@@ -43,7 +44,7 @@ put:
     - Playlists
   summary: Update a Playlist
   description: |
-    This endpoint will delete a playlist
+    From PMS version 1.9.1 clients can also edit playlist metadata using this endpoint as they would via `PUT /library/metadata/{playlistID}`
   operationId: updatePlaylist
   parameters:
     - name: playlistID
