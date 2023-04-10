@@ -46,3 +46,38 @@ delete:
       description: The playlist contents are cleared
     "401":
       $ref: "../responses/401.yaml"
+
+put:
+  tags:
+    - Playlists
+  summary: Adding to a Playlist
+  description: |
+    Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. 
+    With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
+  operationId: clearPlaylistContent
+  parameters:
+    - name: playlistID
+      description: the ID of the playlist
+      in: path
+      schema:
+        type: number
+      required: true
+    - name: uri
+      description: the content URI for the playlist
+      in: query
+      schema:
+        type: string
+        example: library://..
+      required: true
+    - name: playQueueID
+      description: the play queue to add to a playlist
+      in: query
+      schema:
+        type: number
+        example: 123
+      required: true
+  responses:
+    "200":
+      description: Playlist Updated
+    "401":
+      $ref: "../responses/401.yaml"
