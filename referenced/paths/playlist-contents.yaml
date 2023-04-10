@@ -54,7 +54,7 @@ put:
   description: |
     Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. 
     With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
-  operationId: clearPlaylistContent
+  operationId: addPlaylistContent
   parameters:
     - name: playlistID
       description: the ID of the playlist
