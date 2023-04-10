@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Library
+  summary: Get All Library Items
+  description: |
+    This endpoint will return a list of all library items filtered by the filter and type provided
+  operationId: getAllLibraryItems
+  parameters:
+    - name: sectionId
+      description: the Id of the library to query
+      in: path
+      schema:
+        type: number
+      required: true
+    - name: type
+      description: item type
+      in: query
+      schema:
+        type: number
+      required: false
+    - name: filter
+      description: the filter parameter
+      in: query
+      schema:
+        type: string
+      required: false
+  responses:
+    "200":
+      description: The details of the library
+    "401":
+      $ref: "../responses/401.yaml"

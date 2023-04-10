@@ -1,10 +1,10 @@
 get:
   tags:
     - Library
-  summary: Get Library Items
+  summary: Get Latest Library Items
   description: |
-    This endpoint will return a list of library items filtered by the filter and type provided
-  operationId: getLibraryItems
+    This endpoint will return a list of the latest library items filtered by the filter and type provided
+  operationId: getLatestLibraryItems
   parameters:
     - name: sectionId
       description: the Id of the library to query
@@ -12,21 +12,12 @@ get:
       schema:
         type: number
       required: true
-    - name: category
-      description: the category to retrieve from the library
-      in: path
-      schema:
-        type: string
-        enum:
-          - all
-          - latest
-      required: true
     - name: type
       description: item type
       in: query
       schema:
         type: number
-      required: false
+      required: true
     - name: filter
       description: the filter parameter
       in: query

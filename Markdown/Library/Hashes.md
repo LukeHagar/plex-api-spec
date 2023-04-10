@@ -2,8 +2,6 @@
 
 This resource returns hash values for local files.
 
-
-
 ### Get the hash values [GET]
 
 + Parameters

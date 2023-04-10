@@ -61,10 +61,16 @@ paths:
     $ref: "./paths/security-token.yaml"
   /security/resources:
     $ref: "./paths/security-resources.yaml"
-  /library/sections/{sectionId}/{category}:
-    $ref: "./paths/library-content.yaml"
+
+  /library/sections/{sectionId}/all:
+    $ref: "./paths/library-content-all.yaml"
+  /library/sections/{sectionId}/latest:
+    $ref: "./paths/library-content-latest.yaml"
+  /library/sections/{sectionId}/common:
+    $ref: "./paths/library-content-common.yaml"
   /library/sections/{sectionId}:
     $ref: "./paths/library-details.yaml"
+
   /library/sections:
     $ref: "./paths/all-libraries.yaml"
   /library/hashes:
