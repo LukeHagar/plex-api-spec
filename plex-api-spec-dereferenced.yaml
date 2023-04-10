@@ -530,29 +530,20 @@ paths:
           description: Source Connection Information
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-  '/library/sections/{sectionId}/{category}':
+  '/library/sections/{sectionId}/all':
     get:
       tags:
         - Library
-      summary: Get Library Items
+      summary: Get All Library Items
       description: |
-        This endpoint will return a list of library items filtered by the filter and type provided
-      operationId: getLibraryItems
+        This endpoint will return a list of all library items filtered by the filter and type provided
+      operationId: getAllLibraryItems
       parameters:
         - name: sectionId
           description: the Id of the library to query
           in: path
           schema:
             type: number
-          required: true
-        - name: category
-          description: the category to retrieve from the library
-          in: path
-          schema:
-            type: string
-            enum:
-              - all
-              - latest
           required: true
         - name: type
           description: item type
@@ -571,6 +562,74 @@ paths:
           description: The details of the library
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/library/sections/{sectionId}/latest':
+    get:
+      tags:
+        - Library
+      summary: Get Latest Library Items
+      description: |
+        This endpoint will return a list of the latest library items filtered by the filter and type provided
+      operationId: getLatestLibraryItems
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: item type
+          in: query
+          schema:
+            type: number
+          required: true
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/library/sections/{sectionId}/common':
+    get:
+      tags:
+        - Library
+      summary: Get Common Library Items
+      description: |
+        Represents a "Common" item. It contains only the common attributes of the items selected by the provided filter
+      operationId: getCommonLibraryItems
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: item type
+          in: query
+          schema:
+            type: number
+          required: true
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '400':
+          description: In response to missing the type parameter.
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+        '404':
+          description: In response to a non-existant sectionId.
   '/library/sections/{sectionId}':
     get:
       tags:
