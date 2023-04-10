@@ -938,7 +938,7 @@ paths:
         - Playlists
       summary: Retrieve Playlist Contents
       description: |
-        Gets the contents if a playlist. Should be paged by clients via standard mechanisms. 
+        Gets the contents of a playlist. Should be paged by clients via standard mechanisms. 
         By default leaves are returned (e.g. episodes, movies). In order to return other types you can use the `type` parameter. 
         For example, you could use this to display a list of recently added albums vis a smart playlist. 
         Note that for dumb playlists, items have a `playlistItemID` attribute which is used for deleting or moving items.
