@@ -77,6 +77,8 @@ paths:
     $ref: "./paths/playlist-id.yaml"
   /playlists/{playlistID}/items:
     $ref: "./paths/playlist-contents.yaml"
+  /playlists/upload:
+    $ref: "./paths/playlist-upload.yaml"
 
 tags:
   - name: Activities
