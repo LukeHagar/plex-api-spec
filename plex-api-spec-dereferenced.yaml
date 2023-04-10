@@ -752,6 +752,89 @@ paths:
           description: The playlist
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+    delete:
+      tags:
+        - Playlists
+      summary: Delete a Playlist
+      description: |
+        This endpoint will delete a playlist
+      operationId: deletePlaylist
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist is deleted
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+    put:
+      tags:
+        - Playlists
+      summary: Update a Playlist
+      description: |
+        This endpoint will delete a playlist
+      operationId: updatePlaylist
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist is deleted
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/playlists/{playlistID}/items':
+    get:
+      tags:
+        - Playlists
+      summary: Retrieve Playlist Contents
+      description: |
+        This endpoint will return the contents of a playlist
+      operationId: getPlaylistContent
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: the metadata type of the item to return
+          in: query
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist contents
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+    delete:
+      tags:
+        - Playlists
+      summary: Delete Playlist Contents
+      description: |
+        This endpoint will clear the contents of a playlist
+      operationId: clearPlaylistContent
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist contents are cleared
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
   - name: Activities
     description: |
@@ -784,7 +867,7 @@ tags:
   - name: Hubs
     description: |
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
-  - name: Playlist
+  - name: Playlists
     description: |
       Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). They can be organized in (optionally nesting) folders.
       Retrieving a playlist, or its items, will trigger a refresh of its metadata. This may cause the duration and number of items to change.
