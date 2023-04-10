@@ -119,7 +119,7 @@ Clears a playlist, only works with dumb playlists. Returns the playlist.
           <Playlist ratingKey="2561805" key="/playlists/2561805/items"  type="playlist" title="Background videos" summary="" smart="0" playlistType="video" composite="/playlists/2561805/composite/1485900004" viewCount="8" lastViewedAt="1484680617" duration="1512000" leafCount="0" addedAt="1476942219" updatedAt="1485900004"></Playlist>
         </MediaContainer>
 
-### Adding to  a Playlist [PUT /playlists/{playlistID}/items?{uri,playQueueID}]
+### Adding to a Playlist [PUT /playlists/{playlistID}/items?{uri,playQueueID}]
 
 Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
 

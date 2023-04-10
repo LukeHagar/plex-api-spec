@@ -75,6 +75,8 @@ paths:
     $ref: "./paths/playlists.yaml"
   /playlists/{playlistID}:
     $ref: "./paths/playlist-id.yaml"
+  /playlists/{playlistID}/items:
+    $ref: "./paths/playlist-contents.yaml"
 
 tags:
   - name: Activities
@@ -108,7 +110,7 @@ tags:
   - name: Hubs
     description: |
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
-  - name: Playlist
+  - name: Playlists
     description: |
       Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). They can be organized in (optionally nesting) folders.
       Retrieving a playlist, or its items, will trigger a refresh of its metadata. This may cause the duration and number of items to change.

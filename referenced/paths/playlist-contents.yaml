@@ -1,0 +1,45 @@
+get:
+  tags:
+    - Playlists
+  summary: Retrieve Playlist Contents
+  description: |
+    This endpoint will return the contents of a playlist
+  operationId: getPlaylistContent
+  parameters:
+    - name: playlistID
+      description: the ID of the playlist
+      in: path
+      schema:
+        type: number
+      required: true
+    - name: type
+      description: the metadata type of the item to return
+      in: query
+      schema:
+        type: number
+      required: true
+  responses:
+    "200":
+      description: The playlist contents
+    "401":
+      $ref: "../responses/401.yaml"
+
+delete:
+  tags:
+    - Playlists
+  summary: Delete Playlist Contents
+  description: |
+    This endpoint will clear the contents of a playlist
+  operationId: clearPlaylistContent
+  parameters:
+    - name: playlistID
+      description: the ID of the playlist
+      in: path
+      schema:
+        type: number
+      required: true
+  responses:
+    "200":
+      description: The playlist contents are cleared
+    "401":
+      $ref: "../responses/401.yaml"

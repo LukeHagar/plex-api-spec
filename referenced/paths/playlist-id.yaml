@@ -17,3 +17,43 @@ get:
       description: The playlist
     "401":
       $ref: "../responses/401.yaml"
+
+delete:
+  tags:
+    - Playlists
+  summary: Delete a Playlist
+  description: |
+    This endpoint will delete a playlist
+  operationId: deletePlaylist
+  parameters:
+    - name: playlistID
+      description: the ID of the playlist
+      in: path
+      schema:
+        type: number
+      required: true
+  responses:
+    "200":
+      description: The playlist is deleted
+    "401":
+      $ref: "../responses/401.yaml"
+
+put:
+  tags:
+    - Playlists
+  summary: Update a Playlist
+  description: |
+    This endpoint will delete a playlist
+  operationId: updatePlaylist
+  parameters:
+    - name: playlistID
+      description: the ID of the playlist
+      in: path
+      schema:
+        type: number
+      required: true
+  responses:
+    "200":
+      description: The playlist is deleted
+    "401":
+      $ref: "../responses/401.yaml"
