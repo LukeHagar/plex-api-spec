@@ -53,7 +53,6 @@ If you're creating a smart playlist, you must pass `smart=1` and use the `uri=..
 ### Retrieve Playlist  [GET /playlists/{playlistID}]
 
 Gets detailed metadata for a playlist. A playlist for many purposes (rating, editing metadata, tagging), can be treated like a regular metadata item:
-
 Smart playlist details contain the `content` attribute. This is the content URI for the generator. This can then be parsed by a client to provide smart playlist editing.
 
 +   Parameters

@@ -79,6 +79,10 @@ paths:
     $ref: "./paths/playlist-contents.yaml"
   /playlists/upload:
     $ref: "./paths/playlist-upload.yaml"
+  /hubs/search:
+    $ref: "./paths/hubs-search.yaml"
+  /hubs/search/voice:
+    $ref: "./paths/hubs-search-voice.yaml"
 
 tags:
   - name: Activities
@@ -118,3 +122,6 @@ tags:
       They can be organized in (optionally nesting) folders.
       Retrieving a playlist, or its items, will trigger a refresh of its metadata. 
       This may cause the duration and number of items to change.
+  - name: Search
+    description: |
+      API Calls that perform search operations with Plex Media Server
