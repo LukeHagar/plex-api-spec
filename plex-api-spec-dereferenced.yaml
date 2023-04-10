@@ -738,7 +738,8 @@ paths:
         - Playlists
       summary: Retrieve Playlist
       description: |
-        This endpoint will return a playlist
+        Gets detailed metadata for a playlist. A playlist for many purposes (rating, editing metadata, tagging), can be treated like a regular metadata item:
+        Smart playlist details contain the `content` attribute. This is the content URI for the generator. This can then be parsed by a client to provide smart playlist editing.
       operationId: getPlaylist
       parameters:
         - name: playlistID
@@ -755,7 +756,7 @@ paths:
     delete:
       tags:
         - Playlists
-      summary: Delete a Playlist
+      summary: Deletes a Playlist
       description: |
         This endpoint will delete a playlist
       operationId: deletePlaylist
@@ -776,7 +777,7 @@ paths:
         - Playlists
       summary: Update a Playlist
       description: |
-        This endpoint will delete a playlist
+        From PMS version 1.9.1 clients can also edit playlist metadata using this endpoint as they would via `PUT /library/metadata/{playlistID}`
       operationId: updatePlaylist
       parameters:
         - name: playlistID
@@ -796,7 +797,10 @@ paths:
         - Playlists
       summary: Retrieve Playlist Contents
       description: |
-        This endpoint will return the contents of a playlist
+        Gets the contents if a playlist. Should be paged by clients via standard mechanisms. 
+        By default leaves are returned (e.g. episodes, movies). In order to return other types you can use the `type` parameter. 
+        For example, you could use this to display a list of recently added albums vis a smart playlist. 
+        Note that for dumb playlists, items have a `playlistItemID` attribute which is used for deleting or moving items.
       operationId: getPlaylistContent
       parameters:
         - name: playlistID
@@ -821,7 +825,7 @@ paths:
         - Playlists
       summary: Delete Playlist Contents
       description: |
-        This endpoint will clear the contents of a playlist
+        Clears a playlist, only works with dumb playlists. Returns the playlist.
       operationId: clearPlaylistContent
       parameters:
         - name: playlistID
@@ -907,5 +911,7 @@ tags:
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
   - name: Playlists
     description: |
-      Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). They can be organized in (optionally nesting) folders.
-      Retrieving a playlist, or its items, will trigger a refresh of its metadata. This may cause the duration and number of items to change.
+      Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). 
+      They can be organized in (optionally nesting) folders.
+      Retrieving a playlist, or its items, will trigger a refresh of its metadata. 
+      This may cause the duration and number of items to change.
