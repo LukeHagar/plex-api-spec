@@ -1138,6 +1138,42 @@ paths:
           description: The search results
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /user:
+    get:
+      tags:
+        - User
+      summary: Get Logged in User
+      description: Get Logged in User
+      operationId: getCurrentUserDetails
+      responses:
+        '200':
+          description: Logged in user details
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /resources:
+    get:
+      tags:
+        - Resources
+      summary: Get Devices
+      description: Get Devices
+      operationId: getDevices
+      responses:
+        '200':
+          description: List of Plex Devices
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /status/sessions:
+    get:
+      tags:
+        - Sessions
+      summary: Get Active Sessions
+      description: Get Active Sessions
+      operationId: getSessions
+      responses:
+        '200':
+          description: List of Active Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
   - name: Activities
     description: |
@@ -1179,3 +1215,6 @@ tags:
   - name: Search
     description: |
       API Calls that perform search operations with Plex Media Server
+  - name: User
+    description: |
+      API Calls that perform operations with Plex Media Server Users
