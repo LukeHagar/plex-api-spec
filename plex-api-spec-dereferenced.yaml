@@ -35,13 +35,62 @@ paths:
   /clients:
     get:
       tags:
-        - Clients
+        - Devices
       summary: Get Available Clients
       description: Get Available Clients
       operationId: getAvailableClients
       responses:
         '200':
           description: Available Clients
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 1
+                      Server:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: iPad
+                            host:
+                              type: string
+                              example: 10.10.10.102
+                            address:
+                              type: string
+                              example: 10.10.10.102
+                            port:
+                              type: number
+                              example: 32500
+                            machineIdentifier:
+                              type: string
+                              example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
+                            version:
+                              type: string
+                              example: 8.17
+                            protocol:
+                              type: string
+                              example: plex
+                            product:
+                              type: string
+                              example: Plex for iOS
+                            deviceClass:
+                              type: string
+                              example: tablet
+                            protocolVersion:
+                              type: string
+                              example: 2
+                            protocolCapabilities:
+                              type: string
+                              example: 'playback,playqueues,timeline,provider-playback'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /:
@@ -1184,6 +1233,8 @@ paths:
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /user:
+    servers:
+      - url: 'https://plex.tv/api/v2'
     get:
       tags:
         - User
@@ -1200,13 +1251,103 @@ paths:
       - url: 'https://plex.tv/api/v2'
     get:
       tags:
-        - Resources
+        - Devices
       summary: Get Devices
       description: Get Devices
       operationId: getDevices
       responses:
         '200':
           description: List of Plex Devices
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Hera
+                  product:
+                    type: string
+                    example: Plex Media Server
+                  productVersion:
+                    type: string
+                    example: 1.31.3.6868-28fc46b27
+                  platform:
+                    type: string
+                    example: Linux
+                  platformVersion:
+                    type: string
+                    example: '5.19.17-Unraid (#2 SMP PREEMPT_DYNAMIC Wed Nov 2 11:54:15 PDT 2022)'
+                  device:
+                    type: string
+                    example: PC
+                  clientIdentifier:
+                    type: string
+                    example: 96f2fe7a78c9dc1f16a16bedbe90f98149be16b4
+                  createdAt:
+                    type: string
+                    format: date-time
+                    example: 2022-06-02T00:54:26.000Z
+                  lastSeenAt:
+                    type: string
+                    format: date-time
+                    example: 2023-04-11T05:53:59.000Z
+                  provides:
+                    type: string
+                    example: server
+                  ownerId:
+                    type: string
+                    format: nullable
+                  sourceTitle:
+                    type: string
+                    format: nullable
+                  publicAddress:
+                    type: string
+                    example: 68.248.140.20
+                  accessToken:
+                    type: string
+                    example: CR3nxzsaSHdWx_WwZsJL
+                  owned:
+                    type: boolean
+                  home:
+                    type: boolean
+                  synced:
+                    type: boolean
+                  relay:
+                    type: boolean
+                  presence:
+                    type: boolean
+                  httpsRequired:
+                    type: boolean
+                  publicAddressMatches:
+                    type: boolean
+                  dnsRebindingProtection:
+                    type: boolean
+                  natLoopbackSupported:
+                    type: boolean
+                  connections:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        protocol:
+                          type: string
+                          example: http
+                        address:
+                          type: string
+                          example: 172.18.0.1
+                        port:
+                          type: number
+                          example: 32400
+                        uri:
+                          type: string
+                          example: 'http://172.18.0.1:32400'
+                        local:
+                          type: boolean
+                        relay:
+                          type: boolean
+                        IPv6:
+                          type: boolean
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /status/sessions:
