@@ -1196,6 +1196,8 @@ paths:
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /resources:
+    servers:
+      - 'https://plex.tv/api/v2'
     get:
       tags:
         - Resources
