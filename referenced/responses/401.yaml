@@ -6,7 +6,7 @@ content:
     properties:
       errors: 
       type: array
-      items: 
+      items:
         type: object
         properties: 
           code: 
