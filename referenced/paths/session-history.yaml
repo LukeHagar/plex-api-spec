@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Sessions
+  summary: Get Session History
+  description: This will Retrieve a listing of all history views.
+  operationId: getSessionHistory
+  responses:
+    "200":
+      description: List of Plex Sessions
+    "401":
+     $ref: "../responses/401.yaml"

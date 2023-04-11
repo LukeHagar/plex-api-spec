@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Clients
+  summary: Get Available Clients
+  description: Get Available Clients
+  operationId: getAvailableClients
+  responses:
+    "200":
+      description: Available Clients
+    "401":
+      $ref: "../responses/401.yaml"

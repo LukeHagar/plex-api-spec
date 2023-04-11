@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Server
+  summary: Get Server Preferences
+  description: Get Server Preferences
+  operationId: getServerPreferences
+  responses:
+    "200":
+      description: Server Preferences
+    "401":
+      $ref: "../responses/401.yaml"

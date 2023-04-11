@@ -37,6 +37,8 @@ components:
       name: X-Plex-Token # name of the header, query parameter or cookie
 
 paths:
+  /clients:
+    $ref: "./paths/clients.yaml"
   /:
     $ref: "./paths/root.yaml"
   /activities:
@@ -63,6 +65,8 @@ paths:
     $ref: "./paths/security-resources.yaml"
   /library/sections/{sectionId}/all:
     $ref: "./paths/library-content-all.yaml"
+  /library/sections/{sectionId}/refresh:
+    $ref: "./paths/library-refresh.yaml"
   /library/sections/{sectionId}/latest:
     $ref: "./paths/library-content-latest.yaml"
   /library/sections/{sectionId}/common:
@@ -73,6 +77,8 @@ paths:
     $ref: "./paths/all-libraries.yaml"
   /library/hashes:
     $ref: "./paths/library-hashes.yaml"
+  /library/onDeck:
+    $ref: "./paths/library-ondeck.yaml"
   /hubs:
     $ref: "./paths/hubs.yaml"
   /hubs/sections/{sectionId}:
@@ -97,6 +103,10 @@ paths:
     $ref: "./paths/resources.yaml"
   /status/sessions:
     $ref: "./paths/sessions.yaml"
+  /status/sessions/history/all:
+    $ref: "./paths/session-history.yaml"
+  /:/prefs:
+    $ref: "./paths/server-preferences.yaml"
 
 tags:
   - name: Activities

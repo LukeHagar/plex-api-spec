@@ -1,0 +1,12 @@
+get:
+  tags:
+    - Library
+  summary: Get On Deck
+  description: |
+    This endpoint will return the on deck content.
+  operationId: getOnDeck
+  responses:
+    "200":
+      description: The on deck content
+    "401":
+      $ref: "../responses/401.yaml"
