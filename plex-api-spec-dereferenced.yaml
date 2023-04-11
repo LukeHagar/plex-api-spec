@@ -32,6 +32,18 @@ components:
       in: header
       name: X-Plex-Token
 paths:
+  /clients:
+    get:
+      tags:
+        - Clients
+      summary: Get Available Clients
+      description: Get Available Clients
+      operationId: getAvailableClients
+      responses:
+        '200':
+          description: Available Clients
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /:
     get:
       tags:
@@ -562,6 +574,26 @@ paths:
           description: The details of the library
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/library/sections/{sectionId}/refresh':
+    get:
+      tags:
+        - Library
+      summary: Refresh Library
+      description: |
+        This endpoint Refreshes the library.
+      operationId: refreshLibrary
+      parameters:
+        - name: sectionId
+          description: the Id of the library to refresh
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The library is refreshing
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   '/library/sections/{sectionId}/latest':
     get:
       tags:
@@ -723,6 +755,19 @@ paths:
       responses:
         '200':
           description: The hash of the file
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /library/onDeck:
+    get:
+      tags:
+        - Library
+      summary: Get On Deck
+      description: |
+        This endpoint will return the on deck content.
+      operationId: getOnDeck
+      responses:
+        '200':
+          description: The on deck content
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
   /hubs:
@@ -1167,11 +1212,35 @@ paths:
       tags:
         - Sessions
       summary: Get Active Sessions
-      description: Get Active Sessions
+      description: This will retrieve the "Now Playing" Information of the PMS.
       operationId: getSessions
       responses:
         '200':
           description: List of Active Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  /status/sessions/history/all:
+    get:
+      tags:
+        - Sessions
+      summary: Get Session History
+      description: This will Retrieve a listing of all history views.
+      operationId: getSessionHistory
+      responses:
+        '200':
+          description: List of Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+  '/:/prefs':
+    get:
+      tags:
+        - Server
+      summary: Get Server Preferences
+      description: Get Server Preferences
+      operationId: getServerPreferences
+      responses:
+        '200':
+          description: Server Preferences
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
 tags:
