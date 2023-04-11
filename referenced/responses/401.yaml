@@ -5,16 +5,16 @@ content:
     type: object
     properties:
       errors: 
-      type: array
-      items:
-        type: object
-        properties: 
-          code: 
-            type: number
-            example: 1001
-          message: 
-            type: string
-            example: User could not be authenticated
-          status: 
-            type: number
-            example: 401
+        type: array
+        items:
+          type: object
+          properties: 
+            code: 
+              type: number
+              example: 1001
+            message: 
+              type: string
+              example: User could not be authenticated
+            status: 
+              type: number
+              example: 401
