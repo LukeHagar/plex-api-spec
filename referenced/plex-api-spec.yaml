@@ -101,7 +101,7 @@ paths:
     $ref: "./paths/user.yaml"
   /resources:
     servers:
-      - https://plex.tv/api/v2
+      - url: https://plex.tv/api/v2
     $ref: "./paths/resources.yaml"
   /status/sessions:
     $ref: "./paths/sessions.yaml"
