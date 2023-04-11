@@ -20,10 +20,10 @@ servers:
         default: http
         description: The protocol to use with your plex server
       Local IP:
-        default: 10.10.10.47
+        default: "10.10.10.47"
         description: The Local IP Address of your plex server
       Port:
-        default: 32400
+        default: "32400"
         description: The port to access your plex server
 
 security:
