@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Resources
+  summary: Get Devices
+  description: Get Devices
+  operationId: getDevices
+  responses:
+    "200":
+      description: List of Plex Devices
+    "401":
+      $ref: "#/components/responses/401"

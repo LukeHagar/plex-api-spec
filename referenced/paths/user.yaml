@@ -1,0 +1,11 @@
+get:
+  tags:
+    - User
+  summary: Get Logged in User
+  description: Get Logged in User
+  operationId: getCurrentUserDetails
+  responses:
+    "200":
+      description: Logged in user details
+    "401":
+      $ref: "../responses/401.yaml"
