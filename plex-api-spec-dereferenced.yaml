@@ -93,6 +93,25 @@ paths:
                               example: 'playback,playqueues,timeline,provider-playback'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /:
     get:
       tags:
@@ -224,6 +243,25 @@ paths:
                               type: string
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /activities:
     get:
       tags:
@@ -270,6 +308,25 @@ paths:
                                   type: string
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/activities/{activityUUID}':
     delete:
       tags:
@@ -290,6 +347,25 @@ paths:
           description: The Server Activity was canceled
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /updater/status:
     get:
       tags:
@@ -302,6 +378,25 @@ paths:
           description: The Server Updates
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /updater/check:
     put:
       tags:
@@ -324,6 +419,25 @@ paths:
           description: ''
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /updater/apply:
     put:
       tags:
@@ -356,6 +470,25 @@ paths:
           description: If the update process started correctly
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
         '500':
           description: If the update process failed to start
   /butler:
@@ -375,6 +508,25 @@ paths:
           description: All tasks were started
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     delete:
       tags:
         - Butler
@@ -387,6 +539,25 @@ paths:
           description: All tasks were stopped
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/butler/{taskName}':
     post:
       tags:
@@ -428,6 +599,25 @@ paths:
           description: The task was already running.
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     delete:
       tags:
         - Butler
@@ -462,6 +652,25 @@ paths:
           description: The task was stopped
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
         '404':
           description: The task was not running
   /log:
@@ -510,6 +719,25 @@ paths:
           description: Log Line submitted successfully
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     post:
       tags:
         - Log
@@ -522,6 +750,25 @@ paths:
           description: Multi-Line Log Message Posted successfully
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /log/networked:
     get:
       tags:
@@ -535,6 +782,25 @@ paths:
           description: Papertrail enabled successfully
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
         '403':
           description: the user was not signed in
   /security/token:
@@ -567,6 +833,25 @@ paths:
           description: A Transient Token
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /security/resources:
     get:
       tags:
@@ -591,6 +876,25 @@ paths:
           description: Source Connection Information
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/library/sections/{sectionId}/all':
     get:
       tags:
@@ -623,6 +927,25 @@ paths:
           description: The details of the library
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/library/sections/{sectionId}/refresh':
     get:
       tags:
@@ -643,6 +966,25 @@ paths:
           description: The library is refreshing
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/library/sections/{sectionId}/latest':
     get:
       tags:
@@ -675,6 +1017,25 @@ paths:
           description: The details of the library
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/library/sections/{sectionId}/common':
     get:
       tags:
@@ -709,6 +1070,25 @@ paths:
           description: In response to missing the type parameter.
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
         '404':
           description: In response to a non-existant sectionId.
   '/library/sections/{sectionId}':
@@ -762,6 +1142,25 @@ paths:
           description: The details of the library
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /library/sections:
     get:
       tags:
@@ -780,6 +1179,25 @@ paths:
           description: The libraries available on the Server
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /library/hashes:
     get:
       tags:
@@ -806,6 +1224,25 @@ paths:
           description: The hash of the file
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /library/onDeck:
     get:
       tags:
@@ -819,6 +1256,25 @@ paths:
           description: The on deck content
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /hubs:
     get:
       tags:
@@ -847,6 +1303,25 @@ paths:
           description: returns global hubs
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/hubs/sections/{sectionId}':
     get:
       tags:
@@ -882,6 +1357,25 @@ paths:
           description: The hubs specific to the library
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /playlists/all:
     get:
       tags:
@@ -914,6 +1408,25 @@ paths:
           description: returns all playlists
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /playlists:
     post:
       tags:
@@ -967,6 +1480,25 @@ paths:
           description: returns all playlists
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/playlists/{playlistID}':
     get:
       tags:
@@ -988,6 +1520,25 @@ paths:
           description: The playlist
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     delete:
       tags:
         - Playlists
@@ -1007,6 +1558,25 @@ paths:
           description: The playlist is deleted
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     put:
       tags:
         - Playlists
@@ -1026,6 +1596,25 @@ paths:
           description: The playlist is deleted
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/playlists/{playlistID}/items':
     get:
       tags:
@@ -1055,6 +1644,25 @@ paths:
           description: The playlist contents
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     delete:
       tags:
         - Playlists
@@ -1074,6 +1682,25 @@ paths:
           description: The playlist contents are cleared
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
     put:
       tags:
         - Playlists
@@ -1108,6 +1735,25 @@ paths:
           description: Playlist Updated
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /playlists/upload:
     post:
       tags:
@@ -1146,6 +1792,25 @@ paths:
           description: The playlist is uploaded
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /hubs/search:
     get:
       tags:
@@ -1193,6 +1858,25 @@ paths:
           description: The search results
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /hubs/search/voice:
     get:
       tags:
@@ -1232,6 +1916,25 @@ paths:
           description: The search results
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /user:
     servers:
       - url: 'https://plex.tv/api/v2'
@@ -1246,6 +1949,25 @@ paths:
           description: Logged in user details
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /resources:
     servers:
       - url: 'https://plex.tv/api/v2'
@@ -1350,6 +2072,25 @@ paths:
                           type: boolean
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /status/sessions:
     get:
       tags:
@@ -1362,6 +2103,25 @@ paths:
           description: List of Active Plex Sessions
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   /status/sessions/history/all:
     get:
       tags:
@@ -1374,6 +2134,25 @@ paths:
           description: List of Plex Sessions
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
   '/:/prefs':
     get:
       tags:
@@ -1386,6 +2165,25 @@ paths:
           description: Server Preferences
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                errors: null
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1001
+                    message:
+                      type: string
+                      example: User could not be authenticated
+                    status:
+                      type: number
+                      example: 401
 tags:
   - name: Activities
     description: |
