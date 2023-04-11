@@ -98,6 +98,8 @@ paths:
   /hubs/search/voice:
     $ref: "./paths/hubs-search-voice.yaml"
   /user:
+    servers:
+      - url: https://plex.tv/api/v2  
     $ref: "./paths/user.yaml"
   /resources:
     servers:
