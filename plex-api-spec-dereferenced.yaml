@@ -98,20 +98,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /:
     get:
       tags:
@@ -248,20 +248,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /activities:
     get:
       tags:
@@ -313,20 +313,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/activities/{activityUUID}':
     delete:
       tags:
@@ -352,20 +352,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /updater/status:
     get:
       tags:
@@ -383,20 +383,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /updater/check:
     put:
       tags:
@@ -424,20 +424,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /updater/apply:
     put:
       tags:
@@ -475,20 +475,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
         '500':
           description: If the update process failed to start
   /butler:
@@ -513,20 +513,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     delete:
       tags:
         - Butler
@@ -544,20 +544,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/butler/{taskName}':
     post:
       tags:
@@ -604,20 +604,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     delete:
       tags:
         - Butler
@@ -657,20 +657,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
         '404':
           description: The task was not running
   /log:
@@ -724,20 +724,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     post:
       tags:
         - Log
@@ -755,20 +755,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /log/networked:
     get:
       tags:
@@ -787,20 +787,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
         '403':
           description: the user was not signed in
   /security/token:
@@ -838,20 +838,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /security/resources:
     get:
       tags:
@@ -881,20 +881,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/library/sections/{sectionId}/all':
     get:
       tags:
@@ -932,20 +932,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/library/sections/{sectionId}/refresh':
     get:
       tags:
@@ -971,20 +971,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/library/sections/{sectionId}/latest':
     get:
       tags:
@@ -1022,20 +1022,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/library/sections/{sectionId}/common':
     get:
       tags:
@@ -1075,20 +1075,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
         '404':
           description: In response to a non-existant sectionId.
   '/library/sections/{sectionId}':
@@ -1147,20 +1147,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /library/sections:
     get:
       tags:
@@ -1184,20 +1184,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /library/hashes:
     get:
       tags:
@@ -1229,20 +1229,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /library/onDeck:
     get:
       tags:
@@ -1261,20 +1261,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /hubs:
     get:
       tags:
@@ -1308,20 +1308,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/hubs/sections/{sectionId}':
     get:
       tags:
@@ -1362,20 +1362,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /playlists/all:
     get:
       tags:
@@ -1413,20 +1413,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /playlists:
     post:
       tags:
@@ -1485,20 +1485,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/playlists/{playlistID}':
     get:
       tags:
@@ -1525,20 +1525,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     delete:
       tags:
         - Playlists
@@ -1563,20 +1563,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     put:
       tags:
         - Playlists
@@ -1601,20 +1601,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/playlists/{playlistID}/items':
     get:
       tags:
@@ -1649,20 +1649,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     delete:
       tags:
         - Playlists
@@ -1687,20 +1687,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
     put:
       tags:
         - Playlists
@@ -1740,20 +1740,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /playlists/upload:
     post:
       tags:
@@ -1797,20 +1797,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /hubs/search:
     get:
       tags:
@@ -1863,20 +1863,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /hubs/search/voice:
     get:
       tags:
@@ -1921,20 +1921,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /user:
     servers:
       - url: 'https://plex.tv/api/v2'
@@ -1954,20 +1954,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /resources:
     servers:
       - url: 'https://plex.tv/api/v2'
@@ -2077,20 +2077,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /status/sessions:
     get:
       tags:
@@ -2108,20 +2108,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   /status/sessions/history/all:
     get:
       tags:
@@ -2139,20 +2139,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
   '/:/prefs':
     get:
       tags:
@@ -2170,20 +2170,20 @@ paths:
               schema: null
               type: object
               properties:
-                errors: null
-                type: array
-                items:
-                  type: object
-                  properties:
-                    code:
-                      type: number
-                      example: 1001
-                    message:
-                      type: string
-                      example: User could not be authenticated
-                    status:
-                      type: number
-                      example: 401
+                errors:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                        example: 1001
+                      message:
+                        type: string
+                        example: User could not be authenticated
+                      status:
+                        type: number
+                        example: 401
 tags:
   - name: Activities
     description: |
