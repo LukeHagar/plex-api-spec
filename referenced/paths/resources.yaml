@@ -8,4 +8,4 @@ get:
     "200":
       description: List of Plex Devices
     "401":
-      $ref: "#/components/responses/401"
+      $ref: "../responses/401.yaml"

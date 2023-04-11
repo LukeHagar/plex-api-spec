@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Sessions
+  summary: Get Active Sessions
+  description: Get Active Sessions
+  operationId: getSessions
+  responses:
+    "200":
+      description: List of Active Plex Sessions
+    "401":
+     $ref: "../responses/401.yaml"

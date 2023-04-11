@@ -30,50 +30,6 @@ security:
   - PlexToken: []
 
 components:
-  responses:
-    "401":
-      $ref: "./responses/401.yaml"
-  parameters:
-    mediaType:      # Can be referenced via '#/components/parameters/mediaType'
-      name: mediaType
-      in: query
-      description: |
-        The Plex Media Types for the operation
-        1. Movies
-        2. Shows
-        3. Seasons
-        4. Episodes
-        5. Trailer
-        6. Comic
-        7. Person
-        8. Artist
-        9. Album
-        10. Track
-        11. Photo Album
-        12. Picture
-        13. Photo
-        14. Clip
-        15. Playlist Item
-      required: false
-      schema:
-        type: integer
-        enum:
-          - 1
-          - 2
-          - 3
-          - 4
-          - 5
-          - 6
-          - 7
-          - 8
-          - 9
-          - 10
-          - 11
-          - 12
-          - 13
-          - 14
-          - 15
-
   securitySchemes:
     PlexToken: # arbitrary name for the security scheme
       type: apiKey
@@ -139,6 +95,8 @@ paths:
     $ref: "./paths/user.yaml"
   /resources:
     $ref: "./paths/resources.yaml"
+  /status/sessions:
+    $ref: "./paths/sessions.yaml"
 
 tags:
   - name: Activities
