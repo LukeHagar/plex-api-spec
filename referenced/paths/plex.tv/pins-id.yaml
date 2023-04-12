@@ -1,0 +1,21 @@
+get: 
+  tags: 
+    -  Authentication
+  summary: Get Access Token
+  operationId: getToken
+  description: Retrieve a Pin from Plex.tv for authentication flows
+  parameters: 
+    - name: pinID
+      description: The PinID to retrieve an access token for
+      in: path
+      schema:
+        type: string
+      required: true
+    - $ref: "../../parameters/X-Plex-Client-Identifier.yaml"
+    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
+    - $ref: "../../parameters/X-Plex-Device.yaml"
+    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Platform.yaml"
+    - $ref: "../../parameters/X-Plex-Product.yaml"
+    - $ref: "../../parameters/X-Plex-Provides.yaml"
+    - $ref: "../../parameters/X-Plex-Version.yaml"

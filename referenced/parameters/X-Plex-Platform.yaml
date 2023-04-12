@@ -1,9 +1,10 @@
 in: header
 name: X-Plex-Platform
-description: Platform name, eg `iOS`, `MacOSX`, `Android`, `LG`
+description: Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`
 schema:
   type: string
   example:
+    - Web
     - iOS
     - MacOSX
     - Android

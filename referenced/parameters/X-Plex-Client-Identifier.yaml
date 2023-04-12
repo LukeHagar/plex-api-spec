@@ -1,6 +1,6 @@
 in: header
 name: X-Plex-Client-Identifier
-description: UUID, serial number, or other number unique per device
+description: Unique Id, UUID, serial number, or other number unique per device that identifies your client
 schema:
   type: string
 required: true

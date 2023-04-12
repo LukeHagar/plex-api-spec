@@ -1,6 +1,6 @@
 in: header
 name: X-Plex-Version
-description: Plex application version number
+description: Your application version number
 schema:
   type: string
 required: false

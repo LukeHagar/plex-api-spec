@@ -41,10 +41,13 @@ components:
 
 
 paths:
-  /clients:
-    $ref: "./paths/pms/clients.yaml"
+  
+  # Plex Media Server endpoints
+
   /:
     $ref: "./paths/pms/root.yaml"
+  /clients:
+    $ref: "./paths/pms/clients.yaml"
   /activities:
     $ref: "./paths/pms/activities.yaml"
   /activities/{activityUUID}:
@@ -101,6 +104,15 @@ paths:
     $ref: "./paths/pms/hubs-search.yaml"
   /hubs/search/voice:
     $ref: "./paths/pms/hubs-search-voice.yaml"
+  /status/sessions:
+    $ref: "./paths/pms/sessions.yaml"
+  /status/sessions/history/all:
+    $ref: "./paths/pms/session-history.yaml"
+  /:/prefs:
+    $ref: "./paths/pms/server-preferences.yaml"
+
+  # Plex.tv API endpoints    
+  
   /user:
     servers:
       - url: https://plex.tv/api/v2  
@@ -109,12 +121,14 @@ paths:
     servers:
       - url: https://plex.tv/api/v2
     $ref: "./paths/plex.tv/resources.yaml"
-  /status/sessions:
-    $ref: "./paths/pms/sessions.yaml"
-  /status/sessions/history/all:
-    $ref: "./paths/pms/session-history.yaml"
-  /:/prefs:
-    $ref: "./paths/pms/server-preferences.yaml"
+  /pins:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/pins.yaml"
+  /pins/{pinID}:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/pins-id.yaml"
 
 tags:
   - name: Activities
@@ -126,6 +140,9 @@ tags:
       - They must contain an `type` which is used by clients to distinguish the specific activity.
       - They may contain a `Context` object with attributes which associate the activity with various specific entities (items, libraries, etc.)
       - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
+  - name: Authentication
+    description: |
+      API Calls regarding authentication for Plex Media Server 
   - name: Butler
     description: |
       Butler is the task manager of the Plex Media Server Ecosystem.

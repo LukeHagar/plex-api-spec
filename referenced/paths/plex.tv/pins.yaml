@@ -1,0 +1,24 @@
+post: 
+  tags: 
+    -  Authentication
+  summary: Get a Pin
+  operationId: getPin
+  description: Retrieve a Pin from Plex.tv for authentication flows
+  parameters: 
+    - name: strong
+      description: |
+        Determines the kind of code returned by the API call
+        Strong codes are used for Pin authentication flows
+        Non-Strong codes are used for `Plex.tv/link`
+      in: query
+      schema:
+        type: boolean
+      required: true
+    - $ref: "../../parameters/X-Plex-Client-Identifier.yaml"
+    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
+    - $ref: "../../parameters/X-Plex-Device.yaml"
+    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Platform.yaml"
+    - $ref: "../../parameters/X-Plex-Product.yaml"
+    - $ref: "../../parameters/X-Plex-Provides.yaml"
+    - $ref: "../../parameters/X-Plex-Version.yaml"
