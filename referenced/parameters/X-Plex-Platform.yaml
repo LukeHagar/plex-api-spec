@@ -1,11 +1,11 @@
-- in: header
-  name: X-Plex-Platform
-  description: Platform name, eg iOS, MacOSX, Android, LG, etc
-  schema:
-    type: string
-    example:
-      - iOS
-      - MacOSX
-      - Android
-      - LG
-  required: false
+in: header
+name: X-Plex-Platform
+description: Platform name, eg iOS, MacOSX, Android, LG, etc
+schema:
+  type: string
+  example:
+    - iOS
+    - MacOSX
+    - Android
+    - LG
+required: false

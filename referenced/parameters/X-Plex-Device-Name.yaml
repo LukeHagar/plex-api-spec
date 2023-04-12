@@ -1,4 +1,4 @@
-- in: header
+  in: header
   name: X-Plex-Device-Name
   description: Primary name for the device eg. `Plex Web (Chrome)`
   schema:
