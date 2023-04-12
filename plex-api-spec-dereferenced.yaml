@@ -2360,7 +2360,7 @@ paths:
           in: query
           schema:
             type: boolean
-          required: true
+          required: false
         - in: header
           name: X-Plex-Client-Identifier
           description: 'Unique Id, UUID, serial number, or other number unique per device that identifies your client'
