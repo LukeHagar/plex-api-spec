@@ -4,6 +4,8 @@ get:
   summary: Get Available Clients
   description: Get Available Clients
   operationId: getAvailableClients
+  parameters:
+    $ref: "./parameters/clientDetails.yaml"
   responses:
     "200":
       description: Available Clients
