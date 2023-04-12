@@ -1,6 +1,11 @@
 name: "Build and Push Plex TypeScript SDK"
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - referenced/**
   workflow_dispatch:
 
 jobs:
