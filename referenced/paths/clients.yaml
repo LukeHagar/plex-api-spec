@@ -5,7 +5,7 @@ get:
   description: Get Available Clients
   operationId: getAvailableClients
   parameters:
-    $ref: "./parameters/clientDetails.yaml"
+    $ref: "../parameters/clientDetails.yaml"
   responses:
     "200":
       description: Available Clients
