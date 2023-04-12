@@ -1,0 +1,11 @@
+- in: header
+  name: X-Plex-Provides
+  description: One or more of [player, controller, server]
+  schema:
+    type: string
+    example:
+      - iOS
+      - MacOSX
+      - Android
+      - LG
+  required: false

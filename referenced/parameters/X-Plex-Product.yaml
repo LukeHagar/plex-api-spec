@@ -1,0 +1,10 @@
+- in: header
+  name: X-Plex-Product
+  description: Plex application name, eg Laika, Plex Media Server, Media Link
+  schema:
+    type: string
+    example:
+      - Laika
+      - Plex Media Server
+      - Media Link
+  required: false

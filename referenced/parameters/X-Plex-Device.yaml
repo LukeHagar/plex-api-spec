@@ -1,0 +1,10 @@
+- in: header
+  name: X-Plex-Device
+  description: Device name and model number, eg iPhone3,2, Motorola XOOM™, LG5200TV
+  schema:
+    type: string
+    example:
+      - iPhone3,2
+      - Motorola XOOM™
+      - LG5200TV
+  required: false
