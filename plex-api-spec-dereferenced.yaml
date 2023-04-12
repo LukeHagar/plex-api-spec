@@ -36,88 +36,6 @@ components:
       in: header
       name: X-Plex-Token
 paths:
-  /clients:
-    get:
-      tags:
-        - Devices
-      summary: Get Available Clients
-      description: Get Available Clients
-      operationId: getAvailableClients
-      responses:
-        '200':
-          description: Available Clients
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    MediaContainer:
-                      type: object
-                      properties:
-                        size:
-                          type: number
-                          example: 1
-                        Server:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              name:
-                                type: string
-                                example: iPad
-                              host:
-                                type: string
-                                example: 10.10.10.102
-                              address:
-                                type: string
-                                example: 10.10.10.102
-                              port:
-                                type: number
-                                example: 32500
-                              machineIdentifier:
-                                type: string
-                                example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
-                              version:
-                                type: string
-                                example: 8.17
-                              protocol:
-                                type: string
-                                example: plex
-                              product:
-                                type: string
-                                example: Plex for iOS
-                              deviceClass:
-                                type: string
-                                example: tablet
-                              protocolVersion:
-                                type: string
-                                example: 2
-                              protocolCapabilities:
-                                type: string
-                                example: 'playback,playqueues,timeline,provider-playback'
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
   /:
     get:
       tags:
@@ -247,6 +165,88 @@ paths:
                               type: string
                             title:
                               type: string
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /clients:
+    get:
+      tags:
+        - Devices
+      summary: Get Available Clients
+      description: Get Available Clients
+      operationId: getAvailableClients
+      responses:
+        '200':
+          description: Available Clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    MediaContainer:
+                      type: object
+                      properties:
+                        size:
+                          type: number
+                          example: 1
+                        Server:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: iPad
+                              host:
+                                type: string
+                                example: 10.10.10.102
+                              address:
+                                type: string
+                                example: 10.10.10.102
+                              port:
+                                type: number
+                                example: 32500
+                              machineIdentifier:
+                                type: string
+                                example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
+                              version:
+                                type: string
+                                example: 8.17
+                              protocol:
+                                type: string
+                                example: plex
+                              product:
+                                type: string
+                                example: Plex for iOS
+                              deviceClass:
+                                type: string
+                                example: tablet
+                              protocolVersion:
+                                type: string
+                                example: 2
+                              protocolCapabilities:
+                                type: string
+                                example: 'playback,playqueues,timeline,provider-playback'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1941,6 +1941,99 @@ paths:
                         status:
                           type: number
                           example: 401
+  /status/sessions:
+    get:
+      tags:
+        - Sessions
+      summary: Get Active Sessions
+      description: This will retrieve the "Now Playing" Information of the PMS.
+      operationId: getSessions
+      responses:
+        '200':
+          description: List of Active Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /status/sessions/history/all:
+    get:
+      tags:
+        - Sessions
+      summary: Get Session History
+      description: This will Retrieve a listing of all history views.
+      operationId: getSessionHistory
+      responses:
+        '200':
+          description: List of Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/:/prefs':
+    get:
+      tags:
+        - Server
+      summary: Get Server Preferences
+      description: Get Server Preferences
+      operationId: getServerPreferences
+      responses:
+        '200':
+          description: Server Preferences
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /user:
     servers:
       - url: 'https://plex.tv/api/v2'
@@ -1953,7 +2046,7 @@ paths:
       parameters:
         - in: header
           name: X-Plex-Client-Identifier
-          description: 'UUID, serial number, or other number unique per device'
+          description: 'Unique Id, UUID, serial number, or other number unique per device that identifies your client'
           schema:
             type: string
           required: true
@@ -1966,7 +2059,9 @@ paths:
           required: false
         - in: header
           name: X-Plex-Device
-          description: 'Device name and model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`'
+          description: |
+            The type of device your application is running on
+            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
           schema:
             type: string
             example:
@@ -1986,10 +2081,11 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform
-          description: 'Platform name, eg `iOS`, `MacOSX`, `Android`, `LG`'
+          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
           schema:
             type: string
             example:
+              - Web
               - iOS
               - MacOSX
               - Android
@@ -2018,7 +2114,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Version
-          description: Plex application version number
+          description: Your application version number
           schema:
             type: string
           required: false
@@ -2058,7 +2154,7 @@ paths:
       parameters:
         - in: header
           name: X-Plex-Client-Identifier
-          description: 'UUID, serial number, or other number unique per device'
+          description: 'Unique Id, UUID, serial number, or other number unique per device that identifies your client'
           schema:
             type: string
           required: true
@@ -2071,7 +2167,9 @@ paths:
           required: false
         - in: header
           name: X-Plex-Device
-          description: 'Device name and model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`'
+          description: |
+            The type of device your application is running on
+            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
           schema:
             type: string
             example:
@@ -2091,10 +2189,11 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform
-          description: 'Platform name, eg `iOS`, `MacOSX`, `Android`, `LG`'
+          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
           schema:
             type: string
             example:
+              - Web
               - iOS
               - MacOSX
               - Android
@@ -2123,7 +2222,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Version
-          description: Plex application version number
+          description: Your application version number
           schema:
             type: string
           required: false
@@ -2243,99 +2342,189 @@ paths:
                         status:
                           type: number
                           example: 401
-  /status/sessions:
+  /pins:
+    servers:
+      - url: 'https://plex.tv/api/v2'
+    post:
+      tags:
+        - Authentication
+      summary: Get a Pin
+      operationId: getPin
+      description: Retrieve a Pin from Plex.tv for authentication flows
+      parameters:
+        - name: strong
+          description: |
+            Determines the kind of code returned by the API call
+            Strong codes are used for Pin authentication flows
+            Non-Strong codes are used for `Plex.tv/link`
+          in: query
+          schema:
+            type: boolean
+          required: true
+        - in: header
+          name: X-Plex-Client-Identifier
+          description: 'Unique Id, UUID, serial number, or other number unique per device that identifies your client'
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: X-Plex-Device-Name
+          description: Primary name for the device eg. `Plex Web (Chrome)`
+          schema:
+            type: string
+            example: Plex Web (Chrome)
+          required: false
+        - in: header
+          name: X-Plex-Device
+          description: |
+            The type of device your application is running on
+            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+          schema:
+            type: string
+            example:
+              - 'iPhone3,2'
+              - Motorola XOOM™
+              - LG5200TV
+          required: false
+        - in: header
+          name: X-Plex-Platform-Version
+          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
+          schema:
+            type: string
+            example:
+              - 4.3.1
+              - 10.6.7
+              - 3.2
+          required: false
+        - in: header
+          name: X-Plex-Platform
+          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
+          schema:
+            type: string
+            example:
+              - Web
+              - iOS
+              - MacOSX
+              - Android
+              - LG
+          required: false
+        - in: header
+          name: X-Plex-Product
+          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
+          schema:
+            type: string
+            example:
+              - Laika
+              - Plex Media Server
+              - Media Link
+          required: false
+        - in: header
+          name: X-Plex-Provides
+          description: 'One or more of `[player, controller, server]`'
+          schema:
+            type: string
+            example:
+              - iOS
+              - MacOSX
+              - Android
+              - LG
+          required: false
+        - in: header
+          name: X-Plex-Version
+          description: Your application version number
+          schema:
+            type: string
+          required: false
+  '/pins/{pinID}':
+    servers:
+      - url: 'https://plex.tv/api/v2'
     get:
       tags:
-        - Sessions
-      summary: Get Active Sessions
-      description: This will retrieve the "Now Playing" Information of the PMS.
-      operationId: getSessions
-      responses:
-        '200':
-          description: List of Active Plex Sessions
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
-  /status/sessions/history/all:
-    get:
-      tags:
-        - Sessions
-      summary: Get Session History
-      description: This will Retrieve a listing of all history views.
-      operationId: getSessionHistory
-      responses:
-        '200':
-          description: List of Plex Sessions
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
-  '/:/prefs':
-    get:
-      tags:
-        - Server
-      summary: Get Server Preferences
-      description: Get Server Preferences
-      operationId: getServerPreferences
-      responses:
-        '200':
-          description: Server Preferences
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
+        - Authentication
+      summary: Get Access Token
+      operationId: getToken
+      description: Retrieve a Pin from Plex.tv for authentication flows
+      parameters:
+        - name: pinID
+          description: The PinID to retrieve an access token for
+          in: path
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: X-Plex-Client-Identifier
+          description: 'Unique Id, UUID, serial number, or other number unique per device that identifies your client'
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: X-Plex-Device-Name
+          description: Primary name for the device eg. `Plex Web (Chrome)`
+          schema:
+            type: string
+            example: Plex Web (Chrome)
+          required: false
+        - in: header
+          name: X-Plex-Device
+          description: |
+            The type of device your application is running on
+            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+          schema:
+            type: string
+            example:
+              - 'iPhone3,2'
+              - Motorola XOOM™
+              - LG5200TV
+          required: false
+        - in: header
+          name: X-Plex-Platform-Version
+          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
+          schema:
+            type: string
+            example:
+              - 4.3.1
+              - 10.6.7
+              - 3.2
+          required: false
+        - in: header
+          name: X-Plex-Platform
+          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
+          schema:
+            type: string
+            example:
+              - Web
+              - iOS
+              - MacOSX
+              - Android
+              - LG
+          required: false
+        - in: header
+          name: X-Plex-Product
+          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
+          schema:
+            type: string
+            example:
+              - Laika
+              - Plex Media Server
+              - Media Link
+          required: false
+        - in: header
+          name: X-Plex-Provides
+          description: 'One or more of `[player, controller, server]`'
+          schema:
+            type: string
+            example:
+              - iOS
+              - MacOSX
+              - Android
+              - LG
+          required: false
+        - in: header
+          name: X-Plex-Version
+          description: Your application version number
+          schema:
+            type: string
+          required: false
 tags:
   - name: Activities
     description: |
@@ -2346,6 +2535,9 @@ tags:
       - They must contain an `type` which is used by clients to distinguish the specific activity.
       - They may contain a `Context` object with attributes which associate the activity with various specific entities (items, libraries, etc.)
       - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
+  - name: Authentication
+    description: |
+      API Calls regarding authentication for Plex Media Server 
   - name: Butler
     description: |
       Butler is the task manager of the Plex Media Server Ecosystem.
