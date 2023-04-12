@@ -1,6 +1,6 @@
 in: header
 name: X-Plex-Provides
-description: One or more of [player, controller, server]
+description: One or more of `[player, controller, server]`
 schema:
   type: string
   example:

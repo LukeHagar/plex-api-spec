@@ -1,6 +1,6 @@
 in: header
 name: X-Plex-Platform-Version
-description: Operating system version, eg 4.3.1, 10.6.7, 3.2
+description: Operating system version, eg `4.3.1`, `10.6.7`, `3.2`
 schema:
   type: string
   example:
