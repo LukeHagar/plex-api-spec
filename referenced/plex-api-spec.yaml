@@ -30,13 +30,18 @@ servers:
         description: The port to access your plex server
 
 security:
-  - PlexToken: []
+  - PlexToken-Header: []
+  - PlexToken-Query: []
 
 components:
   securitySchemes:
-    PlexToken: # arbitrary name for the security scheme
+    PlexToken-Header: # arbitrary name for the security scheme
       type: apiKey
       in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Token # name of the header, query parameter or cookie
+    PlexToken-Query: # arbitrary name for the security scheme
+      type: apiKey
+      in: query # can be "header", "query" or "cookie"
       name: X-Plex-Token # name of the header, query parameter or cookie
 
 paths:
