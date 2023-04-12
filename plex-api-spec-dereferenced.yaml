@@ -28,17 +28,12 @@ servers:
         default: '32400'
         description: The port to access your plex server
 security:
-  - PlexToken-Header: []
-  - PlexToken-Query: []
+  - PlexToken: []
 components:
   securitySchemes:
-    PlexToken-Header:
+    PlexToken:
       type: apiKey
       in: header
-      name: X-Plex-Token
-    PlexToken-Query:
-      type: apiKey
-      in: query
       name: X-Plex-Token
 paths:
   /clients:
