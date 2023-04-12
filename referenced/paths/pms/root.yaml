@@ -3,7 +3,7 @@ get:
     - Server
   summary: Server Capabilities
   description: Server Capabilities
-  operationId: serverCapabilities
+  operationId: getServerCapabilities
   responses:
     "200":
       description: The Server Capabilities

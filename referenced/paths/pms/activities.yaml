@@ -3,7 +3,7 @@ get:
     - Activities
   summary: Server Activities
   description: Server Activities
-  operationId: serverActivities
+  operationId: getServerActivities
   responses:
     "200":
       description: The Server Activities

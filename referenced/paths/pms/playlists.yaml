@@ -6,7 +6,7 @@ post:
     Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
     - `uri` - The content URI for what we're playing (e.g. `library://...`).
     - `playQueueID` - To create a playlist from an existing play queue.
-  operationId: createAPlaylist
+  operationId: createPlaylist
   parameters:
     - name: title
       description: name of the playlist

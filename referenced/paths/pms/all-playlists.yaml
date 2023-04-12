@@ -3,7 +3,7 @@ get:
     - Playlists
   summary: Get All Playlists
   description: ""
-  operationId: getAllPlaylists
+  operationId: getPlaylists
   parameters:
     - name: playlistType
       description: limit to a type of playlist.

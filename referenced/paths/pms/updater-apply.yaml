@@ -4,7 +4,7 @@ put:
   summary: Applying updates
   description: |
     Note that these two parameters are effectively mutually exclusive. The `tonight` parameter takes precedence and `skip` will be ignored if `tonight` is also passed
-  operationId: applyingUpdates
+  operationId: applyUpdates
   parameters:
     - name: tonight
       description: Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install

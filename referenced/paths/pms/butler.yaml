@@ -8,7 +8,7 @@ post:
     2. If a task is configured to run at a random time during the configured window and we are outside that window, the task will start immediately.
     3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
     4. If we are outside the configured window, the task will start immediately.
-  operationId: startAllButlerTasks
+  operationId: startAllTasks
   responses:
     "200":
       description: All tasks were started
@@ -21,7 +21,7 @@ delete:
   summary: Stop all Butler tasks
   description: |
     This endpoint will stop all currently running tasks and remove any scheduled tasks from the queue.
-  operationId: stopAllButlerTasks
+  operationId: stopAllTasks
   responses:
     "200":
       description: All tasks were stopped

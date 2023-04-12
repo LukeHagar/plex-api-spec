@@ -1,10 +1,10 @@
 get:
   tags:
     - Library
-  summary: Get All Library Items
+  summary: Get Library Items
   description: |
-    This endpoint will return a list of all library items filtered by the filter and type provided
-  operationId: getAllLibraryItems
+    This endpoint will return a list of library items filtered by the filter and type provided
+  operationId: getLibraryItems
   parameters:
     - name: sectionId
       description: the Id of the library to query

@@ -2,6 +2,7 @@ get:
   tags:
     - Search
   summary: Perform a search
+  operationId: performSearch
   description: |
     This endpoint performs a search across all library sections, or a single section, and returns matches as hubs, split up by type. It performs spell checking, looks for partial matches, and orders the hubs based on quality of results. In addition, based on matches, it will return other related matches (e.g. for a genre match, it may return movies in that genre, or for an actor match, movies with that actor).
 
@@ -15,7 +16,6 @@ get:
     - `reasonID`: The ID of the item associated with the reason for the result. This might be a section ID, a tag ID, an artist ID, or a show ID.
 
     This request is intended to be very fast, and called as the user types.
-  operationId: performSearch
   parameters:
     - name: query
       description: The query term

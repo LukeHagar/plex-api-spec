@@ -2,12 +2,12 @@ get:
   tags:
     - Search
   summary: Perform a voice search
+  operationId: performVoiceSearch
   description: |
     This endpoint performs a search specifically tailored towards voice or other imprecise input which may work badly with the substring and spell-checking heuristics used by the `/hubs/search` endpoint. 
     It uses a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) heuristic to search titles, and as such is much slower than the other search endpoint. 
     Whenever possible, clients should limit the search to the appropriate type. 
     Results, as well as their containing per-type hubs, contain a `distance` attribute which can be used to judge result quality.
-  operationId: performVoiceSearch
   parameters:
     - name: query
       description: The query term

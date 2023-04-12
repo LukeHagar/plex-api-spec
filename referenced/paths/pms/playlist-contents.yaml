@@ -7,7 +7,7 @@ get:
     By default leaves are returned (e.g. episodes, movies). In order to return other types you can use the `type` parameter. 
     For example, you could use this to display a list of recently added albums vis a smart playlist. 
     Note that for dumb playlists, items have a `playlistItemID` attribute which is used for deleting or moving items.
-  operationId: getPlaylistContent
+  operationId: getPlaylistContents
   parameters:
     - name: playlistID
       description: the ID of the playlist
@@ -33,7 +33,7 @@ delete:
   summary: Delete Playlist Contents
   description: |
     Clears a playlist, only works with dumb playlists. Returns the playlist.
-  operationId: clearPlaylistContent
+  operationId: clearPlaylistContents
   parameters:
     - name: playlistID
       description: the ID of the playlist
@@ -54,7 +54,7 @@ put:
   description: |
     Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. 
     With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
-  operationId: addPlaylistContent
+  operationId: addPlaylistContents
   parameters:
     - name: playlistID
       description: the ID of the playlist

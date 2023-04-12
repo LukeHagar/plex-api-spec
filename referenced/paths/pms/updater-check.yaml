@@ -3,7 +3,7 @@ put:
     - Updater
   summary: Checking for updates
   description: Checking for updates
-  operationId: checkingforUpdates
+  operationId: checkForUpdates
   parameters:
     - name: download
       description: Indicate that you want to start download any updates found.
