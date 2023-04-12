@@ -4,6 +4,8 @@ get:
   summary: Get Logged in User
   description: Get Logged in User
   operationId: getCurrentUserDetails
+  parameters:
+    $ref: "../parameters/clientDetails.yaml"
   responses:
     "200":
       description: Logged in user details

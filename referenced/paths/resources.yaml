@@ -4,6 +4,8 @@ get:
   summary: Get Devices
   description: Get Devices
   operationId: getDevices
+  parameters:
+    $ref: "../parameters/clientDetails.yaml"
   responses:
     "200":
       description: List of Plex Devices

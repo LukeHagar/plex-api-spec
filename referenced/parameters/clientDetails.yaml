@@ -8,7 +8,7 @@
       - MacOSX
       - Android
       - LG
-  required: true
+  required: false
 
 - in: header
   name: X-Plex-Platform-Version
@@ -19,7 +19,7 @@
       - 4.3.1
       - 10.6.7
       - 3.2
-  required: true
+  required: false
 
 - in: header
   name: X-Plex-Provides
@@ -31,7 +31,7 @@
       - MacOSX
       - Android
       - LG
-  required: true
+  required: false
 
 - in: header
   name: X-Plex-Client-Identifier
@@ -49,14 +49,14 @@
       - Laika
       - Plex Media Server
       - Media Link
-  required: true
+  required: false
 
 - in: header
   name: X-Plex-Version
   description: Plex application version number
   schema:
     type: string
-  required: true
+  required: false
 
 - in: header
   name: X-Plex-Device
@@ -67,7 +67,7 @@
       - iPhone3,2
       - Motorola XOOM™
       - LG5200TV
-  required: true
+  required: false
 
 - in: header
   name: X-Plex-Device-Name
@@ -75,4 +75,4 @@
   schema:
     type: string
     example: Plex Web (Chrome)
-  required: true
+  required: false
