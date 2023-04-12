@@ -6,10 +6,11 @@ info:
   version: 0.0.3
   contact:
     name: Luke Hagar
-    email: Lukeslakemail@gmail.com
     url: 'https://www.LukeHagar.com'
+    email: Lukeslakemail@gmail.com
   license:
     name: MIT
+    identifier: MIT
     url: 'https://opensource.org/licenses/MIT'
 servers:
   - url: '{Protocol}://{Local IP}:{Port}'
