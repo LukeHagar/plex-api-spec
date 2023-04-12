@@ -31,4 +31,4 @@ get:
     "200":
       description: The hubs specific to the library
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

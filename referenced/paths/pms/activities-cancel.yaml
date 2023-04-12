@@ -16,4 +16,4 @@ delete:
     "200":
       description: The Server Activity was canceled
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

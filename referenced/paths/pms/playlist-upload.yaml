@@ -34,4 +34,4 @@ post:
     "200":
       description: The playlist is uploaded
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

@@ -5,14 +5,14 @@ get:
   description: Get Devices
   operationId: getDevices
   parameters:
-    - $ref: "../parameters/X-Plex-Client-Identifier.yaml"
-    - $ref: "../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../parameters/X-Plex-Device.yaml"
-    - $ref: "../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../parameters/X-Plex-Platform.yaml"
-    - $ref: "../parameters/X-Plex-Product.yaml"
-    - $ref: "../parameters/X-Plex-Provides.yaml"
-    - $ref: "../parameters/X-Plex-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Client-Identifier.yaml"
+    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
+    - $ref: "../../parameters/X-Plex-Device.yaml"
+    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Platform.yaml"
+    - $ref: "../../parameters/X-Plex-Product.yaml"
+    - $ref: "../../parameters/X-Plex-Provides.yaml"
+    - $ref: "../../parameters/X-Plex-Version.yaml"
   responses:
     "200":
       description: List of Plex Devices
@@ -109,4 +109,4 @@ get:
                       IPv6: 
                         type: boolean
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

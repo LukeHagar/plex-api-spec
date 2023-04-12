@@ -11,4 +11,4 @@ get:
     "403":
       description: the user was not signed in
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

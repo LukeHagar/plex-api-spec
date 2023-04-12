@@ -20,4 +20,4 @@ get:
     "200":
       description: Source Connection Information
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

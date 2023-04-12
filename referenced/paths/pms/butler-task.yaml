@@ -35,7 +35,7 @@ post:
     "200":
       description: The task was started successfully
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"
     "202":
       description: The task was already running.
 
@@ -72,6 +72,6 @@ delete:
     "200":
       description: The task was stopped
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"
     "404":
       description: The task was not running

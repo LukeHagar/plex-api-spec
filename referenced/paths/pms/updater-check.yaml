@@ -18,4 +18,4 @@ put:
     "200":
       description: ""
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

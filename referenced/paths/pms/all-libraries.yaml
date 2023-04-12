@@ -14,4 +14,4 @@ get:
     "200":
       description: The libraries available on the Server
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

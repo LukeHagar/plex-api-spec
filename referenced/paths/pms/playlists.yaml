@@ -49,4 +49,4 @@ post:
     "200":
       description: returns all playlists
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

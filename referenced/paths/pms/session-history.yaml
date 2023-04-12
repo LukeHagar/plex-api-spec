@@ -8,4 +8,4 @@ get:
     "200":
       description: List of Plex Sessions
     "401":
-     $ref: "../responses/401.yaml"
+     $ref: "../../responses/401.yaml"

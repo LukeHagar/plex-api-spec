@@ -9,4 +9,4 @@ get:
     "200":
       description: The on deck content
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"

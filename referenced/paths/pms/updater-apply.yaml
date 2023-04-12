@@ -28,6 +28,6 @@ put:
     "200":
       description: If the update process started correctly
     "401":
-      $ref: "../responses/401.yaml"
+      $ref: "../../responses/401.yaml"
     "500":
       description: If the update process failed to start
