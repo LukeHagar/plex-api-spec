@@ -45,6 +45,7 @@ paths:
           description: 'UUID, serial number, or other number unique per device'
           schema:
             type: string
+            default: PlexJS
           required: true
         - in: header
           name: X-Plex-Device-Name
@@ -55,7 +56,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Device
-          description: 'Device name and model number, eg iPhone3,2, Motorola XOOM™, LG5200TV'
+          description: 'Device name and model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`'
           schema:
             type: string
             example:
@@ -65,7 +66,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform-Version
-          description: 'Operating system version, eg 4.3.1, 10.6.7, 3.2'
+          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
           schema:
             type: string
             example:
@@ -75,7 +76,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform
-          description: 'Platform name, eg iOS, MacOSX, Android, LG, etc'
+          description: 'Platform name, eg `iOS`, `MacOSX`, `Android`, `LG`, etc'
           schema:
             type: string
             example:
@@ -86,7 +87,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Product
-          description: 'Plex application name, eg Laika, Plex Media Server, Media Link'
+          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
           schema:
             type: string
             example:
@@ -96,7 +97,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Provides
-          description: 'One or more of [player, controller, server]'
+          description: 'One or more of `[player, controller, server]`'
           schema:
             type: string
             example:
@@ -2022,6 +2023,7 @@ paths:
           description: 'UUID, serial number, or other number unique per device'
           schema:
             type: string
+            default: PlexJS
           required: true
         - in: header
           name: X-Plex-Device-Name
@@ -2032,7 +2034,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Device
-          description: 'Device name and model number, eg iPhone3,2, Motorola XOOM™, LG5200TV'
+          description: 'Device name and model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`'
           schema:
             type: string
             example:
@@ -2042,7 +2044,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform-Version
-          description: 'Operating system version, eg 4.3.1, 10.6.7, 3.2'
+          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
           schema:
             type: string
             example:
@@ -2052,7 +2054,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform
-          description: 'Platform name, eg iOS, MacOSX, Android, LG, etc'
+          description: 'Platform name, eg `iOS`, `MacOSX`, `Android`, `LG`, etc'
           schema:
             type: string
             example:
@@ -2063,7 +2065,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Product
-          description: 'Plex application name, eg Laika, Plex Media Server, Media Link'
+          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
           schema:
             type: string
             example:
@@ -2073,7 +2075,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Provides
-          description: 'One or more of [player, controller, server]'
+          description: 'One or more of `[player, controller, server]`'
           schema:
             type: string
             example:
@@ -2127,6 +2129,7 @@ paths:
           description: 'UUID, serial number, or other number unique per device'
           schema:
             type: string
+            default: PlexJS
           required: true
         - in: header
           name: X-Plex-Device-Name
@@ -2137,7 +2140,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Device
-          description: 'Device name and model number, eg iPhone3,2, Motorola XOOM™, LG5200TV'
+          description: 'Device name and model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`'
           schema:
             type: string
             example:
@@ -2147,7 +2150,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform-Version
-          description: 'Operating system version, eg 4.3.1, 10.6.7, 3.2'
+          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
           schema:
             type: string
             example:
@@ -2157,7 +2160,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Platform
-          description: 'Platform name, eg iOS, MacOSX, Android, LG, etc'
+          description: 'Platform name, eg `iOS`, `MacOSX`, `Android`, `LG`, etc'
           schema:
             type: string
             example:
@@ -2168,7 +2171,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Product
-          description: 'Plex application name, eg Laika, Plex Media Server, Media Link'
+          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
           schema:
             type: string
             example:
@@ -2178,7 +2181,7 @@ paths:
           required: false
         - in: header
           name: X-Plex-Provides
-          description: 'One or more of [player, controller, server]'
+          description: 'One or more of `[player, controller, server]`'
           schema:
             type: string
             example:
