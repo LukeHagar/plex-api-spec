@@ -13,7 +13,7 @@ post:
       in: query
       schema:
         type: boolean
-      required: true
+      required: false
     - $ref: "../../parameters/X-Plex-Client-Identifier.yaml"
     - $ref: "../../parameters/X-Plex-Device-Name.yaml"
     - $ref: "../../parameters/X-Plex-Device.yaml"
