@@ -2346,6 +2346,7 @@ paths:
     servers:
       - url: 'https://plex.tv/api/v2'
     post:
+      security: []
       tags:
         - Authentication
       summary: Get a Pin
