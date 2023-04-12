@@ -7,7 +7,7 @@ get:
   parameters:
     - name: url
       description: This is the path to the local file, must be prefixed by `file://`
-      in: path
+      in: query
       schema:
         type: string
         example: file://C:\Image.png&type=13

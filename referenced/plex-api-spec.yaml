@@ -9,9 +9,13 @@ info:
     name: Luke Hagar
     email: Lukeslakemail@gmail.com
     url: "https://www.LukeHagar.com"
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+    
 
 servers:
-  - url: "{Protocol}://{Local IP}:{Port}"
+  - url: '{Protocol}://{Local IP}:{Port}'
     variables:
       Protocol:
         enum:
@@ -38,79 +42,79 @@ components:
 
 paths:
   /clients:
-    $ref: "./paths/clients.yaml"
+    $ref: "./paths/pms/clients.yaml"
   /:
-    $ref: "./paths/root.yaml"
+    $ref: "./paths/pms/root.yaml"
   /activities:
-    $ref: "./paths/activities.yaml"
+    $ref: "./paths/pms/activities.yaml"
   /activities/{activityUUID}:
-    $ref: "./paths/activities-cancel.yaml"
+    $ref: "./paths/pms/activities-cancel.yaml"
   /updater/status:
-    $ref: "./paths/updater-status.yaml"
+    $ref: "./paths/pms/updater-status.yaml"
   /updater/check:
-    $ref: "./paths/updater-check.yaml"
+    $ref: "./paths/pms/updater-check.yaml"
   /updater/apply:
-    $ref: "./paths/updater-apply.yaml"
+    $ref: "./paths/pms/updater-apply.yaml"
   /butler:
-    $ref: "./paths/butler.yaml"
+    $ref: "./paths/pms/butler.yaml"
   /butler/{taskName}:
-    $ref: "./paths/butler-task.yaml"
+    $ref: "./paths/pms/butler-task.yaml"
   /log:
-    $ref: "./paths/log.yaml"
+    $ref: "./paths/pms/log.yaml"
   /log/networked:
-    $ref: "./paths/log-networked.yaml"
+    $ref: "./paths/pms/log-networked.yaml"
   /security/token:
-    $ref: "./paths/security-token.yaml"
+    $ref: "./paths/pms/security-token.yaml"
   /security/resources:
-    $ref: "./paths/security-resources.yaml"
+    $ref: "./paths/pms/security-resources.yaml"
   /library/sections/{sectionId}/all:
-    $ref: "./paths/library-content-all.yaml"
+    $ref: "./paths/pms/library-content-all.yaml"
   /library/sections/{sectionId}/refresh:
-    $ref: "./paths/library-refresh.yaml"
+    $ref: "./paths/pms/library-refresh.yaml"
   /library/sections/{sectionId}/latest:
-    $ref: "./paths/library-content-latest.yaml"
+    $ref: "./paths/pms/library-content-latest.yaml"
   /library/sections/{sectionId}/common:
-    $ref: "./paths/library-content-common.yaml"
+    $ref: "./paths/pms/library-content-common.yaml"
   /library/sections/{sectionId}:
-    $ref: "./paths/library-details.yaml"
+    $ref: "./paths/pms/library-details.yaml"
   /library/sections:
-    $ref: "./paths/all-libraries.yaml"
+    $ref: "./paths/pms/all-libraries.yaml"
   /library/hashes:
-    $ref: "./paths/library-hashes.yaml"
+    $ref: "./paths/pms/library-hashes.yaml"
   /library/onDeck:
-    $ref: "./paths/library-ondeck.yaml"
+    $ref: "./paths/pms/library-ondeck.yaml"
   /hubs:
-    $ref: "./paths/hubs.yaml"
+    $ref: "./paths/pms/hubs.yaml"
   /hubs/sections/{sectionId}:
-    $ref: "./paths/hubs-section.yaml"
+    $ref: "./paths/pms/hubs-section.yaml"
   /playlists/all:
-    $ref: "./paths/all-playlists.yaml"
+    $ref: "./paths/pms/all-playlists.yaml"
   /playlists:
-    $ref: "./paths/playlists.yaml"
+    $ref: "./paths/pms/playlists.yaml"
   /playlists/{playlistID}:
-    $ref: "./paths/playlist-id.yaml"
+    $ref: "./paths/pms/playlist-id.yaml"
   /playlists/{playlistID}/items:
-    $ref: "./paths/playlist-contents.yaml"
+    $ref: "./paths/pms/playlist-contents.yaml"
   /playlists/upload:
-    $ref: "./paths/playlist-upload.yaml"
+    $ref: "./paths/pms/playlist-upload.yaml"
   /hubs/search:
-    $ref: "./paths/hubs-search.yaml"
+    $ref: "./paths/pms/hubs-search.yaml"
   /hubs/search/voice:
-    $ref: "./paths/hubs-search-voice.yaml"
+    $ref: "./paths/pms/hubs-search-voice.yaml"
   /user:
     servers:
       - url: https://plex.tv/api/v2  
-    $ref: "./paths/user.yaml"
+    $ref: "./paths/plex.tv/user.yaml"
   /resources:
     servers:
       - url: https://plex.tv/api/v2
-    $ref: "./paths/resources.yaml"
+    $ref: "./paths/plex.tv/resources.yaml"
   /status/sessions:
-    $ref: "./paths/sessions.yaml"
+    $ref: "./paths/pms/sessions.yaml"
   /status/sessions/history/all:
-    $ref: "./paths/session-history.yaml"
+    $ref: "./paths/pms/session-history.yaml"
   /:/prefs:
-    $ref: "./paths/server-preferences.yaml"
+    $ref: "./paths/pms/server-preferences.yaml"
 
 tags:
   - name: Activities
