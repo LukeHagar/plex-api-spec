@@ -14,6 +14,7 @@ post:
       in: query
       schema:
         type: boolean
+        default: false
       required: false
     - $ref: "../../parameters/X-Plex-Client-Identifier.yaml"
     - $ref: "../../parameters/X-Plex-Device-Name.yaml"
