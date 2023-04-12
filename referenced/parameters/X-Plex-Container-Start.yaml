@@ -1,0 +1,13 @@
+  in: header
+  name: X-Plex-Container-Start
+  description: |
+    Paging Start, Number to offset into the total before returning the size for a given query. 
+    Commonly referred to as the offset parameter
+  schema:
+    type: number
+    example:
+      - 0
+      - 25
+      - 50
+      - 100
+  required: false

@@ -3,5 +3,4 @@ name: X-Plex-Client-Identifier
 description: UUID, serial number, or other number unique per device
 schema:
   type: string
-  default: PlexJS
 required: true
