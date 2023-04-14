@@ -5,7 +5,6 @@ get:
   description: Get Logged in User
   operationId: getCurrentUserDetails
   parameters:
-    - $ref: "../../parameters/X-Plex-Client-Identifier.yaml"
     - $ref: "../../parameters/X-Plex-Device-Name.yaml"
     - $ref: "../../parameters/X-Plex-Device.yaml"
     - $ref: "../../parameters/X-Plex-Platform-Version.yaml"

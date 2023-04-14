@@ -1,9 +1,17 @@
 get:
   tags:
     - Activities
-  summary: Server Activities
-  description: Server Activities
+  summary: Get Server Activities
+  description: Get Server Activities
   operationId: getServerActivities
+  parameters: 
+    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
+    - $ref: "../../parameters/X-Plex-Device.yaml"
+    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Platform.yaml"
+    - $ref: "../../parameters/X-Plex-Product.yaml"
+    - $ref: "../../parameters/X-Plex-Provides.yaml"
+    - $ref: "../../parameters/X-Plex-Version.yaml"
   responses:
     "200":
       description: The Server Activities

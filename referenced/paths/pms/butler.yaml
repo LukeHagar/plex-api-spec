@@ -9,6 +9,14 @@ post:
     3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
     4. If we are outside the configured window, the task will start immediately.
   operationId: startAllTasks
+  parameters: 
+    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
+    - $ref: "../../parameters/X-Plex-Device.yaml"
+    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Platform.yaml"
+    - $ref: "../../parameters/X-Plex-Product.yaml"
+    - $ref: "../../parameters/X-Plex-Provides.yaml"
+    - $ref: "../../parameters/X-Plex-Version.yaml"
   responses:
     "200":
       description: All tasks were started

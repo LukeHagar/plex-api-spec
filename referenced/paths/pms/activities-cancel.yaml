@@ -12,6 +12,13 @@ delete:
         type: string
       example: 25b71ed5-0f9d-461c-baa7-d404e9e10d3e
       required: true
+    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
+    - $ref: "../../parameters/X-Plex-Device.yaml"
+    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
+    - $ref: "../../parameters/X-Plex-Platform.yaml"
+    - $ref: "../../parameters/X-Plex-Product.yaml"
+    - $ref: "../../parameters/X-Plex-Provides.yaml"
+    - $ref: "../../parameters/X-Plex-Version.yaml"
   responses:
     "200":
       description: The Server Activity was canceled
