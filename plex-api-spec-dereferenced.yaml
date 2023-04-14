@@ -865,7 +865,7 @@ paths:
     put:
       tags:
         - Updater
-      summary: Applying updates
+      summary: Apply Updates
       description: |
         Note that these two parameters are effectively mutually exclusive. The `tonight` parameter takes precedence and `skip` will be ignored if `tonight` is also passed
       operationId: applyUpdates
@@ -1830,7 +1830,7 @@ paths:
       description: |
         If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.
         Note: requires Plex Media Server >= 1.15.4.
-      operationId: getConnectionInformation
+      operationId: getSourceConnectionInformation
       parameters:
         - name: source
           description: The source identifier with an included prefix.
@@ -4643,7 +4643,7 @@ paths:
         - User
       summary: Get Logged in User
       description: Get Logged in User
-      operationId: getCurrentUserDetails
+      operationId: getUserDetails
       parameters:
         - in: header
           name: X-Plex-Device-Name
@@ -4934,14 +4934,17 @@ paths:
   /pins:
     servers:
       - url: 'https://plex.tv/api/v2'
-    security:
-      - PlexClientIdentifier: []
     post:
       tags:
         - Authentication
       summary: Get a Pin
       operationId: getPin
       description: Retrieve a Pin from Plex.tv for authentication flows
+      security:
+        - PlexClientIdentifier:
+            type: apiKey
+            in: header
+            name: X-Plex-Client-Identifier
       parameters:
         - name: strong
           description: |
@@ -5123,14 +5126,17 @@ paths:
   '/pins/{pinID}':
     servers:
       - url: 'https://plex.tv/api/v2'
-    security:
-      - PlexClientIdentifier: []
     get:
       tags:
         - Authentication
       summary: Get Access Token
       operationId: getToken
       description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
+      security:
+        - PlexClientIdentifier:
+            type: apiKey
+            in: header
+            name: X-Plex-Client-Identifier
       parameters:
         - name: pinID
           description: The PinID to retrieve an access token for
@@ -5242,7 +5248,7 @@ tags:
       - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
   - name: Authentication
     description: |
-      API Calls regarding authentication for Plex Media Server 
+      API Calls regarding authentication for Plex Media Server
   - name: Butler
     description: |
       Butler is the task manager of the Plex Media Server Ecosystem.
