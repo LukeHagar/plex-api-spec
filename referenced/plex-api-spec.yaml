@@ -129,10 +129,14 @@ paths:
   /pins:
     servers:
       - url: https://plex.tv/api/v2
+    security:
+      - PlexClientIdentifier: []
     $ref: "./paths/plex.tv/pins.yaml"
   /pins/{pinID}:
     servers:
       - url: https://plex.tv/api/v2
+    security:
+      - PlexClientIdentifier: []
     $ref: "./paths/plex.tv/pins-id.yaml"
 
 tags:

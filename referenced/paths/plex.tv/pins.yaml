@@ -1,5 +1,4 @@
 post: 
-  security: []
   tags: 
     -  Authentication
   summary: Get a Pin
