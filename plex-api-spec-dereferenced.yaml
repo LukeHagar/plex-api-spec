@@ -4934,8 +4934,9 @@ paths:
   /pins:
     servers:
       - url: 'https://plex.tv/api/v2'
+    security:
+      - PlexClientIdentifier: []
     post:
-      security: []
       tags:
         - Authentication
       summary: Get a Pin
@@ -5122,6 +5123,8 @@ paths:
   '/pins/{pinID}':
     servers:
       - url: 'https://plex.tv/api/v2'
+    security:
+      - PlexClientIdentifier: []
     get:
       tags:
         - Authentication
