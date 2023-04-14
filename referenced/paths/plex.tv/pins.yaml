@@ -1,10 +1,12 @@
-post: 
-  tags: 
-    -  Authentication
+post:
+  tags:
+    - Authentication
   summary: Get a Pin
   operationId: getPin
   description: Retrieve a Pin from Plex.tv for authentication flows
-  parameters: 
+  security:
+    - $ref: "../../security/PlexClientIdentifier.yaml"
+  parameters:
     - name: strong
       description: |
         Determines the kind of code returned by the API call
@@ -22,102 +24,102 @@ post:
     - $ref: "../../parameters/X-Plex-Product.yaml"
     - $ref: "../../parameters/X-Plex-Provides.yaml"
     - $ref: "../../parameters/X-Plex-Version.yaml"
-  responses: 
+  responses:
     "200":
       description: The Pin
-      content: 
+      content:
         application/json:
-          schema: 
+          schema:
             type: object
-            properties: 
-              id: 
+            properties:
+              id:
                 description: PinID for use with authentication
                 type: number
                 example: 1272322473
-              code: 
+              code:
                 type: string
                 example: 3patfx1a78ukcbr7x0n9bl26t
-              product: 
+              product:
                 type: string
                 example: Plex Web
-              trusted: 
+              trusted:
                 type: boolean
-              qr: 
+              qr:
                 description: |
                   a link to a QR code hosted on plex.tv 
                   The QR code redirects to the relevant `plex.tv/link` authentication page
                   Which then prompts the user for the 4 Digit Link Pin
                 type: string
                 example: https://plex.tv/api/v2/pins/qr/3patfx1a78ukcbr7x0n9bl26t
-              clientIdentifier: 
+              clientIdentifier:
                 type: string
                 example: Postman
-              location: 
+              location:
                 type: object
-                properties: 
-                  code: 
+                properties:
+                  code:
                     type: string
                     example: US
-                  european_union_member: 
+                  european_union_member:
                     type: boolean
-                  continent_code: 
+                  continent_code:
                     type: string
                     example: NA
-                  country: 
+                  country:
                     type: string
                     example: United States
-                  city: 
+                  city:
                     type: string
                     example: Austin
-                  time_zone: 
+                  time_zone:
                     type: string
                     example: America/Chicago
-                  postal_code: 
+                  postal_code:
                     type: string
                     example: 78732
-                  in_privacy_restricted_country: 
+                  in_privacy_restricted_country:
                     type: boolean
-                  subdivisions: 
+                  subdivisions:
                     type: string
                     example: Texas
-                  coordinates: 
+                  coordinates:
                     type: string
                     example: 30.3768 -97.8935
-              expiresIn: 
+              expiresIn:
                 type: number
                 example: 1800
-              createdAt: 
+              createdAt:
                 type: string
                 format: date-time
                 example: 2023-04-12T17:00:03Z
-              expiresAt: 
+              expiresAt:
                 type: string
                 format: date-time
                 example: 2023-04-12T17:30:03Z
-              authToken: 
+              authToken:
                 type: string
                 format: nullable
-              newRegistration: 
+              newRegistration:
                 type: string
                 format: nullable
     "400":
       description: X-Plex-Client-Identifier is missing
-      content: 
+      content:
         application/json:
-          schema: 
+          schema:
             type: object
-            properties: 
-              errors: 
+            properties:
+              errors:
                 type: array
-                items: 
+                items:
                   type: object
-                  properties: 
-                    code: 
+                  properties:
+                    code:
                       type: number
                       example: 1000
-                    message: 
+                    message:
                       type: string
                       example: X-Plex-Client-Identifier is missing
-                    status: 
+                    status:
                       type: number
                       example: 400

@@ -3,7 +3,8 @@
     "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json": [
       "file:///Users/luke.hagar/Documents/GitHub/plex-api-spec/paths/root.yaml",
       "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/referenced/plex-api-spec.yaml",
-      "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/referenced/paths/resources.yaml"
+      "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/referenced/paths/resources.yaml",
+      "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/plex-api-spec-dereferenced.yaml"
     ]
   }
 }

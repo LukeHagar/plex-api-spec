@@ -11,10 +11,10 @@ info:
   license:
     name: MIT
     identifier: MIT
-    url: https://opensource.org/licenses/MIT    
+    url: https://opensource.org/licenses/MIT
 
 servers:
-  - url: '{Protocol}://{Local IP}:{Port}'
+  - url: "{Protocol}://{Local IP}:{Port}"
     variables:
       Protocol:
         enum:
@@ -44,9 +44,7 @@ components:
       in: header # can be "header", "query" or "cookie"
       name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
 
-
 paths:
-  
   # Plex Media Server endpoints
 
   /:
@@ -116,11 +114,11 @@ paths:
   /:/prefs:
     $ref: "./paths/pms/server-preferences.yaml"
 
-  # Plex.tv API endpoints    
-  
+  # Plex.tv API endpoints
+
   /user:
     servers:
-      - url: https://plex.tv/api/v2  
+      - url: https://plex.tv/api/v2
     $ref: "./paths/plex.tv/user.yaml"
   /resources:
     servers:
@@ -129,14 +127,10 @@ paths:
   /pins:
     servers:
       - url: https://plex.tv/api/v2
-    security:
-      - PlexClientIdentifier: []
     $ref: "./paths/plex.tv/pins.yaml"
   /pins/{pinID}:
     servers:
       - url: https://plex.tv/api/v2
-    security:
-      - PlexClientIdentifier: []
     $ref: "./paths/plex.tv/pins-id.yaml"
 
 tags:
@@ -151,7 +145,7 @@ tags:
       - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
   - name: Authentication
     description: |
-      API Calls regarding authentication for Plex Media Server 
+      API Calls regarding authentication for Plex Media Server
   - name: Butler
     description: |
       Butler is the task manager of the Plex Media Server Ecosystem.

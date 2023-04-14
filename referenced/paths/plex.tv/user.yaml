@@ -3,7 +3,7 @@ get:
     - User
   summary: Get Logged in User
   description: Get Logged in User
-  operationId: getCurrentUserDetails
+  operationId: getUserDetails
   parameters:
     - $ref: "../../parameters/X-Plex-Device-Name.yaml"
     - $ref: "../../parameters/X-Plex-Device.yaml"

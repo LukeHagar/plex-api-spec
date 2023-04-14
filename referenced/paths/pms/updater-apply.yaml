@@ -1,7 +1,7 @@
 put:
   tags:
     - Updater
-  summary: Applying updates
+  summary: Apply Updates
   description: |
     Note that these two parameters are effectively mutually exclusive. The `tonight` parameter takes precedence and `skip` will be ignored if `tonight` is also passed
   operationId: applyUpdates
