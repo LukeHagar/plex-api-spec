@@ -13,14 +13,16 @@ info:
     identifier: MIT
     url: 'https://opensource.org/licenses/MIT'
 servers:
-  - url: '{Protocol}://{Local IP}:{Port}'
+  - url: 'http://{Local IP}:{Port}'
     variables:
-      Protocol:
-        enum:
-          - http
-          - https
-        default: http
-        description: The protocol to use with your plex server
+      Local IP:
+        default: 10.10.10.47
+        description: The Local IP Address of your plex server
+      Port:
+        default: '32400'
+        description: The port to access your plex server
+  - url: 'https://{Local IP}:{Port}'
+    variables:
       Local IP:
         default: 10.10.10.47
         description: The Local IP Address of your plex server
@@ -28,18 +30,31 @@ servers:
         default: '32400'
         description: The port to access your plex server
 security:
-  - PlexToken: []
-    PlexClientIdentifier: []
+  - Token: []
+    ClientIdentifier: []
+    Host: []
+    DeviceName: []
 components:
   securitySchemes:
-    PlexToken:
+    Token:
+      description: Plex Authentication Token
       type: apiKey
       in: header
       name: X-Plex-Token
-    PlexClientIdentifier:
+    ClientIdentifier:
+      description: Plex Authentication Token
       type: apiKey
       in: header
       name: X-Plex-Client-Identifier
+    Host:
+      type: apiKey
+      in: header
+      name: Host
+    DeviceName:
+      description: Primary name for the device eg. `Plex Web (Chrome)`
+      type: apiKey
+      in: header
+      name: X-Plex-Device-Name
 paths:
   /:
     get:
@@ -48,75 +63,6 @@ paths:
       summary: Server Capabilities
       description: Server Capabilities
       operationId: getServerCapabilities
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The Server Capabilities
@@ -267,75 +213,6 @@ paths:
       summary: Get Available Clients
       description: Get Available Clients
       operationId: getAvailableClients
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Available Clients
@@ -418,75 +295,6 @@ paths:
       summary: Get Server Activities
       description: Get Server Activities
       operationId: getServerActivities
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The Server Activities
@@ -560,74 +368,6 @@ paths:
             type: string
           example: 25b71ed5-0f9d-461c-baa7-d404e9e10d3e
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The Server Activity was canceled
@@ -659,75 +399,6 @@ paths:
       summary: Querying status of updates
       description: Querying status of updates
       operationId: queryUpdateStatus
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The Server Updates
@@ -769,74 +440,6 @@ paths:
               - 0
               - 1
           example: 1
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: ''
@@ -888,74 +491,6 @@ paths:
               - 0
               - 1
           example: 1
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: If the update process started correctly
@@ -994,75 +529,6 @@ paths:
         3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
         4. If we are outside the configured window, the task will start immediately.
       operationId: startAllTasks
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: All tasks were started
@@ -1152,74 +618,6 @@ paths:
               - RefreshPeriodicMetadata
               - UpgradeMediaAnalysis
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The task was started successfully
@@ -1275,74 +673,6 @@ paths:
               - RefreshPeriodicMetadata
               - UpgradeMediaAnalysis
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The task was stopped
@@ -1410,74 +740,6 @@ paths:
             type: string
             example: ''
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Log Line submitted successfully
@@ -1509,75 +771,6 @@ paths:
       description: |
         This endpoint will write multiple lines to the main Plex Media Server log in a single request. It takes a set of query strings as would normally sent to the above GET endpoint as a linefeed-separated block of POST data. The parameters for each query string match as above.
       operationId: logMultiLine
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Multi-Line Log Message Posted successfully
@@ -1610,75 +803,6 @@ paths:
       description: |
         This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail networked logging site for a period of time.
       operationId: enablePaperTrail
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Papertrail enabled successfully
@@ -1730,74 +854,6 @@ paths:
             enum:
               - all
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: A Transient Token
@@ -1841,74 +897,6 @@ paths:
               - 'server://client-identifier'
               - 'provider://provider-identifier'
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Source Connection Information
@@ -1960,74 +948,6 @@ paths:
           schema:
             type: string
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The details of the library
@@ -2067,74 +987,6 @@ paths:
           schema:
             type: number
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The library is refreshing
@@ -2186,74 +1038,6 @@ paths:
           schema:
             type: string
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The details of the library
@@ -2302,74 +1086,6 @@ paths:
         - name: filter
           description: the filter parameter
           in: query
-          schema:
-            type: string
-          required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
           schema:
             type: string
           required: false
@@ -2447,74 +1163,6 @@ paths:
               - 1
             default: 0
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The details of the library
@@ -2545,75 +1193,6 @@ paths:
         - Library
       summary: Get All Libraries
       operationId: getLibraries
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       description: |
         A library section (commonly referred to as just a library) is a collection of media. 
         Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
@@ -2666,74 +1245,6 @@ paths:
           schema:
             type: number
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The hash of the file
@@ -2766,75 +1277,6 @@ paths:
       description: |
         This endpoint will return the on deck content.
       operationId: getOnDeck
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The on deck content
@@ -2881,74 +1323,6 @@ paths:
             enum:
               - 0
               - 1
-          required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
           required: false
       responses:
         '200':
@@ -3004,74 +1378,6 @@ paths:
               - 0
               - 1
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The hubs specific to the library
@@ -3122,74 +1428,6 @@ paths:
             enum:
               - 0
               - 1
-          required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
           required: false
       responses:
         '200':
@@ -3263,74 +1501,6 @@ paths:
           schema:
             type: number
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: returns all playlists
@@ -3371,74 +1541,6 @@ paths:
           schema:
             type: number
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The playlist
@@ -3477,74 +1579,6 @@ paths:
           schema:
             type: number
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The playlist is deleted
@@ -3631,74 +1665,6 @@ paths:
           schema:
             type: number
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The playlist contents
@@ -3737,74 +1703,6 @@ paths:
           schema:
             type: number
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The playlist contents are cleared
@@ -3858,74 +1756,6 @@ paths:
             type: number
             example: 123
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Playlist Updated
@@ -3983,74 +1813,6 @@ paths:
               - 0
               - 1
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The playlist is uploaded
@@ -4117,74 +1879,6 @@ paths:
             type: number
             example: 5
             default: 3
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The search results
@@ -4243,74 +1937,6 @@ paths:
             example: 5
             default: 3
           required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: The search results
@@ -4342,75 +1968,6 @@ paths:
       summary: Get Active Sessions
       description: This will retrieve the "Now Playing" Information of the PMS.
       operationId: getSessions
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: List of Active Plex Sessions
@@ -4442,75 +1999,6 @@ paths:
       summary: Get Session History
       description: This will Retrieve a listing of all history views.
       operationId: getSessionHistory
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: List of Plex Sessions
@@ -4542,75 +2030,6 @@ paths:
       summary: Get Server Preferences
       description: Get Server Preferences
       operationId: getServerPreferences
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Server Preferences
@@ -4644,75 +2063,6 @@ paths:
       summary: Get Logged in User
       description: Get Logged in User
       operationId: getUserDetails
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Logged in user details
@@ -4746,75 +2096,8 @@ paths:
       summary: Get Devices
       description: Get Devices
       operationId: getDevices
-      parameters:
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
+      security:
+        - PlexClientIdentifier: []
       responses:
         '200':
           description: List of Plex Devices
@@ -4941,10 +2224,7 @@ paths:
       operationId: getPin
       description: Retrieve a Pin from Plex.tv for authentication flows
       security:
-        - PlexClientIdentifier:
-            type: apiKey
-            in: header
-            name: X-Plex-Client-Identifier
+        - PlexClientIdentifier: []
       parameters:
         - name: strong
           description: |
@@ -4955,74 +2235,6 @@ paths:
           schema:
             type: boolean
             default: false
-          required: false
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
           required: false
       responses:
         '200':
@@ -5133,10 +2345,7 @@ paths:
       operationId: getToken
       description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
       security:
-        - PlexClientIdentifier:
-            type: apiKey
-            in: header
-            name: X-Plex-Client-Identifier
+        - PlexClientIdentifier: []
       parameters:
         - name: pinID
           description: The PinID to retrieve an access token for
@@ -5144,74 +2353,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: header
-          name: X-Plex-Device-Name
-          description: Primary name for the device eg. `Plex Web (Chrome)`
-          schema:
-            type: string
-            example: Plex Web (Chrome)
-          required: false
-        - in: header
-          name: X-Plex-Device
-          description: |
-            The type of device your application is running on
-            Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-          schema:
-            type: string
-            example:
-              - 'iPhone3,2'
-              - Motorola XOOM™
-              - LG5200TV
-          required: false
-        - in: header
-          name: X-Plex-Platform-Version
-          description: 'Operating system version, eg `4.3.1`, `10.6.7`, `3.2`'
-          schema:
-            type: string
-            example:
-              - 4.3.1
-              - 10.6.7
-              - 3.2
-          required: false
-        - in: header
-          name: X-Plex-Platform
-          description: 'Platform name, eg `Web`, `iOS`, `MacOSX`, `Android`, `LG`'
-          schema:
-            type: string
-            example:
-              - Web
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Product
-          description: 'Plex application name, eg `Laika`, `Plex Media Server`, `Media Link`'
-          schema:
-            type: string
-            example:
-              - Laika
-              - Plex Media Server
-              - Media Link
-          required: false
-        - in: header
-          name: X-Plex-Provides
-          description: 'One or more of `[player, controller, server]`'
-          schema:
-            type: string
-            example:
-              - iOS
-              - MacOSX
-              - Android
-              - LG
-          required: false
-        - in: header
-          name: X-Plex-Version
-          description: Your application version number
-          schema:
-            type: string
-          required: false
       responses:
         '200':
           description: Access Token
