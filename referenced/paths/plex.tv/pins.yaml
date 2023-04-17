@@ -5,7 +5,8 @@ post:
   operationId: getPin
   description: Retrieve a Pin from Plex.tv for authentication flows
   security:
-    - PlexClientIdentifier: []
+    - ClientIdentifier: []
+      Host: []
   parameters:
     - name: strong
       description: |
