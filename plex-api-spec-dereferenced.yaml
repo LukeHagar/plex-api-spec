@@ -2096,6 +2096,31 @@ paths:
       summary: Get Devices
       description: Get Devices
       operationId: getDevices
+      parameters:
+        - name: includeHttps
+          description: Include Https entries in the results
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+        - name: includeRelay
+          description: Include Relay addresses in the results
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+        - name: includeIPv6
+          description: Include IPv6 entries in the results
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
       responses:
         '200':
           description: List of Plex Devices
