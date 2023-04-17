@@ -3,14 +3,6 @@ get:
     - Library
   summary: Get All Libraries
   operationId: getLibraries
-  parameters: 
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml"
   description: |
     A library section (commonly referred to as just a library) is a collection of media. 
     Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 

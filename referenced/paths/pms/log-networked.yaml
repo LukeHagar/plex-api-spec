@@ -5,14 +5,6 @@ get:
   description: |
     This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail networked logging site for a period of time.
   operationId: enablePaperTrail
-  parameters: 
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml"
   responses:
     "200":
       description: Papertrail enabled successfully

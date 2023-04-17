@@ -4,14 +4,8 @@ get:
   summary: Get Devices
   description: Get Devices
   operationId: getDevices
-  parameters:
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml"
+  security:
+    - PlexClientIdentifier: []
   responses:
     "200":
       description: List of Plex Devices
@@ -22,90 +16,90 @@ get:
             items:
               type: object
               properties:
-                name: 
+                name:
                   type: string
                   example: Hera
-                product: 
+                product:
                   type: string
                   example: Plex Media Server
-                productVersion: 
+                productVersion:
                   type: string
                   example: 1.31.3.6868-28fc46b27
-                platform: 
+                platform:
                   type: string
                   example: Linux
-                platformVersion: 
+                platformVersion:
                   type: string
                   example: 5.19.17-Unraid (#2 SMP PREEMPT_DYNAMIC Wed Nov 2 11:54:15 PDT 2022)
-                device: 
+                device:
                   type: string
                   example: PC
-                clientIdentifier: 
+                clientIdentifier:
                   type: string
                   example: 96f2fe7a78c9dc1f16a16bedbe90f98149be16b4
-                createdAt: 
+                createdAt:
                   type: string
                   format: date-time
                   example: 2022-06-02T00:54:26Z
-                lastSeenAt: 
+                lastSeenAt:
                   type: string
                   format: date-time
                   example: 2023-04-11T05:53:59Z
-                provides: 
+                provides:
                   type: string
                   example: server
-                ownerId: 
+                ownerId:
                   type: string
                   format: nullable
-                sourceTitle: 
+                sourceTitle:
                   type: string
                   format: nullable
-                publicAddress: 
+                publicAddress:
                   type: string
                   example: 68.248.140.20
-                accessToken: 
+                accessToken:
                   type: string
                   example: CR3nxzsaSHdWx_WwZsJL
-                owned: 
+                owned:
                   type: boolean
-                home: 
+                home:
                   type: boolean
-                synced: 
+                synced:
                   type: boolean
-                relay: 
+                relay:
                   type: boolean
-                presence: 
+                presence:
                   type: boolean
-                httpsRequired: 
+                httpsRequired:
                   type: boolean
-                publicAddressMatches: 
+                publicAddressMatches:
                   type: boolean
-                dnsRebindingProtection: 
+                dnsRebindingProtection:
                   type: boolean
-                natLoopbackSupported: 
+                natLoopbackSupported:
                   type: boolean
-                connections: 
+                connections:
                   type: array
-                  items: 
+                  items:
                     type: object
-                    properties: 
-                      protocol: 
+                    properties:
+                      protocol:
                         type: string
                         example: http
-                      address: 
+                      address:
                         type: string
                         example: 172.18.0.1
-                      port: 
+                      port:
                         type: number
                         example: 32400
-                      uri: 
+                      uri:
                         type: string
                         example: http://172.18.0.1:32400
-                      local: 
+                      local:
                         type: boolean
-                      relay: 
+                      relay:
                         type: boolean
-                      IPv6: 
+                      IPv6:
                         type: boolean
     "401":
       $ref: "../../responses/401.yaml"

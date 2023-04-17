@@ -5,7 +5,7 @@ get:
   operationId: getToken
   description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
   security:
-    - $ref: "../../security/PlexClientIdentifier.yaml"
+    - PlexClientIdentifier: []
   parameters:
     - name: pinID
       description: The PinID to retrieve an access token for
@@ -13,13 +13,7 @@ get:
       schema:
         type: string
       required: true
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml"
+
   responses:
     "200":
       description: Access Token

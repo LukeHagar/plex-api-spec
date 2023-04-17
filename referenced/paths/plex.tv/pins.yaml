@@ -5,7 +5,7 @@ post:
   operationId: getPin
   description: Retrieve a Pin from Plex.tv for authentication flows
   security:
-    - $ref: "../../security/PlexClientIdentifier.yaml"
+    - PlexClientIdentifier: []
   parameters:
     - name: strong
       description: |
@@ -17,13 +17,7 @@ post:
         type: boolean
         default: false
       required: false
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml"
+
   responses:
     "200":
       description: The Pin

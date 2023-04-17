@@ -22,7 +22,7 @@ post:
         enum:
           - audio
           - video
-          - photo 
+          - photo
       required: true
     - name: smart
       description: whether the playlist is smart or not
@@ -32,26 +32,20 @@ post:
         enum:
           - 0
           - 1
-      required: true  
+      required: true
     - name: uri
       description: the content URI for the playlist
       in: query
       schema:
         type: string
-      required: false  
+      required: false
     - name: playQueueID
       description: the play queue to copy to a playlist
       in: query
       schema:
         type: number
-      required: false 
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml" 
+      required: false
+
   responses:
     "200":
       description: returns all playlists

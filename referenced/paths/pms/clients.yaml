@@ -4,14 +4,6 @@ get:
   summary: Get Available Clients
   description: Get Available Clients
   operationId: getAvailableClients
-  parameters: 
-    - $ref: "../../parameters/X-Plex-Device-Name.yaml"
-    - $ref: "../../parameters/X-Plex-Device.yaml"
-    - $ref: "../../parameters/X-Plex-Platform-Version.yaml"
-    - $ref: "../../parameters/X-Plex-Platform.yaml"
-    - $ref: "../../parameters/X-Plex-Product.yaml"
-    - $ref: "../../parameters/X-Plex-Provides.yaml"
-    - $ref: "../../parameters/X-Plex-Version.yaml"
   responses:
     "200":
       description: Available Clients
@@ -22,48 +14,48 @@ get:
             items:
               type: object
               properties:
-                MediaContainer: 
+                MediaContainer:
                   type: object
-                  properties: 
-                    size: 
+                  properties:
+                    size:
                       type: number
                       example: 1
-                    Server: 
+                    Server:
                       type: array
-                      items: 
+                      items:
                         type: object
-                        properties: 
-                          name: 
+                        properties:
+                          name:
                             type: string
                             example: iPad
-                          host: 
+                          host:
                             type: string
                             example: 10.10.10.102
-                          address: 
+                          address:
                             type: string
                             example: 10.10.10.102
-                          port: 
+                          port:
                             type: number
                             example: 32500
-                          machineIdentifier: 
+                          machineIdentifier:
                             type: string
                             example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
-                          version: 
+                          version:
                             type: string
                             example: 8.17
-                          protocol: 
+                          protocol:
                             type: string
                             example: plex
-                          product: 
+                          product:
                             type: string
                             example: Plex for iOS
-                          deviceClass: 
+                          deviceClass:
                             type: string
                             example: tablet
-                          protocolVersion: 
+                          protocolVersion:
                             type: string
                             example: 2
-                          protocolCapabilities: 
+                          protocolCapabilities:
                             type: string
                             example: playback,playqueues,timeline,provider-playback
     "401":
