@@ -6,7 +6,7 @@ post:
   description: Retrieve a Pin from Plex.tv for authentication flows
   security:
     - ClientIdentifier: []
-      Host: []
+      # Host: []
   parameters:
     - name: strong
       description: |

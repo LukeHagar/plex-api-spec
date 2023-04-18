@@ -6,7 +6,7 @@ get:
   description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
   security:
     - ClientIdentifier: []
-      Host: []
+      # Host: []
   parameters:
     - name: pinID
       description: The PinID to retrieve an access token for
