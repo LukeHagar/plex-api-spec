@@ -32,7 +32,6 @@ servers:
 security:
   - Token: []
     ClientIdentifier: []
-    Host: []
     DeviceName: []
 components:
   securitySchemes:
@@ -46,15 +45,32 @@ components:
       type: apiKey
       in: header
       name: X-Plex-Client-Identifier
-    Host:
-      type: apiKey
-      in: header
-      name: Host
     DeviceName:
       description: Primary name for the device eg. `Plex Web (Chrome)`
       type: apiKey
       in: header
       name: X-Plex-Device-Name
+    Device:
+      description: |
+        The type of device your application is running on
+        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+      type: apiKey
+      in: header
+      name: X-Plex-Device
+    PlatformVersion:
+      description: |
+        Operating system version
+        eg `4.3.1`, `10.6.7`, `3.2`
+      type: apiKey
+      in: header
+      name: X-Plex-Platform-Version
+    Platform:
+      description: |
+        Platform name 
+        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
+      type: apiKey
+      in: header
+      name: X-Plex-Platform
 paths:
   /:
     get:
@@ -2248,7 +2264,6 @@ paths:
       description: Retrieve a Pin from Plex.tv for authentication flows
       security:
         - ClientIdentifier: []
-          Host: []
       parameters:
         - name: strong
           description: |
@@ -2370,7 +2385,6 @@ paths:
       description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
       security:
         - ClientIdentifier: []
-          Host: []
       parameters:
         - name: pinID
           description: The PinID to retrieve an access token for
