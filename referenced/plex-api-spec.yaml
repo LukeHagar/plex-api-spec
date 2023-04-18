@@ -34,7 +34,12 @@ servers:
 security:
   - Token: []
     ClientIdentifier: []
+    Device: []
     DeviceName: []
+    Platform: []
+    PlatformVersion: []
+    Product: []
+    Version: []
 
 components:
   securitySchemes:
@@ -74,6 +79,18 @@ components:
       type: apiKey
       in: header # can be "header", "query" or "cookie"
       name: X-Plex-Platform # name of the header, query parameter or cookie
+    Product: # arbitrary name for the security scheme
+      description: |
+        Plex application name 
+        eg: `Laika`, `Plex Media Server`, `Media Link`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Product # name of the header, query parameter or cookie
+    Version: # arbitrary name for the security scheme
+      description: Plex application version number
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Version # name of the header, query parameter or cookie
 
 paths:
   # Plex Media Server endpoints
