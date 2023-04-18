@@ -32,7 +32,12 @@ servers:
 security:
   - Token: []
     ClientIdentifier: []
+    Device: []
     DeviceName: []
+    Platform: []
+    PlatformVersion: []
+    Product: []
+    Version: []
 components:
   securitySchemes:
     Token:
@@ -71,6 +76,18 @@ components:
       type: apiKey
       in: header
       name: X-Plex-Platform
+    Product:
+      description: |
+        Plex application name 
+        eg: `Laika`, `Plex Media Server`, `Media Link`
+      type: apiKey
+      in: header
+      name: X-Plex-Product
+    Version:
+      description: Plex application version number
+      type: apiKey
+      in: header
+      name: X-Plex-Version
 paths:
   /:
     get:
