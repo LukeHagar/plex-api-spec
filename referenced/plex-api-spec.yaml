@@ -34,7 +34,7 @@ servers:
 security:
   - Token: []
     ClientIdentifier: []
-    Host: []
+    # Host: []
     DeviceName: []
 
 components:
@@ -49,15 +49,37 @@ components:
       type: apiKey
       in: header # can be "header", "query" or "cookie"
       name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
-    Host: # arbitrary name for the security scheme
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: Host # name of the header, query parameter or cookie
+    # Host: # arbitrary name for the security scheme
+    #   description: Host Identification
+    #   type: apiKey
+    #   in: header # can be "header", "query" or "cookie"
+    #   name: Host # name of the header, query parameter or cookie
     DeviceName: # arbitrary name for the security scheme
       description: Primary name for the device eg. `Plex Web (Chrome)`
       type: apiKey
       in: header # can be "header", "query" or "cookie"
       name: X-Plex-Device-Name # name of the header, query parameter or cookie
+    Device: # arbitrary name for the security scheme
+      description: |
+        The type of device your application is running on
+        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Device # name of the header, query parameter or cookie
+    PlatformVersion: # arbitrary name for the security scheme
+      description: |
+        Operating system version
+        eg `4.3.1`, `10.6.7`, `3.2`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Platform-Version # name of the header, query parameter or cookie
+    Platform: # arbitrary name for the security scheme
+      description: |
+        Platform name 
+        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Platform # name of the header, query parameter or cookie
 
 paths:
   # Plex Media Server endpoints
