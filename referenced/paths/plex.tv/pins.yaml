@@ -1,5 +1,6 @@
 post:
   tags:
+    - Plex.tv
     - Authentication
   summary: Get a Pin
   operationId: getPin

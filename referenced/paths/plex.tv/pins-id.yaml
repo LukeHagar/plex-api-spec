@@ -1,5 +1,6 @@
 get:
   tags:
+    - Plex.tv
     - Authentication
   summary: Get Access Token
   operationId: getToken

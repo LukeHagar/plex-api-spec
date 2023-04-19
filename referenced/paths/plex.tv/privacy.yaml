@@ -1,0 +1,39 @@
+get:
+  tags:
+    - Plex.tv
+    - Privacy
+  summary: Get Privacy Data
+  description: Get Privacy Data
+  operationId: getPrivacyData
+  responses:
+    "200":
+      description: Privacy Data
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              optOutPlayback:
+                type: boolean
+              optOutLibraryStats:
+                type: boolean
+              domain:
+                type: string
+                example: analytics.plex.tv
+              baseUrl:
+                type: string
+                example: https://analytics.plex.tv
+              metrics:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    event:
+                      type: string
+                      example: cameraupload:batch
+                    status:
+                      type: string
+                      example: identifiable
+
+    "401":
+      $ref: "../../responses/401.yaml"

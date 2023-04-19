@@ -1,0 +1,33 @@
+get:
+  tags:
+    - Plex.tv
+  summary: Get Home Data
+  description: Get Home Data
+  operationId: getHomeData
+  responses:
+    "200":
+      description: Home Data
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: number
+                example: 1841489
+              name:
+                type: string
+                example: Blindkitty38's home
+              guestUserID:
+                type: number
+                example: 58815432
+              guestUserUUID:
+                type: string
+                example: f3df4e01bfca0787
+              guestEnabled:
+                type: boolean
+              subscription:
+                type: boolean
+
+    "401":
+      $ref: "../../responses/401.yaml"

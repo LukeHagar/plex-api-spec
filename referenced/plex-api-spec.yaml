@@ -190,6 +190,10 @@ paths:
     $ref: "./paths/pms/updater-apply.yaml"
 
   # Plex.tv API endpoints
+  /home:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/home.yaml"
   /pins:
     servers:
       - url: https://plex.tv/api/v2
