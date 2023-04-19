@@ -147,6 +147,11 @@ paths:
   /log/networked:
     $ref: "./paths/pms/log-networked.yaml"
 
+  /myplex/account:
+    $ref: "./paths/pms/myplex-account.yaml"
+
+  /photo/:/transcode:
+    $ref: "./paths/pms/photo-transcode.yaml"
   /playlists:
     $ref: "./paths/pms/playlists.yaml"
   /playlists/all:
@@ -158,6 +163,8 @@ paths:
   /playlists/upload:
     $ref: "./paths/pms/playlist-upload.yaml"
 
+  /search:
+    $ref: "./paths/pms/search.yaml"
   /security/token:
     $ref: "./paths/pms/security-token.yaml"
   /security/resources:
