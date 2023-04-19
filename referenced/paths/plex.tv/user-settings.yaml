@@ -1,0 +1,32 @@
+get:
+  tags:
+    - Plex.tv
+  summary: Get User Settings
+  description: Get User Settings
+  operationId: getUserSettings
+  responses:
+    "200":
+      description: User Settings
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: experience
+                type:
+                  type: string
+                  example: json
+                value:
+                  type: string
+                hidden:
+                  type: boolean
+                updatedAt:
+                  type: number
+                  example: 1681769995
+
+    "401":
+      $ref: "../../responses/401.yaml"

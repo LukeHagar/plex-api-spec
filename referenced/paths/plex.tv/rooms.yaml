@@ -1,0 +1,73 @@
+get:
+  tags:
+    - Plex.tv
+    - Watch Together
+  summary: Get Watch Together Rooms
+  description: Get Watch Together Rooms
+  operationId: getWatchTogetherRooms
+  responses:
+    "200":
+      description: Watch Together Rooms
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              rooms:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    endsAt:
+                      type: number
+                      example: 1681926945
+                    id:
+                      type: string
+                      example: 1p0qq82tg3ff
+                    sourceUri:
+                      type: string
+                      example: server://96f2fe7a78c9dc1f16a16bedbe90f98149be16b4/com.plexapp.plugins.library/library/metadata/59409
+                    startsAt:
+                      type: number
+                      example: 1681916145
+                    syncplayHost:
+                      type: string
+                      example: pop-atl01.syncplay.plex.services
+                    syncplayPort:
+                      type: number
+                      example: 7776
+                    title:
+                      type: string
+                      example: The Rookie · S5 · E20 · S.T.R.
+                    type:
+                      type: string
+                      example: watch
+                    updatedAt:
+                      type: number
+                      example: 1681916145
+                    users:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                            example: 9539173
+                          thumb:
+                            type: string
+                            example: https://plex.tv/users/844780fc6f8a26b5/avatar?c=1679685540
+                          title:
+                            type: string
+                            example: Luke
+                          username:
+                            type: string
+                            example: Blindkitty38
+                          uuid:
+                            type: string
+                            example: 844780fc6f8a26b5
+                    source:
+                      type: string
+                      example: server://96f2fe7a78c9dc1f16a16bedbe90f98149be16b4/com.plexapp.plugins.library/library/metadata/59409
+
+    "401":
+      $ref: "../../responses/401.yaml"

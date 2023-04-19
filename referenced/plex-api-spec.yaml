@@ -190,6 +190,10 @@ paths:
     $ref: "./paths/pms/updater-apply.yaml"
 
   # Plex.tv API endpoints
+  /companions:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/companions.yaml"
   /geoip:
     servers:
       - url: https://plex.tv/api/v2
@@ -216,7 +220,18 @@ paths:
     servers:
       - url: https://plex.tv/api/v2
     $ref: "./paths/plex.tv/user.yaml"
-
+  /user/settings:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/user-settings.yaml"
+  /user/settings/opt_outs:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/user-settings-opt_outs.yaml"
+  /rooms:
+    servers:
+      - url: https://together.plex.tv
+    $ref: "./paths/plex.tv/rooms.yaml"
 tags:
   - name: Activities
     description: |
