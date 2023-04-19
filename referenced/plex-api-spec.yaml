@@ -97,32 +97,40 @@ paths:
 
   /:
     $ref: "./paths/pms/root.yaml"
-  /clients:
-    $ref: "./paths/pms/clients.yaml"
+  /:/prefs:
+    $ref: "./paths/pms/server-preferences.yaml"
+
   /activities:
     $ref: "./paths/pms/activities.yaml"
   /activities/{activityUUID}:
     $ref: "./paths/pms/activities-cancel.yaml"
-  /updater/status:
-    $ref: "./paths/pms/updater-status.yaml"
-  /updater/check:
-    $ref: "./paths/pms/updater-check.yaml"
-  /updater/apply:
-    $ref: "./paths/pms/updater-apply.yaml"
   /butler:
     $ref: "./paths/pms/butler.yaml"
   /butler/{taskName}:
     $ref: "./paths/pms/butler-task.yaml"
+  /clients:
+    $ref: "./paths/pms/clients.yaml"
+
+  /hubs:
+    $ref: "./paths/pms/hubs.yaml"
+  /hubs/search:
+    $ref: "./paths/pms/hubs-search.yaml"
+  /hubs/search/voice:
+    $ref: "./paths/pms/hubs-search-voice.yaml"
+  /hubs/sections/{sectionId}:
+    $ref: "./paths/pms/hubs-section.yaml"
+
   /identity:
     $ref: "./paths/pms/identity.yaml"
-  /log:
-    $ref: "./paths/pms/log.yaml"
-  /log/networked:
-    $ref: "./paths/pms/log-networked.yaml"
-  /security/token:
-    $ref: "./paths/pms/security-token.yaml"
-  /security/resources:
-    $ref: "./paths/pms/security-resources.yaml"
+
+  /library/hashes:
+    $ref: "./paths/pms/library-hashes.yaml"
+  /library/recentlyAdded:
+    $ref: "./paths/pms/library-recentlyadded.yaml"
+  /library/sections:
+    $ref: "./paths/pms/all-libraries.yaml"
+  /library/sections/{sectionId}:
+    $ref: "./paths/pms/library-details.yaml"
   /library/sections/{sectionId}/all:
     $ref: "./paths/pms/library-content-all.yaml"
   /library/sections/{sectionId}/refresh:
@@ -131,55 +139,50 @@ paths:
     $ref: "./paths/pms/library-content-latest.yaml"
   /library/sections/{sectionId}/common:
     $ref: "./paths/pms/library-content-common.yaml"
-  /library/sections/{sectionId}:
-    $ref: "./paths/pms/library-details.yaml"
-  /library/sections:
-    $ref: "./paths/pms/all-libraries.yaml"
-  /library/hashes:
-    $ref: "./paths/pms/library-hashes.yaml"
   /library/onDeck:
     $ref: "./paths/pms/library-ondeck.yaml"
-  /hubs:
-    $ref: "./paths/pms/hubs.yaml"
-  /hubs/sections/{sectionId}:
-    $ref: "./paths/pms/hubs-section.yaml"
-  /playlists/all:
-    $ref: "./paths/pms/all-playlists.yaml"
+
+  /log:
+    $ref: "./paths/pms/log.yaml"
+  /log/networked:
+    $ref: "./paths/pms/log-networked.yaml"
+
   /playlists:
     $ref: "./paths/pms/playlists.yaml"
+  /playlists/all:
+    $ref: "./paths/pms/all-playlists.yaml"
   /playlists/{playlistID}:
     $ref: "./paths/pms/playlist-id.yaml"
   /playlists/{playlistID}/items:
     $ref: "./paths/pms/playlist-contents.yaml"
   /playlists/upload:
     $ref: "./paths/pms/playlist-upload.yaml"
-  /hubs/search:
-    $ref: "./paths/pms/hubs-search.yaml"
-  /hubs/search/voice:
-    $ref: "./paths/pms/hubs-search-voice.yaml"
+
+  /security/token:
+    $ref: "./paths/pms/security-token.yaml"
+  /security/resources:
+    $ref: "./paths/pms/security-resources.yaml"
+
+  /servers:
+    $ref: "./paths/pms/servers.yaml"
   /status/sessions:
     $ref: "./paths/pms/sessions.yaml"
   /status/sessions/history/all:
     $ref: "./paths/pms/session-history.yaml"
-  /servers:
-    $ref: "./paths/pms/servers.yaml"
+
   /transcode/sessions:
     $ref: "./paths/pms/transcode-sessions.yaml"
   /transcode/sessions/{sessionKey}:
     $ref: "./paths/pms/transcode-sessions-key.yaml"
-  /:/prefs:
-    $ref: "./paths/pms/server-preferences.yaml"
+
+  /updater/status:
+    $ref: "./paths/pms/updater-status.yaml"
+  /updater/check:
+    $ref: "./paths/pms/updater-check.yaml"
+  /updater/apply:
+    $ref: "./paths/pms/updater-apply.yaml"
 
   # Plex.tv API endpoints
-
-  /user:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/user.yaml"
-  /resources:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/resources.yaml"
   /pins:
     servers:
       - url: https://plex.tv/api/v2
@@ -188,6 +191,16 @@ paths:
     servers:
       - url: https://plex.tv/api/v2
     $ref: "./paths/plex.tv/pins-id.yaml"
+
+  /resources:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/resources.yaml"
+
+  /user:
+    servers:
+      - url: https://plex.tv/api/v2
+    $ref: "./paths/plex.tv/user.yaml"
 
 tags:
   - name: Activities

@@ -1,3 +1,44 @@
+get:
+  tags:
+    - Butler
+  summary: Get Butler tasks
+  description: Returns a list of butler tasks
+  operationId: getButlerTasks
+  responses:
+    "200":
+      description: All butler tasks
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ButlerTasks:
+                type: object
+                properties:
+                  ButlerTask:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: BackupDatabase
+                        interval:
+                          type: number
+                          example: 3
+                        scheduleRandomized:
+                          type: boolean
+                        enabled:
+                          type: boolean
+                        title:
+                          type: string
+                          example: Backup Database
+                        description:
+                          type: string
+                          example: Create a backup copy of the server's database in the configured backup directory
+    "401":
+      $ref: "../../responses/401.yaml"
+
 post:
   tags:
     - Butler
