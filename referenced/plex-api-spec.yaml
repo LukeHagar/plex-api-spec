@@ -113,6 +113,8 @@ paths:
     $ref: "./paths/pms/butler.yaml"
   /butler/{taskName}:
     $ref: "./paths/pms/butler-task.yaml"
+  /identity:
+    $ref: "./paths/pms/identity.yaml"
   /log:
     $ref: "./paths/pms/log.yaml"
   /log/networked:
@@ -159,6 +161,12 @@ paths:
     $ref: "./paths/pms/sessions.yaml"
   /status/sessions/history/all:
     $ref: "./paths/pms/session-history.yaml"
+  /servers:
+    $ref: "./paths/pms/servers.yaml"
+  /transcode/sessions:
+    $ref: "./paths/pms/transcode-sessions.yaml"
+  /transcode/sessions/{sessionKey}:
+    $ref: "./paths/pms/transcode-sessions-key.yaml"
   /:/prefs:
     $ref: "./paths/pms/server-preferences.yaml"
 

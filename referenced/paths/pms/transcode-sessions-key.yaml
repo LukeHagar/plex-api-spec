@@ -1,0 +1,19 @@
+delete:
+  tags:
+    - Sessions
+  summary: Stop a Transcode Session
+  description: Stop a Transcode Session
+  parameters:
+    - name: sessionKey
+      description: the Key of the transcode session to stop
+      in: path
+      schema:
+        type: string
+        example: zz7llzqlx8w9vnrsbnwhbmep
+      required: true
+  operationId: stopTranscodeSession
+  responses:
+    "200":
+      description: The Transcode Session ended
+    "401":
+      $ref: "../../responses/401.yaml"

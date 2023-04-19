@@ -3,7 +3,7 @@ get:
     - Updater
   summary: Querying status of updates
   description: Querying status of updates
-  operationId: queryUpdateStatus
+  operationId: getUpdateStatus
   responses:
     "200":
       description: The Server Updates

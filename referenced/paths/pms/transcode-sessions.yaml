@@ -1,0 +1,90 @@
+get:
+  tags:
+    - Sessions
+  summary: Get Transcode Sessions
+  description: Get Transcode Sessions
+  operationId: getTranscodeSessions
+  responses:
+    "200":
+      description: The Transcode Sessions
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: number
+                    example: 1
+                  TranscodeSession:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          example: zz7llzqlx8w9vnrsbnwhbmep
+                        throttled:
+                          type: boolean
+                        complete:
+                          type: boolean
+                        progress:
+                          type: number
+                          example: 0.4000000059604645
+                        size:
+                          type: number
+                          example: -22
+                        speed:
+                          type: number
+                          example: 22.399999618530273
+                        error:
+                          type: boolean
+                        duration:
+                          type: number
+                          example: 2561768
+                        context:
+                          type: string
+                          example: streaming
+                        sourceVideoCodec:
+                          type: string
+                          example: h264
+                        sourceAudioCodec:
+                          type: string
+                          example: ac3
+                        videoDecision:
+                          type: string
+                          example: transcode
+                        audioDecision:
+                          type: string
+                          example: transcode
+                        protocol:
+                          type: string
+                          example: http
+                        container:
+                          type: string
+                          example: mkv
+                        videoCodec:
+                          type: string
+                          example: h264
+                        audioCodec:
+                          type: string
+                          example: opus
+                        audioChannels:
+                          type: number
+                          example: 2
+                        transcodeHwRequested:
+                          type: boolean
+                        timeStamp:
+                          type: number
+                          example: 1681869535.7764285
+                        maxOffsetAvailable:
+                          type: number
+                          example: 861.778
+                        minOffsetAvailable:
+                          type: number
+                          example: 0
+
+    "401":
+      $ref: "../../responses/401.yaml"
