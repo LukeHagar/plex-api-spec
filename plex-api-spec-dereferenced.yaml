@@ -3400,11 +3400,66 @@ paths:
                           example: 401
         '500':
           description: If the update process failed to start
+  /home:
+    servers:
+      - url: 'https://plex.tv/api/v2'
+    get:
+      tags:
+        - Plex.tv
+      summary: Get Home Data
+      description: Get Home Data
+      operationId: getHomeData
+      responses:
+        '200':
+          description: Home Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    example: 1841489
+                  name:
+                    type: string
+                    example: Blindkitty38's home
+                  guestUserID:
+                    type: number
+                    example: 58815432
+                  guestUserUUID:
+                    type: string
+                    example: f3df4e01bfca0787
+                  guestEnabled:
+                    type: boolean
+                  subscription:
+                    type: boolean
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /pins:
     servers:
       - url: 'https://plex.tv/api/v2'
     post:
       tags:
+        - Plex.tv
         - Authentication
       summary: Get a Pin
       operationId: getPin
@@ -3526,6 +3581,7 @@ paths:
       - url: 'https://plex.tv/api/v2'
     get:
       tags:
+        - Plex.tv
         - Authentication
       summary: Get Access Token
       operationId: getToken
@@ -3568,6 +3624,7 @@ paths:
       - url: 'https://plex.tv/api/v2'
     get:
       tags:
+        - Plex.tv
         - Devices
       summary: Get Devices
       description: Get Devices
@@ -3718,6 +3775,7 @@ paths:
       - url: 'https://plex.tv/api/v2'
     get:
       tags:
+        - Plex.tv
         - User
       summary: Get Logged in User
       description: Get Logged in User
