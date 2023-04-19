@@ -3400,6 +3400,60 @@ paths:
                           example: 401
         '500':
           description: If the update process failed to start
+  /geoip:
+    servers:
+      - url: 'https://plex.tv/api/v2'
+    get:
+      tags:
+        - Plex.tv
+      summary: Get Geo Data
+      description: Get Geo Data
+      operationId: getGeoData
+      responses:
+        '200':
+          description: Geo Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    example: 1841489
+                  name:
+                    type: string
+                    example: Blindkitty38's home
+                  guestUserID:
+                    type: number
+                    example: 58815432
+                  guestUserUUID:
+                    type: string
+                    example: f3df4e01bfca0787
+                  guestEnabled:
+                    type: boolean
+                  subscription:
+                    type: boolean
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /home:
     servers:
       - url: 'https://plex.tv/api/v2'
@@ -3598,8 +3652,8 @@ paths:
       responses:
         '200':
           description: Access Token
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+        '400':
+          description: X-Plex-Client-Identifier is missing
           content:
             application/json:
               schema:
@@ -3612,13 +3666,13 @@ paths:
                       properties:
                         code:
                           type: number
-                          example: 1001
+                          example: 1000
                         message:
                           type: string
-                          example: User could not be authenticated
+                          example: X-Plex-Client-Identifier is missing
                         status:
                           type: number
-                          example: 401
+                          example: 400
   /resources:
     servers:
       - url: 'https://plex.tv/api/v2'
