@@ -1,7 +1,6 @@
 get:
   tags:
     - Plex.tv
-    - Privacy
   summary: Get Privacy Data
   description: Get Privacy Data
   operationId: getPrivacyData

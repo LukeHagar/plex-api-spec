@@ -18,5 +18,24 @@ get:
   responses:
     "200":
       description: Access Token
-    "401":
-      $ref: "../../responses/401.yaml"
+    "400":
+      description: X-Plex-Client-Identifier is missing
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1000
+                    message:
+                      type: string
+                      example: X-Plex-Client-Identifier is missing
+                    status:
+                      type: number
+                      example: 400
