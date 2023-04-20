@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - referenced/**
+      - plextc/**
+      - pms/**
   workflow_dispatch:
 
 jobs:
