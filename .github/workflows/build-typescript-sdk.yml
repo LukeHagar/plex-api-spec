@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - plextc/**
+      - plextv/**
       - pms/**
   workflow_dispatch:
 
