@@ -1,11 +1,11 @@
-name: Build and Copy Dereferenced Plex API Spec
+name: Build and Copy Dereferenced Plex TV API Spec
 
 on:
   push:
     branches:
       - main
     paths:
-      - referenced/**
+      - plextv/**
   workflow_dispatch:
 
 jobs:
@@ -22,25 +22,9 @@ jobs:
         run: |
           npm install -g swagger-cli
 
-      - name: Dereference Plex Media Server Specification
-        run: |
-          swagger-cli bundle --dereference pms/pms-spec.yaml -t yaml -o plex-media-server-spec-dereferenced.yaml
-
       - name: Dereference Plex TV Specification
         run: |
           swagger-cli bundle --dereference plextv/plextv-spec.yaml -t yaml -o plex-tv-spec-dereferenced.yaml
-
-      - name: Pushes Dereferenced Specification File
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_file: plex-media-server-spec-dereferenced.yaml
-          destination_repo: lukehagar/plex-docs
-          destination_folder: static
-          user_email: lukeslakemail@gmail.com
-          user_name: lukehagar
-          commit_message: Updating PMS Spec
 
       - name: Pushes Dereferenced Specification File
         uses: dmnemec/copy_file_to_another_repo_action@main
