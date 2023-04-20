@@ -21,18 +21,37 @@ jobs:
       - name: Install swagger-cli
         run: |
           npm install -g swagger-cli
-      - name: Dereference Plex API Specification
+
+      - name: Dereference Plex Media Server Specification
         run: |
-          swagger-cli bundle --dereference referenced/plex-api-spec.yaml -t yaml -o plex-api-spec-dereferenced.yaml
+          swagger-cli bundle --dereference pms/pms-spec.yaml -t yaml -o plex-media-server-spec-dereferenced.yaml
+
+      - name: Dereference Plex TV Specification
+        run: |
+          swagger-cli bundle --dereference plextv/plextv-spec.yaml -t yaml -o plex-tv-spec-dereferenced.yaml
+
       - name: Pushes Dereferenced Specification File
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: plex-api-spec-dereferenced.yaml
+          source_file: plex-media-server-spec-dereferenced.yaml
           destination_repo: lukehagar/plex-docs
           destination_folder: static
           user_email: lukeslakemail@gmail.com
           user_name: lukehagar
-          commit_message: Updating OpenAPI Spec
+          commit_message: Updating PMS Spec
+
+      - name: Pushes Dereferenced Specification File
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: plex-tv-spec-dereferenced.yaml
+          destination_repo: lukehagar/plex-docs
+          destination_folder: static
+          user_email: lukeslakemail@gmail.com
+          user_name: lukehagar
+          commit_message: Updating PlexTV Spec
+
       - uses: stefanzweifel/git-auto-commit-action@v4

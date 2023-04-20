@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
   title: Plex-API
-  summary: A Plex Media Server API Map
-  description: An Open API Spec for interacting with Plex.tv and Plex Servers
+  summary: A Plex.TV API Map
+  description: An Open API Spec for interacting with Plex.tv
   version: 0.0.3
   contact:
     name: Luke Hagar
@@ -14,22 +14,7 @@ info:
     url: https://opensource.org/licenses/MIT
 
 servers:
-  - url: "http://{Local IP}:{Port}"
-    variables:
-      Local IP:
-        default: "10.10.10.47"
-        description: The Local IP Address of your plex server
-      Port:
-        default: "32400"
-        description: The port to access your plex server
-  - url: "https://{Local IP}:{Port}"
-    variables:
-      Local IP:
-        default: "10.10.10.47"
-        description: The Local IP Address of your plex server
-      Port:
-        default: "32400"
-        description: The port to access your plex server
+  - url: https://plex.tv/api/v2
 
 security:
   - Token: []
@@ -93,145 +78,26 @@ components:
       name: X-Plex-Version # name of the header, query parameter or cookie
 
 paths:
-  # Plex Media Server endpoints
-
-  /:
-    $ref: "./paths/pms/root.yaml"
-  /:/prefs:
-    $ref: "./paths/pms/server-preferences.yaml"
-
-  /activities:
-    $ref: "./paths/pms/activities.yaml"
-  /activities/{activityUUID}:
-    $ref: "./paths/pms/activities-cancel.yaml"
-  /butler:
-    $ref: "./paths/pms/butler.yaml"
-  /butler/{taskName}:
-    $ref: "./paths/pms/butler-task.yaml"
-  /clients:
-    $ref: "./paths/pms/clients.yaml"
-
-  /hubs:
-    $ref: "./paths/pms/hubs.yaml"
-  /hubs/search:
-    $ref: "./paths/pms/hubs-search.yaml"
-  /hubs/search/voice:
-    $ref: "./paths/pms/hubs-search-voice.yaml"
-  /hubs/sections/{sectionId}:
-    $ref: "./paths/pms/hubs-section.yaml"
-
-  /identity:
-    $ref: "./paths/pms/identity.yaml"
-
-  /library/hashes:
-    $ref: "./paths/pms/library-hashes.yaml"
-  /library/recentlyAdded:
-    $ref: "./paths/pms/library-recentlyadded.yaml"
-  /library/sections:
-    $ref: "./paths/pms/all-libraries.yaml"
-  /library/sections/{sectionId}:
-    $ref: "./paths/pms/library-details.yaml"
-  /library/sections/{sectionId}/all:
-    $ref: "./paths/pms/library-content-all.yaml"
-  /library/sections/{sectionId}/refresh:
-    $ref: "./paths/pms/library-refresh.yaml"
-  /library/sections/{sectionId}/latest:
-    $ref: "./paths/pms/library-content-latest.yaml"
-  /library/sections/{sectionId}/common:
-    $ref: "./paths/pms/library-content-common.yaml"
-  /library/onDeck:
-    $ref: "./paths/pms/library-ondeck.yaml"
-
-  /log:
-    $ref: "./paths/pms/log.yaml"
-  /log/networked:
-    $ref: "./paths/pms/log-networked.yaml"
-
-  /myplex/account:
-    $ref: "./paths/pms/myplex-account.yaml"
-
-  /photo/:/transcode:
-    $ref: "./paths/pms/photo-transcode.yaml"
-  /playlists:
-    $ref: "./paths/pms/playlists.yaml"
-  /playlists/all:
-    $ref: "./paths/pms/all-playlists.yaml"
-  /playlists/{playlistID}:
-    $ref: "./paths/pms/playlist-id.yaml"
-  /playlists/{playlistID}/items:
-    $ref: "./paths/pms/playlist-contents.yaml"
-  /playlists/upload:
-    $ref: "./paths/pms/playlist-upload.yaml"
-
-  /search:
-    $ref: "./paths/pms/search.yaml"
-  /security/token:
-    $ref: "./paths/pms/security-token.yaml"
-  /security/resources:
-    $ref: "./paths/pms/security-resources.yaml"
-
-  /servers:
-    $ref: "./paths/pms/servers.yaml"
-  /status/sessions:
-    $ref: "./paths/pms/sessions.yaml"
-  /status/sessions/history/all:
-    $ref: "./paths/pms/session-history.yaml"
-
-  /transcode/sessions:
-    $ref: "./paths/pms/transcode-sessions.yaml"
-  /transcode/sessions/{sessionKey}:
-    $ref: "./paths/pms/transcode-sessions-key.yaml"
-
-  /updater/status:
-    $ref: "./paths/pms/updater-status.yaml"
-  /updater/check:
-    $ref: "./paths/pms/updater-check.yaml"
-  /updater/apply:
-    $ref: "./paths/pms/updater-apply.yaml"
-
   # Plex.tv API endpoints
   /companions:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/companions.yaml"
+    $ref: "./paths/companions.yaml"
   /geoip:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/geoip.yaml"
+    $ref: "./paths/geoip.yaml"
   /home:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/home.yaml"
+    $ref: "./paths/home.yaml"
   /pins:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/pins.yaml"
+    $ref: "./paths/pins.yaml"
   /pins/{pinID}:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/pins-id.yaml"
-
+    $ref: "./paths/pins-id.yaml"
   /resources:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/resources.yaml"
-
+    $ref: "./paths/resources.yaml"
   /user:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/user.yaml"
+    $ref: "./paths/user.yaml"
   /user/settings:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/user-settings.yaml"
+    $ref: "./paths/user-settings.yaml"
   /user/settings/opt_outs:
-    servers:
-      - url: https://plex.tv/api/v2
-    $ref: "./paths/plex.tv/user-settings-opt_outs.yaml"
-  /rooms:
-    servers:
-      - url: https://together.plex.tv
-    $ref: "./paths/plex.tv/rooms.yaml"
+    $ref: "./paths/user-settings-opt_outs.yaml"
+
 tags:
   - name: Activities
     description: |

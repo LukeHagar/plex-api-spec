@@ -1,0 +1,238 @@
+openapi: 3.1.0
+info:
+  title: Plex-API
+  summary: A Plex Media Server API Map
+  description: An Open API Spec for interacting with Plex.tv and Plex Servers
+  version: 0.0.3
+  contact:
+    name: Luke Hagar
+    url: "https://www.LukeHagar.com"
+    email: Lukeslakemail@gmail.com
+  license:
+    name: MIT
+    identifier: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: "http://{Local IP}:{Port}"
+    variables:
+      Local IP:
+        default: "10.10.10.47"
+        description: The Local IP Address of your plex server
+      Port:
+        default: "32400"
+        description: The port to access your plex server
+  - url: "https://{Local IP}:{Port}"
+    variables:
+      Local IP:
+        default: "10.10.10.47"
+        description: The Local IP Address of your plex server
+      Port:
+        default: "32400"
+        description: The port to access your plex server
+
+security:
+  - Token: []
+    ClientIdentifier: []
+    Device: []
+    DeviceName: []
+    Platform: []
+    PlatformVersion: []
+    Product: []
+    Version: []
+
+components:
+  securitySchemes:
+    Token: # arbitrary name for the security scheme
+      description: Plex Authentication Token
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Token # name of the header, query parameter or cookie
+    ClientIdentifier: # arbitrary name for the security scheme
+      description: Plex Authentication Token
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
+    DeviceName: # arbitrary name for the security scheme
+      description: Primary name for the device eg. `Plex Web (Chrome)`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Device-Name # name of the header, query parameter or cookie
+    Device: # arbitrary name for the security scheme
+      description: |
+        The type of device your application is running on
+        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Device # name of the header, query parameter or cookie
+    PlatformVersion: # arbitrary name for the security scheme
+      description: |
+        Operating system version
+        eg `4.3.1`, `10.6.7`, `3.2`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Platform-Version # name of the header, query parameter or cookie
+    Platform: # arbitrary name for the security scheme
+      description: |
+        Platform name 
+        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Platform # name of the header, query parameter or cookie
+    Product: # arbitrary name for the security scheme
+      description: |
+        Plex application name 
+        eg: `Laika`, `Plex Media Server`, `Media Link`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Product # name of the header, query parameter or cookie
+    Version: # arbitrary name for the security scheme
+      description: Plex application version number
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Version # name of the header, query parameter or cookie
+
+paths:
+  # Plex Media Server endpoints
+
+  /:
+    $ref: "./paths/root.yaml"
+  /:/prefs:
+    $ref: "./paths/server-preferences.yaml"
+
+  /activities:
+    $ref: "./paths/activities.yaml"
+  /activities/{activityUUID}:
+    $ref: "./paths/activities-cancel.yaml"
+  /butler:
+    $ref: "./paths/butler.yaml"
+  /butler/{taskName}:
+    $ref: "./paths/butler-task.yaml"
+  /clients:
+    $ref: "./paths/clients.yaml"
+
+  /hubs:
+    $ref: "./paths/hubs.yaml"
+  /hubs/search:
+    $ref: "./paths/hubs-search.yaml"
+  /hubs/search/voice:
+    $ref: "./paths/hubs-search-voice.yaml"
+  /hubs/sections/{sectionId}:
+    $ref: "./paths/hubs-section.yaml"
+
+  /identity:
+    $ref: "./paths/identity.yaml"
+
+  /library/hashes:
+    $ref: "./paths/library-hashes.yaml"
+  /library/recentlyAdded:
+    $ref: "./paths/library-recentlyadded.yaml"
+  /library/sections:
+    $ref: "./paths/all-libraries.yaml"
+  /library/sections/{sectionId}:
+    $ref: "./paths/library-details.yaml"
+  /library/sections/{sectionId}/all:
+    $ref: "./paths/library-content-all.yaml"
+  /library/sections/{sectionId}/refresh:
+    $ref: "./paths/library-refresh.yaml"
+  /library/sections/{sectionId}/latest:
+    $ref: "./paths/library-content-latest.yaml"
+  /library/sections/{sectionId}/common:
+    $ref: "./paths/library-content-common.yaml"
+  /library/onDeck:
+    $ref: "./paths/library-ondeck.yaml"
+
+  /log:
+    $ref: "./paths/log.yaml"
+  /log/networked:
+    $ref: "./paths/log-networked.yaml"
+
+  /myplex/account:
+    $ref: "./paths/myplex-account.yaml"
+
+  /photo/:/transcode:
+    $ref: "./paths/photo-transcode.yaml"
+  /playlists:
+    $ref: "./paths/playlists.yaml"
+  /playlists/all:
+    $ref: "./paths/all-playlists.yaml"
+  /playlists/{playlistID}:
+    $ref: "./paths/playlist-id.yaml"
+  /playlists/{playlistID}/items:
+    $ref: "./paths/playlist-contents.yaml"
+  /playlists/upload:
+    $ref: "./paths/playlist-upload.yaml"
+
+  /search:
+    $ref: "./paths/search.yaml"
+  /security/token:
+    $ref: "./paths/security-token.yaml"
+  /security/resources:
+    $ref: "./paths/security-resources.yaml"
+
+  /servers:
+    $ref: "./paths/servers.yaml"
+  /status/sessions:
+    $ref: "./paths/sessions.yaml"
+  /status/sessions/history/all:
+    $ref: "./paths/session-history.yaml"
+
+  /transcode/sessions:
+    $ref: "./paths/transcode-sessions.yaml"
+  /transcode/sessions/{sessionKey}:
+    $ref: "./paths/transcode-sessions-key.yaml"
+
+  /updater/status:
+    $ref: "./paths/updater-status.yaml"
+  /updater/check:
+    $ref: "./paths/updater-check.yaml"
+  /updater/apply:
+    $ref: "./paths/updater-apply.yaml"
+
+tags:
+  - name: Activities
+    description: |
+      Activities are awesome. They provide a way to monitor and control asynchronous operations on the server. In order to receive real-time updates for activities, a client would normally subscribe via either EventSource or Websocket endpoints.
+      Activities are associated with HTTP replies via a special `X-Plex-Activity` header which contains the UUID of the activity.
+      Activities are optional cancellable. If cancellable, they may be cancelled via the `DELETE` endpoint. Other details:
+      - They can contain a `progress` (from 0 to 100) marking the percent completion of the activity.
+      - They must contain an `type` which is used by clients to distinguish the specific activity.
+      - They may contain a `Context` object with attributes which associate the activity with various specific entities (items, libraries, etc.)
+      - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
+  - name: Authentication
+    description: |
+      API Calls regarding authentication for Plex Media Server
+  - name: Butler
+    description: |
+      Butler is the task manager of the Plex Media Server Ecosystem.
+  - name: Server
+    description: |
+      Operations against the Plex Media Server System.
+  - name: Updater
+    description: |
+      This describes the API for searching and applying updates to the Plex Media Server.
+      Updates to the status can be observed via the Event API.
+  - name: Log
+    description: |
+      Submit logs to the Log Handler for Plex Media Server
+  - name: Security
+    description: |
+      API Calls against Security for Plex Media Server
+  - name: Library
+    description: |
+      API Calls interacting with Plex Media Server Libraries
+  - name: Hubs
+    description: |
+      Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
+  - name: Playlists
+    description: |
+      Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). 
+      They can be organized in (optionally nesting) folders.
+      Retrieving a playlist, or its items, will trigger a refresh of its metadata. 
+      This may cause the duration and number of items to change.
+  - name: Search
+    description: |
+      API Calls that perform search operations with Plex Media Server
+  - name: User
+    description: |
+      API Calls that perform operations with Plex Media Server Users

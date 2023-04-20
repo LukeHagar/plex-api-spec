@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "build": "swagger-cli bundle --dereference referenced/plex-api-spec.yaml -t yaml -o plex-api-spec-dereferenced.yaml"
-  }
-}
