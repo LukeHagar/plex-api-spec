@@ -32,15 +32,16 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Build TS SDK
-        id: buildTS
+      - name: Build PMS
+        id: buildPMS
         run: |
           cd sdk-ts
           rm -rf plexjs/pms
           java -jar openapi-generator-cli.jar generate -i ../pms/pms-spec.yaml -g typescript-axios -o plexjs/pms --global-property skipFormModel=false --config sdk-resources/pms-config.yaml
 
       - name: Build TS SDK
-        id: buildTS
+        id: buildPTV
+        if: steps.buildPMS.outcome == 'success'
         run: |
           cd sdk-ts
           rm -rf plexjs/plextv
@@ -48,7 +49,7 @@ jobs:
 
       - name: Run npm install and build Typescript SDK
         id: buildSDK
-        if: steps.buildTS.outcome == 'success'
+        if: steps.buildPTV.outcome == 'success'
         run: |
           cd sdk-ts/plexjs
           npm install
