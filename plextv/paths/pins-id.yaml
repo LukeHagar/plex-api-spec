@@ -1,7 +1,6 @@
 get:
   tags:
     - Plex.tv
-    - Authentication
   summary: Get Access Token
   operationId: getToken
   description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated

@@ -1,7 +1,6 @@
 post:
   tags:
     - Plex.tv
-    - Authentication
   summary: Get a Pin
   operationId: getPin
   description: Retrieve a Pin from Plex.tv for authentication flows

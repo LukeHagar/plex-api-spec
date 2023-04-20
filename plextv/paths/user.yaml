@@ -1,7 +1,6 @@
 get:
   tags:
     - Plex.tv
-    - User
   summary: Get Logged in User
   description: Get Logged in User
   operationId: getUserDetails

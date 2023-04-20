@@ -1,7 +1,6 @@
 get:
   tags:
     - Plex.tv
-    - Devices
   summary: Get Devices
   description: Get Devices
   operationId: getDevices
