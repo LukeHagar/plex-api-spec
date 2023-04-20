@@ -1,0 +1,3449 @@
+openapi: 3.1.0
+info:
+  title: Plex-API
+  summary: A Plex Media Server API Map
+  description: An Open API Spec for interacting with Plex.tv and Plex Servers
+  version: 0.0.3
+  contact:
+    name: Luke Hagar
+    url: 'https://www.LukeHagar.com'
+    email: Lukeslakemail@gmail.com
+  license:
+    name: MIT
+    identifier: MIT
+    url: 'https://opensource.org/licenses/MIT'
+servers:
+  - url: 'http://{Local IP}:{Port}'
+    variables:
+      Local IP:
+        default: 10.10.10.47
+        description: The Local IP Address of your plex server
+      Port:
+        default: '32400'
+        description: The port to access your plex server
+  - url: 'https://{Local IP}:{Port}'
+    variables:
+      Local IP:
+        default: 10.10.10.47
+        description: The Local IP Address of your plex server
+      Port:
+        default: '32400'
+        description: The port to access your plex server
+security:
+  - Token: []
+    ClientIdentifier: []
+    Device: []
+    DeviceName: []
+    Platform: []
+    PlatformVersion: []
+    Product: []
+    Version: []
+components:
+  securitySchemes:
+    Token:
+      description: Plex Authentication Token
+      type: apiKey
+      in: header
+      name: X-Plex-Token
+    ClientIdentifier:
+      description: Plex Authentication Token
+      type: apiKey
+      in: header
+      name: X-Plex-Client-Identifier
+    DeviceName:
+      description: Primary name for the device eg. `Plex Web (Chrome)`
+      type: apiKey
+      in: header
+      name: X-Plex-Device-Name
+    Device:
+      description: |
+        The type of device your application is running on
+        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+      type: apiKey
+      in: header
+      name: X-Plex-Device
+    PlatformVersion:
+      description: |
+        Operating system version
+        eg `4.3.1`, `10.6.7`, `3.2`
+      type: apiKey
+      in: header
+      name: X-Plex-Platform-Version
+    Platform:
+      description: |
+        Platform name 
+        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
+      type: apiKey
+      in: header
+      name: X-Plex-Platform
+    Product:
+      description: |
+        Plex application name 
+        eg: `Laika`, `Plex Media Server`, `Media Link`
+      type: apiKey
+      in: header
+      name: X-Plex-Product
+    Version:
+      description: Plex application version number
+      type: apiKey
+      in: header
+      name: X-Plex-Version
+paths:
+  /:
+    get:
+      tags:
+        - Server
+      summary: Server Capabilities
+      description: Server Capabilities
+      operationId: getServerCapabilities
+      responses:
+        '200':
+          description: The Server Capabilities
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                      allowCameraUpload:
+                        type: boolean
+                      allowChannelAccess:
+                        type: boolean
+                      allowMediaDeletion:
+                        type: boolean
+                      allowSharing:
+                        type: boolean
+                      allowSync:
+                        type: boolean
+                      allowTuners:
+                        type: boolean
+                      backgroundProcessing:
+                        type: boolean
+                      certificate:
+                        type: boolean
+                      companionProxy:
+                        type: boolean
+                      countryCode:
+                        type: string
+                      diagnostics:
+                        type: string
+                      eventStream:
+                        type: boolean
+                      friendlyName:
+                        type: string
+                      hubSearch:
+                        type: boolean
+                      itemClusters:
+                        type: boolean
+                      livetv:
+                        type: number
+                      machineIdentifier:
+                        type: string
+                      mediaProviders:
+                        type: boolean
+                      multiuser:
+                        type: boolean
+                      musicAnalysis:
+                        type: number
+                      myPlex:
+                        type: boolean
+                      myPlexMappingState:
+                        type: string
+                      myPlexSigninState:
+                        type: string
+                      myPlexSubscription:
+                        type: boolean
+                      myPlexUsername:
+                        type: string
+                      offlineTranscode:
+                        type: number
+                      ownerFeatures:
+                        type: string
+                      photoAutoTag:
+                        type: boolean
+                      platform:
+                        type: string
+                      platformVersion:
+                        type: string
+                      pluginHost:
+                        type: boolean
+                      pushNotifications:
+                        type: boolean
+                      readOnlyLibraries:
+                        type: boolean
+                      streamingBrainABRVersion:
+                        type: number
+                      streamingBrainVersion:
+                        type: number
+                      sync:
+                        type: boolean
+                      transcoderActiveVideoSessions:
+                        type: number
+                      transcoderAudio:
+                        type: boolean
+                      transcoderLyrics:
+                        type: boolean
+                      transcoderPhoto:
+                        type: boolean
+                      transcoderSubtitles:
+                        type: boolean
+                      transcoderVideo:
+                        type: boolean
+                      transcoderVideoBitrates:
+                        type: string
+                      transcoderVideoQualities:
+                        type: string
+                      transcoderVideoResolutions:
+                        type: string
+                      updatedAt:
+                        type: number
+                      updater:
+                        type: boolean
+                      version:
+                        type: string
+                      voiceSearch:
+                        type: boolean
+                      Directory:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            count:
+                              type: number
+                            key:
+                              type: string
+                            title:
+                              type: string
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/:/prefs':
+    get:
+      tags:
+        - Server
+      summary: Get Server Preferences
+      description: Get Server Preferences
+      operationId: getServerPreferences
+      responses:
+        '200':
+          description: Server Preferences
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /activities:
+    get:
+      tags:
+        - Activities
+      summary: Get Server Activities
+      description: Get Server Activities
+      operationId: getServerActivities
+      responses:
+        '200':
+          description: The Server Activities
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                      Activity:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            uuid:
+                              type: string
+                            type:
+                              type: string
+                            cancellable:
+                              type: boolean
+                            userID:
+                              type: number
+                            title:
+                              type: string
+                            subtitle:
+                              type: string
+                            progress:
+                              type: number
+                            Context:
+                              type: object
+                              properties:
+                                librarySectionID:
+                                  type: string
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/activities/{activityUUID}':
+    delete:
+      tags:
+        - Activities
+      summary: Cancel Server Activities
+      description: Cancel Server Activities
+      operationId: cancelServerActivities
+      parameters:
+        - name: activityUUID
+          description: The UUID of the activity to cancel.
+          in: path
+          schema:
+            type: string
+          example: 25b71ed5-0f9d-461c-baa7-d404e9e10d3e
+          required: true
+      responses:
+        '200':
+          description: The Server Activity was canceled
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /butler:
+    get:
+      tags:
+        - Butler
+      summary: Get Butler tasks
+      description: Returns a list of butler tasks
+      operationId: getButlerTasks
+      responses:
+        '200':
+          description: All butler tasks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ButlerTasks:
+                    type: object
+                    properties:
+                      ButlerTask:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: BackupDatabase
+                            interval:
+                              type: number
+                              example: 3
+                            scheduleRandomized:
+                              type: boolean
+                            enabled:
+                              type: boolean
+                            title:
+                              type: string
+                              example: Backup Database
+                            description:
+                              type: string
+                              example: Create a backup copy of the server's database in the configured backup directory
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    post:
+      tags:
+        - Butler
+      summary: Start all Butler tasks
+      description: |
+        This endpoint will attempt to start all Butler tasks that are enabled in the settings. Butler tasks normally run automatically during a time window configured on the server's Settings page but can be manually started using this endpoint. Tasks will run with the following criteria:
+        1. Any tasks not scheduled to run on the current day will be skipped.
+        2. If a task is configured to run at a random time during the configured window and we are outside that window, the task will start immediately.
+        3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
+        4. If we are outside the configured window, the task will start immediately.
+      operationId: startAllTasks
+      responses:
+        '200':
+          description: All tasks were started
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    delete:
+      tags:
+        - Butler
+      summary: Stop all Butler tasks
+      description: |
+        This endpoint will stop all currently running tasks and remove any scheduled tasks from the queue.
+      operationId: stopAllTasks
+      responses:
+        '200':
+          description: All tasks were stopped
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/butler/{taskName}':
+    post:
+      tags:
+        - Butler
+      summary: Start a single Butler task
+      description: |
+        This endpoint will attempt to start a single Butler task that is enabled in the settings. Butler tasks normally run automatically during a time window configured on the server's Settings page but can be manually started using this endpoint. Tasks will run with the following criteria:
+        1. Any tasks not scheduled to run on the current day will be skipped.
+        2. If a task is configured to run at a random time during the configured window and we are outside that window, the task will start immediately.
+        3. If a task is configured to run at a random time during the configured window and we are within that window, the task will be scheduled at a random time within the window.
+        4. If we are outside the configured window, the task will start immediately.
+      operationId: startTask
+      parameters:
+        - name: taskName
+          description: the name of the task to be started.
+          in: path
+          schema:
+            type: string
+            enum:
+              - BackupDatabase
+              - BuildGracenoteCollections
+              - CheckForUpdates
+              - CleanOldBundles
+              - CleanOldCacheFiles
+              - DeepMediaAnalysis
+              - GenerateAutoTags
+              - GenerateChapterThumbs
+              - GenerateMediaIndexFiles
+              - OptimizeDatabase
+              - RefreshLibraries
+              - RefreshLocalMedia
+              - RefreshPeriodicMetadata
+              - UpgradeMediaAnalysis
+          required: true
+      responses:
+        '200':
+          description: The task was started successfully
+        '202':
+          description: The task was already running.
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    delete:
+      tags:
+        - Butler
+      summary: Stop a single Butler task
+      description: |
+        This endpoint will stop a currently running task by name, or remove it from the list of scheduled tasks if it exists. See the section above for a list of task names for this endpoint.
+      operationId: stopTask
+      parameters:
+        - name: taskName
+          description: The name of the task to be started.
+          in: path
+          schema:
+            type: string
+            enum:
+              - BackupDatabase
+              - BuildGracenoteCollections
+              - CheckForUpdates
+              - CleanOldBundles
+              - CleanOldCacheFiles
+              - DeepMediaAnalysis
+              - GenerateAutoTags
+              - GenerateChapterThumbs
+              - GenerateMediaIndexFiles
+              - OptimizeDatabase
+              - RefreshLibraries
+              - RefreshLocalMedia
+              - RefreshPeriodicMetadata
+              - UpgradeMediaAnalysis
+          required: true
+      responses:
+        '200':
+          description: The task was stopped
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+        '404':
+          description: The task was not running
+  /clients:
+    get:
+      tags:
+        - Devices
+      summary: Get Available Clients
+      description: Get Available Clients
+      operationId: getAvailableClients
+      responses:
+        '200':
+          description: Available Clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    MediaContainer:
+                      type: object
+                      properties:
+                        size:
+                          type: number
+                          example: 1
+                        Server:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: iPad
+                              host:
+                                type: string
+                                example: 10.10.10.102
+                              address:
+                                type: string
+                                example: 10.10.10.102
+                              port:
+                                type: number
+                                example: 32500
+                              machineIdentifier:
+                                type: string
+                                example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
+                              version:
+                                type: string
+                                example: 8.17
+                              protocol:
+                                type: string
+                                example: plex
+                              product:
+                                type: string
+                                example: Plex for iOS
+                              deviceClass:
+                                type: string
+                                example: tablet
+                              protocolVersion:
+                                type: string
+                                example: 2
+                              protocolCapabilities:
+                                type: string
+                                example: 'playback,playqueues,timeline,provider-playback'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /hubs:
+    get:
+      tags:
+        - Hubs
+      summary: Get Global Hubs
+      description: ''
+      operationId: getGlobalHubs
+      parameters:
+        - name: count
+          description: The number of items to return with each hub.
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: onlyTransient
+          description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: false
+      responses:
+        '200':
+          description: returns global hubs
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /hubs/search:
+    get:
+      tags:
+        - Search
+      summary: Perform a search
+      operationId: performSearch
+      description: |
+        This endpoint performs a search across all library sections, or a single section, and returns matches as hubs, split up by type. It performs spell checking, looks for partial matches, and orders the hubs based on quality of results. In addition, based on matches, it will return other related matches (e.g. for a genre match, it may return movies in that genre, or for an actor match, movies with that actor).
+
+        In the response's items, the following extra attributes are returned to further describe or disambiguate the result:
+
+        - `reason`: The reason for the result, if not because of a direct search term match; can be either:
+          - `section`: There are multiple identical results from different sections.
+          - `originalTitle`: There was a search term match from the original title field (sometimes those can be very different or in a foreign language).
+          - `<hub identifier>`: If the reason for the result is due to a result in another hub, the source hub identifier is returned. For example, if the search is for "dylan" then Bob Dylan may be returned as an artist result, an a few of his albums returned as album results with a reason code of `artist` (the identifier of that particular hub). Or if the search is for "arnold", there might be movie results returned with a reason of `actor`
+        - `reasonTitle`: The string associated with the reason code. For a section reason, it'll be the section name; For a hub identifier, it'll be a string associated with the match (e.g. `Arnold Schwarzenegger` for movies which were returned because the search was for "arnold").
+        - `reasonID`: The ID of the item associated with the reason for the result. This might be a section ID, a tag ID, an artist ID, or a show ID.
+
+        This request is intended to be very fast, and called as the user types.
+      parameters:
+        - name: query
+          description: The query term
+          in: query
+          schema:
+            type: string
+            example:
+              - arnold
+              - dylan
+          required: true
+        - name: sectionId
+          description: 'This gives context to the search, and can result in re-ordering of search result hubs'
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: limit
+          description: The number of items to return per hub
+          in: query
+          schema:
+            type: number
+            example: 5
+            default: 3
+      responses:
+        '200':
+          description: The search results
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /hubs/search/voice:
+    get:
+      tags:
+        - Search
+      summary: Perform a voice search
+      operationId: performVoiceSearch
+      description: |
+        This endpoint performs a search specifically tailored towards voice or other imprecise input which may work badly with the substring and spell-checking heuristics used by the `/hubs/search` endpoint. 
+        It uses a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) heuristic to search titles, and as such is much slower than the other search endpoint. 
+        Whenever possible, clients should limit the search to the appropriate type. 
+        Results, as well as their containing per-type hubs, contain a `distance` attribute which can be used to judge result quality.
+      parameters:
+        - name: query
+          description: The query term
+          in: query
+          schema:
+            type: string
+            example:
+              - dead+poop
+          required: true
+        - name: sectionId
+          description: 'This gives context to the search, and can result in re-ordering of search result hubs'
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: limit
+          description: The number of items to return per hub
+          in: query
+          schema:
+            type: number
+            example: 5
+            default: 3
+          required: false
+      responses:
+        '200':
+          description: The search results
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/hubs/sections/{sectionId}':
+    get:
+      tags:
+        - Hubs
+      summary: Get library specific hubs
+      description: |
+        This endpoint will return a list of library specific hubs
+      operationId: getLibraryHubs
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: count
+          description: The number of items to return with each hub.
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: onlyTransient
+          description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: false
+      responses:
+        '200':
+          description: The hubs specific to the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /identity:
+    get:
+      tags:
+        - Server
+      summary: Get Server Identity
+      description: Get Server Identity
+      operationId: getServerIdentity
+      responses:
+        '200':
+          description: The Transcode Sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 0
+                      claimed:
+                        type: boolean
+                      machineIdentifier:
+                        type: string
+                        example: 96f2fe7a78c9dc1f16a16bedbe90f98149be16b4
+                      version:
+                        type: string
+                        example: 1.31.3.6868-28fc46b27
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /library/hashes:
+    get:
+      tags:
+        - Hashes
+      summary: Get Hash Value
+      description: This resource returns hash values for local files
+      operationId: getFileHash
+      parameters:
+        - name: url
+          description: 'This is the path to the local file, must be prefixed by `file://`'
+          in: query
+          schema:
+            type: string
+            example: 'file://C:\Image.png&type=13'
+          required: true
+        - name: type
+          description: Item type
+          in: query
+          schema:
+            type: number
+          required: false
+      responses:
+        '200':
+          description: The hash of the file
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /library/recentlyAdded:
+    get:
+      tags:
+        - Library
+      summary: Get Recently Added
+      description: |
+        This endpoint will return the recently added content.
+      operationId: getRecentlyAdded
+      responses:
+        '200':
+          description: The recently added content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 50
+                      allowSync:
+                        type: boolean
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      mediaTagPrefix:
+                        type: string
+                        example: /system/bundle/media/flags/
+                      mediaTagVersion:
+                        type: number
+                        example: 1680021154
+                      mixedParents:
+                        type: boolean
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            allowSync:
+                              type: boolean
+                            librarySectionID:
+                              type: number
+                              example: 1
+                            librarySectionTitle:
+                              type: string
+                              example: Movies
+                            librarySectionUUID:
+                              type: string
+                              example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                            ratingKey:
+                              type: string
+                              example: 59398
+                            key:
+                              type: string
+                              example: /library/metadata/59398
+                            guid:
+                              type: string
+                              example: 'plex://movie/5e161a83bea6ac004126e148'
+                            studio:
+                              type: string
+                              example: Marvel Studios
+                            type:
+                              type: string
+                              example: movie
+                            title:
+                              type: string
+                              example: 'Ant-Man and the Wasp: Quantumania'
+                            contentRating:
+                              type: string
+                              example: PG-13
+                            summary:
+                              type: string
+                              example: Scott Lang and Hope Van Dyne along with Hank Pym and Janet Van Dyne explore the Quantum Realm where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible.
+                            rating:
+                              type: number
+                              example: 4.7
+                            audienceRating:
+                              type: number
+                              example: 8.3
+                            year:
+                              type: number
+                              example: 2023
+                            tagline:
+                              type: string
+                              example: Witness the beginning of a new dynasty.
+                            thumb:
+                              type: string
+                              example: /library/metadata/59398/thumb/1681888010
+                            art:
+                              type: string
+                              example: /library/metadata/59398/art/1681888010
+                            duration:
+                              type: number
+                              example: 7474422
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 2023-02-15T00:00:00.000Z
+                            addedAt:
+                              type: number
+                              example: 1681803215
+                            updatedAt:
+                              type: number
+                              example: 1681888010
+                            audienceRatingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.upright'
+                            chapterSource:
+                              type: string
+                              example: media
+                            primaryExtraKey:
+                              type: string
+                              example: /library/metadata/59399
+                            ratingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.rotten'
+                            Media:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                    example: 120345
+                                  duration:
+                                    type: number
+                                    example: 7474422
+                                  bitrate:
+                                    type: number
+                                    example: 3623
+                                  width:
+                                    type: number
+                                    example: 1920
+                                  height:
+                                    type: number
+                                    example: 804
+                                  aspectRatio:
+                                    type: number
+                                    example: 2.35
+                                  audioChannels:
+                                    type: number
+                                    example: 6
+                                  audioCodec:
+                                    type: string
+                                    example: ac3
+                                  videoCodec:
+                                    type: string
+                                    example: h264
+                                  videoResolution:
+                                    type: string
+                                    example: 1080
+                                  container:
+                                    type: string
+                                    example: mp4
+                                  videoFrameRate:
+                                    type: string
+                                    example: 24p
+                                  optimizedForStreaming:
+                                    type: number
+                                    example: 0
+                                  has64bitOffsets:
+                                    type: boolean
+                                  videoProfile:
+                                    type: string
+                                    example: high
+                                  Part:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                          example: 120353
+                                        key:
+                                          type: string
+                                          example: /library/parts/120353/1681803203/file.mp4
+                                        duration:
+                                          type: number
+                                          example: 7474422
+                                        file:
+                                          type: string
+                                          example: /movies/Ant-Man and the Wasp Quantumania (2023)/Ant-Man.and.the.Wasp.Quantumania.2023.1080p.mp4
+                                        size:
+                                          type: number
+                                          example: 3395307162
+                                        container:
+                                          type: string
+                                          example: mp4
+                                        has64bitOffsets:
+                                          type: boolean
+                                        hasThumbnail:
+                                          type: string
+                                          example: 1
+                                        optimizedForStreaming:
+                                          type: boolean
+                                        videoProfile:
+                                          type: string
+                                          example: high
+                            Genre:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Comedy
+                            Director:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Peyton Reed
+                            Writer:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Jeff Loveness
+                            Country:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: United States of America
+                            Role:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Paul Rudd
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /library/sections:
+    get:
+      tags:
+        - Library
+      summary: Get All Libraries
+      operationId: getLibraries
+      description: |
+        A library section (commonly referred to as just a library) is a collection of media. 
+        Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
+        For example, a music library has an artist > albums > tracks structure, whereas a movie library is flat.
+
+        Libraries have features beyond just being a collection of media; for starters, they include information about supported types, filters and sorts. 
+        This allows a client to provide a rich interface around the media (e.g. allow sorting movies by release year).
+      responses:
+        '200':
+          description: The libraries available on the Server
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/library/sections/{sectionId}':
+    get:
+      tags:
+        - Library
+      summary: Get Library Details
+      description: |
+        Returns details for the library. This can be thought of as an interstitial endpoint because it contains information about the library, rather than content itself. These details are:
+
+        - A list of `Directory` objects: These used to be used by clients to build a menuing system. There are four flavors of directory found here:
+          - Primary: (e.g. all, On Deck) These are still used in some clients to provide "shortcuts" to subsets of media. However, with the exception of On Deck, all of them can be created by media queries, and the desire is to allow these to be customized by users.
+          - Secondary: These are marked with `secondary="1"` and were used by old clients to provide nested menus allowing for primative (but structured) navigation.
+          - Special: There is a By Folder entry which allows browsing the media by the underlying filesystem structure, and there's a completely obsolete entry marked `search="1"` which used to be used to allow clients to build search dialogs on the fly.
+        - A list of `Type` objects: These represent the types of things found in this library, and for each one, a list of `Filter` and `Sort` objects. These can be used to build rich controls around a grid of media to allow filtering and organizing. Note that these filters and sorts are optional, and without them, the client won't render any filtering controls. The `Type` object contains:
+          - `key`: This provides the root endpoint returning the actual media list for the type.
+          - `type`: This is the metadata type for the type (if a standard Plex type).
+          - `title`: The title for for the content of this type (e.g. "Movies").
+        - Each `Filter` object contains a description of the filter. Note that it is not an exhaustive list of the full media query language, but an inportant subset useful for top-level API.
+          - `filter`: This represents the filter name used for the filter, which can be used to construct complex media queries with.
+          - `filterType`: This is either `string`, `integer`, or `boolean`, and describes the type of values used for the filter.
+          - `key`: This provides the endpoint where the possible range of values for the filter can be retrieved (e.g. for a "Genre" filter, it returns a list of all the genres in the library). This will include a `type` argument that matches the metadata type of the Type element.
+          - `title`: The title for the filter.
+        - Each `Sort` object contains a description of the sort field.
+          - `defaultDirection`: Can be either `asc` or `desc`, and specifies the default direction for the sort field (e.g. titles default to alphabetically ascending).
+          - `descKey` and `key`: Contains the parameters passed to the `sort=...` media query for each direction of the sort.
+          - `title`: The title of the field.
+      operationId: getLibraryDetails
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: string
+            example: 1000
+          required: true
+        - name: includeDetails
+          description: |
+            Whether or not to include details for a section (types, filters, and sorts). 
+            Only exists for backwards compatibility, media providers other than the server libraries have it on always.
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+            default: 0
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/library/sections/{sectionId}/all':
+    get:
+      tags:
+        - Library
+      summary: Get Library Items
+      description: |
+        This endpoint will return a list of library items filtered by the filter and type provided
+      operationId: getLibraryItems
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: item type
+          in: query
+          schema:
+            type: number
+          required: false
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/library/sections/{sectionId}/refresh':
+    get:
+      tags:
+        - Library
+      summary: Refresh Library
+      description: |
+        This endpoint Refreshes the library.
+      operationId: refreshLibrary
+      parameters:
+        - name: sectionId
+          description: the Id of the library to refresh
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The library is refreshing
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/library/sections/{sectionId}/latest':
+    get:
+      tags:
+        - Library
+      summary: Get Latest Library Items
+      description: |
+        This endpoint will return a list of the latest library items filtered by the filter and type provided
+      operationId: getLatestLibraryItems
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: item type
+          in: query
+          schema:
+            type: number
+          required: true
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/library/sections/{sectionId}/common':
+    get:
+      tags:
+        - Library
+      summary: Get Common Library Items
+      description: |
+        Represents a "Common" item. It contains only the common attributes of the items selected by the provided filter
+      operationId: getCommonLibraryItems
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: item type
+          in: query
+          schema:
+            type: number
+          required: true
+        - name: filter
+          description: the filter parameter
+          in: query
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: The details of the library
+        '400':
+          description: In response to missing the type parameter.
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+        '404':
+          description: In response to a non-existant sectionId.
+  /library/onDeck:
+    get:
+      tags:
+        - Library
+      summary: Get On Deck
+      description: |
+        This endpoint will return the on deck content.
+      operationId: getOnDeck
+      responses:
+        '200':
+          description: The on Deck content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 16
+                      allowSync:
+                        type: boolean
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      mediaTagPrefix:
+                        type: string
+                        example: /system/bundle/media/flags/
+                      mediaTagVersion:
+                        type: number
+                        example: 1680021154
+                      mixedParents:
+                        type: boolean
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            allowSync:
+                              type: boolean
+                            librarySectionID:
+                              type: number
+                              example: 2
+                            librarySectionTitle:
+                              type: string
+                              example: TV Shows
+                            librarySectionUUID:
+                              type: string
+                              example: 4bb2521c-8ba9-459b-aaee-8ab8bc35eabd
+                            ratingKey:
+                              type: string
+                              example: 49564
+                            key:
+                              type: string
+                              example: /library/metadata/49564
+                            parentRatingKey:
+                              type: string
+                              example: 49557
+                            grandparentRatingKey:
+                              type: string
+                              example: 49556
+                            guid:
+                              type: string
+                              example: 'plex://episode/5ea7d7402e7ab10042e74d4f'
+                            parentGuid:
+                              type: string
+                              example: 'plex://season/602e754d67f4c8002ce54b3d'
+                            grandparentGuid:
+                              type: string
+                              example: 'plex://show/5d9c090e705e7a001e6e94d8'
+                            type:
+                              type: string
+                              example: episode
+                            title:
+                              type: string
+                              example: Circus
+                            grandparentKey:
+                              type: string
+                              example: /library/metadata/49556
+                            parentKey:
+                              type: string
+                              example: /library/metadata/49557
+                            librarySectionKey:
+                              type: string
+                              example: /library/sections/2
+                            grandparentTitle:
+                              type: string
+                              example: Bluey (2018)
+                            parentTitle:
+                              type: string
+                              example: Season 2
+                            contentRating:
+                              type: string
+                              example: TV-Y
+                            summary:
+                              type: string
+                              example: Bluey is the ringmaster in a game of circus with her friends but Hercules wants to play his motorcycle game instead. Luckily Bluey has a solution to keep everyone happy.
+                            index:
+                              type: number
+                              example: 33
+                            parentIndex:
+                              type: number
+                              example: 2
+                            lastViewedAt:
+                              type: number
+                              example: 1681908352
+                            year:
+                              type: number
+                              example: 2018
+                            thumb:
+                              type: string
+                              example: /library/metadata/49564/thumb/1654258204
+                            art:
+                              type: string
+                              example: /library/metadata/49556/art/1680939546
+                            parentThumb:
+                              type: string
+                              example: /library/metadata/49557/thumb/1654258204
+                            grandparentThumb:
+                              type: string
+                              example: /library/metadata/49556/thumb/1680939546
+                            grandparentArt:
+                              type: string
+                              example: /library/metadata/49556/art/1680939546
+                            grandparentTheme:
+                              type: string
+                              example: /library/metadata/49556/theme/1680939546
+                            duration:
+                              type: number
+                              example: 420080
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 2020-10-31T00:00:00.000Z
+                            addedAt:
+                              type: number
+                              example: 1654258196
+                            updatedAt:
+                              type: number
+                              example: 1654258204
+                            Media:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                    example: 80994
+                                  duration:
+                                    type: number
+                                    example: 420080
+                                  bitrate:
+                                    type: number
+                                    example: 1046
+                                  width:
+                                    type: number
+                                    example: 1920
+                                  height:
+                                    type: number
+                                    example: 1080
+                                  aspectRatio:
+                                    type: number
+                                    example: 1.78
+                                  audioChannels:
+                                    type: number
+                                    example: 2
+                                  audioCodec:
+                                    type: string
+                                    example: aac
+                                  videoCodec:
+                                    type: string
+                                    example: hevc
+                                  videoResolution:
+                                    type: string
+                                    example: 1080
+                                  container:
+                                    type: string
+                                    example: mkv
+                                  videoFrameRate:
+                                    type: string
+                                    example: PAL
+                                  audioProfile:
+                                    type: string
+                                    example: lc
+                                  videoProfile:
+                                    type: string
+                                    example: main
+                                  Part:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                          example: 80994
+                                        key:
+                                          type: string
+                                          example: /library/parts/80994/1655007810/file.mkv
+                                        duration:
+                                          type: number
+                                          example: 420080
+                                        file:
+                                          type: string
+                                          example: /tvshows/Bluey (2018)/Bluey (2018) - S02E33 - Circus.mkv
+                                        size:
+                                          type: number
+                                          example: 55148931
+                                        audioProfile:
+                                          type: string
+                                          example: lc
+                                        container:
+                                          type: string
+                                          example: mkv
+                                        videoProfile:
+                                          type: string
+                                          example: main
+                                        Stream:
+                                          type: array
+                                          items:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: number
+                                                example: 211234
+                                              streamType:
+                                                type: number
+                                                example: 1
+                                              default:
+                                                type: boolean
+                                              codec:
+                                                type: string
+                                                example: hevc
+                                              index:
+                                                type: number
+                                                example: 0
+                                              bitrate:
+                                                type: number
+                                                example: 918
+                                              language:
+                                                type: string
+                                                example: English
+                                              languageTag:
+                                                type: string
+                                                example: en
+                                              languageCode:
+                                                type: string
+                                                example: eng
+                                              bitDepth:
+                                                type: number
+                                                example: 8
+                                              chromaLocation:
+                                                type: string
+                                                example: left
+                                              chromaSubsampling:
+                                                type: string
+                                                example: 14520
+                                              codedHeight:
+                                                type: number
+                                                example: 1080
+                                              codedWidth:
+                                                type: number
+                                                example: 1920
+                                              colorRange:
+                                                type: string
+                                                example: tv
+                                              frameRate:
+                                                type: number
+                                                example: 25
+                                              height:
+                                                type: number
+                                                example: 1080
+                                              level:
+                                                type: number
+                                                example: 120
+                                              profile:
+                                                type: string
+                                                example: main
+                                              refFrames:
+                                                type: number
+                                                example: 1
+                                              width:
+                                                type: number
+                                                example: 1920
+                                              displayTitle:
+                                                type: string
+                                                example: 1080p (HEVC Main)
+                                              extendedDisplayTitle:
+                                                type: string
+                                                example: 1080p (HEVC Main)
+                            Guid:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                    example: 'imdb://tt13303712'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /log:
+    get:
+      tags:
+        - Log
+      summary: Logging a single line message.
+      description: |
+        This endpoint will write a single-line log message, including a level and source to the main Plex Media Server log.
+      operationId: logLine
+      parameters:
+        - name: level
+          description: |
+            An integer log level to write to the PMS log with.  
+            0: Error  
+            1: Warning  
+            2: Info 
+            3: Debug  
+            4: Verbose
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4
+          required: true
+        - name: message
+          description: The text of the message to write to the log.
+          in: query
+          schema:
+            type: string
+            example: ''
+          required: true
+        - name: source
+          description: a string indicating the source of the message.
+          in: query
+          schema:
+            type: string
+            example: ''
+          required: true
+      responses:
+        '200':
+          description: Log Line submitted successfully
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    post:
+      tags:
+        - Log
+      summary: Logging a multi-line message
+      description: |
+        This endpoint will write multiple lines to the main Plex Media Server log in a single request. It takes a set of query strings as would normally sent to the above GET endpoint as a linefeed-separated block of POST data. The parameters for each query string match as above.
+      operationId: logMultiLine
+      responses:
+        '200':
+          description: Multi-Line Log Message Posted successfully
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /log/networked:
+    get:
+      tags:
+        - Log
+      summary: Enabling Papertrail
+      description: |
+        This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail networked logging site for a period of time.
+      operationId: enablePaperTrail
+      responses:
+        '200':
+          description: Papertrail enabled successfully
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+        '403':
+          description: the user was not signed in
+  /myplex/account:
+    get:
+      tags:
+        - MyPlex
+      summary: Get MyPlex Account
+      description: Returns MyPlex Account Information
+      operationId: getMyPlexAccount
+      responses:
+        '200':
+          description: MyPlex Account
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MyPlex:
+                    type: object
+                    properties:
+                      authToken:
+                        type: string
+                        example: Z5v-PrNASDFpsaCi3CPK7
+                      username:
+                        type: string
+                        example: example.email@mail.com
+                      mappingState:
+                        type: string
+                        example: mapped
+                      mappingError:
+                        type: string
+                        example: null
+                      signInState:
+                        type: string
+                        example: ok
+                      publicAddress:
+                        type: string
+                        example: 140.20.68.140
+                      publicPort:
+                        type: number
+                        example: 32400
+                      privateAddress:
+                        type: string
+                        example: 10.10.10.47
+                      privatePort:
+                        type: number
+                        example: 32400
+                      subscriptionFeatures:
+                        type: string
+                        example: 'federated-auth,hardware_transcoding,home,hwtranscode,item_clusters,kevin-bacon,livetv,loudness,lyrics,music-analysis,music_videos,pass,photo_autotags,photos-v5,photosV6-edit,photosV6-tv-albums,premium_music_metadata,radio,server-manager,session_bandwidth_restrictions,session_kick,shared-radio,sync,trailers,tuner-sharing,type-first,unsupportedtuners,webhooks'
+                      subscriptionActive:
+                        type: boolean
+                      subscriptionState:
+                        type: string
+                        example: Active
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/photo/:/transcode':
+    get:
+      tags:
+        - Photos
+      summary: Get a Resized Photo
+      description: |
+        Plex's Photo transcoder is used throughout the service to serve images at specified sizes.
+      operationId: getResizedPhoto
+      parameters:
+        - name: width
+          description: The width for the resized photo
+          in: query
+          schema:
+            type: number
+            example: 110
+          required: true
+        - name: height
+          description: The height for the resized photo
+          in: query
+          schema:
+            type: number
+            example: 165
+          required: true
+        - name: opacity
+          description: The opacity for the resized photo
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 100
+          required: true
+        - name: blur
+          description: The width for the resized photo
+          in: query
+          schema:
+            type: number
+            example:
+              - 0
+              - 20
+              - 4000
+          required: true
+        - name: minSize
+          description: images are always scaled proportionally. A value of '1' in minSize will make the smaller native dimension the dimension resized against.
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: true
+        - name: upscale
+          description: allow images to be resized beyond native dimensions.
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: true
+        - name: url
+          description: path to image within Plex
+          in: query
+          schema:
+            type: string
+            example: /library/metadata/49564/thumb/1654258204
+          required: true
+      responses:
+        '200':
+          description: Resized Image
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /playlists:
+    post:
+      tags:
+        - Playlists
+      summary: Create a Playlist
+      description: |
+        Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
+        - `uri` - The content URI for what we're playing (e.g. `library://...`).
+        - `playQueueID` - To create a playlist from an existing play queue.
+      operationId: createPlaylist
+      parameters:
+        - name: title
+          description: name of the playlist
+          in: query
+          schema:
+            type: string
+          required: true
+        - name: type
+          description: type of playlist to create
+          in: query
+          schema:
+            type: string
+            enum:
+              - audio
+              - video
+              - photo
+          required: true
+        - name: smart
+          description: whether the playlist is smart or not
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: true
+        - name: uri
+          description: the content URI for the playlist
+          in: query
+          schema:
+            type: string
+          required: false
+        - name: playQueueID
+          description: the play queue to copy to a playlist
+          in: query
+          schema:
+            type: number
+          required: false
+      responses:
+        '200':
+          description: returns all playlists
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /playlists/all:
+    get:
+      tags:
+        - Playlists
+      summary: Get All Playlists
+      description: ''
+      operationId: getPlaylists
+      parameters:
+        - name: playlistType
+          description: limit to a type of playlist.
+          in: query
+          schema:
+            type: string
+            enum:
+              - audio
+              - video
+              - photo
+          required: false
+        - name: smart
+          description: type of playlists to return (default is all).
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: false
+      responses:
+        '200':
+          description: returns all playlists
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/playlists/{playlistID}':
+    get:
+      tags:
+        - Playlists
+      summary: Retrieve Playlist
+      description: |
+        Gets detailed metadata for a playlist. A playlist for many purposes (rating, editing metadata, tagging), can be treated like a regular metadata item:
+        Smart playlist details contain the `content` attribute. This is the content URI for the generator. This can then be parsed by a client to provide smart playlist editing.
+      operationId: getPlaylist
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    delete:
+      tags:
+        - Playlists
+      summary: Deletes a Playlist
+      description: |
+        This endpoint will delete a playlist
+      operationId: deletePlaylist
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist is deleted
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    put:
+      tags:
+        - Playlists
+      summary: Update a Playlist
+      description: |
+        From PMS version 1.9.1 clients can also edit playlist metadata using this endpoint as they would via `PUT /library/metadata/{playlistID}`
+      operationId: updatePlaylist
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist is deleted
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/playlists/{playlistID}/items':
+    get:
+      tags:
+        - Playlists
+      summary: Retrieve Playlist Contents
+      description: |
+        Gets the contents of a playlist. Should be paged by clients via standard mechanisms. 
+        By default leaves are returned (e.g. episodes, movies). In order to return other types you can use the `type` parameter. 
+        For example, you could use this to display a list of recently added albums vis a smart playlist. 
+        Note that for dumb playlists, items have a `playlistItemID` attribute which is used for deleting or moving items.
+      operationId: getPlaylistContents
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: type
+          description: the metadata type of the item to return
+          in: query
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist contents
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    delete:
+      tags:
+        - Playlists
+      summary: Delete Playlist Contents
+      description: |
+        Clears a playlist, only works with dumb playlists. Returns the playlist.
+      operationId: clearPlaylistContents
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The playlist contents are cleared
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    put:
+      tags:
+        - Playlists
+      summary: Adding to a Playlist
+      description: |
+        Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. 
+        With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
+      operationId: addPlaylistContents
+      parameters:
+        - name: playlistID
+          description: the ID of the playlist
+          in: path
+          schema:
+            type: number
+          required: true
+        - name: uri
+          description: the content URI for the playlist
+          in: query
+          schema:
+            type: string
+            example: 'library://..'
+          required: true
+        - name: playQueueID
+          description: the play queue to add to a playlist
+          in: query
+          schema:
+            type: number
+            example: 123
+          required: true
+      responses:
+        '200':
+          description: Playlist Updated
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /playlists/upload:
+    post:
+      tags:
+        - Playlists
+      summary: Upload Playlist
+      description: |
+        Imports m3u playlists by passing a path on the server to scan for m3u-formatted playlist files, or a path to a single playlist file.
+      operationId: uploadPlaylist
+      parameters:
+        - name: path
+          description: |
+            absolute path to a directory on the server where m3u files are stored, or the absolute path to a playlist file on the server. 
+            If the `path` argument is a directory, that path will be scanned for playlist files to be processed. 
+            Each file in that directory creates a separate playlist, with a name based on the filename of the file that created it. 
+            The GUID of each playlist is based on the filename. 
+            If the `path` argument is a file, that file will be used to create a new playlist, with the name based on the filename of the file that created it. 
+            The GUID of each playlist is based on the filename.
+          in: query
+          schema:
+            type: string
+            example: /home/barkley/playlist.m3u
+          required: true
+        - name: force
+          description: |
+            force overwriting of duplicate playlists. By default, a playlist file uploaded with the same path will overwrite the existing playlist. 
+            The `force` argument is used to disable overwriting. If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
+          in: query
+          schema:
+            type: number
+            enum:
+              - 0
+              - 1
+          required: true
+      responses:
+        '200':
+          description: The playlist is uploaded
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /search:
+    get:
+      tags:
+        - Search
+      summary: Get Search Results
+      description: This will search the database for the string provided.
+      operationId: getSearchResults
+      parameters:
+        - name: query
+          description: The search query string to use
+          in: query
+          schema:
+            type: string
+            example: 110
+          required: true
+      responses:
+        '200':
+          description: Search Results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 26
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      mediaTagPrefix:
+                        type: string
+                        example: /system/bundle/media/flags/
+                      mediaTagVersion:
+                        type: number
+                        example: 1680021154
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            allowSync:
+                              type: boolean
+                            librarySectionID:
+                              type: number
+                              example: 1
+                            librarySectionTitle:
+                              type: string
+                              example: Movies
+                            librarySectionUUID:
+                              type: string
+                              example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                            personal:
+                              type: boolean
+                            sourceTitle:
+                              type: string
+                              example: Hera
+                            ratingKey:
+                              type: string
+                              example: 10398
+                            key:
+                              type: string
+                              example: /library/metadata/10398
+                            guid:
+                              type: string
+                              example: 'plex://movie/5d7768284de0ee001fcc8f52'
+                            studio:
+                              type: string
+                              example: Paramount
+                            type:
+                              type: string
+                              example: movie
+                            title:
+                              type: string
+                              example: 'Mission: Impossible'
+                            contentRating:
+                              type: string
+                              example: PG-13
+                            summary:
+                              type: string
+                              example: When Ethan Hunt the leader of a crack espionage team whose perilous operation has gone awry with no explanation discovers that a mole has penetrated the CIA he's surprised to learn that he's the No. 1 suspect. To clear his name Hunt now must ferret out the real double agent and in the process even the score.
+                            rating:
+                              type: number
+                              example: 6.6
+                            audienceRating:
+                              type: number
+                              example: 7.1
+                            year:
+                              type: number
+                              example: 1996
+                            tagline:
+                              type: string
+                              example: Expect the impossible.
+                            thumb:
+                              type: string
+                              example: /library/metadata/10398/thumb/1679505055
+                            art:
+                              type: string
+                              example: /library/metadata/10398/art/1679505055
+                            duration:
+                              type: number
+                              example: 6612628
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 1996-05-22T00:00:00.000Z
+                            addedAt:
+                              type: number
+                              example: 1589234571
+                            updatedAt:
+                              type: number
+                              example: 1679505055
+                            audienceRatingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.upright'
+                            chapterSource:
+                              type: string
+                              example: media
+                            primaryExtraKey:
+                              type: string
+                              example: /library/metadata/10501
+                            ratingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.ripe'
+                            Media:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                    example: 26610
+                                  duration:
+                                    type: number
+                                    example: 6612628
+                                  bitrate:
+                                    type: number
+                                    example: 4751
+                                  width:
+                                    type: number
+                                    example: 1916
+                                  height:
+                                    type: number
+                                    example: 796
+                                  aspectRatio:
+                                    type: number
+                                    example: 2.35
+                                  audioChannels:
+                                    type: number
+                                    example: 6
+                                  audioCodec:
+                                    type: string
+                                    example: aac
+                                  videoCodec:
+                                    type: string
+                                    example: hevc
+                                  videoResolution:
+                                    type: string
+                                    example: 1080
+                                  container:
+                                    type: string
+                                    example: mkv
+                                  videoFrameRate:
+                                    type: string
+                                    example: 24p
+                                  audioProfile:
+                                    type: string
+                                    example: lc
+                                  videoProfile:
+                                    type: string
+                                    example: main 10
+                                  Part:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                          example: 26610
+                                        key:
+                                          type: string
+                                          example: /library/parts/26610/1589234571/file.mkv
+                                        duration:
+                                          type: number
+                                          example: 6612628
+                                        file:
+                                          type: string
+                                          example: /movies/Mission Impossible (1996)/Mission Impossible (1996) Bluray-1080p.mkv
+                                        size:
+                                          type: number
+                                          example: 3926903851
+                                        audioProfile:
+                                          type: string
+                                          example: lc
+                                        container:
+                                          type: string
+                                          example: mkv
+                                        videoProfile:
+                                          type: string
+                                          example: main 10
+                            Genre:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Action
+                            Director:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Brian De Palma
+                            Writer:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: David Koepp
+                            Country:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: United States of America
+                            Role:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Tom Cruise
+                      Provider:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                              example: /system/search
+                            title:
+                              type: string
+                              example: Local Network
+                            type:
+                              type: string
+                              example: mixed
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /security/token:
+    get:
+      tags:
+        - Security
+      summary: Get a Transient Token.
+      description: |
+        This endpoint provides the caller with a temporary token with the same access level as the caller's token. These tokens are valid for up to 48 hours and are destroyed if the server instance is restarted.
+      operationId: getTransientToken
+      parameters:
+        - name: type
+          description: '`delegation` - This is the only supported `type` parameter.'
+          in: query
+          schema:
+            type: string
+            enum:
+              - delegation
+          required: true
+        - name: scope
+          description: '`all` - This is the only supported `scope` parameter.'
+          in: query
+          schema:
+            type: string
+            enum:
+              - all
+          required: true
+      responses:
+        '200':
+          description: A Transient Token
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /security/resources:
+    get:
+      tags:
+        - Security
+      summary: Get Source Connection Information
+      description: |
+        If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.
+        Note: requires Plex Media Server >= 1.15.4.
+      operationId: getSourceConnectionInformation
+      parameters:
+        - name: source
+          description: The source identifier with an included prefix.
+          in: query
+          schema:
+            type: string
+            example:
+              - 'server://client-identifier'
+              - 'provider://provider-identifier'
+          required: true
+      responses:
+        '200':
+          description: Source Connection Information
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /servers:
+    get:
+      tags:
+        - Server
+      summary: Get Server List
+      description: Get Server List
+      operationId: getServerList
+      responses:
+        '200':
+          description: List of Servers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 1
+                      Server:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: Hera
+                            host:
+                              type: string
+                              example: 10.10.10.47
+                            address:
+                              type: string
+                              example: 10.10.10.47
+                            port:
+                              type: number
+                              example: 32400
+                            machineIdentifier:
+                              type: string
+                              example: 96f2fe7a78c9dc1f16a16bedbe90f98149be16b4
+                            version:
+                              type: string
+                              example: 1.31.3.6868-28fc46b27
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /status/sessions:
+    get:
+      tags:
+        - Sessions
+      summary: Get Active Sessions
+      description: This will retrieve the "Now Playing" Information of the PMS.
+      operationId: getSessions
+      responses:
+        '200':
+          description: List of Active Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /status/sessions/history/all:
+    get:
+      tags:
+        - Sessions
+      summary: Get Session History
+      description: This will Retrieve a listing of all history views.
+      operationId: getSessionHistory
+      responses:
+        '200':
+          description: List of Plex Sessions
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /transcode/sessions:
+    get:
+      tags:
+        - Sessions
+      summary: Get Transcode Sessions
+      description: Get Transcode Sessions
+      operationId: getTranscodeSessions
+      responses:
+        '200':
+          description: The Transcode Sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 1
+                      TranscodeSession:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                              example: zz7llzqlx8w9vnrsbnwhbmep
+                            throttled:
+                              type: boolean
+                            complete:
+                              type: boolean
+                            progress:
+                              type: number
+                              example: 0.4000000059604645
+                            size:
+                              type: number
+                              example: -22
+                            speed:
+                              type: number
+                              example: 22.399999618530273
+                            error:
+                              type: boolean
+                            duration:
+                              type: number
+                              example: 2561768
+                            context:
+                              type: string
+                              example: streaming
+                            sourceVideoCodec:
+                              type: string
+                              example: h264
+                            sourceAudioCodec:
+                              type: string
+                              example: ac3
+                            videoDecision:
+                              type: string
+                              example: transcode
+                            audioDecision:
+                              type: string
+                              example: transcode
+                            protocol:
+                              type: string
+                              example: http
+                            container:
+                              type: string
+                              example: mkv
+                            videoCodec:
+                              type: string
+                              example: h264
+                            audioCodec:
+                              type: string
+                              example: opus
+                            audioChannels:
+                              type: number
+                              example: 2
+                            transcodeHwRequested:
+                              type: boolean
+                            timeStamp:
+                              type: number
+                              example: 1681869535.7764285
+                            maxOffsetAvailable:
+                              type: number
+                              example: 861.778
+                            minOffsetAvailable:
+                              type: number
+                              example: 0
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/transcode/sessions/{sessionKey}':
+    delete:
+      tags:
+        - Sessions
+      summary: Stop a Transcode Session
+      description: Stop a Transcode Session
+      parameters:
+        - name: sessionKey
+          description: the Key of the transcode session to stop
+          in: path
+          schema:
+            type: string
+            example: zz7llzqlx8w9vnrsbnwhbmep
+          required: true
+      operationId: stopTranscodeSession
+      responses:
+        '200':
+          description: The Transcode Session ended
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /updater/status:
+    get:
+      tags:
+        - Updater
+      summary: Querying status of updates
+      description: Querying status of updates
+      operationId: getUpdateStatus
+      responses:
+        '200':
+          description: The Server Updates
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /updater/check:
+    put:
+      tags:
+        - Updater
+      summary: Checking for updates
+      description: Checking for updates
+      operationId: checkForUpdates
+      parameters:
+        - name: download
+          description: Indicate that you want to start download any updates found.
+          required: false
+          in: query
+          schema:
+            enum:
+              - 0
+              - 1
+          example: 1
+      responses:
+        '200':
+          description: ''
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /updater/apply:
+    put:
+      tags:
+        - Updater
+      summary: Apply Updates
+      description: |
+        Note that these two parameters are effectively mutually exclusive. The `tonight` parameter takes precedence and `skip` will be ignored if `tonight` is also passed
+      operationId: applyUpdates
+      parameters:
+        - name: tonight
+          description: Indicate that you want the update to run during the next Butler execution. Omitting this or setting it to false indicates that the update should install
+          required: false
+          in: query
+          schema:
+            enum:
+              - 0
+              - 1
+          example: 1
+        - name: skip
+          description: Indicate that the latest version should be marked as skipped. The <Release> entry for this version will have the `state` set to `skipped`.
+          required: false
+          in: query
+          schema:
+            enum:
+              - 0
+              - 1
+          example: 1
+      responses:
+        '200':
+          description: If the update process started correctly
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+        '500':
+          description: If the update process failed to start
+tags:
+  - name: Activities
+    description: |
+      Activities are awesome. They provide a way to monitor and control asynchronous operations on the server. In order to receive real-time updates for activities, a client would normally subscribe via either EventSource or Websocket endpoints.
+      Activities are associated with HTTP replies via a special `X-Plex-Activity` header which contains the UUID of the activity.
+      Activities are optional cancellable. If cancellable, they may be cancelled via the `DELETE` endpoint. Other details:
+      - They can contain a `progress` (from 0 to 100) marking the percent completion of the activity.
+      - They must contain an `type` which is used by clients to distinguish the specific activity.
+      - They may contain a `Context` object with attributes which associate the activity with various specific entities (items, libraries, etc.)
+      - The may contain a `Response` object which attributes which represent the result of the asynchronous operation.
+  - name: Authentication
+    description: |
+      API Calls regarding authentication for Plex Media Server
+  - name: Butler
+    description: |
+      Butler is the task manager of the Plex Media Server Ecosystem.
+  - name: Server
+    description: |
+      Operations against the Plex Media Server System.
+  - name: Updater
+    description: |
+      This describes the API for searching and applying updates to the Plex Media Server.
+      Updates to the status can be observed via the Event API.
+  - name: Log
+    description: |
+      Submit logs to the Log Handler for Plex Media Server
+  - name: Security
+    description: |
+      API Calls against Security for Plex Media Server
+  - name: Library
+    description: |
+      API Calls interacting with Plex Media Server Libraries
+  - name: Hubs
+    description: |
+      Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
+  - name: Playlists
+    description: |
+      Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). 
+      They can be organized in (optionally nesting) folders.
+      Retrieving a playlist, or its items, will trigger a refresh of its metadata. 
+      This may cause the duration and number of items to change.
+  - name: Search
+    description: |
+      API Calls that perform search operations with Plex Media Server
+  - name: User
+    description: |
+      API Calls that perform operations with Plex Media Server Users
