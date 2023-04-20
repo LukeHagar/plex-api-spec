@@ -238,7 +238,6 @@ paths:
     post:
       tags:
         - Plex.tv
-        - Authentication
       summary: Get a Pin
       operationId: getPin
       description: Retrieve a Pin from Plex.tv for authentication flows
@@ -358,7 +357,6 @@ paths:
     get:
       tags:
         - Plex.tv
-        - Authentication
       summary: Get Access Token
       operationId: getToken
       description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
@@ -399,7 +397,6 @@ paths:
     get:
       tags:
         - Plex.tv
-        - Devices
       summary: Get Devices
       description: Get Devices
       operationId: getDevices
@@ -548,7 +545,6 @@ paths:
     get:
       tags:
         - Plex.tv
-        - User
       summary: Get Logged in User
       description: Get Logged in User
       operationId: getUserDetails
