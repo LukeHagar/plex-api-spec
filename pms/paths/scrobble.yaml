@@ -12,3 +12,8 @@ get:
         type: string
         example: 59398
       required: true
+  responses:
+    200:
+      description: Media is marked Played
+    401:
+      $ref: ..\..\responses\401.yaml
