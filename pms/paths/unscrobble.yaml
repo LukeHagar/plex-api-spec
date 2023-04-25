@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Media
+  summary: Mark Media Unplayed
+  description: This will mark the provided media key as Unplayed.
+  operationId: markUnplayed
+  parameters:
+    - name: key
+      description: The media key to mark as Unplayed
+      in: query
+      schema:
+        type: string
+        example: 59398
+      required: true

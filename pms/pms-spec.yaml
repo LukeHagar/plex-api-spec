@@ -99,6 +99,10 @@ paths:
     $ref: "./paths/root.yaml"
   /:/prefs:
     $ref: "./paths/server-preferences.yaml"
+  /:/scrobble:
+    $ref: "./paths/scrobble.yaml"
+  /:/unscrobble:
+    $ref: "./paths/unscrobble.yaml"
 
   /activities:
     $ref: "./paths/activities.yaml"
