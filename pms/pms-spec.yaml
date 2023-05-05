@@ -114,6 +114,8 @@ paths:
     $ref: "./paths/butler-task.yaml"
   /clients:
     $ref: "./paths/clients.yaml"
+  /devices:
+    $ref: "./paths/devices.yaml"
 
   /hubs:
     $ref: "./paths/hubs.yaml"
@@ -132,9 +134,9 @@ paths:
   /library/recentlyAdded:
     $ref: "./paths/library-recentlyadded.yaml"
   /library/sections:
-    $ref: "./paths/all-libraries.yaml"
+    $ref: "./paths/libraries.yaml"
   /library/sections/{sectionId}:
-    $ref: "./paths/library-details.yaml"
+    $ref: "./paths/library.yaml"
   /library/sections/{sectionId}/all:
     $ref: "./paths/library-content-all.yaml"
   /library/sections/{sectionId}/refresh:
