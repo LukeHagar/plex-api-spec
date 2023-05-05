@@ -775,6 +775,71 @@ paths:
                         status:
                           type: number
                           example: 401
+  /devices:
+    get:
+      tags:
+        - Devices
+      summary: Get Devices
+      description: Get Devices
+      operationId: getDevices
+      responses:
+        '200':
+          description: Devices
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 151
+                      identifier:
+                        type: string
+                        example: com.plexapp.system.devices
+                      Device:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              example: 1
+                            name:
+                              type: string
+                              example: iPhone
+                            platform:
+                              type: string
+                              example: iOS
+                            clientIdentifier:
+                              type: string
+                              example: null
+                            createdAt:
+                              type: number
+                              example: 1654131230
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /hubs:
     get:
       tags:
@@ -1418,7 +1483,7 @@ paths:
           - `defaultDirection`: Can be either `asc` or `desc`, and specifies the default direction for the sort field (e.g. titles default to alphabetically ascending).
           - `descKey` and `key`: Contains the parameters passed to the `sort=...` media query for each direction of the sort.
           - `title`: The title of the field.
-      operationId: getLibraryDetails
+      operationId: getLibrary
       parameters:
         - name: sectionId
           description: the Id of the library to query
@@ -1442,6 +1507,43 @@ paths:
       responses:
         '200':
           description: The details of the library
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+    delete:
+      tags:
+        - Library
+      summary: Delete Library Section
+      operationId: deleteLibrary
+      parameters:
+        - name: sectionId
+          description: the Id of the library to query
+          in: path
+          schema:
+            type: string
+            example: 1000
+          required: true
+      responses:
+        '200':
+          description: The library is deleted
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
