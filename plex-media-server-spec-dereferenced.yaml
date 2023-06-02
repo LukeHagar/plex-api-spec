@@ -10,7 +10,6 @@ info:
     email: Lukeslakemail@gmail.com
   license:
     name: MIT
-    identifier: MIT
     url: 'https://opensource.org/licenses/MIT'
 servers:
   - url: 'http://{Local IP}:{Port}'
@@ -23,6 +22,20 @@ servers:
         description: The port to access your plex server
   - url: 'https://{Local IP}:{Port}'
     variables:
+      Local IP:
+        default: 10.10.10.47
+        description: The Local IP Address of your plex server
+      Port:
+        default: '32400'
+        description: The port to access your plex server
+  - url: '{Protocol}://{Local IP}:{Port}'
+    variables:
+      Protocol:
+        default: http
+        description: The protocl to use when connecting to your plex server
+        enum:
+          - http
+          - https
       Local IP:
         default: 10.10.10.47
         description: The Local IP Address of your plex server
@@ -286,7 +299,7 @@ paths:
           description: The media key to mark as played
           in: query
           schema:
-            type: string
+            type: number
             example: 59398
           required: true
       responses:
@@ -325,12 +338,14 @@ paths:
           description: The media key to mark as Unplayed
           in: query
           schema:
-            type: string
+            type: number
             example: 59398
           required: true
       responses:
         '200':
           description: Media is marked Unplayed
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -769,7 +784,7 @@ paths:
   /clients:
     get:
       tags:
-        - Devices
+        - Server
       summary: Get Available Clients
       description: Get Available Clients
       operationId: getAvailableClients
@@ -811,7 +826,7 @@ paths:
                                 example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
                               version:
                                 type: string
-                                example: 8.17
+                                example: '8.17'
                               protocol:
                                 type: string
                                 example: plex
@@ -822,7 +837,7 @@ paths:
                                 type: string
                                 example: tablet
                               protocolVersion:
-                                type: string
+                                type: number
                                 example: 2
                               protocolCapabilities:
                                 type: string
@@ -853,7 +868,7 @@ paths:
   /devices:
     get:
       tags:
-        - Devices
+        - Server
       summary: Get Devices
       description: Get Devices
       operationId: getDevices
@@ -890,7 +905,6 @@ paths:
                               example: iOS
                             clientIdentifier:
                               type: string
-                              example: null
                             createdAt:
                               type: number
                               example: 1654131230
@@ -922,7 +936,7 @@ paths:
       tags:
         - Hubs
       summary: Get Global Hubs
-      description: ''
+      description: Get Global Hubs filtered by the parameters provided.
       operationId: getGlobalHubs
       parameters:
         - name: count
@@ -991,7 +1005,7 @@ paths:
           in: query
           schema:
             type: string
-            example:
+            examples:
               - arnold
               - dylan
           required: true
@@ -1051,7 +1065,7 @@ paths:
           in: query
           schema:
             type: string
-            example:
+            examples:
               - dead+poop
           required: true
         - name: sectionId
@@ -1205,7 +1219,7 @@ paths:
   /library/hashes:
     get:
       tags:
-        - Hashes
+        - Library
       summary: Get Hash Value
       description: This resource returns hash values for local files
       operationId: getFileHash
@@ -1301,7 +1315,7 @@ paths:
                               type: string
                               example: 322a231a-b7f7-49f5-920f-14c61199cd30
                             ratingKey:
-                              type: string
+                              type: number
                               example: 59398
                             key:
                               type: string
@@ -1400,7 +1414,7 @@ paths:
                                     type: string
                                     example: h264
                                   videoResolution:
-                                    type: string
+                                    type: number
                                     example: 1080
                                   container:
                                     type: string
@@ -1442,7 +1456,7 @@ paths:
                                         has64bitOffsets:
                                           type: boolean
                                         hasThumbnail:
-                                          type: string
+                                          type: number
                                           example: 1
                                         optimizedForStreaming:
                                           type: boolean
@@ -1582,7 +1596,7 @@ paths:
           description: the Id of the library to query
           in: path
           schema:
-            type: string
+            type: number
             example: 1000
           required: true
         - name: includeDetails
@@ -1627,13 +1641,14 @@ paths:
       tags:
         - Library
       summary: Delete Library Section
+      description: Delate a library using a specific section
       operationId: deleteLibrary
       parameters:
         - name: sectionId
           description: the Id of the library to query
           in: path
           schema:
-            type: string
+            type: number
             example: 1000
           required: true
       responses:
@@ -1864,6 +1879,47 @@ paths:
                           example: 401
         '404':
           description: In response to a non-existant sectionId.
+  '/library/metadata/{ratingKey}':
+    get:
+      tags:
+        - Library
+      summary: Get Items Metadata
+      description: |
+        This endpoint will return the metadata of a library item specified with the ratingKey.
+      operationId: getMetadata
+      parameters:
+        - name: ratingKey
+          description: the id of the library item to return the children of.
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The children of the library item.
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   '/library/metadata/{ratingKey}/children':
     get:
       tags:
@@ -1957,16 +2013,16 @@ paths:
                               type: string
                               example: 4bb2521c-8ba9-459b-aaee-8ab8bc35eabd
                             ratingKey:
-                              type: string
+                              type: number
                               example: 49564
                             key:
                               type: string
                               example: /library/metadata/49564
                             parentRatingKey:
-                              type: string
+                              type: number
                               example: 49557
                             grandparentRatingKey:
-                              type: string
+                              type: number
                               example: 49556
                             guid:
                               type: string
@@ -2081,7 +2137,7 @@ paths:
                                     example: hevc
                                   videoResolution:
                                     type: string
-                                    example: 1080
+                                    example: '1080'
                                   container:
                                     type: string
                                     example: mkv
@@ -2366,7 +2422,7 @@ paths:
   /myplex/account:
     get:
       tags:
-        - MyPlex
+        - Server
       summary: Get MyPlex Account
       description: Returns MyPlex Account Information
       operationId: getMyPlexAccount
@@ -2392,7 +2448,6 @@ paths:
                         example: mapped
                       mappingError:
                         type: string
-                        example: null
                       signInState:
                         type: string
                         example: ok
@@ -2442,7 +2497,7 @@ paths:
   '/photo/:/transcode':
     get:
       tags:
-        - Photos
+        - Server
       summary: Get a Resized Photo
       description: |
         Plex's Photo transcoder is used throughout the service to serve images at specified sizes.
@@ -2476,7 +2531,7 @@ paths:
           in: query
           schema:
             type: number
-            example:
+            examples:
               - 0
               - 20
               - 4000
@@ -2611,7 +2666,7 @@ paths:
       tags:
         - Playlists
       summary: Get All Playlists
-      description: ''
+      description: Get All Playlists given the specified filters.
       operationId: getPlaylists
       parameters:
         - name: playlistType
@@ -2998,7 +3053,7 @@ paths:
           in: query
           schema:
             type: string
-            example: 110
+            example: '110'
           required: true
       responses:
         '200':
@@ -3045,7 +3100,7 @@ paths:
                               type: string
                               example: Hera
                             ratingKey:
-                              type: string
+                              type: number
                               example: 10398
                             key:
                               type: string
@@ -3144,7 +3199,7 @@ paths:
                                     type: string
                                     example: hevc
                                   videoResolution:
-                                    type: string
+                                    type: number
                                     example: 1080
                                   container:
                                     type: string
@@ -3330,7 +3385,7 @@ paths:
           in: query
           schema:
             type: string
-            example:
+            examples:
               - 'server://client-identifier'
               - 'provider://provider-identifier'
           required: true
@@ -3808,6 +3863,9 @@ tags:
   - name: Library
     description: |
       API Calls interacting with Plex Media Server Libraries
+  - name: Media
+    description: |
+      API Calls interacting with Plex Media Server Media
   - name: Hubs
     description: |
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
@@ -3820,6 +3878,9 @@ tags:
   - name: Search
     description: |
       API Calls that perform search operations with Plex Media Server
+  - name: Sessions
+    description: |
+      API Calls that perform search operations with Plex Media Server Sessions
   - name: User
     description: |
       API Calls that perform operations with Plex Media Server Users
