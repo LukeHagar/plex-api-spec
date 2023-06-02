@@ -147,6 +147,8 @@ paths:
     $ref: "./paths/library-content-latest.yaml"
   /library/sections/{sectionId}/common:
     $ref: "./paths/library-content-common.yaml"
+  /library/metadata/{ratingKey}/children:
+    $ref: "./paths/metadata-children.yaml"
   /library/onDeck:
     $ref: "./paths/library-ondeck.yaml"
 
