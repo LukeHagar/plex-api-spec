@@ -1,6 +1,6 @@
 get:
   tags:
-    - Devices
+    - Server
   summary: Get Devices
   description: Get Devices
   operationId: getDevices
@@ -37,7 +37,6 @@ get:
                           example: iOS
                         clientIdentifier:
                           type: string
-                          example:
                         createdAt:
                           type: number
                           example: 1654131230

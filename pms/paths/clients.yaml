@@ -1,6 +1,6 @@
 get:
   tags:
-    - Devices
+    - Server
   summary: Get Available Clients
   description: Get Available Clients
   operationId: getAvailableClients
@@ -42,7 +42,7 @@ get:
                             example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
                           version:
                             type: string
-                            example: 8.17
+                            example: "8.17"
                           protocol:
                             type: string
                             example: plex
@@ -53,7 +53,7 @@ get:
                             type: string
                             example: tablet
                           protocolVersion:
-                            type: string
+                            type: number
                             example: 2
                           protocolCapabilities:
                             type: string

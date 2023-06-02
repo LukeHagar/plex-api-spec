@@ -2,7 +2,7 @@ get:
   tags:
     - Playlists
   summary: Get All Playlists
-  description: ""
+  description: Get All Playlists given the specified filters.
   operationId: getPlaylists
   parameters:
     - name: playlistType

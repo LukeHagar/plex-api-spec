@@ -10,7 +10,7 @@ get:
       in: query
       schema:
         type: string
-        example: 110
+        example: "110"
       required: true
 
   responses:
@@ -58,7 +58,7 @@ get:
                           type: string
                           example: Hera
                         ratingKey:
-                          type: string
+                          type: number
                           example: 10398
                         key:
                           type: string
@@ -157,7 +157,7 @@ get:
                                 type: string
                                 example: hevc
                               videoResolution:
-                                type: string
+                                type: number
                                 example: 1080
                               container:
                                 type: string

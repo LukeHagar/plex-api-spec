@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Library
+  summary: Get Items Metadata
+  description: |
+    This endpoint will return the metadata of a library item specified with the ratingKey.
+  operationId: getMetadata
+  parameters:
+    - name: ratingKey
+      description: the id of the library item to return the children of.
+      in: path
+      schema:
+        type: number
+      required: true
+
+  responses:
+    "200":
+      description: The children of the library item.
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

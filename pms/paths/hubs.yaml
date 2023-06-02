@@ -2,7 +2,7 @@ get:
   tags:
     - Hubs
   summary: Get Global Hubs
-  description: ""
+  description: Get Global Hubs filtered by the parameters provided.
   operationId: getGlobalHubs
   parameters:
     - name: count

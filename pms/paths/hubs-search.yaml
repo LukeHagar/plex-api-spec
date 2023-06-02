@@ -22,9 +22,9 @@ get:
       in: query
       schema:
         type: string
-        example:
-          - arnold
-          - dylan
+        examples:
+          - "arnold"
+          - "dylan"
       required: true
     - name: sectionId
       description: This gives context to the search, and can result in re-ordering of search result hubs

@@ -14,7 +14,7 @@ get:
       in: query
       schema:
         type: string
-        example:
+        examples:
           - dead+poop
       required: true
     - name: sectionId

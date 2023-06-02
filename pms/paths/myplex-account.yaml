@@ -1,6 +1,6 @@
 get:
   tags:
-    - MyPlex
+    - Server
   summary: Get MyPlex Account
   description: Returns MyPlex Account Information
   operationId: getMyPlexAccount
@@ -26,7 +26,6 @@ get:
                     example: mapped
                   mappingError:
                     type: string
-                    example:
                   signInState:
                     type: string
                     example: ok

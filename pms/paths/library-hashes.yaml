@@ -1,6 +1,6 @@
 get:
   tags:
-    - Hashes
+    - Library
   summary: Get Hash Value
   description: This resource returns hash values for local files
   operationId: getFileHash

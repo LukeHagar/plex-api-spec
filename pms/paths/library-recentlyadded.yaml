@@ -49,7 +49,7 @@ get:
                           type: string
                           example: 322a231a-b7f7-49f5-920f-14c61199cd30
                         ratingKey:
-                          type: string
+                          type: number
                           example: 59398
                         key:
                           type: string
@@ -148,7 +148,7 @@ get:
                                 type: string
                                 example: h264
                               videoResolution:
-                                type: string
+                                type: number
                                 example: 1080
                               container:
                                 type: string
@@ -190,7 +190,7 @@ get:
                                     has64bitOffsets:
                                       type: boolean
                                     hasThumbnail:
-                                      type: string
+                                      type: number
                                       example: 1
                                     optimizedForStreaming:
                                       type: boolean

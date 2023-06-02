@@ -10,7 +10,6 @@ info:
     email: Lukeslakemail@gmail.com
   license:
     name: MIT
-    identifier: MIT
     url: https://opensource.org/licenses/MIT
 
 servers:
@@ -24,6 +23,20 @@ servers:
         description: The port to access your plex server
   - url: "https://{Local IP}:{Port}"
     variables:
+      Local IP:
+        default: "10.10.10.47"
+        description: The Local IP Address of your plex server
+      Port:
+        default: "32400"
+        description: The port to access your plex server
+  - url: "{Protocol}://{Local IP}:{Port}"
+    variables:
+      Protocol:
+        default: http
+        description: The protocl to use when connecting to your plex server
+        enum:
+          - http
+          - https
       Local IP:
         default: "10.10.10.47"
         description: The Local IP Address of your plex server
@@ -147,6 +160,8 @@ paths:
     $ref: "./paths/library-content-latest.yaml"
   /library/sections/{sectionId}/common:
     $ref: "./paths/library-content-common.yaml"
+  /library/metadata/{ratingKey}:
+    $ref: "./paths/metadata.yaml"
   /library/metadata/{ratingKey}/children:
     $ref: "./paths/metadata-children.yaml"
   /library/onDeck:
@@ -231,6 +246,9 @@ tags:
   - name: Library
     description: |
       API Calls interacting with Plex Media Server Libraries
+  - name: Media
+    description: |
+      API Calls interacting with Plex Media Server Media
   - name: Hubs
     description: |
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
@@ -243,6 +261,9 @@ tags:
   - name: Search
     description: |
       API Calls that perform search operations with Plex Media Server
+  - name: Sessions
+    description: |
+      API Calls that perform search operations with Plex Media Server Sessions
   - name: User
     description: |
       API Calls that perform operations with Plex Media Server Users

@@ -1,6 +1,6 @@
 get:
   tags:
-    - Photos
+    - Server
   summary: Get a Resized Photo
   description: |
     Plex's Photo transcoder is used throughout the service to serve images at specified sizes.
@@ -34,7 +34,7 @@ get:
       in: query
       schema:
         type: number
-        example:
+        examples:
           - 0
           - 20
           - 4000

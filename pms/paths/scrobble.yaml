@@ -9,11 +9,11 @@ get:
       description: The media key to mark as played
       in: query
       schema:
-        type: string
+        type: number
         example: 59398
       required: true
   responses:
-    200:
+    "200":
       description: Media is marked Played
-    401:
+    "401":
       $ref: "../../responses/401.yaml"

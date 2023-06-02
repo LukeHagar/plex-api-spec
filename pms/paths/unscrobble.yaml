@@ -9,11 +9,13 @@ get:
       description: The media key to mark as Unplayed
       in: query
       schema:
-        type: string
+        type: number
         example: 59398
       required: true
   responses:
-    200:
+    "200":
       description: Media is marked Unplayed
-    401:
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
       $ref: "../../responses/401.yaml"
