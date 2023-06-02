@@ -1864,6 +1864,47 @@ paths:
                           example: 401
         '404':
           description: In response to a non-existant sectionId.
+  '/library/metadata/{ratingKey}/children':
+    get:
+      tags:
+        - Library
+      summary: Get Items Children
+      description: |
+        This endpoint will return the children of of a library item specified with the ratingKey.
+      operationId: getMetadataChildren
+      parameters:
+        - name: ratingKey
+          description: the id of the library item to return the children of.
+          in: path
+          schema:
+            type: number
+          required: true
+      responses:
+        '200':
+          description: The children of the library item.
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /library/onDeck:
     get:
       tags:
