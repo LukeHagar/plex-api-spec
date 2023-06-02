@@ -103,6 +103,8 @@ paths:
     $ref: "./paths/scrobble.yaml"
   /:/unscrobble:
     $ref: "./paths/unscrobble.yaml"
+  /:/progress:
+    $ref: "./paths/progress.yaml"
 
   /activities:
     $ref: "./paths/activities.yaml"
