@@ -29,20 +29,6 @@ servers:
       Port:
         default: "32400"
         description: The port to access your plex server
-  - url: "{Protocol}://{Local IP}:{Port}"
-    variables:
-      Protocol:
-        default: http
-        description: The protocl to use when connecting to your plex server
-        enum:
-          - http
-          - https
-      Local IP:
-        default: "10.10.10.47"
-        description: The Local IP Address of your plex server
-      Port:
-        default: "32400"
-        description: The port to access your plex server
 
 security:
   - Token: []
