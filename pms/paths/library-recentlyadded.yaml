@@ -237,5 +237,7 @@ get:
                               tag:
                                 type: string
                                 example: Paul Rudd
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

@@ -13,5 +13,7 @@ get:
   responses:
     "200":
       description: The libraries available on the Server
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

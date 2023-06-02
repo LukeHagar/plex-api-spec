@@ -26,5 +26,7 @@ get:
   responses:
     "200":
       description: A Transient Token
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

@@ -28,9 +28,9 @@ get:
   responses:
     "200":
       description: The details of the library
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
-    "400":
-      description: In response to missing the type parameter.
     "404":
       description: In response to a non-existant sectionId.

@@ -24,5 +24,7 @@ get:
   responses:
     "200":
       description: returns global hubs
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

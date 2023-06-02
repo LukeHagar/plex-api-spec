@@ -47,6 +47,8 @@ get:
   responses:
     "200":
       description: The details of the library
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
 
@@ -66,5 +68,7 @@ delete:
   responses:
     "200":
       description: The library is deleted
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

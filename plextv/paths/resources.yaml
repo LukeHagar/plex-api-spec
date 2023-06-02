@@ -124,5 +124,7 @@ get:
                         type: boolean
                       IPv6:
                         type: boolean
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

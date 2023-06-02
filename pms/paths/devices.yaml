@@ -41,5 +41,7 @@ get:
                         createdAt:
                           type: number
                           example: 1654131230
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

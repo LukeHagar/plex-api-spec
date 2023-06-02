@@ -7,5 +7,7 @@ get:
   responses:
     "200":
       description: List of Active Plex Sessions
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

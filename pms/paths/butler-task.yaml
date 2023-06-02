@@ -35,6 +35,8 @@ post:
   responses:
     "200":
       description: The task was started successfully
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "202":
@@ -73,6 +75,8 @@ delete:
   responses:
     "200":
       description: The task was stopped
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "404":

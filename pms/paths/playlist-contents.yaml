@@ -25,6 +25,8 @@ get:
   responses:
     "200":
       description: The playlist contents
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
 
@@ -46,6 +48,8 @@ delete:
   responses:
     "200":
       description: The playlist contents are cleared
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
 
@@ -82,5 +86,7 @@ put:
   responses:
     "200":
       description: Playlist Updated
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

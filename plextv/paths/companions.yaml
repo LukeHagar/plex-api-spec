@@ -33,5 +33,7 @@ get:
                   type: string
                   example: VFnxitsRFdWx_WrzsKL
 
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

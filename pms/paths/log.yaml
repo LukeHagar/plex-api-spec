@@ -42,6 +42,8 @@ get:
   responses:
     "200":
       description: Log Line submitted successfully
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
 
@@ -55,5 +57,7 @@ post:
   responses:
     "200":
       description: Multi-Line Log Message Posted successfully
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

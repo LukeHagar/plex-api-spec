@@ -34,5 +34,7 @@ get:
                       type: string
                       example: identifiable
 
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

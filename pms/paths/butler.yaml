@@ -36,6 +36,8 @@ get:
                         description:
                           type: string
                           example: Create a backup copy of the server's database in the configured backup directory
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
 
@@ -53,6 +55,8 @@ post:
   responses:
     "200":
       description: All tasks were started
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
 
@@ -66,5 +70,7 @@ delete:
   responses:
     "200":
       description: All tasks were stopped
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

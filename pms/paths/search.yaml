@@ -254,5 +254,7 @@ get:
                         type:
                           type: string
                           example: mixed
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

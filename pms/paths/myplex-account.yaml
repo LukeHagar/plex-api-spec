@@ -50,5 +50,7 @@ get:
                   subscriptionState:
                     type: string
                     example: Active
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

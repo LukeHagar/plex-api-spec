@@ -58,5 +58,7 @@ get:
                           protocolCapabilities:
                             type: string
                             example: playback,playqueues,timeline,provider-playback
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

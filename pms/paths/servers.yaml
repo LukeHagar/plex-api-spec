@@ -41,5 +41,7 @@ get:
                         version:
                           type: string
                           example: 1.31.3.6868-28fc46b27
+    "400":
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
