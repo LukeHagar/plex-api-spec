@@ -218,6 +218,8 @@ paths:
                               type: string
                             title:
                               type: string
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -249,6 +251,8 @@ paths:
       responses:
         '200':
           description: Server Preferences
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -348,6 +352,61 @@ paths:
                         status:
                           type: number
                           example: 401
+  '/:/progress':
+    post:
+      tags:
+        - Media
+      summary: Update Media Play Progress
+      description: |
+        This API command can be used to update the play progress of a media item.
+      operationId: updatePlayProgress
+      parameters:
+        - name: key
+          description: the media key
+          in: query
+          schema:
+            type: string
+          required: true
+        - name: time
+          description: 'The time, in milliseconds, used to set the media playback progress.'
+          in: query
+          schema:
+            type: number
+          example: 90000
+          required: true
+        - name: state
+          description: The playback state of the media item.
+          in: query
+          schema:
+            type: string
+          example: played
+          required: true
+      responses:
+        '200':
+          description: Success - The request was successful.
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /activities:
     get:
       tags:
@@ -392,6 +451,8 @@ paths:
                               properties:
                                 librarySectionID:
                                   type: string
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -431,6 +492,8 @@ paths:
       responses:
         '200':
           description: The Server Activity was canceled
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -491,6 +554,8 @@ paths:
                             description:
                               type: string
                               example: Create a backup copy of the server's database in the configured backup directory
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -526,6 +591,8 @@ paths:
       responses:
         '200':
           description: All tasks were started
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -557,6 +624,8 @@ paths:
       responses:
         '200':
           description: All tasks were stopped
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -617,6 +686,8 @@ paths:
           description: The task was started successfully
         '202':
           description: The task was already running.
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -670,6 +741,8 @@ paths:
       responses:
         '200':
           description: The task was stopped
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -754,6 +827,8 @@ paths:
                               protocolCapabilities:
                                 type: string
                                 example: 'playback,playqueues,timeline,provider-playback'
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -819,6 +894,8 @@ paths:
                             createdAt:
                               type: number
                               example: 1654131230
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -866,6 +943,8 @@ paths:
       responses:
         '200':
           description: returns global hubs
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -932,6 +1011,8 @@ paths:
       responses:
         '200':
           description: The search results
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -990,6 +1071,8 @@ paths:
       responses:
         '200':
           description: The search results
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1044,6 +1127,8 @@ paths:
       responses:
         '200':
           description: The hubs specific to the library
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1094,6 +1179,8 @@ paths:
                       version:
                         type: string
                         example: 1.31.3.6868-28fc46b27
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1139,6 +1226,8 @@ paths:
       responses:
         '200':
           description: The hash of the file
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1400,6 +1489,8 @@ paths:
                                   tag:
                                     type: string
                                     example: Paul Rudd
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1437,6 +1528,8 @@ paths:
       responses:
         '200':
           description: The libraries available on the Server
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1507,6 +1600,8 @@ paths:
       responses:
         '200':
           description: The details of the library
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1544,6 +1639,8 @@ paths:
       responses:
         '200':
           description: The library is deleted
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1595,6 +1692,8 @@ paths:
       responses:
         '200':
           description: The details of the library
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1634,6 +1733,8 @@ paths:
       responses:
         '200':
           description: The library is refreshing
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1685,6 +1786,8 @@ paths:
       responses:
         '200':
           description: The details of the library
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1737,7 +1840,7 @@ paths:
         '200':
           description: The details of the library
         '400':
-          description: In response to missing the type parameter.
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2060,6 +2163,8 @@ paths:
                                   id:
                                     type: string
                                     example: 'imdb://tt13303712'
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2125,6 +2230,8 @@ paths:
       responses:
         '200':
           description: Log Line submitted successfully
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2156,6 +2263,8 @@ paths:
       responses:
         '200':
           description: Multi-Line Log Message Posted successfully
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2188,6 +2297,8 @@ paths:
       responses:
         '200':
           description: Papertrail enabled successfully
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2264,6 +2375,8 @@ paths:
                       subscriptionState:
                         type: string
                         example: Active
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2355,6 +2468,8 @@ paths:
       responses:
         '200':
           description: Resized Image
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2427,6 +2542,8 @@ paths:
       responses:
         '200':
           description: returns all playlists
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2478,6 +2595,8 @@ paths:
       responses:
         '200':
           description: returns all playlists
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2518,6 +2637,8 @@ paths:
       responses:
         '200':
           description: The playlist
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2556,6 +2677,8 @@ paths:
       responses:
         '200':
           description: The playlist is deleted
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2594,6 +2717,8 @@ paths:
       responses:
         '200':
           description: The playlist is deleted
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2642,6 +2767,8 @@ paths:
       responses:
         '200':
           description: The playlist contents
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2680,6 +2807,8 @@ paths:
       responses:
         '200':
           description: The playlist contents are cleared
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2733,6 +2862,8 @@ paths:
       responses:
         '200':
           description: Playlist Updated
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2790,6 +2921,8 @@ paths:
       responses:
         '200':
           description: The playlist is uploaded
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3067,6 +3200,8 @@ paths:
                             type:
                               type: string
                               example: mixed
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3116,6 +3251,8 @@ paths:
       responses:
         '200':
           description: A Transient Token
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3159,6 +3296,8 @@ paths:
       responses:
         '200':
           description: Source Connection Information
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3224,6 +3363,8 @@ paths:
                             version:
                               type: string
                               example: 1.31.3.6868-28fc46b27
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3255,6 +3396,8 @@ paths:
       responses:
         '200':
           description: List of Active Plex Sessions
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3286,6 +3429,8 @@ paths:
       responses:
         '200':
           description: List of Plex Sessions
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3395,6 +3540,8 @@ paths:
                             minOffsetAvailable:
                               type: number
                               example: 0
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3434,6 +3581,8 @@ paths:
       responses:
         '200':
           description: The Transcode Session ended
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3465,6 +3614,8 @@ paths:
       responses:
         '200':
           description: The Server Updates
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3506,6 +3657,8 @@ paths:
       responses:
         '200':
           description: ''
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3557,6 +3710,8 @@ paths:
       responses:
         '200':
           description: If the update process started correctly
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
