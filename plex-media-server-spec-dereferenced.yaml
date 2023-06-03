@@ -42,49 +42,6 @@ components:
       type: apiKey
       in: query
       name: X-Plex-Token
-    ClientIdentifier:
-      description: Plex Authentication Token
-      type: apiKey
-      in: header
-      name: X-Plex-Client-Identifier
-    DeviceName:
-      description: Primary name for the device eg. `Plex Web (Chrome)`
-      type: apiKey
-      in: header
-      name: X-Plex-Device-Name
-    Device:
-      description: |
-        The type of device your application is running on
-        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-      type: apiKey
-      in: header
-      name: X-Plex-Device
-    PlatformVersion:
-      description: |
-        Operating system version
-        eg `4.3.1`, `10.6.7`, `3.2`
-      type: apiKey
-      in: header
-      name: X-Plex-Platform-Version
-    Platform:
-      description: |
-        Platform name 
-        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
-      type: apiKey
-      in: header
-      name: X-Plex-Platform
-    Product:
-      description: |
-        Plex application name 
-        eg: `Laika`, `Plex Media Server`, `Media Link`
-      type: apiKey
-      in: header
-      name: X-Plex-Product
-    Version:
-      description: Plex application version number
-      type: apiKey
-      in: header
-      name: X-Plex-Version
 paths:
   /:
     get:
