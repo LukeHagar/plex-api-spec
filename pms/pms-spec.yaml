@@ -14,36 +14,20 @@ info:
     url: https://opensource.org/licenses/MIT
 
 servers:
-  - url: "http://{Local IP}:{Port}"
+  - url: "{protocol}://{localIP}:{port}"
     variables:
-      Local IP:
-        default: "10.10.10.47"
-        description: The Local IP Address of your plex server
-      Port:
-        default: "32400"
-        description: The port to access your plex server
-  - url: "https://{Local IP}:{Port}"
-    variables:
-      Local IP:
-        default: "10.10.10.47"
-        description: The Local IP Address of your plex server
-      Port:
-        default: "32400"
-        description: The port to access your plex server
-  - url: "{Protocol}://{Local IP}:{Port}"
-    variables:
-      Protocol:
+      protocol:
         default: http
-        description: The protocl to use when connecting to your plex server
+        description: The protocol to use when connecting to your plex server.
         enum:
           - http
           - https
-      Local IP:
+      localIP:
         default: "10.10.10.47"
-        description: The Local IP Address of your plex server
-      Port:
+        description: The Local IP Address of your plex server.
+      port:
         default: "32400"
-        description: The port to access your plex server
+        description: The port to access your plex server.
 
 security:
   - Token: []
