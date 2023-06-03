@@ -30,22 +30,21 @@ servers:
         description: The port to access your plex server.
 
 security:
-  - Token: []
-    ClientIdentifier: []
-    Device: []
-    DeviceName: []
-    Platform: []
-    PlatformVersion: []
-    Product: []
-    Version: []
+  - accessTokenHeader: []
+  - accessTokenQuery: []
 
 components:
   securitySchemes:
-    Token: # arbitrary name for the security scheme
+    accessTokenHeader:
       description: Plex Authentication Token
       type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Token # name of the header, query parameter or cookie
+      in: header
+      name: X-Plex-Token
+    accessTokenQuery:
+      description: Plex Authentication Token
+      type: apiKey
+      in: query
+      name: X-Plex-Token
     ClientIdentifier: # arbitrary name for the security scheme
       description: Plex Authentication Token
       type: apiKey
