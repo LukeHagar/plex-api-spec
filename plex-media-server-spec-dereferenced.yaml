@@ -13,6 +13,7 @@ info:
     identifier: MIT
 servers:
   - url: '{protocol}://{localIP}:{port}'
+    description: The full address of your Plex Server
     variables:
       protocol:
         default: http
@@ -27,19 +28,13 @@ servers:
         default: '32400'
         description: The port to access your plex server.
 security:
-  - accessTokenHeader: []
-  - accessTokenQuery: []
+  - accessToken: []
 components:
   securitySchemes:
-    accessTokenHeader:
+    accessToken:
       description: Plex Authentication Token
       type: apiKey
       in: header
-      name: X-Plex-Token
-    accessTokenQuery:
-      description: Plex Authentication Token
-      type: apiKey
-      in: query
       name: X-Plex-Token
 paths:
   /:
@@ -3771,6 +3766,241 @@ paths:
                           example: 401
         '500':
           description: If the update process failed to start
+  '/video/:/transcode/universal/start.mpd':
+    get:
+      tags:
+        - Video
+      summary: Start Universal Transcode
+      description: Begin a Universal Transcode Session
+      operationId: startUniversalTranscode
+      parameters:
+        - name: hasMDE
+          description: Whether the media item has MDE
+          required: true
+          in: query
+          schema: number
+          example: 1
+        - name: path
+          description: The path to the media item to transcode
+          required: true
+          in: query
+          schema: string
+          example: /library/metadata/23409
+        - name: mediaIndex
+          description: The index of the media item to transcode
+          required: true
+          in: query
+          schema: number
+          example: 0
+        - name: partIndex
+          description: The index of the part to transcode
+          required: true
+          in: query
+          schema: number
+          example: 0
+        - name: protocol
+          description: The protocol to use for the transcode session
+          required: true
+          in: query
+          schema: string
+          example: hls
+        - name: fastSeek
+          description: Whether to use fast seek or not
+          required: false
+          in: query
+          schema: number
+          example: 0
+        - name: directPlay
+          description: Whether to use direct play or not
+          required: false
+          in: query
+          schema: number
+          example: 0
+        - name: directStream
+          description: Whether to use direct stream or not
+          required: false
+          in: query
+          schema: number
+          example: 0
+        - name: subtitleSize
+          description: The size of the subtitles
+          required: false
+          in: query
+          schema: number
+          example: 100
+        - name: subtites
+          description: The subtitles
+          required: false
+          in: query
+          schema: string
+          example: burn
+        - name: audioBoost
+          description: The audio boost
+          required: false
+          in: query
+          schema: number
+          example: 100
+        - name: location
+          description: The location of the transcode session
+          required: false
+          in: query
+          schema: string
+          example: lan
+        - name: mediaBufferSize
+          description: The size of the media buffer
+          required: false
+          in: query
+          schema: number
+          example: 102400
+        - name: session
+          description: The session ID
+          required: false
+          in: query
+          schema: string
+          example: zvcage8b7rkioqcm8f4uns4c
+        - name: addDebugOverlay
+          description: Whether to add a debug overlay or not
+          required: false
+          in: query
+          schema: number
+          example: 0
+        - name: autoAdjustQuality
+          description: Whether to auto adjust quality or not
+          required: false
+          in: query
+          schema: number
+          example: 0
+      responses:
+        '200':
+          description: The transcode session has started
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/:/timeline':
+    get:
+      tags:
+        - Video
+      summary: Get the timeline for a media item
+      description: Get the timeline for a media item
+      operationId: getTimeline
+      parameters:
+        - name: ratingKey
+          description: The rating key of the media item
+          required: true
+          in: query
+          schema: number
+          example: 23409
+        - name: key
+          description: The key of the media item to get the timeline for
+          required: true
+          in: query
+          schema: string
+          example: /library/metadata/23409
+        - name: state
+          description: The state of the media item
+          required: true
+          in: query
+          schema:
+            type: string
+            enum:
+              - playing
+              - paused
+              - stopped
+          example: playing
+        - name: hasMDE
+          description: Whether the media item has MDE
+          required: true
+          in: query
+          schema: number
+          example: 1
+        - name: time
+          description: The time of the media item
+          required: true
+          in: query
+          schema: number
+          example: 2000
+        - name: duration
+          description: The duration of the media item
+          required: true
+          in: query
+          schema: number
+          example: 10000
+        - name: context
+          description: The context of the media item
+          required: true
+          in: query
+          schema: string
+          example: 'home:hub.continueWatching'
+        - name: playQueueItemID
+          description: The play queue item ID of the media item
+          required: true
+          in: query
+          schema: number
+          example: 1
+        - name: playBackTime
+          description: The playback time of the media item
+          required: true
+          in: query
+          schema: number
+          example: 2000
+        - name: row
+          description: The row of the media item
+          required: true
+          in: query
+          schema: number
+          example: 1
+        - name: ratingKey
+          description: The rating key of the media item
+          required: true
+          in: query
+          schema: number
+          example: 23409
+      responses:
+        '200':
+          description: The timeline for the media item
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
 tags:
   - name: Activities
     description: |
