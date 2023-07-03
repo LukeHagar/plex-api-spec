@@ -14,13 +14,14 @@ info:
 
 servers:
   - url: "{protocol}://{localIP}:{port}"
+    description: The full address of your Plex Server
     variables:
       protocol:
-        default: http
+        default: "http"
         description: The protocol to use when connecting to your plex server.
         enum:
-          - http
-          - https
+          - "http"
+          - "https"
       localIP:
         default: "10.10.10.47"
         description: The Local IP Address of your plex server.
@@ -29,64 +30,65 @@ servers:
         description: The port to access your plex server.
 
 security:
-  - accessTokenHeader: []
-  - accessTokenQuery: []
+  - accessToken: []
+    clientIdentifier: []
+    deviceName: []
+    device: []
+    platformVersion: []
+    platform: []
+    product: []
+    version: []
 
 components:
   securitySchemes:
-    accessTokenHeader:
+    accessToken:
       description: Plex Authentication Token
       type: "apiKey"
       in: "header"
       name: "X-Plex-Token"
-    accessTokenQuery:
+    ClientIdentifier: # arbitrary name for the security scheme
       description: Plex Authentication Token
-      type: "apiKey"
-      in: "query"
-      name: "X-Plex-Token"
-    # ClientIdentifier: # arbitrary name for the security scheme
-    #   description: Plex Authentication Token
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
-    # DeviceName: # arbitrary name for the security scheme
-    #   description: Primary name for the device eg. `Plex Web (Chrome)`
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Device-Name # name of the header, query parameter or cookie
-    # Device: # arbitrary name for the security scheme
-    #   description: |
-    #     The type of device your application is running on
-    #     Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Device # name of the header, query parameter or cookie
-    # PlatformVersion: # arbitrary name for the security scheme
-    #   description: |
-    #     Operating system version
-    #     eg `4.3.1`, `10.6.7`, `3.2`
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Platform-Version # name of the header, query parameter or cookie
-    # Platform: # arbitrary name for the security scheme
-    #   description: |
-    #     Platform name
-    #     eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Platform # name of the header, query parameter or cookie
-    # Product: # arbitrary name for the security scheme
-    #   description: |
-    #     Plex application name
-    #     eg: `Laika`, `Plex Media Server`, `Media Link`
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Product # name of the header, query parameter or cookie
-    # Version: # arbitrary name for the security scheme
-    #   description: Plex application version number
-    #   type: apiKey
-    #   in: header # can be "header", "query" or "cookie"
-    #   name: X-Plex-Version # name of the header, query parameter or cookie
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
+    DeviceName: # arbitrary name for the security scheme
+      description: Primary name for the device eg. `Plex Web (Chrome)`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Device-Name # name of the header, query parameter or cookie
+    Device: # arbitrary name for the security scheme
+      description: |
+        The type of device your application is running on
+        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Device # name of the header, query parameter or cookie
+    PlatformVersion: # arbitrary name for the security scheme
+      description: |
+        Operating system version
+        eg `4.3.1`, `10.6.7`, `3.2`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Platform-Version # name of the header, query parameter or cookie
+    Platform: # arbitrary name for the security scheme
+      description: |
+        Platform name
+        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Platform # name of the header, query parameter or cookie
+    Product: # arbitrary name for the security scheme
+      description: |
+        Plex application name
+        eg: `Laika`, `Plex Media Server`, `Media Link`
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Product # name of the header, query parameter or cookie
+    Version: # arbitrary name for the security scheme
+      description: Plex application version number
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-Plex-Version # name of the header, query parameter or cookie
 
 paths:
   # Plex Media Server endpoints
