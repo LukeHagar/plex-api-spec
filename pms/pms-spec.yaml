@@ -199,6 +199,12 @@ paths:
   /updater/apply:
     $ref: "./paths/updater-apply.yaml"
 
+  /video/:/transcode/universal/start.mpd:
+    $ref: "./paths/video-transcode-universal-start.yaml"
+
+  /:/timeline:
+    $ref: "./paths/timeline.yaml"
+
 tags:
   - name: Activities
     description: |
