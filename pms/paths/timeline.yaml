@@ -87,14 +87,6 @@ get:
         type: number
       example: 1
 
-    - name: ratingKey
-      description: The rating key of the media item
-      required: true
-      in: query
-      schema: 
-        type: number
-      example: 23409
-
   responses:
     "200":
       description: The timeline for the media item
