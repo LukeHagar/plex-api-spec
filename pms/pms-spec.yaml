@@ -13,7 +13,7 @@ info:
     identifier: MIT
 
 servers:
-  - url: "{protocol}://{localIP}:{port}"
+  - url: "{protocol}://{ip}:{port}"
     description: The full address of your Plex Server
     variables:
       protocol:
@@ -22,7 +22,7 @@ servers:
         enum:
           - "http"
           - "https"
-      localIP:
+      ip:
         default: "10.10.10.47"
         description: The Local IP Address of your plex server.
       port:

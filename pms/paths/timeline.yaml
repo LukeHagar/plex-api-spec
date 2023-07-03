@@ -10,14 +10,16 @@ get:
       description: The rating key of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 23409
       
     - name: key
       description: The key of the media item to get the timeline for
       required: true
       in: query
-      schema: string
+      schema: 
+        type: string
       example: "/library/metadata/23409"
 
     - name: state
@@ -33,56 +35,64 @@ get:
       description: Whether the media item has MDE
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 1
 
     - name: time
       description: The time of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 2000
 
     - name: duration
       description: The duration of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 10000
 
     - name: context
       description: The context of the media item
       required: true
       in: query
-      schema: string
+      schema: 
+        type: string
       example: "home:hub.continueWatching"
 
     - name: playQueueItemID
       description: The play queue item ID of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 1
 
     - name: playBackTime
       description: The playback time of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 2000
 
     - name: row
       description: The row of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 1
 
     - name: ratingKey
       description: The rating key of the media item
       required: true
       in: query
-      schema: number
+      schema: 
+        type: number
       example: 23409
 
   responses:
