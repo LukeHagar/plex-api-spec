@@ -12,7 +12,7 @@ info:
     name: MIT
     identifier: MIT
 servers:
-  - url: '{protocol}://{localIP}:{port}'
+  - url: '{protocol}://{ip}:{port}'
     description: The full address of your Plex Server
     variables:
       protocol:
@@ -21,7 +21,7 @@ servers:
         enum:
           - http
           - https
-      localIP:
+      ip:
         default: 10.10.10.47
         description: The Local IP Address of your plex server.
       port:
@@ -3778,97 +3778,113 @@ paths:
           description: Whether the media item has MDE
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 1
         - name: path
           description: The path to the media item to transcode
           required: true
           in: query
-          schema: string
+          schema:
+            type: string
           example: /library/metadata/23409
         - name: mediaIndex
           description: The index of the media item to transcode
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
         - name: partIndex
           description: The index of the part to transcode
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
         - name: protocol
           description: The protocol to use for the transcode session
           required: true
           in: query
-          schema: string
+          schema:
+            type: string
           example: hls
         - name: fastSeek
           description: Whether to use fast seek or not
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
         - name: directPlay
           description: Whether to use direct play or not
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
         - name: directStream
           description: Whether to use direct stream or not
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
         - name: subtitleSize
           description: The size of the subtitles
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 100
         - name: subtites
           description: The subtitles
           required: false
           in: query
-          schema: string
+          schema:
+            type: string
           example: burn
         - name: audioBoost
           description: The audio boost
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 100
         - name: location
           description: The location of the transcode session
           required: false
           in: query
-          schema: string
+          schema:
+            type: string
           example: lan
         - name: mediaBufferSize
           description: The size of the media buffer
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 102400
         - name: session
           description: The session ID
           required: false
           in: query
-          schema: string
+          schema:
+            type: string
           example: zvcage8b7rkioqcm8f4uns4c
         - name: addDebugOverlay
           description: Whether to add a debug overlay or not
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
         - name: autoAdjustQuality
           description: Whether to auto adjust quality or not
           required: false
           in: query
-          schema: number
+          schema:
+            type: number
           example: 0
       responses:
         '200':
@@ -3908,13 +3924,15 @@ paths:
           description: The rating key of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 23409
         - name: key
           description: The key of the media item to get the timeline for
           required: true
           in: query
-          schema: string
+          schema:
+            type: string
           example: /library/metadata/23409
         - name: state
           description: The state of the media item
@@ -3931,49 +3949,57 @@ paths:
           description: Whether the media item has MDE
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 1
         - name: time
           description: The time of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 2000
         - name: duration
           description: The duration of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 10000
         - name: context
           description: The context of the media item
           required: true
           in: query
-          schema: string
+          schema:
+            type: string
           example: 'home:hub.continueWatching'
         - name: playQueueItemID
           description: The play queue item ID of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 1
         - name: playBackTime
           description: The playback time of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 2000
         - name: row
           description: The row of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 1
         - name: ratingKey
           description: The rating key of the media item
           required: true
           in: query
-          schema: number
+          schema:
+            type: number
           example: 23409
       responses:
         '200':
