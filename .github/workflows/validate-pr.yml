@@ -52,8 +52,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: PR-Build-${{ github.ref }}
-          path: |
-            plexjs
+          path: sdk-ts
 
       - name: Run npm install and build Typescript SDK
         id: buildSDK
