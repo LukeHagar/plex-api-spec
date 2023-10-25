@@ -84,8 +84,8 @@ paths:
     $ref: "./paths/geoip.yaml"
   /home:
     $ref: "./paths/home.yaml"
-  /pins:
-    $ref: "./paths/pins.yaml"
+  # /pins:
+  #   $ref: "./paths/pins.yaml"
   /pins/{pinID}:
     $ref: "./paths/pins-id.yaml"
   /resources:

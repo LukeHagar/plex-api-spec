@@ -48,6 +48,13 @@ jobs:
           rm -rf plexjs/plextv
           java -jar openapi-generator-cli.jar generate -i ../plextv/plextv-spec.yaml -g typescript-axios -o plexjs/plextv --global-property skipFormModel=false --config sdk-resources/plextv-config.yaml
 
+      - name: After SDK Build
+        uses: actions/upload-artifact@v3
+        with:
+          name: PR-Build-${{ github.ref }}
+          path: |
+            plexjs
+
       - name: Run npm install and build Typescript SDK
         id: buildSDK
         if: steps.buildPTV.outcome == 'success'
@@ -55,11 +62,3 @@ jobs:
           cd sdk-ts/plexjs
           npm install
           npm run build
-
-      - name: After SDK Build
-        if: steps.buildSDK.outcome == 'success'
-        uses: actions/upload-artifact@v3
-        with:
-          name: PR-Build-${{ github.ref }}
-          path: |
-            plexjs
