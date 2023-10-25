@@ -1,0 +1,65 @@
+name: "Test OAG TypeScript SDK Build"
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - plextv/**
+      - pms/**
+  workflow_dispatch:
+
+jobs:
+  push_spec_workflow:
+    name: Build and test typescript SDK
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the master branch request to run rsync
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      # Checkout the main branch of api-specs
+      - name: Checkout API Specs Repo
+        uses: actions/checkout@v3
+        with:
+          repository: LukeHagar/plexjs
+          path: sdk-ts
+          ref: main
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install OpenAPI Generator
+        run: |
+          wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.0.1/openapi-generator-cli-7.0.1.jar -O openapi-generator-cli.jar
+
+      - name: Build PMS SDK
+        id: buildPMS
+        run: |
+          rm -rf plexjs/pms
+          java -jar openapi-generator-cli.jar generate -i api-specs/pms/pms-spec.yaml -g typescript-axios -o plexjs/pms --config sdk-resources/pms-config-test.yaml
+
+      - name: Build PTV SDK
+        id: buildPTV
+        run: |
+          rm -rf plexjs/plextv
+          java -jar openapi-generator-cli.jar generate -i api-specs/plextv/plextv-spec.yaml -g typescript-axios -o plexjs/plextv --config sdk-resources/plextv-config-test.yaml
+
+      - name: Archive test build
+        uses: actions/upload-artifact@v3
+        with:
+          name: OAG-7.0.1-pr-test
+          path: |
+            plexjs
+
+      - name: Run npm install and build Typescript SDK
+        id: buildSDK
+        if: steps.buildPTV.outcome == 'success'
+        run: |
+          cd sdk-ts/plexjs
+          npm install
+          npm run build
