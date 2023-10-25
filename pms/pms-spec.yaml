@@ -205,6 +205,12 @@ paths:
   /:/timeline:
     $ref: "./paths/timeline.yaml"
 
+  /pins:
+    servers: 
+      - url: https://plex.tv/api/v2
+        description: The full address of your Plex Server
+    $ref: "../plextv/paths/pins.yaml"
+
 tags:
   - name: Activities
     description: |
