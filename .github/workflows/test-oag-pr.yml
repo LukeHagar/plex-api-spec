@@ -40,12 +40,14 @@ jobs:
       - name: Build PMS SDK
         id: buildPMS
         run: |
+          cd sdk-ts
           rm -rf plexjs/pms
           java -jar openapi-generator-cli.jar generate -i api-specs/pms/pms-spec.yaml -g typescript-axios -o plexjs/pms --config sdk-resources/pms-config-test.yaml
 
       - name: Build PTV SDK
         id: buildPTV
         run: |
+          cd sdk-ts
           rm -rf plexjs/plextv
           java -jar openapi-generator-cli.jar generate -i api-specs/plextv/plextv-spec.yaml -g typescript-axios -o plexjs/plextv --config sdk-resources/plextv-config-test.yaml
 

@@ -56,6 +56,13 @@ jobs:
           npm install
           npm run build
 
+      - name: Archive test build
+        uses: actions/upload-artifact@v3
+        with:
+          name: pr-test-build
+          path: |
+            plexjs
+
       - name: After SDK Build
         if: steps.buildSDK.outcome == 'success'
         run: |
