@@ -51,7 +51,7 @@ jobs:
       - name: After SDK Build
         uses: actions/upload-artifact@v3
         with:
-          name: PR-Build-${{ github.ref }}
+          name: PR-Build
           path: sdk-ts
 
       - name: Run npm install and build Typescript SDK

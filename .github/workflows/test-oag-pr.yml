@@ -55,6 +55,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: OAG-7.0.1-pr-test
+          path: sdk-ts
 
       - name: Run npm install and build Typescript SDK
         id: buildSDK
