@@ -1,0 +1,73 @@
+{
+  "sdkName": "plexsdk",
+  "specFilePath": "./plex-media-server-spec-dereferenced.yaml",
+  "languages": ["python", "typescript", "java"],
+  "createDocs": true,
+  "auth": ["apikey"],
+  "customizations": {
+    "authentication": {
+      "apiKey": {
+        "header": "X-Plex-Token"
+      }
+    },
+    "generateEnv": true,
+    "devContainer": true,
+    "license": {
+      "type": "MIT"
+    },
+    "retry": {
+      "enabled": true,
+      "retryDelay": 150,
+      "maxAttempts": 3
+    },
+    "injectedModels": [],
+    "inferServiceNames": false,
+    "responseHeaders": true
+  },
+  "languageOptions": {
+    "typescript": {
+      "npmName": "plex-typescript-sdk",
+      "npmOrg": "lukehagar",
+      "httpClient": "axios",
+      "bundle": false,
+      "exportClassDefault": false,
+      "githubRepoName": "plexjs",
+      "sdkVersion": "0.0.1",
+      "ignoreFiles": [],
+      "authors": [
+        {
+          "name": "Luke Hagar",
+          "email": "lukeslakemail@gmail.com"
+        }
+      ]
+    },
+    "python": {
+      "pypiPackageName": "plex-python-sdk",
+      "alwaysInitializeOptionals": false,
+      "githubRepoName": "plexpy",
+      "sdkVersion": "0.0.1",
+      "ignoreFiles": [],
+      "authors": [
+        {
+          "name": "Luke Hagar",
+          "email": "lukeslakemail@gmail.com"
+        }
+      ]
+    },
+    "java": {
+      "githubRepoName": "plex-java-sdk",
+      "sdkVersion": "0.0.1",
+      "groupId": "plex.lukehagar",
+      "ignoreFiles": [],
+      "authors": [
+        {
+          "name": "Luke Hagar",
+          "email": "lukeslakemail@gmail.com"
+        }
+      ]
+    }
+  },
+  "publishing": {
+    "githubOrg": "lukehagar"
+  }
+}
