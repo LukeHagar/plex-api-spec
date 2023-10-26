@@ -2155,7 +2155,7 @@ paths:
                                                 example: left
                                               chromaSubsampling:
                                                 type: string
-                                                example: 14520
+                                                example: '4:2:0'
                                               codedHeight:
                                                 type: number
                                                 example: 1080
