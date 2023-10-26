@@ -104,7 +104,7 @@ get:
                           example: 6612628
                         originallyAvailableAt:
                           type: string
-                          format: date
+                          format: date-time
                           example: 1996-05-22
                         addedAt:
                           type: number

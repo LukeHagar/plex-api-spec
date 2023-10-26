@@ -258,3 +258,6 @@ tags:
   - name: User
     description: |
       API Calls that perform operations with Plex Media Server Users
+  - name: Video
+    description: |
+      API Calls that perform operations with Plex Media Server Videos
