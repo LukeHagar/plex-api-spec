@@ -254,7 +254,7 @@ get:
                                             example: left
                                           chromaSubsampling:
                                             type: string
-                                            example: 4:2:0
+                                            example: "4:2:0"
                                           codedHeight:
                                             type: number
                                             example: 1080
