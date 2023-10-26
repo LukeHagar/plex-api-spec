@@ -240,6 +240,8 @@ paths:
       responses:
         '200':
           description: Media is marked Played
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1296,7 +1298,7 @@ paths:
                               example: 7474422
                             originallyAvailableAt:
                               type: string
-                              format: date
+                              format: date-time
                               example: 2023-02-15T00:00:00.000Z
                             addedAt:
                               type: number
@@ -2030,7 +2032,7 @@ paths:
                               example: 420080
                             originallyAvailableAt:
                               type: string
-                              format: date
+                              format: date-time
                               example: 2020-10-31T00:00:00.000Z
                             addedAt:
                               type: number
@@ -3081,7 +3083,7 @@ paths:
                               example: 6612628
                             originallyAvailableAt:
                               type: string
-                              format: date
+                              format: date-time
                               example: 1996-05-22T00:00:00.000Z
                             addedAt:
                               type: number
@@ -4073,3 +4075,6 @@ tags:
   - name: User
     description: |
       API Calls that perform operations with Plex Media Server Users
+  - name: Video
+    description: |
+      API Calls that perform operations with Plex Media Server Videos
