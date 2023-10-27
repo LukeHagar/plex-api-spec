@@ -1,5 +1,5 @@
 {
-  "sdkName": "plexsdk",
+  "sdkName": "PlexSDK",
   "specFilePath": "./plex-media-server-spec-dereferenced.yaml",
   "languages": ["python", "typescript", "java"],
   "createDocs": true,
@@ -26,7 +26,7 @@
   },
   "languageOptions": {
     "typescript": {
-      "npmName": "plex-typescript-sdk",
+      "npmName": "plexjs",
       "npmOrg": "lukehagar",
       "httpClient": "axios",
       "bundle": false,
@@ -42,7 +42,7 @@
       ]
     },
     "python": {
-      "pypiPackageName": "plex-python-sdk",
+      "pypiPackageName": "plexpy",
       "alwaysInitializeOptionals": false,
       "githubRepoName": "plexpy",
       "sdkVersion": "0.0.1",
@@ -55,10 +55,12 @@
       ]
     },
     "java": {
-      "githubRepoName": "plex-java-sdk",
+      "githubRepoName": "plexjava",
       "sdkVersion": "0.0.1",
-      "groupId": "plex.lukehagar",
       "ignoreFiles": [],
+      "java": {
+        "groupId": "sdk.plex"
+      },
       "authors": [
         {
           "name": "Luke Hagar",
