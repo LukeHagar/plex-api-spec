@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - plex-media-server-spec-dereferenced.yaml
-  # Add any other triggers you want here, such as a push to the spec file
   workflow_call:
   workflow_dispatch:
 
