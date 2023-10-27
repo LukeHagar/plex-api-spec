@@ -43,3 +43,4 @@ jobs:
   generate-sdks:
     needs: dereference_api
     uses: ./.github/workflows/liblab-generate-sdks.yml
+    secrets: inherit
