@@ -40,4 +40,5 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
 
-      - uses: ./.github/workflows/liblab-generate-sdks.yml
+  generate-sdks:
+    uses: ./.github/workflows/liblab-generate-sdks.yml
