@@ -888,7 +888,7 @@ paths:
           description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -1072,7 +1072,7 @@ paths:
           description: 'Only return hubs which are "transient", meaning those which are prone to changing after media playback or addition (e.g. On Deck, or Recently Added).'
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -1544,7 +1544,7 @@ paths:
             Only exists for backwards compatibility, media providers other than the server libraries have it on always.
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -2241,7 +2241,7 @@ paths:
             4: Verbose
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -2479,7 +2479,7 @@ paths:
           description: images are always scaled proportionally. A value of '1' in minSize will make the smaller native dimension the dimension resized against.
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -2488,7 +2488,7 @@ paths:
           description: allow images to be resized beyond native dimensions.
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -2557,7 +2557,7 @@ paths:
           description: whether the playlist is smart or not
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -2622,7 +2622,7 @@ paths:
           description: type of playlists to return (default is all).
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -2948,7 +2948,7 @@ paths:
             The `force` argument is used to disable overwriting. If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -3685,6 +3685,7 @@ paths:
           required: false
           in: query
           schema:
+            type: integer
             enum:
               - 0
               - 1
@@ -3729,6 +3730,7 @@ paths:
           required: false
           in: query
           schema:
+            type: integer
             enum:
               - 0
               - 1
@@ -3738,6 +3740,7 @@ paths:
           required: false
           in: query
           schema:
+            type: integer
             enum:
               - 0
               - 1
