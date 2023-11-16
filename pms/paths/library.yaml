@@ -37,7 +37,7 @@ get:
         Only exists for backwards compatibility, media providers other than the server libraries have it on always.
       in: query
       schema:
-        type: number
+        type: integer
         enum:
           - 0
           - 1

@@ -28,7 +28,7 @@ post:
       description: whether the playlist is smart or not
       in: query
       schema:
-        type: number
+        type: integer
         enum:
           - 0
           - 1

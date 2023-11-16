@@ -16,7 +16,7 @@ get:
         4: Verbose
       in: query
       schema:
-        type: number
+        type: integer
         enum:
           - 0
           - 1

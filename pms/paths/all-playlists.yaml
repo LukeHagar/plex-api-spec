@@ -19,7 +19,7 @@ get:
       description: type of playlists to return (default is all).
       in: query
       schema:
-        type: number
+        type: integer
         enum:
           - 0
           - 1
