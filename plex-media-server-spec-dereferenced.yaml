@@ -12,8 +12,6 @@ info:
     name: MIT
     identifier: MIT
 servers:
-  - url: 'http://10.10.10.47:32400'
-    description: The full address of your Plex Server
   - url: '{protocol}://{ip}:{port}'
     description: The full address of your Plex Server
     variables:
