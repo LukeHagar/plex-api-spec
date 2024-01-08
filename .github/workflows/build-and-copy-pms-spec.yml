@@ -39,8 +39,3 @@ jobs:
           commit_message: Updating PMS Spec
 
       - uses: stefanzweifel/git-auto-commit-action@v4
-
-  generate-sdks:
-    needs: dereference_api
-    uses: ./.github/workflows/liblab-generate-sdks.yml
-    secrets: inherit
