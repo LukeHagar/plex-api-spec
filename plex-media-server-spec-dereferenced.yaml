@@ -1479,6 +1479,133 @@ paths:
       responses:
         '200':
           description: The libraries available on the Server
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 5
+                      allowSync:
+                        type: boolean
+                        example: false
+                      title1:
+                        type: string
+                        example: Plex Library
+                      Directory:
+                        type: array
+                        items:
+                          - type: object
+                            properties:
+                              allowSync:
+                                type: boolean
+                                example: true
+                              art:
+                                type: string
+                                example: '/:/resources/movie-fanart.jpg'
+                              composite:
+                                type: string
+                                example: /library/sections/1/composite/1705615584
+                              filters:
+                                type: boolean
+                                example: true
+                              refreshing:
+                                type: boolean
+                                example: false
+                              thumb:
+                                type: string
+                                example: '/:/resources/movie.png'
+                              key:
+                                type: string
+                                example: '1'
+                              type:
+                                type: string
+                                example: movie
+                              title:
+                                type: string
+                                example: Movies
+                              agent:
+                                type: string
+                                example: tv.plex.agents.movie
+                              scanner:
+                                type: string
+                                example: Plex Movie
+                              language:
+                                type: string
+                                example: en-US
+                              uuid:
+                                type: string
+                                example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                              updatedAt:
+                                type: integer
+                                format: int32
+                                example: 1705615634
+                              createdAt:
+                                type: integer
+                                format: int32
+                                example: 1654131312
+                              scannedAt:
+                                type: integer
+                                format: int32
+                                example: 1705615584
+                              content:
+                                type: boolean
+                                example: true
+                              directory:
+                                type: boolean
+                                example: true
+                              contentChangedAt:
+                                type: integer
+                                format: int32
+                                example: 3192854
+                              hidden:
+                                type: integer
+                                format: int32
+                                example: 0
+                              Location:
+                                type: array
+                                items:
+                                  - type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int32
+                                        example: 1
+                                      path:
+                                        type: string
+                                        example: /movies
+                                example:
+                                  - id: 1
+                                    path: /movies
+                        example:
+                          - allowSync: true
+                            art: '/:/resources/movie-fanart.jpg'
+                            composite: /library/sections/1/composite/1705615584
+                            filters: true
+                            refreshing: false
+                            thumb: '/:/resources/movie.png'
+                            key: '1'
+                            type: movie
+                            title: Movies
+                            agent: tv.plex.agents.movie
+                            scanner: Plex Movie
+                            language: en-US
+                            uuid: 322a231a-b7f7-49f5-920f-14c61199cd30
+                            updatedAt: 1705615634
+                            createdAt: 1654131312
+                            scannedAt: 1705615584
+                            content: true
+                            directory: true
+                            contentChangedAt: 3192854
+                            hidden: 0
+                            Location:
+                              - id: 1
+                                path: /movies
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
