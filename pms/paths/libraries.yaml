@@ -104,15 +104,15 @@ get:
                         Location:
                           type: array
                           items:
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                  format: int32
-                                  example: 1
-                                path:
-                                  type: string
-                                  example: /movies
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 1
+                              path:
+                                type: string
+                                example: /movies
                           example:
                             - id: 1
                               path: /movies
