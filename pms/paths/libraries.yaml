@@ -13,6 +13,74 @@ get:
   responses:
     "200":
       description: The libraries available on the Server
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: number
+                  allowSync:
+                    type: boolean
+                  title1:
+                    type: string
+                  Directory:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        allowSync:
+                          type: boolean
+                        art:
+                          type: string
+                        composite:
+                          type: string
+                        filters:
+                          type: boolean
+                        refreshing:
+                          type: boolean
+                        thumb:
+                          type: string
+                        key:
+                          type: string
+                        type:
+                          type: string
+                        title:
+                          type: string
+                        agent:
+                          type: string
+                        scanner:
+                          type: string
+                        language:
+                          type: string
+                        uuid:
+                          type: string
+                        updatedAt:
+                          type: number
+                        createdAt:
+                          type: number
+                        scannedAt:
+                          type: number
+                        content:
+                          type: boolean
+                        directory:
+                          type: boolean
+                        contentChangedAt:
+                          type: number
+                        hidden:
+                          type: number
+                        Location:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              path:
+                                type: string
     "400":
       $ref: "../../responses/400.yaml"
     "401":
