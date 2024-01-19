@@ -7,3 +7,4 @@ Documentation is hosted on https://plexapi.dev
 
 Typescript SDK is under construction at https://github.com/lukehagar/plexjs
 
+Discord Server: https://discord.gg/H4bnFg7e
