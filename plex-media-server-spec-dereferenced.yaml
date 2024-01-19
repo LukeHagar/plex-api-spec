@@ -1678,6 +1678,80 @@ paths:
       responses:
         '200':
           description: The details of the library
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 20
+                      allowSync:
+                        type: boolean
+                        example: false
+                      art:
+                        type: string
+                        example: '/:/resources/movie-fanart.jpg'
+                      content:
+                        type: string
+                        example: secondary
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      librarySectionID:
+                        type: integer
+                        format: int32
+                        example: 1
+                      mediaTagPrefix:
+                        type: string
+                        example: /system/bundle/media/flags/
+                      mediaTagVersion:
+                        type: integer
+                        format: int32
+                        example: 1698860922
+                      thumb:
+                        type: string
+                        example: '/:/resources/movie.png'
+                      title1:
+                        type: string
+                        example: Movies
+                      viewGroup:
+                        type: string
+                        example: secondary
+                      viewMode:
+                        type: integer
+                        format: int32
+                        example: 65592
+                      Directory:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            secondary:
+                              type: boolean
+                              example: true
+                            prompt:
+                              type: string
+                              example: Search Movies
+                            search:
+                              type: boolean
+                              example: true
+                            key:
+                              type: string
+                              example: search?type=1
+                            title:
+                              type: string
+                              example: Search...
+                        example:
+                          - secondary: true
+                            prompt: Search Movies
+                            search: true
+                            key: search?type=1
+                            title: Search...
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':

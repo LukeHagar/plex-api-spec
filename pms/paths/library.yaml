@@ -47,6 +47,449 @@ get:
   responses:
     "200":
       description: The details of the library
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 29
+                  allowSync:
+                    type: boolean
+                    example: false
+                  art:
+                    type: string
+                    example: /:/resources/movie-fanart.jpg
+                  content:
+                    type: string
+                    example: secondary
+                  identifier:
+                    type: string
+                    example: com.plexapp.plugins.library
+                  librarySectionID:
+                    type: integer
+                    format: int32
+                    example: 1
+                  mediaTagPrefix:
+                    type: string
+                    example: /system/bundle/media/flags/
+                  mediaTagVersion:
+                    type: integer
+                    format: int32
+                    example: 1701731894
+                  thumb:
+                    type: string
+                    example: /:/resources/movie.png
+                  title1:
+                    type: string
+                    example: Movies
+                  viewGroup:
+                    type: string
+                    example: secondary
+                  viewMode:
+                    type: integer
+                    format: int32
+                    example: 65592
+                  Directory:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          example: search?type=1
+                        title:
+                          type: string
+                          example: Search...
+                        secondary:
+                          type: boolean
+                          example: true
+                        prompt:
+                          type: string
+                          example: Search Movies
+                        search:
+                          type: boolean
+                          example: true
+                    example:
+                      - key: search?type=1
+                        title: Search...
+                        secondary: true
+                        prompt: Search Movies
+                        search: true
+                  Type:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          example: /library/sections/1/all?type=1
+                        type:
+                          type: string
+                          example: movie
+                        title:
+                          type: string
+                          example: Movies
+                        active:
+                          type: boolean
+                          example: false
+                        Filter:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              filter:
+                                type: string
+                                example: label
+                              filterType:
+                                type: string
+                                example: string
+                              key:
+                                type: string
+                                example: /library/sections/1/label
+                              title:
+                                type: string
+                                example: Labels
+                              type:
+                                type: string
+                                example: filter
+                          example:
+                            - filter: label
+                              filterType: string
+                              key: /library/sections/1/label
+                              title: Labels
+                              type: filter
+                        Sort:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              default:
+                                type: string
+                                example: asc
+                              defaultDirection:
+                                type: string
+                                example: desc
+                              descKey:
+                                type: string
+                                example: random:desc
+                              firstCharacterKey:
+                                type: string
+                                example: /library/sections/1/firstCharacter
+                              key:
+                                type: string
+                                example: random
+                              title:
+                                type: string
+                                example: Randomly
+                          example:
+                            - default: asc
+                              defaultDirection: desc
+                              descKey: random:desc
+                              firstCharacterKey: /library/sections/1/firstCharacter
+                              key: random
+                              title: Randomly
+                        Field:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              key:
+                                type: string
+                                example: label
+                              title:
+                                type: string
+                                example: Label
+                              type:
+                                type: string
+                                example: tag
+                              subType:
+                                type: string
+                                example: bitrate
+                          example:
+                            - key: label
+                              title: Label
+                              type: tag
+                              subType: bitrate
+                    example:
+                      - key: /library/sections/1/all?type=1
+                        type: movie
+                        title: Movies
+                        active: false
+                        Filter:
+                          - filter: genre
+                            filterType: string
+                            key: /library/sections/1/genre
+                            title: Genre
+                            type: filter
+                          - filter: year
+                            filterType: integer
+                            key: /library/sections/1/year
+                            title: Year
+                            type: filter
+                          - filter: decade
+                            filterType: integer
+                            key: /library/sections/1/decade
+                            title: Decade
+                            type: filter
+                          - filter: contentRating
+                            filterType: string
+                            key: /library/sections/1/contentRating
+                            title: Content Rating
+                            type: filter
+                          - filter: collection
+                            filterType: string
+                            key: /library/sections/1/collection
+                            title: Collection
+                            type: filter
+                          - filter: director
+                            filterType: string
+                            key: /library/sections/1/director
+                            title: Director
+                            type: filter
+                          - filter: actor
+                            filterType: string
+                            key: /library/sections/1/actor
+                            title: Actor
+                            type: filter
+                          - filter: writer
+                            filterType: string
+                            key: /library/sections/1/writer
+                            title: Writer
+                            type: filter
+                          - filter: producer
+                            filterType: string
+                            key: /library/sections/1/producer
+                            title: Producer
+                            type: filter
+                          - filter: country
+                            filterType: string
+                            key: /library/sections/1/country
+                            title: Country
+                            type: filter
+                          - filter: studio
+                            filterType: string
+                            key: /library/sections/1/studio
+                            title: Studio
+                            type: filter
+                          - filter: resolution
+                            filterType: string
+                            key: /library/sections/1/resolution
+                            title: Resolution
+                            type: filter
+                          - filter: hdr
+                            filterType: boolean
+                            key: /library/sections/1/hdr
+                            title: HDR
+                            type: filter
+                          - filter: unwatched
+                            filterType: boolean
+                            key: /library/sections/1/unwatched
+                            title: Unplayed
+                            type: filter
+                          - filter: inProgress
+                            filterType: boolean
+                            key: /library/sections/1/inProgress
+                            title: In Progress
+                            type: filter
+                          - filter: unmatched
+                            filterType: boolean
+                            key: /library/sections/1/unmatched
+                            title: Unmatched
+                            type: filter
+                          - filter: audioLanguage
+                            filterType: string
+                            key: /library/sections/1/audioLanguage
+                            title: Audio Language
+                            type: filter
+                          - filter: subtitleLanguage
+                            filterType: string
+                            key: /library/sections/1/subtitleLanguage
+                            title: Subtitle Language
+                            type: filter
+                          - filter: editionTitle
+                            filterType: string
+                            key: /library/sections/1/editionTitle
+                            title: Edition
+                            type: filter
+                          - filter: label
+                            filterType: string
+                            key: /library/sections/1/label
+                            title: Labels
+                            type: filter
+                        Sort:
+                          - default: asc
+                            defaultDirection: asc
+                            descKey: titleSort:desc
+                            firstCharacterKey: /library/sections/1/firstCharacter
+                            key: titleSort
+                            title: Title
+                          - defaultDirection: desc
+                            descKey: originallyAvailableAt:desc
+                            key: originallyAvailableAt
+                            title: Release Date
+                          - defaultDirection: desc
+                            descKey: rating:desc
+                            key: rating
+                            title: Critic Rating
+                          - defaultDirection: desc
+                            descKey: audienceRating:desc
+                            key: audienceRating
+                            title: Audience Rating
+                          - defaultDirection: desc
+                            descKey: duration:desc
+                            key: duration
+                            title: Duration
+                          - defaultDirection: desc
+                            descKey: addedAt:desc
+                            key: addedAt
+                            title: Date Added
+                          - defaultDirection: desc
+                            descKey: lastViewedAt:desc
+                            key: lastViewedAt
+                            title: Date Viewed
+                          - defaultDirection: asc
+                            descKey: mediaHeight:desc
+                            key: mediaHeight
+                            title: Resolution
+                          - defaultDirection: desc
+                            descKey: random:desc
+                            key: random
+                            title: Randomly
+                        Field:
+                          - key: title
+                            title: Title
+                            type: string
+                          - key: studio
+                            title: Studio
+                            type: string
+                          - key: userRating
+                            subType: rating
+                            title: Rating
+                            type: integer
+                          - key: contentRating
+                            title: Content Rating
+                            type: tag
+                          - key: year
+                            subType: year
+                            title: Year
+                            type: integer
+                          - key: decade
+                            subType: decade
+                            title: Decade
+                            type: integer
+                          - key: originallyAvailableAt
+                            title: Release Date
+                            type: date
+                          - key: duration
+                            subType: duration
+                            title: Duration
+                            type: integer
+                          - key: unmatched
+                            title: Unmatched
+                            type: boolean
+                          - key: duplicate
+                            title: Duplicate
+                            type: boolean
+                          - key: genre
+                            title: Genre
+                            type: tag
+                          - key: collection
+                            title: Collection
+                            type: tag
+                          - key: director
+                            title: Director
+                            type: tag
+                          - key: writer
+                            title: Writer
+                            type: tag
+                          - key: producer
+                            title: Producer
+                            type: tag
+                          - key: actor
+                            title: Actor
+                            type: tag
+                          - key: country
+                            title: Country
+                            type: tag
+                          - key: addedAt
+                            title: Date Added
+                            type: date
+                          - key: viewCount
+                            title: Plays
+                            type: integer
+                          - key: lastViewedAt
+                            title: Last Played
+                            type: date
+                          - key: unwatched
+                            title: Unplayed
+                            type: boolean
+                          - key: resolution
+                            title: Resolution
+                            type: resolution
+                          - key: hdr
+                            subType: hdr
+                            title: HDR
+                            type: boolean
+                          - key: mediaSize
+                            subType: fileSize
+                            title: File Size
+                            type: integer
+                          - key: mediaBitrate
+                            subType: bitrate
+                            title: Bitrate
+                            type: integer
+                          - key: subtitleLanguage
+                            title: Subtitle Language
+                            type: subtitleLanguage
+                          - key: audioLanguage
+                            title: Audio Language
+                            type: audioLanguage
+                          - key: inProgress
+                            title: In Progress
+                            type: boolean
+                          - key: trash
+                            title: Trash
+                            type: boolean
+                          - key: editionTitle
+                            title: Edition
+                            type: string
+                          - key: label
+                            title: Label
+                            type: tag
+                  FieldType:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          example: resolution
+                        Operator:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              key:
+                                type: string
+                                example: =
+                              title:
+                                type: string
+                                example: is
+                          example:
+                            - key: =
+                              title: is
+                    example:
+                      - type: resolution
+                        Operator:
+                          - key: =
+                            title: is
+
     "400":
       $ref: "../../responses/400.yaml"
     "401":
