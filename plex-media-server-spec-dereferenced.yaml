@@ -201,102 +201,103 @@ paths:
           description: Server Preferences
           content:
             application/json:
-              type: object
-              properties:
-                MediaContainer:
-                  type: object
-                  properties:
-                    size:
-                      type: integer
-                      format: int32
-                      example: 161
-                    Setting:
-                      type: array
-                      items:
-                        oneOf:
-                          - type: object
-                            properties:
-                              id:
-                                type: string
-                                example: FriendlyName
-                              label:
-                                type: string
-                                example: Friendly name
-                              summary:
-                                type: string
-                                example: 'This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer''s name will be used instead.'
-                              type:
-                                type: string
-                                example: text
-                              default:
-                                type: string
-                                example: ''
-                              value:
-                                type: string
-                                example: Hera
-                              hidden:
-                                type: boolean
-                                example: false
-                              advanced:
-                                type: boolean
-                                example: false
-                              group:
-                                type: string
-                                example: general
-                          - type: object
-                            properties:
-                              id:
-                                type: string
-                                example: ScheduledLibraryUpdateInterval
-                              label:
-                                type: string
-                                example: Library scan interval
-                              summary:
-                                type: string
-                                example: ''
-                              type:
-                                type: string
-                                example: int
-                              default:
-                                type: integer
-                                format: int32
-                                example: 3600
-                              value:
-                                type: integer
-                                format: int32
-                                example: 3600
-                              hidden:
-                                type: boolean
-                                example: false
-                              advanced:
-                                type: boolean
-                                example: false
-                              group:
-                                type: string
-                                example: library
-                              enumValues:
-                                type: string
-                                example: '900:every 15 minutes|1800:every 30 minutes|3600:hourly|7200:every 2 hours|21600:every 6 hours|43200:every 12 hours|86400:daily'
-                      example:
-                        - id: FriendlyName
-                          label: Friendly name
-                          summary: 'This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer''s name will be used instead.'
-                          type: text
-                          default: ''
-                          value: Hera
-                          hidden: false
-                          advanced: false
-                          group: general
-                        - id: ScheduledLibraryUpdateInterval
-                          label: Library scan interval
-                          summary: ''
-                          type: int
-                          default: 3600
-                          value: 3600
-                          hidden: false
-                          advanced: false
-                          group: library
-                          enumValues: '900:every 15 minutes|1800:every 30 minutes|3600:hourly|7200:every 2 hours|21600:every 6 hours|43200:every 12 hours|86400:daily'
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 161
+                      Setting:
+                        type: array
+                        items:
+                          oneOf:
+                            - type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: FriendlyName
+                                label:
+                                  type: string
+                                  example: Friendly name
+                                summary:
+                                  type: string
+                                  example: 'This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer''s name will be used instead.'
+                                type:
+                                  type: string
+                                  example: text
+                                default:
+                                  type: string
+                                  example: ''
+                                value:
+                                  type: string
+                                  example: Hera
+                                hidden:
+                                  type: boolean
+                                  example: false
+                                advanced:
+                                  type: boolean
+                                  example: false
+                                group:
+                                  type: string
+                                  example: general
+                            - type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: ScheduledLibraryUpdateInterval
+                                label:
+                                  type: string
+                                  example: Library scan interval
+                                summary:
+                                  type: string
+                                  example: ''
+                                type:
+                                  type: string
+                                  example: int
+                                default:
+                                  type: integer
+                                  format: int32
+                                  example: 3600
+                                value:
+                                  type: integer
+                                  format: int32
+                                  example: 3600
+                                hidden:
+                                  type: boolean
+                                  example: false
+                                advanced:
+                                  type: boolean
+                                  example: false
+                                group:
+                                  type: string
+                                  example: library
+                                enumValues:
+                                  type: string
+                                  example: '900:every 15 minutes|1800:every 30 minutes|3600:hourly|7200:every 2 hours|21600:every 6 hours|43200:every 12 hours|86400:daily'
+                        example:
+                          - id: FriendlyName
+                            label: Friendly name
+                            summary: 'This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer''s name will be used instead.'
+                            type: text
+                            default: ''
+                            value: Hera
+                            hidden: false
+                            advanced: false
+                            group: general
+                          - id: ScheduledLibraryUpdateInterval
+                            label: Library scan interval
+                            summary: ''
+                            type: int
+                            default: 3600
+                            value: 3600
+                            hidden: false
+                            advanced: false
+                            group: library
+                            enumValues: '900:every 15 minutes|1800:every 30 minutes|3600:hourly|7200:every 2 hours|21600:every 6 hours|43200:every 12 hours|86400:daily'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
