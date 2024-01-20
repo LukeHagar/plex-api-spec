@@ -38,7 +38,7 @@ post:
       in: query
       schema:
         type: string
-      required: false
+      required: true
     - name: playQueueID
       description: the play queue to copy to a playlist
       in: query
