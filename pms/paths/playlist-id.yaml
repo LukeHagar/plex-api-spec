@@ -17,6 +17,89 @@ get:
   responses:
     "200":
       description: The playlist
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 1
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        content:
+                          type: string
+                          example: library://x/directory/%2Flibrary%2Fsections%2F1%2Fall%3Ftype%3D1%26push%3D1%26title%3D2%26or%3D1%26title%3DSerenity%26pop%3D1
+                        ratingKey:
+                          type: string
+                          example: "95"
+                        key:
+                          type: string
+                          example: /playlists/95/items
+                        guid:
+                          type: string
+                          example: com.plexapp.agents.none://87425529-380f-44b8-a689-9a0537e7ec91
+                        type:
+                          type: string
+                          example: playlist
+                        title:
+                          type: string
+                          example: Smart Movie Playlist
+                        summary:
+                          type: string
+                          example: ""
+                        smart:
+                          type: boolean
+                          example: true
+                        playlistType:
+                          type: string
+                          example: video
+                        composite:
+                          type: string
+                          example: /playlists/95/composite/1705717387
+                        icon:
+                          type: string
+                          example: playlist://image.smart
+                        duration:
+                          type: integer
+                          format: int32
+                          example: 282000
+                        leafCount:
+                          type: integer
+                          format: int32
+                          example: 2
+                        addedAt:
+                          type: integer
+                          format: int32
+                          example: 1705716493
+                        updatedAt:
+                          type: integer
+                          format: int32
+                          example: 1705717387
+                    example:
+                      - content: library://x/directory/%2Flibrary%2Fsections%2F1%2Fall%3Ftype%3D1%26push%3D1%26title%3D2%26or%3D1%26title%3DSerenity%26pop%3D1
+                        ratingKey: "95"
+                        key: /playlists/95/items
+                        guid: com.plexapp.agents.none://87425529-380f-44b8-a689-9a0537e7ec91
+                        type: playlist
+                        title: Smart Movie Playlist
+                        summary: ""
+                        smart: true
+                        playlistType: video
+                        composite: /playlists/95/composite/1705717387
+                        icon: playlist://image.smart
+                        duration: 282000
+                        leafCount: 2
+                        addedAt: 1705716493
+                        updatedAt: 1705717387
+
     "400":
       $ref: "../../responses/400.yaml"
     "401":
