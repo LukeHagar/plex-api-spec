@@ -142,6 +142,18 @@ put:
       schema:
         type: number
       required: true
+    - name: title
+      description: name of the playlist
+      in: query
+      schema:
+        type: string
+      required: false
+    - name: summary
+      description: summary description of the playlist
+      in: query
+      schema:
+        type: string
+      required: false
   responses:
     "200":
       description: The playlist is deleted
