@@ -4423,6 +4423,94 @@ paths:
       responses:
         '200':
           description: returns all playlists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 7
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: '96'
+                            key:
+                              type: string
+                              example: /playlists/96/items
+                            guid:
+                              type: string
+                              example: 'com.plexapp.agents.none://a2f92937-1408-40e2-b022-63a8a9377e55'
+                            type:
+                              type: string
+                              example: playlist
+                            title:
+                              type: string
+                              example: A Great Playlist
+                            summary:
+                              type: string
+                              example: What a great playlist
+                            smart:
+                              type: boolean
+                              example: false
+                            playlistType:
+                              type: string
+                              example: video
+                            icon:
+                              type: string
+                              example: 'playlist://image.smart'
+                            viewCount:
+                              type: integer
+                              format: int32
+                              example: 1
+                            lastViewedAt:
+                              type: integer
+                              format: int32
+                              example: 1705719589
+                            leafCount:
+                              type: integer
+                              format: int32
+                              example: 1
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705719589
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705724593
+                            composite:
+                              type: string
+                              example: /playlists/96/composite/1705724593
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 141000
+                        example:
+                          - ratingKey: '96'
+                            key: /playlists/96/items
+                            guid: 'com.plexapp.agents.none://a2f92937-1408-40e2-b022-63a8a9377e55'
+                            type: playlist
+                            title: A Great Playlist
+                            summary: What a great playlist
+                            smart: false
+                            playlistType: video
+                            icon: 'playlist://image.smart'
+                            viewCount: 1
+                            lastViewedAt: 1705719589
+                            leafCount: 1
+                            addedAt: 1705719589
+                            updatedAt: 1705724593
+                            composite: /playlists/96/composite/1705724593
+                            duration: 141000
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4476,6 +4564,94 @@ paths:
       responses:
         '200':
           description: returns all playlists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 4
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: '92'
+                            key:
+                              type: string
+                              example: /playlists/92/items
+                            guid:
+                              type: string
+                              example: 'com.plexapp.agents.none://7ca5aaef-58e8-4828-9e21-c009c97f2903'
+                            type:
+                              type: string
+                              example: playlist
+                            title:
+                              type: string
+                              example: Static Playlist
+                            summary:
+                              type: string
+                              example: A Great Playlist
+                            smart:
+                              type: boolean
+                              example: false
+                            playlistType:
+                              type: string
+                              example: video
+                            composite:
+                              type: string
+                              example: /playlists/92/composite/1705716440
+                            icon:
+                              type: string
+                              example: 'playlist://image.smart'
+                            viewCount:
+                              type: integer
+                              format: int32
+                              example: 1
+                            lastViewedAt:
+                              type: integer
+                              format: int32
+                              example: 1705716298
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 7328000
+                            leafCount:
+                              type: integer
+                              format: int32
+                              example: 32
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705716298
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705716440
+                        example:
+                          - ratingKey: '92'
+                            key: /playlists/92/items
+                            guid: 'com.plexapp.agents.none://7ca5aaef-58e8-4828-9e21-c009c97f2903'
+                            type: playlist
+                            title: Static Playlist
+                            summary: A Great Playlist
+                            smart: false
+                            playlistType: video
+                            composite: /playlists/92/composite/1705716440
+                            icon: 'playlist://image.smart'
+                            viewCount: 1
+                            lastViewedAt: 1705716298
+                            duration: 7328000
+                            leafCount: 32
+                            addedAt: 1705716298
+                            updatedAt: 1705716440
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4518,6 +4694,88 @@ paths:
       responses:
         '200':
           description: The playlist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 1
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            content:
+                              type: string
+                              example: 'library://x/directory/%2Flibrary%2Fsections%2F1%2Fall%3Ftype%3D1%26push%3D1%26title%3D2%26or%3D1%26title%3DSerenity%26pop%3D1'
+                            ratingKey:
+                              type: string
+                              example: '95'
+                            key:
+                              type: string
+                              example: /playlists/95/items
+                            guid:
+                              type: string
+                              example: 'com.plexapp.agents.none://87425529-380f-44b8-a689-9a0537e7ec91'
+                            type:
+                              type: string
+                              example: playlist
+                            title:
+                              type: string
+                              example: Smart Movie Playlist
+                            summary:
+                              type: string
+                              example: ''
+                            smart:
+                              type: boolean
+                              example: true
+                            playlistType:
+                              type: string
+                              example: video
+                            composite:
+                              type: string
+                              example: /playlists/95/composite/1705717387
+                            icon:
+                              type: string
+                              example: 'playlist://image.smart'
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 282000
+                            leafCount:
+                              type: integer
+                              format: int32
+                              example: 2
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705716493
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705717387
+                        example:
+                          - content: 'library://x/directory/%2Flibrary%2Fsections%2F1%2Fall%3Ftype%3D1%26push%3D1%26title%3D2%26or%3D1%26title%3DSerenity%26pop%3D1'
+                            ratingKey: '95'
+                            key: /playlists/95/items
+                            guid: 'com.plexapp.agents.none://87425529-380f-44b8-a689-9a0537e7ec91'
+                            type: playlist
+                            title: Smart Movie Playlist
+                            summary: ''
+                            smart: true
+                            playlistType: video
+                            composite: /playlists/95/composite/1705717387
+                            icon: 'playlist://image.smart'
+                            duration: 282000
+                            leafCount: 2
+                            addedAt: 1705716493
+                            updatedAt: 1705717387
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4595,6 +4853,18 @@ paths:
           schema:
             type: number
           required: true
+        - name: title
+          description: name of the playlist
+          in: query
+          schema:
+            type: string
+          required: false
+        - name: summary
+          description: summary description of the playlist
+          in: query
+          schema:
+            type: string
+          required: false
       responses:
         '200':
           description: The playlist is deleted
@@ -4648,6 +4918,382 @@ paths:
       responses:
         '200':
           description: The playlist contents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 2
+                      composite:
+                        type: string
+                        example: /playlists/95/composite/1705717521
+                      duration:
+                        type: integer
+                        format: int32
+                        example: 282
+                      leafCount:
+                        type: integer
+                        format: int32
+                        example: 2
+                      playlistType:
+                        type: string
+                        example: video
+                      ratingKey:
+                        type: string
+                        example: '95'
+                      smart:
+                        type: boolean
+                        example: true
+                      title:
+                        type: string
+                        example: Smart Movie Playlist
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: '17'
+                            key:
+                              type: string
+                              example: /library/metadata/17
+                            guid:
+                              type: string
+                              example: 'plex://movie/5d77683f6f4521001ea9dc53'
+                            studio:
+                              type: string
+                              example: Universal Pictures
+                            type:
+                              type: string
+                              example: movie
+                            title:
+                              type: string
+                              example: Serenity
+                            titleSort:
+                              type: string
+                              example: Amazing Spider-Man 2
+                            librarySectionTitle:
+                              type: string
+                              example: Movies
+                            librarySectionID:
+                              type: integer
+                              format: int32
+                              example: 1
+                            librarySectionKey:
+                              type: string
+                              example: /library/sections/1
+                            contentRating:
+                              type: string
+                              example: PG-13
+                            summary:
+                              type: string
+                              example: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
+                            rating:
+                              type: number
+                              example: 8.2
+                            audienceRating:
+                              type: number
+                              example: 9.1
+                            year:
+                              type: integer
+                              format: int32
+                              example: 2005
+                            tagline:
+                              type: string
+                              example: They aim to misbehave.
+                            thumb:
+                              type: string
+                              example: /library/metadata/17/thumb/1705637165
+                            art:
+                              type: string
+                              example: /library/metadata/17/art/1705637165
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 141416
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 2005-09-29T00:00:00.000Z
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705637164
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705637165
+                            audienceRatingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.upright'
+                            hasPremiumExtras:
+                              type: string
+                              example: '1'
+                            hasPremiumPrimaryExtra:
+                              type: string
+                              example: '1'
+                            ratingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.ripe'
+                            Media:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 15
+                                  duration:
+                                    type: integer
+                                    format: int32
+                                    example: 141416
+                                  bitrate:
+                                    type: integer
+                                    format: int32
+                                    example: 2273
+                                  width:
+                                    type: integer
+                                    format: int32
+                                    example: 1920
+                                  height:
+                                    type: integer
+                                    format: int32
+                                    example: 814
+                                  aspectRatio:
+                                    type: number
+                                    example: 2.35
+                                  audioChannels:
+                                    type: integer
+                                    format: int32
+                                    example: 2
+                                  audioCodec:
+                                    type: string
+                                    example: aac
+                                  videoCodec:
+                                    type: string
+                                    example: h264
+                                  videoResolution:
+                                    type: string
+                                    example: '1080'
+                                  container:
+                                    type: string
+                                    example: mp4
+                                  videoFrameRate:
+                                    type: string
+                                    example: 24p
+                                  optimizedForStreaming:
+                                    type: integer
+                                    format: int32
+                                    example: 0
+                                  audioProfile:
+                                    type: string
+                                    example: lc
+                                  has64bitOffsets:
+                                    type: boolean
+                                    example: false
+                                  videoProfile:
+                                    type: string
+                                    example: high
+                                  Part:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: integer
+                                          format: int32
+                                          example: 15
+                                        key:
+                                          type: string
+                                          example: /library/parts/15/1705637151/file.mp4
+                                        duration:
+                                          type: integer
+                                          format: int32
+                                          example: 141416
+                                        file:
+                                          type: string
+                                          example: /movies/Serenity (2005)/Serenity (2005).mp4
+                                        size:
+                                          type: integer
+                                          format: int32
+                                          example: 40271948
+                                        audioProfile:
+                                          type: string
+                                          example: lc
+                                        container:
+                                          type: string
+                                          example: mp4
+                                        has64bitOffsets:
+                                          type: boolean
+                                          example: false
+                                        optimizedForStreaming:
+                                          type: boolean
+                                          example: false
+                                        videoProfile:
+                                          type: string
+                                          example: high
+                                    example:
+                                      - id: 15
+                                        key: /library/parts/15/1705637151/file.mp4
+                                        duration: 141416
+                                        file: /movies/Serenity (2005)/Serenity (2005).mp4
+                                        size: 40271948
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: false
+                                        videoProfile: high
+                              example:
+                                - id: 15
+                                  duration: 141416
+                                  bitrate: 2273
+                                  width: 1920
+                                  height: 814
+                                  aspectRatio: 2.35
+                                  audioChannels: 2
+                                  audioCodec: aac
+                                  videoCodec: h264
+                                  videoResolution: '1080'
+                                  container: mp4
+                                  videoFrameRate: 24p
+                                  optimizedForStreaming: 0
+                                  audioProfile: lc
+                                  has64bitOffsets: false
+                                  videoProfile: high
+                                  Part:
+                                    - id: 15
+                                      key: /library/parts/15/1705637151/file.mp4
+                                      duration: 141416
+                                      file: /movies/Serenity (2005)/Serenity (2005).mp4
+                                      size: 40271948
+                                      audioProfile: lc
+                                      container: mp4
+                                      has64bitOffsets: false
+                                      optimizedForStreaming: false
+                                      videoProfile: high
+                            Genre:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Action
+                              example:
+                                - tag: Action
+                            Country:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: United States of America
+                              example:
+                                - tag: United States of America
+                            Director:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Joss Whedon
+                              example:
+                                - tag: Joss Whedon
+                            Writer:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Joss Whedon
+                              example:
+                                - tag: Joss Whedon
+                            Role:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Gina Torres
+                              example:
+                                - tag: Gina Torres
+                        example:
+                          - ratingKey: '17'
+                            key: /library/metadata/17
+                            guid: 'plex://movie/5d77683f6f4521001ea9dc53'
+                            studio: Universal Pictures
+                            type: movie
+                            title: Serenity
+                            titleSort: Amazing Spider-Man 2
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: PG-13
+                            summary: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
+                            rating: 8.2
+                            audienceRating: 9.1
+                            year: 2005
+                            tagline: They aim to misbehave.
+                            thumb: /library/metadata/17/thumb/1705637165
+                            art: /library/metadata/17/art/1705637165
+                            duration: 141416
+                            originallyAvailableAt: 2005-09-29T00:00:00.000Z
+                            addedAt: 1705637164
+                            updatedAt: 1705637165
+                            audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                            hasPremiumExtras: '1'
+                            hasPremiumPrimaryExtra: '1'
+                            ratingImage: 'rottentomatoes://image.rating.ripe'
+                            Media:
+                              - id: 15
+                                duration: 141416
+                                bitrate: 2273
+                                width: 1920
+                                height: 814
+                                aspectRatio: 2.35
+                                audioChannels: 2
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: '1080'
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 0
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 15
+                                    key: /library/parts/15/1705637151/file.mp4
+                                    duration: 141416
+                                    file: /movies/Serenity (2005)/Serenity (2005).mp4
+                                    size: 40271948
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: false
+                                    videoProfile: high
+                            Genre:
+                              - tag: Science Fiction
+                            Country:
+                              - tag: United States of America
+                            Director:
+                              - tag: Joss Whedon
+                            Writer:
+                              - tag: Joss Whedon
+                            Role:
+                              - tag: Nathan Fillion
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4716,7 +5362,7 @@ paths:
         - Playlists
       summary: Adding to a Playlist
       description: |
-        Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. 
+        Adds a generator to a playlist, same parameters as the POST to create. With a dumb playlist, this adds the specified items to the playlist.
         With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
       operationId: addPlaylistContents
       parameters:
@@ -4731,7 +5377,7 @@ paths:
           in: query
           schema:
             type: string
-            example: 'library://..'
+            example: 'server://12345/com.plexapp.plugins.library/library/metadata/1'
           required: true
         - name: playQueueID
           description: the play queue to add to a playlist
@@ -4739,10 +5385,92 @@ paths:
           schema:
             type: number
             example: 123
-          required: true
+          required: false
       responses:
         '200':
           description: Playlist Updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 1
+                      leafCountAdded:
+                        type: integer
+                        format: int32
+                        example: 1
+                      leafCountRequested:
+                        type: integer
+                        format: int32
+                        example: 1
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: '94'
+                            key:
+                              type: string
+                              example: /playlists/94/items
+                            guid:
+                              type: string
+                              example: 'com.plexapp.agents.none://972e3047-83d6-4848-a000-261f0af26ba2'
+                            type:
+                              type: string
+                              example: playlist
+                            title:
+                              type: string
+                              example: A great playlist
+                            summary:
+                              type: string
+                              example: One of my great playlists
+                            smart:
+                              type: boolean
+                              example: false
+                            playlistType:
+                              type: string
+                              example: video
+                            composite:
+                              type: string
+                              example: /playlists/94/composite/1705800070
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 423000
+                            leafCount:
+                              type: integer
+                              format: int32
+                              example: 3
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705716458
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705800070
+                        example:
+                          - ratingKey: '94'
+                            key: /playlists/94/items
+                            guid: 'com.plexapp.agents.none://972e3047-83d6-4848-a000-261f0af26ba2'
+                            type: playlist
+                            title: A great playlist
+                            summary: One of my great playlists
+                            smart: false
+                            playlistType: video
+                            composite: /playlists/94/composite/1705800070
+                            duration: 423000
+                            leafCount: 3
+                            addedAt: 1705716458
+                            updatedAt: 1705800070
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
