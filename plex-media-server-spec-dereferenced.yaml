@@ -830,54 +830,52 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    MediaContainer:
-                      type: object
-                      properties:
-                        size:
-                          type: number
-                          example: 1
-                        Server:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              name:
-                                type: string
-                                example: iPad
-                              host:
-                                type: string
-                                example: 10.10.10.102
-                              address:
-                                type: string
-                                example: 10.10.10.102
-                              port:
-                                type: number
-                                example: 32500
-                              machineIdentifier:
-                                type: string
-                                example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
-                              version:
-                                type: string
-                                example: '8.17'
-                              protocol:
-                                type: string
-                                example: plex
-                              product:
-                                type: string
-                                example: Plex for iOS
-                              deviceClass:
-                                type: string
-                                example: tablet
-                              protocolVersion:
-                                type: number
-                                example: 2
-                              protocolCapabilities:
-                                type: string
-                                example: 'playback,playqueues,timeline,provider-playback'
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: number
+                        example: 1
+                      Server:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: iPad
+                            host:
+                              type: string
+                              example: 10.10.10.102
+                            address:
+                              type: string
+                              example: 10.10.10.102
+                            port:
+                              type: number
+                              example: 32500
+                            machineIdentifier:
+                              type: string
+                              example: A2E901F8-E016-43A7-ADFB-EF8CA8A4AC05
+                            version:
+                              type: string
+                              example: '8.17'
+                            protocol:
+                              type: string
+                              example: plex
+                            product:
+                              type: string
+                              example: Plex for iOS
+                            deviceClass:
+                              type: string
+                              example: tablet
+                            protocolVersion:
+                              type: number
+                              example: 2
+                            protocolCapabilities:
+                              type: string
+                              example: 'playback,playqueues,timeline,provider-playback'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4082,7 +4080,7 @@ paths:
             An integer log level to write to the PMS log with.  
             0: Error  
             1: Warning  
-            2: Info 
+            2: Info  
             3: Debug  
             4: Verbose
           in: query
@@ -4100,18 +4098,18 @@ paths:
           in: query
           schema:
             type: string
-            example: ''
+            example: Test log message
           required: true
         - name: source
           description: a string indicating the source of the message.
           in: query
           schema:
             type: string
-            example: ''
+            example: Postman
           required: true
       responses:
         '200':
-          description: Log Line submitted successfully
+          description: Log Message Posted successfully
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4140,8 +4138,38 @@ paths:
         - Log
       summary: Logging a multi-line message
       description: |
-        This endpoint will write multiple lines to the main Plex Media Server log in a single request. It takes a set of query strings as would normally sent to the above GET endpoint as a linefeed-separated block of POST data. The parameters for each query string match as above.
+        This endpoint allows for the batch addition of log entries to the main Plex Media Server log.  
+        It accepts a text/plain request body, where each line represents a distinct log entry.  
+        Each log entry consists of URL-encoded key-value pairs, specifying log attributes such as 'level', 'message', and 'source'.  
+
+        Log entries are separated by a newline character (`\n`).  
+        Each entry's parameters should be URL-encoded to ensure accurate parsing and handling of special characters.  
+        This method is efficient for logging multiple entries in a single API call, reducing the overhead of multiple individual requests.  
+
+        The 'level' parameter specifies the log entry's severity or importance, with the following integer values:
+        - `0`: Error - Critical issues that require immediate attention.
+        - `1`: Warning - Important events that are not critical but may indicate potential issues.
+        - `2`: Info - General informational messages about system operation.
+        - `3`: Debug - Detailed information useful for debugging purposes.
+        - `4`: Verbose - Highly detailed diagnostic information for in-depth analysis.
+
+        The 'message' parameter contains the log text, and 'source' identifies the log message's origin (e.g., an application name or module).
+
+        Example of a single log entry format:
+        `level=4&message=Sample%20log%20entry&source=applicationName`
+
+        Ensure each parameter is properly URL-encoded to avoid interpretation issues.
       operationId: logMultiLine
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              example: |-
+                level=4&message=Test%20message%201&source=postman
+                level=3&message=Test%20message%202&source=postman
+                level=1&message=Test%20message%203&source=postman
       responses:
         '200':
           description: Multi-Line Log Message Posted successfully
@@ -6223,6 +6251,96 @@ paths:
       responses:
         '200':
           description: The Server Updates
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 1
+                      canInstall:
+                        type: boolean
+                        example: false
+                      checkedAt:
+                        type: integer
+                        format: int32
+                        example: 1705801232
+                      downloadURL:
+                        type: string
+                        example: 'https://plex.tv/downloads/latest/5?channel=8&build=linux-x86_64&distro=redhat&X-Plex-Token=xxxxxxxxxxxxxxxxxxxx'
+                      status:
+                        type: integer
+                        format: int32
+                        example: 0
+                      Release:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                              example: 'https://plex.tv/updater/releases/5136'
+                            version:
+                              type: string
+                              example: 1.40.0.7775-456fbaf97
+                            added:
+                              type: string
+                              example: |-
+                                (PLEASE NOTE) This version makes changes to the database which will make it compatible only with server versions 1.31.2 or higher (released March 14). You will not be able to use your database on Plex Media Server versions lower than this after this update. Please also be patient when updating to this version if you have a very large database and allow the upgrade process to finish.
+                                (Collections) Items added to a collection from the item context menu will now lock the collection field on the items (#12793)
+                                (Music) Store track genres and add filtering options (#14653)
+                                (Music) Support ID3v2.4 null-separated tags for genres and release type (#14653)
+                                (View History) No longer create a view history entry for items marked as played (#10888)
+                                (Web) Updated to 4.118.0
+                            fixed:
+                              type: string
+                              example: |-
+                                (Agents) Changing a 'Other Videos' type library to the modern movie agent would fail (#14483)
+                                (Agents) It is possible that agents are not initialised during startup on rare occasions (#14654)
+                                (Agents) Remove the legacy OpenSubtitles agent which is no longer supported upstream (#14667)
+                                (Collection) Server could become unresponsive when collection membership changes (#14612)
+                                (DVR) Previously watched recordings could be deleted without being watched again (#13779)
+                                (Libraries) When performing fix match on items from certain music libraries the language would default to Arabic (#14501)
+                                (Library) The Content Rating not equal to None filter does not work (#14620)
+                                (Search) Album search results could contain all the album's tracks too (#14486)
+                                (Subtitles) In some circumstances, sidecar subtitles can show up for media when they're no longer available (#14674)
+                                (Transcoder) HW encoding would fail on devices with no rate control (#14222)
+                                (Transcoder) Software transcoding on Ubuntu could cause unexpected behavior (#14605)
+                            downloadURL:
+                              type: string
+                              example: 'https://plex.tv/downloads/latest/5?channel=8&build=linux-x86_64&distro=redhat&X-Plex-Token=xxxxxxxxxxxxxxxxxxxx'
+                            state:
+                              type: string
+                              example: notify
+                        example:
+                          - key: 'https://plex.tv/updater/releases/5136'
+                            version: 1.40.0.7775-456fbaf97
+                            added: |-
+                              (PLEASE NOTE) This version makes changes to the database which will make it compatible only with server versions 1.31.2 or higher (released March 14). You will not be able to use your database on Plex Media Server versions lower than this after this update. Please also be patient when updating to this version if you have a very large database and allow the upgrade process to finish.
+                              (Collections) Items added to a collection from the item context menu will now lock the collection field on the items (#12793)
+                              (Music) Store track genres and add filtering options (#14653)
+                              (Music) Support ID3v2.4 null-separated tags for genres and release type (#14653)
+                              (View History) No longer create a view history entry for items marked as played (#10888)
+                              (Web) Updated to 4.118.0
+                            fixed: |-
+                              (Agents) Changing a 'Other Videos' type library to the modern movie agent would fail (#14483)
+                              (Agents) It is possible that agents are not initialised during startup on rare occasions (#14654)
+                              (Agents) Remove the legacy OpenSubtitles agent which is no longer supported upstream (#14667)
+                              (Collection) Server could become unresponsive when collection membership changes (#14612)
+                              (DVR) Previously watched recordings could be deleted without being watched again (#13779)
+                              (Libraries) When performing fix match on items from certain music libraries the language would default to Arabic (#14501)
+                              (Library) The Content Rating not equal to None filter does not work (#14620)
+                              (Search) Album search results could contain all the album's tracks too (#14486)
+                              (Subtitles) In some circumstances, sidecar subtitles can show up for media when they're no longer available (#14674)
+                              (Transcoder) HW encoding would fail on devices with no rate control (#14222)
+                              (Transcoder) Software transcoding on Ubuntu could cause unexpected behavior (#14605)
+                            downloadURL: 'https://plex.tv/downloads/latest/5?channel=8&build=linux-x86_64&distro=redhat&X-Plex-Token=xxxxxxxxxxxxxxxxxxxx'
+                            state: notify
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6266,7 +6384,7 @@ paths:
           example: 1
       responses:
         '200':
-          description: ''
+          description: 'The update check is started, if download is set to 1 and the system is able to update automatically, the update download will start.'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
