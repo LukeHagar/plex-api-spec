@@ -4,7 +4,7 @@ post:
   summary: Create a Playlist
   description: |
     Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
-    - `uri` - The content URI for what we're playing (e.g. `library://...`).
+    - `uri` - The content URI for what we're playing (e.g. `server://1234/com.plexapp.plugins.library/library/metadata/1`).
     - `playQueueID` - To create a playlist from an existing play queue.
   operationId: createPlaylist
   parameters:
@@ -49,6 +49,95 @@ post:
   responses:
     "200":
       description: returns all playlists
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 7
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ratingKey:
+                          type: string
+                          example: "96"
+                        key:
+                          type: string
+                          example: /playlists/96/items
+                        guid:
+                          type: string
+                          example: com.plexapp.agents.none://a2f92937-1408-40e2-b022-63a8a9377e55
+                        type:
+                          type: string
+                          example: playlist
+                        title:
+                          type: string
+                          example: A Great Playlist
+                        summary:
+                          type: string
+                          example: What a great playlist
+                        smart:
+                          type: boolean
+                          example: false
+                        playlistType:
+                          type: string
+                          example: video
+                        icon:
+                          type: string
+                          example: playlist://image.smart
+                        viewCount:
+                          type: integer
+                          format: int32
+                          example: 1
+                        lastViewedAt:
+                          type: integer
+                          format: int32
+                          example: 1705719589
+                        leafCount:
+                          type: integer
+                          format: int32
+                          example: 1
+                        addedAt:
+                          type: integer
+                          format: int32
+                          example: 1705719589
+                        updatedAt:
+                          type: integer
+                          format: int32
+                          example: 1705724593
+                        composite:
+                          type: string
+                          example: /playlists/96/composite/1705724593
+                        duration:
+                          type: integer
+                          format: int32
+                          example: 141000
+                    example:
+                      - ratingKey: "96"
+                        key: /playlists/96/items
+                        guid: com.plexapp.agents.none://a2f92937-1408-40e2-b022-63a8a9377e55
+                        type: playlist
+                        title: A Great Playlist
+                        summary: What a great playlist
+                        smart: false
+                        playlistType: video
+                        icon: playlist://image.smart
+                        viewCount: 1
+                        lastViewedAt: 1705719589
+                        leafCount: 1
+                        addedAt: 1705719589
+                        updatedAt: 1705724593
+                        composite: /playlists/96/composite/1705724593
+                        duration: 141000
+
     "400":
       $ref: "../../responses/400.yaml"
     "401":

@@ -30,18 +30,24 @@ Gets a list of playlists and playlist folders for a user. General filters are pe
 
 ### Create a Playlist [POST /playlists?{title,type,smart,uri,playQueueID}]
 
-Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
+Create a new playlist. By default the playlist is blank if you leave the `uri` empty.
+
+To create a playlist along with a first item, pass:
 
 - `uri` - The content URI for what we're playing (e.g. `library://...`).
 - `playQueueID` - To create a playlist from an existing play queue.
 
-If you're creating a smart playlist, you must pass `smart=1` and use the `uri=...` form. Playlists are owned by the account associated with the request.
+If you're creating a smart playlist, you must pass:
+- `smart=1` 
+- `uri` -  using the `uri=...` format. 
+
+Playlists are owned by the account associated with the request.
 
 +   Parameters
      + title: `My Playlist` (string) - name of the playlist
      + type: `audio` (string) - type of the playlist (`video`/`audio`/`photo`)
      + smart: `0` (0/1) - whether the playlist is smart or not.
-     + uri: `library://..` (string, optional) - the content URI for the playlist.
+     + uri: `library://..` (string) - the content URI for the playlist.
      + playQueueID: `123` (integer, optional) - the play queue to copy to a playlist.
 
 +   Response 200 (application/xml)
@@ -87,21 +93,25 @@ Deletes a playlist.
 
 +   Response 200
 
-### Editing a Playlist [PUT /library/metadata/{playlistID}]
+### Editing a Playlist [PUT /library/metadata/{playlistID}{?title,summary}]
 
 Use the standard metadata item editing endpoint (tag a playlist! edit the title!). Just listing it here to illustrate the potential.
 
 +   Parameters
     + playlistID: `123` (integer) - the ID of the playlist.
+    + title: `A title` (string) - the new title of the playlist
+    + summary: `A summary` (string) - the new summary of the playlist
 
 +   Response 200
 
-### Editing a Playlist (PMS >= 1.9.1) [PUT /playlists/{playlistID}]
+### Editing a Playlist (PMS >= 1.9.1) [PUT /playlists/{playlistID}{?title,summary}]
 
-From PMS version 1.9.1 clients can also edit playlist metadata using this endpoint as they would via `PUT /library/metadata/{playlistID}`
+From PMS version >=1.9.1 clients can also edit playlist metadata using this endpoint as they would via `PUT /library/metadata/{playlistID}`
 
 +   Parameters
     + playlistID: `123` (integer) - the ID of the playlist.
+    + title: `A title` (string, optional) - the new title of the playlist
+    + summary: `A summary` (string, optional) - the new summary of the playlist
 
 +   Response 200
 
