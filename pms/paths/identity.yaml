@@ -6,7 +6,7 @@ get:
   operationId: getServerIdentity
   responses:
     "200":
-      description: The Transcode Sessions
+      description: The Server Identity information
       content:
         application/json:
           schema:

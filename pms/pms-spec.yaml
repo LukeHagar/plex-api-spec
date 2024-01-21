@@ -87,14 +87,15 @@ paths:
     $ref: "./paths/libraries.yaml"
   /library/sections/{sectionId}:
     $ref: "./paths/library.yaml"
-  /library/sections/{sectionId}/all:
-    $ref: "./paths/library-content-all.yaml"
+  /library/sections/{sectionId}/{tag}:
+    $ref: "./paths/library-content.yaml"
   /library/sections/{sectionId}/refresh:
     $ref: "./paths/library-refresh.yaml"
-  /library/sections/{sectionId}/latest:
-    $ref: "./paths/library-content-latest.yaml"
-  /library/sections/{sectionId}/common:
-    $ref: "./paths/library-content-common.yaml"
+
+  # /library/sections/{sectionId}/common:
+  #   $ref: "./paths/library-content-common.yaml"
+  #  This endpoint seems to be busted
+
   /library/metadata/{ratingKey}:
     $ref: "./paths/metadata.yaml"
   /library/metadata/{ratingKey}/children:

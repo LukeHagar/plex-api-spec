@@ -3,25 +3,46 @@ get:
     - Library
   summary: Get Library Details
   description: |
-    Returns details for the library. This can be thought of as an interstitial endpoint because it contains information about the library, rather than content itself. These details are:
+    ## Library Details Endpoint
 
-    - A list of `Directory` objects: These used to be used by clients to build a menuing system. There are four flavors of directory found here:
-      - Primary: (e.g. all, On Deck) These are still used in some clients to provide "shortcuts" to subsets of media. However, with the exception of On Deck, all of them can be created by media queries, and the desire is to allow these to be customized by users.
-      - Secondary: These are marked with `secondary="1"` and were used by old clients to provide nested menus allowing for primative (but structured) navigation.
-      - Special: There is a By Folder entry which allows browsing the media by the underlying filesystem structure, and there's a completely obsolete entry marked `search="1"` which used to be used to allow clients to build search dialogs on the fly.
-    - A list of `Type` objects: These represent the types of things found in this library, and for each one, a list of `Filter` and `Sort` objects. These can be used to build rich controls around a grid of media to allow filtering and organizing. Note that these filters and sorts are optional, and without them, the client won't render any filtering controls. The `Type` object contains:
-      - `key`: This provides the root endpoint returning the actual media list for the type.
-      - `type`: This is the metadata type for the type (if a standard Plex type).
-      - `title`: The title for for the content of this type (e.g. "Movies").
-    - Each `Filter` object contains a description of the filter. Note that it is not an exhaustive list of the full media query language, but an inportant subset useful for top-level API.
-      - `filter`: This represents the filter name used for the filter, which can be used to construct complex media queries with.
-      - `filterType`: This is either `string`, `integer`, or `boolean`, and describes the type of values used for the filter.
-      - `key`: This provides the endpoint where the possible range of values for the filter can be retrieved (e.g. for a "Genre" filter, it returns a list of all the genres in the library). This will include a `type` argument that matches the metadata type of the Type element.
-      - `title`: The title for the filter.
-    - Each `Sort` object contains a description of the sort field.
-      - `defaultDirection`: Can be either `asc` or `desc`, and specifies the default direction for the sort field (e.g. titles default to alphabetically ascending).
-      - `descKey` and `key`: Contains the parameters passed to the `sort=...` media query for each direction of the sort.
-      - `title`: The title of the field.
+    This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.   
+
+    The details include:
+
+    ### Directories
+    Organized into three categories:
+
+    - **Primary Directories**: 
+      - Used in some clients for quick access to media subsets (e.g., "All", "On Deck").
+      - Most can be replicated via media queries.
+      - Customizable by users.
+
+    - **Secondary Directories**:
+      - Marked with `secondary="1"`.
+      - Used in older clients for structured navigation.
+
+    - **Special Directories**:
+      - Includes a "By Folder" entry for filesystem-based browsing.
+      - Contains an obsolete `search="1"` entry for on-the-fly search dialog creation.
+
+    ### Types
+    Each type in the library comes with a set of filters and sorts, aiding in building dynamic media controls:
+
+    - **Type Object Attributes**:
+      - `key`: Endpoint for the media list of this type.
+      - `type`: Metadata type (if standard Plex type).
+      - `title`: Title for this content type (e.g., "Movies").
+
+    - **Filter Objects**:
+      - Subset of the media query language.
+      - Attributes include `filter` (name), `filterType` (data type), `key` (endpoint for value range), and `title`.
+
+    - **Sort Objects**:
+      - Description of sort fields.
+      - Attributes include `defaultDirection` (asc/desc), `descKey` and `key` (sort parameters), and `title`.
+
+    > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
+
   operationId: getLibrary
   parameters:
     - name: sectionId

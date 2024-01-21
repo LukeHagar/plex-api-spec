@@ -15,7 +15,7 @@ get:
 
   responses:
     "200":
-      description: The children of the library item.
+      description: The metadata of the library item.
       content:
         application/json:
           schema:
@@ -89,7 +89,8 @@ get:
                           example: PG-13
                         summary:
                           type: string
-                          example: Serenity continues the story of the TV series it was based upon
+                          example:
+                            Serenity continues the story of the TV series it was based upon
                             ("Firefly"). River Tam had a secret - one in which she's not
                             even aware - so dangerous, no one's safe, as an Alliance
                             operative's sent to capture her, and all others are considered
@@ -698,7 +699,8 @@ get:
                         librarySectionID: 1
                         librarySectionKey: /library/sections/1
                         contentRating: PG-13
-                        summary: Serenity continues the story of the TV series it was based upon
+                        summary:
+                          Serenity continues the story of the TV series it was based upon
                           ("Firefly"). River Tam had a secret - one in which she's not even
                           aware - so dangerous, no one's safe, as an Alliance operative's
                           sent to capture her, and all others are considered irrelevant to
