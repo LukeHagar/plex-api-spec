@@ -4,7 +4,7 @@ post:
   summary: Create a Playlist
   description: |
     Create a new playlist. By default the playlist is blank. To create a playlist along with a first item, pass:
-    - `uri` - The content URI for what we're playing (e.g. `library://...`).
+    - `uri` - The content URI for what we're playing (e.g. `server://1234/com.plexapp.plugins.library/library/metadata/1`).
     - `playQueueID` - To create a playlist from an existing play queue.
   operationId: createPlaylist
   parameters:

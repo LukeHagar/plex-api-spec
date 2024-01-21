@@ -442,7 +442,7 @@ put:
     - Playlists
   summary: Adding to a Playlist
   description: |
-    Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. 
+    Adds a generator to a playlist, same parameters as the POST to create. With a dumb playlist, this adds the specified items to the playlist.
     With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
   operationId: addPlaylistContents
   parameters:
@@ -457,7 +457,7 @@ put:
       in: query
       schema:
         type: string
-        example: library://..
+        example: server://12345/com.plexapp.plugins.library/library/metadata/1
       required: true
     - name: playQueueID
       description: the play queue to add to a playlist
@@ -465,11 +465,93 @@ put:
       schema:
         type: number
         example: 123
-      required: true
+      required: false
 
   responses:
     "200":
       description: Playlist Updated
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 1
+                  leafCountAdded:
+                    type: integer
+                    format: int32
+                    example: 1
+                  leafCountRequested:
+                    type: integer
+                    format: int32
+                    example: 1
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ratingKey:
+                          type: string
+                          example: "94"
+                        key:
+                          type: string
+                          example: /playlists/94/items
+                        guid:
+                          type: string
+                          example: com.plexapp.agents.none://972e3047-83d6-4848-a000-261f0af26ba2
+                        type:
+                          type: string
+                          example: playlist
+                        title:
+                          type: string
+                          example: A great playlist
+                        summary:
+                          type: string
+                          example: One of my great playlists
+                        smart:
+                          type: boolean
+                          example: false
+                        playlistType:
+                          type: string
+                          example: video
+                        composite:
+                          type: string
+                          example: /playlists/94/composite/1705800070
+                        duration:
+                          type: integer
+                          format: int32
+                          example: 423000
+                        leafCount:
+                          type: integer
+                          format: int32
+                          example: 3
+                        addedAt:
+                          type: integer
+                          format: int32
+                          example: 1705716458
+                        updatedAt:
+                          type: integer
+                          format: int32
+                          example: 1705800070
+                    example:
+                      - ratingKey: "94"
+                        key: /playlists/94/items
+                        guid: com.plexapp.agents.none://972e3047-83d6-4848-a000-261f0af26ba2
+                        type: playlist
+                        title: A great playlist
+                        summary: One of my great playlists
+                        smart: false
+                        playlistType: video
+                        composite: /playlists/94/composite/1705800070
+                        duration: 423000
+                        leafCount: 3
+                        addedAt: 1705716458
+                        updatedAt: 1705800070
     "400":
       $ref: "../../responses/400.yaml"
     "401":
