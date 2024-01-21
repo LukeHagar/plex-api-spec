@@ -1207,7 +1207,7 @@ paths:
       operationId: getServerIdentity
       responses:
         '200':
-          description: The Transcode Sessions
+          description: The Server Identity information
           content:
             application/json:
               schema:
@@ -1732,25 +1732,45 @@ paths:
         - Library
       summary: Get Library Details
       description: |
-        Returns details for the library. This can be thought of as an interstitial endpoint because it contains information about the library, rather than content itself. These details are:
+        ## Library Details Endpoint
 
-        - A list of `Directory` objects: These used to be used by clients to build a menuing system. There are four flavors of directory found here:
-          - Primary: (e.g. all, On Deck) These are still used in some clients to provide "shortcuts" to subsets of media. However, with the exception of On Deck, all of them can be created by media queries, and the desire is to allow these to be customized by users.
-          - Secondary: These are marked with `secondary="1"` and were used by old clients to provide nested menus allowing for primative (but structured) navigation.
-          - Special: There is a By Folder entry which allows browsing the media by the underlying filesystem structure, and there's a completely obsolete entry marked `search="1"` which used to be used to allow clients to build search dialogs on the fly.
-        - A list of `Type` objects: These represent the types of things found in this library, and for each one, a list of `Filter` and `Sort` objects. These can be used to build rich controls around a grid of media to allow filtering and organizing. Note that these filters and sorts are optional, and without them, the client won't render any filtering controls. The `Type` object contains:
-          - `key`: This provides the root endpoint returning the actual media list for the type.
-          - `type`: This is the metadata type for the type (if a standard Plex type).
-          - `title`: The title for for the content of this type (e.g. "Movies").
-        - Each `Filter` object contains a description of the filter. Note that it is not an exhaustive list of the full media query language, but an inportant subset useful for top-level API.
-          - `filter`: This represents the filter name used for the filter, which can be used to construct complex media queries with.
-          - `filterType`: This is either `string`, `integer`, or `boolean`, and describes the type of values used for the filter.
-          - `key`: This provides the endpoint where the possible range of values for the filter can be retrieved (e.g. for a "Genre" filter, it returns a list of all the genres in the library). This will include a `type` argument that matches the metadata type of the Type element.
-          - `title`: The title for the filter.
-        - Each `Sort` object contains a description of the sort field.
-          - `defaultDirection`: Can be either `asc` or `desc`, and specifies the default direction for the sort field (e.g. titles default to alphabetically ascending).
-          - `descKey` and `key`: Contains the parameters passed to the `sort=...` media query for each direction of the sort.
-          - `title`: The title of the field.
+        This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.   
+
+        The details include:
+
+        ### Directories
+        Organized into three categories:
+
+        - **Primary Directories**: 
+          - Used in some clients for quick access to media subsets (e.g., "All", "On Deck").
+          - Most can be replicated via media queries.
+          - Customizable by users.
+
+        - **Secondary Directories**:
+          - Marked with `secondary="1"`.
+          - Used in older clients for structured navigation.
+
+        - **Special Directories**:
+          - Includes a "By Folder" entry for filesystem-based browsing.
+          - Contains an obsolete `search="1"` entry for on-the-fly search dialog creation.
+
+        ### Types
+        Each type in the library comes with a set of filters and sorts, aiding in building dynamic media controls:
+
+        - **Type Object Attributes**:
+          - `key`: Endpoint for the media list of this type.
+          - `type`: Metadata type (if standard Plex type).
+          - `title`: Title for this content type (e.g., "Movies").
+
+        - **Filter Objects**:
+          - Subset of the media query language.
+          - Attributes include `filter` (name), `filterType` (data type), `key` (endpoint for value range), and `title`.
+
+        - **Sort Objects**:
+          - Description of sort fields.
+          - Attributes include `defaultDirection` (asc/desc), `descKey` and `key` (sort parameters), and `title`.
+
+        > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
       operationId: getLibrary
       parameters:
         - name: sectionId
@@ -2280,36 +2300,68 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/sections/{sectionId}/all':
+  '/library/sections/{sectionId}/{tag}':
     get:
-      tags:
-        - Library
-      summary: Get Library Items
+      summary: Retrieve Information by Section and Tag
       description: |
-        This endpoint will return a list of library items filtered by the filter and type provided
-      operationId: getLibraryItems
+        Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
+        - `all`: All items in the section.
+        - `unwatched`: Items that have not been played.
+        - `newest`: Items that are recently released.
+        - `recentlyAdded`: Items that are recently added to the library.
+        - `recentlyViewed`: Items that were recently viewed.
+        - `onDeck`: Items to continue watching.
+        - `collection`: Items categorized by collection.
+        - `edition`: Items categorized by edition.
+        - `genre`: Items categorized by genre.
+        - `year`: Items categorized by year of release.
+        - `decade`: Items categorized by decade.
+        - `director`: Items categorized by director.
+        - `actor`: Items categorized by starring actor.
+        - `country`: Items categorized by country of origin.
+        - `contentRating`: Items categorized by content rating.
+        - `rating`: Items categorized by rating.
+        - `resolution`: Items categorized by resolution.
+        - `firstCharacter`: Items categorized by the first letter.
+        - `folder`: Items categorized by folder.
+        - `search?type=1`: Search functionality within the section.
       parameters:
         - name: sectionId
-          description: the Id of the library to query
           in: path
-          schema:
-            type: number
           required: true
-        - name: type
-          description: item type
-          in: query
+          description: the Id of the library to query
           schema:
-            type: number
-          required: false
-        - name: filter
-          description: the filter parameter
-          in: query
+            type: integer
+        - name: tag
+          in: path
+          required: true
+          description: A key representing a specific tag within the section.
           schema:
             type: string
-          required: false
+            enum:
+              - all
+              - unwatched
+              - newest
+              - recentlyAdded
+              - recentlyViewed
+              - onDeck
+              - collection
+              - edition
+              - genre
+              - year
+              - decade
+              - director
+              - actor
+              - country
+              - contentRating
+              - rating
+              - resolution
+              - firstCharacter
+              - folder
+              - search?type=1
       responses:
         '200':
-          description: The details of the library
+          description: The contents of the library by section and tag
           content:
             application/json:
               schema:
@@ -2321,7 +2373,7 @@ paths:
                       size:
                         type: integer
                         format: int32
-                        example: 1
+                        example: 70
                       allowSync:
                         type: boolean
                         example: true
@@ -2340,14 +2392,14 @@ paths:
                         example: Movies
                       librarySectionUUID:
                         type: string
-                        example: cfc899d7-3000-46f6-8489-b9592714ada5
+                        example: 322a231a-b7f7-49f5-920f-14c61199cd30
                       mediaTagPrefix:
                         type: string
                         example: /system/bundle/media/flags/
                       mediaTagVersion:
                         type: integer
                         format: int32
-                        example: 1698860922
+                        example: 1701731894
                       thumb:
                         type: string
                         example: '/:/resources/movie.png'
@@ -2356,7 +2408,7 @@ paths:
                         example: Movies
                       title2:
                         type: string
-                        example: All Movies
+                        example: Recently Released
                       viewGroup:
                         type: string
                         example: movie
@@ -2371,69 +2423,72 @@ paths:
                           properties:
                             ratingKey:
                               type: string
-                              example: '17'
+                              example: '58683'
                             key:
                               type: string
-                              example: /library/metadata/17
+                              example: /library/metadata/58683
                             guid:
                               type: string
-                              example: 'plex://movie/5d77683f6f4521001ea9dc53'
+                              example: 'plex://movie/5d7768ba96b655001fdc0408'
                             studio:
                               type: string
-                              example: Universal Pictures
+                              example: 20th Century Studios
                             type:
                               type: string
                               example: movie
                             title:
                               type: string
-                              example: Serenity
+                              example: 'Avatar: The Way of Water'
                             contentRating:
                               type: string
                               example: PG-13
                             summary:
                               type: string
-                              example: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
+                              example: 'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na''vi race to protect their home.'
                             rating:
                               type: number
-                              example: 8.2
+                              example: 7.6
                             audienceRating:
                               type: number
-                              example: 9.1
+                              example: 9.2
                             year:
                               type: integer
                               format: int32
-                              example: 2005
+                              example: 2022
                             tagline:
                               type: string
-                              example: They aim to misbehave.
+                              example: Return to Pandora.
                             thumb:
                               type: string
-                              example: /library/metadata/17/thumb/1705637165
+                              example: /library/metadata/58683/thumb/1703239236
                             art:
                               type: string
-                              example: /library/metadata/17/art/1705637165
+                              example: /library/metadata/58683/art/1703239236
                             duration:
                               type: integer
                               format: int32
-                              example: 141417
+                              example: 11558112
                             originallyAvailableAt:
                               type: string
                               format: date
-                              example: 2005-09-29T00:00:00.000Z
+                              example: 2022-12-14T00:00:00.000Z
                             addedAt:
                               type: integer
                               format: int32
-                              example: 1705637164
+                              example: 1680457607
                             updatedAt:
                               type: integer
                               format: int32
-                              example: 1705637165
+                              example: 1703239236
                             audienceRatingImage:
                               type: string
                               example: 'rottentomatoes://image.rating.upright'
-                            hasPremiumPrimaryExtra:
+                            chapterSource:
                               type: string
-                              example: '1'
+                              example: media
+                            primaryExtraKey:
+                              type: string
+                              example: /library/metadata/58684
                             ratingImage:
                               type: string
                               example: 'rottentomatoes://image.rating.ripe'
@@ -2445,58 +2500,48 @@ paths:
                                   id:
                                     type: integer
                                     format: int32
-                                    example: 15
+                                    example: 119534
                                   duration:
                                     type: integer
                                     format: int32
-                                    example: 141417
+                                    example: 11558112
                                   bitrate:
                                     type: integer
                                     format: int32
-                                    example: 2278
+                                    example: 25025
                                   width:
                                     type: integer
                                     format: int32
-                                    example: 1920
+                                    example: 3840
                                   height:
                                     type: integer
                                     format: int32
-                                    example: 814
+                                    example: 2072
                                   aspectRatio:
                                     type: number
-                                    example: 2.35
+                                    example: 1.85
                                   audioChannels:
                                     type: integer
                                     format: int32
-                                    example: 2
+                                    example: 6
                                   audioCodec:
                                     type: string
-                                    example: aac
+                                    example: eac3
                                   videoCodec:
                                     type: string
-                                    example: h264
+                                    example: hevc
                                   videoResolution:
                                     type: string
-                                    example: '1080'
+                                    example: 4k
                                   container:
                                     type: string
-                                    example: mp4
+                                    example: mkv
                                   videoFrameRate:
                                     type: string
                                     example: 24p
-                                  optimizedForStreaming:
-                                    type: integer
-                                    format: int32
-                                    example: 0
-                                  audioProfile:
-                                    type: string
-                                    example: lc
-                                  has64bitOffsets:
-                                    type: boolean
-                                    example: false
                                   videoProfile:
                                     type: string
-                                    example: high
+                                    example: main 10
                                   Part:
                                     type: array
                                     items:
@@ -2505,75 +2550,57 @@ paths:
                                         id:
                                           type: integer
                                           format: int32
-                                          example: 15
+                                          example: 119542
                                         key:
                                           type: string
-                                          example: /library/parts/15/1705637151/file.mp4
+                                          example: /library/parts/119542/1680457526/file.mkv
                                         duration:
                                           type: integer
                                           format: int32
-                                          example: 141417
+                                          example: 11558112
                                         file:
                                           type: string
-                                          example: /movies/Serenity (2005)/Serenity (2005).mp4
+                                          example: /movies/Avatar The Way of Water (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
                                         size:
                                           type: integer
-                                          format: int32
-                                          example: 40271948
-                                        audioProfile:
-                                          type: string
-                                          example: lc
+                                          format: int64
+                                          example: 36158371307
                                         container:
                                           type: string
-                                          example: mp4
-                                        has64bitOffsets:
-                                          type: boolean
-                                          example: false
-                                        optimizedForStreaming:
-                                          type: boolean
-                                          example: false
+                                          example: mkv
                                         videoProfile:
                                           type: string
-                                          example: high
+                                          example: main 10
                                     example:
-                                      - id: 15
-                                        key: /library/parts/15/1705637151/file.mp4
-                                        duration: 141417
-                                        file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                        size: 40271948
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: false
-                                        videoProfile: high
+                                      - id: 119542
+                                        key: /library/parts/119542/1680457526/file.mkv
+                                        duration: 11558112
+                                        file: /movies/Avatar The Way of Water (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
+                                        size: 36158371307
+                                        container: mkv
+                                        videoProfile: main 10
                               example:
-                                - id: 15
-                                  duration: 141417
-                                  bitrate: 2278
-                                  width: 1920
-                                  height: 814
-                                  aspectRatio: 2.35
-                                  audioChannels: 2
-                                  audioCodec: aac
-                                  videoCodec: h264
-                                  videoResolution: '1080'
-                                  container: mp4
+                                - id: 119534
+                                  duration: 11558112
+                                  bitrate: 25025
+                                  width: 3840
+                                  height: 2072
+                                  aspectRatio: 1.85
+                                  audioChannels: 6
+                                  audioCodec: eac3
+                                  videoCodec: hevc
+                                  videoResolution: 4k
+                                  container: mkv
                                   videoFrameRate: 24p
-                                  optimizedForStreaming: 0
-                                  audioProfile: lc
-                                  has64bitOffsets: false
-                                  videoProfile: high
+                                  videoProfile: main 10
                                   Part:
-                                    - id: 15
-                                      key: /library/parts/15/1705637151/file.mp4
-                                      duration: 141417
-                                      file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                      size: 40271948
-                                      audioProfile: lc
-                                      container: mp4
-                                      has64bitOffsets: false
-                                      optimizedForStreaming: false
-                                      videoProfile: high
+                                    - id: 119542
+                                      key: /library/parts/119542/1680457526/file.mkv
+                                      duration: 11558112
+                                      file: /movies/Avatar The Way of Water (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
+                                      size: 36158371307
+                                      container: mkv
+                                      videoProfile: main 10
                             Genre:
                               type: array
                               items:
@@ -2581,9 +2608,9 @@ paths:
                                 properties:
                                   tag:
                                     type: string
-                                    example: Action
+                                    example: Adventure
                               example:
-                                - tag: Action
+                                - tag: Adventure
                             Country:
                               type: array
                               items:
@@ -2601,9 +2628,9 @@ paths:
                                 properties:
                                   tag:
                                     type: string
-                                    example: Joss Whedon
+                                    example: James Cameron
                               example:
-                                - tag: Joss Whedon
+                                - tag: James Cameron
                             Writer:
                               type: array
                               items:
@@ -2611,9 +2638,9 @@ paths:
                                 properties:
                                   tag:
                                     type: string
-                                    example: Joss Whedon
+                                    example: James Cameron
                               example:
-                                - tag: Joss Whedon
+                                - tag: James Cameron
                             Role:
                               type: array
                               items:
@@ -2621,95 +2648,96 @@ paths:
                                 properties:
                                   tag:
                                     type: string
-                                    example: Gina Torres
+                                    example: Sigourney Weaver
                               example:
-                                - tag: Gina Torres
+                                - tag: Sigourney Weaver
+                            titleSort:
+                              type: string
+                              example: Whale
+                            viewCount:
+                              type: integer
+                              format: int32
+                              example: 1
+                            lastViewedAt:
+                              type: integer
+                              format: int32
+                              example: 1682752242
+                            originalTitle:
+                              type: string
+                              example: 映画 ブラッククローバー 魔法帝の剣
+                            viewOffset:
+                              type: integer
+                              format: int32
+                              example: 5222500
+                            skipCount:
+                              type: integer
+                              format: int32
+                              example: 1
                         example:
-                          - ratingKey: '17'
-                            key: /library/metadata/17
-                            guid: 'plex://movie/5d77683f6f4521001ea9dc53'
-                            studio: Universal Pictures
+                          - ratingKey: '58683'
+                            key: /library/metadata/58683
+                            guid: 'plex://movie/5d7768ba96b655001fdc0408'
+                            studio: 20th Century Studios
                             type: movie
-                            title: Serenity
+                            title: 'Avatar: The Way of Water'
                             contentRating: PG-13
-                            summary: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
-                            rating: 8.2
-                            audienceRating: 9.1
-                            year: 2005
-                            tagline: They aim to misbehave.
-                            thumb: /library/metadata/17/thumb/1705637165
-                            art: /library/metadata/17/art/1705637165
-                            duration: 141417
-                            originallyAvailableAt: 2005-09-29T00:00:00.000Z
-                            addedAt: 1705637164
-                            updatedAt: 1705637165
+                            summary: 'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na''vi race to protect their home.'
+                            rating: 7.6
+                            audienceRating: 9.2
+                            year: 2022
+                            tagline: Return to Pandora.
+                            thumb: /library/metadata/58683/thumb/1703239236
+                            art: /library/metadata/58683/art/1703239236
+                            duration: 11558112
+                            originallyAvailableAt: 2022-12-14T00:00:00.000Z
+                            addedAt: 1680457607
+                            updatedAt: 1703239236
                             audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                            hasPremiumPrimaryExtra: '1'
+                            chapterSource: media
+                            primaryExtraKey: /library/metadata/58684
                             ratingImage: 'rottentomatoes://image.rating.ripe'
                             Media:
-                              - id: 15
-                                duration: 141417
-                                bitrate: 2278
-                                width: 1920
-                                height: 814
-                                aspectRatio: 2.35
-                                audioChannels: 2
-                                audioCodec: aac
-                                videoCodec: h264
-                                videoResolution: '1080'
-                                container: mp4
+                              - id: 119534
+                                duration: 11558112
+                                bitrate: 25025
+                                width: 3840
+                                height: 2072
+                                aspectRatio: 1.85
+                                audioChannels: 6
+                                audioCodec: eac3
+                                videoCodec: hevc
+                                videoResolution: 4k
+                                container: mkv
                                 videoFrameRate: 24p
-                                optimizedForStreaming: 0
-                                audioProfile: lc
-                                has64bitOffsets: false
-                                videoProfile: high
+                                videoProfile: main 10
                                 Part:
-                                  - id: 15
-                                    key: /library/parts/15/1705637151/file.mp4
-                                    duration: 141417
-                                    file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                    size: 40271948
-                                    audioProfile: lc
-                                    container: mp4
-                                    has64bitOffsets: false
-                                    optimizedForStreaming: false
-                                    videoProfile: high
+                                  - id: 119542
+                                    key: /library/parts/119542/1680457526/file.mkv
+                                    duration: 11558112
+                                    file: /movies/Avatar The Way of Water (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
+                                    size: 36158371307
+                                    container: mkv
+                                    videoProfile: main 10
                             Genre:
-                              - tag: Science Fiction
                               - tag: Action
+                              - tag: Adventure
                             Country:
                               - tag: United States of America
                             Director:
-                              - tag: Joss Whedon
+                              - tag: James Cameron
                             Writer:
-                              - tag: Joss Whedon
+                              - tag: Josh Friedman
+                              - tag: James Cameron
                             Role:
-                              - tag: Nathan Fillion
-                              - tag: Summer Glau
-                              - tag: Gina Torres
-        '400':
-          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
+                              - tag: Sam Worthington
+                              - tag: Zoe Saldaña
+                              - tag: Sigourney Weaver
+                            titleSort: Whale
+                            viewCount: 1
+                            lastViewedAt: 1682752242
+                            originalTitle: 映画 ブラッククローバー 魔法帝の剣
+                            viewOffset: 5222500
+                            skipCount: 1
   '/library/sections/{sectionId}/refresh':
     get:
       tags:
@@ -2751,114 +2779,6 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/sections/{sectionId}/latest':
-    get:
-      tags:
-        - Library
-      summary: Get Latest Library Items
-      description: |
-        This endpoint will return a list of the latest library items filtered by the filter and type provided
-      operationId: getLatestLibraryItems
-      parameters:
-        - name: sectionId
-          description: the Id of the library to query
-          in: path
-          schema:
-            type: number
-          required: true
-        - name: type
-          description: item type
-          in: query
-          schema:
-            type: number
-          required: true
-        - name: filter
-          description: the filter parameter
-          in: query
-          schema:
-            type: string
-          required: false
-      responses:
-        '200':
-          description: The details of the library
-        '400':
-          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
-  '/library/sections/{sectionId}/common':
-    get:
-      tags:
-        - Library
-      summary: Get Common Library Items
-      description: |
-        Represents a "Common" item. It contains only the common attributes of the items selected by the provided filter
-      operationId: getCommonLibraryItems
-      parameters:
-        - name: sectionId
-          description: the Id of the library to query
-          in: path
-          schema:
-            type: number
-          required: true
-        - name: type
-          description: item type
-          in: query
-          schema:
-            type: number
-          required: true
-        - name: filter
-          description: the filter parameter
-          in: query
-          schema:
-            type: string
-          required: false
-      responses:
-        '200':
-          description: The details of the library
-        '400':
-          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
-        '404':
-          description: In response to a non-existant sectionId.
   '/library/metadata/{ratingKey}':
     get:
       tags:
@@ -2876,7 +2796,7 @@ paths:
           required: true
       responses:
         '200':
-          description: The children of the library item.
+          description: The metadata of the library item.
           content:
             application/json:
               schema:
@@ -3720,6 +3640,237 @@ paths:
       responses:
         '200':
           description: The children of the library item.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 3
+                      allowSync:
+                        type: boolean
+                        example: true
+                      art:
+                        type: string
+                        example: /library/metadata/30072/art/1705739923
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      key:
+                        type: string
+                        example: '30072'
+                      librarySectionID:
+                        type: integer
+                        format: int32
+                        example: 2
+                      librarySectionTitle:
+                        type: string
+                        example: TV Shows
+                      librarySectionUUID:
+                        type: string
+                        example: 4bb2521c-8ba9-459b-aaee-8ab8bc35eabd
+                      mediaTagPrefix:
+                        type: string
+                        example: /system/bundle/media/flags/
+                      mediaTagVersion:
+                        type: integer
+                        format: int32
+                        example: 1701731894
+                      nocache:
+                        type: boolean
+                        example: true
+                      parentIndex:
+                        type: integer
+                        format: int32
+                        example: 1
+                      parentTitle:
+                        type: string
+                        example: Reacher
+                      parentYear:
+                        type: integer
+                        format: int32
+                        example: 2022
+                      summary:
+                        type: string
+                        example: 'When retired Military Police Officer Jack Reacher is arrested for a murder he did not commit, he finds himself in the middle of a deadly conspiracy full of dirty cops, shady businessmen, and scheming politicians. With nothing but his wits, he must figure out what is happening in Margrave, Georgia.'
+                      theme:
+                        type: string
+                        example: /library/metadata/30072/theme/1705739923
+                      thumb:
+                        type: string
+                        example: /library/metadata/30072/thumb/1705739923
+                      title1:
+                        type: string
+                        example: TV Shows
+                      title2:
+                        type: string
+                        example: Reacher
+                      viewGroup:
+                        type: string
+                        example: season
+                      viewMode:
+                        type: integer
+                        format: int32
+                        example: 65593
+                      Directory:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            leafCount:
+                              type: integer
+                              format: int32
+                              example: 16
+                            thumb:
+                              type: string
+                              example: /library/metadata/30072/thumb/1705739923
+                            viewedLeafCount:
+                              type: integer
+                              format: int32
+                              example: 16
+                            key:
+                              type: string
+                              example: /library/metadata/30072/allLeaves
+                            title:
+                              type: string
+                              example: All episodes
+                        example:
+                          - leafCount: 16
+                            thumb: /library/metadata/30072/thumb/1705739923
+                            viewedLeafCount: 16
+                            key: /library/metadata/30072/allLeaves
+                            title: All episodes
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: '66488'
+                            key:
+                              type: string
+                              example: /library/metadata/66488/children
+                            parentRatingKey:
+                              type: string
+                              example: '30072'
+                            guid:
+                              type: string
+                              example: 'plex://season/652aea6549508477c34c6000'
+                            parentGuid:
+                              type: string
+                              example: 'plex://show/5d9c09190aaccd001f8f42f0'
+                            parentStudio:
+                              type: string
+                              example: Amazon Studios
+                            type:
+                              type: string
+                              example: season
+                            title:
+                              type: string
+                              example: Season 2
+                            parentKey:
+                              type: string
+                              example: /library/metadata/30072
+                            parentTitle:
+                              type: string
+                              example: Reacher
+                            summary:
+                              type: string
+                              example: 'Based on"Bad Luck and Trouble," when members of Reacher''s old military unit start turning up dead, Reacher has just one thing on his mind—revenge.'
+                            index:
+                              type: integer
+                              format: int32
+                              example: 2
+                            parentIndex:
+                              type: integer
+                              format: int32
+                              example: 1
+                            viewCount:
+                              type: integer
+                              format: int32
+                              example: 11
+                            lastViewedAt:
+                              type: integer
+                              format: int32
+                              example: 1705646565
+                            parentYear:
+                              type: integer
+                              format: int32
+                              example: 2022
+                            thumb:
+                              type: string
+                              example: /library/metadata/66488/thumb/1703065033
+                            art:
+                              type: string
+                              example: /library/metadata/30072/art/1705739923
+                            parentThumb:
+                              type: string
+                              example: /library/metadata/30072/thumb/1705739923
+                            parentTheme:
+                              type: string
+                              example: /library/metadata/30072/theme/1705739923
+                            leafCount:
+                              type: integer
+                              format: int32
+                              example: 8
+                            viewedLeafCount:
+                              type: integer
+                              format: int32
+                              example: 8
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1702602021
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1703065033
+                            userRating:
+                              type: integer
+                              format: int32
+                              example: 9
+                            skipCount:
+                              type: integer
+                              format: int32
+                              example: 1
+                            lastRatedAt:
+                              type: integer
+                              format: int32
+                              example: 1703881224
+                        example:
+                          - ratingKey: '66488'
+                            key: /library/metadata/66488/children
+                            parentRatingKey: '30072'
+                            guid: 'plex://season/652aea6549508477c34c6000'
+                            parentGuid: 'plex://show/5d9c09190aaccd001f8f42f0'
+                            parentStudio: Amazon Studios
+                            type: season
+                            title: Season 2
+                            parentKey: /library/metadata/30072
+                            parentTitle: Reacher
+                            summary: 'Based on"Bad Luck and Trouble," when members of Reacher''s old military unit start turning up dead, Reacher has just one thing on his mind—revenge.'
+                            index: 2
+                            parentIndex: 1
+                            viewCount: 11
+                            lastViewedAt: 1705646565
+                            parentYear: 2022
+                            thumb: /library/metadata/66488/thumb/1703065033
+                            art: /library/metadata/30072/art/1705739923
+                            parentThumb: /library/metadata/30072/thumb/1705739923
+                            parentTheme: /library/metadata/30072/theme/1705739923
+                            leafCount: 8
+                            viewedLeafCount: 8
+                            addedAt: 1702602021
+                            updatedAt: 1703065033
+                            userRating: 9
+                            skipCount: 1
+                            lastRatedAt: 1703881224
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
