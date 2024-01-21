@@ -18,7 +18,7 @@ put:
 
   responses:
     "200":
-      description: ""
+      description: The update check is started, if download is set to 1 and the system is able to update automatically, the update download will start.
     "400":
       $ref: "../../responses/400.yaml"
     "401":
