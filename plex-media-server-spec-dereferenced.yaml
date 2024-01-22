@@ -2302,6 +2302,8 @@ paths:
                           example: 401
   '/library/sections/{sectionId}/{tag}':
     get:
+      tags:
+        - Library
       summary: Get Library Items
       operationId: getLibraryItems
       description: |
