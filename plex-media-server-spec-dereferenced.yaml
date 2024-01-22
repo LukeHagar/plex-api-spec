@@ -4457,6 +4457,7 @@ paths:
                                   filter: country=116
                                   tag: United States of America
                             Guid:
+                              x-speakeasy-name-override: guids
                               type: array
                               items:
                                 type: object
@@ -4467,6 +4468,7 @@ paths:
                               example:
                                 - id: 'tvdb://2337'
                             Rating:
+                              x-speakeasy-name-override: ratings
                               type: array
                               items:
                                 type: object
