@@ -1,4 +1,6 @@
 get:
+  tags:
+    - Library
   summary: Get Library Items
   operationId: getLibraryItems
   description: |
