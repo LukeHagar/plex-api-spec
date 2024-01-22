@@ -115,8 +115,6 @@ paths:
     $ref: "./paths/photo-transcode.yaml"
   /playlists:
     $ref: "./paths/playlists.yaml"
-  /playlists/all:
-    $ref: "./paths/all-playlists.yaml"
   /playlists/{playlistID}:
     $ref: "./paths/playlist-id.yaml"
   /playlists/{playlistID}/items:
