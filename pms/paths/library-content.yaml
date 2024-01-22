@@ -1,5 +1,6 @@
 get:
-  summary: Retrieve Information by Section and Tag
+  summary: Get Library Items
+  operationId: getLibraryItems
   description: |
     Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
     - `all`: All items in the section.
