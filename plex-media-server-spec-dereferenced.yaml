@@ -991,6 +991,244 @@ paths:
       responses:
         '200':
           description: returns global hubs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 8
+                      allowSync:
+                        type: boolean
+                        example: true
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      Hub:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            hubKey:
+                              type: string
+                              example: '/library/metadata/50768,65523,58188,57341,57302,57070'
+                            key:
+                              type: string
+                              example: '/playlists/all?type=15&sort=lastViewedAt:desc&playlistType=video,audio'
+                            title:
+                              type: string
+                              example: Recent Playlists
+                            type:
+                              type: string
+                              example: playlist
+                            hubIdentifier:
+                              type: string
+                              example: home.playlists
+                            context:
+                              type: string
+                              example: hub.home.playlists
+                            size:
+                              type: integer
+                              format: int32
+                              example: 6
+                            more:
+                              type: boolean
+                              example: true
+                            style:
+                              type: string
+                              example: shelf
+                            promoted:
+                              type: boolean
+                              example: true
+                            Metadata:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  ratingKey:
+                                    type: string
+                                    example: '57070'
+                                  key:
+                                    type: string
+                                    example: /playlists/57070/items
+                                  guid:
+                                    type: string
+                                    example: 'com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c'
+                                  type:
+                                    type: string
+                                    example: playlist
+                                  title:
+                                    type: string
+                                    example: November Movie Day
+                                  titleSort:
+                                    type: string
+                                    example: Tracks
+                                  summary:
+                                    type: string
+                                    example: ''
+                                  smart:
+                                    type: boolean
+                                    example: false
+                                  playlistType:
+                                    type: string
+                                    example: video
+                                  composite:
+                                    type: string
+                                    example: /playlists/57070/composite/1668787730
+                                  icon:
+                                    type: string
+                                    example: 'playlist://image.smart'
+                                  viewCount:
+                                    type: integer
+                                    format: int32
+                                    example: 2
+                                  lastViewedAt:
+                                    type: integer
+                                    format: int32
+                                    example: 1668787732
+                                  duration:
+                                    type: integer
+                                    format: int32
+                                    example: 16873000
+                                  leafCount:
+                                    type: integer
+                                    format: int32
+                                    example: 3
+                                  addedAt:
+                                    type: integer
+                                    format: int32
+                                    example: 1668779618
+                                  updatedAt:
+                                    type: integer
+                                    format: int32
+                                    example: 1668787730
+                              example:
+                                - ratingKey: '57070'
+                                  key: /playlists/57070/items
+                                  guid: 'com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c'
+                                  type: playlist
+                                  title: November Movie Day
+                                  titleSort: Tracks
+                                  summary: ''
+                                  smart: false
+                                  playlistType: video
+                                  composite: /playlists/57070/composite/1668787730
+                                  icon: 'playlist://image.smart'
+                                  viewCount: 2
+                                  lastViewedAt: 1668787732
+                                  duration: 16873000
+                                  leafCount: 3
+                                  addedAt: 1668779618
+                                  updatedAt: 1668787730
+                        example:
+                          - hubKey: '/library/metadata/50768,65523,58188,57341,57302,57070'
+                            key: '/playlists/all?type=15&sort=lastViewedAt:desc&playlistType=video,audio'
+                            title: Recent Playlists
+                            type: playlist
+                            hubIdentifier: home.playlists
+                            context: hub.home.playlists
+                            size: 6
+                            more: true
+                            style: shelf
+                            promoted: true
+                            Metadata:
+                              - ratingKey: '50768'
+                                key: /playlists/50768/items
+                                guid: 'com.plexapp.agents.none://81658e0d-cd4e-4c73-abb9-832b2ae2037b'
+                                type: playlist
+                                title: ❤️ Tracks
+                                titleSort: Tracks
+                                summary: 'All your highly rated tracks, in one convenient place.'
+                                smart: true
+                                playlistType: audio
+                                composite: /playlists/50768/composite/1704333758
+                                icon: 'playlist://image.smart'
+                                viewCount: 47
+                                lastViewedAt: 1705329935
+                                duration: 42864000
+                                leafCount: 178
+                                addedAt: 1655309388
+                                updatedAt: 1704333758
+                              - ratingKey: '65523'
+                                key: /playlists/65523/items
+                                guid: 'com.plexapp.agents.none://1bcdd596-892b-4856-9f28-b4338c439300'
+                                type: playlist
+                                title: Car Rides
+                                summary: ''
+                                smart: false
+                                playlistType: audio
+                                composite: /playlists/65523/composite/1698597932
+                                viewCount: 2
+                                lastViewedAt: 1698597949
+                                duration: 4864000
+                                leafCount: 19
+                                addedAt: 1697993545
+                                updatedAt: 1698597932
+                              - ratingKey: '58188'
+                                key: /playlists/58188/items
+                                guid: 'com.plexapp.agents.none://8f0441d3-2a28-4644-a2f1-b7deeb290dff'
+                                type: playlist
+                                title: Workout
+                                summary: ''
+                                smart: false
+                                playlistType: audio
+                                composite: /playlists/58188/composite/1680825595
+                                viewCount: 4
+                                lastViewedAt: 1680825596
+                                duration: 12522000
+                                leafCount: 56
+                                addedAt: 1679616785
+                                updatedAt: 1680825595
+                              - ratingKey: '57341'
+                                key: /playlists/57341/items
+                                guid: 'com.plexapp.agents.none://bf8778c3-20a3-4619-8eb0-3c172c18ffd6'
+                                type: playlist
+                                title: January Movie Day
+                                summary: ''
+                                smart: false
+                                playlistType: video
+                                composite: /playlists/57341/composite/1673372385
+                                viewCount: 1
+                                lastViewedAt: 1673372306
+                                duration: 19119000
+                                leafCount: 3
+                                addedAt: 1673372306
+                                updatedAt: 1673372385
+                              - ratingKey: '57302'
+                                key: /playlists/57302/items
+                                guid: 'com.plexapp.agents.none://f25064ed-05bb-4bcf-b70c-ed7514b70929'
+                                type: playlist
+                                title: December Movie Day
+                                summary: ''
+                                smart: false
+                                playlistType: video
+                                composite: /playlists/57302/composite/1671205874
+                                viewCount: 2
+                                lastViewedAt: 1671206853
+                                duration: 23040000
+                                leafCount: 3
+                                addedAt: 1671197078
+                                updatedAt: 1671205874
+                              - ratingKey: '57070'
+                                key: /playlists/57070/items
+                                guid: 'com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c'
+                                type: playlist
+                                title: November Movie Day
+                                summary: ''
+                                smart: false
+                                playlistType: video
+                                composite: /playlists/57070/composite/1668787730
+                                viewCount: 2
+                                lastViewedAt: 1668787732
+                                duration: 16873000
+                                leafCount: 3
+                                addedAt: 1668779618
+                                updatedAt: 1668787730
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -1175,6 +1413,897 @@ paths:
       responses:
         '200':
           description: The hubs specific to the library
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 7
+                      allowSync:
+                        type: boolean
+                        example: true
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      librarySectionID:
+                        type: integer
+                        format: int32
+                        example: 1
+                      librarySectionTitle:
+                        type: string
+                        example: Movies
+                      librarySectionUUID:
+                        type: string
+                        example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                      Hub:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                              example: '/library/sections/1/all?sort=lastViewedAt:desc&unwatched=0&viewOffset=0'
+                            title:
+                              type: string
+                              example: Recently Played Movies
+                            type:
+                              type: string
+                              example: movie
+                            hubIdentifier:
+                              type: string
+                              example: movie.recentlyviewed.1
+                            context:
+                              type: string
+                              example: hub.movie.recentlyviewed
+                            size:
+                              type: integer
+                              format: int32
+                              example: 6
+                            more:
+                              type: boolean
+                              example: true
+                            style:
+                              type: string
+                              example: shelf
+                            hubKey:
+                              type: string
+                              example: '/library/metadata/66485,66098,57249,11449,5858,14944'
+                            Metadata:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  ratingKey:
+                                    type: string
+                                    example: '14944'
+                                  key:
+                                    type: string
+                                    example: /library/metadata/14944
+                                  guid:
+                                    type: string
+                                    example: 'plex://movie/5d77686eeb5d26001f1eb339'
+                                  studio:
+                                    type: string
+                                    example: Walt Disney Animation Studios
+                                  type:
+                                    type: string
+                                    example: movie
+                                  title:
+                                    type: string
+                                    example: Tangled
+                                  librarySectionTitle:
+                                    type: string
+                                    example: Movies
+                                  librarySectionID:
+                                    type: integer
+                                    format: int32
+                                    example: 1
+                                  librarySectionKey:
+                                    type: string
+                                    example: /library/sections/1
+                                  contentRating:
+                                    type: string
+                                    example: PG
+                                  summary:
+                                    type: string
+                                    example: 'The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.'
+                                  rating:
+                                    type: number
+                                    example: 8.9
+                                  audienceRating:
+                                    type: number
+                                    example: 8.7
+                                  viewCount:
+                                    type: integer
+                                    format: int32
+                                    example: 1
+                                  lastViewedAt:
+                                    type: integer
+                                    format: int32
+                                    example: 1704936047
+                                  year:
+                                    type: integer
+                                    format: int32
+                                    example: 2010
+                                  tagline:
+                                    type: string
+                                    example: They're taking adventure to new lengths.
+                                  thumb:
+                                    type: string
+                                    example: /library/metadata/14944/thumb/1705739847
+                                  art:
+                                    type: string
+                                    example: /library/metadata/14944/art/1705739847
+                                  duration:
+                                    type: integer
+                                    format: int32
+                                    example: 6017237
+                                  originallyAvailableAt:
+                                    type: string
+                                    format: date
+                                    example: 2010-11-24T00:00:00.000Z
+                                  addedAt:
+                                    type: integer
+                                    format: int32
+                                    example: 1589412494
+                                  updatedAt:
+                                    type: integer
+                                    format: int32
+                                    example: 1705739847
+                                  audienceRatingImage:
+                                    type: string
+                                    example: 'rottentomatoes://image.rating.upright'
+                                  primaryExtraKey:
+                                    type: string
+                                    example: /library/metadata/14952
+                                  ratingImage:
+                                    type: string
+                                    example: 'rottentomatoes://image.rating.ripe'
+                                  Media:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: integer
+                                          format: int32
+                                          example: 38247
+                                        duration:
+                                          type: integer
+                                          format: int32
+                                          example: 6017237
+                                        bitrate:
+                                          type: integer
+                                          format: int32
+                                          example: 2051
+                                        width:
+                                          type: integer
+                                          format: int32
+                                          example: 1920
+                                        height:
+                                          type: integer
+                                          format: int32
+                                          example: 1080
+                                        aspectRatio:
+                                          type: number
+                                          example: 1.78
+                                        audioChannels:
+                                          type: integer
+                                          format: int32
+                                          example: 2
+                                        audioCodec:
+                                          type: string
+                                          example: aac
+                                        videoCodec:
+                                          type: string
+                                          example: h264
+                                        videoResolution:
+                                          type: string
+                                          example: '1080'
+                                        container:
+                                          type: string
+                                          example: mp4
+                                        videoFrameRate:
+                                          type: string
+                                          example: 24p
+                                        optimizedForStreaming:
+                                          type: integer
+                                          format: int32
+                                          example: 1
+                                        audioProfile:
+                                          type: string
+                                          example: lc
+                                        has64bitOffsets:
+                                          type: boolean
+                                          example: false
+                                        videoProfile:
+                                          type: string
+                                          example: high
+                                        Part:
+                                          type: array
+                                          items:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: integer
+                                                format: int32
+                                                example: 38247
+                                              key:
+                                                type: string
+                                                example: /library/parts/38247/1589412494/file.mp4
+                                              duration:
+                                                type: integer
+                                                format: int32
+                                                example: 6017237
+                                              file:
+                                                type: string
+                                                example: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                              size:
+                                                type: integer
+                                                format: int32
+                                                example: 1545647447
+                                              audioProfile:
+                                                type: string
+                                                example: lc
+                                              container:
+                                                type: string
+                                                example: mp4
+                                              has64bitOffsets:
+                                                type: boolean
+                                                example: false
+                                              optimizedForStreaming:
+                                                type: boolean
+                                                example: true
+                                              videoProfile:
+                                                type: string
+                                                example: high
+                                          example:
+                                            - id: 38247
+                                              key: /library/parts/38247/1589412494/file.mp4
+                                              duration: 6017237
+                                              file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                              size: 1545647447
+                                              audioProfile: lc
+                                              container: mp4
+                                              has64bitOffsets: false
+                                              optimizedForStreaming: true
+                                              videoProfile: high
+                                    example:
+                                      - id: 38247
+                                        duration: 6017237
+                                        bitrate: 2051
+                                        width: 1920
+                                        height: 1080
+                                        aspectRatio: 1.78
+                                        audioChannels: 2
+                                        audioCodec: aac
+                                        videoCodec: h264
+                                        videoResolution: '1080'
+                                        container: mp4
+                                        videoFrameRate: 24p
+                                        optimizedForStreaming: 1
+                                        audioProfile: lc
+                                        has64bitOffsets: false
+                                        videoProfile: high
+                                        Part:
+                                          - id: 38247
+                                            key: /library/parts/38247/1589412494/file.mp4
+                                            duration: 6017237
+                                            file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                            size: 1545647447
+                                            audioProfile: lc
+                                            container: mp4
+                                            has64bitOffsets: false
+                                            optimizedForStreaming: true
+                                            videoProfile: high
+                                  Genre:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        tag:
+                                          type: string
+                                          example: Animation
+                                    example:
+                                      - tag: Animation
+                                  Country:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        tag:
+                                          type: string
+                                          example: United States of America
+                                    example:
+                                      - tag: United States of America
+                                  Director:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        tag:
+                                          type: string
+                                          example: Nathan Greno
+                                    example:
+                                      - tag: Nathan Greno
+                                  Role:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        tag:
+                                          type: string
+                                          example: Donna Murphy
+                                    example:
+                                      - tag: Donna Murphy
+                                  Writer:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        tag:
+                                          type: string
+                                          example: Wilhelm Grimm
+                                    example:
+                                      - tag: Wilhelm Grimm
+                                  skipCount:
+                                    type: integer
+                                    format: int32
+                                    example: 1
+                                  chapterSource:
+                                    type: string
+                                    example: media
+                              example:
+                                - ratingKey: '14944'
+                                  key: /library/metadata/14944
+                                  guid: 'plex://movie/5d77686eeb5d26001f1eb339'
+                                  studio: Walt Disney Animation Studios
+                                  type: movie
+                                  title: Tangled
+                                  librarySectionTitle: Movies
+                                  librarySectionID: 1
+                                  librarySectionKey: /library/sections/1
+                                  contentRating: PG
+                                  summary: 'The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.'
+                                  rating: 8.9
+                                  audienceRating: 8.7
+                                  viewCount: 1
+                                  lastViewedAt: 1704936047
+                                  year: 2010
+                                  tagline: They're taking adventure to new lengths.
+                                  thumb: /library/metadata/14944/thumb/1705739847
+                                  art: /library/metadata/14944/art/1705739847
+                                  duration: 6017237
+                                  originallyAvailableAt: 2010-11-24T00:00:00.000Z
+                                  addedAt: 1589412494
+                                  updatedAt: 1705739847
+                                  audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                  primaryExtraKey: /library/metadata/14952
+                                  ratingImage: 'rottentomatoes://image.rating.ripe'
+                                  Media:
+                                    - id: 38247
+                                      duration: 6017237
+                                      bitrate: 2051
+                                      width: 1920
+                                      height: 1080
+                                      aspectRatio: 1.78
+                                      audioChannels: 2
+                                      audioCodec: aac
+                                      videoCodec: h264
+                                      videoResolution: '1080'
+                                      container: mp4
+                                      videoFrameRate: 24p
+                                      optimizedForStreaming: 1
+                                      audioProfile: lc
+                                      has64bitOffsets: false
+                                      videoProfile: high
+                                      Part:
+                                        - id: 38247
+                                          key: /library/parts/38247/1589412494/file.mp4
+                                          duration: 6017237
+                                          file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                          size: 1545647447
+                                          audioProfile: lc
+                                          container: mp4
+                                          has64bitOffsets: false
+                                          optimizedForStreaming: true
+                                          videoProfile: high
+                                  Genre:
+                                    - tag: Comedy
+                                    - tag: Animation
+                                  Country:
+                                    - tag: United States of America
+                                  Director:
+                                    - tag: Byron Howard
+                                    - tag: Nathan Greno
+                                  Role:
+                                    - tag: Mandy Moore
+                                    - tag: Zachary Levi
+                                    - tag: Donna Murphy
+                                  Writer:
+                                    - tag: Jacob Grimm
+                                    - tag: Wilhelm Grimm
+                                  skipCount: 1
+                                  chapterSource: media
+                            promoted:
+                              type: boolean
+                              example: true
+                            random:
+                              type: boolean
+                              example: true
+                        example:
+                          - key: '/library/sections/1/all?sort=lastViewedAt:desc&unwatched=0&viewOffset=0'
+                            title: Recently Played Movies
+                            type: movie
+                            hubIdentifier: movie.recentlyviewed.1
+                            context: hub.movie.recentlyviewed
+                            size: 6
+                            more: true
+                            style: shelf
+                            hubKey: '/library/metadata/66485,66098,57249,11449,5858,14944'
+                            Metadata:
+                              - ratingKey: '66485'
+                                key: /library/metadata/66485
+                                guid: 'plex://movie/5d776c3251dd69001fe38bb4'
+                                studio: Termite Films
+                                type: movie
+                                title: Kedi
+                                librarySectionTitle: Movies
+                                librarySectionID: 1
+                                librarySectionKey: /library/sections/1
+                                contentRating: Not Rated
+                                summary: 'A profile of an ancient city and its unique people, seen through the eyes of the most mysterious and beloved animal humans have ever known, the Cat.'
+                                rating: 9.8
+                                audienceRating: 8.5
+                                viewCount: 2
+                                lastViewedAt: 1705786111
+                                year: 2017
+                                tagline: 'A cat meowing at your feet, looking up at you, is life smiling at you...'
+                                thumb: /library/metadata/66485/thumb/1702586907
+                                art: /library/metadata/66485/art/1702586907
+                                duration: 4736174
+                                originallyAvailableAt: 2017-02-10T00:00:00.000Z
+                                addedAt: 1702586905
+                                updatedAt: 1702586907
+                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                primaryExtraKey: /library/metadata/66486
+                                ratingImage: 'rottentomatoes://image.rating.ripe'
+                                Media:
+                                  - id: 129531
+                                    duration: 4736174
+                                    bitrate: 2377
+                                    width: 1920
+                                    height: 1080
+                                    aspectRatio: 1.78
+                                    audioChannels: 2
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 0
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 129778
+                                        key: /library/parts/129778/1702586883/file.mp4
+                                        duration: 4736174
+                                        file: /movies/Kedi (2017)/Kedi (2017) 1080p x264.mp4
+                                        size: 1410810905
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: false
+                                        videoProfile: high
+                                Genre:
+                                  - tag: Documentary
+                                Country:
+                                  - tag: United States of America
+                                Director:
+                                  - tag: Ceyda Torun
+                                Role:
+                                  - tag: Bülent Üstün
+                              - ratingKey: '66098'
+                                key: /library/metadata/66098
+                                guid: 'plex://movie/5d9f34f4adeb7a0021ce020f'
+                                studio: Touchwood Pacific Partners 1
+                                type: movie
+                                title: 'Homeward Bound: The Incredible Journey'
+                                librarySectionTitle: Movies
+                                librarySectionID: 1
+                                librarySectionKey: /library/sections/1
+                                contentRating: G
+                                summary: 'A fun-loving American bulldog pup, a hilarious Himalayan cat, and a wise old golden retriever embark on a long trek through the rugged wilderness of the Sierra Nevada mountains in a quest to reach home and their beloved owners.'
+                                rating: 8.7
+                                audienceRating: 7.1
+                                viewCount: 2
+                                lastViewedAt: 1705709811
+                                year: 1993
+                                tagline: 'In the classic tradition of Walt Disney Pictures comes a story about courage, adventure and friendship.'
+                                thumb: /library/metadata/66098/thumb/1703148781
+                                art: /library/metadata/66098/art/1703148781
+                                duration: 5065775
+                                originallyAvailableAt: 1993-02-12T00:00:00.000Z
+                                addedAt: 1700434925
+                                updatedAt: 1703148781
+                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                primaryExtraKey: /library/metadata/66099
+                                ratingImage: 'rottentomatoes://image.rating.ripe'
+                                Media:
+                                  - id: 129003
+                                    duration: 5065775
+                                    bitrate: 2444
+                                    width: 1904
+                                    height: 1024
+                                    aspectRatio: 1.85
+                                    audioChannels: 2
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 1
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 129250
+                                        key: /library/parts/129250/1700434864/file.mp4
+                                        duration: 5065775
+                                        file: '/movies/Homeward Bound The Incredible Journey (1993)/Homeward Bound The Incredible Journey (1993) [BluRay] [1080p] [YTS.LT].mp4'
+                                        size: 1550855333
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: true
+                                        videoProfile: high
+                                Genre:
+                                  - tag: Adventure
+                                  - tag: Comedy
+                                Country:
+                                  - tag: United States of America
+                                Director:
+                                  - tag: Duwayne Dunham
+                                Writer:
+                                  - tag: Caroline Thompson
+                                  - tag: Linda Woolverton
+                                Role:
+                                  - tag: Michael J. Fox
+                                  - tag: Sally Field
+                                  - tag: Don Ameche
+                              - ratingKey: '57249'
+                                key: /library/metadata/57249
+                                guid: 'plex://movie/60eff7d3e22797002c55c1cc'
+                                studio: Nickelodeon Movies
+                                type: movie
+                                title: Blue's Big City Adventure
+                                librarySectionTitle: Movies
+                                librarySectionID: 1
+                                librarySectionKey: /library/sections/1
+                                contentRating: TV-Y
+                                summary: 'Josh and Blue skidoo to New York City to audition for Rainbow Puppy''s Broadway musical, but they get lost when Josh accidentally left his Handy Dandy Notebook at home. This leads to a game of Blue''s Clues to figure out where the audition is. Meanwhile, Tickety Tock and her friends go to New York City to find Josh and Blue and get to the audition with help from Joe and Steve.'
+                                rating: 8.3
+                                audienceRating: 8.6
+                                viewCount: 8
+                                skipCount: 1
+                                lastViewedAt: 1705681955
+                                year: 2022
+                                tagline: All They Need is You.
+                                thumb: /library/metadata/57249/thumb/1704274800
+                                art: /library/metadata/57249/art/1704274800
+                                duration: 4459050
+                                originallyAvailableAt: 2022-11-18T00:00:00.000Z
+                                addedAt: 1669671356
+                                updatedAt: 1704274800
+                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                primaryExtraKey: /library/metadata/57250
+                                ratingImage: 'rottentomatoes://image.rating.ripe'
+                                Media:
+                                  - id: 115470
+                                    duration: 4459050
+                                    bitrate: 6384
+                                    width: 3840
+                                    height: 2160
+                                    aspectRatio: 1.78
+                                    audioChannels: 6
+                                    audioCodec: aac
+                                    videoCodec: hevc
+                                    videoResolution: 4k
+                                    container: mkv
+                                    videoFrameRate: 24p
+                                    audioProfile: lc
+                                    videoProfile: main 10
+                                    Part:
+                                      - id: 115478
+                                        key: /library/parts/115478/1669671340/file.mkv
+                                        duration: 4459050
+                                        file: '/movies/Blue''s Big City Adventure (2022)/Blues.Big.City.Adventure.2022.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv'
+                                        size: 3560750664
+                                        audioProfile: lc
+                                        container: mkv
+                                        videoProfile: main 10
+                                Genre:
+                                  - tag: Comedy
+                                  - tag: Family
+                                Country:
+                                  - tag: Canada
+                                  - tag: Ireland
+                                Director:
+                                  - tag: Matt Stawski
+                                Writer:
+                                  - tag: Traci Paige Johnson
+                                  - tag: Todd Kessler
+                                Role:
+                                  - tag: Joshua Dela Cruz
+                                  - tag: Steve Burns
+                                  - tag: Donovan Patton
+                              - ratingKey: '11449'
+                                key: /library/metadata/11449
+                                guid: 'plex://movie/5d776edfad5437001f803cf9'
+                                studio: Walt Disney Pictures
+                                type: movie
+                                title: Onward
+                                librarySectionTitle: Movies
+                                librarySectionID: 1
+                                librarySectionKey: /library/sections/1
+                                contentRating: PG
+                                summary: 'In a magical world full of technological advances, elven brothers Ian and Barley Lightfoot set out on an adventure to resurrect their late father for a day.'
+                                rating: 8.8
+                                audienceRating: 9.5
+                                viewCount: 3
+                                lastViewedAt: 1705543126
+                                year: 2020
+                                tagline: Their quest begineth.
+                                thumb: /library/metadata/11449/thumb/1705224000
+                                art: /library/metadata/11449/art/1705224000
+                                duration: 6141428
+                                originallyAvailableAt: 2020-03-04T00:00:00.000Z
+                                addedAt: 1589237130
+                                updatedAt: 1705224000
+                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                chapterSource: media
+                                primaryExtraKey: /library/metadata/11470
+                                ratingImage: 'rottentomatoes://image.rating.ripe'
+                                Media:
+                                  - id: 29291
+                                    duration: 6141428
+                                    bitrate: 10977
+                                    width: 1920
+                                    height: 804
+                                    aspectRatio: 2.35
+                                    audioChannels: 8
+                                    audioCodec: dca-ma
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mkv
+                                    videoFrameRate: 24p
+                                    audioProfile: ma
+                                    videoProfile: high
+                                    Part:
+                                      - id: 29291
+                                        key: /library/parts/29291/1589237130/file.mkv
+                                        duration: 6141428
+                                        file: /movies/Onward (2020)/Onward (2020) Bluray-1080p.mkv
+                                        size: 8426669232
+                                        audioProfile: ma
+                                        container: mkv
+                                        videoProfile: high
+                                  - id: 29315
+                                    duration: 6142006
+                                    bitrate: 2639
+                                    width: 1920
+                                    height: 800
+                                    aspectRatio: 2.35
+                                    audioChannels: 6
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 1
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 29315
+                                        key: /library/parts/29315/1629002847/file.mp4
+                                        duration: 6142006
+                                        file: /movies/Onward (2020)/Onward (2020) WEBRip-1080p.mp4
+                                        size: 2026154995
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: true
+                                        videoProfile: high
+                                Genre:
+                                  - tag: Animation
+                                  - tag: Comedy
+                                Country:
+                                  - tag: United States of America
+                                Director:
+                                  - tag: Dan Scanlon
+                                Writer:
+                                  - tag: Kelsey Mann
+                                  - tag: Dan Scanlon
+                                Role:
+                                  - tag: Tom Holland
+                                  - tag: Chris Pratt
+                                  - tag: Julia Louis-Dreyfus
+                              - ratingKey: '5858'
+                                key: /library/metadata/5858
+                                guid: 'plex://movie/5d776b85594b2b001e6dc641'
+                                studio: Walt Disney Pictures
+                                type: movie
+                                title: Frozen II
+                                librarySectionTitle: Movies
+                                librarySectionID: 1
+                                librarySectionKey: /library/sections/1
+                                contentRating: PG
+                                summary: 'Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa''s powers in order to save their kingdom.'
+                                rating: 7.7
+                                audienceRating: 9.2
+                                viewCount: 1
+                                skipCount: 1
+                                lastViewedAt: 1705337663
+                                year: 2019
+                                tagline: The past is not what it seems.
+                                thumb: /library/metadata/5858/thumb/1704621922
+                                art: /library/metadata/5858/art/1704621922
+                                duration: 6194042
+                                originallyAvailableAt: 2019-11-20T00:00:00.000Z
+                                addedAt: 1588207762
+                                updatedAt: 1704621922
+                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                primaryExtraKey: /library/metadata/5892
+                                ratingImage: 'rottentomatoes://image.rating.ripe'
+                                Media:
+                                  - id: 14954
+                                    duration: 6194042
+                                    bitrate: 2538
+                                    width: 1920
+                                    height: 800
+                                    aspectRatio: 2.35
+                                    audioChannels: 6
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 1
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 14954
+                                        key: /library/parts/14954/1588207762/file.mp4
+                                        duration: 6194042
+                                        file: /movies/Frozen II (2019)/Frozen II (2019) Bluray-1080p.mp4
+                                        size: 1969230037
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: true
+                                        videoProfile: high
+                                  - id: 14999
+                                    duration: 6244271
+                                    bitrate: 2536
+                                    width: 1920
+                                    height: 800
+                                    aspectRatio: 2.35
+                                    audioChannels: 6
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 1
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 14999
+                                        key: /library/parts/14999/1629001526/file.mp4
+                                        duration: 6244271
+                                        file: /movies/Frozen II (2019)/Frozen II (2019) WEBRip-1080p.mp4
+                                        size: 1983357282
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: true
+                                        videoProfile: high
+                                Genre:
+                                  - tag: Adventure
+                                  - tag: Animation
+                                Country:
+                                  - tag: United States of America
+                                Director:
+                                  - tag: Chris Buck
+                                  - tag: Jennifer Lee
+                                Writer:
+                                  - tag: Chris Buck
+                                  - tag: Hans Christian Andersen
+                                Role:
+                                  - tag: Idina Menzel
+                                  - tag: Kristen Bell
+                                  - tag: Josh Gad
+                              - ratingKey: '14944'
+                                key: /library/metadata/14944
+                                guid: 'plex://movie/5d77686eeb5d26001f1eb339'
+                                studio: Walt Disney Animation Studios
+                                type: movie
+                                title: Tangled
+                                librarySectionTitle: Movies
+                                librarySectionID: 1
+                                librarySectionKey: /library/sections/1
+                                contentRating: PG
+                                summary: 'The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.'
+                                rating: 8.9
+                                audienceRating: 8.7
+                                viewCount: 1
+                                lastViewedAt: 1704936047
+                                year: 2010
+                                tagline: They're taking adventure to new lengths.
+                                thumb: /library/metadata/14944/thumb/1705739847
+                                art: /library/metadata/14944/art/1705739847
+                                duration: 6017237
+                                originallyAvailableAt: 2010-11-24T00:00:00.000Z
+                                addedAt: 1589412494
+                                updatedAt: 1705739847
+                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
+                                primaryExtraKey: /library/metadata/14952
+                                ratingImage: 'rottentomatoes://image.rating.ripe'
+                                Media:
+                                  - id: 38247
+                                    duration: 6017237
+                                    bitrate: 2051
+                                    width: 1920
+                                    height: 1080
+                                    aspectRatio: 1.78
+                                    audioChannels: 2
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: '1080'
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 1
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 38247
+                                        key: /library/parts/38247/1589412494/file.mp4
+                                        duration: 6017237
+                                        file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                        size: 1545647447
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: true
+                                        videoProfile: high
+                                Genre:
+                                  - tag: Comedy
+                                  - tag: Animation
+                                Country:
+                                  - tag: United States of America
+                                Director:
+                                  - tag: Byron Howard
+                                  - tag: Nathan Greno
+                                Writer:
+                                  - tag: Jacob Grimm
+                                  - tag: Wilhelm Grimm
+                                Role:
+                                  - tag: Mandy Moore
+                                  - tag: Zachary Levi
+                                  - tag: Donna Murphy
+                            promoted: true
+                            random: true
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -4716,7 +5845,6 @@ paths:
                         status:
                           type: number
                           example: 401
-  /playlists/all:
     get:
       tags:
         - Playlists
@@ -5700,8 +6828,10 @@ paths:
           required: true
         - name: force
           description: |
-            force overwriting of duplicate playlists. By default, a playlist file uploaded with the same path will overwrite the existing playlist. 
-            The `force` argument is used to disable overwriting. If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
+            Force overwriting of duplicate playlists.  
+            By default, a playlist file uploaded with the same path will overwrite the existing playlist. 
+            The `force` argument is used to disable overwriting.  
+            If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
           in: query
           schema:
             type: integer
@@ -6187,6 +7317,526 @@ paths:
       responses:
         '200':
           description: List of Active Plex Sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 1
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705543312
+                            art:
+                              type: string
+                              example: /library/metadata/39904/art/1705310687
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 186240
+                            grandparentArt:
+                              type: string
+                              example: /library/metadata/39904/art/1705310687
+                            grandparentGuid:
+                              type: string
+                              example: 'plex://artist/5d07bbfd403c6402904a6480'
+                            grandparentKey:
+                              type: string
+                              example: /library/metadata/39904
+                            grandparentRatingKey:
+                              type: string
+                              example: '39904'
+                            grandparentThumb:
+                              type: string
+                              example: /library/metadata/39904/thumb/1705310687
+                            grandparentTitle:
+                              type: string
+                              example: Green Day
+                            guid:
+                              type: string
+                              example: 'plex://track/6535834f71f22f36f71a8e8f'
+                            index:
+                              type: integer
+                              format: int32
+                              example: 1
+                            key:
+                              type: string
+                              example: /library/metadata/67085
+                            librarySectionID:
+                              type: string
+                              example: '3'
+                            librarySectionKey:
+                              type: string
+                              example: /library/sections/3
+                            librarySectionTitle:
+                              type: string
+                              example: Music
+                            musicAnalysisVersion:
+                              type: string
+                              example: '1'
+                            parentGuid:
+                              type: string
+                              example: 'plex://album/65394d6d472b8ab03ef47f12'
+                            parentIndex:
+                              type: integer
+                              format: int32
+                              example: 1
+                            parentKey:
+                              type: string
+                              example: /library/metadata/67084
+                            parentRatingKey:
+                              type: string
+                              example: '67084'
+                            parentStudio:
+                              type: string
+                              example: Reprise Records
+                            parentThumb:
+                              type: string
+                              example: /library/metadata/67084/thumb/1705543314
+                            parentTitle:
+                              type: string
+                              example: Saviors
+                            parentYear:
+                              type: integer
+                              format: int32
+                              example: 2024
+                            ratingCount:
+                              type: integer
+                              format: int32
+                              example: 45885
+                            ratingKey:
+                              type: string
+                              example: '67085'
+                            sessionKey:
+                              type: string
+                              example: '203'
+                            thumb:
+                              type: string
+                              example: /library/metadata/67084/thumb/1705543314
+                            title:
+                              type: string
+                              example: The American Dream Is Killing Me
+                            titleSort:
+                              type: string
+                              example: American Dream Is Killing Me
+                            type:
+                              type: string
+                              example: track
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705543314
+                            viewOffset:
+                              type: integer
+                              format: int32
+                              example: 1000
+                            Media:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  audioChannels:
+                                    type: integer
+                                    format: int32
+                                    example: 2
+                                  audioCodec:
+                                    type: string
+                                    example: flac
+                                  bitrate:
+                                    type: integer
+                                    format: int32
+                                    example: 1014
+                                  container:
+                                    type: string
+                                    example: flac
+                                  duration:
+                                    type: integer
+                                    format: int32
+                                    example: 186240
+                                  id:
+                                    type: string
+                                    example: '130355'
+                                  selected:
+                                    type: boolean
+                                    example: true
+                                  Part:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        container:
+                                          type: string
+                                          example: flac
+                                        duration:
+                                          type: integer
+                                          format: int32
+                                          example: 186240
+                                        file:
+                                          type: string
+                                          example: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
+                                        hasThumbnail:
+                                          type: string
+                                          example: '1'
+                                        id:
+                                          type: string
+                                          example: '130625'
+                                        key:
+                                          type: string
+                                          example: /library/parts/130625/1705543268/file.flac
+                                        size:
+                                          type: integer
+                                          format: int32
+                                          example: 23644000
+                                        decision:
+                                          type: string
+                                          example: directplay
+                                        selected:
+                                          type: boolean
+                                          example: true
+                                        Stream:
+                                          type: array
+                                          items:
+                                            type: object
+                                            properties:
+                                              albumGain:
+                                                type: string
+                                                example: '-12.94'
+                                              albumPeak:
+                                                type: string
+                                                example: '1.000000'
+                                              albumRange:
+                                                type: string
+                                                example: '4.751014'
+                                              audioChannelLayout:
+                                                type: string
+                                                example: stereo
+                                              bitDepth:
+                                                type: integer
+                                                format: int32
+                                                example: 16
+                                              bitrate:
+                                                type: integer
+                                                format: int32
+                                                example: 1014
+                                              channels:
+                                                type: integer
+                                                format: int32
+                                                example: 2
+                                              codec:
+                                                type: string
+                                                example: flac
+                                              displayTitle:
+                                                type: string
+                                                example: FLAC (Stereo)
+                                              extendedDisplayTitle:
+                                                type: string
+                                                example: FLAC (Stereo)
+                                              gain:
+                                                type: string
+                                                example: '-12.94'
+                                              id:
+                                                type: string
+                                                example: '352487'
+                                              index:
+                                                type: integer
+                                                format: int32
+                                                example: 0
+                                              loudness:
+                                                type: string
+                                                example: '-5.94'
+                                              lra:
+                                                type: string
+                                                example: '1.74'
+                                              peak:
+                                                type: string
+                                                example: '1.000000'
+                                              samplingRate:
+                                                type: integer
+                                                format: int32
+                                                example: 44100
+                                              selected:
+                                                type: boolean
+                                                example: true
+                                              streamType:
+                                                type: integer
+                                                format: int32
+                                                example: 2
+                                              location:
+                                                type: string
+                                                example: direct
+                                          example:
+                                            - albumGain: '-12.94'
+                                              albumPeak: '1.000000'
+                                              albumRange: '4.751014'
+                                              audioChannelLayout: stereo
+                                              bitDepth: 16
+                                              bitrate: 1014
+                                              channels: 2
+                                              codec: flac
+                                              displayTitle: FLAC (Stereo)
+                                              extendedDisplayTitle: FLAC (Stereo)
+                                              gain: '-12.94'
+                                              id: '352487'
+                                              index: 0
+                                              loudness: '-5.94'
+                                              lra: '1.74'
+                                              peak: '1.000000'
+                                              samplingRate: 44100
+                                              selected: true
+                                              streamType: 2
+                                              location: direct
+                                    example:
+                                      - container: flac
+                                        duration: 186240
+                                        file: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
+                                        hasThumbnail: '1'
+                                        id: '130625'
+                                        key: /library/parts/130625/1705543268/file.flac
+                                        size: 23644000
+                                        decision: directplay
+                                        selected: true
+                                        Stream:
+                                          - albumGain: '-12.94'
+                                            albumPeak: '1.000000'
+                                            albumRange: '4.751014'
+                                            audioChannelLayout: stereo
+                                            bitDepth: 16
+                                            bitrate: 1014
+                                            channels: 2
+                                            codec: flac
+                                            displayTitle: FLAC (Stereo)
+                                            extendedDisplayTitle: FLAC (Stereo)
+                                            gain: '-12.94'
+                                            id: '352487'
+                                            index: 0
+                                            loudness: '-5.94'
+                                            lra: '1.74'
+                                            peak: '1.000000'
+                                            samplingRate: 44100
+                                            selected: true
+                                            streamType: 2
+                                            location: direct
+                              example:
+                                - audioChannels: 2
+                                  audioCodec: flac
+                                  bitrate: 1014
+                                  container: flac
+                                  duration: 186240
+                                  id: '130355'
+                                  selected: true
+                                  Part:
+                                    - container: flac
+                                      duration: 186240
+                                      file: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
+                                      hasThumbnail: '1'
+                                      id: '130625'
+                                      key: /library/parts/130625/1705543268/file.flac
+                                      size: 23644000
+                                      decision: directplay
+                                      selected: true
+                                      Stream:
+                                        - albumGain: '-12.94'
+                                          albumPeak: '1.000000'
+                                          albumRange: '4.751014'
+                                          audioChannelLayout: stereo
+                                          bitDepth: 16
+                                          bitrate: 1014
+                                          channels: 2
+                                          codec: flac
+                                          displayTitle: FLAC (Stereo)
+                                          extendedDisplayTitle: FLAC (Stereo)
+                                          gain: '-12.94'
+                                          id: '352487'
+                                          index: 0
+                                          loudness: '-5.94'
+                                          lra: '1.74'
+                                          peak: '1.000000'
+                                          samplingRate: 44100
+                                          selected: true
+                                          streamType: 2
+                                          location: direct
+                            User:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: '1'
+                                thumb:
+                                  type: string
+                                  example: 'https://plex.tv/users/844780fc6f8a26b5/avatar?c=1705853661'
+                                title:
+                                  type: string
+                                  example: Blindkitty38
+                            Player:
+                              type: object
+                              properties:
+                                address:
+                                  type: string
+                                  example: 10.10.10.171
+                                machineIdentifier:
+                                  type: string
+                                  example: 3tsdzir85m2onc3qyr255aq1
+                                model:
+                                  type: string
+                                  example: standalone
+                                platform:
+                                  type: string
+                                  example: windows
+                                platformVersion:
+                                  type: string
+                                  example: 10.0.22621
+                                product:
+                                  type: string
+                                  example: Plex for Windows
+                                profile:
+                                  type: string
+                                  example: Plex Desktop
+                                remotePublicAddress:
+                                  type: string
+                                  example: 68.248.140.20
+                                state:
+                                  type: string
+                                  example: playing
+                                title:
+                                  type: string
+                                  example: DESKTOP-BL80MTD
+                                version:
+                                  type: string
+                                  example: 1.85.0.4071-21128b56
+                                local:
+                                  type: boolean
+                                  example: true
+                                relayed:
+                                  type: boolean
+                                  example: false
+                                secure:
+                                  type: boolean
+                                  example: true
+                                userID:
+                                  type: integer
+                                  format: int32
+                                  example: 1
+                            Session:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: 93h7e00ncblxncqw9lkfaoxi
+                                bandwidth:
+                                  type: integer
+                                  format: int32
+                                  example: 1050
+                                location:
+                                  type: string
+                                  example: lan
+                        example:
+                          - addedAt: 1705543312
+                            art: /library/metadata/39904/art/1705310687
+                            duration: 186240
+                            grandparentArt: /library/metadata/39904/art/1705310687
+                            grandparentGuid: 'plex://artist/5d07bbfd403c6402904a6480'
+                            grandparentKey: /library/metadata/39904
+                            grandparentRatingKey: '39904'
+                            grandparentThumb: /library/metadata/39904/thumb/1705310687
+                            grandparentTitle: Green Day
+                            guid: 'plex://track/6535834f71f22f36f71a8e8f'
+                            index: 1
+                            key: /library/metadata/67085
+                            librarySectionID: '3'
+                            librarySectionKey: /library/sections/3
+                            librarySectionTitle: Music
+                            musicAnalysisVersion: '1'
+                            parentGuid: 'plex://album/65394d6d472b8ab03ef47f12'
+                            parentIndex: 1
+                            parentKey: /library/metadata/67084
+                            parentRatingKey: '67084'
+                            parentStudio: Reprise Records
+                            parentThumb: /library/metadata/67084/thumb/1705543314
+                            parentTitle: Saviors
+                            parentYear: 2024
+                            ratingCount: 45885
+                            ratingKey: '67085'
+                            sessionKey: '203'
+                            thumb: /library/metadata/67084/thumb/1705543314
+                            title: The American Dream Is Killing Me
+                            titleSort: American Dream Is Killing Me
+                            type: track
+                            updatedAt: 1705543314
+                            viewOffset: 1000
+                            Media:
+                              - audioChannels: 2
+                                audioCodec: flac
+                                bitrate: 1014
+                                container: flac
+                                duration: 186240
+                                id: '130355'
+                                selected: true
+                                Part:
+                                  - container: flac
+                                    duration: 186240
+                                    file: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
+                                    hasThumbnail: '1'
+                                    id: '130625'
+                                    key: /library/parts/130625/1705543268/file.flac
+                                    size: 23644000
+                                    decision: directplay
+                                    selected: true
+                                    Stream:
+                                      - albumGain: '-12.94'
+                                        albumPeak: '1.000000'
+                                        albumRange: '4.751014'
+                                        audioChannelLayout: stereo
+                                        bitDepth: 16
+                                        bitrate: 1014
+                                        channels: 2
+                                        codec: flac
+                                        displayTitle: FLAC (Stereo)
+                                        extendedDisplayTitle: FLAC (Stereo)
+                                        gain: '-12.94'
+                                        id: '352487'
+                                        index: 0
+                                        loudness: '-5.94'
+                                        lra: '1.74'
+                                        peak: '1.000000'
+                                        samplingRate: 44100
+                                        selected: true
+                                        streamType: 2
+                                        location: direct
+                            User:
+                              id: '1'
+                              thumb: 'https://plex.tv/users/844780fc6f8a26b5/avatar?c=1705853661'
+                              title: Blindkitty38
+                            Player:
+                              address: 10.10.10.171
+                              machineIdentifier: 3tsdzir85m2onc3qyr255aq1
+                              model: standalone
+                              platform: windows
+                              platformVersion: 10.0.22621
+                              product: Plex for Windows
+                              profile: Plex Desktop
+                              remotePublicAddress: 68.248.140.20
+                              state: playing
+                              title: DESKTOP-BL80MTD
+                              version: 1.85.0.4071-21128b56
+                              local: true
+                              relayed: false
+                              secure: true
+                              userID: 1
+                            Session:
+                              id: 93h7e00ncblxncqw9lkfaoxi
+                              bandwidth: 1050
+                              location: lan
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6220,6 +7870,106 @@ paths:
       responses:
         '200':
           description: List of Plex Sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 10855
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            historyKey:
+                              type: string
+                              example: /status/sessions/history/1
+                            key:
+                              type: string
+                              example: /library/metadata/32171
+                            ratingKey:
+                              type: string
+                              example: '32171'
+                            librarySectionID:
+                              type: string
+                              example: '2'
+                            parentKey:
+                              type: string
+                              example: /library/metadata/32170
+                            grandparentKey:
+                              type: string
+                              example: /library/metadata/32132
+                            title:
+                              type: string
+                              example: The Noise That Blue Makes
+                            grandparentTitle:
+                              type: string
+                              example: Taskmaster
+                            type:
+                              type: string
+                              example: episode
+                            thumb:
+                              type: string
+                              example: /library/metadata/32171/thumb/-1
+                            parentThumb:
+                              type: string
+                              example: /library/metadata/32170/thumb/1654134301
+                            grandparentThumb:
+                              type: string
+                              example: /library/metadata/32132/thumb/1703933346
+                            grandparentArt:
+                              type: string
+                              example: /library/metadata/32132/art/1703933346
+                            index:
+                              type: integer
+                              format: int32
+                              example: 1
+                            parentIndex:
+                              type: integer
+                              format: int32
+                              example: 13
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 2022-04-14T00:00:00.000Z
+                            viewedAt:
+                              type: integer
+                              format: int32
+                              example: 1654139223
+                            accountID:
+                              type: integer
+                              format: int32
+                              example: 1
+                            deviceID:
+                              type: integer
+                              format: int32
+                              example: 5
+                        example:
+                          - historyKey: /status/sessions/history/1
+                            key: /library/metadata/32171
+                            ratingKey: '32171'
+                            librarySectionID: '2'
+                            parentKey: /library/metadata/32170
+                            grandparentKey: /library/metadata/32132
+                            title: The Noise That Blue Makes
+                            grandparentTitle: Taskmaster
+                            type: episode
+                            thumb: /library/metadata/32171/thumb/-1
+                            parentThumb: /library/metadata/32170/thumb/1654134301
+                            grandparentThumb: /library/metadata/32132/thumb/1703933346
+                            grandparentArt: /library/metadata/32132/art/1703933346
+                            index: 1
+                            parentIndex: 13
+                            originallyAvailableAt: 2022-04-14T00:00:00.000Z
+                            viewedAt: 1654139223
+                            accountID: 1
+                            deviceID: 5
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6262,7 +8012,8 @@ paths:
                     type: object
                     properties:
                       size:
-                        type: number
+                        type: integer
+                        format: int32
                         example: 1
                       TranscodeSession:
                         type: array
@@ -6271,25 +8022,34 @@ paths:
                           properties:
                             key:
                               type: string
-                              example: zz7llzqlx8w9vnrsbnwhbmep
+                              example: vv3i2q2lax92qlzul1hbd4bx
                             throttled:
                               type: boolean
+                              example: false
                             complete:
                               type: boolean
+                              example: false
                             progress:
                               type: number
-                              example: 0.4000000059604645
+                              example: 1.7999999523162842
                             size:
-                              type: number
+                              type: integer
+                              format: int32
                               example: -22
                             speed:
                               type: number
-                              example: 22.399999618530273
+                              example: 25.100000381469727
                             error:
                               type: boolean
+                              example: false
                             duration:
-                              type: number
-                              example: 2561768
+                              type: integer
+                              format: int32
+                              example: 1445695
+                            remaining:
+                              type: integer
+                              format: int32
+                              example: 53
                             context:
                               type: string
                               example: streaming
@@ -6298,13 +8058,16 @@ paths:
                               example: h264
                             sourceAudioCodec:
                               type: string
-                              example: ac3
+                              example: aac
                             videoDecision:
                               type: string
                               example: transcode
                             audioDecision:
                               type: string
                               example: transcode
+                            subtitleDecision:
+                              type: string
+                              example: burn
                             protocol:
                               type: string
                               example: http
@@ -6318,19 +8081,46 @@ paths:
                               type: string
                               example: opus
                             audioChannels:
-                              type: number
-                              example: 2
+                              type: integer
+                              format: int32
+                              example: 1
                             transcodeHwRequested:
                               type: boolean
+                              example: true
                             timeStamp:
                               type: number
-                              example: 1681869535.7764285
+                              example: 1705895805.4919229
                             maxOffsetAvailable:
                               type: number
-                              example: 861.778
+                              example: 29.53
                             minOffsetAvailable:
                               type: number
-                              example: 0
+                              example: 3.003000020980835
+                        example:
+                          - key: vv3i2q2lax92qlzul1hbd4bx
+                            throttled: false
+                            complete: false
+                            progress: 1.7999999523162842
+                            size: -22
+                            speed: 25.100000381469727
+                            error: false
+                            duration: 1445695
+                            remaining: 53
+                            context: streaming
+                            sourceVideoCodec: h264
+                            sourceAudioCodec: aac
+                            videoDecision: transcode
+                            audioDecision: transcode
+                            subtitleDecision: burn
+                            protocol: http
+                            container: mkv
+                            videoCodec: h264
+                            audioCodec: opus
+                            audioChannels: 1
+                            transcodeHwRequested: true
+                            timeStamp: 1705895805.4919229
+                            maxOffsetAvailable: 29.53
+                            minOffsetAvailable: 3.003000020980835
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6359,6 +8149,7 @@ paths:
       tags:
         - Sessions
       summary: Stop a Transcode Session
+      operationId: stopTranscodeSession
       description: Stop a Transcode Session
       parameters:
         - name: sessionKey
@@ -6368,9 +8159,8 @@ paths:
             type: string
             example: zz7llzqlx8w9vnrsbnwhbmep
           required: true
-      operationId: stopTranscodeSession
       responses:
-        '200':
+        '204':
           description: The Transcode Session ended
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
