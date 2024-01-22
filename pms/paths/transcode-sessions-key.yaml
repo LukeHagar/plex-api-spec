@@ -2,6 +2,7 @@ delete:
   tags:
     - Sessions
   summary: Stop a Transcode Session
+  operationId: stopTranscodeSession
   description: Stop a Transcode Session
   parameters:
     - name: sessionKey
@@ -11,9 +12,8 @@ delete:
         type: string
         example: zz7llzqlx8w9vnrsbnwhbmep
       required: true
-  operationId: stopTranscodeSession
   responses:
-    "200":
+    "204":
       description: The Transcode Session ended
     "400":
       $ref: "../../responses/400.yaml"

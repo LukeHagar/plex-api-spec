@@ -31,6 +31,938 @@ get:
   responses:
     "200":
       description: The hubs specific to the library
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 7
+                  allowSync:
+                    type: boolean
+                    example: true
+                  identifier:
+                    type: string
+                    example: com.plexapp.plugins.library
+                  librarySectionID:
+                    type: integer
+                    format: int32
+                    example: 1
+                  librarySectionTitle:
+                    type: string
+                    example: Movies
+                  librarySectionUUID:
+                    type: string
+                    example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                  Hub:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          example: /library/sections/1/all?sort=lastViewedAt:desc&unwatched=0&viewOffset=0
+                        title:
+                          type: string
+                          example: Recently Played Movies
+                        type:
+                          type: string
+                          example: movie
+                        hubIdentifier:
+                          type: string
+                          example: movie.recentlyviewed.1
+                        context:
+                          type: string
+                          example: hub.movie.recentlyviewed
+                        size:
+                          type: integer
+                          format: int32
+                          example: 6
+                        more:
+                          type: boolean
+                          example: true
+                        style:
+                          type: string
+                          example: shelf
+                        hubKey:
+                          type: string
+                          example: /library/metadata/66485,66098,57249,11449,5858,14944
+                        Metadata:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              ratingKey:
+                                type: string
+                                example: "14944"
+                              key:
+                                type: string
+                                example: /library/metadata/14944
+                              guid:
+                                type: string
+                                example: plex://movie/5d77686eeb5d26001f1eb339
+                              studio:
+                                type: string
+                                example: Walt Disney Animation Studios
+                              type:
+                                type: string
+                                example: movie
+                              title:
+                                type: string
+                                example: Tangled
+                              librarySectionTitle:
+                                type: string
+                                example: Movies
+                              librarySectionID:
+                                type: integer
+                                format: int32
+                                example: 1
+                              librarySectionKey:
+                                type: string
+                                example: /library/sections/1
+                              contentRating:
+                                type: string
+                                example: PG
+                              summary:
+                                type: string
+                                example:
+                                  The magically long-haired Rapunzel has spent her entire life in a
+                                  tower, but now that a runaway thief has stumbled upon her,
+                                  she is about to discover the world for the first time, and
+                                  who she really is.
+                              rating:
+                                type: number
+                                example: 8.9
+                              audienceRating:
+                                type: number
+                                example: 8.7
+                              viewCount:
+                                type: integer
+                                format: int32
+                                example: 1
+                              lastViewedAt:
+                                type: integer
+                                format: int32
+                                example: 1704936047
+                              year:
+                                type: integer
+                                format: int32
+                                example: 2010
+                              tagline:
+                                type: string
+                                example: They're taking adventure to new lengths.
+                              thumb:
+                                type: string
+                                example: /library/metadata/14944/thumb/1705739847
+                              art:
+                                type: string
+                                example: /library/metadata/14944/art/1705739847
+                              duration:
+                                type: integer
+                                format: int32
+                                example: 6017237
+                              originallyAvailableAt:
+                                type: string
+                                format: date
+                                example: 2010-11-24
+                              addedAt:
+                                type: integer
+                                format: int32
+                                example: 1589412494
+                              updatedAt:
+                                type: integer
+                                format: int32
+                                example: 1705739847
+                              audienceRatingImage:
+                                type: string
+                                example: rottentomatoes://image.rating.upright
+                              primaryExtraKey:
+                                type: string
+                                example: /library/metadata/14952
+                              ratingImage:
+                                type: string
+                                example: rottentomatoes://image.rating.ripe
+                              Media:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int32
+                                      example: 38247
+                                    duration:
+                                      type: integer
+                                      format: int32
+                                      example: 6017237
+                                    bitrate:
+                                      type: integer
+                                      format: int32
+                                      example: 2051
+                                    width:
+                                      type: integer
+                                      format: int32
+                                      example: 1920
+                                    height:
+                                      type: integer
+                                      format: int32
+                                      example: 1080
+                                    aspectRatio:
+                                      type: number
+                                      example: 1.78
+                                    audioChannels:
+                                      type: integer
+                                      format: int32
+                                      example: 2
+                                    audioCodec:
+                                      type: string
+                                      example: aac
+                                    videoCodec:
+                                      type: string
+                                      example: h264
+                                    videoResolution:
+                                      type: string
+                                      example: "1080"
+                                    container:
+                                      type: string
+                                      example: mp4
+                                    videoFrameRate:
+                                      type: string
+                                      example: 24p
+                                    optimizedForStreaming:
+                                      type: integer
+                                      format: int32
+                                      example: 1
+                                    audioProfile:
+                                      type: string
+                                      example: lc
+                                    has64bitOffsets:
+                                      type: boolean
+                                      example: false
+                                    videoProfile:
+                                      type: string
+                                      example: high
+                                    Part:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                            format: int32
+                                            example: 38247
+                                          key:
+                                            type: string
+                                            example: /library/parts/38247/1589412494/file.mp4
+                                          duration:
+                                            type: integer
+                                            format: int32
+                                            example: 6017237
+                                          file:
+                                            type: string
+                                            example: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                          size:
+                                            type: integer
+                                            format: int32
+                                            example: 1545647447
+                                          audioProfile:
+                                            type: string
+                                            example: lc
+                                          container:
+                                            type: string
+                                            example: mp4
+                                          has64bitOffsets:
+                                            type: boolean
+                                            example: false
+                                          optimizedForStreaming:
+                                            type: boolean
+                                            example: true
+                                          videoProfile:
+                                            type: string
+                                            example: high
+                                      example:
+                                        - id: 38247
+                                          key: /library/parts/38247/1589412494/file.mp4
+                                          duration: 6017237
+                                          file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                          size: 1545647447
+                                          audioProfile: lc
+                                          container: mp4
+                                          has64bitOffsets: false
+                                          optimizedForStreaming: true
+                                          videoProfile: high
+                                example:
+                                  - id: 38247
+                                    duration: 6017237
+                                    bitrate: 2051
+                                    width: 1920
+                                    height: 1080
+                                    aspectRatio: 1.78
+                                    audioChannels: 2
+                                    audioCodec: aac
+                                    videoCodec: h264
+                                    videoResolution: "1080"
+                                    container: mp4
+                                    videoFrameRate: 24p
+                                    optimizedForStreaming: 1
+                                    audioProfile: lc
+                                    has64bitOffsets: false
+                                    videoProfile: high
+                                    Part:
+                                      - id: 38247
+                                        key: /library/parts/38247/1589412494/file.mp4
+                                        duration: 6017237
+                                        file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                        size: 1545647447
+                                        audioProfile: lc
+                                        container: mp4
+                                        has64bitOffsets: false
+                                        optimizedForStreaming: true
+                                        videoProfile: high
+                              Genre:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    tag:
+                                      type: string
+                                      example: Animation
+                                example:
+                                  - tag: Animation
+                              Country:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    tag:
+                                      type: string
+                                      example: United States of America
+                                example:
+                                  - tag: United States of America
+                              Director:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    tag:
+                                      type: string
+                                      example: Nathan Greno
+                                example:
+                                  - tag: Nathan Greno
+                              Role:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    tag:
+                                      type: string
+                                      example: Donna Murphy
+                                example:
+                                  - tag: Donna Murphy
+                              Writer:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    tag:
+                                      type: string
+                                      example: Wilhelm Grimm
+                                example:
+                                  - tag: Wilhelm Grimm
+                              skipCount:
+                                type: integer
+                                format: int32
+                                example: 1
+                              chapterSource:
+                                type: string
+                                example: media
+                          example:
+                            - ratingKey: "14944"
+                              key: /library/metadata/14944
+                              guid: plex://movie/5d77686eeb5d26001f1eb339
+                              studio: Walt Disney Animation Studios
+                              type: movie
+                              title: Tangled
+                              librarySectionTitle: Movies
+                              librarySectionID: 1
+                              librarySectionKey: /library/sections/1
+                              contentRating: PG
+                              summary:
+                                The magically long-haired Rapunzel has spent her entire life in a
+                                tower, but now that a runaway thief has stumbled upon her,
+                                she is about to discover the world for the first time, and
+                                who she really is.
+                              rating: 8.9
+                              audienceRating: 8.7
+                              viewCount: 1
+                              lastViewedAt: 1704936047
+                              year: 2010
+                              tagline: They're taking adventure to new lengths.
+                              thumb: /library/metadata/14944/thumb/1705739847
+                              art: /library/metadata/14944/art/1705739847
+                              duration: 6017237
+                              originallyAvailableAt: 2010-11-24
+                              addedAt: 1589412494
+                              updatedAt: 1705739847
+                              audienceRatingImage: rottentomatoes://image.rating.upright
+                              primaryExtraKey: /library/metadata/14952
+                              ratingImage: rottentomatoes://image.rating.ripe
+                              Media:
+                                - id: 38247
+                                  duration: 6017237
+                                  bitrate: 2051
+                                  width: 1920
+                                  height: 1080
+                                  aspectRatio: 1.78
+                                  audioChannels: 2
+                                  audioCodec: aac
+                                  videoCodec: h264
+                                  videoResolution: "1080"
+                                  container: mp4
+                                  videoFrameRate: 24p
+                                  optimizedForStreaming: 1
+                                  audioProfile: lc
+                                  has64bitOffsets: false
+                                  videoProfile: high
+                                  Part:
+                                    - id: 38247
+                                      key: /library/parts/38247/1589412494/file.mp4
+                                      duration: 6017237
+                                      file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                      size: 1545647447
+                                      audioProfile: lc
+                                      container: mp4
+                                      has64bitOffsets: false
+                                      optimizedForStreaming: true
+                                      videoProfile: high
+                              Genre:
+                                - tag: Comedy
+                                - tag: Animation
+                              Country:
+                                - tag: United States of America
+                              Director:
+                                - tag: Byron Howard
+                                - tag: Nathan Greno
+                              Role:
+                                - tag: Mandy Moore
+                                - tag: Zachary Levi
+                                - tag: Donna Murphy
+                              Writer:
+                                - tag: Jacob Grimm
+                                - tag: Wilhelm Grimm
+                              skipCount: 1
+                              chapterSource: media
+                        promoted:
+                          type: boolean
+                          example: true
+                        random:
+                          type: boolean
+                          example: true
+                    example:
+                      - key: /library/sections/1/all?sort=lastViewedAt:desc&unwatched=0&viewOffset=0
+                        title: Recently Played Movies
+                        type: movie
+                        hubIdentifier: movie.recentlyviewed.1
+                        context: hub.movie.recentlyviewed
+                        size: 6
+                        more: true
+                        style: shelf
+                        hubKey: /library/metadata/66485,66098,57249,11449,5858,14944
+                        Metadata:
+                          - ratingKey: "66485"
+                            key: /library/metadata/66485
+                            guid: plex://movie/5d776c3251dd69001fe38bb4
+                            studio: Termite Films
+                            type: movie
+                            title: Kedi
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: Not Rated
+                            summary:
+                              A profile of an ancient city and its unique people, seen through the
+                              eyes of the most mysterious and beloved animal humans have
+                              ever known, the Cat.
+                            rating: 9.8
+                            audienceRating: 8.5
+                            viewCount: 2
+                            lastViewedAt: 1705786111
+                            year: 2017
+                            tagline:
+                              A cat meowing at your feet, looking up at you, is life smiling at
+                              you...
+                            thumb: /library/metadata/66485/thumb/1702586907
+                            art: /library/metadata/66485/art/1702586907
+                            duration: 4736174
+                            originallyAvailableAt: 2017-02-10
+                            addedAt: 1702586905
+                            updatedAt: 1702586907
+                            audienceRatingImage: rottentomatoes://image.rating.upright
+                            primaryExtraKey: /library/metadata/66486
+                            ratingImage: rottentomatoes://image.rating.ripe
+                            Media:
+                              - id: 129531
+                                duration: 4736174
+                                bitrate: 2377
+                                width: 1920
+                                height: 1080
+                                aspectRatio: 1.78
+                                audioChannels: 2
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 0
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 129778
+                                    key: /library/parts/129778/1702586883/file.mp4
+                                    duration: 4736174
+                                    file: /movies/Kedi (2017)/Kedi (2017) 1080p x264.mp4
+                                    size: 1410810905
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: false
+                                    videoProfile: high
+                            Genre:
+                              - tag: Documentary
+                            Country:
+                              - tag: United States of America
+                            Director:
+                              - tag: Ceyda Torun
+                            Role:
+                              - tag: Bülent Üstün
+                          - ratingKey: "66098"
+                            key: /library/metadata/66098
+                            guid: plex://movie/5d9f34f4adeb7a0021ce020f
+                            studio: Touchwood Pacific Partners 1
+                            type: movie
+                            title: "Homeward Bound: The Incredible Journey"
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: G
+                            summary:
+                              A fun-loving American bulldog pup, a hilarious Himalayan cat, and a
+                              wise old golden retriever embark on a long trek through the
+                              rugged wilderness of the Sierra Nevada mountains in a quest to
+                              reach home and their beloved owners.
+                            rating: 8.7
+                            audienceRating: 7.1
+                            viewCount: 2
+                            lastViewedAt: 1705709811
+                            year: 1993
+                            tagline:
+                              In the classic tradition of Walt Disney Pictures comes a story about
+                              courage, adventure and friendship.
+                            thumb: /library/metadata/66098/thumb/1703148781
+                            art: /library/metadata/66098/art/1703148781
+                            duration: 5065775
+                            originallyAvailableAt: 1993-02-12
+                            addedAt: 1700434925
+                            updatedAt: 1703148781
+                            audienceRatingImage: rottentomatoes://image.rating.upright
+                            primaryExtraKey: /library/metadata/66099
+                            ratingImage: rottentomatoes://image.rating.ripe
+                            Media:
+                              - id: 129003
+                                duration: 5065775
+                                bitrate: 2444
+                                width: 1904
+                                height: 1024
+                                aspectRatio: 1.85
+                                audioChannels: 2
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 1
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 129250
+                                    key: /library/parts/129250/1700434864/file.mp4
+                                    duration: 5065775
+                                    file:
+                                      /movies/Homeward Bound The Incredible Journey (1993)/Homeward Bound The
+                                      Incredible Journey (1993) [BluRay] [1080p]
+                                      [YTS.LT].mp4
+                                    size: 1550855333
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: true
+                                    videoProfile: high
+                            Genre:
+                              - tag: Adventure
+                              - tag: Comedy
+                            Country:
+                              - tag: United States of America
+                            Director:
+                              - tag: Duwayne Dunham
+                            Writer:
+                              - tag: Caroline Thompson
+                              - tag: Linda Woolverton
+                            Role:
+                              - tag: Michael J. Fox
+                              - tag: Sally Field
+                              - tag: Don Ameche
+                          - ratingKey: "57249"
+                            key: /library/metadata/57249
+                            guid: plex://movie/60eff7d3e22797002c55c1cc
+                            studio: Nickelodeon Movies
+                            type: movie
+                            title: Blue's Big City Adventure
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: TV-Y
+                            summary:
+                              Josh and Blue skidoo to New York City to audition for Rainbow Puppy's
+                              Broadway musical, but they get lost when Josh accidentally
+                              left his Handy Dandy Notebook at home. This leads to a game of
+                              Blue's Clues to figure out where the audition is. Meanwhile,
+                              Tickety Tock and her friends go to New York City to find Josh
+                              and Blue and get to the audition with help from Joe and Steve.
+                            rating: 8.3
+                            audienceRating: 8.6
+                            viewCount: 8
+                            skipCount: 1
+                            lastViewedAt: 1705681955
+                            year: 2022
+                            tagline: All They Need is You.
+                            thumb: /library/metadata/57249/thumb/1704274800
+                            art: /library/metadata/57249/art/1704274800
+                            duration: 4459050
+                            originallyAvailableAt: 2022-11-18
+                            addedAt: 1669671356
+                            updatedAt: 1704274800
+                            audienceRatingImage: rottentomatoes://image.rating.upright
+                            primaryExtraKey: /library/metadata/57250
+                            ratingImage: rottentomatoes://image.rating.ripe
+                            Media:
+                              - id: 115470
+                                duration: 4459050
+                                bitrate: 6384
+                                width: 3840
+                                height: 2160
+                                aspectRatio: 1.78
+                                audioChannels: 6
+                                audioCodec: aac
+                                videoCodec: hevc
+                                videoResolution: 4k
+                                container: mkv
+                                videoFrameRate: 24p
+                                audioProfile: lc
+                                videoProfile: main 10
+                                Part:
+                                  - id: 115478
+                                    key: /library/parts/115478/1669671340/file.mkv
+                                    duration: 4459050
+                                    file: /movies/Blue's Big City Adventure
+                                      (2022)/Blues.Big.City.Adventure.2022.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv
+                                    size: 3560750664
+                                    audioProfile: lc
+                                    container: mkv
+                                    videoProfile: main 10
+                            Genre:
+                              - tag: Comedy
+                              - tag: Family
+                            Country:
+                              - tag: Canada
+                              - tag: Ireland
+                            Director:
+                              - tag: Matt Stawski
+                            Writer:
+                              - tag: Traci Paige Johnson
+                              - tag: Todd Kessler
+                            Role:
+                              - tag: Joshua Dela Cruz
+                              - tag: Steve Burns
+                              - tag: Donovan Patton
+                          - ratingKey: "11449"
+                            key: /library/metadata/11449
+                            guid: plex://movie/5d776edfad5437001f803cf9
+                            studio: Walt Disney Pictures
+                            type: movie
+                            title: Onward
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: PG
+                            summary:
+                              In a magical world full of technological advances, elven brothers Ian
+                              and Barley Lightfoot set out on an adventure to resurrect
+                              their late father for a day.
+                            rating: 8.8
+                            audienceRating: 9.5
+                            viewCount: 3
+                            lastViewedAt: 1705543126
+                            year: 2020
+                            tagline: Their quest begineth.
+                            thumb: /library/metadata/11449/thumb/1705224000
+                            art: /library/metadata/11449/art/1705224000
+                            duration: 6141428
+                            originallyAvailableAt: 2020-03-04
+                            addedAt: 1589237130
+                            updatedAt: 1705224000
+                            audienceRatingImage: rottentomatoes://image.rating.upright
+                            chapterSource: media
+                            primaryExtraKey: /library/metadata/11470
+                            ratingImage: rottentomatoes://image.rating.ripe
+                            Media:
+                              - id: 29291
+                                duration: 6141428
+                                bitrate: 10977
+                                width: 1920
+                                height: 804
+                                aspectRatio: 2.35
+                                audioChannels: 8
+                                audioCodec: dca-ma
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mkv
+                                videoFrameRate: 24p
+                                audioProfile: ma
+                                videoProfile: high
+                                Part:
+                                  - id: 29291
+                                    key: /library/parts/29291/1589237130/file.mkv
+                                    duration: 6141428
+                                    file: /movies/Onward (2020)/Onward (2020) Bluray-1080p.mkv
+                                    size: 8426669232
+                                    audioProfile: ma
+                                    container: mkv
+                                    videoProfile: high
+                              - id: 29315
+                                duration: 6142006
+                                bitrate: 2639
+                                width: 1920
+                                height: 800
+                                aspectRatio: 2.35
+                                audioChannels: 6
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 1
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 29315
+                                    key: /library/parts/29315/1629002847/file.mp4
+                                    duration: 6142006
+                                    file: /movies/Onward (2020)/Onward (2020) WEBRip-1080p.mp4
+                                    size: 2026154995
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: true
+                                    videoProfile: high
+                            Genre:
+                              - tag: Animation
+                              - tag: Comedy
+                            Country:
+                              - tag: United States of America
+                            Director:
+                              - tag: Dan Scanlon
+                            Writer:
+                              - tag: Kelsey Mann
+                              - tag: Dan Scanlon
+                            Role:
+                              - tag: Tom Holland
+                              - tag: Chris Pratt
+                              - tag: Julia Louis-Dreyfus
+                          - ratingKey: "5858"
+                            key: /library/metadata/5858
+                            guid: plex://movie/5d776b85594b2b001e6dc641
+                            studio: Walt Disney Pictures
+                            type: movie
+                            title: Frozen II
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: PG
+                            summary:
+                              Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an
+                              ancient, autumn-bound forest of an enchanted land. They set
+                              out to find the origin of Elsa's powers in order to save their
+                              kingdom.
+                            rating: 7.7
+                            audienceRating: 9.2
+                            viewCount: 1
+                            skipCount: 1
+                            lastViewedAt: 1705337663
+                            year: 2019
+                            tagline: The past is not what it seems.
+                            thumb: /library/metadata/5858/thumb/1704621922
+                            art: /library/metadata/5858/art/1704621922
+                            duration: 6194042
+                            originallyAvailableAt: 2019-11-20
+                            addedAt: 1588207762
+                            updatedAt: 1704621922
+                            audienceRatingImage: rottentomatoes://image.rating.upright
+                            primaryExtraKey: /library/metadata/5892
+                            ratingImage: rottentomatoes://image.rating.ripe
+                            Media:
+                              - id: 14954
+                                duration: 6194042
+                                bitrate: 2538
+                                width: 1920
+                                height: 800
+                                aspectRatio: 2.35
+                                audioChannels: 6
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 1
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 14954
+                                    key: /library/parts/14954/1588207762/file.mp4
+                                    duration: 6194042
+                                    file: /movies/Frozen II (2019)/Frozen II (2019) Bluray-1080p.mp4
+                                    size: 1969230037
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: true
+                                    videoProfile: high
+                              - id: 14999
+                                duration: 6244271
+                                bitrate: 2536
+                                width: 1920
+                                height: 800
+                                aspectRatio: 2.35
+                                audioChannels: 6
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 1
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 14999
+                                    key: /library/parts/14999/1629001526/file.mp4
+                                    duration: 6244271
+                                    file: /movies/Frozen II (2019)/Frozen II (2019) WEBRip-1080p.mp4
+                                    size: 1983357282
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: true
+                                    videoProfile: high
+                            Genre:
+                              - tag: Adventure
+                              - tag: Animation
+                            Country:
+                              - tag: United States of America
+                            Director:
+                              - tag: Chris Buck
+                              - tag: Jennifer Lee
+                            Writer:
+                              - tag: Chris Buck
+                              - tag: Hans Christian Andersen
+                            Role:
+                              - tag: Idina Menzel
+                              - tag: Kristen Bell
+                              - tag: Josh Gad
+                          - ratingKey: "14944"
+                            key: /library/metadata/14944
+                            guid: plex://movie/5d77686eeb5d26001f1eb339
+                            studio: Walt Disney Animation Studios
+                            type: movie
+                            title: Tangled
+                            librarySectionTitle: Movies
+                            librarySectionID: 1
+                            librarySectionKey: /library/sections/1
+                            contentRating: PG
+                            summary:
+                              The magically long-haired Rapunzel has spent her entire life in a
+                              tower, but now that a runaway thief has stumbled upon her, she
+                              is about to discover the world for the first time, and who she
+                              really is.
+                            rating: 8.9
+                            audienceRating: 8.7
+                            viewCount: 1
+                            lastViewedAt: 1704936047
+                            year: 2010
+                            tagline: They're taking adventure to new lengths.
+                            thumb: /library/metadata/14944/thumb/1705739847
+                            art: /library/metadata/14944/art/1705739847
+                            duration: 6017237
+                            originallyAvailableAt: 2010-11-24
+                            addedAt: 1589412494
+                            updatedAt: 1705739847
+                            audienceRatingImage: rottentomatoes://image.rating.upright
+                            primaryExtraKey: /library/metadata/14952
+                            ratingImage: rottentomatoes://image.rating.ripe
+                            Media:
+                              - id: 38247
+                                duration: 6017237
+                                bitrate: 2051
+                                width: 1920
+                                height: 1080
+                                aspectRatio: 1.78
+                                audioChannels: 2
+                                audioCodec: aac
+                                videoCodec: h264
+                                videoResolution: "1080"
+                                container: mp4
+                                videoFrameRate: 24p
+                                optimizedForStreaming: 1
+                                audioProfile: lc
+                                has64bitOffsets: false
+                                videoProfile: high
+                                Part:
+                                  - id: 38247
+                                    key: /library/parts/38247/1589412494/file.mp4
+                                    duration: 6017237
+                                    file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
+                                    size: 1545647447
+                                    audioProfile: lc
+                                    container: mp4
+                                    has64bitOffsets: false
+                                    optimizedForStreaming: true
+                                    videoProfile: high
+                            Genre:
+                              - tag: Comedy
+                              - tag: Animation
+                            Country:
+                              - tag: United States of America
+                            Director:
+                              - tag: Byron Howard
+                              - tag: Nathan Greno
+                            Writer:
+                              - tag: Jacob Grimm
+                              - tag: Wilhelm Grimm
+                            Role:
+                              - tag: Mandy Moore
+                              - tag: Zachary Levi
+                              - tag: Donna Murphy
+                        promoted: true
+                        random: true
+
     "400":
       $ref: "../../responses/400.yaml"
     "401":

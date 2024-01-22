@@ -24,6 +24,245 @@ get:
   responses:
     "200":
       description: returns global hubs
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 8
+                  allowSync:
+                    type: boolean
+                    example: true
+                  identifier:
+                    type: string
+                    example: com.plexapp.plugins.library
+                  Hub:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        hubKey:
+                          type: string
+                          example: /library/metadata/50768,65523,58188,57341,57302,57070
+                        key:
+                          type: string
+                          example: /playlists/all?type=15&sort=lastViewedAt:desc&playlistType=video,audio
+                        title:
+                          type: string
+                          example: Recent Playlists
+                        type:
+                          type: string
+                          example: playlist
+                        hubIdentifier:
+                          type: string
+                          example: home.playlists
+                        context:
+                          type: string
+                          example: hub.home.playlists
+                        size:
+                          type: integer
+                          format: int32
+                          example: 6
+                        more:
+                          type: boolean
+                          example: true
+                        style:
+                          type: string
+                          example: shelf
+                        promoted:
+                          type: boolean
+                          example: true
+                        Metadata:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              ratingKey:
+                                type: string
+                                example: "57070"
+                              key:
+                                type: string
+                                example: /playlists/57070/items
+                              guid:
+                                type: string
+                                example: com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c
+                              type:
+                                type: string
+                                example: playlist
+                              title:
+                                type: string
+                                example: November Movie Day
+                              titleSort:
+                                type: string
+                                example: Tracks
+                              summary:
+                                type: string
+                                example: ""
+                              smart:
+                                type: boolean
+                                example: false
+                              playlistType:
+                                type: string
+                                example: video
+                              composite:
+                                type: string
+                                example: /playlists/57070/composite/1668787730
+                              icon:
+                                type: string
+                                example: playlist://image.smart
+                              viewCount:
+                                type: integer
+                                format: int32
+                                example: 2
+                              lastViewedAt:
+                                type: integer
+                                format: int32
+                                example: 1668787732
+                              duration:
+                                type: integer
+                                format: int32
+                                example: 16873000
+                              leafCount:
+                                type: integer
+                                format: int32
+                                example: 3
+                              addedAt:
+                                type: integer
+                                format: int32
+                                example: 1668779618
+                              updatedAt:
+                                type: integer
+                                format: int32
+                                example: 1668787730
+                          example:
+                            - ratingKey: "57070"
+                              key: /playlists/57070/items
+                              guid: com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c
+                              type: playlist
+                              title: November Movie Day
+                              titleSort: Tracks
+                              summary: ""
+                              smart: false
+                              playlistType: video
+                              composite: /playlists/57070/composite/1668787730
+                              icon: playlist://image.smart
+                              viewCount: 2
+                              lastViewedAt: 1668787732
+                              duration: 16873000
+                              leafCount: 3
+                              addedAt: 1668779618
+                              updatedAt: 1668787730
+                    example:
+                      - hubKey: /library/metadata/50768,65523,58188,57341,57302,57070
+                        key: /playlists/all?type=15&sort=lastViewedAt:desc&playlistType=video,audio
+                        title: Recent Playlists
+                        type: playlist
+                        hubIdentifier: home.playlists
+                        context: hub.home.playlists
+                        size: 6
+                        more: true
+                        style: shelf
+                        promoted: true
+                        Metadata:
+                          - ratingKey: "50768"
+                            key: /playlists/50768/items
+                            guid: com.plexapp.agents.none://81658e0d-cd4e-4c73-abb9-832b2ae2037b
+                            type: playlist
+                            title: ❤️ Tracks
+                            titleSort: Tracks
+                            summary: All your highly rated tracks, in one convenient place.
+                            smart: true
+                            playlistType: audio
+                            composite: /playlists/50768/composite/1704333758
+                            icon: playlist://image.smart
+                            viewCount: 47
+                            lastViewedAt: 1705329935
+                            duration: 42864000
+                            leafCount: 178
+                            addedAt: 1655309388
+                            updatedAt: 1704333758
+                          - ratingKey: "65523"
+                            key: /playlists/65523/items
+                            guid: com.plexapp.agents.none://1bcdd596-892b-4856-9f28-b4338c439300
+                            type: playlist
+                            title: Car Rides
+                            summary: ""
+                            smart: false
+                            playlistType: audio
+                            composite: /playlists/65523/composite/1698597932
+                            viewCount: 2
+                            lastViewedAt: 1698597949
+                            duration: 4864000
+                            leafCount: 19
+                            addedAt: 1697993545
+                            updatedAt: 1698597932
+                          - ratingKey: "58188"
+                            key: /playlists/58188/items
+                            guid: com.plexapp.agents.none://8f0441d3-2a28-4644-a2f1-b7deeb290dff
+                            type: playlist
+                            title: Workout
+                            summary: ""
+                            smart: false
+                            playlistType: audio
+                            composite: /playlists/58188/composite/1680825595
+                            viewCount: 4
+                            lastViewedAt: 1680825596
+                            duration: 12522000
+                            leafCount: 56
+                            addedAt: 1679616785
+                            updatedAt: 1680825595
+                          - ratingKey: "57341"
+                            key: /playlists/57341/items
+                            guid: com.plexapp.agents.none://bf8778c3-20a3-4619-8eb0-3c172c18ffd6
+                            type: playlist
+                            title: January Movie Day
+                            summary: ""
+                            smart: false
+                            playlistType: video
+                            composite: /playlists/57341/composite/1673372385
+                            viewCount: 1
+                            lastViewedAt: 1673372306
+                            duration: 19119000
+                            leafCount: 3
+                            addedAt: 1673372306
+                            updatedAt: 1673372385
+                          - ratingKey: "57302"
+                            key: /playlists/57302/items
+                            guid: com.plexapp.agents.none://f25064ed-05bb-4bcf-b70c-ed7514b70929
+                            type: playlist
+                            title: December Movie Day
+                            summary: ""
+                            smart: false
+                            playlistType: video
+                            composite: /playlists/57302/composite/1671205874
+                            viewCount: 2
+                            lastViewedAt: 1671206853
+                            duration: 23040000
+                            leafCount: 3
+                            addedAt: 1671197078
+                            updatedAt: 1671205874
+                          - ratingKey: "57070"
+                            key: /playlists/57070/items
+                            guid: com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c
+                            type: playlist
+                            title: November Movie Day
+                            summary: ""
+                            smart: false
+                            playlistType: video
+                            composite: /playlists/57070/composite/1668787730
+                            viewCount: 2
+                            lastViewedAt: 1668787732
+                            duration: 16873000
+                            leafCount: 3
+                            addedAt: 1668779618
+                            updatedAt: 1668787730
+
     "400":
       $ref: "../../responses/400.yaml"
     "401":

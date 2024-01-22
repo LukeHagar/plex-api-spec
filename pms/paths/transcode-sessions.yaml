@@ -16,7 +16,8 @@ get:
                 type: object
                 properties:
                   size:
-                    type: number
+                    type: integer
+                    format: int32
                     example: 1
                   TranscodeSession:
                     type: array
@@ -25,25 +26,34 @@ get:
                       properties:
                         key:
                           type: string
-                          example: zz7llzqlx8w9vnrsbnwhbmep
+                          example: vv3i2q2lax92qlzul1hbd4bx
                         throttled:
                           type: boolean
+                          example: false
                         complete:
                           type: boolean
+                          example: false
                         progress:
                           type: number
-                          example: 0.4000000059604645
+                          example: 1.7999999523162842
                         size:
-                          type: number
+                          type: integer
+                          format: int32
                           example: -22
                         speed:
                           type: number
-                          example: 22.399999618530273
+                          example: 25.100000381469727
                         error:
                           type: boolean
+                          example: false
                         duration:
-                          type: number
-                          example: 2561768
+                          type: integer
+                          format: int32
+                          example: 1445695
+                        remaining:
+                          type: integer
+                          format: int32
+                          example: 53
                         context:
                           type: string
                           example: streaming
@@ -52,13 +62,16 @@ get:
                           example: h264
                         sourceAudioCodec:
                           type: string
-                          example: ac3
+                          example: aac
                         videoDecision:
                           type: string
                           example: transcode
                         audioDecision:
                           type: string
                           example: transcode
+                        subtitleDecision:
+                          type: string
+                          example: burn
                         protocol:
                           type: string
                           example: http
@@ -72,19 +85,46 @@ get:
                           type: string
                           example: opus
                         audioChannels:
-                          type: number
-                          example: 2
+                          type: integer
+                          format: int32
+                          example: 1
                         transcodeHwRequested:
                           type: boolean
+                          example: true
                         timeStamp:
                           type: number
-                          example: 1681869535.7764285
+                          example: 1705895805.4919229
                         maxOffsetAvailable:
                           type: number
-                          example: 861.778
+                          example: 29.53
                         minOffsetAvailable:
                           type: number
-                          example: 0
+                          example: 3.003000020980835
+                    example:
+                      - key: vv3i2q2lax92qlzul1hbd4bx
+                        throttled: false
+                        complete: false
+                        progress: 1.7999999523162842
+                        size: -22
+                        speed: 25.100000381469727
+                        error: false
+                        duration: 1445695
+                        remaining: 53
+                        context: streaming
+                        sourceVideoCodec: h264
+                        sourceAudioCodec: aac
+                        videoDecision: transcode
+                        audioDecision: transcode
+                        subtitleDecision: burn
+                        protocol: http
+                        container: mkv
+                        videoCodec: h264
+                        audioCodec: opus
+                        audioChannels: 1
+                        transcodeHwRequested: true
+                        timeStamp: 1705895805.4919229
+                        maxOffsetAvailable: 29.53
+                        minOffsetAvailable: 3.003000020980835
 
     "400":
       $ref: "../../responses/400.yaml"
