@@ -1,8 +1,8 @@
 get:
   tags:
     - Library
-  summary: Search Library Section Items
-  operationId: searchLibrarySectionItems
+  summary: Search Library
+  operationId: searchLibrary
   description: |
     Search for content within a specific section of the library.
 
