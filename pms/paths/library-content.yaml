@@ -24,10 +24,6 @@ get:
     - `resolution`: Items categorized by resolution.
     - `firstCharacter`: Items categorized by the first letter.
     - `folder`: Items categorized by folder.
-    - `search?type=1`: Search only (type=1) movies.
-    - `search?type=2`: Search only (type=2) shows.
-    - `search?type=3`: Search only (type=3) seasons.
-    - `search?type=4`: Search only (type=4) episodes.
   parameters:
     - name: sectionId
       in: path
@@ -61,10 +57,6 @@ get:
           - resolution
           - firstCharacter
           - folder
-          - search?type=1
-          - search?type=2
-          - search?type=3
-          - search?type=4
   responses:
     "200":
       description: The contents of the library by section and tag
