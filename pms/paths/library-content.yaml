@@ -24,7 +24,6 @@ get:
     - `resolution`: Items categorized by resolution.
     - `firstCharacter`: Items categorized by the first letter.
     - `folder`: Items categorized by folder.
-    - `search?type=1`: Search functionality within the section.
   parameters:
     - name: sectionId
       in: path
@@ -58,7 +57,6 @@ get:
           - resolution
           - firstCharacter
           - folder
-          - search?type=1
   responses:
     "200":
       description: The contents of the library by section and tag

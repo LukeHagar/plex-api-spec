@@ -91,6 +91,8 @@ paths:
     $ref: "./paths/library-content.yaml"
   /library/sections/{sectionId}/refresh:
     $ref: "./paths/library-refresh.yaml"
+  /library/sections/{sectionId}/search:
+    $ref: "./paths/library-content-search.yaml"
 
   # /library/sections/{sectionId}/common:
   #   $ref: "./paths/library-content-common.yaml"
