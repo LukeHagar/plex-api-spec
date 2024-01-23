@@ -114,6 +114,9 @@ get:
                     type: integer
                     format: int32
                     example: 65592
+                  mixedParents:
+                    type: boolean
+                    example: true
                   Metadata:
                     type: array
                     items:
@@ -194,6 +197,27 @@ get:
                         ratingImage:
                           type: string
                           example: rottentomatoes://image.rating.ripe
+                        grandparentRatingKey:
+                          type: string
+                          example: "66"
+                        grandparentGuid:
+                          type: string
+                          example: plex://show/5d9c081b170e24001f2a7be4
+                        grandparentKey:
+                          type: string
+                          example: /library/metadata/66
+                        grandparentTitle:
+                          type: string
+                          example: Caprica
+                        grandparentThumb:
+                          type: string
+                          example: /library/metadata/66/thumb/1705716261
+                        grandparentArt:
+                          type: string
+                          example: /library/metadata/66/art/1705716261
+                        grandparentTheme:
+                          type: string
+                          example: /library/metadata/66/theme/1705716261
                         Media:
                           type: array
                           items:
@@ -378,6 +402,60 @@ get:
                           type: integer
                           format: int32
                           example: 1
+                        index:
+                          type: integer
+                          format: int32
+                          example: 1
+                        theme:
+                          type: string
+                          example: /library/metadata/1/theme/1705636920
+                        leafCount:
+                          type: integer
+                          format: int32
+                          example: 14
+                        viewedLeafCount:
+                          type: integer
+                          format: int32
+                          example: 0
+                        childCount:
+                          type: integer
+                          format: int32
+                          example: 1
+                        hasPremiumExtras:
+                          type: string
+                          example: "1"
+                        hasPremiumPrimaryExtra:
+                          type: string
+                          example: "1"
+                        parentRatingKey:
+                          type: string
+                          example: "66"
+                        parentGuid:
+                          type: string
+                          example: plex://show/5d9c081b170e24001f2a7be4
+                        parentStudio:
+                          type: string
+                          example: UCP
+                        parentKey:
+                          type: string
+                          example: /library/metadata/66
+                        parentTitle:
+                          type: string
+                          example: Caprica
+                        parentIndex:
+                          type: integer
+                          format: int32
+                          example: 1
+                        parentYear:
+                          type: integer
+                          format: int32
+                          example: 2010
+                        parentThumb:
+                          type: string
+                          example: /library/metadata/66/thumb/1705716261
+                        parentTheme:
+                          type: string
+                          example: /library/metadata/66/theme/1705716261
                     example:
                       - ratingKey: "58683"
                         key: /library/metadata/58683
@@ -448,3 +526,26 @@ get:
                         originalTitle: 映画 ブラッククローバー 魔法帝の剣
                         viewOffset: 5222500
                         skipCount: 1
+                        index: 1
+                        theme: /library/metadata/1/theme/1705636920
+                        leafCount: 14
+                        viewedLeafCount: 0
+                        childCount: 1
+                        hasPremiumExtras: "1"
+                        hasPremiumPrimaryExtra: "1"
+                        parentRatingKey: "66"
+                        parentGuid: plex://show/5d9c081b170e24001f2a7be4
+                        parentStudio: UCP
+                        parentKey: /library/metadata/66
+                        parentTitle: Caprica
+                        parentIndex: 1
+                        parentYear: 2010
+                        parentThumb: /library/metadata/66/thumb/1705716261
+                        parentTheme: /library/metadata/66/theme/1705716261
+                        grandparentRatingKey: "66"
+                        grandparentGuid: plex://show/5d9c081b170e24001f2a7be4
+                        grandparentKey: /library/metadata/66
+                        grandparentTitle: Caprica
+                        grandparentThumb: /library/metadata/66/thumb/1705716261
+                        grandparentArt: /library/metadata/66/art/1705716261
+                        grandparentTheme: /library/metadata/66/theme/1705716261
