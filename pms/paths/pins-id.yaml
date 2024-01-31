@@ -16,10 +16,7 @@ get:
       required: true
     - name: X-Plex-Client-Identifier
       description: Plex Authentication Token
-      in:
-        - header
-        - query
-        - cookie
+      in: header
       schema:
         type: string
       required: true

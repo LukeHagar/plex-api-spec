@@ -8,12 +8,6 @@ post:
   description: Retrieve a Pin from Plex.tv for authentication flows
   security: [] # No security required
   parameters:
-    - name: X-Plex-Client-Identifier
-      description: Plex Authentication Token
-      in: header
-      schema:
-        type: string
-      required: true
     - name: strong
       description: |
         Determines the kind of code returned by the API call
@@ -24,6 +18,12 @@ post:
         type: boolean
         default: false
       required: false
+    - name: X-Plex-Client-Identifier
+      description: Plex Authentication Token
+      in: header
+      schema:
+        type: string
+      required: true
 
   responses:
     "200":
