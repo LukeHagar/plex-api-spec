@@ -5979,12 +5979,6 @@ paths:
       description: Retrieve a Pin from Plex.tv for authentication flows
       security: []
       parameters:
-        - name: X-Plex-Client-Identifier
-          description: Plex Authentication Token
-          in: header
-          schema:
-            type: string
-          required: true
         - name: strong
           description: |
             Determines the kind of code returned by the API call
@@ -5995,6 +5989,12 @@ paths:
             type: boolean
             default: false
           required: false
+        - name: X-Plex-Client-Identifier
+          description: Plex Authentication Token
+          in: header
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: The Pin
@@ -6113,10 +6113,7 @@ paths:
           required: true
         - name: X-Plex-Client-Identifier
           description: Plex Authentication Token
-          in:
-            - header
-            - query
-            - cookie
+          in: header
           schema:
             type: string
           required: true
