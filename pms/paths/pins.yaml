@@ -6,6 +6,7 @@ post:
   summary: Get a Pin
   operationId: getPin
   description: Retrieve a Pin from Plex.tv for authentication flows
+  security: [] # No security required
   parameters:
     - name: X-Plex-Client-Identifier
       description: Plex Authentication Token

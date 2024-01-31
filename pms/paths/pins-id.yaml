@@ -6,6 +6,7 @@ get:
   summary: Get Access Token
   operationId: getToken
   description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
+  security: [] # No security required
   parameters:
     - name: pinID
       description: The PinID to retrieve an access token for
