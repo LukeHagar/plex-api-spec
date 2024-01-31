@@ -1,0 +1,49 @@
+get:
+  servers:
+    - url: https://plex.tv/api/v2
+  tags:
+    - Plex.tv
+  summary: Get Access Token
+  operationId: getToken
+  description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
+  parameters:
+    - name: pinID
+      description: The PinID to retrieve an access token for
+      in: path
+      schema:
+        type: string
+      required: true
+    - name: X-Plex-Client-Identifier
+      description: Plex Authentication Token
+      in:
+        - header
+        - query
+        - cookie
+      schema:
+        type: string
+      required: true
+
+  responses:
+    "200":
+      description: Access Token
+    "400":
+      description: X-Plex-Client-Identifier is missing
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                      example: 1000
+                    message:
+                      type: string
+                      example: X-Plex-Client-Identifier is missing
+                    status:
+                      type: number
+                      example: 400

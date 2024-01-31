@@ -115,6 +115,12 @@ paths:
 
   /photo/:/transcode:
     $ref: "./paths/photo-transcode.yaml"
+
+  /pins:
+    $ref: "./paths/pins.yaml"
+  /pins/{pinID}:
+    $ref: "./paths/pins-id.yaml"
+
   /playlists:
     $ref: "./paths/playlists.yaml"
   /playlists/{playlistID}:
