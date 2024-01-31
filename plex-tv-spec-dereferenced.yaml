@@ -32,7 +32,10 @@ components:
     ClientIdentifier:
       description: Plex Authentication Token
       type: apiKey
-      in: header
+      in:
+        - header
+        - query
+        - cookie
       name: X-Plex-Client-Identifier
     DeviceName:
       description: Primary name for the device eg. `Plex Web (Chrome)`
@@ -410,7 +413,7 @@ paths:
           description: Include Https entries in the results
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -418,7 +421,7 @@ paths:
           description: Include Relay addresses in the results
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
@@ -426,7 +429,7 @@ paths:
           description: Include IPv6 entries in the results
           in: query
           schema:
-            type: number
+            type: integer
             enum:
               - 0
               - 1
