@@ -164,9 +164,9 @@ paths:
 
   # Status
   /status/sessions:
-    $ref: "./paths/sessions.yaml"
+    $ref: "./paths/status/sessions.yaml"
   /status/sessions/history/all:
-    $ref: "./paths/session-history.yaml"
+    $ref: "./paths/status/session-history.yaml"
 
   /transcode/sessions:
     $ref: "./paths/transcode-sessions.yaml"
