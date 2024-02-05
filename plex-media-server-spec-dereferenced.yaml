@@ -5973,7 +5973,7 @@ paths:
       servers:
         - url: 'https://plex.tv/api/v2'
       tags:
-        - Plex.tv
+        - Plex
       summary: Get a Pin
       operationId: getPin
       description: Retrieve a Pin from Plex.tv for authentication flows
@@ -5990,7 +5990,10 @@ paths:
             default: false
           required: false
         - name: X-Plex-Client-Identifier
-          description: Plex Authentication Token
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
           in: header
           schema:
             type: string
@@ -6099,7 +6102,7 @@ paths:
       servers:
         - url: 'https://plex.tv/api/v2'
       tags:
-        - Plex.tv
+        - Plex
       summary: Get Access Token
       operationId: getToken
       description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
@@ -6112,7 +6115,10 @@ paths:
             type: string
           required: true
         - name: X-Plex-Client-Identifier
-          description: Plex Authentication Token
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
           in: header
           schema:
             type: string
@@ -9177,3 +9183,6 @@ tags:
   - name: Video
     description: |
       API Calls that perform operations with Plex Media Server Videos
+  - name: Plex
+    description: |
+      API Calls that perform operations directly against https://Plex.tv
