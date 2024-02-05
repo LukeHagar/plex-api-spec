@@ -118,9 +118,9 @@ paths:
   # Logs 
   # Folder: pms/paths/logs
   /log:
-    $ref: "./paths/log/log.yaml"
+    $ref: "./paths/logs/log.yaml"
   /log/networked:
-    $ref: "./paths/log/networked.yaml"
+    $ref: "./paths/logs/networked.yaml"
 
   /myplex/account:
     $ref: "./paths/myplex-account.yaml"
