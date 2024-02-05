@@ -47,7 +47,7 @@ paths:
   # Colon Endpoints
   # Folder: pms/paths/colon
   /:
-    $ref: "./paths/colon/root.yaml"
+    $ref: "./paths/colon/colon.yaml"
   /:/prefs:
     $ref: "./paths/colon/prefs.yaml"
   /:/scrobble:
