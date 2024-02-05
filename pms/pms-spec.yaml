@@ -218,3 +218,6 @@ tags:
   - name: Video
     description: |
       API Calls that perform operations with Plex Media Server Videos
+  - name: Plex
+    description: |
+      API Calls that perform operations directly against https://Plex.tv
