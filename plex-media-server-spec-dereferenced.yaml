@@ -7678,7 +7678,7 @@ paths:
   /security/token:
     get:
       tags:
-        - Security
+        - Authentication
       summary: Get a Transient Token.
       description: |
         This endpoint provides the caller with a temporary token with the same access level as the caller's token. These tokens are valid for up to 48 hours and are destroyed if the server instance is restarted.
@@ -7729,7 +7729,7 @@ paths:
   /security/resources:
     get:
       tags:
-        - Security
+        - Authentication
       summary: Get Source Connection Information
       description: |
         If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.
@@ -9276,9 +9276,9 @@ tags:
   - name: Log
     description: |
       Submit logs to the Log Handler for Plex Media Server
-  - name: Security
+  - name: Authentication
     description: |
-      API Calls against Security for Plex Media Server
+      API operations related to user authentication.
   - name: Library
     description: |
       API Calls interacting with Plex Media Server Libraries
