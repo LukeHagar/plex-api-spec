@@ -1,6 +1,6 @@
 get:
   tags:
-    - Security
+    - Authentication
   summary: Get Source Connection Information
   description: |
     If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.

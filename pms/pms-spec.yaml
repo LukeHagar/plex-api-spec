@@ -208,9 +208,9 @@ tags:
   - name: Log
     description: |
       Submit logs to the Log Handler for Plex Media Server
-  - name: Security
+  - name: Authentication
     description: |
-      API Calls against Security for Plex Media Server
+      API operations related to user authentication.
   - name: Library
     description: |
       API Calls interacting with Plex Media Server Libraries

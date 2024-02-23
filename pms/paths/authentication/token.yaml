@@ -1,6 +1,6 @@
 get:
   tags:
-    - Security
+    - Authentication
   summary: Get a Transient Token.
   description: |
     This endpoint provides the caller with a temporary token with the same access level as the caller's token. These tokens are valid for up to 48 hours and are destroyed if the server instance is restarted.
