@@ -41,7 +41,6 @@ components:
       name: "X-Plex-Token"
 
 paths:
-
   # Plex Media Server endpoints
 
   # Colon Endpoints
@@ -115,7 +114,7 @@ paths:
   /library/onDeck:
     $ref: "./paths/library/ondeck.yaml"
 
-  # Logs 
+  # Logs
   # Folder: pms/paths/logs
   /log:
     $ref: "./paths/logs/log.yaml"
@@ -242,3 +241,6 @@ tags:
   - name: Plex
     description: |
       API Calls that perform operations directly against https://Plex.tv
+  - name: Statistics
+    description: |
+      API Calls that perform operations with Plex Media Server Statistics
