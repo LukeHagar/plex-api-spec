@@ -9309,3 +9309,6 @@ tags:
   - name: Plex
     description: |
       API Calls that perform operations directly against https://Plex.tv
+  - name: Statistics
+    description: |
+      API Calls that perform operations with Plex Media Server Statistics
