@@ -148,12 +148,12 @@ paths:
   /search:
     $ref: "./paths/search.yaml"
 
-  # Security
-  # Folder: pms/paths/security
+  # Authentication
+  # Folder: pms/paths/authentication
   /security/token:
-    $ref: "./paths/security/token.yaml"
+    $ref: "./paths/authentication/token.yaml"
   /security/resources:
-    $ref: "./paths/security/resources.yaml"
+    $ref: "./paths/authentication/resources.yaml"
 
   /servers:
     $ref: "./paths/servers.yaml"
