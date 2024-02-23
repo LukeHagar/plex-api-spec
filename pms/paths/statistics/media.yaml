@@ -6,10 +6,12 @@ get:
   operationId: getStatistics
   parameters:
     - name: Timespan
-      description: | 
+      description: |
         The timespan to retrieve statistics for
         the exact meaning of this parameter is not known
       in: query
+      schema:
+        type: integer
       required: false
       example: 4
   responses:
@@ -136,7 +138,6 @@ get:
                         metadataType: 4
                         count: 1
                         duration: 1555
-
 
     "400":
       $ref: "../../responses/400.yaml"
