@@ -5,6 +5,7 @@
       "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/referenced/plex-api-spec.yaml",
       "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/referenced/paths/resources.yaml",
       "file:///c%3A/Users/Luke/Documents/GitHub/plex-api-spec/plex-api-spec-dereferenced.yaml"
-    ]
+    ],
+    "https://www.artillery.io/schema.json": []
   }
 }
