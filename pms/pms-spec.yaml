@@ -48,9 +48,9 @@ components:
   securitySchemes:
     accessToken:
       description: Plex Authentication Token
-      type: "apiKey"
-      in: "header"
-      name: "X-Plex-Token"
+      type: apiKey
+      in: header
+      name: X-Plex-Token
 
 paths:
   # Plex Media Server endpoints
