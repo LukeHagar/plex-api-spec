@@ -31,15 +31,7 @@ servers:
 
 x-speakeasy-globals:
   parameters:
-    - name: X-Plex-Client-Identifier
-      description: |
-        The unique identifier for the client application
-        This is used to track the client application and its usage
-        (UUID, serial number, or other number unique per device)
-      in: header
-      schema:
-        type: string
-      required: true
+    - $ref: "../../parameters/ClientIdentifier.yaml"
 
 security:
   - accessToken: []
