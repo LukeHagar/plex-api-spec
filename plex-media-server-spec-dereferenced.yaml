@@ -37,6 +37,7 @@ x-speakeasy-globals:
       in: header
       schema:
         type: string
+        example: Postman
       required: true
 security:
   - accessToken: []
@@ -6075,6 +6076,7 @@ paths:
           in: header
           schema:
             type: string
+            example: Postman
           required: true
       responses:
         '200':
@@ -6200,6 +6202,7 @@ paths:
           in: header
           schema:
             type: string
+            example: Postman
           required: true
       responses:
         '200':
