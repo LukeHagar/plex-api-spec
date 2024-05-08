@@ -3541,7 +3541,9 @@ paths:
           required: true
           description: the Id of the library to query
           schema:
-            type: integer
+            oneOf:
+              - type: string
+              - type: integer
         - name: tag
           in: path
           required: true
