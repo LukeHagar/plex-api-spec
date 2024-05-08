@@ -1,10 +1,12 @@
-# plex-api-spec
+# Plex Media Server OpenAPI Specification
  
-On Open Source Plex Media Server and Plex.tv Open API Specification
+An Open Source OpenAPI Specification covering Plex Media Server and Plex.tv operations
 
+## Documentation
+[API Documentation](https://plexapi.dev)  
 
-Documentation is hosted on https://plexapi.dev
+## SDKs
+[Typescript SDK](https://github.com/lukehagar/plexjs)  
 
-Typescript SDK: https://github.com/lukehagar/plexjs
-
-Discord Server: https://discord.gg/mxqjsJHwUm
+## Questions? 
+Reach out to me on the [Discord Server](https://discord.gg/mxqjsJHwUm)
