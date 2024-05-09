@@ -29,36 +29,34 @@ get:
       in: path
       required: true
       description: the Id of the library to query
-      schema:
-        anyOf:
-          - type: string
-          - type: integer
+      oneOf:
+        - type: string
+        - type: integer
     - name: tag
       in: path
       required: true
       description: A key representing a specific tag within the section.
-      schema:
-        type: string
-        enum:
-          - all
-          - unwatched
-          - newest
-          - recentlyAdded
-          - recentlyViewed
-          - onDeck
-          - collection
-          - edition
-          - genre
-          - year
-          - decade
-          - director
-          - actor
-          - country
-          - contentRating
-          - rating
-          - resolution
-          - firstCharacter
-          - folder
+      type: string
+      enum:
+        - all
+        - unwatched
+        - newest
+        - recentlyAdded
+        - recentlyViewed
+        - onDeck
+        - collection
+        - edition
+        - genre
+        - year
+        - decade
+        - director
+        - actor
+        - country
+        - contentRating
+        - rating
+        - resolution
+        - firstCharacter
+        - folder
   responses:
     "200":
       description: The contents of the library by section and tag
@@ -309,29 +307,6 @@ get:
                                     size: 36158371307
                                     container: mkv
                                     videoProfile: main 10
-                          example:
-                            - id: 119534
-                              duration: 11558112
-                              bitrate: 25025
-                              width: 3840
-                              height: 2072
-                              aspectRatio: 1.85
-                              audioChannels: 6
-                              audioCodec: eac3
-                              videoCodec: hevc
-                              videoResolution: 4k
-                              container: mkv
-                              videoFrameRate: 24p
-                              videoProfile: main 10
-                              Part:
-                                - id: 119542
-                                  key: /library/parts/119542/1680457526/file.mkv
-                                  duration: 11558112
-                                  file: /movies/Avatar The Way of Water
-                                    (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
-                                  size: 36158371307
-                                  container: mkv
-                                  videoProfile: main 10
                         Genre:
                           type: array
                           items:
@@ -340,8 +315,6 @@ get:
                               tag:
                                 type: string
                                 example: Adventure
-                          example:
-                            - tag: Adventure
                         Country:
                           type: array
                           items:
@@ -350,8 +323,6 @@ get:
                               tag:
                                 type: string
                                 example: United States of America
-                          example:
-                            - tag: United States of America
                         Director:
                           type: array
                           items:
@@ -360,8 +331,6 @@ get:
                               tag:
                                 type: string
                                 example: James Cameron
-                          example:
-                            - tag: James Cameron
                         Writer:
                           type: array
                           items:
@@ -370,8 +339,6 @@ get:
                               tag:
                                 type: string
                                 example: James Cameron
-                          example:
-                            - tag: James Cameron
                         Role:
                           type: array
                           items:
@@ -380,8 +347,6 @@ get:
                               tag:
                                 type: string
                                 example: Sigourney Weaver
-                          example:
-                            - tag: Sigourney Weaver
                         titleSort:
                           type: string
                           example: Whale
@@ -458,96 +423,3 @@ get:
                         parentTheme:
                           type: string
                           example: /library/metadata/66/theme/1705716261
-                    example:
-                      - ratingKey: "58683"
-                        key: /library/metadata/58683
-                        guid: plex://movie/5d7768ba96b655001fdc0408
-                        studio: 20th Century Studios
-                        type: movie
-                        title: "Avatar: The Way of Water"
-                        contentRating: PG-13
-                        summary:
-                          Jake Sully lives with his newfound family formed on the extrasolar moon
-                          Pandora. Once a familiar threat returns to finish what was
-                          previously started, Jake must work with Neytiri and the army of
-                          the Na'vi race to protect their home.
-                        rating: 7.6
-                        audienceRating: 9.2
-                        year: 2022
-                        tagline: Return to Pandora.
-                        thumb: /library/metadata/58683/thumb/1703239236
-                        art: /library/metadata/58683/art/1703239236
-                        duration: 11558112
-                        originallyAvailableAt: 2022-12-14
-                        addedAt: 1680457607
-                        updatedAt: 1703239236
-                        audienceRatingImage: rottentomatoes://image.rating.upright
-                        chapterSource: media
-                        primaryExtraKey: /library/metadata/58684
-                        ratingImage: rottentomatoes://image.rating.ripe
-                        Media:
-                          - id: 119534
-                            duration: 11558112
-                            bitrate: 25025
-                            width: 3840
-                            height: 2072
-                            aspectRatio: 1.85
-                            audioChannels: 6
-                            audioCodec: eac3
-                            videoCodec: hevc
-                            videoResolution: 4k
-                            container: mkv
-                            videoFrameRate: 24p
-                            videoProfile: main 10
-                            Part:
-                              - id: 119542
-                                key: /library/parts/119542/1680457526/file.mkv
-                                duration: 11558112
-                                file: /movies/Avatar The Way of Water
-                                  (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
-                                size: 36158371307
-                                container: mkv
-                                videoProfile: main 10
-                        Genre:
-                          - tag: Action
-                          - tag: Adventure
-                        Country:
-                          - tag: United States of America
-                        Director:
-                          - tag: James Cameron
-                        Writer:
-                          - tag: Josh Friedman
-                          - tag: James Cameron
-                        Role:
-                          - tag: Sam Worthington
-                          - tag: Zoe Saldaña
-                          - tag: Sigourney Weaver
-                        titleSort: Whale
-                        viewCount: 1
-                        lastViewedAt: 1682752242
-                        originalTitle: 映画 ブラッククローバー 魔法帝の剣
-                        viewOffset: 5222500
-                        skipCount: 1
-                        index: 1
-                        theme: /library/metadata/1/theme/1705636920
-                        leafCount: 14
-                        viewedLeafCount: 0
-                        childCount: 1
-                        hasPremiumExtras: "1"
-                        hasPremiumPrimaryExtra: "1"
-                        parentRatingKey: "66"
-                        parentGuid: plex://show/5d9c081b170e24001f2a7be4
-                        parentStudio: UCP
-                        parentKey: /library/metadata/66
-                        parentTitle: Caprica
-                        parentIndex: 1
-                        parentYear: 2010
-                        parentThumb: /library/metadata/66/thumb/1705716261
-                        parentTheme: /library/metadata/66/theme/1705716261
-                        grandparentRatingKey: "66"
-                        grandparentGuid: plex://show/5d9c081b170e24001f2a7be4
-                        grandparentKey: /library/metadata/66
-                        grandparentTitle: Caprica
-                        grandparentThumb: /library/metadata/66/thumb/1705716261
-                        grandparentArt: /library/metadata/66/art/1705716261
-                        grandparentTheme: /library/metadata/66/theme/1705716261
