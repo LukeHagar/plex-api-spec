@@ -3540,34 +3540,36 @@ paths:
           in: path
           required: true
           description: the Id of the library to query
-          oneOf:
-            - type: string
-            - type: integer
+          schema:
+            oneOf:
+              - type: string
+              - type: integer
         - name: tag
           in: path
           required: true
           description: A key representing a specific tag within the section.
-          type: string
-          enum:
-            - all
-            - unwatched
-            - newest
-            - recentlyAdded
-            - recentlyViewed
-            - onDeck
-            - collection
-            - edition
-            - genre
-            - year
-            - decade
-            - director
-            - actor
-            - country
-            - contentRating
-            - rating
-            - resolution
-            - firstCharacter
-            - folder
+          schema:
+            type: string
+            enum:
+              - all
+              - unwatched
+              - newest
+              - recentlyAdded
+              - recentlyViewed
+              - onDeck
+              - collection
+              - edition
+              - genre
+              - year
+              - decade
+              - director
+              - actor
+              - country
+              - contentRating
+              - rating
+              - resolution
+              - firstCharacter
+              - folder
       responses:
         '200':
           description: The contents of the library by section and tag
