@@ -30,6 +30,8 @@ get:
       required: true
       description: the Id of the library to query
       schema:
+        type: integer
+        example: 1
     - name: tag
       in: path
       required: true
