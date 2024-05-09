@@ -29,8 +29,6 @@ get:
       in: path
       required: true
       description: the Id of the library to query
-      schema:
-        type: [string, integer]
     - name: tag
       in: path
       required: true
