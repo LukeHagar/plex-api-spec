@@ -1,0 +1,421 @@
+get:
+  tags:
+    - Library
+  summary: Get Library Items
+  operationId: getLibraryItems
+  description: |
+    Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
+    - `all`: All items in the section.
+    - `unwatched`: Items that have not been played.
+    - `newest`: Items that are recently released.
+    - `recentlyAdded`: Items that are recently added to the library.
+    - `recentlyViewed`: Items that were recently viewed.
+    - `onDeck`: Items to continue watching.
+    - `collection`: Items categorized by collection.
+    - `edition`: Items categorized by edition.
+    - `genre`: Items categorized by genre.
+    - `year`: Items categorized by year of release.
+    - `decade`: Items categorized by decade.
+    - `director`: Items categorized by director.
+    - `actor`: Items categorized by starring actor.
+    - `country`: Items categorized by country of origin.
+    - `contentRating`: Items categorized by content rating.
+    - `rating`: Items categorized by rating.
+    - `resolution`: Items categorized by resolution.
+    - `firstCharacter`: Items categorized by the first letter.
+    - `folder`: Items categorized by folder.
+  parameters:
+    - name: sectionId
+      in: path
+      required: true
+      description: the Id of the library to query
+      schema:
+        type: integer
+        example: 1
+    - name: tag
+      in: path
+      required: true
+      description: A key representing a specific tag within the section.
+      schema:
+        type: string
+        enum:
+          - all
+          - unwatched
+          - newest
+          - recentlyAdded
+          - recentlyViewed
+          - onDeck
+          - collection
+          - edition
+          - genre
+          - year
+          - decade
+          - director
+          - actor
+          - country
+          - contentRating
+          - rating
+          - resolution
+          - firstCharacter
+          - folder
+  responses:
+    "200":
+      description: The contents of the library by section and tag
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 70
+                  allowSync:
+                    type: boolean
+                    example: true
+                  art:
+                    type: string
+                    example: /:/resources/movie-fanart.jpg
+                  identifier:
+                    type: string
+                    example: com.plexapp.plugins.library
+                  librarySectionID:
+                    type: integer
+                    format: int32
+                    example: 1
+                  librarySectionTitle:
+                    type: string
+                    example: Movies
+                  librarySectionUUID:
+                    type: string
+                    example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                  mediaTagPrefix:
+                    type: string
+                    example: /system/bundle/media/flags/
+                  mediaTagVersion:
+                    type: integer
+                    format: int32
+                    example: 1701731894
+                  thumb:
+                    type: string
+                    example: /:/resources/movie.png
+                  title1:
+                    type: string
+                    example: Movies
+                  title2:
+                    type: string
+                    example: Recently Released
+                  viewGroup:
+                    type: string
+                    example: movie
+                  viewMode:
+                    type: integer
+                    format: int32
+                    example: 65592
+                  mixedParents:
+                    type: boolean
+                    example: true
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ratingKey:
+                          type: string
+                          example: "58683"
+                        key:
+                          type: string
+                          example: /library/metadata/58683
+                        guid:
+                          type: string
+                          example: plex://movie/5d7768ba96b655001fdc0408
+                        studio:
+                          type: string
+                          example: 20th Century Studios
+                        type:
+                          type: string
+                          example: movie
+                        title:
+                          type: string
+                          example: "Avatar: The Way of Water"
+                        contentRating:
+                          type: string
+                          example: PG-13
+                        summary:
+                          type: string
+                          example:
+                            Jake Sully lives with his newfound family formed on the extrasolar moon
+                            Pandora. Once a familiar threat returns to finish what was
+                            previously started, Jake must work with Neytiri and the army of
+                            the Na'vi race to protect their home.
+                        rating:
+                          type: number
+                          example: 7.6
+                        audienceRating:
+                          type: number
+                          example: 9.2
+                        year:
+                          type: integer
+                          format: int32
+                          example: 2022
+                        tagline:
+                          type: string
+                          example: Return to Pandora.
+                        thumb:
+                          type: string
+                          example: /library/metadata/58683/thumb/1703239236
+                        art:
+                          type: string
+                          example: /library/metadata/58683/art/1703239236
+                        duration:
+                          type: integer
+                          format: int32
+                          example: 11558112
+                        originallyAvailableAt:
+                          type: string
+                          format: date
+                          example: 2022-12-14
+                        addedAt:
+                          type: integer
+                          format: int32
+                          example: 1680457607
+                        updatedAt:
+                          type: integer
+                          format: int32
+                          example: 1703239236
+                        audienceRatingImage:
+                          type: string
+                          example: rottentomatoes://image.rating.upright
+                        chapterSource:
+                          type: string
+                          example: media
+                        primaryExtraKey:
+                          type: string
+                          example: /library/metadata/58684
+                        ratingImage:
+                          type: string
+                          example: rottentomatoes://image.rating.ripe
+                        grandparentRatingKey:
+                          type: string
+                          example: "66"
+                        grandparentGuid:
+                          type: string
+                          example: plex://show/5d9c081b170e24001f2a7be4
+                        grandparentKey:
+                          type: string
+                          example: /library/metadata/66
+                        grandparentTitle:
+                          type: string
+                          example: Caprica
+                        grandparentThumb:
+                          type: string
+                          example: /library/metadata/66/thumb/1705716261
+                        grandparentArt:
+                          type: string
+                          example: /library/metadata/66/art/1705716261
+                        grandparentTheme:
+                          type: string
+                          example: /library/metadata/66/theme/1705716261
+                        Media:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 119534
+                              duration:
+                                type: integer
+                                format: int32
+                                example: 11558112
+                              bitrate:
+                                type: integer
+                                format: int32
+                                example: 25025
+                              width:
+                                type: integer
+                                format: int32
+                                example: 3840
+                              height:
+                                type: integer
+                                format: int32
+                                example: 2072
+                              aspectRatio:
+                                type: number
+                                example: 1.85
+                              audioChannels:
+                                type: integer
+                                format: int32
+                                example: 6
+                              audioCodec:
+                                type: string
+                                example: eac3
+                              videoCodec:
+                                type: string
+                                example: hevc
+                              videoResolution:
+                                type: string
+                                example: 4k
+                              container:
+                                type: string
+                                example: mkv
+                              videoFrameRate:
+                                type: string
+                                example: 24p
+                              videoProfile:
+                                type: string
+                                example: main 10
+                              Part:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int32
+                                      example: 119542
+                                    key:
+                                      type: string
+                                      example: /library/parts/119542/1680457526/file.mkv
+                                    duration:
+                                      type: integer
+                                      format: int32
+                                      example: 11558112
+                                    file:
+                                      type: string
+                                      example: /movies/Avatar The Way of Water
+                                        (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
+                                    size:
+                                      type: integer
+                                      format: int64
+                                      example: 36158371307
+                                    container:
+                                      type: string
+                                      example: mkv
+                                    videoProfile:
+                                      type: string
+                                      example: main 10
+                        Genre:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              tag:
+                                type: string
+                                example: Adventure
+                        Country:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              tag:
+                                type: string
+                                example: United States of America
+                        Director:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              tag:
+                                type: string
+                                example: James Cameron
+                        Writer:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              tag:
+                                type: string
+                                example: James Cameron
+                        Role:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              tag:
+                                type: string
+                                example: Sigourney Weaver
+                        titleSort:
+                          type: string
+                          example: Whale
+                        viewCount:
+                          type: integer
+                          format: int32
+                          example: 1
+                        lastViewedAt:
+                          type: integer
+                          format: int32
+                          example: 1682752242
+                        originalTitle:
+                          type: string
+                          example: 映画 ブラッククローバー 魔法帝の剣
+                        viewOffset:
+                          type: integer
+                          format: int32
+                          example: 5222500
+                        skipCount:
+                          type: integer
+                          format: int32
+                          example: 1
+                        index:
+                          type: integer
+                          format: int32
+                          example: 1
+                        theme:
+                          type: string
+                          example: /library/metadata/1/theme/1705636920
+                        leafCount:
+                          type: integer
+                          format: int32
+                          example: 14
+                        viewedLeafCount:
+                          type: integer
+                          format: int32
+                          example: 0
+                        childCount:
+                          type: integer
+                          format: int32
+                          example: 1
+                        hasPremiumExtras:
+                          type: string
+                          example: "1"
+                        hasPremiumPrimaryExtra:
+                          type: string
+                          example: "1"
+                        parentRatingKey:
+                          type: string
+                          example: "66"
+                        parentGuid:
+                          type: string
+                          example: plex://show/5d9c081b170e24001f2a7be4
+                        parentStudio:
+                          type: string
+                          example: UCP
+                        parentKey:
+                          type: string
+                          example: /library/metadata/66
+                        parentTitle:
+                          type: string
+                          example: Caprica
+                        parentIndex:
+                          type: integer
+                          format: int32
+                          example: 1
+                        parentYear:
+                          type: integer
+                          format: int32
+                          example: 2010
+                        parentThumb:
+                          type: string
+                          example: /library/metadata/66/thumb/1705716261
+                        parentTheme:
+                          type: string
+                          example: /library/metadata/66/theme/1705716261
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

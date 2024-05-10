@@ -1,0 +1,119 @@
+get:
+  tags:
+    - Library
+  summary: Get All Libraries
+  operationId: getLibraries
+  description: |
+    A library section (commonly referred to as just a library) is a collection of media. 
+    Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
+    For example, a music library has an artist > albums > tracks structure, whereas a movie library is flat.
+
+    Libraries have features beyond just being a collection of media; for starters, they include information about supported types, filters and sorts. 
+    This allows a client to provide a rich interface around the media (e.g. allow sorting movies by release year).
+  responses:
+    "200":
+      description: The libraries available on the Server
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 5
+                  allowSync:
+                    type: boolean
+                    example: false
+                  title1:
+                    type: string
+                    example: Plex Library
+                  Directory:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        allowSync:
+                          type: boolean
+                          example: true
+                        art:
+                          type: string
+                          example: /:/resources/movie-fanart.jpg
+                        composite:
+                          type: string
+                          example: /library/sections/1/composite/1705615584
+                        filters:
+                          type: boolean
+                          example: true
+                        refreshing:
+                          type: boolean
+                          example: false
+                        thumb:
+                          type: string
+                          example: /:/resources/movie.png
+                        key:
+                          type: string
+                          example: "1"
+                        type:
+                          type: string
+                          example: movie
+                        title:
+                          type: string
+                          example: Movies
+                        agent:
+                          type: string
+                          example: tv.plex.agents.movie
+                        scanner:
+                          type: string
+                          example: Plex Movie
+                        language:
+                          type: string
+                          example: en-US
+                        uuid:
+                          type: string
+                          example: 322a231a-b7f7-49f5-920f-14c61199cd30
+                        updatedAt:
+                          type: integer
+                          format: int32
+                          example: 1705615634
+                        createdAt:
+                          type: integer
+                          format: int32
+                          example: 1654131312
+                        scannedAt:
+                          type: integer
+                          format: int32
+                          example: 1705615584
+                        content:
+                          type: boolean
+                          example: true
+                        directory:
+                          type: boolean
+                          example: true
+                        contentChangedAt:
+                          type: integer
+                          format: int32
+                          example: 3192854
+                        hidden:
+                          type: integer
+                          format: int32
+                          example: 0
+                        Location:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 1
+                              path:
+                                type: string
+                                example: /movies
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

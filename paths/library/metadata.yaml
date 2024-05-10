@@ -1,0 +1,499 @@
+get:
+  tags:
+    - Library
+  summary: Get Items Metadata
+  description: |
+    This endpoint will return the metadata of a library item specified with the ratingKey.
+  operationId: getMetadata
+  parameters:
+    - name: ratingKey
+      description: the id of the library item to return the children of.
+      in: path
+      schema:
+        type: number
+      required: true
+
+  responses:
+    "200":
+      description: The metadata of the library item.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 1
+                  allowSync:
+                    type: boolean
+                    example: true
+                  identifier:
+                    type: string
+                    example: com.plexapp.plugins.library
+                  librarySectionID:
+                    type: integer
+                    format: int32
+                    example: 1
+                  librarySectionTitle:
+                    type: string
+                    example: Movies
+                  librarySectionUUID:
+                    type: string
+                    example: cfc899d7-3000-46f6-8489-b9592714ada5
+                  mediaTagPrefix:
+                    type: string
+                    example: /system/bundle/media/flags/
+                  mediaTagVersion:
+                    type: integer
+                    format: int32
+                    example: 1698860922
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ratingKey:
+                          type: string
+                          example: "17"
+                        key:
+                          type: string
+                          example: /library/metadata/17
+                        guid:
+                          type: string
+                          example: plex://movie/5d77683f6f4521001ea9dc53
+                        studio:
+                          type: string
+                          example: Universal Pictures
+                        type:
+                          type: string
+                          example: movie
+                        title:
+                          type: string
+                          example: Serenity
+                        librarySectionTitle:
+                          type: string
+                          example: Movies
+                        librarySectionID:
+                          type: integer
+                          format: int32
+                          example: 1
+                        librarySectionKey:
+                          type: string
+                          example: /library/sections/1
+                        contentRating:
+                          type: string
+                          example: PG-13
+                        summary:
+                          type: string
+                          example:
+                            Serenity continues the story of the TV series it was based upon
+                            ("Firefly"). River Tam had a secret - one in which she's not
+                            even aware - so dangerous, no one's safe, as an Alliance
+                            operative's sent to capture her, and all others are considered
+                            irrelevant to his job.
+                        rating:
+                          type: number
+                          example: 8.2
+                        audienceRating:
+                          type: number
+                          example: 9.1
+                        year:
+                          type: integer
+                          format: int32
+                          example: 2005
+                        tagline:
+                          type: string
+                          example: They aim to misbehave.
+                        thumb:
+                          type: string
+                          example: /library/metadata/17/thumb/1705637165
+                        art:
+                          type: string
+                          example: /library/metadata/17/art/1705637165
+                        duration:
+                          type: integer
+                          format: int32
+                          example: 141417
+                        originallyAvailableAt:
+                          type: string
+                          format: date
+                          example: 2005-09-29
+                        addedAt:
+                          type: integer
+                          format: int32
+                          example: 1705637164
+                        updatedAt:
+                          type: integer
+                          format: int32
+                          example: 1705637165
+                        audienceRatingImage:
+                          type: string
+                          example: rottentomatoes://image.rating.upright
+                        hasPremiumPrimaryExtra:
+                          type: string
+                          example: "1"
+                        ratingImage:
+                          type: string
+                          example: rottentomatoes://image.rating.ripe
+                        Media:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 15
+                              duration:
+                                type: integer
+                                format: int32
+                                example: 141417
+                              bitrate:
+                                type: integer
+                                format: int32
+                                example: 2278
+                              width:
+                                type: integer
+                                format: int32
+                                example: 1920
+                              height:
+                                type: integer
+                                format: int32
+                                example: 814
+                              aspectRatio:
+                                type: number
+                                example: 2.35
+                              audioChannels:
+                                type: integer
+                                format: int32
+                                example: 2
+                              audioCodec:
+                                type: string
+                                example: aac
+                              videoCodec:
+                                type: string
+                                example: h264
+                              videoResolution:
+                                type: string
+                                example: "1080"
+                              container:
+                                type: string
+                                example: mp4
+                              videoFrameRate:
+                                type: string
+                                example: 24p
+                              optimizedForStreaming:
+                                type: integer
+                                format: int32
+                                example: 0
+                              audioProfile:
+                                type: string
+                                example: lc
+                              has64bitOffsets:
+                                type: boolean
+                                example: false
+                              videoProfile:
+                                type: string
+                                example: high
+                              Part:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int32
+                                      example: 15
+                                    key:
+                                      type: string
+                                      example: /library/parts/15/1705637151/file.mp4
+                                    duration:
+                                      type: integer
+                                      format: int32
+                                      example: 141417
+                                    file:
+                                      type: string
+                                      example: /movies/Serenity (2005)/Serenity (2005).mp4
+                                    size:
+                                      type: integer
+                                      format: int32
+                                      example: 40271948
+                                    audioProfile:
+                                      type: string
+                                      example: lc
+                                    container:
+                                      type: string
+                                      example: mp4
+                                    has64bitOffsets:
+                                      type: boolean
+                                      example: false
+                                    optimizedForStreaming:
+                                      type: boolean
+                                      example: false
+                                    videoProfile:
+                                      type: string
+                                      example: high
+                                    Stream:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                            format: int32
+                                            example: 29
+                                          streamType:
+                                            type: integer
+                                            format: int32
+                                            example: 2
+                                          default:
+                                            type: boolean
+                                            example: true
+                                          codec:
+                                            type: string
+                                            example: aac
+                                          index:
+                                            type: integer
+                                            format: int32
+                                            example: 0
+                                          bitrate:
+                                            type: integer
+                                            format: int32
+                                            example: 128
+                                          bitDepth:
+                                            type: integer
+                                            format: int32
+                                            example: 8
+                                          chromaLocation:
+                                            type: string
+                                            example: left
+                                          chromaSubsampling:
+                                            type: string
+                                            example: 4:2:0
+                                          codedHeight:
+                                            type: integer
+                                            format: int32
+                                            example: 816
+                                          codedWidth:
+                                            type: integer
+                                            format: int32
+                                            example: 1920
+                                          colorPrimaries:
+                                            type: string
+                                            example: bt709
+                                          colorRange:
+                                            type: string
+                                            example: tv
+                                          colorSpace:
+                                            type: string
+                                            example: bt709
+                                          colorTrc:
+                                            type: string
+                                            example: bt709
+                                          frameRate:
+                                            type: integer
+                                            format: int32
+                                            example: 24
+                                          hasScalingMatrix:
+                                            type: boolean
+                                            example: false
+                                          height:
+                                            type: integer
+                                            format: int32
+                                            example: 814
+                                          level:
+                                            type: integer
+                                            format: int32
+                                            example: 40
+                                          profile:
+                                            type: string
+                                            example: lc
+                                          refFrames:
+                                            type: integer
+                                            format: int32
+                                            example: 4
+                                          scanType:
+                                            type: string
+                                            example: progressive
+                                          streamIdentifier:
+                                            type: string
+                                            example: "1"
+                                          width:
+                                            type: integer
+                                            format: int32
+                                            example: 1920
+                                          displayTitle:
+                                            type: string
+                                            example: English (AAC Stereo)
+                                          extendedDisplayTitle:
+                                            type: string
+                                            example: English (AAC Stereo)
+                                          selected:
+                                            type: boolean
+                                            example: true
+                                          channels:
+                                            type: integer
+                                            format: int32
+                                            example: 2
+                                          language:
+                                            type: string
+                                            example: English
+                                          languageTag:
+                                            type: string
+                                            example: en
+                                          languageCode:
+                                            type: string
+                                            example: eng
+                                          samplingRate:
+                                            type: integer
+                                            format: int32
+                                            example: 44100
+                        Genre:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 184
+                              filter:
+                                type: string
+                                example: genre=184
+                              tag:
+                                type: string
+                                example: Thriller
+                        Country:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 116
+                              filter:
+                                type: string
+                                example: country=116
+                              tag:
+                                type: string
+                                example: United States of America
+                        Guid:
+                          x-speakeasy-name-override: guids
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: tvdb://2337
+                        Rating:
+                          x-speakeasy-name-override: ratings
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              image:
+                                type: string
+                                example: themoviedb://image.rating
+                              value:
+                                type: number
+                                example: 7.4
+                              type:
+                                type: string
+                                example: audience
+                        Director:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 130
+                              filter:
+                                type: string
+                                example: director=130
+                              tag:
+                                type: string
+                                example: Joss Whedon
+                              tagKey:
+                                type: string
+                                example: 5d776828880197001ec90e8f
+                              thumb:
+                                type: string
+                                example: https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg
+                        Writer:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 132
+                              filter:
+                                type: string
+                                example: writer=132
+                              tag:
+                                type: string
+                                example: Joss Whedon
+                              tagKey:
+                                type: string
+                                example: 5d776828880197001ec90e8f
+                              thumb:
+                                type: string
+                                example: https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg
+                        Role:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 220
+                              filter:
+                                type: string
+                                example: actor=220
+                              tag:
+                                type: string
+                                example: Dennis Keiffer
+                              tagKey:
+                                type: string
+                                example: 5d77683554f42c001f8c4708
+                              role:
+                                type: string
+                                example: Bar Guy (uncredited)
+                              thumb:
+                                type: string
+                                example: https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg
+                        Producer:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                format: int32
+                                example: 221
+                              filter:
+                                type: string
+                                example: producer=221
+                              tag:
+                                type: string
+                                example: Barry Mendel
+                              tagKey:
+                                type: string
+                                example: 5d776826961905001eb90e2b
+                              thumb:
+                                type: string
+                                example: https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
