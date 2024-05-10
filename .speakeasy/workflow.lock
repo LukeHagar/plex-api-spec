@@ -1,0 +1,19 @@
+speakeasyVersion: 1.285.6
+sources:
+    Plex-API:
+        sourceNamespace: plex-api
+        sourceRevisionDigest: sha256:9fd5565eb1d3f5e23e5560c805df7eb16506ee6a2bdefc97dae2977682b58a5d
+        sourceBlobDigest: sha256:39b67b4ea24187846968d058efce2fbfae1ae596ba3672bac68a528426b025a6
+        tags:
+            - latest
+targets: {}
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Plex-API:
+            inputs:
+                - location: pms-spec.yaml
+            registry:
+                location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api
+    targets: {}
