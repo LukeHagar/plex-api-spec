@@ -3540,6 +3540,7 @@ paths:
           in: path
           required: true
           description: the Id of the library to query
+          schema: null
         - name: tag
           in: path
           required: true
