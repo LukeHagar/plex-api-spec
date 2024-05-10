@@ -11,31 +11,31 @@ on:
 jobs:
   dereference_api:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout PR branch
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-      - name: Install swagger-cli
-        run: |
-          npm install -g swagger-cli
+#     steps:
+#       - name: Checkout PR branch
+#         uses: actions/checkout@v3
+#       - name: Set up Node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: "16"
+#       - name: Install swagger-cli
+#         run: |
+#           npm install -g swagger-cli
 
-      - name: Dereference Plex Media Server Specification
-        run: |
-          swagger-cli bundle --dereference pms/pms-spec.yaml -t yaml -o plex-media-server-spec-dereferenced.yaml
+#       - name: Dereference Plex Media Server Specification
+#         run: |
+#           swagger-cli bundle --dereference pms/pms-spec.yaml -t yaml -o plex-media-server-spec-dereferenced.yaml
 
-      - name: Pushes Dereferenced Specification File
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_file: plex-media-server-spec-dereferenced.yaml
-          destination_repo: lukehagar/plex-docs
-          destination_folder: static
-          user_email: lukeslakemail@gmail.com
-          user_name: lukehagar
-          commit_message: Updating PMS Spec
+#       - name: Pushes Dereferenced Specification File
+#         uses: dmnemec/copy_file_to_another_repo_action@main
+#         env:
+#           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+#         with:
+#           source_file: plex-media-server-spec-dereferenced.yaml
+#           destination_repo: lukehagar/plex-docs
+#           destination_folder: static
+#           user_email: lukeslakemail@gmail.com
+#           user_name: lukehagar
+#           commit_message: Updating PMS Spec
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+#       - uses: stefanzweifel/git-auto-commit-action@v4
