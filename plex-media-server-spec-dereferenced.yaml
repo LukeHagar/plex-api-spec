@@ -258,17 +258,6 @@ paths:
                             enumValues:
                               type: string
                               example: '1:admin only|2:everyone'
-                        example:
-                          - id: EnableDatabaseTrace
-                            label: ''
-                            summary: ''
-                            type: bool
-                            default: false
-                            value: false
-                            hidden: true
-                            advanced: false
-                            group: ''
-                            enumValues: '1:admin only|2:everyone'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -1186,128 +1175,6 @@ paths:
                                     type: integer
                                     format: int32
                                     example: 1668787730
-                              example:
-                                - ratingKey: '57070'
-                                  key: /playlists/57070/items
-                                  guid: 'com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c'
-                                  type: playlist
-                                  title: November Movie Day
-                                  titleSort: Tracks
-                                  summary: ''
-                                  smart: false
-                                  playlistType: video
-                                  composite: /playlists/57070/composite/1668787730
-                                  icon: 'playlist://image.smart'
-                                  viewCount: 2
-                                  lastViewedAt: 1668787732
-                                  duration: 16873000
-                                  leafCount: 3
-                                  addedAt: 1668779618
-                                  updatedAt: 1668787730
-                        example:
-                          - hubKey: '/library/metadata/50768,65523,58188,57341,57302,57070'
-                            key: '/playlists/all?type=15&sort=lastViewedAt:desc&playlistType=video,audio'
-                            title: Recent Playlists
-                            type: playlist
-                            hubIdentifier: home.playlists
-                            context: hub.home.playlists
-                            size: 6
-                            more: true
-                            style: shelf
-                            promoted: true
-                            Metadata:
-                              - ratingKey: '50768'
-                                key: /playlists/50768/items
-                                guid: 'com.plexapp.agents.none://81658e0d-cd4e-4c73-abb9-832b2ae2037b'
-                                type: playlist
-                                title: ❤️ Tracks
-                                titleSort: Tracks
-                                summary: 'All your highly rated tracks, in one convenient place.'
-                                smart: true
-                                playlistType: audio
-                                composite: /playlists/50768/composite/1704333758
-                                icon: 'playlist://image.smart'
-                                viewCount: 47
-                                lastViewedAt: 1705329935
-                                duration: 42864000
-                                leafCount: 178
-                                addedAt: 1655309388
-                                updatedAt: 1704333758
-                              - ratingKey: '65523'
-                                key: /playlists/65523/items
-                                guid: 'com.plexapp.agents.none://1bcdd596-892b-4856-9f28-b4338c439300'
-                                type: playlist
-                                title: Car Rides
-                                summary: ''
-                                smart: false
-                                playlistType: audio
-                                composite: /playlists/65523/composite/1698597932
-                                viewCount: 2
-                                lastViewedAt: 1698597949
-                                duration: 4864000
-                                leafCount: 19
-                                addedAt: 1697993545
-                                updatedAt: 1698597932
-                              - ratingKey: '58188'
-                                key: /playlists/58188/items
-                                guid: 'com.plexapp.agents.none://8f0441d3-2a28-4644-a2f1-b7deeb290dff'
-                                type: playlist
-                                title: Workout
-                                summary: ''
-                                smart: false
-                                playlistType: audio
-                                composite: /playlists/58188/composite/1680825595
-                                viewCount: 4
-                                lastViewedAt: 1680825596
-                                duration: 12522000
-                                leafCount: 56
-                                addedAt: 1679616785
-                                updatedAt: 1680825595
-                              - ratingKey: '57341'
-                                key: /playlists/57341/items
-                                guid: 'com.plexapp.agents.none://bf8778c3-20a3-4619-8eb0-3c172c18ffd6'
-                                type: playlist
-                                title: January Movie Day
-                                summary: ''
-                                smart: false
-                                playlistType: video
-                                composite: /playlists/57341/composite/1673372385
-                                viewCount: 1
-                                lastViewedAt: 1673372306
-                                duration: 19119000
-                                leafCount: 3
-                                addedAt: 1673372306
-                                updatedAt: 1673372385
-                              - ratingKey: '57302'
-                                key: /playlists/57302/items
-                                guid: 'com.plexapp.agents.none://f25064ed-05bb-4bcf-b70c-ed7514b70929'
-                                type: playlist
-                                title: December Movie Day
-                                summary: ''
-                                smart: false
-                                playlistType: video
-                                composite: /playlists/57302/composite/1671205874
-                                viewCount: 2
-                                lastViewedAt: 1671206853
-                                duration: 23040000
-                                leafCount: 3
-                                addedAt: 1671197078
-                                updatedAt: 1671205874
-                              - ratingKey: '57070'
-                                key: /playlists/57070/items
-                                guid: 'com.plexapp.agents.none://9fee6c5b-3143-4923-813e-57bd0190056c'
-                                type: playlist
-                                title: November Movie Day
-                                summary: ''
-                                smart: false
-                                playlistType: video
-                                composite: /playlists/57070/composite/1668787730
-                                viewCount: 2
-                                lastViewedAt: 1668787732
-                                duration: 16873000
-                                leafCount: 3
-                                addedAt: 1668779618
-                                updatedAt: 1668787730
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -1742,45 +1609,6 @@ paths:
                                               videoProfile:
                                                 type: string
                                                 example: high
-                                          example:
-                                            - id: 38247
-                                              key: /library/parts/38247/1589412494/file.mp4
-                                              duration: 6017237
-                                              file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
-                                              size: 1545647447
-                                              audioProfile: lc
-                                              container: mp4
-                                              has64bitOffsets: false
-                                              optimizedForStreaming: true
-                                              videoProfile: high
-                                    example:
-                                      - id: 38247
-                                        duration: 6017237
-                                        bitrate: 2051
-                                        width: 1920
-                                        height: 1080
-                                        aspectRatio: 1.78
-                                        audioChannels: 2
-                                        audioCodec: aac
-                                        videoCodec: h264
-                                        videoResolution: '1080'
-                                        container: mp4
-                                        videoFrameRate: 24p
-                                        optimizedForStreaming: 1
-                                        audioProfile: lc
-                                        has64bitOffsets: false
-                                        videoProfile: high
-                                        Part:
-                                          - id: 38247
-                                            key: /library/parts/38247/1589412494/file.mp4
-                                            duration: 6017237
-                                            file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
-                                            size: 1545647447
-                                            audioProfile: lc
-                                            container: mp4
-                                            has64bitOffsets: false
-                                            optimizedForStreaming: true
-                                            videoProfile: high
                                   Genre:
                                     type: array
                                     items:
@@ -1789,8 +1617,6 @@ paths:
                                         tag:
                                           type: string
                                           example: Animation
-                                    example:
-                                      - tag: Animation
                                   Country:
                                     type: array
                                     items:
@@ -1799,8 +1625,6 @@ paths:
                                         tag:
                                           type: string
                                           example: United States of America
-                                    example:
-                                      - tag: United States of America
                                   Director:
                                     type: array
                                     items:
@@ -1809,8 +1633,6 @@ paths:
                                         tag:
                                           type: string
                                           example: Nathan Greno
-                                    example:
-                                      - tag: Nathan Greno
                                   Role:
                                     type: array
                                     items:
@@ -1819,8 +1641,6 @@ paths:
                                         tag:
                                           type: string
                                           example: Donna Murphy
-                                    example:
-                                      - tag: Donna Murphy
                                   Writer:
                                     type: array
                                     items:
@@ -1829,8 +1649,6 @@ paths:
                                         tag:
                                           type: string
                                           example: Wilhelm Grimm
-                                    example:
-                                      - tag: Wilhelm Grimm
                                   skipCount:
                                     type: integer
                                     format: int32
@@ -1838,551 +1656,12 @@ paths:
                                   chapterSource:
                                     type: string
                                     example: media
-                              example:
-                                - ratingKey: '14944'
-                                  key: /library/metadata/14944
-                                  guid: 'plex://movie/5d77686eeb5d26001f1eb339'
-                                  studio: Walt Disney Animation Studios
-                                  type: movie
-                                  title: Tangled
-                                  librarySectionTitle: Movies
-                                  librarySectionID: 1
-                                  librarySectionKey: /library/sections/1
-                                  contentRating: PG
-                                  summary: 'The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.'
-                                  rating: 8.9
-                                  audienceRating: 8.7
-                                  viewCount: 1
-                                  lastViewedAt: 1704936047
-                                  year: 2010
-                                  tagline: They're taking adventure to new lengths.
-                                  thumb: /library/metadata/14944/thumb/1705739847
-                                  art: /library/metadata/14944/art/1705739847
-                                  duration: 6017237
-                                  originallyAvailableAt: 2010-11-24T00:00:00.000Z
-                                  addedAt: 1589412494
-                                  updatedAt: 1705739847
-                                  audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                  primaryExtraKey: /library/metadata/14952
-                                  ratingImage: 'rottentomatoes://image.rating.ripe'
-                                  Media:
-                                    - id: 38247
-                                      duration: 6017237
-                                      bitrate: 2051
-                                      width: 1920
-                                      height: 1080
-                                      aspectRatio: 1.78
-                                      audioChannels: 2
-                                      audioCodec: aac
-                                      videoCodec: h264
-                                      videoResolution: '1080'
-                                      container: mp4
-                                      videoFrameRate: 24p
-                                      optimizedForStreaming: 1
-                                      audioProfile: lc
-                                      has64bitOffsets: false
-                                      videoProfile: high
-                                      Part:
-                                        - id: 38247
-                                          key: /library/parts/38247/1589412494/file.mp4
-                                          duration: 6017237
-                                          file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
-                                          size: 1545647447
-                                          audioProfile: lc
-                                          container: mp4
-                                          has64bitOffsets: false
-                                          optimizedForStreaming: true
-                                          videoProfile: high
-                                  Genre:
-                                    - tag: Comedy
-                                    - tag: Animation
-                                  Country:
-                                    - tag: United States of America
-                                  Director:
-                                    - tag: Byron Howard
-                                    - tag: Nathan Greno
-                                  Role:
-                                    - tag: Mandy Moore
-                                    - tag: Zachary Levi
-                                    - tag: Donna Murphy
-                                  Writer:
-                                    - tag: Jacob Grimm
-                                    - tag: Wilhelm Grimm
-                                  skipCount: 1
-                                  chapterSource: media
                             promoted:
                               type: boolean
                               example: true
                             random:
                               type: boolean
                               example: true
-                        example:
-                          - key: '/library/sections/1/all?sort=lastViewedAt:desc&unwatched=0&viewOffset=0'
-                            title: Recently Played Movies
-                            type: movie
-                            hubIdentifier: movie.recentlyviewed.1
-                            context: hub.movie.recentlyviewed
-                            size: 6
-                            more: true
-                            style: shelf
-                            hubKey: '/library/metadata/66485,66098,57249,11449,5858,14944'
-                            Metadata:
-                              - ratingKey: '66485'
-                                key: /library/metadata/66485
-                                guid: 'plex://movie/5d776c3251dd69001fe38bb4'
-                                studio: Termite Films
-                                type: movie
-                                title: Kedi
-                                librarySectionTitle: Movies
-                                librarySectionID: 1
-                                librarySectionKey: /library/sections/1
-                                contentRating: Not Rated
-                                summary: 'A profile of an ancient city and its unique people, seen through the eyes of the most mysterious and beloved animal humans have ever known, the Cat.'
-                                rating: 9.8
-                                audienceRating: 8.5
-                                viewCount: 2
-                                lastViewedAt: 1705786111
-                                year: 2017
-                                tagline: 'A cat meowing at your feet, looking up at you, is life smiling at you...'
-                                thumb: /library/metadata/66485/thumb/1702586907
-                                art: /library/metadata/66485/art/1702586907
-                                duration: 4736174
-                                originallyAvailableAt: 2017-02-10T00:00:00.000Z
-                                addedAt: 1702586905
-                                updatedAt: 1702586907
-                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                primaryExtraKey: /library/metadata/66486
-                                ratingImage: 'rottentomatoes://image.rating.ripe'
-                                Media:
-                                  - id: 129531
-                                    duration: 4736174
-                                    bitrate: 2377
-                                    width: 1920
-                                    height: 1080
-                                    aspectRatio: 1.78
-                                    audioChannels: 2
-                                    audioCodec: aac
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mp4
-                                    videoFrameRate: 24p
-                                    optimizedForStreaming: 0
-                                    audioProfile: lc
-                                    has64bitOffsets: false
-                                    videoProfile: high
-                                    Part:
-                                      - id: 129778
-                                        key: /library/parts/129778/1702586883/file.mp4
-                                        duration: 4736174
-                                        file: /movies/Kedi (2017)/Kedi (2017) 1080p x264.mp4
-                                        size: 1410810905
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: false
-                                        videoProfile: high
-                                Genre:
-                                  - tag: Documentary
-                                Country:
-                                  - tag: United States of America
-                                Director:
-                                  - tag: Ceyda Torun
-                                Role:
-                                  - tag: Bülent Üstün
-                              - ratingKey: '66098'
-                                key: /library/metadata/66098
-                                guid: 'plex://movie/5d9f34f4adeb7a0021ce020f'
-                                studio: Touchwood Pacific Partners 1
-                                type: movie
-                                title: 'Homeward Bound: The Incredible Journey'
-                                librarySectionTitle: Movies
-                                librarySectionID: 1
-                                librarySectionKey: /library/sections/1
-                                contentRating: G
-                                summary: 'A fun-loving American bulldog pup, a hilarious Himalayan cat, and a wise old golden retriever embark on a long trek through the rugged wilderness of the Sierra Nevada mountains in a quest to reach home and their beloved owners.'
-                                rating: 8.7
-                                audienceRating: 7.1
-                                viewCount: 2
-                                lastViewedAt: 1705709811
-                                year: 1993
-                                tagline: 'In the classic tradition of Walt Disney Pictures comes a story about courage, adventure and friendship.'
-                                thumb: /library/metadata/66098/thumb/1703148781
-                                art: /library/metadata/66098/art/1703148781
-                                duration: 5065775
-                                originallyAvailableAt: 1993-02-12T00:00:00.000Z
-                                addedAt: 1700434925
-                                updatedAt: 1703148781
-                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                primaryExtraKey: /library/metadata/66099
-                                ratingImage: 'rottentomatoes://image.rating.ripe'
-                                Media:
-                                  - id: 129003
-                                    duration: 5065775
-                                    bitrate: 2444
-                                    width: 1904
-                                    height: 1024
-                                    aspectRatio: 1.85
-                                    audioChannels: 2
-                                    audioCodec: aac
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mp4
-                                    videoFrameRate: 24p
-                                    optimizedForStreaming: 1
-                                    audioProfile: lc
-                                    has64bitOffsets: false
-                                    videoProfile: high
-                                    Part:
-                                      - id: 129250
-                                        key: /library/parts/129250/1700434864/file.mp4
-                                        duration: 5065775
-                                        file: '/movies/Homeward Bound The Incredible Journey (1993)/Homeward Bound The Incredible Journey (1993) [BluRay] [1080p] [YTS.LT].mp4'
-                                        size: 1550855333
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: true
-                                        videoProfile: high
-                                Genre:
-                                  - tag: Adventure
-                                  - tag: Comedy
-                                Country:
-                                  - tag: United States of America
-                                Director:
-                                  - tag: Duwayne Dunham
-                                Writer:
-                                  - tag: Caroline Thompson
-                                  - tag: Linda Woolverton
-                                Role:
-                                  - tag: Michael J. Fox
-                                  - tag: Sally Field
-                                  - tag: Don Ameche
-                              - ratingKey: '57249'
-                                key: /library/metadata/57249
-                                guid: 'plex://movie/60eff7d3e22797002c55c1cc'
-                                studio: Nickelodeon Movies
-                                type: movie
-                                title: Blue's Big City Adventure
-                                librarySectionTitle: Movies
-                                librarySectionID: 1
-                                librarySectionKey: /library/sections/1
-                                contentRating: TV-Y
-                                summary: 'Josh and Blue skidoo to New York City to audition for Rainbow Puppy''s Broadway musical, but they get lost when Josh accidentally left his Handy Dandy Notebook at home. This leads to a game of Blue''s Clues to figure out where the audition is. Meanwhile, Tickety Tock and her friends go to New York City to find Josh and Blue and get to the audition with help from Joe and Steve.'
-                                rating: 8.3
-                                audienceRating: 8.6
-                                viewCount: 8
-                                skipCount: 1
-                                lastViewedAt: 1705681955
-                                year: 2022
-                                tagline: All They Need is You.
-                                thumb: /library/metadata/57249/thumb/1704274800
-                                art: /library/metadata/57249/art/1704274800
-                                duration: 4459050
-                                originallyAvailableAt: 2022-11-18T00:00:00.000Z
-                                addedAt: 1669671356
-                                updatedAt: 1704274800
-                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                primaryExtraKey: /library/metadata/57250
-                                ratingImage: 'rottentomatoes://image.rating.ripe'
-                                Media:
-                                  - id: 115470
-                                    duration: 4459050
-                                    bitrate: 6384
-                                    width: 3840
-                                    height: 2160
-                                    aspectRatio: 1.78
-                                    audioChannels: 6
-                                    audioCodec: aac
-                                    videoCodec: hevc
-                                    videoResolution: 4k
-                                    container: mkv
-                                    videoFrameRate: 24p
-                                    audioProfile: lc
-                                    videoProfile: main 10
-                                    Part:
-                                      - id: 115478
-                                        key: /library/parts/115478/1669671340/file.mkv
-                                        duration: 4459050
-                                        file: '/movies/Blue''s Big City Adventure (2022)/Blues.Big.City.Adventure.2022.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv'
-                                        size: 3560750664
-                                        audioProfile: lc
-                                        container: mkv
-                                        videoProfile: main 10
-                                Genre:
-                                  - tag: Comedy
-                                  - tag: Family
-                                Country:
-                                  - tag: Canada
-                                  - tag: Ireland
-                                Director:
-                                  - tag: Matt Stawski
-                                Writer:
-                                  - tag: Traci Paige Johnson
-                                  - tag: Todd Kessler
-                                Role:
-                                  - tag: Joshua Dela Cruz
-                                  - tag: Steve Burns
-                                  - tag: Donovan Patton
-                              - ratingKey: '11449'
-                                key: /library/metadata/11449
-                                guid: 'plex://movie/5d776edfad5437001f803cf9'
-                                studio: Walt Disney Pictures
-                                type: movie
-                                title: Onward
-                                librarySectionTitle: Movies
-                                librarySectionID: 1
-                                librarySectionKey: /library/sections/1
-                                contentRating: PG
-                                summary: 'In a magical world full of technological advances, elven brothers Ian and Barley Lightfoot set out on an adventure to resurrect their late father for a day.'
-                                rating: 8.8
-                                audienceRating: 9.5
-                                viewCount: 3
-                                lastViewedAt: 1705543126
-                                year: 2020
-                                tagline: Their quest begineth.
-                                thumb: /library/metadata/11449/thumb/1705224000
-                                art: /library/metadata/11449/art/1705224000
-                                duration: 6141428
-                                originallyAvailableAt: 2020-03-04T00:00:00.000Z
-                                addedAt: 1589237130
-                                updatedAt: 1705224000
-                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                chapterSource: media
-                                primaryExtraKey: /library/metadata/11470
-                                ratingImage: 'rottentomatoes://image.rating.ripe'
-                                Media:
-                                  - id: 29291
-                                    duration: 6141428
-                                    bitrate: 10977
-                                    width: 1920
-                                    height: 804
-                                    aspectRatio: 2.35
-                                    audioChannels: 8
-                                    audioCodec: dca-ma
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mkv
-                                    videoFrameRate: 24p
-                                    audioProfile: ma
-                                    videoProfile: high
-                                    Part:
-                                      - id: 29291
-                                        key: /library/parts/29291/1589237130/file.mkv
-                                        duration: 6141428
-                                        file: /movies/Onward (2020)/Onward (2020) Bluray-1080p.mkv
-                                        size: 8426669232
-                                        audioProfile: ma
-                                        container: mkv
-                                        videoProfile: high
-                                  - id: 29315
-                                    duration: 6142006
-                                    bitrate: 2639
-                                    width: 1920
-                                    height: 800
-                                    aspectRatio: 2.35
-                                    audioChannels: 6
-                                    audioCodec: aac
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mp4
-                                    videoFrameRate: 24p
-                                    optimizedForStreaming: 1
-                                    audioProfile: lc
-                                    has64bitOffsets: false
-                                    videoProfile: high
-                                    Part:
-                                      - id: 29315
-                                        key: /library/parts/29315/1629002847/file.mp4
-                                        duration: 6142006
-                                        file: /movies/Onward (2020)/Onward (2020) WEBRip-1080p.mp4
-                                        size: 2026154995
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: true
-                                        videoProfile: high
-                                Genre:
-                                  - tag: Animation
-                                  - tag: Comedy
-                                Country:
-                                  - tag: United States of America
-                                Director:
-                                  - tag: Dan Scanlon
-                                Writer:
-                                  - tag: Kelsey Mann
-                                  - tag: Dan Scanlon
-                                Role:
-                                  - tag: Tom Holland
-                                  - tag: Chris Pratt
-                                  - tag: Julia Louis-Dreyfus
-                              - ratingKey: '5858'
-                                key: /library/metadata/5858
-                                guid: 'plex://movie/5d776b85594b2b001e6dc641'
-                                studio: Walt Disney Pictures
-                                type: movie
-                                title: Frozen II
-                                librarySectionTitle: Movies
-                                librarySectionID: 1
-                                librarySectionKey: /library/sections/1
-                                contentRating: PG
-                                summary: 'Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa''s powers in order to save their kingdom.'
-                                rating: 7.7
-                                audienceRating: 9.2
-                                viewCount: 1
-                                skipCount: 1
-                                lastViewedAt: 1705337663
-                                year: 2019
-                                tagline: The past is not what it seems.
-                                thumb: /library/metadata/5858/thumb/1704621922
-                                art: /library/metadata/5858/art/1704621922
-                                duration: 6194042
-                                originallyAvailableAt: 2019-11-20T00:00:00.000Z
-                                addedAt: 1588207762
-                                updatedAt: 1704621922
-                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                primaryExtraKey: /library/metadata/5892
-                                ratingImage: 'rottentomatoes://image.rating.ripe'
-                                Media:
-                                  - id: 14954
-                                    duration: 6194042
-                                    bitrate: 2538
-                                    width: 1920
-                                    height: 800
-                                    aspectRatio: 2.35
-                                    audioChannels: 6
-                                    audioCodec: aac
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mp4
-                                    videoFrameRate: 24p
-                                    optimizedForStreaming: 1
-                                    audioProfile: lc
-                                    has64bitOffsets: false
-                                    videoProfile: high
-                                    Part:
-                                      - id: 14954
-                                        key: /library/parts/14954/1588207762/file.mp4
-                                        duration: 6194042
-                                        file: /movies/Frozen II (2019)/Frozen II (2019) Bluray-1080p.mp4
-                                        size: 1969230037
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: true
-                                        videoProfile: high
-                                  - id: 14999
-                                    duration: 6244271
-                                    bitrate: 2536
-                                    width: 1920
-                                    height: 800
-                                    aspectRatio: 2.35
-                                    audioChannels: 6
-                                    audioCodec: aac
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mp4
-                                    videoFrameRate: 24p
-                                    optimizedForStreaming: 1
-                                    audioProfile: lc
-                                    has64bitOffsets: false
-                                    videoProfile: high
-                                    Part:
-                                      - id: 14999
-                                        key: /library/parts/14999/1629001526/file.mp4
-                                        duration: 6244271
-                                        file: /movies/Frozen II (2019)/Frozen II (2019) WEBRip-1080p.mp4
-                                        size: 1983357282
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: true
-                                        videoProfile: high
-                                Genre:
-                                  - tag: Adventure
-                                  - tag: Animation
-                                Country:
-                                  - tag: United States of America
-                                Director:
-                                  - tag: Chris Buck
-                                  - tag: Jennifer Lee
-                                Writer:
-                                  - tag: Chris Buck
-                                  - tag: Hans Christian Andersen
-                                Role:
-                                  - tag: Idina Menzel
-                                  - tag: Kristen Bell
-                                  - tag: Josh Gad
-                              - ratingKey: '14944'
-                                key: /library/metadata/14944
-                                guid: 'plex://movie/5d77686eeb5d26001f1eb339'
-                                studio: Walt Disney Animation Studios
-                                type: movie
-                                title: Tangled
-                                librarySectionTitle: Movies
-                                librarySectionID: 1
-                                librarySectionKey: /library/sections/1
-                                contentRating: PG
-                                summary: 'The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.'
-                                rating: 8.9
-                                audienceRating: 8.7
-                                viewCount: 1
-                                lastViewedAt: 1704936047
-                                year: 2010
-                                tagline: They're taking adventure to new lengths.
-                                thumb: /library/metadata/14944/thumb/1705739847
-                                art: /library/metadata/14944/art/1705739847
-                                duration: 6017237
-                                originallyAvailableAt: 2010-11-24T00:00:00.000Z
-                                addedAt: 1589412494
-                                updatedAt: 1705739847
-                                audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                                primaryExtraKey: /library/metadata/14952
-                                ratingImage: 'rottentomatoes://image.rating.ripe'
-                                Media:
-                                  - id: 38247
-                                    duration: 6017237
-                                    bitrate: 2051
-                                    width: 1920
-                                    height: 1080
-                                    aspectRatio: 1.78
-                                    audioChannels: 2
-                                    audioCodec: aac
-                                    videoCodec: h264
-                                    videoResolution: '1080'
-                                    container: mp4
-                                    videoFrameRate: 24p
-                                    optimizedForStreaming: 1
-                                    audioProfile: lc
-                                    has64bitOffsets: false
-                                    videoProfile: high
-                                    Part:
-                                      - id: 38247
-                                        key: /library/parts/38247/1589412494/file.mp4
-                                        duration: 6017237
-                                        file: /movies/Tangled (2010)/Tangled (2010) Bluray-1080p.mp4
-                                        size: 1545647447
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: true
-                                        videoProfile: high
-                                Genre:
-                                  - tag: Comedy
-                                  - tag: Animation
-                                Country:
-                                  - tag: United States of America
-                                Director:
-                                  - tag: Byron Howard
-                                  - tag: Nathan Greno
-                                Writer:
-                                  - tag: Jacob Grimm
-                                  - tag: Wilhelm Grimm
-                                Role:
-                                  - tag: Mandy Moore
-                                  - tag: Zachary Levi
-                                  - tag: Donna Murphy
-                            promoted: true
-                            random: true
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -2884,33 +2163,6 @@ paths:
                                   path:
                                     type: string
                                     example: /movies
-                              example:
-                                - id: 1
-                                  path: /movies
-                        example:
-                          - allowSync: true
-                            art: '/:/resources/movie-fanart.jpg'
-                            composite: /library/sections/1/composite/1705615584
-                            filters: true
-                            refreshing: false
-                            thumb: '/:/resources/movie.png'
-                            key: '1'
-                            type: movie
-                            title: Movies
-                            agent: tv.plex.agents.movie
-                            scanner: Plex Movie
-                            language: en-US
-                            uuid: 322a231a-b7f7-49f5-920f-14c61199cd30
-                            updatedAt: 1705615634
-                            createdAt: 1654131312
-                            scannedAt: 1705615584
-                            content: true
-                            directory: true
-                            contentChangedAt: 3192854
-                            hidden: 0
-                            Location:
-                              - id: 1
-                                path: /movies
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -3071,12 +2323,6 @@ paths:
                             search:
                               type: boolean
                               example: true
-                        example:
-                          - key: search?type=1
-                            title: Search...
-                            secondary: true
-                            prompt: Search Movies
-                            search: true
                       Type:
                         type: array
                         items:
@@ -3114,12 +2360,6 @@ paths:
                                   type:
                                     type: string
                                     example: filter
-                              example:
-                                - filter: label
-                                  filterType: string
-                                  key: /library/sections/1/label
-                                  title: Labels
-                                  type: filter
                             Sort:
                               type: array
                               items:
@@ -3143,13 +2383,6 @@ paths:
                                   title:
                                     type: string
                                     example: Randomly
-                              example:
-                                - default: asc
-                                  defaultDirection: desc
-                                  descKey: 'random:desc'
-                                  firstCharacterKey: /library/sections/1/firstCharacter
-                                  key: random
-                                  title: Randomly
                             Field:
                               type: array
                               items:
@@ -3167,257 +2400,6 @@ paths:
                                   subType:
                                     type: string
                                     example: bitrate
-                              example:
-                                - key: label
-                                  title: Label
-                                  type: tag
-                                  subType: bitrate
-                        example:
-                          - key: /library/sections/1/all?type=1
-                            type: movie
-                            title: Movies
-                            active: false
-                            Filter:
-                              - filter: genre
-                                filterType: string
-                                key: /library/sections/1/genre
-                                title: Genre
-                                type: filter
-                              - filter: year
-                                filterType: integer
-                                key: /library/sections/1/year
-                                title: Year
-                                type: filter
-                              - filter: decade
-                                filterType: integer
-                                key: /library/sections/1/decade
-                                title: Decade
-                                type: filter
-                              - filter: contentRating
-                                filterType: string
-                                key: /library/sections/1/contentRating
-                                title: Content Rating
-                                type: filter
-                              - filter: collection
-                                filterType: string
-                                key: /library/sections/1/collection
-                                title: Collection
-                                type: filter
-                              - filter: director
-                                filterType: string
-                                key: /library/sections/1/director
-                                title: Director
-                                type: filter
-                              - filter: actor
-                                filterType: string
-                                key: /library/sections/1/actor
-                                title: Actor
-                                type: filter
-                              - filter: writer
-                                filterType: string
-                                key: /library/sections/1/writer
-                                title: Writer
-                                type: filter
-                              - filter: producer
-                                filterType: string
-                                key: /library/sections/1/producer
-                                title: Producer
-                                type: filter
-                              - filter: country
-                                filterType: string
-                                key: /library/sections/1/country
-                                title: Country
-                                type: filter
-                              - filter: studio
-                                filterType: string
-                                key: /library/sections/1/studio
-                                title: Studio
-                                type: filter
-                              - filter: resolution
-                                filterType: string
-                                key: /library/sections/1/resolution
-                                title: Resolution
-                                type: filter
-                              - filter: hdr
-                                filterType: boolean
-                                key: /library/sections/1/hdr
-                                title: HDR
-                                type: filter
-                              - filter: unwatched
-                                filterType: boolean
-                                key: /library/sections/1/unwatched
-                                title: Unplayed
-                                type: filter
-                              - filter: inProgress
-                                filterType: boolean
-                                key: /library/sections/1/inProgress
-                                title: In Progress
-                                type: filter
-                              - filter: unmatched
-                                filterType: boolean
-                                key: /library/sections/1/unmatched
-                                title: Unmatched
-                                type: filter
-                              - filter: audioLanguage
-                                filterType: string
-                                key: /library/sections/1/audioLanguage
-                                title: Audio Language
-                                type: filter
-                              - filter: subtitleLanguage
-                                filterType: string
-                                key: /library/sections/1/subtitleLanguage
-                                title: Subtitle Language
-                                type: filter
-                              - filter: editionTitle
-                                filterType: string
-                                key: /library/sections/1/editionTitle
-                                title: Edition
-                                type: filter
-                              - filter: label
-                                filterType: string
-                                key: /library/sections/1/label
-                                title: Labels
-                                type: filter
-                            Sort:
-                              - default: asc
-                                defaultDirection: asc
-                                descKey: 'titleSort:desc'
-                                firstCharacterKey: /library/sections/1/firstCharacter
-                                key: titleSort
-                                title: Title
-                              - defaultDirection: desc
-                                descKey: 'originallyAvailableAt:desc'
-                                key: originallyAvailableAt
-                                title: Release Date
-                              - defaultDirection: desc
-                                descKey: 'rating:desc'
-                                key: rating
-                                title: Critic Rating
-                              - defaultDirection: desc
-                                descKey: 'audienceRating:desc'
-                                key: audienceRating
-                                title: Audience Rating
-                              - defaultDirection: desc
-                                descKey: 'duration:desc'
-                                key: duration
-                                title: Duration
-                              - defaultDirection: desc
-                                descKey: 'addedAt:desc'
-                                key: addedAt
-                                title: Date Added
-                              - defaultDirection: desc
-                                descKey: 'lastViewedAt:desc'
-                                key: lastViewedAt
-                                title: Date Viewed
-                              - defaultDirection: asc
-                                descKey: 'mediaHeight:desc'
-                                key: mediaHeight
-                                title: Resolution
-                              - defaultDirection: desc
-                                descKey: 'random:desc'
-                                key: random
-                                title: Randomly
-                            Field:
-                              - key: title
-                                title: Title
-                                type: string
-                              - key: studio
-                                title: Studio
-                                type: string
-                              - key: userRating
-                                subType: rating
-                                title: Rating
-                                type: integer
-                              - key: contentRating
-                                title: Content Rating
-                                type: tag
-                              - key: year
-                                subType: year
-                                title: Year
-                                type: integer
-                              - key: decade
-                                subType: decade
-                                title: Decade
-                                type: integer
-                              - key: originallyAvailableAt
-                                title: Release Date
-                                type: date
-                              - key: duration
-                                subType: duration
-                                title: Duration
-                                type: integer
-                              - key: unmatched
-                                title: Unmatched
-                                type: boolean
-                              - key: duplicate
-                                title: Duplicate
-                                type: boolean
-                              - key: genre
-                                title: Genre
-                                type: tag
-                              - key: collection
-                                title: Collection
-                                type: tag
-                              - key: director
-                                title: Director
-                                type: tag
-                              - key: writer
-                                title: Writer
-                                type: tag
-                              - key: producer
-                                title: Producer
-                                type: tag
-                              - key: actor
-                                title: Actor
-                                type: tag
-                              - key: country
-                                title: Country
-                                type: tag
-                              - key: addedAt
-                                title: Date Added
-                                type: date
-                              - key: viewCount
-                                title: Plays
-                                type: integer
-                              - key: lastViewedAt
-                                title: Last Played
-                                type: date
-                              - key: unwatched
-                                title: Unplayed
-                                type: boolean
-                              - key: resolution
-                                title: Resolution
-                                type: resolution
-                              - key: hdr
-                                subType: hdr
-                                title: HDR
-                                type: boolean
-                              - key: mediaSize
-                                subType: fileSize
-                                title: File Size
-                                type: integer
-                              - key: mediaBitrate
-                                subType: bitrate
-                                title: Bitrate
-                                type: integer
-                              - key: subtitleLanguage
-                                title: Subtitle Language
-                                type: subtitleLanguage
-                              - key: audioLanguage
-                                title: Audio Language
-                                type: audioLanguage
-                              - key: inProgress
-                                title: In Progress
-                                type: boolean
-                              - key: trash
-                                title: Trash
-                                type: boolean
-                              - key: editionTitle
-                                title: Edition
-                                type: string
-                              - key: label
-                                title: Label
-                                type: tag
                       FieldType:
                         type: array
                         items:
@@ -3437,14 +2419,6 @@ paths:
                                   title:
                                     type: string
                                     example: is
-                              example:
-                                - key: '='
-                                  title: is
-                        example:
-                          - type: resolution
-                            Operator:
-                              - key: '='
-                                title: is
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -3540,7 +2514,9 @@ paths:
           in: path
           required: true
           description: the Id of the library to query
-          schema: null
+          schema:
+            type: integer
+            example: 1
         - name: tag
           in: path
           required: true
@@ -3803,14 +2779,6 @@ paths:
                                         videoProfile:
                                           type: string
                                           example: main 10
-                                    example:
-                                      - id: 119542
-                                        key: /library/parts/119542/1680457526/file.mkv
-                                        duration: 11558112
-                                        file: /movies/Avatar The Way of Water (2022)/Avatar.The.Way.of.Water.2022.2160p.WEB-DL.DDP5.1.Atmos.DV.HDR10.HEVC-CMRG.mkv
-                                        size: 36158371307
-                                        container: mkv
-                                        videoProfile: main 10
                             Genre:
                               type: array
                               items:
@@ -3927,6 +2895,29 @@ paths:
                             parentTheme:
                               type: string
                               example: /library/metadata/66/theme/1705716261
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   '/library/sections/{sectionId}/refresh':
     get:
       tags:
@@ -4131,27 +3122,29 @@ paths:
                               type: integer
                               format: int32
                               example: 1705636920
-                        example:
-                          - ratingKey: '2'
-                            key: /library/metadata/2/children
-                            parentRatingKey: '1'
-                            guid: 'plex://season/602e67e766dfdb002c0a1b5b'
-                            parentGuid: 'plex://show/5d9c086c7d06d9001ffd27aa'
-                            parentStudio: Mutant Enemy Productions
-                            type: season
-                            title: Season 1
-                            parentKey: /library/metadata/1
-                            parentTitle: Firefly
-                            summary: 'Captain Malcolm ''Mal'' Reynolds is a former galactic war veteran who is the captain of the transport ship "Serenity". Mal and his crew, ensign Zoe Alleyne Washburne; Zoe''s husband, pilot Hoban ''Wash'' Washburne; muscular mercenary Jayne Cobb; young mechanic Kaylee Frye; former Alliance medical officer Simon Tam; his disturbed teenage sister River (both on the run from the interplanetary government "The Alliance"); the beautiful courtesan Inara Serra; and preacher Shepherd Book do any jobs, legal or illegal, they can find as the Serenity crew travels across the outskirts of outer space.'
-                            index: 1
-                            parentIndex: 1
-                            parentYear: 2002
-                            thumb: /library/metadata/2/thumb/1705636920
-                            art: /library/metadata/1/art/1705636920
-                            parentThumb: /library/metadata/1/thumb/1705636920
-                            parentTheme: /library/metadata/1/theme/1705636920
-                            addedAt: 1705636916
-                            updatedAt: 1705636920
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   '/library/metadata/{ratingKey}':
     get:
       tags:
@@ -4501,164 +3494,6 @@ paths:
                                                 type: integer
                                                 format: int32
                                                 example: 44100
-                                          example:
-                                            - id: 29
-                                              streamType: 2
-                                              default: true
-                                              codec: aac
-                                              index: 0
-                                              bitrate: 128
-                                              bitDepth: 8
-                                              chromaLocation: left
-                                              chromaSubsampling: 14520
-                                              codedHeight: 816
-                                              codedWidth: 1920
-                                              colorPrimaries: bt709
-                                              colorRange: tv
-                                              colorSpace: bt709
-                                              colorTrc: bt709
-                                              frameRate: 24
-                                              hasScalingMatrix: false
-                                              height: 814
-                                              level: 40
-                                              profile: lc
-                                              refFrames: 4
-                                              scanType: progressive
-                                              streamIdentifier: '1'
-                                              width: 1920
-                                              displayTitle: English (AAC Stereo)
-                                              extendedDisplayTitle: English (AAC Stereo)
-                                              selected: true
-                                              channels: 2
-                                              language: English
-                                              languageTag: en
-                                              languageCode: eng
-                                              samplingRate: 44100
-                                    example:
-                                      - id: 15
-                                        key: /library/parts/15/1705637151/file.mp4
-                                        duration: 141417
-                                        file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                        size: 40271948
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: false
-                                        videoProfile: high
-                                        Stream:
-                                          - id: 30
-                                            streamType: 1
-                                            default: true
-                                            codec: h264
-                                            index: 1
-                                            bitrate: 2160
-                                            bitDepth: 8
-                                            chromaLocation: left
-                                            chromaSubsampling: 14520
-                                            codedHeight: 816
-                                            codedWidth: 1920
-                                            colorPrimaries: bt709
-                                            colorRange: tv
-                                            colorSpace: bt709
-                                            colorTrc: bt709
-                                            frameRate: 24
-                                            hasScalingMatrix: false
-                                            height: 814
-                                            level: 40
-                                            profile: high
-                                            refFrames: 4
-                                            scanType: progressive
-                                            streamIdentifier: '2'
-                                            width: 1920
-                                            displayTitle: 1080p (H.264)
-                                            extendedDisplayTitle: 1080p (H.264)
-                                          - id: 29
-                                            streamType: 2
-                                            selected: true
-                                            default: true
-                                            codec: aac
-                                            index: 0
-                                            channels: 2
-                                            bitrate: 128
-                                            language: English
-                                            languageTag: en
-                                            languageCode: eng
-                                            profile: lc
-                                            samplingRate: 44100
-                                            streamIdentifier: '1'
-                                            displayTitle: English (AAC Stereo)
-                                            extendedDisplayTitle: English (AAC Stereo)
-                              example:
-                                - id: 15
-                                  duration: 141417
-                                  bitrate: 2278
-                                  width: 1920
-                                  height: 814
-                                  aspectRatio: 2.35
-                                  audioChannels: 2
-                                  audioCodec: aac
-                                  videoCodec: h264
-                                  videoResolution: '1080'
-                                  container: mp4
-                                  videoFrameRate: 24p
-                                  optimizedForStreaming: 0
-                                  audioProfile: lc
-                                  has64bitOffsets: false
-                                  videoProfile: high
-                                  Part:
-                                    - id: 15
-                                      key: /library/parts/15/1705637151/file.mp4
-                                      duration: 141417
-                                      file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                      size: 40271948
-                                      audioProfile: lc
-                                      container: mp4
-                                      has64bitOffsets: false
-                                      optimizedForStreaming: false
-                                      videoProfile: high
-                                      Stream:
-                                        - id: 30
-                                          streamType: 1
-                                          default: true
-                                          codec: h264
-                                          index: 1
-                                          bitrate: 2160
-                                          bitDepth: 8
-                                          chromaLocation: left
-                                          chromaSubsampling: 14520
-                                          codedHeight: 816
-                                          codedWidth: 1920
-                                          colorPrimaries: bt709
-                                          colorRange: tv
-                                          colorSpace: bt709
-                                          colorTrc: bt709
-                                          frameRate: 24
-                                          hasScalingMatrix: false
-                                          height: 814
-                                          level: 40
-                                          profile: high
-                                          refFrames: 4
-                                          scanType: progressive
-                                          streamIdentifier: '2'
-                                          width: 1920
-                                          displayTitle: 1080p (H.264)
-                                          extendedDisplayTitle: 1080p (H.264)
-                                        - id: 29
-                                          streamType: 2
-                                          selected: true
-                                          default: true
-                                          codec: aac
-                                          index: 0
-                                          channels: 2
-                                          bitrate: 128
-                                          language: English
-                                          languageTag: en
-                                          languageCode: eng
-                                          profile: lc
-                                          samplingRate: 44100
-                                          streamIdentifier: '1'
-                                          displayTitle: English (AAC Stereo)
-                                          extendedDisplayTitle: English (AAC Stereo)
                             Genre:
                               type: array
                               items:
@@ -4674,10 +3509,6 @@ paths:
                                   tag:
                                     type: string
                                     example: Thriller
-                              example:
-                                - id: 184
-                                  filter: genre=184
-                                  tag: Thriller
                             Country:
                               type: array
                               items:
@@ -4693,10 +3524,6 @@ paths:
                                   tag:
                                     type: string
                                     example: United States of America
-                              example:
-                                - id: 116
-                                  filter: country=116
-                                  tag: United States of America
                             Guid:
                               x-speakeasy-name-override: guids
                               type: array
@@ -4706,8 +3533,6 @@ paths:
                                   id:
                                     type: string
                                     example: 'tvdb://2337'
-                              example:
-                                - id: 'tvdb://2337'
                             Rating:
                               x-speakeasy-name-override: ratings
                               type: array
@@ -4723,10 +3548,6 @@ paths:
                                   type:
                                     type: string
                                     example: audience
-                              example:
-                                - image: 'themoviedb://image.rating'
-                                  value: 7.4
-                                  type: audience
                             Director:
                               type: array
                               items:
@@ -4748,12 +3569,6 @@ paths:
                                   thumb:
                                     type: string
                                     example: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
-                              example:
-                                - id: 130
-                                  filter: director=130
-                                  tag: Joss Whedon
-                                  tagKey: 5d776828880197001ec90e8f
-                                  thumb: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
                             Writer:
                               type: array
                               items:
@@ -4775,12 +3590,6 @@ paths:
                                   thumb:
                                     type: string
                                     example: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
-                              example:
-                                - id: 132
-                                  filter: writer=132
-                                  tag: Joss Whedon
-                                  tagKey: 5d776828880197001ec90e8f
-                                  thumb: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
                             Role:
                               type: array
                               items:
@@ -4805,13 +3614,6 @@ paths:
                                   thumb:
                                     type: string
                                     example: 'https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg'
-                              example:
-                                - id: 220
-                                  filter: actor=220
-                                  tag: Dennis Keiffer
-                                  tagKey: 5d77683554f42c001f8c4708
-                                  role: Bar Guy (uncredited)
-                                  thumb: 'https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg'
                             Producer:
                               type: array
                               items:
@@ -4833,147 +3635,6 @@ paths:
                                   thumb:
                                     type: string
                                     example: 'https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg'
-                              example:
-                                - id: 221
-                                  filter: producer=221
-                                  tag: Barry Mendel
-                                  tagKey: 5d776826961905001eb90e2b
-                                  thumb: 'https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg'
-                        example:
-                          - ratingKey: '17'
-                            key: /library/metadata/17
-                            guid: 'plex://movie/5d77683f6f4521001ea9dc53'
-                            studio: Universal Pictures
-                            type: movie
-                            title: Serenity
-                            librarySectionTitle: Movies
-                            librarySectionID: 1
-                            librarySectionKey: /library/sections/1
-                            contentRating: PG-13
-                            summary: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
-                            rating: 8.2
-                            audienceRating: 9.1
-                            year: 2005
-                            tagline: They aim to misbehave.
-                            thumb: /library/metadata/17/thumb/1705637165
-                            art: /library/metadata/17/art/1705637165
-                            duration: 141417
-                            originallyAvailableAt: 2005-09-29T00:00:00.000Z
-                            addedAt: 1705637164
-                            updatedAt: 1705637165
-                            audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                            hasPremiumPrimaryExtra: '1'
-                            ratingImage: 'rottentomatoes://image.rating.ripe'
-                            Media:
-                              - id: 15
-                                duration: 141417
-                                bitrate: 2278
-                                width: 1920
-                                height: 814
-                                aspectRatio: 2.35
-                                audioChannels: 2
-                                audioCodec: aac
-                                videoCodec: h264
-                                videoResolution: '1080'
-                                container: mp4
-                                videoFrameRate: 24p
-                                optimizedForStreaming: 0
-                                audioProfile: lc
-                                has64bitOffsets: false
-                                videoProfile: high
-                                Part:
-                                  - id: 15
-                                    key: /library/parts/15/1705637151/file.mp4
-                                    duration: 141417
-                                    file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                    size: 40271948
-                                    audioProfile: lc
-                                    container: mp4
-                                    has64bitOffsets: false
-                                    optimizedForStreaming: false
-                                    videoProfile: high
-                                    Stream:
-                                      - id: 30
-                                        streamType: 1
-                                        default: true
-                                        codec: h264
-                                        index: 1
-                                        bitrate: 2160
-                                        bitDepth: 8
-                                        chromaLocation: left
-                                        chromaSubsampling: 14520
-                                        codedHeight: 816
-                                        codedWidth: 1920
-                                        colorPrimaries: bt709
-                                        colorRange: tv
-                                        colorSpace: bt709
-                                        colorTrc: bt709
-                                        frameRate: 24
-                                        hasScalingMatrix: false
-                                        height: 814
-                                        level: 40
-                                        profile: high
-                                        refFrames: 4
-                                        scanType: progressive
-                                        streamIdentifier: '2'
-                                        width: 1920
-                                        displayTitle: 1080p (H.264)
-                                        extendedDisplayTitle: 1080p (H.264)
-                                      - id: 29
-                                        streamType: 2
-                                        selected: true
-                                        default: true
-                                        codec: aac
-                                        index: 0
-                                        channels: 2
-                                        bitrate: 128
-                                        language: English
-                                        languageTag: en
-                                        languageCode: eng
-                                        profile: lc
-                                        samplingRate: 44100
-                                        streamIdentifier: '1'
-                                        displayTitle: English (AAC Stereo)
-                                        extendedDisplayTitle: English (AAC Stereo)
-                            Genre:
-                              - id: 5
-                                filter: genre=5
-                                tag: Science Fiction
-                            Country:
-                              - id: 116
-                                filter: country=116
-                                tag: United States of America
-                            Guid:
-                              - id: 'imdb://tt0379786'
-                            Rating:
-                              - image: 'imdb://image.rating'
-                                value: 7.8
-                                type: audience
-                            Director:
-                              - id: 130
-                                filter: director=130
-                                tag: Joss Whedon
-                                tagKey: 5d776828880197001ec90e8f
-                                thumb: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
-                            Writer:
-                              - id: 132
-                                filter: writer=132
-                                tag: Joss Whedon
-                                tagKey: 5d776828880197001ec90e8f
-                                thumb: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
-                            Role:
-                              - id: 8
-                                filter: actor=8
-                                tag: Nathan Fillion
-                                tagKey: 5d7768286f4521001ea9945c
-                                role: Malcolm "Mal" Reynolds
-                                thumb: 'https://metadata-static.plex.tv/4/people/4a2890ca346eb832500b1ed0add89d5e.jpg'
-                            Producer:
-                              - id: 221
-                                filter: producer=221
-                                tag: Barry Mendel
-                                tagKey: 5d776826961905001eb90e2b
-                                thumb: 'https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -5218,34 +3879,6 @@ paths:
                               type: integer
                               format: int32
                               example: 1703881224
-                        example:
-                          - ratingKey: '66488'
-                            key: /library/metadata/66488/children
-                            parentRatingKey: '30072'
-                            guid: 'plex://season/652aea6549508477c34c6000'
-                            parentGuid: 'plex://show/5d9c09190aaccd001f8f42f0'
-                            parentStudio: Amazon Studios
-                            type: season
-                            title: Season 2
-                            parentKey: /library/metadata/30072
-                            parentTitle: Reacher
-                            summary: 'Based on"Bad Luck and Trouble," when members of Reacher''s old military unit start turning up dead, Reacher has just one thing on his mind—revenge.'
-                            index: 2
-                            parentIndex: 1
-                            viewCount: 11
-                            lastViewedAt: 1705646565
-                            parentYear: 2022
-                            thumb: /library/metadata/66488/thumb/1703065033
-                            art: /library/metadata/30072/art/1705739923
-                            parentThumb: /library/metadata/30072/thumb/1705739923
-                            parentTheme: /library/metadata/30072/theme/1705739923
-                            leafCount: 8
-                            viewedLeafCount: 8
-                            addedAt: 1702602021
-                            updatedAt: 1703065033
-                            userRating: 9
-                            skipCount: 1
-                            lastRatedAt: 1703881224
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6229,23 +4862,6 @@ paths:
                               type: integer
                               format: int32
                               example: 141000
-                        example:
-                          - ratingKey: '96'
-                            key: /playlists/96/items
-                            guid: 'com.plexapp.agents.none://a2f92937-1408-40e2-b022-63a8a9377e55'
-                            type: playlist
-                            title: A Great Playlist
-                            summary: What a great playlist
-                            smart: false
-                            playlistType: video
-                            icon: 'playlist://image.smart'
-                            viewCount: 1
-                            lastViewedAt: 1705719589
-                            leafCount: 1
-                            addedAt: 1705719589
-                            updatedAt: 1705724593
-                            composite: /playlists/96/composite/1705724593
-                            duration: 141000
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6369,23 +4985,6 @@ paths:
                               type: integer
                               format: int32
                               example: 1705716440
-                        example:
-                          - ratingKey: '92'
-                            key: /playlists/92/items
-                            guid: 'com.plexapp.agents.none://7ca5aaef-58e8-4828-9e21-c009c97f2903'
-                            type: playlist
-                            title: Static Playlist
-                            summary: A Great Playlist
-                            smart: false
-                            playlistType: video
-                            composite: /playlists/92/composite/1705716440
-                            icon: 'playlist://image.smart'
-                            viewCount: 1
-                            lastViewedAt: 1705716298
-                            duration: 7328000
-                            leafCount: 32
-                            addedAt: 1705716298
-                            updatedAt: 1705716440
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6494,22 +5093,6 @@ paths:
                               type: integer
                               format: int32
                               example: 1705717387
-                        example:
-                          - content: 'library://x/directory/%2Flibrary%2Fsections%2F1%2Fall%3Ftype%3D1%26push%3D1%26title%3D2%26or%3D1%26title%3DSerenity%26pop%3D1'
-                            ratingKey: '95'
-                            key: /playlists/95/items
-                            guid: 'com.plexapp.agents.none://87425529-380f-44b8-a689-9a0537e7ec91'
-                            type: playlist
-                            title: Smart Movie Playlist
-                            summary: ''
-                            smart: true
-                            playlistType: video
-                            composite: /playlists/95/composite/1705717387
-                            icon: 'playlist://image.smart'
-                            duration: 282000
-                            leafCount: 2
-                            addedAt: 1705716493
-                            updatedAt: 1705717387
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -6874,45 +5457,6 @@ paths:
                                         videoProfile:
                                           type: string
                                           example: high
-                                    example:
-                                      - id: 15
-                                        key: /library/parts/15/1705637151/file.mp4
-                                        duration: 141416
-                                        file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                        size: 40271948
-                                        audioProfile: lc
-                                        container: mp4
-                                        has64bitOffsets: false
-                                        optimizedForStreaming: false
-                                        videoProfile: high
-                              example:
-                                - id: 15
-                                  duration: 141416
-                                  bitrate: 2273
-                                  width: 1920
-                                  height: 814
-                                  aspectRatio: 2.35
-                                  audioChannels: 2
-                                  audioCodec: aac
-                                  videoCodec: h264
-                                  videoResolution: '1080'
-                                  container: mp4
-                                  videoFrameRate: 24p
-                                  optimizedForStreaming: 0
-                                  audioProfile: lc
-                                  has64bitOffsets: false
-                                  videoProfile: high
-                                  Part:
-                                    - id: 15
-                                      key: /library/parts/15/1705637151/file.mp4
-                                      duration: 141416
-                                      file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                      size: 40271948
-                                      audioProfile: lc
-                                      container: mp4
-                                      has64bitOffsets: false
-                                      optimizedForStreaming: false
-                                      videoProfile: high
                             Genre:
                               type: array
                               items:
@@ -6921,8 +5465,6 @@ paths:
                                   tag:
                                     type: string
                                     example: Action
-                              example:
-                                - tag: Action
                             Country:
                               type: array
                               items:
@@ -6931,8 +5473,6 @@ paths:
                                   tag:
                                     type: string
                                     example: United States of America
-                              example:
-                                - tag: United States of America
                             Director:
                               type: array
                               items:
@@ -6941,8 +5481,6 @@ paths:
                                   tag:
                                     type: string
                                     example: Joss Whedon
-                              example:
-                                - tag: Joss Whedon
                             Writer:
                               type: array
                               items:
@@ -6951,8 +5489,6 @@ paths:
                                   tag:
                                     type: string
                                     example: Joss Whedon
-                              example:
-                                - tag: Joss Whedon
                             Role:
                               type: array
                               items:
@@ -6961,73 +5497,6 @@ paths:
                                   tag:
                                     type: string
                                     example: Gina Torres
-                              example:
-                                - tag: Gina Torres
-                        example:
-                          - ratingKey: '17'
-                            key: /library/metadata/17
-                            guid: 'plex://movie/5d77683f6f4521001ea9dc53'
-                            studio: Universal Pictures
-                            type: movie
-                            title: Serenity
-                            titleSort: Amazing Spider-Man 2
-                            librarySectionTitle: Movies
-                            librarySectionID: 1
-                            librarySectionKey: /library/sections/1
-                            contentRating: PG-13
-                            summary: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
-                            rating: 8.2
-                            audienceRating: 9.1
-                            year: 2005
-                            tagline: They aim to misbehave.
-                            thumb: /library/metadata/17/thumb/1705637165
-                            art: /library/metadata/17/art/1705637165
-                            duration: 141416
-                            originallyAvailableAt: 2005-09-29T00:00:00.000Z
-                            addedAt: 1705637164
-                            updatedAt: 1705637165
-                            audienceRatingImage: 'rottentomatoes://image.rating.upright'
-                            hasPremiumExtras: '1'
-                            hasPremiumPrimaryExtra: '1'
-                            ratingImage: 'rottentomatoes://image.rating.ripe'
-                            Media:
-                              - id: 15
-                                duration: 141416
-                                bitrate: 2273
-                                width: 1920
-                                height: 814
-                                aspectRatio: 2.35
-                                audioChannels: 2
-                                audioCodec: aac
-                                videoCodec: h264
-                                videoResolution: '1080'
-                                container: mp4
-                                videoFrameRate: 24p
-                                optimizedForStreaming: 0
-                                audioProfile: lc
-                                has64bitOffsets: false
-                                videoProfile: high
-                                Part:
-                                  - id: 15
-                                    key: /library/parts/15/1705637151/file.mp4
-                                    duration: 141416
-                                    file: /movies/Serenity (2005)/Serenity (2005).mp4
-                                    size: 40271948
-                                    audioProfile: lc
-                                    container: mp4
-                                    has64bitOffsets: false
-                                    optimizedForStreaming: false
-                                    videoProfile: high
-                            Genre:
-                              - tag: Science Fiction
-                            Country:
-                              - tag: United States of America
-                            Director:
-                              - tag: Joss Whedon
-                            Writer:
-                              - tag: Joss Whedon
-                            Role:
-                              - tag: Nathan Fillion
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -7191,20 +5660,6 @@ paths:
                               type: integer
                               format: int32
                               example: 1705800070
-                        example:
-                          - ratingKey: '94'
-                            key: /playlists/94/items
-                            guid: 'com.plexapp.agents.none://972e3047-83d6-4848-a000-261f0af26ba2'
-                            type: playlist
-                            title: A great playlist
-                            summary: One of my great playlists
-                            smart: false
-                            playlistType: video
-                            composite: /playlists/94/composite/1705800070
-                            duration: 423000
-                            leafCount: 3
-                            addedAt: 1705716458
-                            updatedAt: 1705800070
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -7785,12 +6240,6 @@ paths:
                               type: integer
                               format: int32
                               example: 1706470556
-                        example:
-                          - id: 208
-                            name: Roku Express
-                            platform: Roku
-                            clientIdentifier: 793095d235660625108ef785cc7646e9
-                            createdAt: 1706470556
                       Account:
                         type: array
                         items:
@@ -7822,15 +6271,6 @@ paths:
                             thumb:
                               type: string
                               example: 'https://plex.tv/users/50d83634246da1de/avatar?c=1707110967'
-                        example:
-                          - id: 238960586
-                            key: /accounts/238960586
-                            name: Diane
-                            defaultAudioLanguage: en
-                            autoSelectAudio: true
-                            defaultSubtitleLanguage: en
-                            subtitleMode: 1
-                            thumb: 'https://plex.tv/users/50d83634246da1de/avatar?c=1707110967'
                       StatisticsMedia:
                         type: array
                         items:
@@ -7864,14 +6304,6 @@ paths:
                               type: integer
                               format: int32
                               example: 1555
-                        example:
-                          - accountID: 1
-                            deviceID: 13
-                            timespan: 4
-                            at: 1707141600
-                            metadataType: 4
-                            count: 1
-                            duration: 1555
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -8163,97 +6595,6 @@ paths:
                                               location:
                                                 type: string
                                                 example: direct
-                                          example:
-                                            - albumGain: '-12.94'
-                                              albumPeak: '1.000000'
-                                              albumRange: '4.751014'
-                                              audioChannelLayout: stereo
-                                              bitDepth: 16
-                                              bitrate: 1014
-                                              channels: 2
-                                              codec: flac
-                                              displayTitle: FLAC (Stereo)
-                                              extendedDisplayTitle: FLAC (Stereo)
-                                              gain: '-12.94'
-                                              id: '352487'
-                                              index: 0
-                                              loudness: '-5.94'
-                                              lra: '1.74'
-                                              peak: '1.000000'
-                                              samplingRate: 44100
-                                              selected: true
-                                              streamType: 2
-                                              location: direct
-                                    example:
-                                      - container: flac
-                                        duration: 186240
-                                        file: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
-                                        hasThumbnail: '1'
-                                        id: '130625'
-                                        key: /library/parts/130625/1705543268/file.flac
-                                        size: 23644000
-                                        decision: directplay
-                                        selected: true
-                                        Stream:
-                                          - albumGain: '-12.94'
-                                            albumPeak: '1.000000'
-                                            albumRange: '4.751014'
-                                            audioChannelLayout: stereo
-                                            bitDepth: 16
-                                            bitrate: 1014
-                                            channels: 2
-                                            codec: flac
-                                            displayTitle: FLAC (Stereo)
-                                            extendedDisplayTitle: FLAC (Stereo)
-                                            gain: '-12.94'
-                                            id: '352487'
-                                            index: 0
-                                            loudness: '-5.94'
-                                            lra: '1.74'
-                                            peak: '1.000000'
-                                            samplingRate: 44100
-                                            selected: true
-                                            streamType: 2
-                                            location: direct
-                              example:
-                                - audioChannels: 2
-                                  audioCodec: flac
-                                  bitrate: 1014
-                                  container: flac
-                                  duration: 186240
-                                  id: '130355'
-                                  selected: true
-                                  Part:
-                                    - container: flac
-                                      duration: 186240
-                                      file: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
-                                      hasThumbnail: '1'
-                                      id: '130625'
-                                      key: /library/parts/130625/1705543268/file.flac
-                                      size: 23644000
-                                      decision: directplay
-                                      selected: true
-                                      Stream:
-                                        - albumGain: '-12.94'
-                                          albumPeak: '1.000000'
-                                          albumRange: '4.751014'
-                                          audioChannelLayout: stereo
-                                          bitDepth: 16
-                                          bitrate: 1014
-                                          channels: 2
-                                          codec: flac
-                                          displayTitle: FLAC (Stereo)
-                                          extendedDisplayTitle: FLAC (Stereo)
-                                          gain: '-12.94'
-                                          id: '352487'
-                                          index: 0
-                                          loudness: '-5.94'
-                                          lra: '1.74'
-                                          peak: '1.000000'
-                                          samplingRate: 44100
-                                          selected: true
-                                          streamType: 2
-                                          location: direct
                             User:
                               type: object
                               properties:
@@ -8328,103 +6669,6 @@ paths:
                                 location:
                                   type: string
                                   example: lan
-                        example:
-                          - addedAt: 1705543312
-                            art: /library/metadata/39904/art/1705310687
-                            duration: 186240
-                            grandparentArt: /library/metadata/39904/art/1705310687
-                            grandparentGuid: 'plex://artist/5d07bbfd403c6402904a6480'
-                            grandparentKey: /library/metadata/39904
-                            grandparentRatingKey: '39904'
-                            grandparentThumb: /library/metadata/39904/thumb/1705310687
-                            grandparentTitle: Green Day
-                            guid: 'plex://track/6535834f71f22f36f71a8e8f'
-                            index: 1
-                            key: /library/metadata/67085
-                            librarySectionID: '3'
-                            librarySectionKey: /library/sections/3
-                            librarySectionTitle: Music
-                            musicAnalysisVersion: '1'
-                            parentGuid: 'plex://album/65394d6d472b8ab03ef47f12'
-                            parentIndex: 1
-                            parentKey: /library/metadata/67084
-                            parentRatingKey: '67084'
-                            parentStudio: Reprise Records
-                            parentThumb: /library/metadata/67084/thumb/1705543314
-                            parentTitle: Saviors
-                            parentYear: 2024
-                            ratingCount: 45885
-                            ratingKey: '67085'
-                            sessionKey: '203'
-                            thumb: /library/metadata/67084/thumb/1705543314
-                            title: The American Dream Is Killing Me
-                            titleSort: American Dream Is Killing Me
-                            type: track
-                            updatedAt: 1705543314
-                            viewOffset: 1000
-                            Media:
-                              - audioChannels: 2
-                                audioCodec: flac
-                                bitrate: 1014
-                                container: flac
-                                duration: 186240
-                                id: '130355'
-                                selected: true
-                                Part:
-                                  - container: flac
-                                    duration: 186240
-                                    file: /music/Green Day/Saviors (2024)/Green Day - Saviors - 01 - The American Dream Is Killing Me.flac
-                                    hasThumbnail: '1'
-                                    id: '130625'
-                                    key: /library/parts/130625/1705543268/file.flac
-                                    size: 23644000
-                                    decision: directplay
-                                    selected: true
-                                    Stream:
-                                      - albumGain: '-12.94'
-                                        albumPeak: '1.000000'
-                                        albumRange: '4.751014'
-                                        audioChannelLayout: stereo
-                                        bitDepth: 16
-                                        bitrate: 1014
-                                        channels: 2
-                                        codec: flac
-                                        displayTitle: FLAC (Stereo)
-                                        extendedDisplayTitle: FLAC (Stereo)
-                                        gain: '-12.94'
-                                        id: '352487'
-                                        index: 0
-                                        loudness: '-5.94'
-                                        lra: '1.74'
-                                        peak: '1.000000'
-                                        samplingRate: 44100
-                                        selected: true
-                                        streamType: 2
-                                        location: direct
-                            User:
-                              id: '1'
-                              thumb: 'https://plex.tv/users/844780fc6f8a26b5/avatar?c=1705853661'
-                              title: Blindkitty38
-                            Player:
-                              address: 10.10.10.171
-                              machineIdentifier: 3tsdzir85m2onc3qyr255aq1
-                              model: standalone
-                              platform: windows
-                              platformVersion: 10.0.22621
-                              product: Plex for Windows
-                              profile: Plex Desktop
-                              remotePublicAddress: 68.248.140.20
-                              state: playing
-                              title: DESKTOP-BL80MTD
-                              version: 1.85.0.4071-21128b56
-                              local: true
-                              relayed: false
-                              secure: true
-                              userID: 1
-                            Session:
-                              id: 93h7e00ncblxncqw9lkfaoxi
-                              bandwidth: 1050
-                              location: lan
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
@@ -8538,26 +6782,6 @@ paths:
                               type: integer
                               format: int32
                               example: 5
-                        example:
-                          - historyKey: /status/sessions/history/1
-                            key: /library/metadata/32171
-                            ratingKey: '32171'
-                            librarySectionID: '2'
-                            parentKey: /library/metadata/32170
-                            grandparentKey: /library/metadata/32132
-                            title: The Noise That Blue Makes
-                            grandparentTitle: Taskmaster
-                            type: episode
-                            thumb: /library/metadata/32171/thumb/-1
-                            parentThumb: /library/metadata/32170/thumb/1654134301
-                            grandparentThumb: /library/metadata/32132/thumb/1703933346
-                            grandparentArt: /library/metadata/32132/art/1703933346
-                            index: 1
-                            parentIndex: 13
-                            originallyAvailableAt: 2022-04-14T00:00:00.000Z
-                            viewedAt: 1654139223
-                            accountID: 1
-                            deviceID: 5
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
