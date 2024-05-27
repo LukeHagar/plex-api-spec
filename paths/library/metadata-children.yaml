@@ -12,7 +12,6 @@ get:
       schema:
         type: number
       required: true
-
   responses:
     "200":
       description: The children of the library item.
