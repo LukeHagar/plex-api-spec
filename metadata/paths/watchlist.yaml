@@ -5,6 +5,8 @@ get:
   description: Get User Watchlist
   operationId: getWatchlist
   parameters:
+    # Many details of this api were taken from the python-plexapi library
+    # See: https://github.com/pkkid/python-plexapi/blob/dd80deb18fe1111050777d067f3d87b0524d4850/plexapi/myplex.py#L904
     - name: filter
       description: Filter
       in: path
@@ -15,6 +17,54 @@ get:
           - all
           - available
           - released
+    - name: sort
+      description: |
+        In the format "field:dir". Available fields are "watchlistedAt" (Added At),
+        "titleSort" (Title), "originallyAvailableAt" (Release Date), or "rating" (Critic Rating).
+        "dir" can be "asc" or "desc"
+      in: query
+      required: false
+      schema:
+        type: string
+    - name: libtype
+      description: |
+        The type of library to filter. Can be "movie" or "show", or all if not present.
+      in: query
+      required: false
+      schema:
+        type: enum
+        enum:
+          - movie
+          - show
+    - name: maxresults
+      description: |
+        The number of items to return. If not specified, all items will be returned.
+        If the number of items exceeds the limit, the response will be paginated.
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+    - name: includeCollections
+      description: |
+        include collections in the results
+      in: query
+      required: false
+      schema:
+        type: enum
+        enum:
+          - 1
+          - 0
+    - name: includeExternalMedia
+      description: |
+        include external media in the results
+      in: query
+      required: false
+      schema:
+        type: enum
+        enum:
+          - 1
+          - 0
     - name: X-Plex-Token
       description: User Token
       in: query
