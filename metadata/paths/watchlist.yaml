@@ -1,0 +1,134 @@
+get:
+  tags:
+    - Metadata
+  summary: Get User Watchlist
+  description: Get User Watchlist
+  operationId: getWatchlist
+  parameters:
+    - name: X-Plex-Token
+      description: User Token
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Watchlist Data
+      content:
+        application/json:
+          schema:
+            type: object
+              properties:
+                librarySectionID:
+                  type: string
+                librarySectionTitle:
+                  type: string
+                offset:
+                  type: integer
+                  format: int32
+                totalSize:
+                  type: integer
+                  format: int32
+                identifier:
+                  type: string
+                size:
+                  type: integer
+                  format: int32
+                Metadata:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      art:
+                        type: string
+                      guid:
+                        type: string
+                      key:
+                        type: string
+                      ratingKey:
+                        type: string
+                      studio:
+                        type: string
+                      tagline:
+                        type: string
+                      type:
+                        type: string
+                      thumb:
+                        type: string
+                      addedAt:
+                        type: integer
+                        format: int32
+                      duration:
+                        type: integer
+                        format: int32
+                      publicPagesURL:
+                        type: string
+                      slug:
+                        type: string
+                      userState:
+                        type: boolean
+                      title:
+                        type: string
+                      contentRating:
+                        type: string
+                      originallyAvailableAt:
+                        type: string
+                        format: date
+                      year:
+                        type: integer
+                        format: int32
+                      Image:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            alt:
+                              type: string
+                            type:
+                              type: string
+                            url:
+                              type: string
+                      banner:
+                        type: string
+                      rating:
+                        type: number
+                      expiresAt:
+                        type: integer
+                        format: int32
+                      originalTitle:
+                        type: string
+                      audienceRating:
+                        type: number
+                      audienceRatingImage:
+                        type: string
+                      ratingImage:
+                        type: string
+                      imdbRatingCount:
+                        type: integer
+                        format: int32
+                      subtype:
+                        type: string
+                      theme:
+                        type: string
+                      leafCount:
+                        type: integer
+                        format: int32
+                      childCount:
+                        type: integer
+                        format: int32
+                      isContinuingSeries:
+                        type: boolean
+                      skipChildren:
+                        type: boolean
+                      availabilityId:
+                        type: string
+                      streamingMediaId:
+                        type: string
+                      playableKey:
+                        type: string
+
+
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

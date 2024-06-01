@@ -1,0 +1,32 @@
+openapi: 3.1.0
+info:
+  title: Plex-Metadata-API
+  summary: A Plex Metadata API Map
+  description: An Open API Spec for interacting with metadata.provider.plex.tv
+  version: 0.0.3
+  contact:
+    name: Luke Hagar
+    url: "https://www.LukeHagar.com"
+    email: Lukeslakemail@gmail.com
+  license:
+    name: MIT
+    identifier: MIT
+
+servers:
+  - url: "https://metadata.provider.plex.tv"
+    description: The plex metadata provider server
+
+security:
+  - accessToken: []
+
+components:
+  securitySchemes:
+    accessToken:
+      description: Plex Authentication Token
+      type: apiKey
+      in: header
+      name: X-Plex-Token
+
+paths:
+  /library/sections/watchlist/{filter}:
+    $ref: "./paths/watchlist.yaml"
