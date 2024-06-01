@@ -5,6 +5,16 @@ get:
   description: Get User Watchlist
   operationId: getWatchlist
   parameters:
+    - name: filter
+      description: Filter
+      in: path
+      required: true
+      schema:
+        type: enum
+        enum:
+          - all
+          - available
+          - released
     - name: X-Plex-Token
       description: User Token
       in: query
