@@ -186,6 +186,13 @@ paths:
   /video/:/transcode/universal/start.mpd:
     $ref: "./paths/video-transcode-universal-start.yaml"
 
+  # metadata
+  /library/sections/watchlist/{filter}:
+    $ref: "./paths/metadata/watchlist.yaml"
+    servers:
+      - url: "https://metadata.provider.plex.tv"
+        description: The plex metadata provider server
+
 tags:
   - name: Activities
     description: |
