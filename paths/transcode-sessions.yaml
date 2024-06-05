@@ -125,7 +125,6 @@ get:
                         timeStamp: 1705895805.4919229
                         maxOffsetAvailable: 29.53
                         minOffsetAvailable: 3.003000020980835
-
     "400":
       $ref: "../responses/400.yaml"
     "401":

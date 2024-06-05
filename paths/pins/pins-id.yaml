@@ -15,7 +15,6 @@ get:
         type: string
       required: true
     - $ref: "../../parameters/ClientIdentifier.yaml"
-
   responses:
     "200":
       description: Access Token

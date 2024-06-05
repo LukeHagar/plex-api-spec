@@ -140,7 +140,6 @@ get:
                           (Transcoder) Software transcoding on Ubuntu could cause unexpected behavior (#14605)
                         downloadURL: https://plex.tv/downloads/latest/5?channel=8&build=linux-x86_64&distro=redhat&X-Plex-Token=xxxxxxxxxxxxxxxxxxxx
                         state: notify
-
     "400":
       $ref: "../../responses/400.yaml"
     "401":

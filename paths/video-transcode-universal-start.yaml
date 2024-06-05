@@ -9,7 +9,7 @@ get:
       description: Whether the media item has MDE
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 1
 
@@ -17,7 +17,7 @@ get:
       description: The path to the media item to transcode
       required: true
       in: query
-      schema: 
+      schema:
         type: string
       example: "/library/metadata/23409"
 
@@ -25,7 +25,7 @@ get:
       description: The index of the media item to transcode
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
@@ -33,15 +33,15 @@ get:
       description: The index of the part to transcode
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
-    - name: protocol  
+    - name: protocol
       description: The protocol to use for the transcode session
       required: true
       in: query
-      schema: 
+      schema:
         type: string
       example: "hls"
 
@@ -49,7 +49,7 @@ get:
       description: Whether to use fast seek or not
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
@@ -57,7 +57,7 @@ get:
       description: Whether to use direct play or not
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
@@ -65,7 +65,7 @@ get:
       description: Whether to use direct stream or not
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
@@ -73,7 +73,7 @@ get:
       description: The size of the subtitles
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 100
 
@@ -81,7 +81,7 @@ get:
       description: The subtitles
       required: false
       in: query
-      schema: 
+      schema:
         type: string
       example: "burn"
 
@@ -89,7 +89,7 @@ get:
       description: The audio boost
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 100
 
@@ -97,7 +97,7 @@ get:
       description: The location of the transcode session
       required: false
       in: query
-      schema: 
+      schema:
         type: string
       example: lan
 
@@ -105,7 +105,7 @@ get:
       description: The size of the media buffer
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 102400
 
@@ -113,7 +113,7 @@ get:
       description: The session ID
       required: false
       in: query
-      schema: 
+      schema:
         type: string
       example: "zvcage8b7rkioqcm8f4uns4c"
 
@@ -121,7 +121,7 @@ get:
       description: Whether to add a debug overlay or not
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
@@ -129,14 +129,13 @@ get:
       description: Whether to auto adjust quality or not
       required: false
       in: query
-      schema: 
+      schema:
         type: number
       example: 0
 
   responses:
     "200":
       description: The transcode session has started
-
     "400":
       $ref: "../responses/400.yaml"
     "401":

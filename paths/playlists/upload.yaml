@@ -32,7 +32,6 @@ post:
           - 0
           - 1
       required: true
-
   responses:
     "200":
       description: The playlist is uploaded
