@@ -186,6 +186,10 @@ paths:
   /video/:/transcode/universal/start.mpd:
     $ref: "./paths/video-transcode-universal-start.yaml"
 
+  # metadata
+  /library/sections/watchlist/{filter}:
+    $ref: "./paths/metadata/watchlist.yaml"
+
 tags:
   - name: Activities
     description: |
