@@ -1,0 +1,17 @@
+name: Linting
+"on":
+  pull_request:
+    paths:
+      - pms-spec.yaml
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Speakeasy CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh
+
+      - name: OpenAPI Lint
+        run: speakeasy lint openapi -s pms-spec.yaml
