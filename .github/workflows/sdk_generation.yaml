@@ -13,12 +13,21 @@ permissions:
         default: false
   schedule:
     - cron: 0 0 * * *
+  push:
+    branches:
+      - main
+    paths:
+      - pms-spec.yaml
+      - .github/workflows/sdk_generation.yaml
+      - paths/**
+      - parameters/**
+      - responses/**
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
     with:
       force: ${{ github.event.inputs.force }}
-      mode: pr
+      mode: direct
       speakeasy_version: latest
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
