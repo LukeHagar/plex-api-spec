@@ -189,9 +189,6 @@ paths:
   # metadata
   /library/sections/watchlist/{filter}:
     $ref: "./paths/metadata/watchlist.yaml"
-    servers:
-      - url: "https://metadata.provider.plex.tv"
-        description: The plex metadata provider server
 
 tags:
   - name: Activities
