@@ -3,7 +3,7 @@ servers:
     description: The plex metadata provider server
 get:
   tags:
-    - Metadata
+    - Watchlist
   summary: Get User Watchlist
   description: Get User Watchlist
   operationId: getWatchlist

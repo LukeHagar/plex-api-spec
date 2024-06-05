@@ -186,7 +186,7 @@ paths:
   /video/:/transcode/universal/start.mpd:
     $ref: "./paths/video-transcode-universal-start.yaml"
 
-  # metadata
+  # Watchlist
   /library/sections/watchlist/{filter}:
     $ref: "./paths/metadata/watchlist.yaml"
 
@@ -249,3 +249,6 @@ tags:
   - name: Statistics
     description: |
       API Calls that perform operations with Plex Media Server Statistics
+  - name: Watchlist
+    description: |
+      API Calls that perform operations with Plex Media Server Watchlists
