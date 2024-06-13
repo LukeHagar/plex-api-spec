@@ -19,6 +19,7 @@ post:
         default: false
       required: false
     - $ref: "../../parameters/ClientIdentifier.yaml"
+    - $ref: "../../parameters/ClientProduct.yaml"
   responses:
     "201":
       description: The Pin

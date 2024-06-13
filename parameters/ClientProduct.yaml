@@ -1,0 +1,8 @@
+name: X-Plex-Product
+description: |
+  Product name of the application shown in the list of devices
+in: header
+schema:
+  type: string
+  example: Postman
+required: true
