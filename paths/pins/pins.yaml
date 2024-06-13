@@ -70,7 +70,7 @@ post:
                     type: string
                     example: America/Chicago
                   postal_code:
-                    type: number
+                    type: string
                     example: 78732
                   in_privacy_restricted_country:
                     type: boolean
