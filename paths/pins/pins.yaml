@@ -20,7 +20,7 @@ post:
       required: false
     - $ref: "../../parameters/ClientIdentifier.yaml"
   responses:
-    "200":
+    "201":
       description: The Pin
       content:
         application/json:
