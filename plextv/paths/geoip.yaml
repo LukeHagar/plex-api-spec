@@ -28,7 +28,6 @@ get:
                 type: boolean
               subscription:
                 type: boolean
-
     "400":
       $ref: "../../responses/400.yaml"
     "401":
