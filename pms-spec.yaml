@@ -81,6 +81,11 @@ paths:
   /devices:
     $ref: "./paths/devices.yaml"
 
+  # Plex Home
+  # Folder: pms/paths/home
+  /home:
+    $ref: "./paths/home.yaml"
+
   # Hubs
   # Folder: pms/paths/hubs
   /hubs:
