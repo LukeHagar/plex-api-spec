@@ -1,6 +1,6 @@
 get:
   tags:
-    - Plex.tv
+    - Plex
   summary: Get Plex Home Data
   description: Retrieves the home data for the authenticated user, including details like home ID, name, guest access information, and subscription status.
   operationId: getHomeData
@@ -29,6 +29,6 @@ get:
               subscription:
                 type: boolean
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../responses/401.yaml"
