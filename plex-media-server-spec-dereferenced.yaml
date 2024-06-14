@@ -1033,6 +1033,60 @@ paths:
                         status:
                           type: number
                           example: 401
+  /home:
+    get:
+      tags:
+        - Plex
+      summary: Get Plex Home Data
+      description: 'Retrieves the home data for the authenticated user, including details like home ID, name, guest access information, and subscription status.'
+      operationId: getHomeData
+      responses:
+        '200':
+          description: Home Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    example: 1841489
+                  name:
+                    type: string
+                    example: Blindkitty38's home
+                  guestUserID:
+                    type: number
+                    example: 58815432
+                  guestUserUUID:
+                    type: string
+                    example: f3df4e01bfca0787
+                  guestEnabled:
+                    type: boolean
+                  subscription:
+                    type: boolean
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /hubs:
     get:
       tags:
@@ -4590,8 +4644,16 @@ paths:
             type: string
             example: Postman
           required: true
+        - name: X-Plex-Product
+          description: |
+            Product name of the application shown in the list of devices
+          in: header
+          schema:
+            type: string
+            example: Postman
+          required: true
       responses:
-        '200':
+        '201':
           description: The Pin
           content:
             application/json:
@@ -4641,7 +4703,7 @@ paths:
                         type: string
                         example: America/Chicago
                       postal_code:
-                        type: number
+                        type: string
                         example: 78732
                       in_privacy_restricted_country:
                         type: boolean
@@ -4719,6 +4781,80 @@ paths:
       responses:
         '200':
           description: Access Token
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  description: PinID for use with authentication
+                  type: number
+                  example: 1272322473
+                code:
+                  type: string
+                  example: 3patfx1a78ukcbr7x0n9bl26t
+                product:
+                  type: string
+                  example: Plex Web
+                trusted:
+                  type: boolean
+                qr:
+                  description: |
+                    a link to a QR code hosted on plex.tv 
+                    The QR code redirects to the relevant `plex.tv/link` authentication page
+                    Which then prompts the user for the 4 Digit Link Pin
+                  type: string
+                  example: 'https://plex.tv/api/v2/pins/qr/3patfx1a78ukcbr7x0n9bl26t'
+                clientIdentifier:
+                  type: string
+                  example: Postman
+                location:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                      example: US
+                    european_union_member:
+                      type: boolean
+                    continent_code:
+                      type: string
+                      example: NA
+                    country:
+                      type: string
+                      example: United States
+                    city:
+                      type: string
+                      example: Austin
+                    time_zone:
+                      type: string
+                      example: America/Chicago
+                    postal_code:
+                      type: string
+                      example: 78732
+                    in_privacy_restricted_country:
+                      type: boolean
+                    subdivisions:
+                      type: string
+                      example: Texas
+                    coordinates:
+                      type: string
+                      example: 30.3768 -97.8935
+                expiresIn:
+                  type: number
+                  example: 1800
+                createdAt:
+                  type: string
+                  format: date-time
+                  example: 2023-04-12T17:00:03.000Z
+                expiresAt:
+                  type: string
+                  format: date-time
+                  example: 2023-04-12T17:30:03.000Z
+                authToken:
+                  type: string
+                  format: nullable
+                newRegistration:
+                  type: string
+                  format: nullable
         '400':
           description: X-Plex-Client-Identifier is missing
           content:
@@ -7367,6 +7503,237 @@ paths:
                         status:
                           type: number
                           example: 401
+  '/library/sections/watchlist/{filter}':
+    servers:
+      - url: 'https://metadata.provider.plex.tv'
+        description: The plex metadata provider server
+    get:
+      tags:
+        - Watchlist
+      summary: Get User Watchlist
+      description: Get User Watchlist
+      operationId: getWatchlist
+      parameters:
+        - name: filter
+          description: Filter
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - all
+              - available
+              - released
+        - name: sort
+          description: |
+            In the format "field:dir". Available fields are "watchlistedAt" (Added At),
+            "titleSort" (Title), "originallyAvailableAt" (Release Date), or "rating" (Critic Rating).
+            "dir" can be "asc" or "desc"
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: libtype
+          description: |
+            The type of library to filter. Can be "movie" or "show", or all if not present.
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - movie
+              - show
+        - name: maxresults
+          description: |
+            The number of items to return. If not specified, all items will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: includeCollections
+          description: |
+            include collections in the results
+          in: query
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 0
+        - name: includeExternalMedia
+          description: |
+            include external media in the results
+          in: query
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 0
+        - name: X-Plex-Token
+          description: User Token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: X-Plex-Container-Start
+          description: |
+            The index of the first item to return. If not specified, the first item will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: X-Plex-Container-Size
+          description: |
+            The number of items to return. If not specified, all items will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Watchlist Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  librarySectionID:
+                    type: string
+                  librarySectionTitle:
+                    type: string
+                  offset:
+                    type: integer
+                    format: int32
+                  totalSize:
+                    type: integer
+                    format: int32
+                  identifier:
+                    type: string
+                  size:
+                    type: integer
+                    format: int32
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        art:
+                          type: string
+                        guid:
+                          type: string
+                        key:
+                          type: string
+                        ratingKey:
+                          type: string
+                        studio:
+                          type: string
+                        tagline:
+                          type: string
+                        type:
+                          type: string
+                        thumb:
+                          type: string
+                        addedAt:
+                          type: integer
+                          format: int32
+                        duration:
+                          type: integer
+                          format: int32
+                        publicPagesURL:
+                          type: string
+                        slug:
+                          type: string
+                        userState:
+                          type: boolean
+                        title:
+                          type: string
+                        contentRating:
+                          type: string
+                        originallyAvailableAt:
+                          type: string
+                          format: date
+                        year:
+                          type: integer
+                          format: int32
+                        Image:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              alt:
+                                type: string
+                              type:
+                                type: string
+                              url:
+                                type: string
+                        banner:
+                          type: string
+                        rating:
+                          type: number
+                        expiresAt:
+                          type: integer
+                          format: int32
+                        originalTitle:
+                          type: string
+                        audienceRating:
+                          type: number
+                        audienceRatingImage:
+                          type: string
+                        ratingImage:
+                          type: string
+                        imdbRatingCount:
+                          type: integer
+                          format: int32
+                        subtype:
+                          type: string
+                        theme:
+                          type: string
+                        leafCount:
+                          type: integer
+                          format: int32
+                        childCount:
+                          type: integer
+                          format: int32
+                        isContinuingSeries:
+                          type: boolean
+                        skipChildren:
+                          type: boolean
+                        availabilityId:
+                          type: string
+                        streamingMediaId:
+                          type: string
+                        playableKey:
+                          type: string
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
 tags:
   - name: Activities
     description: |
@@ -7426,3 +7793,6 @@ tags:
   - name: Statistics
     description: |
       API Calls that perform operations with Plex Media Server Statistics
+  - name: Watchlist
+    description: |
+      API Calls that perform operations with Plex Media Server Watchlists
