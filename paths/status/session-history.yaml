@@ -31,6 +31,7 @@ get:
       description: |
         Filters content by field and direction/equality
         (Unknown if viewedAt is the only supported column)
+      in: query
       schema:
         type: object
         patternProperties:
