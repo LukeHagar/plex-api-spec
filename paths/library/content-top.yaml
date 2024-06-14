@@ -8,7 +8,7 @@ get:
   parameters:
     - name: type
       description: the library type (1 - movies, 2 - shows, 3 - music)
-      in: path
+      in: query
       schema:
         type: integer
       required: true
