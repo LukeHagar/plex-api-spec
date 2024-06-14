@@ -171,6 +171,8 @@ paths:
     $ref: "./paths/statistics/media.yaml"
   /statistics/resources:
     $ref: "./paths/statistics/resources.yaml"
+  /statistics/bandwidth:
+    $ref: "./paths/statistics/bandwidth.yaml"
 
   # Status
   /status/sessions:
