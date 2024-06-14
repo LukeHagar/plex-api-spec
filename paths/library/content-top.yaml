@@ -12,6 +12,10 @@ get:
       schema:
         type: integer
       required: true
+      examples:
+        - 1
+        - 2
+        - 3
   responses:
     "200": 
       description: The metadata of the library item.
