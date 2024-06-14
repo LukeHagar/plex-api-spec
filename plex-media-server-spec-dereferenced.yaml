@@ -2570,8 +2570,12 @@ paths:
           description: the Id of the library to query
           schema:
             x-speakeasy-type-override: any
-            type: integer
-            example: 1
+            type:
+              - integer
+              - string
+            examples:
+              - 1
+              - watchlist
         - name: tag
           in: path
           required: true
