@@ -61,6 +61,15 @@ get:
           - resolution
           - firstCharacter
           - folder
+    - name: includeGuids
+      in: query
+      descriptions: |
+        Adds the Guids object to the response
+      schema: 
+        type: integer
+      required: false
+      examples:
+        - 1
   responses:
     "200":
       description: The contents of the library by section and tag
