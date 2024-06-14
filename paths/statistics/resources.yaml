@@ -1,9 +1,9 @@
 get:
   tags:
     - Statistics
-  summary: Get Media Statistics Resources
+  summary: Get Resources Statistics
   description: This will return the resources for the server
-  operationId: getStatisticsResources
+  operationId: getResourcesStatistics
   parameters:
     - name: Timespan
       description: |
@@ -16,7 +16,7 @@ get:
       example: 4
   responses:
     "200":
-      description: Media Resource Statistics
+      description: Resource Statistics
       content:
         application/json:
           schema:
