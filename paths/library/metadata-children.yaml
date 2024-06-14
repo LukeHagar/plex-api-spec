@@ -12,6 +12,17 @@ get:
       schema:
         type: number
       required: true
+    - name: includeElements
+      description: |
+        Adds additional elements to the response. Supported types are (Stream)
+      in: query
+      schema: 
+        type: string
+      required: false
+      examples:
+        - Stream
+        - Stream,OtherItem
+        - Stream,OtherItem,AnotherItem
   responses:
     "200":
       description: The children of the library item.
