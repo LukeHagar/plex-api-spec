@@ -12,15 +12,8 @@ get:
       schema:
         type: number
       required: true
-    - name: includeGuids
-      in: query
-      descriptions: |
-        Adds the Guids object to the response
-      schema: 
-        type: integer
-      required: false
-      examples:
-        - 1      
+      examples: 
+        - 17 
   responses:
     "200":
       description: The metadata of the library item.
