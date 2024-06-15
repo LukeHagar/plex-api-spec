@@ -99,6 +99,8 @@ paths:
     $ref: "./paths/user-settings.yaml"
   /user/settings/opt_outs:
     $ref: "./paths/user-settings-opt_outs.yaml"
+  /friends:
+    $ref: "./paths/friends.yaml"
 
 tags:
   - name: Activities
