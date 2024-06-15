@@ -95,9 +95,10 @@ get:
                     type: string
                     example: com.plexapp.plugins.library
                   librarySectionID:
-                    type: integer
-                    format: int32
-                    example: 1
+                    type: [integer, string]
+                    examples:
+                      - 1
+                      - watchlist
                   librarySectionTitle:
                     type: string
                     example: Movies
