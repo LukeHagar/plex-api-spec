@@ -4,6 +4,56 @@ get:
   summary: Get Session History
   description: This will Retrieve a listing of all history views.
   operationId: getSessionHistory
+  parameters: 
+    - name: sort
+      description: |
+        Sorts the results by the specified field followed by the direction (asc, desc)
+      in: query
+      schema:
+        type: string
+      required: false
+      examples: 
+        - viewedAt:desc
+        - viewedAt:asc
+        - rating:desc
+        - rating:asc
+    - name: accountId
+      description: |
+        Filter results by those that are related to a specific users id
+      in: query
+      schema: 
+        type: integer
+      required: false
+      examples: 
+        - 1
+        - 35020085
+    - name: filter
+      description: |
+        Filters content by field and direction/equality
+        (Unknown if viewedAt is the only supported column)
+      in: query
+      schema:
+        type: object
+        patternProperties:
+          '^[A-Za-z][A-Za-z0-9]*[>=<]{0,2}$':
+            type: string
+        examples:
+          - viewedAt>
+          - viewedAt>=
+          - viewedAt<
+      required: false
+      examples:
+        - viewedAt>=1704862818
+    - name: librarySectionID
+      description: |
+        Filters the results based on the id of a valid library section
+      in: query
+      schema: 
+        type: integer
+      required: false
+      examples:
+        - 12
+        - 31 
   responses:
     "200":
       description: List of Plex Sessions

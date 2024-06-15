@@ -1,0 +1,64 @@
+get:
+  tags:
+    - Plex.tv
+  summary: Get list of friends of the user logged in
+  description: Get friends of logged in user
+  operationId: getUserFriends
+  responses:
+    "200":
+      description: Friends Data
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                status: 
+                  type: string
+                  examples: 
+                    - accepted
+                sharedServers:
+                  type: array
+                  example: unknown (always empty)
+                sharedSources:
+                  type: array
+                  example: unknown (always empty)
+                id: 
+                  type: integer
+                  format: int32
+                  example: 167877042
+                uuid:
+                  type: string
+                  format: uuid
+                  example: 1d72102q3ffbc3be
+                title:
+                  type: string
+                  example: my user
+                username:
+                  type: string
+                  example: my_user
+                restricted:
+                  type: boolean
+                  example: false
+                email:  
+                  type: string
+                  format: email
+                  example: user@domain.com
+                friendlyName: 
+                  type: string
+                  nullable: true
+                  examples:
+                    - exampleUser
+                    - null
+                thumb: 
+                  type: string
+                  example: https://plex.tv/users/577af54b4fa7f954/avatar?c=1314429740
+                home:
+                  type: boolean
+                  example: false
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+                
