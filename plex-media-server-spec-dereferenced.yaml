@@ -2602,6 +2602,15 @@ paths:
               - resolution
               - firstCharacter
               - folder
+        - name: includeGuids
+          in: query
+          descriptions: |
+            Adds the Guids object to the response
+          schema:
+            type: integer
+          required: false
+          examples:
+            - 1
       responses:
         '200':
           description: The contents of the library by section and tag
@@ -3219,6 +3228,8 @@ paths:
           schema:
             type: number
           required: true
+          examples:
+            - 17
       responses:
         '200':
           description: The metadata of the library item.
@@ -3732,6 +3743,17 @@ paths:
           schema:
             type: number
           required: true
+        - name: includeElements
+          description: |
+            Adds additional elements to the response. Supported types are (Stream)
+          in: query
+          schema:
+            type: string
+          required: false
+          examples:
+            - Stream
+            - 'Stream,OtherItem'
+            - 'Stream,OtherItem,AnotherItem'
       responses:
         '200':
           description: The children of the library item.
@@ -3961,6 +3983,226 @@ paths:
                         status:
                           type: number
                           example: 401
+  /library/all/top:
+    get:
+      tags:
+        - Library
+      summary: Get Top Watched Content
+      description: |
+        This endpoint will return the top watched content from libraries of a certain type
+      operationId: getTopWatchedContent
+      parameters:
+        - name: type
+          description: 'the library type (1 - movies, 2 - shows, 3 - music)'
+          in: query
+          schema:
+            type: integer
+          required: true
+          examples:
+            - 1
+            - 2
+            - 3
+        - name: includeGuids
+          in: query
+          descriptions: |
+            Adds the Guids object to the response
+          schema:
+            type: integer
+          required: false
+          examples:
+            - 1
+      responses:
+        '200':
+          description: The metadata of the library item.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 1
+                      allowSync:
+                        type: boolean
+                        example: true
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.library
+                      mediaTagPrefix:
+                        type: string
+                        example: /system/bundle/media/flags/
+                      mediaTagVersion:
+                        type: integer
+                        format: int32
+                        example: 1698860922
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: '17'
+                            key:
+                              type: string
+                              example: /library/metadata/17
+                            guid:
+                              type: string
+                              example: 'plex://movie/5d77683f6f4521001ea9dc53'
+                            slug:
+                              type: string
+                              example: waterloo-road
+                            studio:
+                              type: string
+                              example: Universal Pictures
+                            type:
+                              type: string
+                              example: movie
+                            title:
+                              type: string
+                              example: Serenity
+                            librarySectionTitle:
+                              type: string
+                              example: Movies
+                            librarySectionID:
+                              type: integer
+                              format: int32
+                              example: 1
+                            librarySectionKey:
+                              type: string
+                              example: /library/sections/1
+                            contentRating:
+                              type: string
+                              example: PG-13
+                            summary:
+                              type: string
+                              example: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
+                            index:
+                              type: integer
+                              example: 1
+                            audienceRating:
+                              type: number
+                              example: 9.1
+                            year:
+                              type: integer
+                              format: int32
+                              example: 2005
+                            tagline:
+                              type: string
+                              example: They aim to misbehave.
+                            thumb:
+                              type: string
+                              example: /library/metadata/17/thumb/1705637165
+                            art:
+                              type: string
+                              example: /library/metadata/17/art/1705637165
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 141417
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 2005-09-29T00:00:00.000Z
+                            leafCount:
+                              type: integer
+                              example: 222
+                            viewedLeafCount:
+                              type: integer
+                              example: 100
+                            childCount:
+                              type: integer
+                              example: 13
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705637164
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705637165
+                            globalViewCount:
+                              type: integer
+                              example: 80
+                            audienceRatingImage:
+                              type: string
+                              example: 'rottentomatoes://image.rating.upright'
+                            Genre:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 184
+                                  filter:
+                                    type: string
+                                    example: genre=184
+                                  tag:
+                                    type: string
+                                    example: Thriller
+                            Country:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 116
+                                  filter:
+                                    type: string
+                                    example: country=116
+                                  tag:
+                                    type: string
+                                    example: United States of America
+                            Guid:
+                              x-speakeasy-name-override: guids
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                    example: 'tvdb://2337'
+                            Role:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 220
+                                  filter:
+                                    type: string
+                                    example: actor=220
+                                  tag:
+                                    type: string
+                                    example: Dennis Keiffer
+                                  tagKey:
+                                    type: string
+                                    example: 5d77683554f42c001f8c4708
+                                  role:
+                                    type: string
+                                    example: Bar Guy (uncredited)
+                                  thumb:
+                                    type: string
+                                    example: 'https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg'
+                            User:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 220
   /library/onDeck:
     get:
       tags:
@@ -6469,6 +6711,222 @@ paths:
                         status:
                           type: number
                           example: 401
+  /statistics/resources:
+    get:
+      tags:
+        - Statistics
+      summary: Get Resources Statistics
+      description: This will return the resources for the server
+      operationId: getResourcesStatistics
+      parameters:
+        - name: Timespan
+          description: |
+            The timespan to retrieve statistics for
+            the exact meaning of this parameter is not known
+          in: query
+          schema:
+            type: integer
+          required: false
+          example: 4
+      responses:
+        '200':
+          description: Resource Statistics
+          content:
+            application/json:
+              schema: null
+              type: object
+              properties:
+                MediaContainer:
+                  type: object
+                  properties:
+                    size:
+                      type: integer
+                      format: int32
+                      example: 5497
+                    StatisticsResources:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          timespan:
+                            type: integer
+                            example: 6
+                          at:
+                            type: integer
+                            example: 1718384427
+                          hostCpuUtilization:
+                            type: number
+                            format: float
+                            example: 1.276
+                          processCpuUtilization:
+                            type: number
+                            format: float
+                            example: 0.025
+                          hostMemoryUtilization:
+                            type: number
+                            format: float
+                            example: 17.026
+                          processMemoryUtilization:
+                            type: number
+                            format: float
+                            example: 0.493
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /statistics/bandwidth:
+    get:
+      tags:
+        - Statistics
+      summary: Get Bandwidth Statistics
+      description: This will return the bandwidth statistics for the server
+      operationId: getBandwidthStatistics
+      parameters:
+        - name: Timespan
+          description: |
+            The timespan to retrieve statistics for
+            the exact meaning of this parameter is not known
+          in: query
+          schema:
+            type: integer
+          required: false
+          example: 4
+      responses:
+        '200':
+          description: Bandwidth Statistics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 5497
+                      Device:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int32
+                              example: 208
+                            name:
+                              type: string
+                              example: Roku Express
+                            platform:
+                              type: string
+                              example: Roku
+                            clientIdentifier:
+                              type: string
+                              example: 793095d235660625108ef785cc7646e9
+                            createdAt:
+                              type: integer
+                              format: int32
+                              example: 1706470556
+                      Account:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int32
+                              example: 238960586
+                            key:
+                              type: string
+                              example: /accounts/238960586
+                            name:
+                              type: string
+                              example: Diane
+                            defaultAudioLanguage:
+                              type: string
+                              example: en
+                            autoSelectAudio:
+                              type: boolean
+                              example: true
+                            defaultSubtitleLanguage:
+                              type: string
+                              example: en
+                            subtitleMode:
+                              type: integer
+                              format: int32
+                              example: 1
+                            thumb:
+                              type: string
+                              example: 'https://plex.tv/users/50d83634246da1de/avatar?c=1707110967'
+                      StatisticsBandwidth:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            accountID:
+                              type: integer
+                              format: int32
+                              example: 238960586
+                            deviceID:
+                              type: integer
+                              format: int32
+                              exmaple: 208
+                            timespan:
+                              type: integer
+                              example: 6
+                            at:
+                              type: integer
+                              format: int32
+                              example: 1718387650
+                            lan:
+                              type: boolean
+                              example: true
+                            bytes:
+                              type: integer
+                              example: 22
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /status/sessions:
     get:
       tags:
@@ -6841,6 +7299,56 @@ paths:
       summary: Get Session History
       description: This will Retrieve a listing of all history views.
       operationId: getSessionHistory
+      parameters:
+        - name: sort
+          description: |
+            Sorts the results by the specified field followed by the direction (asc, desc)
+          in: query
+          schema:
+            type: string
+          required: false
+          examples:
+            - 'viewedAt:desc'
+            - 'viewedAt:asc'
+            - 'rating:desc'
+            - 'rating:asc'
+        - name: accountId
+          description: |
+            Filter results by those that are related to a specific users id
+          in: query
+          schema:
+            type: integer
+          required: false
+          examples:
+            - 1
+            - 35020085
+        - name: filter
+          description: |
+            Filters content by field and direction/equality
+            (Unknown if viewedAt is the only supported column)
+          in: query
+          schema:
+            type: object
+            patternProperties:
+              '^[A-Za-z][A-Za-z0-9]*[>=<]{0,2}$':
+                type: string
+            examples:
+              - viewedAt>
+              - viewedAt>=
+              - viewedAt<
+          required: false
+          examples:
+            - viewedAt>=1704862818
+        - name: librarySectionID
+          description: |
+            Filters the results based on the id of a valid library section
+          in: query
+          schema:
+            type: integer
+          required: false
+          examples:
+            - 12
+            - 31
       responses:
         '200':
           description: List of Plex Sessions
