@@ -96,8 +96,7 @@ post:
                 type: string
                 format: nullable
               newRegistration:
-                type: string
-                format: nullable
+                type: boolean
     "400":
       description: X-Plex-Client-Identifier is missing
       content:
