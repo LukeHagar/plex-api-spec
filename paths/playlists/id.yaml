@@ -104,7 +104,7 @@ delete:
       required: true
 
   responses:
-    "200":
+    "204":
       description: The playlist is deleted
     "400":
       $ref: "../../responses/400.yaml"
