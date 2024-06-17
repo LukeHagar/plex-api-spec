@@ -1,6 +1,6 @@
 # Plex Media Server OpenAPI Specification
 
-## Automation and SDKs provided by Speakeasy
+Automation and SDKs provided by [Speakeasy](https://speakeasyapi.dev/)
  
 An Open Source OpenAPI Specification for Plex Media Server
 
