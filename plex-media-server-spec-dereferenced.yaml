@@ -5519,7 +5519,7 @@ paths:
             type: number
           required: true
       responses:
-        '200':
+        '204':
           description: The playlist is deleted
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
