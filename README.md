@@ -1,6 +1,6 @@
 # Plex Media Server OpenAPI Specification
  
-An Open Source OpenAPI Specification covering Plex Media Server and Plex.tv operations
+An Open Source OpenAPI Specification for Plex Media Server
 
 ## Documentation
 [API Documentation](https://plexapi.dev)  
