@@ -1,8 +1,8 @@
 get:
   tags:
     - Server
-  summary: Server Capabilities
-  description: Server Capabilities
+  summary: Get Server Capabilities
+  description: Get Server Capabilities
   operationId: getServerCapabilities
   responses:
     "200":
