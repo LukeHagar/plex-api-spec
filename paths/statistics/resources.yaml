@@ -20,42 +20,42 @@ get:
       content:
         application/json:
           schema:
-          type: object
-          properties:
-            MediaContainer:
-              type: object
-              properties:
-                size:
-                  type: integer
-                  format: int32
-                  example: 5497
-                StatisticsResources:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      timespan: 
-                        type: integer
-                        example: 6
-                      at: 
-                        type: integer
-                        example: 1718384427
-                      hostCpuUtilization:
-                        type: number
-                        format: float
-                        example: 1.276
-                      processCpuUtilization:
-                        type: number
-                        format: float
-                        example: 0.025
-                      hostMemoryUtilization:
-                        type: number
-                        format: float
-                        example: 17.026
-                      processMemoryUtilization:
-                        type: number
-                        format: float
-                        example: 0.493                                        
+            type: object
+            properties:
+              MediaContainer:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    format: int32
+                    example: 5497
+                  StatisticsResources:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        timespan: 
+                          type: integer
+                          example: 6
+                        at: 
+                          type: integer
+                          example: 1718384427
+                        hostCpuUtilization:
+                          type: number
+                          format: float
+                          example: 1.276
+                        processCpuUtilization:
+                          type: number
+                          format: float
+                          example: 0.025
+                        hostMemoryUtilization:
+                          type: number
+                          format: float
+                          example: 17.026
+                        processMemoryUtilization:
+                          type: number
+                          format: float
+                          example: 0.493                                        
     "400":
         $ref: "../../responses/400.yaml"
     "401":

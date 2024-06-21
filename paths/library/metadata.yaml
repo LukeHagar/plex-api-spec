@@ -13,7 +13,8 @@ get:
         type: number
       required: true
       examples: 
-        - 17 
+        rating-key:
+          value: 17
   responses:
     "200":
       description: The metadata of the library item.

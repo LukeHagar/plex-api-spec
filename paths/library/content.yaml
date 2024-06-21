@@ -33,8 +33,10 @@ get:
         x-speakeasy-type-override: any
         type: [integer, string]
         examples:
-          - 1
-          - watchlist
+          librarySectionID:
+            value: 1
+          providerSectionID:
+            value: watchlist
     - name: tag
       in: path
       required: true
@@ -68,8 +70,7 @@ get:
       schema: 
         type: integer
       required: false
-      examples:
-        - 1
+      example: 1
   responses:
     "200":
       description: The contents of the library by section and tag

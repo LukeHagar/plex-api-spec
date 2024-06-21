@@ -13,9 +13,12 @@ get:
         type: integer
       required: true
       examples:
-        - 1
-        - 2
-        - 3
+        movies:
+          value: 1
+        shows:
+          value: 2
+        music:
+          value: 3
     - name: includeGuids
       in: query
       descriptions: |
@@ -23,8 +26,7 @@ get:
       schema: 
         type: integer
       required: false
-      examples:
-        - 1           
+      example: 1           
   responses:
     "200": 
       description: The metadata of the library item.
