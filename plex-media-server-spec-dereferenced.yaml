@@ -2605,8 +2605,7 @@ paths:
           in: query
           descriptions: |
             Adds the Guids object to the response
-          schema:
-            type: integer
+          type: integer
           required: false
           example: 1
       responses:
@@ -4000,8 +3999,7 @@ paths:
         - name: type
           description: 'the library type (1 - movies, 2 - shows, 3 - music)'
           in: query
-          schema:
-            type: integer
+          type: integer
           required: true
           examples:
             movies:
@@ -4014,8 +4012,7 @@ paths:
           in: query
           descriptions: |
             Adds the Guids object to the response
-          schema:
-            type: integer
+          type: integer
           required: false
           example: 1
       responses:
