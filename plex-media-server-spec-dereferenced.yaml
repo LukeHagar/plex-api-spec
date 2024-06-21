@@ -2571,8 +2571,10 @@ paths:
               - integer
               - string
             examples:
-              - 1
-              - watchlist
+              librarySectionID:
+                value: 1
+              providerSectionID:
+                value: watchlist
         - name: tag
           in: path
           required: true
@@ -2606,8 +2608,7 @@ paths:
           schema:
             type: integer
           required: false
-          examples:
-            - 1
+          example: 1
       responses:
         '200':
           description: The contents of the library by section and tag
@@ -3229,7 +3230,8 @@ paths:
             type: number
           required: true
           examples:
-            - 17
+            rating-key:
+              value: 17
       responses:
         '200':
           description: The metadata of the library item.
@@ -3751,9 +3753,12 @@ paths:
             type: string
           required: false
           examples:
-            - Stream
-            - 'Stream,OtherItem'
-            - 'Stream,OtherItem,AnotherItem'
+            include-stream:
+              value: Stream
+            include-stream-otheritem:
+              value: 'Stream,OtherItem'
+            include-stream-otheritem-anotheritem:
+              value: 'Stream,OtherItem,AnotherItem'
       responses:
         '200':
           description: The children of the library item.
@@ -3999,9 +4004,12 @@ paths:
             type: integer
           required: true
           examples:
-            - 1
-            - 2
-            - 3
+            movies:
+              value: 1
+            shows:
+              value: 2
+            music:
+              value: 3
         - name: includeGuids
           in: query
           descriptions: |
@@ -4009,8 +4017,7 @@ paths:
           schema:
             type: integer
           required: false
-          examples:
-            - 1
+          example: 1
       responses:
         '200':
           description: The metadata of the library item.
@@ -6734,43 +6741,43 @@ paths:
           description: Resource Statistics
           content:
             application/json:
-              schema: null
-              type: object
-              properties:
-                MediaContainer:
-                  type: object
-                  properties:
-                    size:
-                      type: integer
-                      format: int32
-                      example: 5497
-                    StatisticsResources:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          timespan:
-                            type: integer
-                            example: 6
-                          at:
-                            type: integer
-                            example: 1718384427
-                          hostCpuUtilization:
-                            type: number
-                            format: float
-                            example: 1.276
-                          processCpuUtilization:
-                            type: number
-                            format: float
-                            example: 0.025
-                          hostMemoryUtilization:
-                            type: number
-                            format: float
-                            example: 17.026
-                          processMemoryUtilization:
-                            type: number
-                            format: float
-                            example: 0.493
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    properties:
+                      size:
+                        type: integer
+                        format: int32
+                        example: 5497
+                      StatisticsResources:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timespan:
+                              type: integer
+                              example: 6
+                            at:
+                              type: integer
+                              example: 1718384427
+                            hostCpuUtilization:
+                              type: number
+                              format: float
+                              example: 1.276
+                            processCpuUtilization:
+                              type: number
+                              format: float
+                              example: 0.025
+                            hostMemoryUtilization:
+                              type: number
+                              format: float
+                              example: 17.026
+                            processMemoryUtilization:
+                              type: number
+                              format: float
+                              example: 0.493
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
