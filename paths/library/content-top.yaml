@@ -9,7 +9,8 @@ get:
     - name: type
       description: the library type (1 - movies, 2 - shows, 3 - music)
       in: query
-      type: integer
+      schema:
+        type: integer
       required: true
       examples:
         movies:
@@ -22,7 +23,8 @@ get:
       in: query
       descriptions: |
         Adds the Guids object to the response
-      type: integer
+      schema: 
+        type: integer
       required: false
       example: 1           
   responses:
