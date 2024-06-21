@@ -67,8 +67,7 @@ get:
       in: query
       descriptions: |
         Adds the Guids object to the response
-      schema: 
-        type: integer
+      type: integer
       required: false
       example: 1
   responses:
