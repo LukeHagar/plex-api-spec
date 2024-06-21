@@ -17,16 +17,13 @@ servers:
     variables:
       protocol:
         default: http
-        description: The protocol to use when connecting to your plex server.
         enum:
           - http
           - https
       ip:
         default: 10.10.10.47
-        description: The Local IP Address of your plex server.
       port:
         default: '32400'
-        description: The port to access your plex server.
 x-speakeasy-globals:
   parameters:
     - name: X-Plex-Client-Identifier
@@ -7312,10 +7309,14 @@ paths:
             type: string
           required: false
           examples:
-            - 'viewedAt:desc'
-            - 'viewedAt:asc'
-            - 'rating:desc'
-            - 'rating:asc'
+            viewed-at-descending:
+              value: 'viewedAt:desc'
+            viewed-at-ascending:
+              value: 'viewedAt:asc'
+            rating-descending:
+              value: 'rating:desc'
+            rating-ascending:
+              value: 'rating:asc'
         - name: accountId
           description: |
             Filter results by those that are related to a specific users id
@@ -7323,9 +7324,7 @@ paths:
           schema:
             type: integer
           required: false
-          examples:
-            - 1
-            - 35020085
+          example: 1
         - name: filter
           description: |
             Filters content by field and direction/equality
@@ -7333,16 +7332,18 @@ paths:
           in: query
           schema:
             type: object
-            patternProperties:
-              '^[A-Za-z][A-Za-z0-9]*[>=<]{0,2}$':
-                type: string
-            examples:
-              - viewedAt>
-              - viewedAt>=
-              - viewedAt<
+            pattern: '^[A-Za-z][A-Za-z0-9]*[>=<]{0,2}$'
+            example:
+              viewed-at-greater-than:
+                value: viewedAt>
+              viewed-at-greater-than-or-equal-to:
+                value: viewedAt>=>
+              viewed-at-less-than:
+                value: viewedAt<
           required: false
           examples:
-            - viewedAt>=1704862818
+            ViewedAt:
+              value: viewedAt>=1704862818
         - name: librarySectionID
           description: |
             Filters the results based on the id of a valid library section
@@ -7350,9 +7351,7 @@ paths:
           schema:
             type: integer
           required: false
-          examples:
-            - 12
-            - 31
+          example: 12
       responses:
         '200':
           description: List of Plex Sessions
