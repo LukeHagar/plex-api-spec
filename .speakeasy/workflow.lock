@@ -2,8 +2,8 @@ speakeasyVersion: 1.313.0
 sources:
     Plex-API:
         sourceNamespace: plex-api
-        sourceRevisionDigest: sha256:9bf4ab508e704d7ea41271498cae1e22fbccdf10eb17f7f7012bcdc44e8b3f76
-        sourceBlobDigest: sha256:15dd4b7715ec6257d6193914e49cb643e00d2836d0256bb8756c9ff3946f368e
+        sourceRevisionDigest: sha256:19f7faf21cc7f74df0dc11bc7907eaada3b5a467c1133ff6c29ef6b02ba6f6cb
+        sourceBlobDigest: sha256:6ff2021b7651f7eea6699a459e1fe4e685bc7010814e1b6756fc51142a95dc69
         tags:
             - latest
             - main
