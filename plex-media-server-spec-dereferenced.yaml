@@ -2603,7 +2603,7 @@ paths:
               - folder
         - name: includeGuids
           in: query
-          descriptions: |
+          description: |
             Adds the Guids object to the response
           schema:
             type: integer
@@ -4012,7 +4012,7 @@ paths:
               value: 3
         - name: includeGuids
           in: query
-          descriptions: |
+          description: |
             Adds the Guids object to the response
           schema:
             type: integer
