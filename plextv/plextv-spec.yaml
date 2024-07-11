@@ -35,7 +35,7 @@ components:
     ClientIdentifier: # arbitrary name for the security scheme
       description: Plex Authentication Token
       type: apiKey
-      in: 
+      in:
        - header
        - query
        - cookie # can be "header", "query" or "cookie"
@@ -85,8 +85,6 @@ paths:
     $ref: "./paths/companions.yaml"
   /geoip:
     $ref: "./paths/geoip.yaml"
-  /home:
-    $ref: "./paths/home.yaml"
   /pins:
     $ref: "./paths/pins.yaml"
   /pins/{pinID}:
@@ -99,6 +97,8 @@ paths:
     $ref: "./paths/user-settings.yaml"
   /user/settings/opt_outs:
     $ref: "./paths/user-settings-opt_outs.yaml"
+  /users/signin:
+    $ref: "./paths/users-signin.yaml"
   /friends:
     $ref: "./paths/friends.yaml"
 

@@ -1,0 +1,160 @@
+components:
+  schemas:
+    MyPlexAccount:
+      type: object
+      properties:
+        key:
+          type: string
+          example: 'https://plex.tv/api/v2/user'
+        adsConsent:
+          type: string
+        adsConsentReminderAt:
+          type: string
+        adsConsentSetAt:
+          type: string
+        anonymous:
+          type: string
+        authToken:
+          type: string
+          description: The account token.
+        backupCodesCreated:
+          type: boolean
+          description: If the two-factor authentication backup codes have been created.
+        confirmed:
+          type: boolean
+          description: If the account has been confirmed.
+        country:
+          type: string
+          description: The account country.
+        email:
+          type: string
+          description: The account email address.
+        emailOnlyAuth:
+          type: boolean
+          description: If login with email only is enabled.
+        experimentalFeatures:
+          type: boolean
+          description: If experimental features are enabled.
+        friendlyName:
+          type: string
+          description: Your account full name.
+        entitlements:
+          type: array
+          items:
+            type: string
+          description: List of devices you are allowed to use with this account.
+        guest:
+          type: boolean
+          description: If the account is a Plex Home guest user.
+        hasPassword:
+          type: boolean
+          description: If the account has a password.
+        home:
+          type: boolean
+          description: If the account is a Plex Home user.
+        homeAdmin:
+          type: boolean
+          description: If the account is the Plex Home admin.
+        homeSize:
+          type: integer
+          description: The number of accounts in the Plex Home.
+        id:
+          type: integer
+          description: The Plex account ID.
+        joinedAt:
+          type: string
+          format: date-time
+          description: Date the account joined Plex.
+        locale:
+          type: string
+          description: The account locale.
+        mailingListActive:
+          type: boolean
+          description: If you are subscribed to the Plex newsletter.
+        mailingListStatus:
+          type: string
+          description: Your current mailing list status.
+        maxHomeSize:
+          type: integer
+          description: The maximum number of accounts allowed in the Plex Home.
+        pin:
+          type: string
+          description: The hashed Plex Home PIN.
+        profileAutoSelectAudio:
+          type: boolean
+          description: If the account has automatically selected audio and subtitle tracks enabled.
+        profileDefaultAudioLanguage:
+          type: string
+          description: The preferred audio language for the account.
+        profileDefaultSubtitleLanguage:
+          type: string
+          description: The preferred subtitle language for the account.
+        profileAutoSelectSubtitle:
+          type: integer
+          description: The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled).
+        profileDefaultSubtitleAccessibility:
+          type: integer
+          description: The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles).
+        profileDefaultSubtitleForced:
+          type: integer
+          description: The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles).
+        protected:
+          type: boolean
+          description: If the account has a Plex Home PIN enabled.
+        rememberExpiresAt:
+          type: string
+          format: date-time
+          description: Date the token expires.
+        restricted:
+          type: boolean
+          description: If the account is a Plex Home managed user.
+        roles:
+          type: array
+          items:
+            type: string
+          description: List of account roles. Plexpass membership listed here.
+        scrobbleTypes:
+          type: array
+          items:
+            type: integer
+          description: Unknown.
+        subscriptionActive:
+          type: boolean
+          description: If the account’s Plex Pass subscription is active.
+        subscriptionDescription:
+          type: string
+          description: Description of the Plex Pass subscription.
+        subscriptionFeatures:
+          type: array
+          items:
+            type: string
+          description: List of features allowed on your Plex Pass subscription.
+        subscriptionPaymentService:
+          type: string
+          description: Payment service used for your Plex Pass subscription.
+        subscriptionPlan:
+          type: string
+          description: Name of Plex Pass subscription plan.
+        subscriptionStatus:
+          type: string
+          description: String representation of subscriptionActive.
+        subscriptionSubscribedAt:
+          type: string
+          format: date-time
+          description: Date the account subscribed to Plex Pass.
+        thumb:
+          type: string
+          format: uri
+          description: URL of the account thumbnail.
+        title:
+          type: string
+          description: The title of the account (username or friendly name).
+        twoFactorEnabled:
+          type: boolean
+          description: If two-factor authentication is enabled.
+        username:
+          type: string
+          description: The account username.
+        uuid:
+          type: string
+          description: The account UUID.
