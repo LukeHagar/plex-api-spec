@@ -1,7 +1,6 @@
 openapi: 3.1.0
 info:
   title: Plex-API
-  summary: A Plex.TV API Map
   description: An Open API Spec for interacting with Plex.tv
   version: 0.0.3
   contact:
@@ -10,7 +9,7 @@ info:
     email: Lukeslakemail@gmail.com
   license:
     name: MIT
-    identifier: MIT
+    url: https://opensource.org/license/mit
 
 servers:
   - url: https://plex.tv/api/v2
@@ -35,10 +34,7 @@ components:
     ClientIdentifier: # arbitrary name for the security scheme
       description: Plex Authentication Token
       type: apiKey
-      in:
-       - header
-       - query
-       - cookie # can be "header", "query" or "cookie"
+      in: query
       name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
     DeviceName: # arbitrary name for the security scheme
       description: Primary name for the device eg. `Plex Web (Chrome)`

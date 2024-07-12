@@ -5,19 +5,8 @@ post:
   description: Sign in user with username and password and return user data
   operationId: postUserSignIn
   parameters:
-    - in: query
-      name: X-Plex-Client-Identifier
-      description: Unique client identifier, this can be anything
-      schema:
-        type: string
-      required: true
-      example: fyhf6g3zvcl1d9qorv38ngb9
-    - in: query
-      name: X-Plex-Product
-      schema:
-        type: string
-      required: false
-      example: Plex Web
+    - $ref: "../../parameters/ClientIdentifier.yaml"
+    - $ref: "../../parameters/ClientProduct.yaml"
     - in: query
       name: X-Plex-Version
       schema:
@@ -60,7 +49,7 @@ post:
               example: username@email.com
             password:
               type: string
-              example: password123
+              example: password123Frogment Editor	
             rememberMe:
               type: boolean
               example: true
@@ -74,10 +63,6 @@ post:
         application/xml:
           schema:
             $ref: '../schemas/plex-account.yaml#/components/schemas/MyPlexAccount'
-        image/png:
-          schema:
-            type: string
-            format: binary
     "400":
       $ref: "../../responses/400.yaml"
     "401":
