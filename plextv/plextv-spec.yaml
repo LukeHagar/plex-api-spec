@@ -1,103 +1,845 @@
 openapi: 3.1.0
 info:
+  version: 0.0.3
   title: Plex-API
   description: An Open API Spec for interacting with Plex.tv
-  version: 0.0.3
   contact:
     name: Luke Hagar
-    url: "https://www.LukeHagar.com"
+    url: 'https://www.LukeHagar.com'
     email: Lukeslakemail@gmail.com
   license:
+    url: 'https://opensource.org/license/mit'
     name: MIT
-    url: https://opensource.org/license/mit
-
 servers:
-  - url: https://plex.tv/api/v2
-
-security:
-  - Token: []
-    ClientIdentifier: []
-    Device: []
-    DeviceName: []
-    Platform: []
-    PlatformVersion: []
-    Product: []
-    Version: []
-
-components:
-  securitySchemes:
-    Token: # arbitrary name for the security scheme
-      description: Plex Authentication Token
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Token # name of the header, query parameter or cookie
-    ClientIdentifier: # arbitrary name for the security scheme
-      description: Plex Authentication Token
-      type: apiKey
-      in: query
-      name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
-    DeviceName: # arbitrary name for the security scheme
-      description: Primary name for the device eg. `Plex Web (Chrome)`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Device-Name # name of the header, query parameter or cookie
-    Device: # arbitrary name for the security scheme
-      description: |
-        The type of device your application is running on
-        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Device # name of the header, query parameter or cookie
-    PlatformVersion: # arbitrary name for the security scheme
-      description: |
-        Operating system version
-        eg `4.3.1`, `10.6.7`, `3.2`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Platform-Version # name of the header, query parameter or cookie
-    Platform: # arbitrary name for the security scheme
-      description: |
-        Platform name 
-        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Platform # name of the header, query parameter or cookie
-    Product: # arbitrary name for the security scheme
-      description: |
-        Plex application name 
-        eg: `Laika`, `Plex Media Server`, `Media Link`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Product # name of the header, query parameter or cookie
-    Version: # arbitrary name for the security scheme
-      description: Plex application version number
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Version # name of the header, query parameter or cookie
-
+  - url: 'https://plex.tv/api/v2'
 paths:
-  # Plex.tv API endpoints
   /companions:
-    $ref: "./paths/companions.yaml"
+    get:
+      tags:
+        - User
+      summary: Get Companions Data
+      description: Get Companions Data
+      operationId: getCompanionsData
+      responses:
+        '200':
+          description: Companions Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    identifier:
+                      type: string
+                      examples:
+                        - tv.plex.sonos
+                    baseURL:
+                      type: string
+                      format: uri
+                      examples:
+                        - 'https://sonos.plex.tv'
+                    title:
+                      type: string
+                      examples:
+                        - Sonos
+                    linkURL:
+                      type: string
+                      examples:
+                        - 'https://sonos.plex.tv/link'
+                    provides:
+                      type: string
+                      examples:
+                        - 'client,player'
+                    token:
+                      type: string
+                      description: The plex authtoken used to identify with
+                  required:
+                    - identifier
+                    - baseURL
+                    - title
+                    - linkURL
+                    - provides
+                    - token
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /geoip:
-    $ref: "./paths/geoip.yaml"
+    get:
+      tags:
+        - Activities
+      summary: Get Geo Data
+      description: Get Geo Data
+      operationId: getGeoData
+      responses:
+        '200':
+          description: Geo Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  guestUserID:
+                    type: number
+                  guestUserUUID:
+                    type: string
+                  guestEnabled:
+                    type: boolean
+                  subscription:
+                    type: boolean
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /pins:
-    $ref: "./paths/pins.yaml"
-  /pins/{pinID}:
-    $ref: "./paths/pins-id.yaml"
+    post:
+      tags:
+        - Security
+      summary: Get a Pin
+      description: Retrieve a Pin from Plex.tv for authentication flows
+      operationId: getPin
+      parameters:
+        - name: strong
+          in: query
+          description: |
+            Determines the kind of code returned by the API call
+            Strong codes are used for Pin authentication flows
+            Non-Strong codes are used for `Plex.tv/link`
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: The Pin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: PinID for use with authentication
+                  code:
+                    type: string
+                  product:
+                    type: string
+                  trusted:
+                    type: boolean
+                  qr:
+                    type: string
+                    description: |
+                      a link to a QR code hosted on plex.tv 
+                      The QR code redirects to the relevant `plex.tv/link` authentication page
+                      Which then prompts the user for the 4 Digit Link Pin
+                  clientIdentifier:
+                    type: string
+                  location:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      european_union_member:
+                        type: boolean
+                      continent_code:
+                        type: string
+                      country:
+                        type: string
+                      city:
+                        type: string
+                      time_zone:
+                        type: string
+                      postal_code:
+                        type: string
+                      in_privacy_restricted_country:
+                        type: boolean
+                      subdivisions:
+                        type: string
+                      coordinates:
+                        type: string
+                  expiresIn:
+                    type: number
+                  createdAt:
+                    type: string
+                    format: date-time
+                  expiresAt:
+                    type: string
+                    format: date-time
+                  authToken:
+                    type: string
+                    format: nullable
+                  newRegistration:
+                    type: string
+                    format: nullable
+        '400':
+          $ref: '#/components/responses/400'
+      security: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
+  '/pins/{pinID}':
+    get:
+      tags:
+        - Security
+      summary: Get Access Token
+      description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
+      operationId: getToken
+      parameters:
+        - name: pinID
+          in: path
+          description: The PinID to retrieve an access token for
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The pin with a non-null authToken after verification
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: PinID for use with authentication
+                  code:
+                    type: string
+                  product:
+                    type: string
+                  trusted:
+                    type: boolean
+                  qr:
+                    type: string
+                    description: |
+                      a link to a QR code hosted on plex.tv 
+                      The QR code redirects to the relevant `plex.tv/link` authentication page
+                      Which then prompts the user for the 4 Digit Link Pin
+                  clientIdentifier:
+                    type: string
+                  location:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      european_union_member:
+                        type: boolean
+                      continent_code:
+                        type: string
+                      country:
+                        type: string
+                      city:
+                        type: string
+                      time_zone:
+                        type: string
+                      postal_code:
+                        type: string
+                      in_privacy_restricted_country:
+                        type: boolean
+                      subdivisions:
+                        type: string
+                      coordinates:
+                        type: string
+                  expiresIn:
+                    type: number
+                  createdAt:
+                    type: string
+                    format: date-time
+                  expiresAt:
+                    type: string
+                    format: date-time
+                  authToken:
+                    type: string
+                    format: nullable
+                  newRegistration:
+                    type: string
+                    format: nullable
+      security: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /resources:
-    $ref: "./paths/resources.yaml"
+    get:
+      tags:
+        - Server
+      summary: Get Devices
+      description: Get Devices
+      operationId: getDevices
+      parameters:
+        - name: includeHttps
+          in: query
+          description: Include Https entries in the results
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+        - name: includeRelay
+          in: query
+          description: Include Relay addresses in the results
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+        - name: includeIPv6
+          in: query
+          description: Include IPv6 entries in the results
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+      responses:
+        '200':
+          description: List of Plex Devices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    product:
+                      type: string
+                    productVersion:
+                      type: string
+                    platform:
+                      type: string
+                    platformVersion:
+                      type: string
+                    device:
+                      type: string
+                    clientIdentifier:
+                      type: string
+                    createdAt:
+                      type: string
+                      format: date-time
+                    lastSeenAt:
+                      type: string
+                      format: date-time
+                    provides:
+                      type: string
+                    ownerId:
+                      type: string
+                      format: nullable
+                    sourceTitle:
+                      type: string
+                      format: nullable
+                    publicAddress:
+                      type: string
+                    accessToken:
+                      type: string
+                    owned:
+                      type: boolean
+                    home:
+                      type: boolean
+                    synced:
+                      type: boolean
+                    relay:
+                      type: boolean
+                    presence:
+                      type: boolean
+                    httpsRequired:
+                      type: boolean
+                    publicAddressMatches:
+                      type: boolean
+                    dnsRebindingProtection:
+                      type: boolean
+                    natLoopbackSupported:
+                      type: boolean
+                    connections:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          protocol:
+                            type: string
+                          address:
+                            type: string
+                          port:
+                            type: number
+                          uri:
+                            type: string
+                          local:
+                            type: boolean
+                          relay:
+                            type: boolean
+                          IPv6:
+                            type: boolean
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /user:
-    $ref: "./paths/user.yaml"
+    get:
+      tags:
+        - User
+      summary: Get UserData By Token
+      description: Get the User data from the provided X-Plex-Token
+      operationId: getUserDetails
+      responses:
+        '200':
+          description: Logged in user details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPlexAccount'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /user/settings:
-    $ref: "./paths/user-settings.yaml"
+    get:
+      tags:
+        - User
+      summary: '[Invalid] Get User Settings'
+      description: Get User Settings
+      operationId: getUserSettings
+      parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+      responses:
+        '200':
+          description: User Settings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    value:
+                      type: string
+                    hidden:
+                      type: boolean
+                    updatedAt:
+                      type: number
+        '500':
+          $ref: '#/components/responses/500'
+      deprecated: true
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /user/settings/opt_outs:
-    $ref: "./paths/user-settings-opt_outs.yaml"
+    get:
+      tags:
+        - User
+      summary: Get User Opt Out Settings
+      description: Get User Opt Out Settings
+      operationId: getUserOptOutSettings
+      responses:
+        '200':
+          description: User Opt Out Settings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tv.plex.provider.podcasts:
+                    type: string
+                    examples:
+                      - opt_out
+                  tv.plex.provider.news:
+                    type: string
+                    examples:
+                      - opt_out
+                  tv.plex.provider.webshows:
+                    type: string
+                    examples:
+                      - opt_out
+                  tv.plex.provider.music:
+                    type: string
+                    examples:
+                      - opt_out
+                  tv.plex.provider.vod:
+                    type: string
+                    examples:
+                      - opt_out
+                  scrobbling:
+                    type: string
+                    examples:
+                      - opt_in
+              examples:
+                Example1:
+                  value:
+                    tv.plex.provider.podcasts: opt_out
+                    tv.plex.provider.news: opt_out
+                    tv.plex.provider.webshows: opt_out
+                    tv.plex.provider.music: opt_out
+                    tv.plex.provider.vod: opt_out
+                    scrobbling: opt_in
+        '404':
+          $ref: '#/components/responses/404'
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /users/signin:
-    $ref: "./paths/users-signin.yaml"
+    post:
+      tags:
+        - User
+      summary: Get User SignIn Data
+      description: Sign in user with username and password and return user data with Plex authentication token
+      operationId: post-users-signin-data
+      parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+      requestBody:
+        description: Login credentials
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                login:
+                  type: string
+                  format: email
+                  examples:
+                    - username@email.com
+                password:
+                  type: string
+                  format: password
+                  examples:
+                    - password123
+                rememberMe:
+                  type: boolean
+                  default: false
+              required:
+                - login
+                - password
+      responses:
+        '201':
+          description: Returns the user account data with a valid auth token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPlexAccount'
+                x-examples:
+                  Example 1:
+                    id: 22669213
+                    uuid: 43c1daaebf4f43e5
+                    username: username
+                    title: Username
+                    email: username@email.com
+                    friendlyName: ''
+                    locale: null
+                    confirmed: false
+                    joinedAt: 1552593531
+                    emailOnlyAuth: false
+                    hasPassword: true
+                    protected: false
+                    thumb: 'https://plex.tv/users/c1da434f4aebe43/avatar?c=1720774988'
+                    authToken: CxjxoUzFTpFBTSV5h4af
+                    mailingListStatus: unsubscribed
+                    mailingListActive: false
+                    scrobbleTypes: ''
+                    country: US
+                    subscription:
+                      active: false
+                      subscribedAt: '2019-03-16T15:20:12Z'
+                      status: Inactive
+                      paymentService: null
+                      plan: null
+                      features:
+                        - guided-upgrade
+                        - increase-password-complexity
+                        - upgrade-3ds2
+                        - ad-countdown-timer
+                        - adaptive_bitrate
+                        - amazon-loop-debug
+                        - Android - Dolby Vision
+                        - Android - PiP
+                        - avod-ad-analysis
+                        - avod-new-media
+                        - blacklist_get_signin
+                        - CU Sunset
+                        - client-radio-stations
+                        - cloudflare-turnstile-required
+                        - comments_and_replies_push_notifications
+                        - friend_request_push_notifications
+                        - community_access_plex_tv
+                        - companions_sonos
+                        - custom-home-removal
+                        - disable_home_user_friendships
+                        - disable_sharing_friendships
+                        - drm_support
+                        - le_isrg_root_x1
+                        - federated-auth
+                        - home
+                        - HRK_enable_EUR
+                        - ios14-privacy-banner
+                        - iterable-notification-tokens
+                        - keep-payment-method
+                        - kevin-bacon
+                        - korea-consent
+                        - lets_encrypt
+                        - lightning-dvr-pivot
+                        - livetv
+                        - live-tv-support-incomplete-segments
+                        - tuner-sharing
+                        - metadata_search
+                        - vod_cloudflare
+                        - new_plex_pass_prices
+                        - news-provider-sunset-modal
+                        - photos-favorites
+                        - photos-metadata-edition
+                        - pms_health
+                        - rate-limit-client-token
+                        - shared_server_notification
+                        - shared_source_notification
+                        - scrobbling-service-plex-tv
+                        - collections
+                        - radio
+                        - exclude restrictions
+                        - signin_with_apple
+                        - spring_serve_ad_provider
+                        - transcoder_cache
+                        - TREBLE-show-features
+                        - two-factor-authentication
+                        - unsupportedtuners
+                        - vod-schema
+                        - watch-together-invite
+                        - web_server_dashboard
+                    subscriptionDescription: null
+                    restricted: false
+                    anonymous: false
+                    home: false
+                    guest: false
+                    homeSize: 1
+                    homeAdmin: false
+                    maxHomeSize: 15
+                    rememberExpiresAt: 1721984588
+                    profile:
+                      autoSelectAudio: true
+                      defaultAudioLanguage: ja
+                      defaultSubtitleLanguage: en
+                      autoSelectSubtitle: 1
+                      defaultSubtitleAccessibility: 0
+                      defaultSubtitleForced: 0
+                      watchedIndicator: 1
+                      mediaReviewsVisibility: 0
+                    entitlements: []
+                    subscriptions: []
+                    pastSubscriptions:
+                      - id: null
+                        mode: null
+                        renewsAt: null
+                        endsAt: 1556281940
+                        billing:
+                          paymentMethodId: null
+                          internalPaymentMethod: {}
+                        canceled: false
+                        gracePeriod: false
+                        onHold: false
+                        canReactivate: false
+                        canUpgrade: false
+                        canDowngrade: false
+                        canConvert: false
+                        type: plexpass
+                        transfer: null
+                        state: ended
+                    trials: []
+                    services:
+                      - identifier: epg
+                        endpoint: 'https://epg.provider.plex.tv'
+                        token: RkHIzgbqTjP2giDabsWdbBB9o4YNyhS6CqbTgwfKAOc=
+                        secret: null
+                        status: online
+                      - identifier: epg-staging
+                        endpoint: 'https://epg-staging.provider.plex.tv'
+                        token: RkHIzgbqTjP2giDabsWdbBB9o4YNyhS6CqbTgwfKAOc=
+                        secret: null
+                        status: online
+                      - identifier: epg-dev
+                        endpoint: 'https://epg-dev.provider.plex.tv'
+                        token: RkHIzgbqTjP2giDabsWdbBB9o4YNyhS6CqbTgwfKAOc=
+                        secret: null
+                        status: online
+                      - identifier: eyeq
+                        endpoint: 'https://c4412416.ipg.web.cddbp.net/webapi/xml/1.0/'
+                        token: 6iUU7VrBzA/Hz5nsS9o65Yz77qvh63pYmUN+TaVHeonhsQWlzYGcsik1opEU3toj
+                        secret: null
+                        status: online
+                      - identifier: eyeq-channel-icons
+                        endpoint: 'http://akamai-b.cdn.cddbp.net/cds/2.0/image'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: graph-dev
+                        endpoint: 'https://community-dev.plex.tv'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: graph-staging
+                        endpoint: 'https://community-staging.plex.tv'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: community-dev
+                        endpoint: 'https://community-dev.plex.tv'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: community-staging
+                        endpoint: 'https://community-staging.plex.tv'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: community
+                        endpoint: 'https://community.plex.tv'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: metadata
+                        endpoint: 'https://metadata.provider.plex.tv'
+                        token: 1vme2aaK6G8fZFtFyKeSmInEvdjpjsHEto45VgX1K0c=
+                        secret: null
+                        status: online
+                      - identifier: scrobbling
+                        endpoint: 'https://scrobbles.plex.tv'
+                        token: eyJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjIyNjY5MjEzLCJleHAiOjE3MjA3Nzg1ODgsImlzcyI6InBsZXgudHYiLCJhdWQiOiJzY3JvYmJsaW5nIn0.bFYB92t7ddmg3EncrjqMBYSZJadJwDChVBDv4o-DywXGWyO-Ksl5chLoWiSZ6kFo_FAXXOzCeO9rnvtvVgXvjrVImej2VkxKfqsFEYhn-SA1Wu4VEri_pBBky6wJf7rD9ggzcSJqUBggFWUyRgfsXKb__LwZ9MfOdIldp3UbRqklOX60-XSsMTjDVDzAnIAqnWAffRIcS4e0JOuJbH9wg6_UIqCbTWsMnJ2OPRt0-dvkxfmFYFkytLkxCIw3VVAYC8qRcIzVhfxXURyLLwpzBOQgbie6NeJuSh1iXA5ZnlUiBtmw6zcGq8Ywyyzg5dpJ68PSMjG6WCvcWMlsS5uD8w
+                        secret: null
+                        status: online
+                      - identifier: metadata-dev
+                        endpoint: 'https://metadata-dev.provider.plex.tv'
+                        token: 1vme2aaK6G8fZFtFyKeSmInEvdjpjsHEto45VgX1K0c=
+                        secret: null
+                        status: online
+                      - identifier: metadata-provider
+                        endpoint: 'https://mpm.plex.tv/'
+                        token: null
+                        secret: null
+                        status: online
+                      - identifier: tmsapi
+                        endpoint: 'https://tmsapi.plex.tv/v1.1/'
+                        token: a0VC3zjGN7FmzvlZKIuRRUjLCRoQkgY2jwJsLgi8+OQ=
+                        secret: null
+                        status: online
+                      - identifier: subtitles-search
+                        endpoint: 'https://metadata.provider.plex.tv/library/streams/matches'
+                        token: 1vme2aaK6G8fZFtFyKeSmInEvdjpjsHEto45VgX1K0c=
+                        secret: null
+                        status: online
+                      - identifier: acoustid
+                        endpoint: 'https://acoustid.plex.tv/'
+                        token: XxQtK3u05uaxTaZ6Y6jcrw==
+                        secret: null
+                        status: online
+                      - identifier: lyricfind
+                        endpoint: 'https://lyricfind.plex.tv/'
+                        token: X46ofmSoyOTWjBU4oEx0Rb0ATQjYW31IgFeXw3+/n5hMfGoF7PLEMPrLT9v/zqV1
+                        secret: H8q1AfgeOcf8+wx2ODos1mLBkmsSE4PMCJkkdx27xNwpzzKVV3up6gZJb+teyIOw
+                        status: online
+                      - identifier: lyricfind-search
+                        endpoint: 'https://lyricfind.plex.tv/'
+                        token: 4HRR+YgScsy+71q8J31KgROAuPkWvsus8XQuVFjYUiTjw5f+LesQ8MAgEcjnuYxW
+                        secret: null
+                        status: online
+                      - identifier: tvdb
+                        endpoint: 'https://api4.thetvdb.com/'
+                        token: CFlmhH676IvrFij0l4BR1YNRtyHjz+9EAH+GU5ZgncfJ3ufdmzWK/3giK1Ovei7u
+                        secret: null
+                        status: online
+                    adsConsent: null
+                    adsConsentSetAt: null
+                    adsConsentReminderAt: null
+                    experimentalFeatures: false
+                    twoFactorEnabled: false
+                    backupCodesCreated: false
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      security: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /friends:
-    $ref: "./paths/friends.yaml"
-
+    get:
+      tags:
+        - User
+      summary: Get list of friends of the user logged in
+      description: Get friends of logged in user
+      operationId: getUserFriends
+      responses:
+        '200':
+          description: Friends Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    status:
+                      type: string
+                      examples:
+                        - accepted
+                    sharedServers:
+                      type: array
+                      items:
+                        type: object
+                    sharedSources:
+                      type: array
+                      items:
+                        type: object
+                    id:
+                      type: integer
+                      format: int32
+                    uuid:
+                      type: string
+                      format: uuid
+                    title:
+                      type: string
+                    username:
+                      type: string
+                    restricted:
+                      type: boolean
+                    email:
+                      type: string
+                      format: email
+                    friendlyName:
+                      examples:
+                        - exampleUser
+                        - null
+                      oneOf:
+                        - type: 'null'
+                        - type: string
+                    thumb:
+                      type: string
+                    home:
+                      type: boolean
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      security:
+        - X-Plex-Token-Query: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
 tags:
   - name: Activities
     description: |
@@ -114,25 +856,15 @@ tags:
   - name: Butler
     description: |
       Butler is the task manager of the Plex Media Server Ecosystem.
-  - name: Server
-    description: |
-      Operations against the Plex Media Server System.
-  - name: Updater
-    description: |
-      This describes the API for searching and applying updates to the Plex Media Server.
-      Updates to the status can be observed via the Event API.
-  - name: Log
-    description: |
-      Submit logs to the Log Handler for Plex Media Server
-  - name: Security
-    description: |
-      API Calls against Security for Plex Media Server
-  - name: Library
-    description: |
-      API Calls interacting with Plex Media Server Libraries
   - name: Hubs
     description: |
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
+  - name: Library
+    description: |
+      API Calls interacting with Plex Media Server Libraries
+  - name: Log
+    description: |
+      Submit logs to the Log Handler for Plex Media Server
   - name: Playlists
     description: |
       Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). 
@@ -142,6 +874,717 @@ tags:
   - name: Search
     description: |
       API Calls that perform search operations with Plex Media Server
+  - name: Security
+    description: |
+      API Calls against Security for Plex Media Server
+  - name: Server
+    description: |
+      Operations against the Plex Media Server System.
+  - name: Updater
+    description: |
+      This describes the API for searching and applying updates to the Plex Media Server.
+      Updates to the status can be observed via the Event API.
   - name: User
     description: |
       API Calls that perform operations with Plex Media Server Users
+components:
+  parameters:
+    X-Plex-Token:
+      name: X-Plex-Token
+      in: query
+      description: Plex Authentication Token
+      required: true
+      schema:
+        type: string
+        examples:
+          - 7So4hkyCDMuhFFPV9D
+    X-Plex-Product:
+      name: X-Plex-Product
+      in: query
+      description: Product name of the application shown in the list of devices
+      required: true
+      schema:
+        type: string
+        examples:
+          - Plex Web
+    X-Plex-Version:
+      name: X-Plex-Version
+      in: query
+      description: The version of the Plex product
+      required: true
+      schema:
+        type: string
+        examples:
+          - 4.129.1
+    X-Plex-Client-Identifier:
+      name: X-Plex-Client-Identifier
+      in: query
+      description: |
+        The unique identifier for the client application.
+        This is used to track the client application and its usage.
+        (UUID, serial number, or other number unique per device)
+      required: true
+      schema:
+        type: string
+        examples:
+          - 9klpwueublnfbvlx95w83ah9
+    X-Plex-Platform:
+      name: X-Plex-Platform
+      in: query
+      description: The platform of the client application
+      required: true
+      schema:
+        type: string
+        examples:
+          - Chrome
+    X-Plex-Platform-Version:
+      name: X-Plex-Platform-Version
+      in: query
+      description: The platform version of the client application
+      required: true
+      schema:
+        type: string
+        examples:
+          - '126.0'
+    X-Plex-Features:
+      name: X-Plex-Features
+      in: query
+      description: Features of the Plex client
+      required: false
+      schema:
+        type: string
+        examples:
+          - 'external-media,indirect-media,hub-style-list'
+    X-Plex-Model:
+      name: X-Plex-Model
+      in: query
+      description: The model of the Plex client device
+      required: false
+      schema:
+        type: string
+        examples:
+          - bundled
+    X-Plex-Device:
+      name: X-Plex-Device
+      in: query
+      description: The device on which the Plex client is running
+      required: true
+      schema:
+        type: string
+        examples:
+          - Linux
+    X-Plex-Device-Name:
+      name: X-Plex-Device-Name
+      in: query
+      description: The name of the device on which the Plex client is running
+      required: true
+      schema:
+        type: string
+        examples:
+          - Chrome
+    X-Plex-Device-Screen-Resolution:
+      name: X-Plex-Device-Screen-Resolution
+      in: query
+      description: The screen resolution of the device on which the Plex client is running
+      required: false
+      schema:
+        type: string
+        examples:
+          - '968x1166,2560x1440'
+    X-Plex-Language:
+      name: X-Plex-Language
+      in: query
+      description: The language setting of the Plex client
+      required: false
+      schema:
+        type: string
+        examples:
+          - en
+    X-Plex-Session-Id:
+      name: X-Plex-Session-Id
+      in: query
+      description: The session ID of the Plex client
+      required: false
+      schema:
+        type: string
+        examples:
+          - 5b960d87-3a2a-4ef0-842b-dfb16581af3a
+  securitySchemes:
+    X-Plex-Token-Query:
+      type: apiKey
+      name: X-Plex-Token
+      in: query
+  responses:
+    '400':
+      description: Bad Request - X-Plex-Client-Identifier is missing
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                    message:
+                      type: string
+                    status:
+                      type: integer
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1004
+                    message: login is missing
+                    status: 400
+                  - code: 1004
+                    message: password is missing
+                    status: 400
+          examples:
+            Bad Request Example:
+              value:
+                errors:
+                  - code: 1004
+                    message: login is missing
+                    status: 400
+                  - code: 1004
+                    message: password is missing
+                    status: 400
+        application/xml:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                    message:
+                      type: string
+                    status:
+                      type: integer
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1004
+                    message: login is missing
+                    status: 400
+                  - code: 1004
+                    message: password is missing
+                    status: 400
+    '401':
+      description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                    message:
+                      type: string
+                    status:
+                      type: number
+    '404':
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      examples:
+                        - 1002
+                    message:
+                      type: string
+                      examples:
+                        - The requested resource or endpoint could not be found
+                    status:
+                      type: integer
+                      examples:
+                        - 404
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1002
+                    message: The requested resource or endpoint could not be found
+                    status: 404
+    '500':
+      description: Internal Server Error. Something went wrong on our end
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                      examples:
+                        - 1007
+                    message:
+                      type: string
+                      examples:
+                        - Internal Server Error. Something went wrong on our end
+                    status:
+                      type: integer
+                      examples:
+                        - 500
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1007
+                    message: Internal Server Error. Something went wrong on our end
+                    status: 500
+          examples:
+            Example 1:
+              value:
+                errors:
+                  - code: 0
+                    message: string
+                    status: 0
+  schemas:
+    UserPlexAccount:
+      type: object
+      title: UserPlexAccount
+      properties:
+        adsConsent:
+          type:
+            - boolean
+            - 'null'
+          description: Unknown
+        adsConsentReminderAt:
+          type:
+            - string
+            - 'null'
+          description: Unknown
+          format: date-time
+        adsConsentSetAt:
+          type:
+            - string
+            - 'null'
+          description: Unknown
+          format: date-time
+        anonymous:
+          type: boolean
+          description: Unknown
+        authToken:
+          type: string
+          description: The account token
+          examples:
+            - CxoUzBTSV5hsxjTpFKaf
+        backupCodesCreated:
+          type: boolean
+          description: If the two-factor authentication backup codes have been created
+        confirmed:
+          type: boolean
+          description: If the account has been confirmed
+        country:
+          type: string
+          description: The account country
+          minLength: 2
+          maxLength: 2
+          examples:
+            - NL
+        email:
+          type: string
+          description: The account email address
+          format: email
+          examples:
+            - username@email.com
+        emailOnlyAuth:
+          type: boolean
+          description: If login with email only is enabled
+        experimentalFeatures:
+          type: boolean
+          description: If experimental features are enabled
+        friendlyName:
+          type: string
+          description: Your account full name
+        entitlements:
+          type: array
+          description: List of devices your allowed to use with this account
+          items:
+            type: string
+        guest:
+          type: boolean
+          description: If the account is a Plex Home guest user
+        hasPassword:
+          type: boolean
+          description: If the account has a password
+        home:
+          type: boolean
+          description: If the account is a Plex Home user
+        homeAdmin:
+          type: boolean
+          description: If the account is the Plex Home admin
+        homeSize:
+          type: integer
+          description: The number of accounts in the Plex Home
+        id:
+          type: integer
+          description: The Plex account ID
+        joinedAt:
+          type: string
+          description: Date the account joined Plex
+          format: date-time
+        locale:
+          type: string
+          description: The account locale
+        mailingListActive:
+          type: boolean
+          description: If you are subscribed to the Plex newsletter
+        mailingListStatus:
+          type: string
+          description: Your current mailing list status
+          examples:
+            - unsubscribed
+        maxHomeSize:
+          type: integer
+          description: The maximum number of accounts allowed in the Plex Home
+          examples:
+            - 15
+        pastSubscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PastSubscription'
+        pin:
+          type: string
+          description: 'The hashed Plex Home PIN [Might be missing]'
+          x-deprecated: true
+        profile:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserProfile'
+        protected:
+          type: boolean
+          description: If the account has a Plex Home PIN enabled
+        rememberExpiresAt:
+          type: string
+          description: Date the token expires
+          format: date-time
+        restricted:
+          type: boolean
+          description: If the account is a Plex Home managed user
+        roles:
+          type: array
+          description: '[Might be missing] List of account roles. Plexpass membership listed here'
+          items:
+            type: string
+        scrobbleTypes:
+          type: array
+          description: Unknown
+          items:
+            type: integer
+        services:
+          type: array
+          items:
+            type: object
+            properties:
+              identifier:
+                type: string
+                examples:
+                  - metadata-dev
+              endpoint:
+                type: string
+                format: uri
+                examples:
+                  - 'https://epg.provider.plex.tv'
+              token:
+                type:
+                  - string
+                  - 'null'
+                examples:
+                  - DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
+              secret:
+                type:
+                  - string
+                  - 'null'
+              status:
+                type: string
+                enum:
+                  - online
+                  - offline
+                examples:
+                  - online
+            required:
+              - identifier
+              - endpoint
+              - status
+        subscription:
+          $ref: '#/components/schemas/Subscription'
+          description: If the account’s Plex Pass subscription is active
+        subscriptionDescription:
+          type: string
+          description: Description of the Plex Pass subscription
+        subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subscription'
+        thumb:
+          type: string
+          description: URL of the account thumbnail
+          format: uri
+          examples:
+            - 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+        title:
+          type: string
+          description: The title of the account (username or friendly name)
+          examples:
+            - UsernameTitle
+        trials:
+          type: array
+          items:
+            type: object
+        twoFactorEnabled:
+          type: boolean
+          description: If two-factor authentication is enabled
+          default: false
+        username:
+          type: string
+          description: The account username
+          examples:
+            - Username
+        uuid:
+          type: string
+          description: The account UUID
+          examples:
+            - dae343c1f45beb4f
+      required:
+        - adsConsent
+        - adsConsentReminderAt
+        - adsConsentSetAt
+        - anonymous
+        - authToken
+        - backupCodesCreated
+        - confirmed
+        - country
+        - email
+        - emailOnlyAuth
+        - services
+        - title
+        - twoFactorEnabled
+        - username
+        - uuid
+    PastSubscription:
+      type: object
+      title: PastSubscription
+      properties:
+        id:
+          type: string
+        mode:
+          type: string
+        renewsAt:
+          type: string
+        endsAt:
+          type: string
+          examples:
+            - '1556281940'
+        canceled:
+          type: string
+          examples:
+            - '0'
+        gracePeriod:
+          type: string
+          examples:
+            - '0'
+        onHold:
+          type: string
+          examples:
+            - '0'
+        canReactivate:
+          type: string
+          examples:
+            - '0'
+        canUpgrade:
+          type: string
+          examples:
+            - '0'
+        canDowngrade:
+          type: string
+          examples:
+            - '0'
+        canConvert:
+          type: string
+          examples:
+            - '0'
+        type:
+          type: string
+          examples:
+            - plexpass
+        transfer:
+          type: string
+        state:
+          type: string
+          examples:
+            - ended
+        billing:
+          type: array
+          items:
+            type: object
+            properties:
+              internalPaymentMethod:
+                type: string
+              paymentMethodId:
+                type: string
+    UserProfile:
+      type: object
+      title: UserProfile
+      properties:
+        autoSelectAudio:
+          type: boolean
+          description: If the account has automatically select audio and subtitle tracks enabled
+          default: true
+          examples:
+            - true
+        defaultAudioLanguage:
+          type: string
+          description: The preferred audio language for the account
+          examples:
+            - ja
+        defaultSubtitleLanguage:
+          type: string
+          description: The preferred subtitle language for the account
+          examples:
+            - en
+        autoSelectSubtitle:
+          type: integer
+          description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+          examples:
+            - 1
+        defaultSubtitleAccessibility:
+          type: integer
+          description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)'
+          examples:
+            - 1
+        defaultSubtitleForced:
+          type: integer
+          description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
+          examples:
+            - 0
+        watchedIndicator:
+          type: integer
+          examples:
+            - 1
+        mediaReviewsVisibility:
+          type: integer
+          examples:
+            - 0
+    Subscription:
+      type: object
+      title: Subscription
+      properties:
+        features:
+          type: array
+          description: List of features allowed on your Plex Pass subscription
+          items:
+            type: string
+            enum:
+              - Android - Dolby Vision
+              - Android - PiP
+              - CU Sunset
+              - HRK_enable_EUR
+              - TREBLE-show-features
+              - ad-countdown-timer
+              - adaptive_bitrate
+              - amazon-loop-debug
+              - avod-ad-analysis
+              - avod-new-media
+              - blacklist_get_signin
+              - client-radio-stations
+              - cloudflare-turnstile-required
+              - collections
+              - comments_and_replies_push_notifications
+              - community_access_plex_tv
+              - companions_sonos
+              - custom-home-removal
+              - disable_home_user_friendships
+              - disable_sharing_friendships
+              - drm_support
+              - exclude restrictions
+              - federated-auth
+              - friend_request_push_notifications
+              - guided-upgrade
+              - home
+              - increase-password-complexity
+              - ios14-privacy-banner
+              - iterable-notification-tokens
+              - keep-payment-method
+              - kevin-bacon
+              - korea-consent
+              - le_isrg_root_x1
+              - lets_encrypt
+              - lightning-dvr-pivot
+              - live-tv-support-incomplete-segments
+              - livetv
+              - metadata_search
+              - new_plex_pass_prices
+              - news-provider-sunset-modal
+              - photos-favorites
+              - photos-metadata-edition
+              - pms_health
+              - radio
+              - rate-limit-client-token
+              - scrobbling-service-plex-tv
+              - shared_server_notification
+              - shared_source_notification
+              - signin_with_apple
+              - spring_serve_ad_provider
+              - transcoder_cache
+              - tuner-sharing
+              - two-factor-authentication
+              - unsupportedtuners
+              - upgrade-3ds2
+              - vod-schema
+              - vod_cloudflare
+              - watch-together-invite
+              - web_server_dashboard
+        active:
+          type: boolean
+          description: If the account's Plex Pass subscription is active
+          examples:
+            - true
+        subscribedAt:
+          type: string
+          description: Date the account subscribed to Plex Pass
+          format: date-time
+          examples:
+            - '2021-04-12T18:21:12Z'
+        status:
+          type: string
+          enum:
+            - Inactive
+            - Active
+          description: String representation of subscriptionActive
+          examples:
+            - Inactive
+        paymentService:
+          type:
+            - string
+            - 'null'
+          description: Payment service used for your Plex Pass subscription
+        plan:
+          type:
+            - string
+            - 'null'
+          description: Name of Plex Pass subscription plan
+security:
+  - X-Plex-Token-Query: []
