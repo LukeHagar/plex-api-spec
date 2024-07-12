@@ -14,9 +14,9 @@ get:
             items:
               type: object
               properties:
-                status: 
+                status:
                   type: string
-                  examples: 
+                  examples:
                     - accepted
                 sharedServers:
                   type: array
@@ -24,7 +24,7 @@ get:
                 sharedSources:
                   type: array
                   example: unknown (always empty)
-                id: 
+                id:
                   type: integer
                   format: int32
                   example: 167877042
@@ -41,17 +41,18 @@ get:
                 restricted:
                   type: boolean
                   example: false
-                email:  
+                email:
                   type: string
                   format: email
                   example: user@domain.com
-                friendlyName: 
-                  type: string
-                  nullable: true
+                friendlyName:
+                  oneOf:
+                    - type: "null"
+                    - type: string
                   examples:
                     - exampleUser
                     - null
-                thumb: 
+                thumb:
                   type: string
                   example: https://plex.tv/users/577af54b4fa7f954/avatar?c=1314429740
                 home:
@@ -61,4 +62,3 @@ get:
       $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
-                
