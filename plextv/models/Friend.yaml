@@ -2,6 +2,19 @@ title: Friend
 x-stoplight:
   id: 9yvynqsiev3jv
 type: object
+examples:
+  - email: username@email.com
+    friendlyName: exampleUser
+    home: true
+    id: 0
+    restricted: false
+    sharedServers: []
+    sharedSources: []
+    status: accepted
+    thumb: 'https://plex.tv/users/7d1916e0d8f6e76b/avatar?c=1694481578'
+    title: username123
+    username: username123
+    uuid: 7d1916e0d8f6e76b
 required:
   - email
   - friendlyName
@@ -69,19 +82,5 @@ properties:
     description: The account username
   uuid:
     type: string
-    format: uuid
     example: 7d1916e0d8f6e76b
     description: The account Universally Unique Identifier (UUID)
-examples:
-  - email: username@email.com
-    friendlyName: exampleUser
-    home: true
-    id: 0
-    restricted: false
-    sharedServers: []
-    sharedSources: []
-    status: accepted
-    thumb: 'https://plex.tv/users/7d1916e0d8f6e76b/avatar?c=1694481578'
-    title: username123
-    username: username123
-    uuid: 7d1916e0d8f6e76b

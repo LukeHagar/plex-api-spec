@@ -1,8 +1,0 @@
-title: Test
-x-stoplight:
-  id: 74lcf8pljxwq0
-allOf:
-  - $ref: ./UserPlexAccount.yaml
-  - $ref: ./PastSubscription.yaml
-    x-stoplight:
-      id: 70p5dbyy5qfeu

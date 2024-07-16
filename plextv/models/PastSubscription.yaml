@@ -2,73 +2,111 @@ title: PastSubscription
 x-stoplight:
   id: 2xaxdrlqls73i
 type: object
+required:
+  - id
+  - mode
+  - renewsAt
+  - endsAt
+  - canceled
+  - gracePeriod
+  - onHold
+  - canReactivate
+  - canUpgrade
+  - canDowngrade
+  - canConvert
+  - type
+  - transfer
+  - state
+  - billing
 properties:
   id:
-    type: string
+    type:
+      - string
+      - 'null'
     x-stoplight:
       id: 7cmk7pyy839xs
   mode:
-    type: string
+    type:
+      - string
+      - 'null'
     x-stoplight:
       id: 92oi78sn9x156
   renewsAt:
-    type: string
+    type:
+      - integer
+      - 'null'
     x-stoplight:
       id: e1jk5b4apu76a
+    description: Unix epoch datetime
+    format: int32
   endsAt:
-    type: string
-    example: '1556281940'
+    type:
+      - integer
+      - 'null'
+    example: 1556281940
     x-stoplight:
       id: xb94nk3vckiac
+    description: Unix epoch datetime
+    format: int32
   canceled:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: o31fjmx4bpi4t
+    default: false
   gracePeriod:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: o3t0495t5q9yx
+    default: false
   onHold:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: nsryr982qq0ui
+    default: false
   canReactivate:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: cu1vyitnygmw0
+    default: false
   canUpgrade:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: 5vx5e882vya52
+    default: false
   canDowngrade:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: v30u9rs5jt17e
+    default: false
   canConvert:
-    type: string
-    example: '0'
+    type: boolean
+    example: false
     x-stoplight:
       id: mt87x72doh74l
+    default: false
   type:
     type: string
     example: plexpass
     x-stoplight:
       id: q0b0zs088y6ry
   transfer:
-    type: string
+    type:
+      - string
+      - 'null'
     x-stoplight:
       id: zz2vb16ui0w11
   state:
-    type: string
     example: ended
     x-stoplight:
       id: 1n8gpiaklxc7s
+    enum:
+      - ended
   billing:
     type: array
     x-stoplight:
@@ -77,12 +115,17 @@ properties:
       x-stoplight:
         id: oye4lhi29ozfv
       type: object
+      required:
+        - internalPaymentMethod
+        - paymentMethodId
       properties:
         internalPaymentMethod:
-          type: string
+          type: object
           x-stoplight:
             id: gxvjfaody6wc1
         paymentMethodId:
-          type: string
+          type:
+            - integer
+            - 'null'
           x-stoplight:
             id: abpoj38776e5d

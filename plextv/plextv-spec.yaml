@@ -270,22 +270,34 @@ paths:
                 type: object
                 properties:
                   tv.plex.provider.podcasts:
-                    type: string
-                    example: opt_out
+                    example: opt_in
+                    enum:
+                      - opt_in
+                      - opt_out
                   tv.plex.provider.news:
-                    type: string
+                    enum:
+                      - opt_in
+                      - opt_out
                     example: opt_out
                   tv.plex.provider.webshows:
-                    type: string
+                    enum:
+                      - opt_in
+                      - opt_out
                     example: opt_out
                   tv.plex.provider.music:
-                    type: string
+                    enum:
+                      - opt_in
+                      - opt_out
                     example: opt_out
                   tv.plex.provider.vod:
-                    type: string
+                    enum:
+                      - opt_in
+                      - opt_out
                     example: opt_out
                   scrobbling:
-                    type: string
+                    enum:
+                      - opt_in
+                      - opt_out
                     example: opt_in
               examples:
                 Example1:
