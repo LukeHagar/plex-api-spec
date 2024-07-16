@@ -1,0 +1,36 @@
+title: UserProfile
+x-stoplight:
+  id: c3o09tiphekkb
+type: object
+properties:
+  autoSelectAudio:
+    type: boolean
+    example: true
+    default: true
+    description: If the account has automatically select audio and subtitle tracks enabled
+  defaultAudioLanguage:
+    type: string
+    example: ja
+    description: The preferred audio language for the account
+  defaultSubtitleLanguage:
+    type: string
+    example: en
+    description: The preferred subtitle language for the account
+  autoSelectSubtitle:
+    type: integer
+    example: 1
+    description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+  defaultSubtitleAccessibility:
+    type: integer
+    example: 1
+    description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)'
+  defaultSubtitleForced:
+    type: integer
+    example: 0
+    description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
+  watchedIndicator:
+    type: integer
+    example: 1
+  mediaReviewsVisibility:
+    type: integer
+    example: 0

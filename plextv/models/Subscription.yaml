@@ -1,0 +1,94 @@
+title: Subscription
+x-stoplight:
+  id: yiit25g5tv0ik
+type: object
+properties:
+  features:
+    description: List of features allowed on your Plex Pass subscription
+    type: array
+    items:
+      enum:
+        - Android - Dolby Vision
+        - Android - PiP
+        - CU Sunset
+        - HRK_enable_EUR
+        - TREBLE-show-features
+        - ad-countdown-timer
+        - adaptive_bitrate
+        - amazon-loop-debug
+        - avod-ad-analysis
+        - avod-new-media
+        - blacklist_get_signin
+        - client-radio-stations
+        - cloudflare-turnstile-required
+        - collections
+        - comments_and_replies_push_notifications
+        - community_access_plex_tv
+        - companions_sonos
+        - custom-home-removal
+        - disable_home_user_friendships
+        - disable_sharing_friendships
+        - drm_support
+        - exclude restrictions
+        - federated-auth
+        - friend_request_push_notifications
+        - guided-upgrade
+        - home
+        - increase-password-complexity
+        - ios14-privacy-banner
+        - iterable-notification-tokens
+        - keep-payment-method
+        - kevin-bacon
+        - korea-consent
+        - le_isrg_root_x1
+        - lets_encrypt
+        - lightning-dvr-pivot
+        - live-tv-support-incomplete-segments
+        - livetv
+        - metadata_search
+        - new_plex_pass_prices
+        - news-provider-sunset-modal
+        - photos-favorites
+        - photos-metadata-edition
+        - pms_health
+        - radio
+        - rate-limit-client-token
+        - scrobbling-service-plex-tv
+        - shared_server_notification
+        - shared_source_notification
+        - signin_with_apple
+        - spring_serve_ad_provider
+        - transcoder_cache
+        - tuner-sharing
+        - two-factor-authentication
+        - unsupportedtuners
+        - upgrade-3ds2
+        - vod-schema
+        - vod_cloudflare
+        - watch-together-invite
+        - web_server_dashboard
+  active:
+    description: If the account's Plex Pass subscription is active
+    type: boolean
+    example: true
+  subscribedAt:
+    description: Date the account subscribed to Plex Pass
+    type: string
+    example: '2021-04-12T18:21:12Z'
+    format: date-time
+  status:
+    description: String representation of subscriptionActive
+    example: Inactive
+    enum:
+      - Inactive
+      - Active
+  paymentService:
+    description: Payment service used for your Plex Pass subscription
+    type:
+      - string
+      - 'null'
+  plan:
+    description: Name of Plex Pass subscription plan
+    type:
+      - string
+      - 'null'
