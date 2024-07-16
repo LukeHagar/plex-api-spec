@@ -81,67 +81,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                x-examples:
-                  Example 1:
-                    code: NL
-                    european_union_member: true
-                    continent_code: EU
-                    country: The Netherlands
-                    city: Breda
-                    time_zone: Europe/Amsterdam
-                    postal_code: '4814'
-                    in_privacy_restricted_country: true
-                    in_privacy_restricted_region: true
-                    subdivisions: North Brabant
-                    coordinates: '51.5869, 4.7471'
-                properties:
-                  code:
-                    type: string
-                    description: The ISO 3166-1 alpha-2 code of the country.
-                    example: NL
-                  continent_code:
-                    type: string
-                    description: The continent code where the country is located.
-                    example: EU
-                  country:
-                    type: string
-                    description: The official name of the country.
-                    example: The Netherlands
-                  city:
-                    type: string
-                    description: The name of the city.
-                    example: Amsterdam
-                  european_union_member:
-                    type: boolean
-                    description: Indicates if the country is a member of the European Union.
-                    example: true
-                  time_zone:
-                    type: string
-                    description: The time zone of the country.
-                    example: Europe/Amsterdam
-                  postal_code:
-                    type: integer
-                    description: The postal code of the location.
-                    example: 4814
-                  in_privacy_restricted_country:
-                    type: boolean
-                    description: Indicates if the country has privacy restrictions.
-                    example: true
-                    default: false
-                  in_privacy_restricted_region:
-                    type: boolean
-                    description: Indicates if the region has privacy restrictions.
-                    example: true
-                    default: false
-                  subdivisions:
-                    type: string
-                    description: The name of the primary administrative subdivision.
-                    example: North Brabant
-                  coordinates:
-                    type: string
-                    description: 'The geographical coordinates (latitude, longitude) of the location.'
-                    example: '18.3002, 64.8252'
+`                $ref: ./models/GeoData.yaml
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -153,7 +93,7 @@ paths:
     post:
       tags:
         - Security
-      summary: Get a Pin
+      summary: Get an Auth PinId
       description: Retrieve a Pin from Plex.tv for authentication flows
       operationId: getPin
       parameters:
@@ -170,149 +110,48 @@ paths:
         - $ref: '#/components/parameters/X-Plex-Client-Identifier'
       responses:
         '200':
-          description: The Pin
+          description: Requests a new pin id used in the authentication flow
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: number
-                    description: PinID for use with authentication
-                  code:
-                    type: string
-                  product:
-                    type: string
-                  trusted:
-                    type: boolean
-                  qr:
-                    type: string
-                    description: |
-                      a link to a QR code hosted on plex.tv 
-                      The QR code redirects to the relevant `plex.tv/link` authentication page
-                      Which then prompts the user for the 4 Digit Link Pin
-                  clientIdentifier:
-                    type: string
-                  location:
-                    type: object
-                    properties:
-                      code:
-                        type: string
-                      european_union_member:
-                        type: boolean
-                      continent_code:
-                        type: string
-                      country:
-                        type: string
-                      city:
-                        type: string
-                      time_zone:
-                        type: string
-                      postal_code:
-                        type: string
-                      in_privacy_restricted_country:
-                        type: boolean
-                      subdivisions:
-                        type: string
-                      coordinates:
-                        type: string
-                  expiresIn:
-                    type: number
-                  createdAt:
-                    type: string
-                    format: date-time
-                  expiresAt:
-                    type: string
-                    format: date-time
-                  authToken:
-                    type: string
-                    format: nullable
-                  newRegistration:
-                    type: string
-                    format: nullable
+                $ref: ./models/AuthPinContainer.yaml
         '400':
           $ref: '#/components/responses/400'
       servers:
         - url: 'https://plex.tv/api/v2'
+      x-stoplight:
+        id: 55nwwek4pu6y0
+    parameters: []
   '/pins/{pinID}':
     get:
       tags:
         - Security
-      summary: Get Access Token
+      summary: Get Access Token by PinId
       description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
-      operationId: getToken
+      operationId: getTokenByPinId
       parameters:
-        - name: pinID
-          in: path
-          description: The PinID to retrieve an access token for
-          required: true
-          schema:
-            type: string
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
       responses:
         '200':
           description: The pin with a non-null authToken after verification
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: number
-                    description: PinID for use with authentication
-                  code:
-                    type: string
-                  product:
-                    type: string
-                  trusted:
-                    type: boolean
-                  qr:
-                    type: string
-                    description: |
-                      a link to a QR code hosted on plex.tv 
-                      The QR code redirects to the relevant `plex.tv/link` authentication page
-                      Which then prompts the user for the 4 Digit Link Pin
-                  clientIdentifier:
-                    type: string
-                  location:
-                    type: object
-                    properties:
-                      code:
-                        type: string
-                      european_union_member:
-                        type: boolean
-                      continent_code:
-                        type: string
-                      country:
-                        type: string
-                      city:
-                        type: string
-                      time_zone:
-                        type: string
-                      postal_code:
-                        type: string
-                      in_privacy_restricted_country:
-                        type: boolean
-                      subdivisions:
-                        type: string
-                      coordinates:
-                        type: string
-                  expiresIn:
-                    type: number
-                  createdAt:
-                    type: string
-                    format: date-time
-                  expiresAt:
-                    type: string
-                    format: date-time
-                  authToken:
-                    type: string
-                    format: nullable
-                  newRegistration:
-                    type: string
-                    format: nullable
+                $ref: ./models/AuthPinContainer.yaml
+        '404':
+          $ref: '#/components/responses/404'
       security: []
       servers:
         - url: 'https://plex.tv/api/v2'
+      x-stoplight:
+        id: mf2pam2mfl806
+    parameters:
+      - schema:
+          type: integer
+        name: pinID
+        in: path
+        required: true
+        description: The PinId to retrieve an access token for
   /resources:
     get:
       tags:
@@ -321,6 +160,7 @@ paths:
       description: Get Devices
       operationId: getDevices
       parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
         - name: includeHttps
           in: query
           description: Include Https entries in the results
@@ -353,77 +193,7 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                    product:
-                      type: string
-                    productVersion:
-                      type: string
-                    platform:
-                      type: string
-                    platformVersion:
-                      type: string
-                    device:
-                      type: string
-                    clientIdentifier:
-                      type: string
-                    createdAt:
-                      type: string
-                      format: date-time
-                    lastSeenAt:
-                      type: string
-                      format: date-time
-                    provides:
-                      type: string
-                    ownerId:
-                      type: string
-                      format: nullable
-                    sourceTitle:
-                      type: string
-                      format: nullable
-                    publicAddress:
-                      type: string
-                    accessToken:
-                      type: string
-                    owned:
-                      type: boolean
-                    home:
-                      type: boolean
-                    synced:
-                      type: boolean
-                    relay:
-                      type: boolean
-                    presence:
-                      type: boolean
-                    httpsRequired:
-                      type: boolean
-                    publicAddressMatches:
-                      type: boolean
-                    dnsRebindingProtection:
-                      type: boolean
-                    natLoopbackSupported:
-                      type: boolean
-                    connections:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          protocol:
-                            type: string
-                          address:
-                            type: string
-                          port:
-                            type: number
-                          uri:
-                            type: string
-                          local:
-                            type: boolean
-                          relay:
-                            type: boolean
-                          IPv6:
-                            type: boolean
+                  $ref: ./models/PlexDevice.yaml
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -541,9 +311,6 @@ paths:
       operationId: post-users-signin-data
       parameters:
         - $ref: '#/components/parameters/X-Plex-Client-Identifier'
-        - schema:
-            type: string
-          in: header
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -571,239 +338,33 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/UserPlexAccount.yaml
-                x-examples:
-                  Example 1:
-                    id: 22669213
-                    uuid: 43c1daaebf4f43e5
-                    username: username
-                    title: Username
-                    email: username@email.com
-                    friendlyName: ''
-                    locale: null
-                    confirmed: false
-                    joinedAt: 1552593531
-                    emailOnlyAuth: false
-                    hasPassword: true
-                    protected: false
-                    thumb: 'https://plex.tv/users/c1da434f4aebe43/avatar?c=1720774988'
-                    authToken: CxjxoUzFTpFBTSV5h4af
-                    mailingListStatus: unsubscribed
-                    mailingListActive: false
-                    scrobbleTypes: ''
-                    country: US
-                    subscription:
-                      active: false
-                      subscribedAt: '2019-03-16T15:20:12Z'
-                      status: Inactive
-                      paymentService: null
-                      plan: null
-                      features:
-                        - guided-upgrade
-                        - increase-password-complexity
-                        - upgrade-3ds2
-                        - ad-countdown-timer
-                        - adaptive_bitrate
-                        - amazon-loop-debug
-                        - Android - Dolby Vision
-                        - Android - PiP
-                        - avod-ad-analysis
-                        - avod-new-media
-                        - blacklist_get_signin
-                        - CU Sunset
-                        - client-radio-stations
-                        - cloudflare-turnstile-required
-                        - comments_and_replies_push_notifications
-                        - friend_request_push_notifications
-                        - community_access_plex_tv
-                        - companions_sonos
-                        - custom-home-removal
-                        - disable_home_user_friendships
-                        - disable_sharing_friendships
-                        - drm_support
-                        - le_isrg_root_x1
-                        - federated-auth
-                        - home
-                        - HRK_enable_EUR
-                        - ios14-privacy-banner
-                        - iterable-notification-tokens
-                        - keep-payment-method
-                        - kevin-bacon
-                        - korea-consent
-                        - lets_encrypt
-                        - lightning-dvr-pivot
-                        - livetv
-                        - live-tv-support-incomplete-segments
-                        - tuner-sharing
-                        - metadata_search
-                        - vod_cloudflare
-                        - new_plex_pass_prices
-                        - news-provider-sunset-modal
-                        - photos-favorites
-                        - photos-metadata-edition
-                        - pms_health
-                        - rate-limit-client-token
-                        - shared_server_notification
-                        - shared_source_notification
-                        - scrobbling-service-plex-tv
-                        - collections
-                        - radio
-                        - exclude restrictions
-                        - signin_with_apple
-                        - spring_serve_ad_provider
-                        - transcoder_cache
-                        - TREBLE-show-features
-                        - two-factor-authentication
-                        - unsupportedtuners
-                        - vod-schema
-                        - watch-together-invite
-                        - web_server_dashboard
-                    subscriptionDescription: null
-                    restricted: false
-                    anonymous: false
-                    home: false
-                    guest: false
-                    homeSize: 1
-                    homeAdmin: false
-                    maxHomeSize: 15
-                    rememberExpiresAt: 1721984588
-                    profile:
-                      autoSelectAudio: true
-                      defaultAudioLanguage: ja
-                      defaultSubtitleLanguage: en
-                      autoSelectSubtitle: 1
-                      defaultSubtitleAccessibility: 0
-                      defaultSubtitleForced: 0
-                      watchedIndicator: 1
-                      mediaReviewsVisibility: 0
-                    entitlements: []
-                    subscriptions: []
-                    pastSubscriptions:
-                      - id: null
-                        mode: null
-                        renewsAt: null
-                        endsAt: 1556281940
-                        billing:
-                          paymentMethodId: null
-                          internalPaymentMethod: {}
-                        canceled: false
-                        gracePeriod: false
-                        onHold: false
-                        canReactivate: false
-                        canUpgrade: false
-                        canDowngrade: false
-                        canConvert: false
-                        type: plexpass
-                        transfer: null
-                        state: ended
-                    trials: []
-                    services:
-                      - identifier: epg
-                        endpoint: 'https://epg.provider.plex.tv'
-                        token: RkHIzgbqTjP2giDabsWdbBB9o4YNyhS6CqbTgwfKAOc=
-                        secret: null
-                        status: online
-                      - identifier: epg-staging
-                        endpoint: 'https://epg-staging.provider.plex.tv'
-                        token: RkHIzgbqTjP2giDabsWdbBB9o4YNyhS6CqbTgwfKAOc=
-                        secret: null
-                        status: online
-                      - identifier: epg-dev
-                        endpoint: 'https://epg-dev.provider.plex.tv'
-                        token: RkHIzgbqTjP2giDabsWdbBB9o4YNyhS6CqbTgwfKAOc=
-                        secret: null
-                        status: online
-                      - identifier: eyeq
-                        endpoint: 'https://c4412416.ipg.web.cddbp.net/webapi/xml/1.0/'
-                        token: 6iUU7VrBzA/Hz5nsS9o65Yz77qvh63pYmUN+TaVHeonhsQWlzYGcsik1opEU3toj
-                        secret: null
-                        status: online
-                      - identifier: eyeq-channel-icons
-                        endpoint: 'http://akamai-b.cdn.cddbp.net/cds/2.0/image'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: graph-dev
-                        endpoint: 'https://community-dev.plex.tv'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: graph-staging
-                        endpoint: 'https://community-staging.plex.tv'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: community-dev
-                        endpoint: 'https://community-dev.plex.tv'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: community-staging
-                        endpoint: 'https://community-staging.plex.tv'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: community
-                        endpoint: 'https://community.plex.tv'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: metadata
-                        endpoint: 'https://metadata.provider.plex.tv'
-                        token: 1vme2aaK6G8fZFtFyKeSmInEvdjpjsHEto45VgX1K0c=
-                        secret: null
-                        status: online
-                      - identifier: scrobbling
-                        endpoint: 'https://scrobbles.plex.tv'
-                        token: eyJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjIyNjY5MjEzLCJleHAiOjE3MjA3Nzg1ODgsImlzcyI6InBsZXgudHYiLCJhdWQiOiJzY3JvYmJsaW5nIn0.bFYB92t7ddmg3EncrjqMBYSZJadJwDChVBDv4o-DywXGWyO-Ksl5chLoWiSZ6kFo_FAXXOzCeO9rnvtvVgXvjrVImej2VkxKfqsFEYhn-SA1Wu4VEri_pBBky6wJf7rD9ggzcSJqUBggFWUyRgfsXKb__LwZ9MfOdIldp3UbRqklOX60-XSsMTjDVDzAnIAqnWAffRIcS4e0JOuJbH9wg6_UIqCbTWsMnJ2OPRt0-dvkxfmFYFkytLkxCIw3VVAYC8qRcIzVhfxXURyLLwpzBOQgbie6NeJuSh1iXA5ZnlUiBtmw6zcGq8Ywyyzg5dpJ68PSMjG6WCvcWMlsS5uD8w
-                        secret: null
-                        status: online
-                      - identifier: metadata-dev
-                        endpoint: 'https://metadata-dev.provider.plex.tv'
-                        token: 1vme2aaK6G8fZFtFyKeSmInEvdjpjsHEto45VgX1K0c=
-                        secret: null
-                        status: online
-                      - identifier: metadata-provider
-                        endpoint: 'https://mpm.plex.tv/'
-                        token: null
-                        secret: null
-                        status: online
-                      - identifier: tmsapi
-                        endpoint: 'https://tmsapi.plex.tv/v1.1/'
-                        token: a0VC3zjGN7FmzvlZKIuRRUjLCRoQkgY2jwJsLgi8+OQ=
-                        secret: null
-                        status: online
-                      - identifier: subtitles-search
-                        endpoint: 'https://metadata.provider.plex.tv/library/streams/matches'
-                        token: 1vme2aaK6G8fZFtFyKeSmInEvdjpjsHEto45VgX1K0c=
-                        secret: null
-                        status: online
-                      - identifier: acoustid
-                        endpoint: 'https://acoustid.plex.tv/'
-                        token: XxQtK3u05uaxTaZ6Y6jcrw==
-                        secret: null
-                        status: online
-                      - identifier: lyricfind
-                        endpoint: 'https://lyricfind.plex.tv/'
-                        token: X46ofmSoyOTWjBU4oEx0Rb0ATQjYW31IgFeXw3+/n5hMfGoF7PLEMPrLT9v/zqV1
-                        secret: H8q1AfgeOcf8+wx2ODos1mLBkmsSE4PMCJkkdx27xNwpzzKVV3up6gZJb+teyIOw
-                        status: online
-                      - identifier: lyricfind-search
-                        endpoint: 'https://lyricfind.plex.tv/'
-                        token: 4HRR+YgScsy+71q8J31KgROAuPkWvsus8XQuVFjYUiTjw5f+LesQ8MAgEcjnuYxW
-                        secret: null
-                        status: online
-                      - identifier: tvdb
-                        endpoint: 'https://api4.thetvdb.com/'
-                        token: CFlmhH676IvrFij0l4BR1YNRtyHjz+9EAH+GU5ZgncfJ3ufdmzWK/3giK1Ovei7u
-                        secret: null
-                        status: online
-                    adsConsent: null
-                    adsConsentSetAt: null
-                    adsConsentReminderAt: null
-                    experimentalFeatures: false
-                    twoFactorEnabled: false
-                    backupCodesCreated: false
+                allOf:
+                  - $ref: ./models/UserPlexAccount.yaml
+                    x-stoplight:
+                      id: sk4kj4a0g9wx2
+                  - type: object
+                    x-stoplight:
+                      id: 9mhvf46jde9sh
+                    required:
+                      - pastSubscriptions
+                      - trials
+                    properties:
+                      pastSubscriptions:
+                        x-stoplight:
+                          id: grxmzgizudast
+                        type: array
+                        items:
+                          $ref: ./models/PastSubscription.yaml
+                          x-stoplight:
+                            id: 8nlqzm88uifl5
+                      trials:
+                        type: array
+                        x-stoplight:
+                          id: bcprsmeu8lut5
+                        items:
+                          x-stoplight:
+                            id: nsol7zi1qtgn8
+                          type: object
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -816,7 +377,7 @@ paths:
       tags:
         - User
       summary: Get list of friends of the user logged in
-      description: Get friends of logged in user
+      description: Get friends of provided auth token.
       operationId: getUserFriends
       responses:
         '200':
@@ -826,46 +387,7 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    status:
-                      type: string
-                      examples:
-                        - accepted
-                    sharedServers:
-                      type: array
-                      items:
-                        type: object
-                    sharedSources:
-                      type: array
-                      items:
-                        type: object
-                    id:
-                      type: integer
-                      format: int32
-                    uuid:
-                      type: string
-                      format: uuid
-                    title:
-                      type: string
-                    username:
-                      type: string
-                    restricted:
-                      type: boolean
-                    email:
-                      type: string
-                      format: email
-                    friendlyName:
-                      examples:
-                        - exampleUser
-                        - null
-                      oneOf:
-                        - type: 'null'
-                        - type: string
-                    thumb:
-                      type: string
-                    home:
-                      type: boolean
+                  $ref: ./models/Friend.yaml
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1145,6 +667,9 @@ components:
                 type: array
                 items:
                   type: object
+                  required:
+                    - code
+                    - message
                   properties:
                     code:
                       type: integer
@@ -1155,6 +680,12 @@ components:
                     status:
                       type: integer
                       example: 404
+          examples:
+            Example 1:
+              value:
+                errors:
+                  - code: 1020
+                    message: Code not found or expired
     '500':
       description: Internal Server Error. Something went wrong on our end
       content:
@@ -1172,6 +703,9 @@ components:
                 type: array
                 items:
                   type: object
+                  required:
+                    - code
+                    - message
                   properties:
                     code:
                       type: integer
