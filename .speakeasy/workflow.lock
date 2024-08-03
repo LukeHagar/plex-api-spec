@@ -1,8 +1,8 @@
-speakeasyVersion: 1.351.3
+speakeasyVersion: 1.352.0
 sources:
     Plex-API:
         sourceNamespace: plex-api
-        sourceRevisionDigest: sha256:2b9f32df1647541bfe8cddc1804fdcb4e8a50e3512098637738e0eb5e42573f7
+        sourceRevisionDigest: sha256:72dd1e86d51fc6357f0435d2592e596510d99f7fb7279635688e420eb3e7ee9b
         sourceBlobDigest: sha256:1ed35aea3ff4f83d4c2ad09047b854758d5ed28e9c7b3742d98b56a41b448002
         tags:
             - latest
