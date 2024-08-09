@@ -1,107 +1,411 @@
 openapi: 3.1.0
 info:
-  title: Plex-API
-  summary: A Plex.TV API Map
-  description: An Open API Spec for interacting with Plex.tv
   version: 0.0.3
+  title: Plex-API
+  description: An Open API Spec for interacting with Plex.tv
   contact:
     name: Luke Hagar
-    url: "https://www.LukeHagar.com"
+    url: 'https://www.LukeHagar.com'
     email: Lukeslakemail@gmail.com
   license:
+    url: 'https://opensource.org/license/mit'
     name: MIT
-    identifier: MIT
-
 servers:
-  - url: https://plex.tv/api/v2
-
-security:
-  - Token: []
-    ClientIdentifier: []
-    Device: []
-    DeviceName: []
-    Platform: []
-    PlatformVersion: []
-    Product: []
-    Version: []
-
-components:
-  securitySchemes:
-    Token: # arbitrary name for the security scheme
-      description: Plex Authentication Token
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Token # name of the header, query parameter or cookie
-    ClientIdentifier: # arbitrary name for the security scheme
-      description: Plex Authentication Token
-      type: apiKey
-      in: 
-       - header
-       - query
-       - cookie # can be "header", "query" or "cookie"
-      name: X-Plex-Client-Identifier # name of the header, query parameter or cookie
-    DeviceName: # arbitrary name for the security scheme
-      description: Primary name for the device eg. `Plex Web (Chrome)`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Device-Name # name of the header, query parameter or cookie
-    Device: # arbitrary name for the security scheme
-      description: |
-        The type of device your application is running on
-        Device name and or model number, eg `iPhone3,2`, `Motorola XOOM™`, `LG5200TV`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Device # name of the header, query parameter or cookie
-    PlatformVersion: # arbitrary name for the security scheme
-      description: |
-        Operating system version
-        eg `4.3.1`, `10.6.7`, `3.2`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Platform-Version # name of the header, query parameter or cookie
-    Platform: # arbitrary name for the security scheme
-      description: |
-        Platform name 
-        eg: `Web`, `iOS`, `MacOSX`, `Android`, `LG`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Platform # name of the header, query parameter or cookie
-    Product: # arbitrary name for the security scheme
-      description: |
-        Plex application name 
-        eg: `Laika`, `Plex Media Server`, `Media Link`
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Product # name of the header, query parameter or cookie
-    Version: # arbitrary name for the security scheme
-      description: Plex application version number
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: X-Plex-Version # name of the header, query parameter or cookie
-
+  - url: 'https://plex.tv/api/v2'
+    description: Plex.tv
+  - url: 'https://some-server.com'
+    description: TestServer
 paths:
-  # Plex.tv API endpoints
   /companions:
-    $ref: "./paths/companions.yaml"
+    get:
+      tags:
+        - User
+      summary: Get Companions Data
+      description: Get Companions Data
+      operationId: getCompanionsData
+      responses:
+        '200':
+          description: Companions Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - identifier
+                    - baseURL
+                    - title
+                    - linkURL
+                    - provides
+                    - token
+                  properties:
+                    identifier:
+                      type: string
+                      example: tv.plex.sonos
+                    baseURL:
+                      type: string
+                      example: 'https://sonos.plex.tv'
+                      format: uri
+                    title:
+                      type: string
+                      example: Sonos
+                    linkURL:
+                      type: string
+                      example: 'https://sonos.plex.tv/link'
+                    provides:
+                      type: string
+                      example: 'client,player'
+                    token:
+                      type: string
+                      description: The plex authtoken used to identify with
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      servers:
+        - url: 'https://plex.tv/api/v2'
+    servers:
+      - url: 'https://some-server.com'
+        description: 'https://some-server.com'
   /geoip:
-    $ref: "./paths/geoip.yaml"
-  /home:
-    $ref: "./paths/home.yaml"
+    get:
+      tags:
+        - Activities
+      summary: Get Geo Data
+      description: Returns the geolocation and locale data of the caller
+      operationId: getGeoData
+      responses:
+        '200':
+          description: Gets the geo location data of the user
+          content:
+            application/json:
+              schema:
+                $ref: ./models/GeoData.yaml
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      security: []
   /pins:
-    $ref: "./paths/pins.yaml"
-  /pins/{pinID}:
-    $ref: "./paths/pins-id.yaml"
+    post:
+      tags:
+        - Security
+      summary: Get an Auth PinId
+      description: Retrieve a Pin from Plex.tv for authentication flows
+      operationId: getPin
+      parameters:
+        - name: strong
+          in: query
+          description: |
+            Determines the kind of code returned by the API call
+            Strong codes are used for Pin authentication flows
+            Non-Strong codes are used for `Plex.tv/link`
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+      responses:
+        '200':
+          description: Requests a new pin id used in the authentication flow
+          content:
+            application/json:
+              schema:
+                $ref: ./models/AuthPinContainer.yaml
+        '400':
+          $ref: '#/components/responses/400'
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      x-stoplight:
+        id: 55nwwek4pu6y0
+    parameters: []
+  '/pins/{pinID}':
+    get:
+      tags:
+        - Security
+      summary: Get Access Token by PinId
+      description: Retrieve an Access Token from Plex.tv after the Pin has already been authenticated
+      operationId: getTokenByPinId
+      parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+      responses:
+        '200':
+          description: The pin with a non-null authToken after verification
+          content:
+            application/json:
+              schema:
+                $ref: ./models/AuthPinContainer.yaml
+        '404':
+          $ref: '#/components/responses/404'
+      security: []
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      x-stoplight:
+        id: mf2pam2mfl806
+    parameters:
+      - schema:
+          type: integer
+        name: pinID
+        in: path
+        required: true
+        description: The PinId to retrieve an access token for
   /resources:
-    $ref: "./paths/resources.yaml"
+    get:
+      tags:
+        - Server
+      summary: Get Devices
+      description: Get Devices
+      operationId: getDevices
+      parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+        - name: includeHttps
+          in: query
+          description: Include Https entries in the results
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+        - name: includeRelay
+          in: query
+          description: Include Relay addresses in the results
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+        - name: includeIPv6
+          in: query
+          description: Include IPv6 entries in the results
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+      responses:
+        '200':
+          description: List of Plex Devices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/PlexDevice.yaml
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /user:
-    $ref: "./paths/user.yaml"
+    get:
+      tags:
+        - User
+      summary: Get UserData By Token
+      description: Get the User data from the provided X-Plex-Token
+      operationId: getUserDetails
+      responses:
+        '200':
+          description: Logged in user details
+          content:
+            application/json:
+              schema:
+                $ref: ./models/UserPlexAccount.yaml
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      servers:
+        - url: 'https://plex.tv/api/v2'
   /user/settings:
-    $ref: "./paths/user-settings.yaml"
+    get:
+      tags:
+        - User
+      summary: '[Invalid] Get User Settings'
+      description: Get User Settings
+      operationId: getUserSettings
+      responses:
+        '200':
+          description: User Settings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    value:
+                      type: string
+                    hidden:
+                      type: boolean
+                    updatedAt:
+                      type: number
+        '500':
+          $ref: '#/components/responses/500'
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+      deprecated: true
   /user/settings/opt_outs:
-    $ref: "./paths/user-settings-opt_outs.yaml"
+    get:
+      tags:
+        - User
+      summary: Get User Opt Out Settings
+      description: Get User Opt Out Settings
+      operationId: getUserOptOutSettings
+      responses:
+        '200':
+          description: User Opt Out Settings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tv.plex.provider.podcasts:
+                    example: opt_in
+                    enum:
+                      - opt_in
+                      - opt_out
+                  tv.plex.provider.news:
+                    enum:
+                      - opt_in
+                      - opt_out
+                    example: opt_out
+                  tv.plex.provider.webshows:
+                    enum:
+                      - opt_in
+                      - opt_out
+                    example: opt_out
+                  tv.plex.provider.music:
+                    enum:
+                      - opt_in
+                      - opt_out
+                    example: opt_out
+                  tv.plex.provider.vod:
+                    enum:
+                      - opt_in
+                      - opt_out
+                    example: opt_out
+                  scrobbling:
+                    enum:
+                      - opt_in
+                      - opt_out
+                    example: opt_in
+              examples:
+                Example1:
+                  value:
+                    tv.plex.provider.podcasts: opt_out
+                    tv.plex.provider.news: opt_out
+                    tv.plex.provider.webshows: opt_out
+                    tv.plex.provider.music: opt_out
+                    tv.plex.provider.vod: opt_out
+                    scrobbling: opt_in
+        '404':
+          $ref: '#/components/responses/404'
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      security:
+        - X-Plex-Token-Query: []
+  /users/signin:
+    post:
+      tags:
+        - User
+      summary: Get User SignIn Data
+      description: Sign in user with username and password and return user data with Plex authentication token
+      operationId: post-users-signin-data
+      parameters:
+        - $ref: '#/components/parameters/X-Plex-Client-Identifier'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - login
+                - password
+              properties:
+                login:
+                  type: string
+                  format: email
+                  example: username@email.com
+                password:
+                  type: string
+                  format: password
+                  example: password123
+                rememberMe:
+                  type: boolean
+                  default: false
+        description: Login credentials
+      responses:
+        '201':
+          description: Returns the user account data with a valid auth token
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: ./models/UserPlexAccount.yaml
+                    x-stoplight:
+                      id: sk4kj4a0g9wx2
+                  - type: object
+                    x-stoplight:
+                      id: 9mhvf46jde9sh
+                    required:
+                      - pastSubscriptions
+                      - trials
+                    properties:
+                      pastSubscriptions:
+                        x-stoplight:
+                          id: grxmzgizudast
+                        type: array
+                        items:
+                          $ref: ./models/PastSubscription.yaml
+                          x-stoplight:
+                            id: 8nlqzm88uifl5
+                      trials:
+                        type: array
+                        x-stoplight:
+                          id: bcprsmeu8lut5
+                        items:
+                          x-stoplight:
+                            id: nsol7zi1qtgn8
+                          type: object
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      security: []
   /friends:
-    $ref: "./paths/friends.yaml"
-
+    get:
+      tags:
+        - User
+      summary: Get list of friends of the user logged in
+      description: Get friends of provided auth token.
+      operationId: getUserFriends
+      responses:
+        '200':
+          description: Friends Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/Friend.yaml
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+      servers:
+        - url: 'https://plex.tv/api/v2'
 tags:
   - name: Activities
     description: |
@@ -118,25 +422,15 @@ tags:
   - name: Butler
     description: |
       Butler is the task manager of the Plex Media Server Ecosystem.
-  - name: Server
-    description: |
-      Operations against the Plex Media Server System.
-  - name: Updater
-    description: |
-      This describes the API for searching and applying updates to the Plex Media Server.
-      Updates to the status can be observed via the Event API.
-  - name: Log
-    description: |
-      Submit logs to the Log Handler for Plex Media Server
-  - name: Security
-    description: |
-      API Calls against Security for Plex Media Server
-  - name: Library
-    description: |
-      API Calls interacting with Plex Media Server Libraries
   - name: Hubs
     description: |
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
+  - name: Library
+    description: |
+      API Calls interacting with Plex Media Server Libraries
+  - name: Log
+    description: |
+      Submit logs to the Log Handler for Plex Media Server
   - name: Playlists
     description: |
       Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). 
@@ -146,6 +440,300 @@ tags:
   - name: Search
     description: |
       API Calls that perform search operations with Plex Media Server
+  - name: Security
+    description: |
+      API Calls against Security for Plex Media Server
+  - name: Server
+    description: |
+      Operations against the Plex Media Server System.
+  - name: Updater
+    description: |
+      This describes the API for searching and applying updates to the Plex Media Server.
+      Updates to the status can be observed via the Event API.
   - name: User
     description: |
       API Calls that perform operations with Plex Media Server Users
+components:
+  parameters:
+    X-Plex-Token:
+      name: X-Plex-Token
+      in: query
+      description: Plex Authentication Token
+      required: true
+      schema:
+        type: string
+        examples:
+          - 7So4hkyCDMuhFFPV9D
+    X-Plex-Product:
+      name: X-Plex-Product
+      in: query
+      description: Product name of the application shown in the list of devices
+      required: true
+      schema:
+        type: string
+        examples:
+          - Plex Web
+    X-Plex-Version:
+      name: X-Plex-Version
+      in: query
+      description: The version of the Plex product
+      required: true
+      schema:
+        type: string
+        examples:
+          - 4.129.1
+    X-Plex-Client-Identifier:
+      name: X-Plex-Client-Identifier
+      in: query
+      description: |
+        The unique identifier for the client application.
+        This is used to track the client application and its usage.
+        (UUID, serial number, or other number unique per device)
+      required: true
+      schema:
+        type: string
+        examples:
+          - bv995w83aklpwulx9heublnf
+        example: 9klpwueublnfbvlx95w83ah9
+        default: 9klpwueublnfbvlx95w83ah9
+    X-Plex-Platform:
+      name: X-Plex-Platform
+      in: query
+      description: The platform of the client application
+      required: true
+      schema:
+        type: string
+        examples:
+          - Chrome
+    X-Plex-Platform-Version:
+      name: X-Plex-Platform-Version
+      in: query
+      description: The platform version of the client application
+      required: true
+      schema:
+        type: string
+        examples:
+          - '126.0'
+    X-Plex-Features:
+      name: X-Plex-Features
+      in: query
+      description: Features of the Plex client
+      required: false
+      schema:
+        type: string
+        examples:
+          - 'external-media,indirect-media,hub-style-list'
+    X-Plex-Model:
+      name: X-Plex-Model
+      in: query
+      description: The model of the Plex client device
+      required: false
+      schema:
+        type: string
+        examples:
+          - bundled
+    X-Plex-Device:
+      name: X-Plex-Device
+      in: query
+      description: The device on which the Plex client is running
+      required: true
+      schema:
+        type: string
+        examples:
+          - Linux
+    X-Plex-Device-Name:
+      name: X-Plex-Device-Name
+      in: query
+      description: The name of the device on which the Plex client is running
+      required: true
+      schema:
+        type: string
+        examples:
+          - Chrome
+    X-Plex-Device-Screen-Resolution:
+      name: X-Plex-Device-Screen-Resolution
+      in: query
+      description: The screen resolution of the device on which the Plex client is running
+      required: false
+      schema:
+        type: string
+        examples:
+          - '968x1166,2560x1440'
+    X-Plex-Language:
+      name: X-Plex-Language
+      in: query
+      description: The language setting of the Plex client
+      required: false
+      schema:
+        type: string
+        examples:
+          - en
+    X-Plex-Session-Id:
+      name: X-Plex-Session-Id
+      in: query
+      description: The session ID of the Plex client
+      required: false
+      schema:
+        type: string
+        examples:
+          - 5b960d87-3a2a-4ef0-842b-dfb16581af3a
+  securitySchemes:
+    X-Plex-Token-Query:
+      type: apiKey
+      name: X-Plex-Token
+      in: query
+  responses:
+    '400':
+      description: Bad Request - X-Plex-Client-Identifier is missing
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                    message:
+                      type: string
+                    status:
+                      type: integer
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1004
+                    message: login is missing
+                    status: 400
+                  - code: 1004
+                    message: password is missing
+                    status: 400
+          examples:
+            Bad Request Example:
+              value:
+                errors:
+                  - code: 1004
+                    message: login is missing
+                    status: 400
+                  - code: 1004
+                    message: password is missing
+                    status: 400
+        application/xml:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: integer
+                    message:
+                      type: string
+                    status:
+                      type: integer
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1004
+                    message: login is missing
+                    status: 400
+                  - code: 1004
+                    message: password is missing
+                    status: 400
+    '401':
+      description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: number
+                    message:
+                      type: string
+                    status:
+                      type: number
+    '404':
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1002
+                    message: The requested resource or endpoint could not be found
+                    status: 404
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - code
+                    - message
+                  properties:
+                    code:
+                      type: integer
+                      example: 1002
+                    message:
+                      type: string
+                      example: The requested resource or endpoint could not be found
+                    status:
+                      type: integer
+                      example: 404
+          examples:
+            Example 1:
+              value:
+                errors:
+                  - code: 1020
+                    message: Code not found or expired
+    '500':
+      description: Internal Server Error. Something went wrong on our end
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              Example 1:
+                errors:
+                  - code: 1007
+                    message: Internal Server Error. Something went wrong on our end
+                    status: 500
+            properties:
+              errors:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - code
+                    - message
+                  properties:
+                    code:
+                      type: integer
+                      example: 1007
+                    message:
+                      type: string
+                      example: Internal Server Error. Something went wrong on our end
+                    status:
+                      type: integer
+                      example: 500
+          examples:
+            Example 1:
+              value:
+                errors:
+                  - code: 0
+                    message: string
+                    status: 0
+security:
+  - X-Plex-Token-Query: []

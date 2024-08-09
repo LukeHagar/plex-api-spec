@@ -1,0 +1,74 @@
+title: PlexDevice
+x-stoplight:
+  id: emaovsz492ooc
+type: object
+properties:
+  name:
+    type: string
+  product:
+    type: string
+  productVersion:
+    type: string
+  platform:
+    type: string
+  platformVersion:
+    type: string
+  device:
+    type: string
+  clientIdentifier:
+    type: string
+  createdAt:
+    type: string
+    format: date-time
+  lastSeenAt:
+    type: string
+    format: date-time
+  provides:
+    type: string
+  ownerId:
+    type: string
+    format: nullable
+  sourceTitle:
+    type: string
+    format: nullable
+  publicAddress:
+    type: string
+  accessToken:
+    type: string
+  owned:
+    type: boolean
+  home:
+    type: boolean
+  synced:
+    type: boolean
+  relay:
+    type: boolean
+  presence:
+    type: boolean
+  httpsRequired:
+    type: boolean
+  publicAddressMatches:
+    type: boolean
+  dnsRebindingProtection:
+    type: boolean
+  natLoopbackSupported:
+    type: boolean
+  connections:
+    type: array
+    items:
+      type: object
+      properties:
+        protocol:
+          type: string
+        address:
+          type: string
+        port:
+          type: number
+        uri:
+          type: string
+        local:
+          type: boolean
+        relay:
+          type: boolean
+        IPv6:
+          type: boolean

@@ -1,0 +1,131 @@
+title: PastSubscription
+x-stoplight:
+  id: 2xaxdrlqls73i
+type: object
+required:
+  - id
+  - mode
+  - renewsAt
+  - endsAt
+  - canceled
+  - gracePeriod
+  - onHold
+  - canReactivate
+  - canUpgrade
+  - canDowngrade
+  - canConvert
+  - type
+  - transfer
+  - state
+  - billing
+properties:
+  id:
+    type:
+      - string
+      - 'null'
+    x-stoplight:
+      id: 7cmk7pyy839xs
+  mode:
+    type:
+      - string
+      - 'null'
+    x-stoplight:
+      id: 92oi78sn9x156
+  renewsAt:
+    type:
+      - integer
+      - 'null'
+    x-stoplight:
+      id: e1jk5b4apu76a
+    description: Unix epoch datetime
+    format: int32
+  endsAt:
+    type:
+      - integer
+      - 'null'
+    example: 1556281940
+    x-stoplight:
+      id: xb94nk3vckiac
+    description: Unix epoch datetime
+    format: int32
+  canceled:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: o31fjmx4bpi4t
+    default: false
+  gracePeriod:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: o3t0495t5q9yx
+    default: false
+  onHold:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: nsryr982qq0ui
+    default: false
+  canReactivate:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: cu1vyitnygmw0
+    default: false
+  canUpgrade:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: 5vx5e882vya52
+    default: false
+  canDowngrade:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: v30u9rs5jt17e
+    default: false
+  canConvert:
+    type: boolean
+    example: false
+    x-stoplight:
+      id: mt87x72doh74l
+    default: false
+  type:
+    type: string
+    example: plexpass
+    x-stoplight:
+      id: q0b0zs088y6ry
+  transfer:
+    type:
+      - string
+      - 'null'
+    x-stoplight:
+      id: zz2vb16ui0w11
+  state:
+    example: ended
+    x-stoplight:
+      id: 1n8gpiaklxc7s
+    enum:
+      - ended
+  billing:
+    type: array
+    x-stoplight:
+      id: o0sbz6ffcvkov
+    items:
+      x-stoplight:
+        id: oye4lhi29ozfv
+      type: object
+      required:
+        - internalPaymentMethod
+        - paymentMethodId
+      properties:
+        internalPaymentMethod:
+          type: object
+          x-stoplight:
+            id: gxvjfaody6wc1
+        paymentMethodId:
+          type:
+            - integer
+            - 'null'
+          x-stoplight:
+            id: abpoj38776e5d

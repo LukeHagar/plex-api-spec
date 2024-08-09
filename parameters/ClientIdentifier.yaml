@@ -6,5 +6,5 @@ description: |
 in: header
 schema:
   type: string
-  example: Postman
+  example: fyhf6g3zvcl1d9qorv38ngb9
 required: true

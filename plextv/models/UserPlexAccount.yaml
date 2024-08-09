@@ -1,0 +1,353 @@
+title: UserPlexAccount
+x-stoplight:
+  id: oxmve07qox8h4
+type: object
+examples:
+  - adsConsent: true
+    adsConsentReminderAt: '2019-08-24T14:15:22Z'
+    adsConsentSetAt: '2019-08-24T14:15:22Z'
+    anonymous: false
+    authToken: CxoUzBTSV5hsxjTpFKaf
+    backupCodesCreated: false
+    confirmed: false
+    country: US
+    email: username@email.com
+    emailOnlyAuth: false
+    experimentalFeatures: false
+    friendlyName: friendlyUsername
+    entitlements: []
+    guest: false
+    hasPassword: true
+    home: false
+    homeAdmin: false
+    homeSize: 1
+    id: 13692262
+    joinedAt: 1721154902
+    locale: null
+    mailingListActive: false
+    mailingListStatus: subscribed
+    maxHomeSize: 15
+    pastSubscriptions:
+      - id: string
+        mode: string
+        renewsAt: string
+        endsAt: '1556281940'
+        canceled: '0'
+        gracePeriod: '0'
+        onHold: '0'
+        canReactivate: '0'
+        canUpgrade: '0'
+        canDowngrade: '0'
+        canConvert: '0'
+        type: plexpass
+        transfer: string
+        state: ended
+        billing:
+          - internalPaymentMethod: string
+            paymentMethodId: string
+    pin: string
+    profile:
+      - autoSelectAudio: true
+        defaultAudioLanguage: ja
+        defaultSubtitleLanguage: en
+        autoSelectSubtitle: 1
+        defaultSubtitleAccessibility: 1
+        defaultSubtitleForced: 0
+        watchedIndicator: 1
+        mediaReviewsVisibility: 0
+    protected: false
+    rememberExpiresAt: 1722364046
+    restricted: false
+    roles:
+      - string
+    scrobbleTypes: ''
+    services:
+      - identifier: metadata-dev
+        endpoint: 'https://epg.provider.plex.tv'
+        token: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
+        secret: string
+        status: online
+    subscription:
+      features:
+        - Android - Dolby Vision
+      active: true
+      subscribedAt: '2021-04-12T18:21:12Z'
+      status: Inactive
+      paymentService: string
+      plan: string
+    subscriptionDescription: string
+    subscriptions:
+      - features:
+          - Android - Dolby Vision
+        active: true
+        subscribedAt: '2021-04-12T18:21:12Z'
+        status: Inactive
+        paymentService: string
+        plan: string
+    thumb: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+    title: UsernameTitle
+    trials:
+      - {}
+    twoFactorEnabled: false
+    username: Username
+    uuid: dae343c1f45beb4f
+required:
+  - adsConsent
+  - adsConsentReminderAt
+  - adsConsentSetAt
+  - anonymous
+  - authToken
+  - backupCodesCreated
+  - confirmed
+  - country
+  - email
+  - emailOnlyAuth
+  - experimentalFeatures
+  - friendlyName
+  - entitlements
+  - guest
+  - hasPassword
+  - home
+  - homeAdmin
+  - homeSize
+  - id
+  - joinedAt
+  - locale
+  - mailingListActive
+  - mailingListStatus
+  - maxHomeSize
+  - profile
+  - protected
+  - rememberExpiresAt
+  - restricted
+  - scrobbleTypes
+  - services
+  - subscription
+  - subscriptionDescription
+  - subscriptions
+  - thumb
+  - title
+  - twoFactorEnabled
+  - username
+  - uuid
+properties:
+  adsConsent:
+    type:
+      - boolean
+      - 'null'
+    description: Unknown
+  adsConsentReminderAt:
+    type:
+      - string
+      - 'null'
+    description: Unknown
+    format: date-time
+  adsConsentSetAt:
+    type:
+      - string
+      - 'null'
+    description: Unknown
+    format: date-time
+  anonymous:
+    type: boolean
+    description: Unknown
+    default: false
+  authToken:
+    type: string
+    description: The account token
+    example: CxoUzBTSV5hsxjTpFKaf
+  backupCodesCreated:
+    type: boolean
+    description: If the two-factor authentication backup codes have been created
+    default: false
+  confirmed:
+    type: boolean
+    description: If the account has been confirmed
+    default: false
+  country:
+    type: string
+    description: The account country
+    example: US
+    maxLength: 2
+    minLength: 2
+  email:
+    type: string
+    description: The account email address
+    format: email
+    example: username@email.com
+  emailOnlyAuth:
+    type: boolean
+    description: If login with email only is enabled
+    default: false
+  experimentalFeatures:
+    type: boolean
+    description: If experimental features are enabled
+    default: false
+  friendlyName:
+    type: string
+    description: Your account full name
+    example: friendlyUsername
+  entitlements:
+    type: array
+    description: List of devices your allowed to use with this account
+    items:
+      type: string
+      example: '[]'
+  guest:
+    type: boolean
+    description: If the account is a Plex Home guest user
+    default: false
+  hasPassword:
+    type: boolean
+    description: If the account has a password
+    default: true
+  home:
+    type: boolean
+    description: If the account is a Plex Home user
+    default: false
+  homeAdmin:
+    type: boolean
+    description: If the account is the Plex Home admin
+    default: false
+  homeSize:
+    type: integer
+    description: The number of accounts in the Plex Home
+    example: 1
+    format: int32
+  id:
+    type: integer
+    description: The Plex account ID
+    example: 13692262
+    format: int32
+  joinedAt:
+    type: integer
+    description: Unix epoch datetime the account joined Plex
+    format: int32
+    example: 1721154902
+  locale:
+    type:
+      - string
+      - 'null'
+    description: The account locale
+  mailingListActive:
+    type: boolean
+    description: If you are subscribed to the Plex newsletter
+    default: false
+  mailingListStatus:
+    description: Your current mailing list status
+    enum:
+      - subscribed
+      - unsubscribed
+  maxHomeSize:
+    type: integer
+    description: The maximum number of accounts allowed in the Plex Home
+    example: 15
+    format: int32
+  pin:
+    type: string
+    description: '[Might be removed] The hashed Plex Home PIN '
+    deprecated: true
+  profile:
+    type: array
+    x-stoplight:
+      id: hgq318j7ei8x7
+    items:
+      $ref: ./UserProfile.yaml
+      x-stoplight:
+        id: 9rwcb84hrvcsi
+  protected:
+    type: boolean
+    description: If the account has a Plex Home PIN enabled
+    default: false
+  rememberExpiresAt:
+    type: integer
+    description: Unix epoch datetime the authtoken expires
+    format: int32
+    example: 1722364046
+  restricted:
+    type: boolean
+    description: If the account is a Plex Home managed user
+    default: false
+  roles:
+    type: array
+    description: '[Might be removed] List of account roles. Plexpass membership listed here'
+    items:
+      type: string
+  scrobbleTypes:
+    type: string
+    description: Unknown
+  services:
+    type: array
+    x-stoplight:
+      id: 3euz3w2ibanvz
+    items:
+      x-stoplight:
+        id: irdwceh44hiy9
+      type: object
+      required:
+        - identifier
+        - endpoint
+        - token
+        - secret
+        - status
+      properties:
+        identifier:
+          type: string
+          example: metadata-dev
+        endpoint:
+          type: string
+          example: 'https://epg.provider.plex.tv'
+          format: uri
+        token:
+          type:
+            - string
+            - 'null'
+          example: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
+        secret:
+          type:
+            - string
+            - 'null'
+        status:
+          example: online
+          enum:
+            - online
+            - offline
+  subscription:
+    $ref: ./Subscription.yaml
+    description: If the account’s Plex Pass subscription is active
+    x-stoplight:
+      id: xj3hgb5eqps70
+  subscriptionDescription:
+    type:
+      - string
+      - 'null'
+    description: Description of the Plex Pass subscription
+  subscriptions:
+    type: array
+    x-stoplight:
+      id: fy5zagvjnfyun
+    items:
+      $ref: ./Subscription.yaml
+      x-stoplight:
+        id: efo99d4ygo6j3
+  thumb:
+    type: string
+    description: URL of the account thumbnail
+    format: uri
+    example: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+  title:
+    type: string
+    description: The title of the account (username or friendly name)
+    example: UsernameTitle
+  twoFactorEnabled:
+    type: boolean
+    description: If two-factor authentication is enabled
+    default: false
+  username:
+    type: string
+    description: The account username
+    example: Username
+  uuid:
+    type: string
+    description: The account UUID
+    example: dae343c1f45beb4f

@@ -1,0 +1,126 @@
+type: object
+x-stoplight:
+  id: 2c655ec9286ff
+x-examples:
+  Example 1:
+    id: 373040866
+    code: 7RQZ
+    product: '0'
+    trusted: false
+    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+    clientIdentifier: 9klpwueublnfbvlx95w83ah9
+    location:
+      code: NL
+      european_union_member: true
+      continent_code: EU
+      country: The Netherlands
+      city: Breda
+      time_zone: Europe/Amsterdam
+      postal_code: '4814'
+      in_privacy_restricted_country: true
+      in_privacy_restricted_region: true
+      subdivisions: North Brabant
+      coordinates: '51.5869, 4.7471'
+    expiresIn: 876
+    createdAt: '2024-07-16T17:03:05Z'
+    expiresAt: '2024-07-16T17:18:05Z'
+    authToken: null
+    newRegistration: null
+title: AuthPinContainer
+examples:
+  - id: 308667304
+    code: 7RQZ
+    product: '0'
+    trusted: false
+    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+    clientIdentifier: string
+    location:
+      code: VI
+      continent_code: NA
+      country: United States Virgin Islands
+      city: Amsterdam
+      european_union_member: true
+      time_zone: America/St_Thomas
+      postal_code: 802
+      in_privacy_restricted_country: true
+      in_privacy_restricted_region: true
+      subdivisions: Saint Thomas
+      coordinates: '18.3381, -64.8941'
+    expiresIn: 876
+    createdAt: '2024-07-16T17:03:05Z'
+    expiresAt: '2024-07-16T17:18:05Z'
+    authToken: null
+    newRegistration: null
+required:
+  - id
+  - code
+  - product
+  - trusted
+  - qr
+  - clientIdentifier
+  - location
+  - expiresIn
+  - createdAt
+  - expiresAt
+properties:
+  id:
+    type: integer
+    example: 308667304
+    x-stoplight:
+      id: 0d2tilut4acb9
+  code:
+    type: string
+    example: 7RQZ
+    x-stoplight:
+      id: 6onayyo3kjukg
+  product:
+    type: string
+    example: '0'
+    x-stoplight:
+      id: xm5u18unj132a
+  trusted:
+    type: boolean
+    default: false
+    x-stoplight:
+      id: vtg788j42u0bj
+  qr:
+    type: string
+    example: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+    x-stoplight:
+      id: 43g7q8vh5xj8m
+  clientIdentifier:
+    type: string
+    description: The X-Client-Identifier used in the request
+    x-stoplight:
+      id: m3c32l4ddb0k1
+  location:
+    $ref: ./GeoData.yaml
+    x-stoplight:
+      id: j6xj6b7mogu4q
+  expiresIn:
+    type: integer
+    example: 876
+    description: 'The number of seconds this pin expires, by default 900 seconds'
+    x-stoplight:
+      id: 9uqc9xw6we4in
+    default: 900
+  createdAt:
+    type: string
+    example: '2024-07-16T17:03:05Z'
+    format: date-time
+    x-stoplight:
+      id: 6w4jdocx5skg4
+  expiresAt:
+    type: string
+    format: date-time
+    example: '2024-07-16T17:18:05Z'
+    x-stoplight:
+      id: uaewr3qrdutuw
+  authToken:
+    type: 'null'
+    x-stoplight:
+      id: r8bnxodzq56ba
+  newRegistration:
+    type: 'null'
+    x-stoplight:
+      id: kwkodbq3wzn9r
