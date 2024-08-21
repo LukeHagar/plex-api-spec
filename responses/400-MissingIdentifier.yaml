@@ -1,0 +1,20 @@
+description: Bad Request - X-Plex-Client-Identifier is missing
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 1000
+              message:
+                type: string
+                example: X-Plex-Client-Identifier is missing
+              status:
+                type: integer
+                example: 400
