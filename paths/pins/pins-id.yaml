@@ -8,13 +8,13 @@ get:
   description: Retrieve an Access Token from Plex.tv after the Pin has been authenticated
   operationId: getTokenByPinId
   parameters:
+    - $ref: "../../parameters/ClientIdentifier.yaml"
     - name: pinID
       description: The PinID to retrieve an access token for
       in: path
       required: true
       schema:
         type: integer
-    - $ref: "../../parameters/ClientIdentifier.yaml"
   responses:
     '200':
       description: The Pin with a non-null authToken when it has been verified by the user

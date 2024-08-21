@@ -209,6 +209,13 @@ paths:
   /video/:/transcode/universal/start.mpd:
     $ref: "./paths/video-transcode-universal-start.yaml"
 
+  # User
+  /user:
+    $ref: "./paths/user/user.yaml"
+
+  /users/signin:
+    $ref: "./paths/users/signin.yaml"
+
   # Watchlist
   /library/sections/watchlist/{filter}:
     $ref: "./paths/metadata/watchlist.yaml"
