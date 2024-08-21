@@ -1,16 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Plex-API
-  summary: A Plex Media Server API Map
-  description: An Open API Spec for interacting with Plex.tv and Plex Servers
   version: 0.0.3
+  title: Plex-API
+  description: An Open API Spec for interacting with Plex.tv
   contact:
     name: Luke Hagar
-    url: "https://www.LukeHagar.com"
+    url: 'https://www.LukeHagar.com'
     email: Lukeslakemail@gmail.com
   license:
+    url: 'https://opensource.org/license/mit'
     name: MIT
-    identifier: MIT
 
 servers:
   - url: "{protocol}://{ip}:{port}"
