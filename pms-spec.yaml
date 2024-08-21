@@ -1,16 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Plex-API
-  summary: A Plex Media Server API Map
-  description: An Open API Spec for interacting with Plex.tv and Plex Servers
   version: 0.0.3
+  title: Plex-API
+  description: An Open API Spec for interacting with Plex.tv
   contact:
     name: Luke Hagar
-    url: "https://www.LukeHagar.com"
+    url: 'https://www.LukeHagar.com'
     email: Lukeslakemail@gmail.com
   license:
+    url: 'https://opensource.org/license/mit'
     name: MIT
-    identifier: MIT
 
 servers:
   - url: "{protocol}://{ip}:{port}"
@@ -83,6 +82,11 @@ paths:
   /companions:
     $ref: "paths/companions/companions.yaml"
 
+  # Friends
+  # Folder pms/paths/friends
+  /friends:
+    $ref: "paths/friends/friends.yaml"
+
   # GeoIP
   # Folder pms/paths/geoip
   /geoip:
@@ -132,6 +136,11 @@ paths:
   /library/onDeck:
     $ref: "./paths/library/ondeck.yaml"
 
+  # Resources
+  # Folder: pms/resources
+  /resources:
+    $ref: "./paths/resources/resources.yaml"
+  
   # Logs
   # Folder: pms/paths/logs
   /log:
@@ -203,6 +212,13 @@ paths:
 
   /video/:/transcode/universal/start.mpd:
     $ref: "./paths/video-transcode-universal-start.yaml"
+
+  # User
+  /user:
+    $ref: "./paths/user/user.yaml"
+
+  /users/signin:
+    $ref: "./paths/users/signin.yaml"
 
   # Watchlist
   /library/sections/watchlist/{filter}:

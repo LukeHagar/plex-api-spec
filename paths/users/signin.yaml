@@ -1,0 +1,57 @@
+post:
+  servers:
+    - url: 'https://plex.tv/api/v2'
+  security: []
+  tags:
+    - User
+  summary: Get User SignIn Data
+  description: Sign in user with username and password and return user data with Plex authentication token
+  operationId: post-users-signin-data
+  parameters:
+    - $ref: "../../parameters/ClientIdentifier.yaml"
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - login
+            - password
+          properties:
+            login:
+              type: string
+              format: email
+              example: username@email.com
+            password:
+              type: string
+              format: password
+              example: password123
+            rememberMe:
+              type: boolean
+              default: false
+    description: Login credentials
+  responses:
+    '201':
+      description: Returns the user account data with a valid auth token
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../../models/UserPlexAccount.yaml
+              - type: object
+                required:
+                  - pastSubscriptions
+                  - trials
+                properties:
+                  pastSubscriptions:
+                    type: array
+                    items:
+                      $ref: ../../models/PastSubscription.yaml
+                  trials:
+                    type: array
+                    items:
+                      type: object
+    '400':
+      $ref: '../../responses/400.yaml'
+    '401':
+      $ref: '../../responses/401.yaml'

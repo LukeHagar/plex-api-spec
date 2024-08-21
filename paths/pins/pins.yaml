@@ -22,14 +22,11 @@ post:
     - $ref: ../../parameters/ClientProduct.yaml
   responses:
     '200':
-      description: The Pin
+      description: Requests a new pin id used in the authentication flow
       content:
         application/json:
           schema:
             $ref: ../../models/AuthPinContainer.yaml
     '400':
-      content:
-        application/json:
-          schema:
-             $ref: ../../responses/400-MissingIdentifier.yaml
+      $ref: ../../responses/400-MissingIdentifier.yaml
 
