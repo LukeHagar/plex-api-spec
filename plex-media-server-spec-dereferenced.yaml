@@ -1030,6 +1030,188 @@ paths:
                         status:
                           type: number
                           example: 401
+  /companions:
+    get:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      tags:
+        - Plex
+      summary: Get Companions Data
+      description: Get Companions Data
+      operationId: getCompanionsData
+      responses:
+        '200':
+          description: Companions Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - identifier
+                    - baseURL
+                    - title
+                    - linkURL
+                    - provides
+                    - token
+                  properties:
+                    identifier:
+                      type: string
+                      example: tv.plex.sonos
+                    baseURL:
+                      type: string
+                      example: 'https://sonos.plex.tv'
+                      format: uri
+                    title:
+                      type: string
+                      example: Sonos
+                    linkURL:
+                      type: string
+                      example: 'https://sonos.plex.tv/link'
+                    provides:
+                      type: string
+                      example: 'client,player'
+                    token:
+                      type: string
+                      description: The plex authtoken used to identify with
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  /geoip:
+    get:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      security: []
+      tags:
+        - Plex
+      summary: Get Geo Data
+      description: Returns the geolocation and locale data of the caller
+      operationId: getGeoData
+      responses:
+        '200':
+          description: Gets the geo location data of the user
+          content:
+            application/json:
+              schema:
+                title: GeoData
+                type: object
+                description: Geo location data
+                examples:
+                  - code: VI
+                    continent_code: NA
+                    country: United States Virgin Islands
+                    city: Amsterdam
+                    european_union_member: true
+                    time_zone: America/St_Thomas
+                    postal_code: 802
+                    in_privacy_restricted_country: true
+                    in_privacy_restricted_region: true
+                    subdivisions: Saint Thomas
+                    coordinates: '18.3381, -64.8941'
+                required:
+                  - code
+                  - continent_code
+                  - country
+                  - city
+                  - european_union_member
+                  - time_zone
+                  - postal_code
+                  - in_privacy_restricted_country
+                  - in_privacy_restricted_region
+                  - subdivisions
+                  - coordinates
+                properties:
+                  code:
+                    type: string
+                    description: The ISO 3166-1 alpha-2 code of the country.
+                    example: VI
+                  continent_code:
+                    type: string
+                    description: The continent code where the country is located.
+                    example: NA
+                  country:
+                    type: string
+                    description: The official name of the country.
+                    example: United States Virgin Islands
+                  city:
+                    type: string
+                    description: The name of the city.
+                    example: Amsterdam
+                  european_union_member:
+                    type: boolean
+                    description: Indicates if the country is a member of the European Union.
+                    example: true
+                    default: false
+                  time_zone:
+                    type: string
+                    description: The time zone of the country.
+                    example: America/St_Thomas
+                  postal_code:
+                    type: integer
+                    description: The postal code of the location.
+                    example: 802
+                  in_privacy_restricted_country:
+                    type: boolean
+                    description: Indicates if the country has privacy restrictions.
+                    example: true
+                    default: false
+                  in_privacy_restricted_region:
+                    type: boolean
+                    description: Indicates if the region has privacy restrictions.
+                    example: true
+                    default: false
+                  subdivisions:
+                    type: string
+                    description: The name of the primary administrative subdivision.
+                    example: Saint Thomas
+                  coordinates:
+                    type: string
+                    description: 'The geographical coordinates (latitude, longitude) of the location.'
+                    example: '18.3381, -64.8941'
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /home:
     get:
       tags:
@@ -4907,105 +5089,209 @@ paths:
             example: Postman
           required: true
       responses:
-        '201':
+        '200':
           description: The Pin
           content:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    id: 373040866
+                    code: 7RQZ
+                    product: '0'
+                    trusted: false
+                    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+                    clientIdentifier: 9klpwueublnfbvlx95w83ah9
+                    location:
+                      code: NL
+                      european_union_member: true
+                      continent_code: EU
+                      country: The Netherlands
+                      city: Breda
+                      time_zone: Europe/Amsterdam
+                      postal_code: '4814'
+                      in_privacy_restricted_country: true
+                      in_privacy_restricted_region: true
+                      subdivisions: North Brabant
+                      coordinates: '51.5869, 4.7471'
+                    expiresIn: 876
+                    createdAt: '2024-07-16T17:03:05Z'
+                    expiresAt: '2024-07-16T17:18:05Z'
+                    authToken: null
+                    newRegistration: null
+                title: AuthPinContainer
+                examples:
+                  - id: 308667304
+                    code: 7RQZ
+                    product: '0'
+                    trusted: false
+                    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+                    clientIdentifier: string
+                    location:
+                      code: VI
+                      continent_code: NA
+                      country: United States Virgin Islands
+                      city: Amsterdam
+                      european_union_member: true
+                      time_zone: America/St_Thomas
+                      postal_code: 802
+                      in_privacy_restricted_country: true
+                      in_privacy_restricted_region: true
+                      subdivisions: Saint Thomas
+                      coordinates: '18.3381, -64.8941'
+                    expiresIn: 876
+                    createdAt: '2024-07-16T17:03:05Z'
+                    expiresAt: '2024-07-16T17:18:05Z'
+                    authToken: null
+                    newRegistration: null
+                required:
+                  - id
+                  - code
+                  - product
+                  - trusted
+                  - qr
+                  - clientIdentifier
+                  - location
+                  - expiresIn
+                  - createdAt
+                  - expiresAt
                 properties:
                   id:
-                    description: PinID for use with authentication
-                    type: number
-                    example: 1272322473
+                    type: integer
+                    example: 308667304
                   code:
                     type: string
-                    example: 3patfx1a78ukcbr7x0n9bl26t
+                    example: 7RQZ
                   product:
                     type: string
-                    example: Plex Web
+                    example: '0'
                   trusted:
                     type: boolean
+                    default: false
                   qr:
-                    description: |
-                      a link to a QR code hosted on plex.tv 
-                      The QR code redirects to the relevant `plex.tv/link` authentication page
-                      Which then prompts the user for the 4 Digit Link Pin
                     type: string
-                    example: 'https://plex.tv/api/v2/pins/qr/3patfx1a78ukcbr7x0n9bl26t'
+                    example: 'https://plex.tv/api/v2/pins/qr/7RQZ'
                   clientIdentifier:
                     type: string
-                    example: Postman
+                    description: The X-Client-Identifier used in the request
                   location:
+                    title: GeoData
                     type: object
+                    description: Geo location data
+                    examples:
+                      - code: VI
+                        continent_code: NA
+                        country: United States Virgin Islands
+                        city: Amsterdam
+                        european_union_member: true
+                        time_zone: America/St_Thomas
+                        postal_code: 802
+                        in_privacy_restricted_country: true
+                        in_privacy_restricted_region: true
+                        subdivisions: Saint Thomas
+                        coordinates: '18.3381, -64.8941'
+                    required:
+                      - code
+                      - continent_code
+                      - country
+                      - city
+                      - european_union_member
+                      - time_zone
+                      - postal_code
+                      - in_privacy_restricted_country
+                      - in_privacy_restricted_region
+                      - subdivisions
+                      - coordinates
                     properties:
                       code:
                         type: string
-                        example: US
-                      european_union_member:
-                        type: boolean
+                        description: The ISO 3166-1 alpha-2 code of the country.
+                        example: VI
                       continent_code:
                         type: string
+                        description: The continent code where the country is located.
                         example: NA
                       country:
                         type: string
-                        example: United States
+                        description: The official name of the country.
+                        example: United States Virgin Islands
                       city:
                         type: string
-                        example: Austin
+                        description: The name of the city.
+                        example: Amsterdam
+                      european_union_member:
+                        type: boolean
+                        description: Indicates if the country is a member of the European Union.
+                        example: true
+                        default: false
                       time_zone:
                         type: string
-                        example: America/Chicago
+                        description: The time zone of the country.
+                        example: America/St_Thomas
                       postal_code:
-                        type: string
-                        example: 78732
+                        type: integer
+                        description: The postal code of the location.
+                        example: 802
                       in_privacy_restricted_country:
                         type: boolean
+                        description: Indicates if the country has privacy restrictions.
+                        example: true
+                        default: false
+                      in_privacy_restricted_region:
+                        type: boolean
+                        description: Indicates if the region has privacy restrictions.
+                        example: true
+                        default: false
                       subdivisions:
                         type: string
-                        example: Texas
+                        description: The name of the primary administrative subdivision.
+                        example: Saint Thomas
                       coordinates:
                         type: string
-                        example: 30.3768 -97.8935
+                        description: 'The geographical coordinates (latitude, longitude) of the location.'
+                        example: '18.3381, -64.8941'
                   expiresIn:
-                    type: number
-                    example: 1800
+                    type: integer
+                    example: 876
+                    description: 'The number of seconds this pin expires, by default 900 seconds'
+                    default: 900
                   createdAt:
                     type: string
+                    example: '2024-07-16T17:03:05Z'
                     format: date-time
-                    example: 2023-04-12T17:00:03.000Z
                   expiresAt:
                     type: string
                     format: date-time
-                    example: 2023-04-12T17:30:03.000Z
+                    example: '2024-07-16T17:18:05Z'
                   authToken:
-                    type: string
-                    format: nullable
+                    type: 'null'
                   newRegistration:
-                    type:
-                      - boolean
-                      - 'null'
+                    type: 'null'
         '400':
-          description: X-Plex-Client-Identifier is missing
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
+                description: Bad Request - X-Plex-Client-Identifier is missing
+                content:
+                  application/json:
+                    schema:
                       type: object
                       properties:
-                        code:
-                          type: number
-                          example: 1000
-                        message:
-                          type: string
-                          example: X-Plex-Client-Identifier is missing
-                        status:
-                          type: number
-                          example: 400
+                        errors:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              code:
+                                type: integer
+                                example: 1000
+                              message:
+                                type: string
+                                example: X-Plex-Client-Identifier is missing
+                              status:
+                                type: integer
+                                example: 400
   '/pins/{pinID}':
     get:
       servers:
@@ -5035,103 +5321,208 @@ paths:
           required: true
       responses:
         '200':
-          description: Access Token
+          description: The Pin
           content:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    id: 373040866
+                    code: 7RQZ
+                    product: '0'
+                    trusted: false
+                    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+                    clientIdentifier: 9klpwueublnfbvlx95w83ah9
+                    location:
+                      code: NL
+                      european_union_member: true
+                      continent_code: EU
+                      country: The Netherlands
+                      city: Breda
+                      time_zone: Europe/Amsterdam
+                      postal_code: '4814'
+                      in_privacy_restricted_country: true
+                      in_privacy_restricted_region: true
+                      subdivisions: North Brabant
+                      coordinates: '51.5869, 4.7471'
+                    expiresIn: 876
+                    createdAt: '2024-07-16T17:03:05Z'
+                    expiresAt: '2024-07-16T17:18:05Z'
+                    authToken: null
+                    newRegistration: null
+                title: AuthPinContainer
+                examples:
+                  - id: 308667304
+                    code: 7RQZ
+                    product: '0'
+                    trusted: false
+                    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+                    clientIdentifier: string
+                    location:
+                      code: VI
+                      continent_code: NA
+                      country: United States Virgin Islands
+                      city: Amsterdam
+                      european_union_member: true
+                      time_zone: America/St_Thomas
+                      postal_code: 802
+                      in_privacy_restricted_country: true
+                      in_privacy_restricted_region: true
+                      subdivisions: Saint Thomas
+                      coordinates: '18.3381, -64.8941'
+                    expiresIn: 876
+                    createdAt: '2024-07-16T17:03:05Z'
+                    expiresAt: '2024-07-16T17:18:05Z'
+                    authToken: null
+                    newRegistration: null
+                required:
+                  - id
+                  - code
+                  - product
+                  - trusted
+                  - qr
+                  - clientIdentifier
+                  - location
+                  - expiresIn
+                  - createdAt
+                  - expiresAt
                 properties:
                   id:
-                    description: PinID for use with authentication
-                    type: number
-                    example: 1272322473
+                    type: integer
+                    example: 308667304
                   code:
                     type: string
-                    example: 3patfx1a78ukcbr7x0n9bl26t
+                    example: 7RQZ
                   product:
                     type: string
-                    example: Plex Web
+                    example: '0'
                   trusted:
                     type: boolean
+                    default: false
                   qr:
-                    description: |
-                      a link to a QR code hosted on plex.tv 
-                      The QR code redirects to the relevant `plex.tv/link` authentication page
-                      Which then prompts the user for the 4 Digit Link Pin
                     type: string
-                    example: 'https://plex.tv/api/v2/pins/qr/3patfx1a78ukcbr7x0n9bl26t'
+                    example: 'https://plex.tv/api/v2/pins/qr/7RQZ'
                   clientIdentifier:
                     type: string
-                    example: Postman
+                    description: The X-Client-Identifier used in the request
                   location:
+                    title: GeoData
                     type: object
+                    description: Geo location data
+                    examples:
+                      - code: VI
+                        continent_code: NA
+                        country: United States Virgin Islands
+                        city: Amsterdam
+                        european_union_member: true
+                        time_zone: America/St_Thomas
+                        postal_code: 802
+                        in_privacy_restricted_country: true
+                        in_privacy_restricted_region: true
+                        subdivisions: Saint Thomas
+                        coordinates: '18.3381, -64.8941'
+                    required:
+                      - code
+                      - continent_code
+                      - country
+                      - city
+                      - european_union_member
+                      - time_zone
+                      - postal_code
+                      - in_privacy_restricted_country
+                      - in_privacy_restricted_region
+                      - subdivisions
+                      - coordinates
                     properties:
                       code:
                         type: string
-                        example: US
-                      european_union_member:
-                        type: boolean
+                        description: The ISO 3166-1 alpha-2 code of the country.
+                        example: VI
                       continent_code:
                         type: string
+                        description: The continent code where the country is located.
                         example: NA
                       country:
                         type: string
-                        example: United States
+                        description: The official name of the country.
+                        example: United States Virgin Islands
                       city:
                         type: string
-                        example: Austin
+                        description: The name of the city.
+                        example: Amsterdam
+                      european_union_member:
+                        type: boolean
+                        description: Indicates if the country is a member of the European Union.
+                        example: true
+                        default: false
                       time_zone:
                         type: string
-                        example: America/Chicago
+                        description: The time zone of the country.
+                        example: America/St_Thomas
                       postal_code:
-                        type: string
-                        example: 78732
+                        type: integer
+                        description: The postal code of the location.
+                        example: 802
                       in_privacy_restricted_country:
                         type: boolean
+                        description: Indicates if the country has privacy restrictions.
+                        example: true
+                        default: false
+                      in_privacy_restricted_region:
+                        type: boolean
+                        description: Indicates if the region has privacy restrictions.
+                        example: true
+                        default: false
                       subdivisions:
                         type: string
-                        example: Texas
+                        description: The name of the primary administrative subdivision.
+                        example: Saint Thomas
                       coordinates:
                         type: string
-                        example: 30.3768 -97.8935
+                        description: 'The geographical coordinates (latitude, longitude) of the location.'
+                        example: '18.3381, -64.8941'
                   expiresIn:
-                    type: number
-                    example: 1800
+                    type: integer
+                    example: 876
+                    description: 'The number of seconds this pin expires, by default 900 seconds'
+                    default: 900
                   createdAt:
                     type: string
+                    example: '2024-07-16T17:03:05Z'
                     format: date-time
-                    example: 2023-04-12T17:00:03.000Z
                   expiresAt:
                     type: string
                     format: date-time
-                    example: 2023-04-12T17:30:03.000Z
+                    example: '2024-07-16T17:18:05Z'
                   authToken:
-                    type: string
-                    format: nullable
+                    type: 'null'
                   newRegistration:
-                    type: string
-                    format: nullable
+                    type: 'null'
         '400':
-          description: X-Plex-Client-Identifier is missing
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
+                description: Bad Request - X-Plex-Client-Identifier is missing
+                content:
+                  application/json:
+                    schema:
                       type: object
                       properties:
-                        code:
-                          type: number
-                          example: 1000
-                        message:
-                          type: string
-                          example: X-Plex-Client-Identifier is missing
-                        status:
-                          type: number
-                          example: 400
+                        errors:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              code:
+                                type: integer
+                                example: 1000
+                              message:
+                                type: string
+                                example: X-Plex-Client-Identifier is missing
+                              status:
+                                type: integer
+                                example: 400
   /playlists:
     post:
       tags:
