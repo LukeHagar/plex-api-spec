@@ -22,7 +22,7 @@ post:
     - $ref: ../../parameters/ClientProduct.yaml
   responses:
     '200':
-      description: The Pin
+      description: Requests a new pin id used in the authentication flow
       content:
         application/json:
           schema:
