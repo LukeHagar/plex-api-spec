@@ -1,4 +1,4 @@
-description: Bad Request - X-Plex-Client-Identifier is missing
+description: Bad Request response when the X-Plex-Client-Identifier is missing
 content:
   application/json:
     schema:
