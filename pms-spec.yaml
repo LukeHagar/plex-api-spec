@@ -78,11 +78,16 @@ paths:
   /devices:
     $ref: "./paths/devices.yaml"
 
-  #Companions
+  # Companions
   # Folder pms/paths/companions
   /companions:
     $ref: "paths/companions/companions.yaml"
-    
+
+  # GeoIP
+  # Folder pms/paths/geoip
+  /geoip:
+    $ref: "paths/geoip/geoip.yaml"
+
   # Plex Home
   # Folder: pms/paths/home
   /home:
