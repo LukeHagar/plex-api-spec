@@ -3,7 +3,7 @@ get:
     - Plex.tv
   summary: Get Devices
   description: Get Devices
-  operationId: getDevices
+  operationId: getResourceDevices
   parameters:
     - name: includeHttps
       description: Include Https entries in the results
