@@ -13,7 +13,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ./models/GeoData.yaml
+            $ref: ../models/GeoData.yaml
     '400':
       $ref: ../../responses/400.yaml
     '401':
