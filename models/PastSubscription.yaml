@@ -1,0 +1,93 @@
+title: PastSubscription
+type: object
+required:
+  - id
+  - mode
+  - renewsAt
+  - endsAt
+  - canceled
+  - gracePeriod
+  - onHold
+  - canReactivate
+  - canUpgrade
+  - canDowngrade
+  - canConvert
+  - type
+  - transfer
+  - state
+  - billing
+properties:
+  id:
+    type:
+      - string
+      - 'null'
+  mode:
+    type:
+      - string
+      - 'null'
+  renewsAt:
+    type:
+      - integer
+      - 'null'
+    description: Unix epoch datetime
+    format: int32
+  endsAt:
+    type:
+      - integer
+      - 'null'
+    example: 1556281940
+    description: Unix epoch datetime
+    format: int32
+  canceled:
+    type: boolean
+    example: false
+    default: false
+  gracePeriod:
+    type: boolean
+    example: false
+    default: false
+  onHold:
+    type: boolean
+    example: false
+    default: false
+  canReactivate:
+    type: boolean
+    example: false
+    default: false
+  canUpgrade:
+    type: boolean
+    example: false
+    default: false
+  canDowngrade:
+    type: boolean
+    example: false
+    default: false
+  canConvert:
+    type: boolean
+    example: false
+    default: false
+  type:
+    type: string
+    example: plexpass
+  transfer:
+    type:
+      - string
+      - 'null'
+  state:
+    example: ended
+    enum:
+      - ended
+  billing:
+    type: array
+    items:
+      type: object
+      required:
+        - internalPaymentMethod
+        - paymentMethodId
+      properties:
+        internalPaymentMethod:
+          type: object
+        paymentMethodId:
+          type:
+            - integer
+            - 'null'
