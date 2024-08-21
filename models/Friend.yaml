@@ -55,8 +55,6 @@ properties:
     type: array
     items:
       type: object
-      x-stoplight:
-        id: 51chlcsdg3eq6
   sharedSources:
     type: array
     items:
