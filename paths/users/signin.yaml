@@ -37,7 +37,7 @@ post:
         application/json:
           schema:
             allOf:
-              - $ref: ../models/UserPlexAccount.yaml
+              - $ref: ../../models/UserPlexAccount.yaml
               - type: object
                 required:
                   - pastSubscriptions
@@ -46,12 +46,12 @@ post:
                   pastSubscriptions:
                     type: array
                     items:
-                      $ref: ../models/PastSubscription.yaml
+                      $ref: ../../models/PastSubscription.yaml
                   trials:
                     type: array
                     items:
                       type: object
     '400':
-      $ref: '#/components/responses/400'
+      $ref: '../../responses/400.yaml'
     '401':
-      $ref: '#/components/responses/401'
+      $ref: '../../responses/401.yaml'

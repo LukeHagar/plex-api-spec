@@ -41,8 +41,8 @@ get:
           schema:
             type: array
             items:
-              $ref: ../models/PlexDevice.yaml
+              $ref: ../../models/PlexDevice.yaml
     '400':
-      $ref: '#/components/responses/400'
+      $ref: '../../responses/400.yaml'
     '401':
-      $ref: '#/components/responses/401'
+      $ref: '../../responses/401.yaml'

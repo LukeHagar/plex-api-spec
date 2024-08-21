@@ -12,7 +12,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../models/UserPlexAccount.yaml
+            $ref: ../../models/UserPlexAccount.yaml
     '400':
       $ref: '../../responses/400.yaml'
     '401':
