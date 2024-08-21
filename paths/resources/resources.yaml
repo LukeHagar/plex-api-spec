@@ -1,0 +1,48 @@
+get:
+  servers:
+    - url: 'https://plex.tv/api/v2'
+  security: []
+  tags:
+    - Plex
+  summary: Get Devices
+  description: Get Devices
+  operationId: getDevices
+  parameters:
+    - $ref: "../../parameters/ClientIdentifier.yaml"
+    - name: includeHttps
+      in: query
+      description: Include Https entries in the results
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+    - name: includeRelay
+      in: query
+      description: Include Relay addresses in the results
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+    - name: includeIPv6
+      in: query
+      description: Include IPv6 entries in the results
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+  responses:
+    '200':
+      description: List of Plex Devices. This includes Plex hosted servers and clients
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../models/PlexDevice.yaml
+    '400':
+      $ref: '#/components/responses/400'
+    '401':
+      $ref: '#/components/responses/401'
