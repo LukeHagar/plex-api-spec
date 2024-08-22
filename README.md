@@ -49,7 +49,7 @@ The file should contain data in the following order:
   tags:
   summary:
   description:
-  operationId:
+  operationId: lower snake case prefixed with the method type, post-user-sign-in-data
   parameters:
     $ref:
         name:
