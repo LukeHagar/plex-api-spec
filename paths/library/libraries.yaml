@@ -20,6 +20,10 @@ get:
             properties:
               MediaContainer:
                 type: object
+                required:
+                  - size
+                  - allowSync
+                  - title1
                 properties:
                   size:
                     type: integer
@@ -41,7 +45,7 @@ get:
                           example: true
                         art:
                           type: string
-                          example: /:/resources/movie-fanart.jpg
+                          example: '/:/resources/movie-fanart.jpg'
                         composite:
                           type: string
                           example: /library/sections/1/composite/1705615584
@@ -53,10 +57,10 @@ get:
                           example: false
                         thumb:
                           type: string
-                          example: /:/resources/movie.png
+                          example: '/:/resources/movie.png'
                         key:
                           type: string
-                          example: "1"
+                          example: '1'
                         type:
                           type: string
                           example: movie
@@ -76,17 +80,11 @@ get:
                           type: string
                           example: 322a231a-b7f7-49f5-920f-14c61199cd30
                         updatedAt:
-                          type: integer
-                          format: int32
-                          example: 1705615634
+                          $ref: '../../common/PlexDateTime.yaml'
                         createdAt:
-                          type: integer
-                          format: int32
-                          example: 1654131312
+                          $ref: '../../common/PlexDateTime.yaml'
                         scannedAt:
-                          type: integer
-                          format: int32
-                          example: 1705615584
+                          $ref: '../../common/PlexDateTime.yaml'
                         content:
                           type: boolean
                           example: true
@@ -112,7 +110,7 @@ get:
                                 example: 1
                               path:
                                 type: string
-                                example: /movies
+                                example: /movies  
     "400":
       $ref: "../../responses/400.yaml"
     "401":
