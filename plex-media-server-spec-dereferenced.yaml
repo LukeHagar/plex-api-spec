@@ -11,7 +11,7 @@ info:
     url: 'https://opensource.org/license/mit'
     name: MIT
 servers:
-  - url: '{protocol}://{ip}:{port}'
+  - url: 'http://77.170.188.28:43234'
     description: The full address of your Plex Server
     variables:
       protocol:
