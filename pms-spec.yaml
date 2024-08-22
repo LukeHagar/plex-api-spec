@@ -120,7 +120,11 @@ paths:
   /library/sections:
     $ref: "./paths/library/libraries.yaml"
   /library/sections/{sectionId}:
-    $ref: "./paths/library/library.yaml"
+    get:
+      $ref: "./paths/library/[sectionId]/get-library.yaml#/get"
+    delete:
+      $ref: "./paths/library/[sectionId]/delete-library.yaml#/delete"
+
   /library/sections/{sectionId}/{tag}:
     $ref: "./paths/library/content.yaml"
   /library/sections/{sectionId}/refresh:

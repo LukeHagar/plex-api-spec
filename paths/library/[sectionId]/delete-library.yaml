@@ -1,0 +1,21 @@
+delete:
+  tags:
+    - Library
+  summary: Delete Library Section
+  description: Delate a library using a specific section
+  operationId: deleteLibrary
+  parameters:
+    - name: sectionId
+      description: the Id of the library to query
+      in: path
+      schema:
+        type: number
+        example: 1000
+      required: true
+  responses:
+    "200":
+      description: The library is deleted
+    "400":
+      $ref: "../../../responses/400.yaml"
+    "401":
+      $ref: "../../../responses/401.yaml"
