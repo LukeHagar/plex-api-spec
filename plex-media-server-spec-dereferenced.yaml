@@ -4845,9 +4845,9 @@ paths:
       security: []
       tags:
         - Plex
-      summary: Get Devices
-      description: Get Devices
-      operationId: getDevices
+      summary: Get Resources
+      description: Get Resources
+      operationId: getResources
       parameters:
         - name: X-Plex-Client-Identifier
           description: |
