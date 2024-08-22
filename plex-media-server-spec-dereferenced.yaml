@@ -11,7 +11,7 @@ info:
     url: 'https://opensource.org/license/mit'
     name: MIT
 servers:
-  - url: 'http://77.170.188.28:43234'
+  - url: '{protocol}://{ip}:{port}'
     description: The full address of your Plex Server
     variables:
       protocol:
@@ -2405,6 +2405,19 @@ paths:
                           example: 401
   /library/sections:
     get:
+      servers:
+      - url: '{protocol}://{ip}:{port}'
+        description: The full address of your Plex Server
+        variables:
+          protocol:
+            default: http
+            enum:
+              - http
+              - https
+          ip:
+            default: 10.10.10.47
+          port:
+            default: '32400'
       tags:
         - Library
       summary: Get All Libraries
