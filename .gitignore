@@ -1,2 +1,4 @@
 output
 .spectral.mjs
+node_modules
+.idea

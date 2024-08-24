@@ -78,16 +78,14 @@ properties:
     enum:
       - ended
   billing:
-    type: array
-    items:
-      type: object
-      required:
-        - internalPaymentMethod
-        - paymentMethodId
-      properties:
-        internalPaymentMethod:
-          type: object
-        paymentMethodId:
-          type:
-            - integer
-            - 'null'
+    type: object
+    required:
+      - internalPaymentMethod
+      - paymentMethodId
+    properties:
+      internalPaymentMethod:
+        type: object
+      paymentMethodId:
+        type:
+          - integer
+          - 'null'

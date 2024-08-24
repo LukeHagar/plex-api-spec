@@ -6,7 +6,7 @@ post:
     - User
   summary: Get User SignIn Data
   description: Sign in user with username and password and return user data with Plex authentication token
-  operationId: post-users-signin-data
+  operationId: post-sign-in
   parameters:
     - $ref: "../../parameters/ClientIdentifier.yaml"
   requestBody:

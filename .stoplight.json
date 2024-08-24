@@ -1,5 +1,5 @@
 {
-  "exclude": [".vscode", ".speakeasy", ".idx", "Markdown", ".github", "plex-tv-spec-dereferenced.yaml"],
+  "exclude": [".vscode", ".speakeasy", ".idx", "Markdown", ".github", "tests", "plextv", "plex-tv-spec-dereferenced.yaml"],
   "formats": {
     "openapi": {
       "rootDir": "paths",
