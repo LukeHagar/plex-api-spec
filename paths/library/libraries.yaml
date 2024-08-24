@@ -80,11 +80,11 @@ get:
                           type: string
                           example: 322a231a-b7f7-49f5-920f-14c61199cd30
                         updatedAt:
-                          $ref: '../../common/PlexDateTime.yaml'
+                          $ref: '../../models/common/PlexDateTime.yaml'
                         createdAt:
-                          $ref: '../../common/PlexDateTime.yaml'
+                          $ref: '../../models/common/PlexDateTime.yaml'
                         scannedAt:
-                          $ref: '../../common/PlexDateTime.yaml'
+                          $ref: '../../models/common/PlexDateTime.yaml'
                         content:
                           type: boolean
                           example: true
@@ -110,7 +110,7 @@ get:
                                 example: 1
                               path:
                                 type: string
-                                example: /movies  
+                                example: /movies
     "400":
       $ref: "../../responses/400.yaml"
     "401":

@@ -17,6 +17,6 @@ get:
     "200":
       description: The library is refreshing
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../responses/401.yaml"

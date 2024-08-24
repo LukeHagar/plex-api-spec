@@ -27,11 +27,11 @@ properties:
       - 'null'
   renewsAt:
     oneOf:
-      - $ref: './PlexDateTime.yaml'
+      - $ref: './common/PlexDateTime.yaml'
       - type: 'null'
   endsAt:
     oneOf:
-      - $ref: './PlexDateTime.yaml'
+      - $ref: './common/PlexDateTime.yaml'
       - type: 'null'
   canceled:
     type: boolean

@@ -2426,6 +2426,10 @@ paths:
                 properties:
                   MediaContainer:
                     type: object
+                    required:
+                      - size
+                      - allowSync
+                      - title1
                     properties:
                       size:
                         type: integer
@@ -2482,17 +2486,23 @@ paths:
                               type: string
                               example: 322a231a-b7f7-49f5-920f-14c61199cd30
                             updatedAt:
-                              type: integer
+                              type:
+                                - integer
+                              example: 1556281940
+                              description: Unix epoch datetime
                               format: int32
-                              example: 1705615634
                             createdAt:
-                              type: integer
+                              type:
+                                - integer
+                              example: 1556281940
+                              description: Unix epoch datetime
                               format: int32
-                              example: 1654131312
                             scannedAt:
-                              type: integer
+                              type:
+                                - integer
+                              example: 1556281940
+                              description: Unix epoch datetime
                               format: int32
-                              example: 1705615584
                             content:
                               type: boolean
                               example: true
@@ -9335,10 +9345,10 @@ paths:
         - url: 'https://plex.tv/api/v2'
       security: []
       tags:
-        - User
+        - Authentication
       summary: Get User SignIn Data
       description: Sign in user with username and password and return user data with Plex authentication token
-      operationId: post-sign-in
+      operationId: post-users-sign-in-data
       parameters:
         - name: X-Plex-Client-Identifier
           description: |
@@ -9986,18 +9996,21 @@ paths:
                                 - string
                                 - 'null'
                             renewsAt:
-                              type:
-                                - integer
-                                - 'null'
-                              description: Unix epoch datetime
-                              format: int32
+                              oneOf:
+                                - type:
+                                    - integer
+                                  example: 1556281940
+                                  description: Unix epoch datetime
+                                  format: int32
+                                - type: 'null'
                             endsAt:
-                              type:
-                                - integer
-                                - 'null'
-                              example: 1556281940
-                              description: Unix epoch datetime
-                              format: int32
+                              oneOf:
+                                - type:
+                                    - integer
+                                  example: 1556281940
+                                  description: Unix epoch datetime
+                                  format: int32
+                                - type: 'null'
                             canceled:
                               type: boolean
                               example: false
