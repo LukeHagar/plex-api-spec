@@ -21,7 +21,7 @@ describe('suite', () => {
                 "mailingListStatus": "unsubscribed",
                 "mailingListActive": false,
                 "scrobbleTypes": "",
-                "country": "NL",
+                "country": "ES",
                 "subscription": {
                     "active": false,
                     "subscribedAt": "2019-03-16T15:20:12Z",

@@ -246,9 +246,7 @@ properties:
     description: '[Might be removed] The hashed Plex Home PIN '
     deprecated: true
   profile:
-    type: array
-    items:
-      $ref: ./UserProfile.yaml
+    $ref: ./UserProfile.yaml
   protected:
     type: boolean
     description: If the account has a Plex Home PIN enabled
