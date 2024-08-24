@@ -71,9 +71,10 @@ properties:
     example: true
   subscribedAt:
     description: Date the account subscribed to Plex Pass
-    type: string
+    type:
+      - string
+      - 'null'
     example: '2021-04-12T18:21:12Z'
-    format: date-time
   status:
     description: String representation of subscriptionActive
     example: Inactive

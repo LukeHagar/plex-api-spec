@@ -147,7 +147,9 @@ properties:
     description: Unknown
     format: date-time
   anonymous:
-    type: boolean
+    type:
+      - boolean
+      - 'null'
     description: Unknown
     default: false
   authToken:
@@ -234,7 +236,7 @@ properties:
   mailingListStatus:
     description: Your current mailing list status
     enum:
-      - subscribed
+      - active
       - unsubscribed
   maxHomeSize:
     type: integer
