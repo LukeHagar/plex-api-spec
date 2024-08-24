@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "bundle": "swagger-cli bundle --dereference ../pms-spec.yaml -t yaml -o ../plex-media-server-spec-dereferenced.yaml",
-    "lint": "spectral lint ../plex-media-server-spec-dereferenced.yaml",
     "test": "bun run bundle && vitest --run"
   },
   "keywords": [],
@@ -13,7 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.0",
-    "@stoplight/spectral-cli": "^6.11.1",
     "@types/node": "^22.5.0",
     "swagger-cli": "^4.0.4",
     "typescript": "^5.5.4",
