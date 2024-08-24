@@ -1,10 +1,10 @@
 get:
   tags:
     - Library
-  summary: Refresh Library
+  summary: Refresh Metadata Of The Library
   description: |
-    This endpoint Refreshes the library.
-  operationId: refreshLibrary
+    This endpoint Refreshes all the Metadata of the library.
+  operationId: get-refresh-library-metadata
   parameters:
     - name: sectionId
       description: the Id of the library to refresh
@@ -12,6 +12,12 @@ get:
       schema:
         type: number
       required: true
+    - name: force
+      description: Force the refresh even if the library is already being refreshed.
+      in: query
+      schema:
+        $ref: "../../../models/common/PlexIntBoolean.yaml"
+      required: false
 
   responses:
     "200":

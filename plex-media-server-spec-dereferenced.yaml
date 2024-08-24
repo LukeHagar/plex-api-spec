@@ -3306,10 +3306,10 @@ paths:
     get:
       tags:
         - Library
-      summary: Refresh Library
+      summary: Refresh Metadata Of The Library
       description: |
-        This endpoint Refreshes the library.
-      operationId: refreshLibrary
+        This endpoint Refreshes all the Metadata of the library.
+      operationId: get-refresh-library-metadata
       parameters:
         - name: sectionId
           description: the Id of the library to refresh
@@ -3317,6 +3317,16 @@ paths:
           schema:
             type: number
           required: true
+        - name: force
+          description: Force the refresh even if the library is already being refreshed.
+          in: query
+          schema:
+            type: enum
+            example: 0
+            enum:
+              - 0
+              - 1
+          required: false
       responses:
         '200':
           description: The library is refreshing

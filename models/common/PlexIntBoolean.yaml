@@ -1,0 +1,5 @@
+type: enum
+example: 0
+enum:
+  - 0
+  - 1
