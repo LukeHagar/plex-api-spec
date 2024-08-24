@@ -8883,7 +8883,9 @@ paths:
                     description: Unknown
                     format: date-time
                   anonymous:
-                    type: boolean
+                    type:
+                      - boolean
+                      - 'null'
                     description: Unknown
                     default: false
                   authToken:
@@ -8970,7 +8972,7 @@ paths:
                   mailingListStatus:
                     description: Your current mailing list status
                     enum:
-                      - subscribed
+                      - active
                       - unsubscribed
                   maxHomeSize:
                     type: integer
@@ -8984,6 +8986,9 @@ paths:
                   profile:
                     title: UserProfile
                     type: object
+                    required:
+                      - defaultAudioLanguage
+                      - defaultSubtitleLanguage
                     properties:
                       autoSelectAudio:
                         type: boolean
@@ -8991,29 +8996,44 @@ paths:
                         default: true
                         description: If the account has automatically select audio and subtitle tracks enabled
                       defaultAudioLanguage:
-                        type: string
+                        type:
+                          - string
+                          - 'null'
                         example: ja
                         description: The preferred audio language for the account
                       defaultSubtitleLanguage:
-                        type: string
+                        type:
+                          - string
+                          - 'null'
                         example: en
                         description: The preferred subtitle language for the account
                       autoSelectSubtitle:
-                        type: integer
                         example: 1
                         description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+                        enum:
+                          - 0
+                          - 1
                       defaultSubtitleAccessibility:
-                        type: integer
+                        enum:
+                          - 0
+                          - 1
                         example: 1
                         description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)'
                       defaultSubtitleForced:
-                        type: integer
+                        enum:
+                          - 0
+                          - 1
                         example: 0
                         description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
                       watchedIndicator:
-                        type: integer
+                        enum:
+                          - 0
+                          - 1
                         example: 1
                       mediaReviewsVisibility:
+                        enum:
+                          - 0
+                          - 1
                         type: integer
                         example: 0
                   protected:
@@ -9144,9 +9164,10 @@ paths:
                         example: true
                       subscribedAt:
                         description: Date the account subscribed to Plex Pass
-                        type: string
+                        type:
+                          - string
+                          - 'null'
                         example: '2021-04-12T18:21:12Z'
-                        format: date-time
                       status:
                         description: String representation of subscriptionActive
                         example: Inactive
@@ -9244,9 +9265,10 @@ paths:
                           example: true
                         subscribedAt:
                           description: Date the account subscribed to Plex Pass
-                          type: string
+                          type:
+                            - string
+                            - 'null'
                           example: '2021-04-12T18:21:12Z'
-                          format: date-time
                         status:
                           description: String representation of subscriptionActive
                           example: Inactive
@@ -9505,7 +9527,9 @@ paths:
                         description: Unknown
                         format: date-time
                       anonymous:
-                        type: boolean
+                        type:
+                          - boolean
+                          - 'null'
                         description: Unknown
                         default: false
                       authToken:
@@ -9592,7 +9616,7 @@ paths:
                       mailingListStatus:
                         description: Your current mailing list status
                         enum:
-                          - subscribed
+                          - active
                           - unsubscribed
                       maxHomeSize:
                         type: integer
@@ -9606,6 +9630,9 @@ paths:
                       profile:
                         title: UserProfile
                         type: object
+                        required:
+                          - defaultAudioLanguage
+                          - defaultSubtitleLanguage
                         properties:
                           autoSelectAudio:
                             type: boolean
@@ -9613,29 +9640,44 @@ paths:
                             default: true
                             description: If the account has automatically select audio and subtitle tracks enabled
                           defaultAudioLanguage:
-                            type: string
+                            type:
+                              - string
+                              - 'null'
                             example: ja
                             description: The preferred audio language for the account
                           defaultSubtitleLanguage:
-                            type: string
+                            type:
+                              - string
+                              - 'null'
                             example: en
                             description: The preferred subtitle language for the account
                           autoSelectSubtitle:
-                            type: integer
                             example: 1
                             description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+                            enum:
+                              - 0
+                              - 1
                           defaultSubtitleAccessibility:
-                            type: integer
+                            enum:
+                              - 0
+                              - 1
                             example: 1
                             description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)'
                           defaultSubtitleForced:
-                            type: integer
+                            enum:
+                              - 0
+                              - 1
                             example: 0
                             description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
                           watchedIndicator:
-                            type: integer
+                            enum:
+                              - 0
+                              - 1
                             example: 1
                           mediaReviewsVisibility:
+                            enum:
+                              - 0
+                              - 1
                             type: integer
                             example: 0
                       protected:
@@ -9766,9 +9808,10 @@ paths:
                             example: true
                           subscribedAt:
                             description: Date the account subscribed to Plex Pass
-                            type: string
+                            type:
+                              - string
+                              - 'null'
                             example: '2021-04-12T18:21:12Z'
-                            format: date-time
                           status:
                             description: String representation of subscriptionActive
                             example: Inactive
@@ -9866,9 +9909,10 @@ paths:
                               example: true
                             subscribedAt:
                               description: Date the account subscribed to Plex Pass
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                               example: '2021-04-12T18:21:12Z'
-                              format: date-time
                             status:
                               description: String representation of subscriptionActive
                               example: Inactive
