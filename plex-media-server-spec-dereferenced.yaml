@@ -2408,7 +2408,7 @@ paths:
       tags:
         - Library
       summary: Get All Libraries
-      operationId: getLibraries
+      operationId: get-all-libraries
       description: |
         A library section (commonly referred to as just a library) is a collection of media. 
         Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
@@ -2597,7 +2597,7 @@ paths:
           - Attributes include `defaultDirection` (asc/desc), `descKey` and `key` (sort parameters), and `title`.
 
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
-      operationId: getLibrary
+      operationId: get-library-details
       parameters:
         - name: sectionId
           description: the Id of the library to query

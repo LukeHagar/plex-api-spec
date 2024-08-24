@@ -2,7 +2,7 @@ get:
   tags:
     - Library
   summary: Get All Libraries
-  operationId: getLibraries
+  operationId: get-all-libraries
   description: |
     A library section (commonly referred to as just a library) is a collection of media. 
     Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 

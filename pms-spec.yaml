@@ -118,10 +118,10 @@ paths:
   /library/recentlyAdded:
     $ref: "./paths/library/recentlyadded.yaml"
   /library/sections:
-    $ref: "./paths/library/libraries.yaml"
+    $ref: "./paths/library/get-all-libraries.yaml"
   /library/sections/{sectionId}:
     get:
-      $ref: "./paths/library/[sectionId]/get-library.yaml#/get"
+      $ref: "./paths/library/[sectionId]/get-library-details.yaml#/get"
     delete:
       $ref: "./paths/library/[sectionId]/delete-library.yaml#/delete"
 

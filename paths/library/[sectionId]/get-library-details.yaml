@@ -43,7 +43,7 @@ get:
 
     > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
 
-  operationId: getLibrary
+  operationId: get-library-details
   parameters:
     - name: sectionId
       description: the Id of the library to query
