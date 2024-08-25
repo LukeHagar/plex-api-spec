@@ -45,7 +45,7 @@ get:
                           example: true
                         art:
                           type: string
-                          example: '/:/resources/movie-fanart.jpg'
+                          example: /:/resources/movie-fanart.jpg
                         composite:
                           type: string
                           example: /library/sections/1/composite/1705615584
@@ -57,7 +57,7 @@ get:
                           example: false
                         thumb:
                           type: string
-                          example: '/:/resources/movie.png'
+                          example: /:/resources/movie.png
                         key:
                           type: string
                           example: '1'

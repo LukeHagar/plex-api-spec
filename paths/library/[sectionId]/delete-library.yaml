@@ -2,11 +2,11 @@ delete:
   tags:
     - Library
   summary: Delete Library Section
-  description: Delate a library using a specific section
+  description: Delate a library using a specific section id
   operationId: deleteLibrary
   parameters:
     - name: sectionId
-      description: the Id of the library to query
+      description: the Id of the library to delete
       in: path
       schema:
         type: number
