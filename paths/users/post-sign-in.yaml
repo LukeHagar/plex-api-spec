@@ -3,10 +3,10 @@ post:
     - url: 'https://plex.tv/api/v2'
   security: []
   tags:
-    - User
+    - Authentication
   summary: Get User SignIn Data
   description: Sign in user with username and password and return user data with Plex authentication token
-  operationId: post-sign-in
+  operationId: post-users-sign-in-data
   parameters:
     - $ref: "../../parameters/ClientIdentifier.yaml"
   requestBody:

@@ -43,14 +43,14 @@ get:
 
     > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
 
-  operationId: getLibrary
+  operationId: get-library-details
   parameters:
     - name: sectionId
-      description: the Id of the library to query
+      description: The id of the library
       in: path
       schema:
         type: number
-        example: 1000
+        example: 15
       required: true
     - name: includeDetails
       description: |
@@ -233,28 +233,29 @@ get:
                                 type: string
                                 example: is
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../responses/401.yaml"
 
+# TODO Move the deleteLibrary operation to its own file, there is currently a bug in the SDKEasy lint that prevents this referencing two methods from the same path url
 delete:
   tags:
     - Library
   summary: Delete Library Section
-  description: Delate a library using a specific section
+  description: Delete a library using a specific section id
   operationId: deleteLibrary
   parameters:
     - name: sectionId
-      description: the Id of the library to query
+      description: The id of the library
       in: path
       schema:
         type: number
-        example: 1000
+        example: 15
       required: true
   responses:
     "200":
       description: The library is deleted
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../responses/401.yaml"

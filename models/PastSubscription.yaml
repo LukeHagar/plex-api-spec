@@ -26,18 +26,13 @@ properties:
       - string
       - 'null'
   renewsAt:
-    type:
-      - integer
-      - 'null'
-    description: Unix epoch datetime
-    format: int32
+    oneOf:
+      - $ref: './common/PlexDateTime.yaml'
+      - type: 'null'
   endsAt:
-    type:
-      - integer
-      - 'null'
-    example: 1556281940
-    description: Unix epoch datetime
-    format: int32
+    oneOf:
+      - $ref: './common/PlexDateTime.yaml'
+      - type: 'null'
   canceled:
     type: boolean
     example: false
