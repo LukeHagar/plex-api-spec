@@ -1,0 +1,7 @@
+- name: sectionId
+  description: The id of the library
+  in: path
+  schema:
+    type: number
+    example: 15
+  required: true

@@ -2599,13 +2599,12 @@ paths:
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
       operationId: get-library-details
       parameters:
-        - name: sectionId
-          description: the Id of the library to query
-          in: path
-          schema:
-            type: number
-            example: 1000
-          required: true
+        - - name: sectionId
+            description: The id of the library
+            in: path
+            schema:
+              type: number
+            required: true
         - name: includeDetails
           description: |
             Whether or not to include details for a section (types, filters, and sorts). 
@@ -2815,13 +2814,12 @@ paths:
       description: Delate a library using a specific section id
       operationId: deleteLibrary
       parameters:
-        - name: sectionId
-          description: the Id of the library to delete
-          in: path
-          schema:
-            type: number
-            example: 1000
-          required: true
+        - - name: sectionId
+            description: The id of the library
+            in: path
+            schema:
+              type: number
+            required: true
       responses:
         '200':
           description: The library is deleted
@@ -3311,12 +3309,12 @@ paths:
         This endpoint Refreshes all the Metadata of the library.
       operationId: get-refresh-library-metadata
       parameters:
-        - name: sectionId
-          description: the Id of the library to refresh
-          in: path
-          schema:
-            type: number
-          required: true
+        - - name: sectionId
+            description: The id of the library
+            in: path
+            schema:
+              type: number
+            required: true
         - name: force
           description: Force the refresh even if the library is already being refreshed.
           in: query
