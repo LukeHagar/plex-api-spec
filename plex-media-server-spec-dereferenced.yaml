@@ -2408,7 +2408,7 @@ paths:
       tags:
         - Library
       summary: Get All Libraries
-      operationId: get-all-libraries
+      operationId: getLibraries
       description: |
         A library section (commonly referred to as just a library) is a collection of media. 
         Libraries are typed, and depending on their type provide either a flat or a hierarchical view of the media. 
@@ -2426,10 +2426,6 @@ paths:
                 properties:
                   MediaContainer:
                     type: object
-                    required:
-                      - size
-                      - allowSync
-                      - title1
                     properties:
                       size:
                         type: integer
@@ -2486,23 +2482,17 @@ paths:
                               type: string
                               example: 322a231a-b7f7-49f5-920f-14c61199cd30
                             updatedAt:
-                              type:
-                                - integer
-                              example: 1556281940
-                              description: Unix epoch datetime
+                              type: integer
                               format: int32
+                              example: 1705615634
                             createdAt:
-                              type:
-                                - integer
-                              example: 1556281940
-                              description: Unix epoch datetime
+                              type: integer
                               format: int32
+                              example: 1654131312
                             scannedAt:
-                              type:
-                                - integer
-                              example: 1556281940
-                              description: Unix epoch datetime
+                              type: integer
                               format: int32
+                              example: 1705615584
                             content:
                               type: boolean
                               example: true
@@ -2597,14 +2587,14 @@ paths:
           - Attributes include `defaultDirection` (asc/desc), `descKey` and `key` (sort parameters), and `title`.
 
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
-      operationId: get-library-details
+      operationId: getLibrary
       parameters:
         - name: sectionId
-          description: The id of the library
+          description: the Id of the library to query
           in: path
           schema:
             type: number
-            example: 15
+            example: 1000
           required: true
         - name: includeDetails
           description: |
@@ -2812,15 +2802,15 @@ paths:
       tags:
         - Library
       summary: Delete Library Section
-      description: Delete a library using a specific section id
+      description: Delate a library using a specific section
       operationId: deleteLibrary
       parameters:
         - name: sectionId
-          description: The id of the library
+          description: the Id of the library to query
           in: path
           schema:
             type: number
-            example: 15
+            example: 1000
           required: true
       responses:
         '200':
@@ -3306,28 +3296,17 @@ paths:
     get:
       tags:
         - Library
-      summary: Refresh Metadata Of The Library
+      summary: Refresh Library
       description: |
-        This endpoint Refreshes all the Metadata of the library.
-      operationId: get-refresh-library-metadata
+        This endpoint Refreshes the library.
+      operationId: refreshLibrary
       parameters:
         - name: sectionId
-          description: The id of the library
+          description: the Id of the library to refresh
           in: path
           schema:
             type: number
-            example: 15
           required: true
-        - name: force
-          description: Force the refresh even if the library is already being refreshed.
-          in: query
-          schema:
-            type: enum
-            example: 0
-            enum:
-              - 0
-              - 1
-          required: false
       responses:
         '200':
           description: The library is refreshing
@@ -9356,10 +9335,10 @@ paths:
         - url: 'https://plex.tv/api/v2'
       security: []
       tags:
-        - Authentication
+        - User
       summary: Get User SignIn Data
       description: Sign in user with username and password and return user data with Plex authentication token
-      operationId: post-users-sign-in-data
+      operationId: post-sign-in
       parameters:
         - name: X-Plex-Client-Identifier
           description: |
@@ -10007,21 +9986,18 @@ paths:
                                 - string
                                 - 'null'
                             renewsAt:
-                              oneOf:
-                                - type:
-                                    - integer
-                                  example: 1556281940
-                                  description: Unix epoch datetime
-                                  format: int32
-                                - type: 'null'
+                              type:
+                                - integer
+                                - 'null'
+                              description: Unix epoch datetime
+                              format: int32
                             endsAt:
-                              oneOf:
-                                - type:
-                                    - integer
-                                  example: 1556281940
-                                  description: Unix epoch datetime
-                                  format: int32
-                                - type: 'null'
+                              type:
+                                - integer
+                                - 'null'
+                              example: 1556281940
+                              description: Unix epoch datetime
+                              format: int32
                             canceled:
                               type: boolean
                               example: false
