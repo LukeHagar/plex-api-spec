@@ -45,7 +45,13 @@ get:
 
   operationId: get-library-details
   parameters:
-    - $ref: "../../../parameters/LibrarySectionId.yaml"
+    - name: sectionId
+      description: The id of the library
+      in: path
+      schema:
+        type: number
+        example: 15
+      required: true
     - name: includeDetails
       description: |
         Whether or not to include details for a section (types, filters, and sorts). 
@@ -239,7 +245,13 @@ delete:
   description: Delate a library using a specific section id
   operationId: deleteLibrary
   parameters:
-    - $ref: "../../../parameters/LibrarySectionId.yaml"
+    - name: sectionId
+      description: The id of the library
+      in: path
+      schema:
+        type: number
+        example: 15
+      required: true
   responses:
     "200":
       description: The library is deleted

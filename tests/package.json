@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "bundle": "swagger-cli bundle --dereference ../pms-spec.yaml -t yaml -o ../plex-media-server-spec-dereferenced.yaml",
-    "test": "bun run bundle && vitest --run"
+    "test": "bun run bundle && vitest --run",
+    "setup-speakeasy-cli": "curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh",
+    "lint": "speakeasy lint openapi -s ../pms-spec.yaml",
+    "lint-bundled": "bun run bundle && speakeasy lint openapi -s ../plex-media-server-spec-dereferenced.yaml"
   },
   "keywords": [],
   "author": "",
