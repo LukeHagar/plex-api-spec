@@ -16,7 +16,7 @@ describe('GET /library/sections', () => {
                             "filters": true,
                             "refreshing": false,
                             "thumb": "/:/resources/movie.png",
-                            "keady": "7",
+                            "key": "7",
                             "type": "movie",
                             "title": "Kids Movies",
                             "agent": "tv.plex.agents.movie",

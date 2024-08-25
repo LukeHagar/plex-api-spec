@@ -2599,13 +2599,13 @@ paths:
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
       operationId: get-library-details
       parameters:
-        - - name: sectionId
-            description: The id of the library
-            in: path
-            schema:
-              type: number
-              example: 15
-            required: true
+        - name: sectionId
+          description: The id of the library
+          in: path
+          schema:
+            type: number
+            example: 15
+          required: true
         - name: includeDetails
           description: |
             Whether or not to include details for a section (types, filters, and sorts). 
@@ -2812,16 +2812,16 @@ paths:
       tags:
         - Library
       summary: Delete Library Section
-      description: Delate a library using a specific section id
+      description: Delete a library using a specific section id
       operationId: deleteLibrary
       parameters:
-        - - name: sectionId
-            description: The id of the library
-            in: path
-            schema:
-              type: number
-              example: 15
-            required: true
+        - name: sectionId
+          description: The id of the library
+          in: path
+          schema:
+            type: number
+            example: 15
+          required: true
       responses:
         '200':
           description: The library is deleted
@@ -3311,13 +3311,13 @@ paths:
         This endpoint Refreshes all the Metadata of the library.
       operationId: get-refresh-library-metadata
       parameters:
-        - - name: sectionId
-            description: The id of the library
-            in: path
-            schema:
-              type: number
-              example: 15
-            required: true
+        - name: sectionId
+          description: The id of the library
+          in: path
+          schema:
+            type: number
+            example: 15
+          required: true
         - name: force
           description: Force the refresh even if the library is already being refreshed.
           in: query
