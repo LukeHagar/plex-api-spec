@@ -2,7 +2,7 @@ get:
   tags:
     - Library
   summary: Get Library Items
-  operationId: getLibraryItems
+  operationId: get-library-items
   description: |
     Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
     - `all`: All items in the section.
@@ -67,10 +67,24 @@ get:
       in: query
       description: |
         Adds the Guids object to the response
-      schema: 
-        type: integer
-      required: false
+      schema:
+        type: enum
+        enum:
+          - 0
+          - 1
       example: 1
+      required: false
+    - name: includeMeta
+      in: query
+      description: |
+        Adds the Meta object to the response
+      schema:
+        type: enum
+        enum:
+          - 0
+          - 1
+      example: 1
+      required: false
   responses:
     "200":
       description: The contents of the library by section and tag
@@ -430,6 +444,6 @@ get:
                           type: string
                           example: /library/metadata/66/theme/1705716261
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../responses/401.yaml"

@@ -124,7 +124,7 @@ paths:
 
 
   /library/sections/{sectionId}/{tag}:
-    $ref: "./paths/library/content.yaml"
+    $ref: "./paths/library/[sectionId]/get-library-items.yaml"
   /library/sections/{sectionId}/refresh:
     $ref: "./paths/library/[sectionId]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionId}/search:
