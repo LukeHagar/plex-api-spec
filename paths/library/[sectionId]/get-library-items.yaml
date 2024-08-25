@@ -30,13 +30,7 @@ get:
       required: true
       description: the Id of the library to query
       schema:
-        x-speakeasy-type-override: any
         type: [integer, string]
-        examples:
-          librarySectionID:
-            value: 1
-          providerSectionID:
-            value: watchlist
     - name: tag
       in: path
       required: true
@@ -68,7 +62,7 @@ get:
       description: |
         Adds the Guids object to the response
       schema:
-        type: enum
+        type: integer
         enum:
           - 0
           - 1
@@ -79,7 +73,7 @@ get:
       description: |
         Adds the Meta object to the response
       schema:
-        type: enum
+        type: integer
         enum:
           - 0
           - 1
