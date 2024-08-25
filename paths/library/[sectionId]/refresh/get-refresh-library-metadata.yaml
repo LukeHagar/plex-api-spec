@@ -16,13 +16,13 @@ get:
       description: Force the refresh even if the library is already being refreshed.
       in: query
       schema:
-        $ref: "../../../models/common/PlexIntBoolean.yaml"
+        $ref: "../../../../models/common/PlexIntBoolean.yaml"
       required: false
 
   responses:
     "200":
       description: The library is refreshing
     "400":
-      $ref: "../../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"
