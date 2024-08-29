@@ -17,7 +17,7 @@ get:
       description: Force the refresh even if the library is already being refreshed.
       in: query
       schema:
-        type: enum
+        type: integer
         example: 0
         enum:
           - 0
