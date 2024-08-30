@@ -2853,7 +2853,7 @@ paths:
       tags:
         - Library
       summary: Get Library Items
-      operationId: getLibraryItems
+      operationId: get-library-items
       description: |
         Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
         - `all`: All items in the section.
@@ -2881,15 +2881,9 @@ paths:
           required: true
           description: the Id of the library to query
           schema:
-            x-speakeasy-type-override: any
             type:
               - integer
               - string
-            examples:
-              librarySectionID:
-                value: 1
-              providerSectionID:
-                value: watchlist
         - name: tag
           in: path
           required: true
@@ -2922,8 +2916,59 @@ paths:
             Adds the Guids object to the response
           schema:
             type: integer
-          required: false
+            enum:
+              - 0
+              - 1
           example: 1
+          required: false
+        - name: includeMeta
+          in: query
+          description: |
+            Adds the Meta object to the response
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+          required: false
+        - name: type
+          in: query
+          description: |
+            Filter the type of media to retrieve
+            1 is movie
+            2 is tv shows
+            3 is seasons
+            4 is episodes
+            E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4
+          example: 2
+          required: false
+        - name: X-Plex-Container-Start
+          in: query
+          description: |
+            Add the index start from which the media items should be returned.
+            By default this is 0
+          schema:
+            type: integer
+          example: 0
+          required: false
+        - name: X-Plex-Container-Size
+          in: query
+          description: |
+            Add the length/size of the number of media to be retrieved.
+            By default this is 50
+          schema:
+            type: integer
+          example: 0
+          required: false
       responses:
         '200':
           description: The contents of the library by section and tag
@@ -5800,29 +5845,26 @@ paths:
                   newRegistration:
                     type: 'null'
         '400':
+          description: Bad Request response when the X-Plex-Client-Identifier is missing
           content:
             application/json:
               schema:
-                description: Bad Request response when the X-Plex-Client-Identifier is missing
-                content:
-                  application/json:
-                    schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
                       type: object
                       properties:
-                        errors:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              code:
-                                type: integer
-                                example: 1000
-                              message:
-                                type: string
-                                example: X-Plex-Client-Identifier is missing
-                              status:
-                                type: integer
-                                example: 400
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '404':
           description: Not Found or Expired
           content:
