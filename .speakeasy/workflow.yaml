@@ -3,7 +3,7 @@ speakeasyVersion: latest
 sources:
     Plex-API:
         inputs:
-            - location: pms-spec.yaml
+            - location: ./src/pms-spec.yaml
         registry:
             location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api
 targets: {}

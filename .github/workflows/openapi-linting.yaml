@@ -2,16 +2,23 @@ name: Linting
 "on":
   pull_request:
     paths:
-      - pms-spec.yaml
+      - src/**
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install Dependencies
+        run: bun install
 
       - name: Install Speakeasy CLI
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh
+        run: bun run setup-speakeasy-cli
 
       - name: OpenAPI Lint
-        run: speakeasy lint openapi -s pms-spec.yaml
+        run: bun run lint
