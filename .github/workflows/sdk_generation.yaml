@@ -17,11 +17,8 @@ permissions:
     branches:
       - main
     paths:
-      - pms-spec.yaml
       - .github/workflows/sdk_generation.yaml
-      - paths/**
-      - parameters/**
-      - responses/**
+      - src/**
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15

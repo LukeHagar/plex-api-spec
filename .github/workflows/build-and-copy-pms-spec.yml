@@ -5,11 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "pms-spec.yaml"
-      - "parameters/**"
-      - "responses/**"
-      - "paths/**"
-      
+      - src/**
+
   workflow_dispatch:
 
 jobs:
@@ -18,28 +15,35 @@ jobs:
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-      - name: Install swagger-cli
-        run: |
-          npm install -g swagger-cli
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install Dependencies
+        run: bun install
 
       - name: Dereference Plex Media Server Specification
-        run: |
-          swagger-cli bundle --dereference pms-spec.yaml -t yaml -o plex-media-server-spec-dereferenced.yaml
+        run: bun run build
+
+      - name: Commit Dereferenced Specification File
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "build: dereferenced Plex Media Server API Spec updated"
+          skip_checkout: true
+          skip_fetch: true
+          add_options: '-f'
+          file_pattern: './output/*.yaml'
+          skip_dirty_check: true
 
       - name: Pushes Dereferenced Specification File
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: plex-media-server-spec-dereferenced.yaml
+          source_file: ./output/plex-media-server-spec-dereferenced.yaml
           destination_repo: lukehagar/plex-docs
           destination_folder: static
           user_email: lukeslakemail@gmail.com
           user_name: lukehagar
           commit_message: Updating PMS Spec
 
-      - uses: stefanzweifel/git-auto-commit-action@v4

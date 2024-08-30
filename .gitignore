@@ -1,4 +1,7 @@
-output
-.spectral.mjs
-node_modules
 .idea
+.spectral.mjs
+.vscode
+.stoplight
+.stoplight.json
+node_modules
+output

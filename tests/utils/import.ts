@@ -1,4 +1,4 @@
-import PMSSpec from '../plex-media-server-spec-dereferenced.yaml'
+import PMSSpec from '../../output/plex-media-server-spec-dereferenced.yaml';
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import {expect} from 'vitest'
