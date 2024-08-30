@@ -2881,9 +2881,15 @@ paths:
           required: true
           description: the Id of the library to query
           schema:
+            x-speakeasy-type-override: any
             type:
               - integer
               - string
+            examples:
+              librarySectionID:
+                value: 1
+              providerSectionID:
+                value: watchlist
         - name: tag
           in: path
           required: true
@@ -5794,26 +5800,29 @@ paths:
                   newRegistration:
                     type: 'null'
         '400':
-          description: Bad Request response when the X-Plex-Client-Identifier is missing
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
+                description: Bad Request response when the X-Plex-Client-Identifier is missing
+                content:
+                  application/json:
+                    schema:
                       type: object
                       properties:
-                        code:
-                          type: integer
-                          example: 1000
-                        message:
-                          type: string
-                          example: X-Plex-Client-Identifier is missing
-                        status:
-                          type: integer
-                          example: 400
+                        errors:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              code:
+                                type: integer
+                                example: 1000
+                              message:
+                                type: string
+                                example: X-Plex-Client-Identifier is missing
+                              status:
+                                type: integer
+                                example: 400
         '404':
           description: Not Found or Expired
           content:
