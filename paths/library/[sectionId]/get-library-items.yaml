@@ -79,6 +79,27 @@ get:
           - 1
       example: 1
       required: false
+    - name: type
+      in: query
+      description: |
+        Filter the type of media to retrieve
+        1 is movie
+        2 is tv shows
+        3 is seasons
+        4 is episodes
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+      example: 2
+      required: false
+    - $ref: "../../../parameters/container-start.yaml"
+    - $ref: "../../../parameters/container-size.yaml"
   responses:
     "200":
       description: The contents of the library by section and tag
