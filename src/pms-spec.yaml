@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   version: 0.0.3
   title: Plex-API
-  description: An Open API Spec for interacting with Plex.tv
+  description: An Open API Spec for interacting with Plex.tv and Plex Media Server
   contact:
     name: Luke Hagar
     url: 'https://www.LukeHagar.com'
@@ -27,7 +27,7 @@ servers:
 
 x-speakeasy-globals:
   parameters:
-    - $ref: "./parameters/ClientIdentifier.yaml"
+    - $ref: '#/components/parameters/ClientIdentifier'
 
 security:
   - accessToken: []
