@@ -29,6 +29,11 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "build: dereferenced Plex Media Server API Spec updated"
+          skip_checkout: true
+          skip_fetch: true
+          add_options: '-f'
+          file_pattern: './output/*.yaml'
+          skip_dirty_check: true
 
       - name: Pushes Dereferenced Specification File
         uses: dmnemec/copy_file_to_another_repo_action@main
