@@ -1,0 +1,9 @@
+name: X-Plex-Container-Size
+in: query
+description: |
+  Add the length/size of the number of media to be retrieved.
+  By default this is 50
+schema:
+  type: integer
+example: 0
+required: false

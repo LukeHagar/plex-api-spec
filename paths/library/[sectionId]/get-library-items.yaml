@@ -2,7 +2,7 @@ get:
   tags:
     - Library
   summary: Get Library Items
-  operationId: getLibraryItems
+  operationId: get-library-items
   description: |
     Fetches details from a specific section of the library identified by a section key and a tag. The tag parameter accepts the following values:
     - `all`: All items in the section.
@@ -30,13 +30,7 @@ get:
       required: true
       description: the Id of the library to query
       schema:
-        x-speakeasy-type-override: any
         type: [integer, string]
-        examples:
-          librarySectionID:
-            value: 1
-          providerSectionID:
-            value: watchlist
     - name: tag
       in: path
       required: true
@@ -67,10 +61,45 @@ get:
       in: query
       description: |
         Adds the Guids object to the response
-      schema: 
+      schema:
         type: integer
-      required: false
+        enum:
+          - 0
+          - 1
       example: 1
+      required: false
+    - name: includeMeta
+      in: query
+      description: |
+        Adds the Meta object to the response
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+      example: 1
+      required: false
+    - name: type
+      in: query
+      description: |
+        Filter the type of media to retrieve
+        1 is movie
+        2 is tv shows
+        3 is seasons
+        4 is episodes
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+      example: 2
+      required: false
+    - $ref: "../../../parameters/container-start.yaml"
+    - $ref: "../../../parameters/container-size.yaml"
   responses:
     "200":
       description: The contents of the library by section and tag
@@ -430,6 +459,6 @@ get:
                           type: string
                           example: /library/metadata/66/theme/1705716261
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../responses/401.yaml"

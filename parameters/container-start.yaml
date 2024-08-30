@@ -1,0 +1,9 @@
+name: X-Plex-Container-Start
+in: query
+description: |
+  Add the index start from which the media items should be returned.
+  By default this is 0
+schema:
+  type: integer
+example: 0
+required: false
