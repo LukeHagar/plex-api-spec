@@ -17,7 +17,7 @@ put:
           - 1
       example: 1
     - name: skip
-      description: Indicate that the latest version should be marked as skipped. The <Release> entry for this version will have the `state` set to `skipped`.
+      description: Indicate that the latest version should be marked as skipped. The [Release] entry for this version will have the `state` set to `skipped`.
       required: false
       in: query
       schema:
