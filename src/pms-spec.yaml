@@ -27,7 +27,7 @@ servers:
 
 x-speakeasy-globals:
   parameters:
-    - $ref: '#/components/parameters/ClientIdentifier'
+    - $ref: "./parameters/ClientIdentifier.yaml"
 
 security:
   - accessToken: []
