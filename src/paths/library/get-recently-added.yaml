@@ -5,6 +5,10 @@ get:
   description: |
     This endpoint will return the recently added content.
   operationId: getRecentlyAdded
+  parameters:
+    - $ref: "../../parameters/accept-application-json.yaml"
+    - $ref: "../../parameters/container-start.yaml"
+    - $ref: "../../parameters/container-size.yaml"
   responses:
     "200":
       description: The recently added content

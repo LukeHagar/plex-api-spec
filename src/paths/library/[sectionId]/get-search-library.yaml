@@ -2,7 +2,7 @@ get:
   tags:
     - Library
   summary: Search Library
-  operationId: searchLibrary
+  operationId: get-search-library
   description: |
     Search for content within a specific section of the library.
 
@@ -29,17 +29,8 @@ get:
       description: the Id of the library to query
       schema:
         type: integer
-    - name: type
-      description: Plex content type to search for
-      in: query
-      schema:
-        type: integer
-        enum:
-          - 1
-          - 2
-          - 3
-          - 4
-      required: true
+    - $ref: "../../../parameters/accept-application-json.yaml"
+    - $ref: "../../../parameters/type.yaml"
   responses:
     "200":
       description: The contents of the library by section and type
@@ -170,6 +161,6 @@ get:
                           format: int32
                           example: 1705636920
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../responses/401.yaml"
