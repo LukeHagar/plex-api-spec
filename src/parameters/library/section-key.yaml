@@ -1,5 +1,7 @@
 name: sectionKey
-description: The unique key of the library item to return the children of.
+description: | 
+  The unique key of the Plex library. 
+  Note: This is unique in the context of the Plex server.
 in: path
 schema:
   type: integer
