@@ -24,8 +24,8 @@ jobs:
 #      - name: OpenAPI Lint
 #        run: bun run lint
 
-      - name: OpenAPI Lint
+      - name: Bundle OpenAPI Spec
         run: bun run build
 
-      - name: OpenAPI Lint
+      - name: OpenAPI Lint On Bundled Spec
         run: bun run lint-bundled
