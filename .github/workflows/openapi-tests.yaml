@@ -6,22 +6,15 @@ name: Unit Tests
       - tests/**
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout PR branch
-        uses: actions/checkout@v3
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Install Dependencies
-        run: bun install
-
   unit-test:
-    needs: setup
+    name: Run Unit Tests
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Project Setup
+        uses: ./.github/workflows/steps/project-setup
+
       - name: Bundle OpenAPI Spec
         run: bun run build
 
@@ -29,8 +22,13 @@ jobs:
         run: bun run test
 
   type-check:
-    needs: setup
+    name: Run Type Check
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Project Setup
+        uses: ./.github/workflows/steps/project-setup
+
       - name: Run Unit Tests
         run: bun run type-check
