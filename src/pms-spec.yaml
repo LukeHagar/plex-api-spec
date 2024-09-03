@@ -119,19 +119,23 @@ paths:
     $ref: "./paths/library/get-recently-added.yaml"
   /library/sections:
     $ref: "./paths/library/get-all-libraries.yaml"
+
   /library/sections/{sectionKey}:
-    $ref: "./paths/library/[sectionId]/get-and-delete-library-details.yaml"
+    get:
+      $ref: "./paths/library/[sectionKey]/get-library-details.yaml#/get"
+    delete:
+      $ref: "./paths/library/[sectionKey]/delete-library.yaml#/delete"
 
   # Watchlist
   /library/sections/watchlist/{filter}:
     $ref: "./paths/library/sections/watchlist/get-watch-list.yaml"
 
   /library/sections/{sectionKey}/{tag}:
-    $ref: "./paths/library/[sectionId]/get-library-items.yaml"
+    $ref: "./paths/library/[sectionKey]/get-library-items.yaml"
   /library/sections/{sectionKey}/refresh:
-    $ref: "./paths/library/[sectionId]/refresh/get-refresh-library-metadata.yaml"
+    $ref: "./paths/library/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionKey}/search:
-    $ref: "./paths/library/[sectionId]/get-search-library.yaml"
+    $ref: "./paths/library/[sectionKey]/get-search-library.yaml"
 
 
   /library/metadata/{ratingKey}:
