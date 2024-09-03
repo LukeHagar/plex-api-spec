@@ -6,7 +6,7 @@ name: Unit Tests
       - tests/**
 
 jobs:
-  test:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR branch
@@ -18,8 +18,19 @@ jobs:
       - name: Install Dependencies
         run: bun install
 
+  unit-test:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
       - name: Bundle OpenAPI Spec
         run: bun run build
 
       - name: Run Unit Tests
         run: bun run test
+
+  type-check:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Unit Tests
+        run: bun run type-check

@@ -13,6 +13,7 @@
     "build": "swagger-cli bundle --dereference ./src/pms-spec.yaml -t yaml -o ./output/plex-media-server-spec-dereferenced.yaml",
     "build-redocly": "redocly bundle ./src/pms-spec.yaml --ext yaml  -o ./output/plex-media-server-spec-dereferenced.yaml",
     "test": "bun run build && vitest --run",
+    "type-check": "tsc",
     "setup-speakeasy-cli": "curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh",
     "lint": "redocly lint",
     "lint-speakeasy": "speakeasy lint openapi -s ./src/pms-spec.yaml",
