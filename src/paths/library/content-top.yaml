@@ -6,29 +6,17 @@ get:
     This endpoint will return the top watched content from libraries of a certain type
   operationId: getTopWatchedContent
   parameters:
-    - name: type
-      description: the library type (1 - movies, 2 - shows, 3 - music)
-      in: query
-      schema:
-        type: integer
-      required: true
-      examples:
-        movies:
-          value: 1
-        shows:
-          value: 2
-        music:
-          value: 3
+    - $ref: "../../parameters/type.yaml"
     - name: includeGuids
       in: query
       description: |
         Adds the Guids object to the response
-      schema: 
+      schema:
         type: integer
       required: false
-      example: 1           
+      example: 1
   responses:
-    "200": 
+    "200":
       description: The metadata of the library item.
       content:
         application/json:
@@ -69,7 +57,7 @@ get:
                         guid:
                           type: string
                           example: plex://movie/5d77683f6f4521001ea9dc53
-                        slug: 
+                        slug:
                           type: string
                           example: waterloo-road
                         studio:
@@ -220,7 +208,11 @@ get:
                           items:
                             type: object
                             properties:
-                              id: 
+                              id:
                                 type: integer
                                 format: int32
                                 example: 220
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
