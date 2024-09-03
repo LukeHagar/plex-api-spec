@@ -87,14 +87,14 @@ get:
                     items:
                       type: object
                       properties:
-                        accountID: 
+                        accountID:
                           type: integer
                           format: int32
                           example: 238960586
-                        deviceID: 
+                        deviceID:
                           type: integer
                           format: int32
-                          exmaple: 208
+                          example: 208
                         timespan:
                           type: integer
                           example: 6
@@ -102,7 +102,7 @@ get:
                           type: integer
                           format: int32
                           example: 1718387650
-                        lan: 
+                        lan:
                           type: boolean
                           example: true
                         bytes:

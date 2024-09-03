@@ -25,12 +25,7 @@ get:
     - `firstCharacter`: Items categorized by the first letter.
     - `folder`: Items categorized by folder.
   parameters:
-    - name: sectionId
-      in: path
-      required: true
-      description: the Id of the library to query
-      schema:
-        type: [integer, string]
+    - $ref: "../../../parameters/library/section-key.yaml"
     - name: tag
       in: path
       required: true

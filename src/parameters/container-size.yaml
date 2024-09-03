@@ -1,10 +1,12 @@
 name: X-Plex-Container-Size
 in: query
 description: |
-  Add the length/size of the number of media to be retrieved.
+  The number of items to return. If not specified, all items will be returned.
+  If the number of items exceeds the limit, the response will be paginated.
   By default this is 50
 schema:
   type: integer
+  format: int32
   default: 50
   example: 50
 required: false

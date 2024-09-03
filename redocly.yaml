@@ -1,2 +1,9 @@
 extends:
   - recommended
+
+apis:
+  core@v1:
+    root: ./src/pms-spec.yaml
+
+rules:
+  no-ambiguous-paths: off

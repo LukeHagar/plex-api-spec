@@ -1,10 +1,12 @@
 name: X-Plex-Container-Start
 in: query
 description: |
-  Add the index start from which the media items should be returned.
+  The index of the first item to return. If not specified, the first item will be returned.
+  If the number of items exceeds the limit, the response will be paginated.
   By default this is 0
 schema:
   type: integer
+  format: int32
   default: 0
   example: 0
 required: false

@@ -119,16 +119,20 @@ paths:
     $ref: "./paths/library/get-recently-added.yaml"
   /library/sections:
     $ref: "./paths/library/get-all-libraries.yaml"
-  /library/sections/{sectionId}:
+  /library/sections/{sectionKey}:
     $ref: "./paths/library/[sectionId]/get-and-delete-library-details.yaml"
 
+  # Watchlist
+  /library/sections/watchlist/{filter}:
+    $ref: "./paths/library/sections/watchlist/get-watch-list.yaml"
 
-  /library/sections/{sectionId}/{tag}:
+  /library/sections/{sectionKey}/{tag}:
     $ref: "./paths/library/[sectionId]/get-library-items.yaml"
-  /library/sections/{sectionId}/refresh:
+  /library/sections/{sectionKey}/refresh:
     $ref: "./paths/library/[sectionId]/refresh/get-refresh-library-metadata.yaml"
-  /library/sections/{sectionId}/search:
+  /library/sections/{sectionKey}/search:
     $ref: "./paths/library/[sectionId]/get-search-library.yaml"
+
 
   /library/metadata/{ratingKey}:
     $ref: "./paths/library/metadata/[ratingKey]/get-meta-data-by-rating-key.yaml"
@@ -227,9 +231,7 @@ paths:
   /users/signin:
     $ref: "./paths/users/post-sign-in.yaml"
 
-  # Watchlist
-  /library/sections/watchlist/{filter}:
-    $ref: "./paths/metadata/watchlist.yaml"
+
 
 tags:
   - name: Activities

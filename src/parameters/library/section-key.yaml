@@ -1,0 +1,9 @@
+name: sectionKey
+description: The unique key of the library item to return the children of.
+in: path
+schema:
+  type: integer
+  format: int32
+  example: 9518
+required: true
+
