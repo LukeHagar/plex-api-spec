@@ -407,7 +407,7 @@ describe('GET /library/sections', () => {
             }
         };
 
-        validateResponseSpec("/library/sections/{sectionId}/{tag}", "get", 200, response)
+        validateResponseSpec("/library/sections/{sectionKey}/{tag}", "get", 200, response)
     });
 
     it('should validate the 200 response with includeGuids and includeMeta queryParam when the API spec is valid', () => {
@@ -1140,7 +1140,7 @@ describe('GET /library/sections', () => {
             }
         };
 
-        validateResponseSpec("/library/sections/{sectionId}/{tag}", "get", 200, response)
+        validateResponseSpec("/library/sections/{sectionKey}/{tag}", "get", 200, response)
     });
 
 })

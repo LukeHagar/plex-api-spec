@@ -6,7 +6,7 @@ get:
     - Watchlist
   summary: Get User Watchlist
   description: Get User Watchlist
-  operationId: getWatchlist
+  operationId: get-watch-list
   parameters:
     # Many details of this api were taken from the python-plexapi library
     # See: https://github.com/pkkid/python-plexapi/blob/dd80deb18fe1111050777d067f3d87b0524d4850/plexapi/myplex.py#L904
@@ -68,30 +68,10 @@ get:
         enum:
           - 1
           - 0
-    - name: X-Plex-Token
-      description: User Token
-      in: query
-      required: true
-      schema:
-        type: string
-    - name: X-Plex-Container-Start
-      description: |
-        The index of the first item to return. If not specified, the first item will be returned.
-        If the number of items exceeds the limit, the response will be paginated.
-      in: query
-      required: false
-      schema:
-        type: integer
-        format: int32
-    - name: X-Plex-Container-Size
-      description: |
-        The number of items to return. If not specified, all items will be returned.
-        If the number of items exceeds the limit, the response will be paginated.
-      in: query
-      required: false
-      schema:
-        type: integer
-        format: int32
+    - $ref: "../../../../parameters/accept-application-json.yaml"
+    - $ref: "../../../../parameters/container-start.yaml"
+    - $ref: "../../../../parameters/container-size.yaml"
+    - $ref: "../../../../parameters/plex-token.yaml"
   responses:
     "200":
       description: Watchlist Data
@@ -208,6 +188,6 @@ get:
                     playableKey:
                       type: string
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"

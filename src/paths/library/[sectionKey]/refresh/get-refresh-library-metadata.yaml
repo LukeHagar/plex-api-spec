@@ -6,13 +6,7 @@ get:
     This endpoint Refreshes all the Metadata of the library.
   operationId: get-refresh-library-metadata
   parameters:
-    - name: sectionId
-      description: The id of the library
-      in: path
-      schema:
-        type: number
-        example: 15
-      required: true
+    - $ref: "../../../../parameters/library/section-key.yaml"
     - name: force
       description: Force the refresh even if the library is already being refreshed.
       in: query

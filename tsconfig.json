@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "noEmit": true,
+    "outDir": "./output",
     "types": [
       "@modyfi/vite-plugin-yaml/modules"
     ],
-  }
+    "skipLibCheck": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }

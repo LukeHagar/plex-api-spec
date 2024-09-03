@@ -15,12 +15,7 @@ get:
       schema:
         type: number
       required: true
-    - name: type
-      description: the metadata type of the item to return
-      in: query
-      schema:
-        type: number
-      required: true
+    - $ref: "../../parameters/type.yaml"
   responses:
     "200":
       description: The playlist contents

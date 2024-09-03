@@ -23,12 +23,7 @@ get:
 
     > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
   parameters:
-    - name: sectionId
-      in: path
-      required: true
-      description: the Id of the library to query
-      schema:
-        type: integer
+    - $ref: "../../../parameters/library/section-key.yaml"
     - $ref: "../../../parameters/accept-application-json.yaml"
     - $ref: "../../../parameters/type.yaml"
   responses:
