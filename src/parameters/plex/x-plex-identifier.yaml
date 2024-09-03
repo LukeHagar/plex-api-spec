@@ -1,0 +1,6 @@
+name: X-Plex-Client-Identifier
+in: query
+required: false
+schema:
+  type: string
+example: "gcgzw5rz2xovp84b4vha3a40"

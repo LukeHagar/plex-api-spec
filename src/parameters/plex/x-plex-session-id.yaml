@@ -1,0 +1,6 @@
+name: X-Plex-Session-Id
+in: query
+required: false
+schema:
+  type: string
+example: "97e136ef-4ddd-4ff3-89a7-a5820c96c2ca"

@@ -1,0 +1,6 @@
+name: X-Plex-Model
+in: query
+required: false
+schema:
+  type: string
+example: "bundled"

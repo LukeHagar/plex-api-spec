@@ -1,0 +1,7 @@
+name: X-Plex-Device
+in: query
+required: false
+schema:
+  type: string
+example: "Linux"
+

@@ -187,6 +187,10 @@ paths:
   /playlists/upload:
     $ref: "./paths/playlists/upload.yaml"
 
+  # Media
+  /media/providers:
+    $ref: "./paths/media/providers/get-media-providers.yaml"
+
   /search:
     $ref: "./paths/search.yaml"
 
