@@ -1,15 +1,6 @@
-#name: type
-#in: query
-#description: |
-#  Filter the type of media to retrieve
-#required: false
-#schema:
-# $ref: '../models/common/PlexMediaType.yaml'
-#
-#
 name: type
 in: query
-description: Plex content type to search for
+description: Filter the type of media to retrieve
 schema:
   type: integer
   enum:
@@ -17,5 +8,5 @@ schema:
     - 2
     - 3
     - 4
-example: 2
+  example: 2
 required: true

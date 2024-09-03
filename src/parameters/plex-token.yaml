@@ -3,5 +3,5 @@ in: query
 description: Plex Authentication Token
 schema:
   type: string
-example: CV5xoxjTpFKUzBTShsaf
+  example: CV5xoxjTpFKUzBTShsaf
 required: true

@@ -5,6 +5,7 @@
   "main": "src/pms-spec.yaml",
   "scripts": {
     "dev": "redocly preview -d=./src",
+    "preview-docs": "redocly preview-docs src/pms-spec.yaml --config=./redocly.yaml",
     "stats": "redocly stats ./src/pms-spec.yaml",
     "build": "swagger-cli bundle --dereference ./src/pms-spec.yaml -t yaml -o ./output/plex-media-server-spec-dereferenced.yaml",
     "build-redocly": "redocly bundle ./src/pms-spec.yaml --ext yaml  -o ./output/plex-media-server-spec-dereferenced.yaml",
