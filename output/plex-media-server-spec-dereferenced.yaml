@@ -3404,7 +3404,7 @@ paths:
       tags:
         - Library
       summary: Search Library
-      operationId: get-search-library
+      operationId: searchLibrary
       description: |
         Search for content within a specific section of the library.
 
@@ -3589,18 +3589,20 @@ paths:
     get:
       tags:
         - Library
-      summary: Get Metadata by RatingKey
+      summary: Get Items Metadata
       description: |
         This endpoint will return the metadata of a library item specified with the ratingKey.
-      operationId: get-meta-data-by-rating-key
+      operationId: getMetadata
       parameters:
         - name: ratingKey
-          in: path
           description: the id of the library item to return the children of.
-          schema: null
-          type: integer
-          example: 9518
+          in: path
+          schema:
+            type: number
           required: true
+          examples:
+            rating-key:
+              value: 17
       responses:
         '200':
           description: The metadata of the library item.
@@ -4099,206 +4101,6 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/metadata/{ratingKey}/banner':
-    get:
-      summary: Get Banner Image
-      description: Gets the banner image of the media item
-      operationId: get-banner-image
-      parameters:
-        - name: ratingKey
-          in: path
-          description: the id of the library item to return the children of.
-          schema:
-            type: integer
-            example: 9518
-          required: true
-        - name: width
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 396
-        - name: height
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 396
-        - name: minSize
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 1
-        - name: upscale
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 1
-      responses:
-        '200':
-          description: Successful response returning an image
-          headers:
-            X-Plex-Protocol:
-              description: Version of the Plex protocol
-              schema:
-                type: string
-                example: '1.0'
-            Content-Type:
-              description: The MIME type of the returned content
-              schema:
-                type: string
-                example: image/jpeg
-            Connection:
-              description: Connection type
-              schema:
-                type: string
-                example: Keep-Alive
-            Keep-Alive:
-              description: Keep-Alive header with timeout value
-              schema:
-                type: string
-                example: timeout=20
-            Content-Encoding:
-              description: Content encoding method
-              schema:
-                type: string
-                example: gzip
-            X-Plex-Content-Original-Length:
-              description: Original length of the uncompressed content
-              schema:
-                type: integer
-                format: int32
-                example: 92476
-            X-Plex-Content-Compressed-Length:
-              description: Length of the compressed content
-              schema:
-                type: integer
-                format: int32
-                example: 92483
-            Content-Length:
-              description: Length of the response content
-              schema:
-                type: integer
-                format: int32
-                example: 92483
-            Cache-Control:
-              description: Cache control directives
-              schema:
-                type: string
-                example: max-age=259200
-            Date:
-              description: Date and time the response was generated
-              schema:
-                type: string
-                format: date-time
-                example: 'Tue, 03 Sep 2024 10:48:05 GMT'
-          content:
-            image/jpeg:
-              schema:
-                type: string
-                format: binary
-  '/library/metadata/{ratingKey}/thumb':
-    get:
-      summary: Get Banner Image
-      description: Gets the banner image of the media item
-      operationId: get-thumb-image
-      parameters:
-        - name: ratingKey
-          in: path
-          description: the id of the library item to return the children of.
-          schema:
-            type: integer
-            example: 9518
-          required: true
-        - name: width
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 396
-        - name: height
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 396
-        - name: minSize
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 1
-        - name: upscale
-          in: query
-          required: true
-          schema:
-            type: integer
-            example: 1
-      responses:
-        '200':
-          description: Successful response returning an image
-          headers:
-            X-Plex-Protocol:
-              description: Version of the Plex protocol
-              schema:
-                type: string
-                example: '1.0'
-            Content-Type:
-              description: The MIME type of the returned content
-              schema:
-                type: string
-                example: image/jpeg
-            Connection:
-              description: Connection type
-              schema:
-                type: string
-                example: Keep-Alive
-            Keep-Alive:
-              description: Keep-Alive header with timeout value
-              schema:
-                type: string
-                example: timeout=20
-            Content-Encoding:
-              description: Content encoding method
-              schema:
-                type: string
-                example: gzip
-            X-Plex-Content-Original-Length:
-              description: Original length of the uncompressed content
-              schema:
-                type: integer
-                format: int32
-                example: 92476
-            X-Plex-Content-Compressed-Length:
-              description: Length of the compressed content
-              schema:
-                type: integer
-                format: int32
-                example: 92483
-            Content-Length:
-              description: Length of the response content
-              schema:
-                type: integer
-                format: int32
-                example: 92483
-            Cache-Control:
-              description: Cache control directives
-              schema:
-                type: string
-                example: max-age=259200
-            Date:
-              description: Date and time the response was generated
-              schema:
-                type: string
-                format: date-time
-                example: 'Tue, 03 Sep 2024 10:48:05 GMT'
-          content:
-            image/jpeg:
-              schema:
-                type: string
-                format: binary
   '/library/metadata/{ratingKey}/children':
     get:
       tags:
@@ -8985,8 +8787,8 @@ paths:
       servers:
         - url: 'https://plex.tv/api/v2'
       tags:
-        - Authentication
-      summary: Get User Data By Token
+        - Plex
+      summary: Get UserData By Token
       description: Get the User data from the provided X-Plex-Token
       operationId: getUserDetails
       responses:
