@@ -1,5 +1,7 @@
 get:
-  summary: Get Banner Image
+  tags:
+    - Media
+  summary: Get Thumb Image
   description: Gets the banner image of the media item
   operationId: get-thumb-image
   parameters:
@@ -14,6 +16,7 @@ get:
     - $ref: "../../../../../parameters/image/height.yaml"
     - $ref: "../../../../../parameters/image/min-size.yaml"
     - $ref: "../../../../../parameters/image/upscale.yaml"
+    - $ref: "../../../../../parameters/plex-token.yaml"
   responses:
     '200':
       description: Successful response returning an image
