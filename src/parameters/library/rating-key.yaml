@@ -1,0 +1,8 @@
+name: ratingKey
+in: path
+description: the id of the library item to return the children of.
+schema:
+  type: integer
+  example: 9518
+required: true
+

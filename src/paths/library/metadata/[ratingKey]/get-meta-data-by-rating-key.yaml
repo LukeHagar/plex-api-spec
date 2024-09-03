@@ -1,20 +1,18 @@
 get:
   tags:
     - Library
-  summary: Get Items Metadata
+  summary: Get Metadata by RatingKey
   description: |
     This endpoint will return the metadata of a library item specified with the ratingKey.
-  operationId: getMetadata
+  operationId: get-meta-data-by-rating-key
   parameters:
     - name: ratingKey
-      description: the id of the library item to return the children of.
       in: path
+      description: the id of the library item to return the children of.
       schema:
-        type: number
+      type: integer
+      example: 9518
       required: true
-      examples: 
-        rating-key:
-          value: 17
   responses:
     "200":
       description: The metadata of the library item.
@@ -91,8 +89,7 @@ get:
                           example: PG-13
                         summary:
                           type: string
-                          example:
-                            Serenity continues the story of the TV series it was based upon
+                          example: Serenity continues the story of the TV series it was based upon
                             ("Firefly"). River Tam had a secret - one in which she's not
                             even aware - so dangerous, no one's safe, as an Alliance
                             operative's sent to capture her, and all others are considered
@@ -496,6 +493,6 @@ get:
                                 type: string
                                 example: https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg
     "400":
-      $ref: "../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"

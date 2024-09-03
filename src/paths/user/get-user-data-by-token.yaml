@@ -2,8 +2,8 @@ get:
   servers:
     - url: 'https://plex.tv/api/v2'
   tags:
-    - User
-  summary: Get UserData By Token
+    - Authentication
+  summary: Get User Data By Token
   description: Get the User data from the provided X-Plex-Token
   operationId: getUserDetails
   parameters:

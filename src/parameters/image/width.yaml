@@ -1,0 +1,6 @@
+name: width
+in: query
+required: true
+schema:
+  type: integer
+  example: 396

@@ -129,8 +129,13 @@ paths:
     $ref: "./paths/library/[sectionId]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionId}/search:
     $ref: "./paths/library/[sectionId]/get-search-library.yaml"
+
   /library/metadata/{ratingKey}:
-    $ref: "./paths/library/metadata.yaml"
+    $ref: "./paths/library/metadata/[ratingKey]/get-meta-data-by-rating-key.yaml"
+  /library/metadata/{ratingKey}/banner:
+    $ref: "./paths/library/metadata/[ratingKey]/banner/get-banner-image.yaml"
+  /library/metadata/{ratingKey}/thumb:
+    $ref: "./paths/library/metadata/[ratingKey]/thumb/get-thumb-image.yaml"
   /library/metadata/{ratingKey}/children:
     $ref: "./paths/library/metadata-children.yaml"
   /library/all/top:
@@ -217,7 +222,7 @@ paths:
 
   # User
   /user:
-    $ref: "./paths/user/user.yaml"
+    $ref: "./paths/user/get-user-data-by-token.yaml"
 
   /users/signin:
     $ref: "./paths/users/post-sign-in.yaml"
