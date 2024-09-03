@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Checks
 "on":
   pull_request:
     paths:
@@ -32,3 +32,24 @@ jobs:
 
       - name: Run Unit Tests
         run: bun run type-check
+
+  lint:
+    name: Run OpenApi Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Project Setup
+        uses: ./.github/workflows/steps/project-setup
+
+      - name: OpenAPI Lint
+        run: bun run lint
+
+      - name: Install Speakeasy CLI
+        run: bun run setup-speakeasy-cli
+
+      - name: Bundle OpenAPI Spec
+        run: bun run build
+
+      - name: OpenAPI Lint On Bundled Spec
+        run: bun run lint-bundled
