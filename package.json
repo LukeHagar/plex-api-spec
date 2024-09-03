@@ -12,7 +12,7 @@
     "test": "bun run build && vitest --run",
     "setup-speakeasy-cli": "curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh",
     "lint": "speakeasy lint openapi -s ./src/pms-spec.yaml",
-    "lint-bundled": "bun run build && speakeasy lint openapi -s ./output/plex-media-server-spec-dereferenced.yaml"
+    "lint-bundled": "speakeasy lint openapi -s ./output/plex-media-server-spec-dereferenced.yaml"
   },
   "keywords": ["plex", "api", "specification", "openapi", "swagger"],
   "author": "LukeHagar",

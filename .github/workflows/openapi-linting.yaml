@@ -20,5 +20,12 @@ jobs:
       - name: Install Speakeasy CLI
         run: bun run setup-speakeasy-cli
 
-      - name: OpenAPI Lint
-        run: bun run lint
+#      TODO: Disable this step until the linting is fixed in speakeasy with regards to $ref parameters in the OpenAPI spec `GET` must define parameter `ratingKey` as expected by path `/library/metadata/{ratingKey}`
+#      - name: OpenAPI Lint
+#        run: bun run lint
+
+      - name: Bundle OpenAPI Spec
+        run: bun run build
+
+      - name: OpenAPI Lint On Bundled Spec
+        run: bun run lint-bundled
