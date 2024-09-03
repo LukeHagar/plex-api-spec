@@ -2,7 +2,7 @@ get:
   tags:
     - Media
   summary: Get Thumb Image
-  description: Gets the banner image of the media item
+  description: Gets the thumbnail image of the media item
   operationId: get-thumb-image
   parameters:
     - name: ratingKey
