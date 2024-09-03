@@ -4,7 +4,7 @@
   "description": "An open source Plex Media Server API Specification",
   "main": "src/pms-spec.yaml",
   "scripts": {
-    "dev": "redocly preview --product=redoc -d=./src",
+    "dev": "redocly preview -d=./src",
     "stats": "redocly stats ./src/pms-spec.yaml",
     "build": "swagger-cli bundle --dereference ./src/pms-spec.yaml -t yaml -o ./output/plex-media-server-spec-dereferenced.yaml",
     "build-redocly": "redocly bundle ./src/pms-spec.yaml --ext yaml  -o ./output/plex-media-server-spec-dereferenced.yaml",
@@ -18,7 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.0",
-    "@redocly/cli": "^1.22.0",
+    "@redocly/cli": "latest",
+    "@scalar/cli": "^0.2.190",
     "@types/node": "^22.5.0",
     "swagger-cli": "^4.0.4",
     "typescript": "^5.5.4",

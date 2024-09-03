@@ -1,0 +1,7 @@
+name: X-Plex-Token
+in: query
+description: Plex Authentication Token
+schema:
+  type: string
+example: CV5xoxjTpFKUzBTShsaf
+required: true

@@ -2,10 +2,12 @@ get:
   servers:
     - url: 'https://plex.tv/api/v2'
   tags:
-    - Plex
+    - User
   summary: Get UserData By Token
   description: Get the User data from the provided X-Plex-Token
   operationId: getUserDetails
+  parameters:
+    - $ref: '../../parameters/plex-token.yaml'
   responses:
     '200':
       description: Logged in user details

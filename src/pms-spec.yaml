@@ -41,6 +41,15 @@ components:
       name: X-Plex-Token
 
 paths:
+  parameters:
+    - name: Accept
+      in: header
+      required: true
+      schema:
+        type: string
+        enum: [application/json]
+      description: Specifies that the client expects a JSON response.
+
   # Plex Media Server endpoints
 
   # Colon Endpoints
@@ -116,7 +125,7 @@ paths:
   /library/hashes:
     $ref: "./paths/library/hashes.yaml"
   /library/recentlyAdded:
-    $ref: "./paths/library/recentlyadded.yaml"
+    $ref: "./paths/library/get-recently-added.yaml"
   /library/sections:
     $ref: "./paths/library/get-all-libraries.yaml"
   /library/sections/{sectionId}:

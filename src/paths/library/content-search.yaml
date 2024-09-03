@@ -29,17 +29,8 @@ get:
       description: the Id of the library to query
       schema:
         type: integer
-    - name: type
-      description: Plex content type to search for
-      in: query
-      schema:
-        type: integer
-        enum:
-          - 1
-          - 2
-          - 3
-          - 4
-      required: true
+    - $ref: "../../parameters/accept-application-json.yaml"
+    - $ref: "../../parameters/type.yaml"
   responses:
     "200":
       description: The contents of the library by section and type
