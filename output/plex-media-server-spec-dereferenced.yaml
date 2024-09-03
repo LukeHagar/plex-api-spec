@@ -2161,20 +2161,24 @@ paths:
         - name: X-Plex-Container-Start
           in: query
           description: |
-            Add the index start from which the media items should be returned.
+            The index of the first item to return. If not specified, the first item will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
             By default this is 0
           schema:
             type: integer
+            format: int32
             default: 0
             example: 0
           required: false
         - name: X-Plex-Container-Size
           in: query
           description: |
-            Add the length/size of the number of media to be retrieved.
+            The number of items to return. If not specified, all items will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
             By default this is 50
           schema:
             type: integer
+            format: int32
             default: 50
             example: 50
           required: false
@@ -2582,7 +2586,7 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/sections/{sectionId}':
+  '/library/sections/{sectionKey}':
     get:
       tags:
         - Library
@@ -2629,12 +2633,15 @@ paths:
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
       operationId: get-library-details
       parameters:
-        - name: sectionId
-          description: The id of the library
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
           in: path
           schema:
-            type: number
-            example: 15
+            type: integer
+            format: int32
+            example: 9518
           required: true
         - name: includeDetails
           description: |
@@ -2845,12 +2852,15 @@ paths:
       description: Delete a library using a specific section id
       operationId: deleteLibrary
       parameters:
-        - name: sectionId
-          description: The id of the library
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
           in: path
           schema:
-            type: number
-            example: 15
+            type: integer
+            format: int32
+            example: 9518
           required: true
       responses:
         '200':
@@ -2878,7 +2888,254 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/sections/{sectionId}/{tag}':
+  '/library/sections/watchlist/{filter}':
+    servers:
+      - url: 'https://metadata.provider.plex.tv'
+        description: The plex metadata provider server
+    get:
+      tags:
+        - Watchlist
+      summary: Get User Watchlist
+      description: Get User Watchlist
+      operationId: get-watch-list
+      parameters:
+        - name: filter
+          description: Filter
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - all
+              - available
+              - released
+        - name: sort
+          description: |
+            In the format "field:dir". Available fields are "watchlistedAt" (Added At),
+            "titleSort" (Title), "originallyAvailableAt" (Release Date), or "rating" (Critic Rating).
+            "dir" can be "asc" or "desc"
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: libtype
+          description: |
+            The type of library to filter. Can be "movie" or "show", or all if not present.
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - movie
+              - show
+        - name: maxresults
+          description: |
+            The number of items to return. If not specified, all items will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: includeCollections
+          description: |
+            include collections in the results
+          in: query
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 0
+        - name: includeExternalMedia
+          description: |
+            include external media in the results
+          in: query
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 0
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/json
+              - application/xml
+            example: application/json
+        - name: X-Plex-Container-Start
+          in: query
+          description: |
+            The index of the first item to return. If not specified, the first item will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
+            By default this is 0
+          schema:
+            type: integer
+            format: int32
+            default: 0
+            example: 0
+          required: false
+        - name: X-Plex-Container-Size
+          in: query
+          description: |
+            The number of items to return. If not specified, all items will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
+            By default this is 50
+          schema:
+            type: integer
+            format: int32
+            default: 50
+            example: 50
+          required: false
+        - name: X-Plex-Token
+          in: query
+          description: Plex Authentication Token
+          schema:
+            type: string
+            example: CV5xoxjTpFKUzBTShsaf
+          required: true
+      responses:
+        '200':
+          description: Watchlist Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  librarySectionID:
+                    type: string
+                  librarySectionTitle:
+                    type: string
+                  offset:
+                    type: integer
+                    format: int32
+                  totalSize:
+                    type: integer
+                    format: int32
+                  identifier:
+                    type: string
+                  size:
+                    type: integer
+                    format: int32
+                  Metadata:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        art:
+                          type: string
+                        guid:
+                          type: string
+                        key:
+                          type: string
+                        ratingKey:
+                          type: string
+                        studio:
+                          type: string
+                        tagline:
+                          type: string
+                        type:
+                          type: string
+                        thumb:
+                          type: string
+                        addedAt:
+                          type: integer
+                          format: int32
+                        duration:
+                          type: integer
+                          format: int32
+                        publicPagesURL:
+                          type: string
+                        slug:
+                          type: string
+                        userState:
+                          type: boolean
+                        title:
+                          type: string
+                        contentRating:
+                          type: string
+                        originallyAvailableAt:
+                          type: string
+                          format: date
+                        year:
+                          type: integer
+                          format: int32
+                        Image:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              alt:
+                                type: string
+                              type:
+                                type: string
+                              url:
+                                type: string
+                        banner:
+                          type: string
+                        rating:
+                          type: number
+                        expiresAt:
+                          type: integer
+                          format: int32
+                        originalTitle:
+                          type: string
+                        audienceRating:
+                          type: number
+                        audienceRatingImage:
+                          type: string
+                        ratingImage:
+                          type: string
+                        imdbRatingCount:
+                          type: integer
+                          format: int32
+                        subtype:
+                          type: string
+                        theme:
+                          type: string
+                        leafCount:
+                          type: integer
+                          format: int32
+                        childCount:
+                          type: integer
+                          format: int32
+                        isContinuingSeries:
+                          type: boolean
+                        skipChildren:
+                          type: boolean
+                        availabilityId:
+                          type: string
+                        streamingMediaId:
+                          type: string
+                        playableKey:
+                          type: string
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
+  '/library/sections/{sectionKey}/{tag}':
     get:
       tags:
         - Library
@@ -2906,14 +3163,16 @@ paths:
         - `firstCharacter`: Items categorized by the first letter.
         - `folder`: Items categorized by folder.
       parameters:
-        - name: sectionId
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
           in: path
-          required: true
-          description: the Id of the library to query
           schema:
-            type:
-              - integer
-              - string
+            type: integer
+            format: int32
+            example: 9518
+          required: true
         - name: tag
           in: path
           required: true
@@ -2983,20 +3242,24 @@ paths:
         - name: X-Plex-Container-Start
           in: query
           description: |
-            Add the index start from which the media items should be returned.
+            The index of the first item to return. If not specified, the first item will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
             By default this is 0
           schema:
             type: integer
+            format: int32
             default: 0
             example: 0
           required: false
         - name: X-Plex-Container-Size
           in: query
           description: |
-            Add the length/size of the number of media to be retrieved.
+            The number of items to return. If not specified, all items will be returned.
+            If the number of items exceeds the limit, the response will be paginated.
             By default this is 50
           schema:
             type: integer
+            format: int32
             default: 50
             example: 50
           required: false
@@ -3387,7 +3650,7 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/sections/{sectionId}/refresh':
+  '/library/sections/{sectionKey}/refresh':
     get:
       tags:
         - Library
@@ -3396,12 +3659,15 @@ paths:
         This endpoint Refreshes all the Metadata of the library.
       operationId: get-refresh-library-metadata
       parameters:
-        - name: sectionId
-          description: The id of the library
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
           in: path
           schema:
-            type: number
-            example: 15
+            type: integer
+            format: int32
+            example: 9518
           required: true
         - name: force
           description: Force the refresh even if the library is already being refreshed.
@@ -3439,7 +3705,7 @@ paths:
                         status:
                           type: number
                           example: 401
-  '/library/sections/{sectionId}/search':
+  '/library/sections/{sectionKey}/search':
     get:
       tags:
         - Library
@@ -3465,12 +3731,16 @@ paths:
 
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
       parameters:
-        - name: sectionId
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
           in: path
-          required: true
-          description: the Id of the library to query
           schema:
             type: integer
+            format: int32
+            example: 9518
+          required: true
         - name: Accept
           in: header
           required: false
@@ -4264,6 +4534,29 @@ paths:
               schema:
                 type: string
                 format: binary
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   '/library/metadata/{ratingKey}/thumb':
     get:
       tags:
@@ -4373,6 +4666,29 @@ paths:
               schema:
                 type: string
                 format: binary
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   '/library/metadata/{ratingKey}/children':
     get:
       tags:
@@ -4641,18 +4957,23 @@ paths:
       operationId: getTopWatchedContent
       parameters:
         - name: type
-          description: 'the library type (1 - movies, 2 - shows, 3 - music)'
           in: query
+          description: |
+            The type of media to retrieve.
+            1 = movie
+            2 = show
+            3 = season
+            4 = episode
+            E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+            example: 2
           required: true
-          examples:
-            movies:
-              value: 1
-            shows:
-              value: 2
-            music:
-              value: 3
         - name: includeGuids
           in: query
           description: |
@@ -4853,6 +5174,29 @@ paths:
                                     type: integer
                                     format: int32
                                     example: 220
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: number
+                          example: 1001
+                        message:
+                          type: string
+                          example: User could not be authenticated
+                        status:
+                          type: number
+                          example: 401
   /library/onDeck:
     get:
       tags:
@@ -6646,10 +6990,22 @@ paths:
             type: number
           required: true
         - name: type
-          description: the metadata type of the item to return
           in: query
+          description: |
+            The type of media to retrieve.
+            1 = movie
+            2 = show
+            3 = season
+            4 = episode
+            E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
-            type: number
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+            example: 2
           required: true
       responses:
         '200':
@@ -7925,7 +8281,7 @@ paths:
                             deviceID:
                               type: integer
                               format: int32
-                              exmaple: 208
+                              example: 208
                             timespan:
                               type: integer
                               example: 6
@@ -10408,237 +10764,6 @@ paths:
                         type: array
                         items:
                           type: object
-        '400':
-          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
-  '/library/sections/watchlist/{filter}':
-    servers:
-      - url: 'https://metadata.provider.plex.tv'
-        description: The plex metadata provider server
-    get:
-      tags:
-        - Watchlist
-      summary: Get User Watchlist
-      description: Get User Watchlist
-      operationId: getWatchlist
-      parameters:
-        - name: filter
-          description: Filter
-          in: path
-          required: true
-          schema:
-            type: string
-            enum:
-              - all
-              - available
-              - released
-        - name: sort
-          description: |
-            In the format "field:dir". Available fields are "watchlistedAt" (Added At),
-            "titleSort" (Title), "originallyAvailableAt" (Release Date), or "rating" (Critic Rating).
-            "dir" can be "asc" or "desc"
-          in: query
-          required: false
-          schema:
-            type: string
-        - name: libtype
-          description: |
-            The type of library to filter. Can be "movie" or "show", or all if not present.
-          in: query
-          required: false
-          schema:
-            type: string
-            enum:
-              - movie
-              - show
-        - name: maxresults
-          description: |
-            The number of items to return. If not specified, all items will be returned.
-            If the number of items exceeds the limit, the response will be paginated.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-        - name: includeCollections
-          description: |
-            include collections in the results
-          in: query
-          required: false
-          schema:
-            type: integer
-            enum:
-              - 1
-              - 0
-        - name: includeExternalMedia
-          description: |
-            include external media in the results
-          in: query
-          required: false
-          schema:
-            type: integer
-            enum:
-              - 1
-              - 0
-        - name: X-Plex-Token
-          description: User Token
-          in: query
-          required: true
-          schema:
-            type: string
-        - name: X-Plex-Container-Start
-          description: |
-            The index of the first item to return. If not specified, the first item will be returned.
-            If the number of items exceeds the limit, the response will be paginated.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-        - name: X-Plex-Container-Size
-          description: |
-            The number of items to return. If not specified, all items will be returned.
-            If the number of items exceeds the limit, the response will be paginated.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: Watchlist Data
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  librarySectionID:
-                    type: string
-                  librarySectionTitle:
-                    type: string
-                  offset:
-                    type: integer
-                    format: int32
-                  totalSize:
-                    type: integer
-                    format: int32
-                  identifier:
-                    type: string
-                  size:
-                    type: integer
-                    format: int32
-                  Metadata:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        art:
-                          type: string
-                        guid:
-                          type: string
-                        key:
-                          type: string
-                        ratingKey:
-                          type: string
-                        studio:
-                          type: string
-                        tagline:
-                          type: string
-                        type:
-                          type: string
-                        thumb:
-                          type: string
-                        addedAt:
-                          type: integer
-                          format: int32
-                        duration:
-                          type: integer
-                          format: int32
-                        publicPagesURL:
-                          type: string
-                        slug:
-                          type: string
-                        userState:
-                          type: boolean
-                        title:
-                          type: string
-                        contentRating:
-                          type: string
-                        originallyAvailableAt:
-                          type: string
-                          format: date
-                        year:
-                          type: integer
-                          format: int32
-                        Image:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              alt:
-                                type: string
-                              type:
-                                type: string
-                              url:
-                                type: string
-                        banner:
-                          type: string
-                        rating:
-                          type: number
-                        expiresAt:
-                          type: integer
-                          format: int32
-                        originalTitle:
-                          type: string
-                        audienceRating:
-                          type: number
-                        audienceRatingImage:
-                          type: string
-                        ratingImage:
-                          type: string
-                        imdbRatingCount:
-                          type: integer
-                          format: int32
-                        subtype:
-                          type: string
-                        theme:
-                          type: string
-                        leafCount:
-                          type: integer
-                          format: int32
-                        childCount:
-                          type: integer
-                          format: int32
-                        isContinuingSeries:
-                          type: boolean
-                        skipChildren:
-                          type: boolean
-                        availabilityId:
-                          type: string
-                        streamingMediaId:
-                          type: string
-                        playableKey:
-                          type: string
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
         '401':
