@@ -1,1 +1,11 @@
-{}
+{
+  "insertPragma": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": false,
+  "bracketSpacing": true,
+  "proseWrap": "preserve",
+  "trailingComma": "none",
+  "endOfLine": "lf"
+}

@@ -5,7 +5,13 @@
   "main": "src/pms-spec.yaml",
   "type": "module",
   "author": "LukeHagar",
-  "keywords": ["plex", "api", "specification", "openapi", "swagger"],
+  "keywords": [
+    "plex",
+    "api",
+    "specification",
+    "openapi",
+    "swagger"
+  ],
   "license": "MIT",
   "scripts": {
     "dev": "redocly preview -d=./src",
@@ -16,6 +22,7 @@
     "test": "bun run build && vitest --run",
     "type-check": "tsc",
     "setup-speakeasy-cli": "curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh",
+    "format": "bun prettier . --write",
     "lint": "redocly lint",
     "lint-speakeasy": "speakeasy lint openapi -s ./src/pms-spec.yaml",
     "lint-bundled": "speakeasy lint openapi -s ./output/plex-media-server-spec-dereferenced.yaml"
