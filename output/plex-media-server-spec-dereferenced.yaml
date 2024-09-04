@@ -30,10 +30,10 @@ x-speakeasy-globals:
         The unique identifier for the client application
         This is used to track the client application and its usage
         (UUID, serial number, or other number unique per device)
-      in: query
+      in: header
       schema:
         type: string
-        example: gcgzw5rz2xovp84b4vha3a40
+        example: Postman
       required: true
 security:
   - accessToken: []
@@ -5536,10 +5536,10 @@ paths:
             The unique identifier for the client application
             This is used to track the client application and its usage
             (UUID, serial number, or other number unique per device)
-          in: query
+          in: header
           schema:
             type: string
-            example: gcgzw5rz2xovp84b4vha3a40
+            example: Postman
           required: true
         - name: includeHttps
           in: query
@@ -6039,17 +6039,19 @@ paths:
             The unique identifier for the client application
             This is used to track the client application and its usage
             (UUID, serial number, or other number unique per device)
-          in: query
+          in: header
           schema:
             type: string
-            example: gcgzw5rz2xovp84b4vha3a40
+            example: Postman
           required: true
         - name: X-Plex-Product
-          in: query
-          required: false
+          description: |
+            Product name of the application shown in the list of devices
+          in: header
           schema:
             type: string
-          example: Plex Web
+            example: Postman
+          required: true
       responses:
         '200':
           description: Requests a new pin id used in the authentication flow
@@ -6267,10 +6269,10 @@ paths:
             The unique identifier for the client application
             This is used to track the client application and its usage
             (UUID, serial number, or other number unique per device)
-          in: query
+          in: header
           schema:
             type: string
-            example: gcgzw5rz2xovp84b4vha3a40
+            example: Postman
           required: true
         - name: pinID
           description: The PinID to retrieve an access token for
@@ -7517,271 +7519,6 @@ paths:
                         status:
                           type: number
                           example: 401
-  /media/providers:
-    get:
-      tags:
-        - Server
-      summary: Get Media Providers
-      description: Retrieves media providers and their features from the Plex server.
-      operationId: get-media-providers
-      parameters:
-        - name: Accept
-          in: header
-          required: false
-          schema:
-            type: string
-            enum:
-              - application/json
-              - application/xml
-            example: application/json
-        - name: X-Plex-Device
-          in: query
-          required: false
-          schema:
-            type: string
-          example: Linux
-        - name: X-Plex-Device-Name
-          in: query
-          required: false
-          schema:
-            type: string
-          example: Chrome
-        - name: X-Plex-Device-Screen-Resolution
-          in: query
-          required: false
-          schema:
-            type: string
-          example: '1487x1165,2560x1440'
-        - name: X-Plex-Features
-          in: query
-          required: false
-          schema:
-            type: string
-          example: 'external-media,indirect-media,hub-style-list'
-        - name: X-Plex-Client-Identifier
-          description: |
-            The unique identifier for the client application
-            This is used to track the client application and its usage
-            (UUID, serial number, or other number unique per device)
-          in: query
-          schema:
-            type: string
-            example: gcgzw5rz2xovp84b4vha3a40
-          required: true
-        - name: X-Plex-Language
-          in: query
-          required: false
-          schema:
-            type: string
-          example: en
-        - name: X-Plex-Model
-          in: query
-          required: false
-          schema:
-            type: string
-          example: bundled
-        - name: X-Plex-Platform
-          in: query
-          required: false
-          schema:
-            type: string
-          example: Chrome
-        - name: X-Plex-Product
-          in: query
-          required: false
-          schema:
-            type: string
-          example: Plex Web
-        - name: X-Plex-Session-Id
-          in: query
-          required: false
-          schema:
-            type: string
-          example: 97e136ef-4ddd-4ff3-89a7-a5820c96c2ca
-        - name: X-Plex-Version
-          in: query
-          required: false
-          schema:
-            type: string
-          example: 4.133.0
-        - name: X-Plex-Token
-          in: query
-          description: Plex Authentication Token
-          schema:
-            type: string
-            example: CV5xoxjTpFKUzBTShsaf
-          required: true
-      responses:
-        '200':
-          description: Media providers and their features
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  MediaContainer:
-                    type: object
-                    properties:
-                      size:
-                        type: integer
-                      allowCameraUpload:
-                        type: boolean
-                      allowChannelAccess:
-                        type: boolean
-                      allowSharing:
-                        type: boolean
-                      allowSync:
-                        type: boolean
-                      allowTuners:
-                        type: boolean
-                      backgroundProcessing:
-                        type: boolean
-                      certificate:
-                        type: boolean
-                      companionProxy:
-                        type: boolean
-                      countryCode:
-                        type: string
-                      diagnostics:
-                        type: string
-                      eventStream:
-                        type: boolean
-                      friendlyName:
-                        type: string
-                      livetv:
-                        type: integer
-                      machineIdentifier:
-                        type: string
-                      musicAnalysis:
-                        type: integer
-                      myPlex:
-                        type: boolean
-                      myPlexMappingState:
-                        type: string
-                      myPlexSigninState:
-                        type: string
-                      myPlexSubscription:
-                        type: boolean
-                      myPlexUsername:
-                        type: string
-                      offlineTranscode:
-                        type: integer
-                      ownerFeatures:
-                        type: string
-                      platform:
-                        type: string
-                      platformVersion:
-                        type: string
-                      pluginHost:
-                        type: boolean
-                      pushNotifications:
-                        type: boolean
-                      readOnlyLibraries:
-                        type: boolean
-                      streamingBrainABRVersion:
-                        type: integer
-                      streamingBrainVersion:
-                        type: integer
-                      sync:
-                        type: boolean
-                      transcoderActiveVideoSessions:
-                        type: integer
-                      transcoderAudio:
-                        type: boolean
-                      transcoderLyrics:
-                        type: boolean
-                      transcoderSubtitles:
-                        type: boolean
-                      transcoderVideo:
-                        type: boolean
-                      transcoderVideoBitrates:
-                        type: string
-                      transcoderVideoQualities:
-                        type: string
-                      transcoderVideoResolutions:
-                        type: string
-                      updatedAt:
-                        type: integer
-                      updater:
-                        type: boolean
-                      version:
-                        type: string
-                      voiceSearch:
-                        type: boolean
-                      MediaProvider:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            identifier:
-                              type: string
-                            title:
-                              type: string
-                            types:
-                              type: string
-                            protocols:
-                              type: string
-                            Feature:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                  type:
-                                    type: string
-                                  Directory:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        hubKey:
-                                          type: string
-                                        title:
-                                          type: string
-                                        agent:
-                                          type: string
-                                        language:
-                                          type: string
-                                        refreshing:
-                                          type: boolean
-                                        scanner:
-                                          type: string
-                                        uuid:
-                                          type: string
-                                        id:
-                                          type: string
-                                        key:
-                                          type: string
-                                        type:
-                                          type: string
-                                        subtype:
-                                          type: string
-                                        updatedAt:
-                                          type: integer
-                                        scannedAt:
-                                          type: integer
-                                        Pivot:
-                                          type: array
-                                          items:
-                                            type: object
-                                            properties:
-                                              id:
-                                                type: string
-                                              key:
-                                                type: string
-                                              type:
-                                                type: string
-                                              title:
-                                                type: string
-                                              context:
-                                                type: string
-                                              symbol:
-                                                type: string
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
   /search:
     get:
       tags:
@@ -10316,10 +10053,10 @@ paths:
             The unique identifier for the client application
             This is used to track the client application and its usage
             (UUID, serial number, or other number unique per device)
-          in: query
+          in: header
           schema:
             type: string
-            example: gcgzw5rz2xovp84b4vha3a40
+            example: Postman
           required: true
       requestBody:
         content:
