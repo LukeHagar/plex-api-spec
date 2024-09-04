@@ -37,7 +37,7 @@ components:
     accessToken:
       description: Plex Authentication Token
       type: apiKey
-      in: header
+      in: query
       name: X-Plex-Token
 
 paths:
