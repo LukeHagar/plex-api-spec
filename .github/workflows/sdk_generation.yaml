@@ -26,7 +26,6 @@ jobs:
       force: ${{ github.event.inputs.force }}
       mode: direct
       speakeasy_version: latest
-      working_directory: src
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}

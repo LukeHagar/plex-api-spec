@@ -14,7 +14,7 @@ workflow:
     sources:
         Plex-API:
             inputs:
-                - location: ./src/pms-spec.yaml
+                - location: ./output/plex-media-server-spec-dereferenced.yaml
             registry:
                 location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api
     targets: {}
