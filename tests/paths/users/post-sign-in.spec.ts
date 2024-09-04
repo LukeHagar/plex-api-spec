@@ -1,5 +1,5 @@
-import { validateResponseSpec } from "../../utils/"
-import { describe, expect, it } from "vitest"
+import { validateResponseSpec } from "@utils"
+import { describe, it } from "vitest"
 
 describe("POST /users/signin", () => {
   it("should validate the 201 response when the API spec is valid", () => {

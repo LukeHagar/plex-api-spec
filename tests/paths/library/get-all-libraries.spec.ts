@@ -1,4 +1,4 @@
-import { validateResponseSpec } from "../../utils/"
+import { validateResponseSpec } from "@utils"
 import { describe, it } from "vitest"
 
 describe("GET /library/sections", () => {
