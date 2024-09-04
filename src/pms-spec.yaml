@@ -5,10 +5,10 @@ info:
   description: An Open API Spec for interacting with Plex.tv and Plex Media Server
   contact:
     name: Luke Hagar
-    url: 'https://www.LukeHagar.com'
+    url: "https://www.LukeHagar.com"
     email: Lukeslakemail@gmail.com
   license:
-    url: 'https://opensource.org/license/mit'
+    url: "https://opensource.org/license/mit"
     name: MIT
 
 servers:
@@ -16,7 +16,7 @@ servers:
     description: The full address of your Plex Server
     variables:
       protocol:
-        default: "http"
+        default: "https"
         enum:
           - "http"
           - "https"
