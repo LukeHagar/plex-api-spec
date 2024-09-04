@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An open source Plex Media Server API Specification",
   "main": "src/pms-spec.yaml",
+  "type": "module",
   "author": "LukeHagar",
   "keywords": ["plex", "api", "specification", "openapi", "swagger"],
   "license": "MIT",
@@ -23,8 +24,10 @@
     "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@redocly/cli": "latest",
     "@types/node": "^22.5.0",
+    "prettier": "3.3.3",
     "swagger-cli": "^4.0.4",
     "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.0.5"
   },
   "dependencies": {

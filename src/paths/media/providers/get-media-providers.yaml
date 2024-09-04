@@ -6,17 +6,6 @@ get:
   operationId: get-media-providers
   parameters:
     - $ref: '../../../parameters/accept-application-json.yaml'
-    - $ref: '../../../parameters/plex/x-plex-device.yaml'
-    - $ref: '../../../parameters/plex/x-plex-device-name.yaml'
-    - $ref: '../../../parameters/plex/x-plex-device-screen-resolution.yaml'
-    - $ref: '../../../parameters/plex/x-plex-features.yaml'
-    - $ref: '../../../parameters/plex/x-plex-identifier.yaml'
-    - $ref: '../../../parameters/plex/x-plex-language.yaml'
-    - $ref: '../../../parameters/plex/x-plex-model.yaml'
-    - $ref: '../../../parameters/plex/x-plex-platform.yaml'
-    - $ref: '../../../parameters/plex/x-plex-product.yaml'
-    - $ref: '../../../parameters/plex/x-plex-session-id.yaml'
-    - $ref: '../../../parameters/plex/x-plex-version.yaml'
     - $ref: '../../../parameters/plex/x-plex-token.yaml'
   responses:
     '200':
@@ -185,7 +174,7 @@ get:
                                             type: string
                                           symbol:
                                             type: string
-    '400':
-      description: Bad Request
-    '401':
-      description: Unauthorized
+    "400":
+      $ref: "../../../responses/400.yaml"
+    "401":
+      $ref: "../../../responses/401.yaml"
