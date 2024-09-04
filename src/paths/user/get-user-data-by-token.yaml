@@ -7,7 +7,7 @@ get:
   description: Get the User data from the provided X-Plex-Token
   operationId: getUserDetails
   parameters:
-    - $ref: '../../parameters/plex-token.yaml'
+    - $ref: '../../parameters/plex/x-plex-token.yaml'
     - $ref: "../../parameters/accept-application-json.yaml"
   responses:
     '200':

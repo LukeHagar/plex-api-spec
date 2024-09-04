@@ -4,4 +4,4 @@ description: Plex Authentication Token
 schema:
   type: string
   example: CV5xoxjTpFKUzBTShsaf
-required: false
+required: true

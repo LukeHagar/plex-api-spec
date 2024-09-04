@@ -18,8 +18,8 @@ post:
         type: boolean
         default: false
       required: false
-    - $ref: ../../parameters/ClientIdentifier.yaml
-    - $ref: ../../parameters/ClientProduct.yaml
+    - $ref: ../../parameters/plex/x-plex-identifier.yaml
+    - $ref: ../../parameters/plex/x-plex-product.yaml
   responses:
     '200':
       description: Requests a new pin id used in the authentication flow

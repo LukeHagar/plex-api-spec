@@ -17,12 +17,7 @@ get:
     - $ref: '../../../parameters/plex/x-plex-product.yaml'
     - $ref: '../../../parameters/plex/x-plex-session-id.yaml'
     - $ref: '../../../parameters/plex/x-plex-version.yaml'
-    - name: X-Plex-Token
-      in: query
-      required: true
-      schema:
-        type: string
-      example: "tW7zyenPCasLpVnaZa8y"
+    - $ref: '../../../parameters/plex/x-plex-token.yaml'
   responses:
     '200':
       description: Media providers and their features

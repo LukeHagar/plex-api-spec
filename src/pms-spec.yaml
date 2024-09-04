@@ -27,7 +27,7 @@ servers:
 
 x-speakeasy-globals:
   parameters:
-    - $ref: "./parameters/ClientIdentifier.yaml"
+    - $ref: "./parameters/plex/x-plex-identifier.yaml"
 
 security:
   - accessToken: []

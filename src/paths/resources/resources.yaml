@@ -8,7 +8,7 @@ get:
   description: Get Resources
   operationId: getResources
   parameters:
-    - $ref: "../../parameters/ClientIdentifier.yaml"
+    - $ref: "../../parameters/plex/x-plex-identifier.yaml"
     - name: includeHttps
       in: query
       description: Include Https entries in the results

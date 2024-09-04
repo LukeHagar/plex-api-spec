@@ -1,6 +1,10 @@
 name: X-Plex-Client-Identifier
+description: |
+  The unique identifier for the client application
+  This is used to track the client application and its usage
+  (UUID, serial number, or other number unique per device)
 in: query
-required: false
 schema:
   type: string
-example: "gcgzw5rz2xovp84b4vha3a40"
+  example: gcgzw5rz2xovp84b4vha3a40
+required: true

@@ -16,7 +16,7 @@ get:
     - $ref: "../../../../../parameters/image/height.yaml"
     - $ref: "../../../../../parameters/image/min-size.yaml"
     - $ref: "../../../../../parameters/image/upscale.yaml"
-    - $ref: "../../../../../parameters/plex-token.yaml"
+    - $ref: "../../../../../parameters/plex/x-plex-token.yaml"
   responses:
     '200':
       description: Successful response returning an image
