@@ -1,22 +1,22 @@
 get:
   servers:
-    - url: 'https://plex.tv/api/v2'
+    - url: "https://plex.tv/api/v2"
   tags:
     - Authentication
   summary: Get User Data By Token
   description: Get the User data from the provided X-Plex-Token
   operationId: getUserDetails
   parameters:
-    - $ref: '../../parameters/plex-token.yaml'
+    - $ref: "../../parameters/plex/x-plex-token.yaml"
     - $ref: "../../parameters/accept-application-json.yaml"
   responses:
-    '200':
+    "200":
       description: Logged in user details
       content:
         application/json:
           schema:
             $ref: ../../models/UserPlexAccount.yaml
-    '400':
-      $ref: '../../responses/400.yaml'
-    '401':
-      $ref: '../../responses/401.yaml'
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

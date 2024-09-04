@@ -73,8 +73,8 @@ properties:
     description: Date the account subscribed to Plex Pass
     type:
       - string
-      - 'null'
-    example: '2021-04-12T18:21:12Z'
+      - "null"
+    example: "2021-04-12T18:21:12Z"
   status:
     description: String representation of subscriptionActive
     example: Inactive
@@ -85,9 +85,9 @@ properties:
     description: Payment service used for your Plex Pass subscription
     type:
       - string
-      - 'null'
+      - "null"
   plan:
     description: Name of Plex Pass subscription plan
     type:
       - string
-      - 'null'
+      - "null"

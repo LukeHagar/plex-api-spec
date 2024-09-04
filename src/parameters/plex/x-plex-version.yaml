@@ -1,0 +1,6 @@
+name: X-Plex-Version
+in: query
+required: false
+schema:
+  type: string
+example: "4.133.0"

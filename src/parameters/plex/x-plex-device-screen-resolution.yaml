@@ -1,0 +1,6 @@
+name: X-Plex-Device-Screen-Resolution
+in: query
+required: false
+schema:
+  type: string
+example: "1487x1165,2560x1440"

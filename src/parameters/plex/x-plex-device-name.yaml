@@ -1,0 +1,6 @@
+name: X-Plex-Device-Name
+in: query
+required: false
+schema:
+  type: string
+example: "Chrome"

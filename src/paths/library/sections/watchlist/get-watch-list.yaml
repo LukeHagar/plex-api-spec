@@ -71,7 +71,7 @@ get:
     - $ref: "../../../../parameters/accept-application-json.yaml"
     - $ref: "../../../../parameters/container-start.yaml"
     - $ref: "../../../../parameters/container-size.yaml"
-    - $ref: "../../../../parameters/plex-token.yaml"
+    - $ref: "../../../../parameters/plex/x-plex-token.yaml"
   responses:
     "200":
       description: Watchlist Data

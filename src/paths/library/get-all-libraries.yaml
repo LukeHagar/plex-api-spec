@@ -60,7 +60,7 @@ get:
                           example: /:/resources/movie.png
                         key:
                           type: string
-                          example: '1'
+                          example: "1"
                         type:
                           type: string
                           example: movie
@@ -80,11 +80,11 @@ get:
                           type: string
                           example: 322a231a-b7f7-49f5-920f-14c61199cd30
                         updatedAt:
-                          $ref: '../../models/common/PlexDateTime.yaml'
+                          $ref: "../../models/common/PlexDateTime.yaml"
                         createdAt:
-                          $ref: '../../models/common/PlexDateTime.yaml'
+                          $ref: "../../models/common/PlexDateTime.yaml"
                         scannedAt:
-                          $ref: '../../models/common/PlexDateTime.yaml'
+                          $ref: "../../models/common/PlexDateTime.yaml"
                         content:
                           type: boolean
                           example: true

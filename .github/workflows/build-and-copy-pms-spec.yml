@@ -27,8 +27,8 @@ jobs:
           commit_message: "build: dereferenced Plex Media Server API Spec updated"
           skip_checkout: true
           skip_fetch: true
-          add_options: '-f'
-          file_pattern: './output/*.yaml'
+          add_options: "-f"
+          file_pattern: "./output/*.yaml"
           skip_dirty_check: true
 
       - name: Pushes Dereferenced Specification File
@@ -42,4 +42,3 @@ jobs:
           user_email: lukeslakemail@gmail.com
           user_name: lukehagar
           commit_message: Updating PMS Spec
-

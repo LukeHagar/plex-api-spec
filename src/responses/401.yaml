@@ -4,17 +4,17 @@ content:
     schema:
       type: object
       properties:
-        errors: 
+        errors:
           type: array
           items:
             type: object
-            properties: 
-              code: 
+            properties:
+              code:
                 type: number
                 example: 1001
-              message: 
+              message:
                 type: string
                 example: User could not be authenticated
-              status: 
+              status:
                 type: number
                 example: 401

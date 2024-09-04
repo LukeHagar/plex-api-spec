@@ -1,25 +1,26 @@
-import PMSSpec from '../../output/plex-media-server-spec-dereferenced.yaml';
-import Ajv from "ajv";
-import addFormats from "ajv-formats";
-import {expect} from 'vitest'
+import PMSSpec from "../../output/plex-media-server-spec-dereferenced.yaml"
+import Ajv from "ajv"
+import addFormats from "ajv-formats"
+import { expect } from "vitest"
 
+export function validateResponseSpec(
+  path: string,
+  type: "get" | "post" | "delete",
+  statusCode: number,
+  response: any
+): void {
+  const ajv = new Ajv({ allErrors: true, strict: false })
+  ajv.addSchema(PMSSpec, "API.yaml")
+  addFormats(ajv)
 
-export function validateResponseSpec(path: string, type: 'get' | 'post' | 'delete', statusCode: number, response: any): void {
+  // Convert JSONPath to JSON Pointer
+  const pathPointer = `/paths/${path.replace(/\//g, `~1`)}/${type}/responses/${statusCode}/content/application~1json/schema`
 
-    const ajv = new Ajv({allErrors: true, strict: false});
-    ajv.addSchema(PMSSpec, "API.yaml");
-    addFormats(ajv);
+  const validate = ajv.validate({ $ref: "API.yaml#" + pathPointer }, response)
 
+  if (!validate) {
+    console.error(ajv.errors)
+  }
 
-    // Convert JSONPath to JSON Pointer
-    const pathPointer = `/paths/${path.replace(/\//g, `~1`)}/${type}/responses/${statusCode}/content/application~1json/schema`
-
-    const validate = ajv.validate({$ref: "API.yaml#" + pathPointer}, response);
-
-    if (!validate) {
-        console.error(ajv.errors);
-    }
-
-    expect(validate).toBe(true);
-
+  expect(validate).toBe(true)
 }

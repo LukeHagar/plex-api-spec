@@ -1,6 +1,6 @@
 post:
   servers:
-    - url: 'https://plex.tv/api/v2'
+    - url: "https://plex.tv/api/v2"
   tags:
     - Plex
   summary: Get a Pin
@@ -18,15 +18,14 @@ post:
         type: boolean
         default: false
       required: false
-    - $ref: ../../parameters/ClientIdentifier.yaml
-    - $ref: ../../parameters/ClientProduct.yaml
+    - $ref: ../../parameters/plex/x-plex-identifier.yaml
+    - $ref: ../../parameters/plex/x-plex-product.yaml
   responses:
-    '200':
+    "200":
       description: Requests a new pin id used in the authentication flow
       content:
         application/json:
           schema:
             $ref: ../../models/AuthPinContainer.yaml
-    '400':
+    "400":
       $ref: ../../responses/400-MissingIdentifier.yaml
-

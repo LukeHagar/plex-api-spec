@@ -5,10 +5,10 @@ info:
   description: An Open API Spec for interacting with Plex.tv and Plex Media Server
   contact:
     name: Luke Hagar
-    url: 'https://www.LukeHagar.com'
+    url: "https://www.LukeHagar.com"
     email: Lukeslakemail@gmail.com
   license:
-    url: 'https://opensource.org/license/mit'
+    url: "https://opensource.org/license/mit"
     name: MIT
 
 servers:
@@ -16,7 +16,7 @@ servers:
     description: The full address of your Plex Server
     variables:
       protocol:
-        default: "http"
+        default: "https"
         enum:
           - "http"
           - "https"
@@ -27,7 +27,7 @@ servers:
 
 x-speakeasy-globals:
   parameters:
-    - $ref: "./parameters/ClientIdentifier.yaml"
+    - $ref: "./parameters/plex/x-plex-identifier.yaml"
 
 security:
   - accessToken: []
@@ -37,7 +37,7 @@ components:
     accessToken:
       description: Plex Authentication Token
       type: apiKey
-      in: header
+      in: query
       name: X-Plex-Token
 
 paths:
@@ -186,6 +186,10 @@ paths:
     $ref: "./paths/playlists/contents.yaml"
   /playlists/upload:
     $ref: "./paths/playlists/upload.yaml"
+
+  # Media
+  /media/providers:
+    $ref: "./paths/media/providers/get-media-providers.yaml"
 
   /search:
     $ref: "./paths/search.yaml"

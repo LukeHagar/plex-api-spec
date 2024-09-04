@@ -1,0 +1,6 @@
+name: X-Plex-Language
+in: query
+required: false
+schema:
+  type: string
+example: "en"

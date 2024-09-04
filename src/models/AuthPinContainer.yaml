@@ -3,9 +3,9 @@ x-examples:
   Example 1:
     id: 373040866
     code: 7RQZ
-    product: '0'
+    product: "0"
     trusted: false
-    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+    qr: "https://plex.tv/api/v2/pins/qr/7RQZ"
     clientIdentifier: 9klpwueublnfbvlx95w83ah9
     location:
       code: NL
@@ -14,23 +14,23 @@ x-examples:
       country: The Netherlands
       city: Breda
       time_zone: Europe/Amsterdam
-      postal_code: '4814'
+      postal_code: "4814"
       in_privacy_restricted_country: true
       in_privacy_restricted_region: true
       subdivisions: North Brabant
-      coordinates: '51.5869, 4.7471'
+      coordinates: "51.5869, 4.7471"
     expiresIn: 876
-    createdAt: '2024-07-16T17:03:05Z'
-    expiresAt: '2024-07-16T17:18:05Z'
+    createdAt: "2024-07-16T17:03:05Z"
+    expiresAt: "2024-07-16T17:18:05Z"
     authToken: null
     newRegistration: null
 title: AuthPinContainer
 examples:
   - id: 308667304
     code: 7RQZ
-    product: '0'
+    product: "0"
     trusted: false
-    qr: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+    qr: "https://plex.tv/api/v2/pins/qr/7RQZ"
     clientIdentifier: string
     location:
       code: VI
@@ -43,10 +43,10 @@ examples:
       in_privacy_restricted_country: true
       in_privacy_restricted_region: true
       subdivisions: Saint Thomas
-      coordinates: '18.3381, -64.8941'
+      coordinates: "18.3381, -64.8941"
     expiresIn: 876
-    createdAt: '2024-07-16T17:03:05Z'
-    expiresAt: '2024-07-16T17:18:05Z'
+    createdAt: "2024-07-16T17:03:05Z"
+    expiresAt: "2024-07-16T17:18:05Z"
     authToken: null
     newRegistration: null
 required:
@@ -69,13 +69,13 @@ properties:
     example: 7RQZ
   product:
     type: string
-    example: '0'
+    example: "0"
   trusted:
     type: boolean
     default: false
   qr:
     type: string
-    example: 'https://plex.tv/api/v2/pins/qr/7RQZ'
+    example: "https://plex.tv/api/v2/pins/qr/7RQZ"
   clientIdentifier:
     type: string
     description: The X-Client-Identifier used in the request
@@ -84,17 +84,17 @@ properties:
   expiresIn:
     type: integer
     example: 876
-    description: 'The number of seconds this pin expires, by default 900 seconds'
+    description: "The number of seconds this pin expires, by default 900 seconds"
     default: 900
   createdAt:
     type: string
-    example: '2024-07-16T17:03:05Z'
+    example: "2024-07-16T17:03:05Z"
     format: date-time
   expiresAt:
     type: string
     format: date-time
-    example: '2024-07-16T17:18:05Z'
+    example: "2024-07-16T17:18:05Z"
   authToken:
-    type: 'null'
+    type: "null"
   newRegistration:
-    type: 'null'
+    type: "null"

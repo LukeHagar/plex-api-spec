@@ -9,7 +9,7 @@ examples:
     sharedServers: []
     sharedSources: []
     status: accepted
-    thumb: 'https://plex.tv/users/7d1916e0d8f6e76b/avatar?c=1694481578'
+    thumb: "https://plex.tv/users/7d1916e0d8f6e76b/avatar?c=1694481578"
     title: username123
     username: username123
     uuid: 7d1916e0d8f6e76b
@@ -38,7 +38,7 @@ properties:
       - null
     type:
       - string
-      - 'null'
+      - "null"
     description: The account full name
   home:
     type: boolean
@@ -67,7 +67,7 @@ properties:
     description: Current friend request status
   thumb:
     type: string
-    example: 'https://plex.tv/users/7d1916e0d8f6e76b/avatar?c=1694481578'
+    example: "https://plex.tv/users/7d1916e0d8f6e76b/avatar?c=1694481578"
     format: uri
     description: URL of the account thumbnail
   title:

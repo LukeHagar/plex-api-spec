@@ -1,6 +1,6 @@
 title: GeoData
 type: object
-description: 'Geo location data'
+description: "Geo location data"
 examples:
   - code: VI
     continent_code: NA
@@ -12,7 +12,7 @@ examples:
     in_privacy_restricted_country: true
     in_privacy_restricted_region: true
     subdivisions: Saint Thomas
-    coordinates: '18.3381, -64.8941'
+    coordinates: "18.3381, -64.8941"
 required:
   - code
   - continent_code
@@ -71,5 +71,5 @@ properties:
     example: Saint Thomas
   coordinates:
     type: string
-    description: 'The geographical coordinates (latitude, longitude) of the location.'
-    example: '18.3381, -64.8941'
+    description: "The geographical coordinates (latitude, longitude) of the location."
+    example: "18.3381, -64.8941"
