@@ -2,8 +2,8 @@ title: UserPlexAccount
 type: object
 examples:
   - adsConsent: true
-    adsConsentReminderAt: '2019-08-24T14:15:22Z'
-    adsConsentSetAt: '2019-08-24T14:15:22Z'
+    adsConsentReminderAt: "2019-08-24T14:15:22Z"
+    adsConsentSetAt: "2019-08-24T14:15:22Z"
     anonymous: false
     authToken: CxoUzBTSV5hsxjTpFKaf
     backupCodesCreated: false
@@ -29,14 +29,14 @@ examples:
       - id: string
         mode: string
         renewsAt: string
-        endsAt: '1556281940'
-        canceled: '0'
-        gracePeriod: '0'
-        onHold: '0'
-        canReactivate: '0'
-        canUpgrade: '0'
-        canDowngrade: '0'
-        canConvert: '0'
+        endsAt: "1556281940"
+        canceled: "0"
+        gracePeriod: "0"
+        onHold: "0"
+        canReactivate: "0"
+        canUpgrade: "0"
+        canDowngrade: "0"
+        canConvert: "0"
         type: plexpass
         transfer: string
         state: ended
@@ -58,10 +58,10 @@ examples:
     restricted: false
     roles:
       - string
-    scrobbleTypes: ''
+    scrobbleTypes: ""
     services:
       - identifier: metadata-dev
-        endpoint: 'https://epg.provider.plex.tv'
+        endpoint: "https://epg.provider.plex.tv"
         token: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
         secret: string
         status: online
@@ -69,7 +69,7 @@ examples:
       features:
         - Android - Dolby Vision
       active: true
-      subscribedAt: '2021-04-12T18:21:12Z'
+      subscribedAt: "2021-04-12T18:21:12Z"
       status: Inactive
       paymentService: string
       plan: string
@@ -78,11 +78,11 @@ examples:
       - features:
           - Android - Dolby Vision
         active: true
-        subscribedAt: '2021-04-12T18:21:12Z'
+        subscribedAt: "2021-04-12T18:21:12Z"
         status: Inactive
         paymentService: string
         plan: string
-    thumb: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+    thumb: "https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101"
     title: UsernameTitle
     trials:
       - {}
@@ -132,24 +132,24 @@ properties:
   adsConsent:
     type:
       - boolean
-      - 'null'
+      - "null"
     description: Unknown
   adsConsentReminderAt:
     type:
       - string
-      - 'null'
+      - "null"
     description: Unknown
     format: date-time
   adsConsentSetAt:
     type:
       - string
-      - 'null'
+      - "null"
     description: Unknown
     format: date-time
   anonymous:
     type:
       - boolean
-      - 'null'
+      - "null"
     description: Unknown
     default: false
   authToken:
@@ -192,7 +192,7 @@ properties:
     description: List of devices your allowed to use with this account
     items:
       type: string
-      example: '[]'
+      example: "[]"
   guest:
     type: boolean
     description: If the account is a Plex Home guest user
@@ -227,7 +227,7 @@ properties:
   locale:
     type:
       - string
-      - 'null'
+      - "null"
     description: The account locale
   mailingListActive:
     type: boolean
@@ -245,7 +245,7 @@ properties:
     format: int32
   pin:
     type: string
-    description: '[Might be removed] The hashed Plex Home PIN '
+    description: "[Might be removed] The hashed Plex Home PIN "
     deprecated: true
   profile:
     $ref: ./UserProfile.yaml
@@ -264,7 +264,7 @@ properties:
     default: false
   roles:
     type: array
-    description: '[Might be removed] List of account roles. Plexpass membership listed here'
+    description: "[Might be removed] List of account roles. Plexpass membership listed here"
     items:
       type: string
   scrobbleTypes:
@@ -286,17 +286,17 @@ properties:
           example: metadata-dev
         endpoint:
           type: string
-          example: 'https://epg.provider.plex.tv'
+          example: "https://epg.provider.plex.tv"
           format: uri
         token:
           type:
             - string
-            - 'null'
+            - "null"
           example: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
         secret:
           type:
             - string
-            - 'null'
+            - "null"
         status:
           example: online
           enum:
@@ -308,7 +308,7 @@ properties:
   subscriptionDescription:
     type:
       - string
-      - 'null'
+      - "null"
     description: Description of the Plex Pass subscription
   subscriptions:
     type: array
@@ -318,7 +318,7 @@ properties:
     type: string
     description: URL of the account thumbnail
     format: uri
-    example: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+    example: "https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101"
   title:
     type: string
     description: The title of the account (username or friendly name)

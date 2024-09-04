@@ -34,10 +34,10 @@ get:
                     items:
                       type: object
                       properties:
-                        timespan: 
+                        timespan:
                           type: integer
                           example: 6
-                        at: 
+                        at:
                           type: integer
                           example: 1718384427
                         hostCpuUtilization:
@@ -55,8 +55,8 @@ get:
                         processMemoryUtilization:
                           type: number
                           format: float
-                          example: 0.493                                        
+                          example: 0.493
     "400":
-        $ref: "../../responses/400.yaml"
+      $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"

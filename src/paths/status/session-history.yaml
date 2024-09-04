@@ -4,7 +4,7 @@ get:
   summary: Get Session History
   description: This will Retrieve a listing of all history views.
   operationId: getSessionHistory
-  parameters: 
+  parameters:
     - name: sort
       description: |
         Sorts the results by the specified field followed by the direction (asc, desc)
@@ -12,7 +12,7 @@ get:
       schema:
         type: string
       required: false
-      examples: 
+      examples:
         viewed-at-descending:
           value: viewedAt:desc
         viewed-at-ascending:
@@ -25,7 +25,7 @@ get:
       description: |
         Filter results by those that are related to a specific users id
       in: query
-      schema: 
+      schema:
         type: integer
       required: false
       example: 1
@@ -36,7 +36,7 @@ get:
       in: query
       schema:
         type: object
-        pattern: '^[A-Za-z][A-Za-z0-9]*[>=<]{0,2}$'
+        pattern: "^[A-Za-z][A-Za-z0-9]*[>=<]{0,2}$"
         example:
           viewed-at-greater-than:
             value: viewedAt>
@@ -52,7 +52,7 @@ get:
       description: |
         Filters the results based on the id of a valid library section
       in: query
-      schema: 
+      schema:
         type: integer
       required: false
       example: 12

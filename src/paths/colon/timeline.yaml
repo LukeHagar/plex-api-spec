@@ -4,12 +4,12 @@ get:
   summary: Get the timeline for a media item
   description: Get the timeline for a media item
   operationId: getTimeline
-  parameters: 
+  parameters:
     - name: ratingKey
       description: The rating key of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 23409
 
@@ -17,7 +17,7 @@ get:
       description: The key of the media item to get the timeline for
       required: true
       in: query
-      schema: 
+      schema:
         type: string
       example: "/library/metadata/23409"
 
@@ -25,7 +25,7 @@ get:
       description: The state of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: string
         enum: ["playing", "paused", "stopped"]
       example: "playing"
@@ -34,7 +34,7 @@ get:
       description: Whether the media item has MDE
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 1
 
@@ -42,7 +42,7 @@ get:
       description: The time of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 2000
 
@@ -50,7 +50,7 @@ get:
       description: The duration of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 10000
 
@@ -58,7 +58,7 @@ get:
       description: The context of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: string
       example: "home:hub.continueWatching"
 
@@ -66,7 +66,7 @@ get:
       description: The play queue item ID of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 1
 
@@ -74,7 +74,7 @@ get:
       description: The playback time of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 2000
 
@@ -82,7 +82,7 @@ get:
       description: The row of the media item
       required: true
       in: query
-      schema: 
+      schema:
         type: number
       example: 1
 

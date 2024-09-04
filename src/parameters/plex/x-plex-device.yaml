@@ -4,4 +4,3 @@ required: false
 schema:
   type: string
 example: "Linux"
-

@@ -1,5 +1,5 @@
 name: sectionKey
-description: | 
+description: |
   The unique key of the Plex library. 
   Note: This is unique in the context of the Plex server.
 in: path
@@ -8,4 +8,3 @@ schema:
   format: int32
   example: 9518
 required: true
-

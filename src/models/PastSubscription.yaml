@@ -20,19 +20,19 @@ properties:
   id:
     type:
       - string
-      - 'null'
+      - "null"
   mode:
     type:
       - string
-      - 'null'
+      - "null"
   renewsAt:
     oneOf:
-      - $ref: './common/PlexDateTime.yaml'
-      - type: 'null'
+      - $ref: "./common/PlexDateTime.yaml"
+      - type: "null"
   endsAt:
     oneOf:
-      - $ref: './common/PlexDateTime.yaml'
-      - type: 'null'
+      - $ref: "./common/PlexDateTime.yaml"
+      - type: "null"
   canceled:
     type: boolean
     example: false
@@ -67,7 +67,7 @@ properties:
   transfer:
     type:
       - string
-      - 'null'
+      - "null"
   state:
     example: ended
     enum:
@@ -83,4 +83,4 @@ properties:
       paymentMethodId:
         type:
           - integer
-          - 'null'
+          - "null"

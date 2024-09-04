@@ -113,7 +113,8 @@ get:
                           example: Firefly
                         summary:
                           type: string
-                          example: Captain Malcolm 'Mal' Reynolds is a former galactic war veteran who is
+                          example:
+                            Captain Malcolm 'Mal' Reynolds is a former galactic war veteran who is
                             the captain of the transport ship "Serenity". Mal and his crew,
                             ensign Zoe Alleyne Washburne; Zoe's husband, pilot Hoban 'Wash'
                             Washburne; muscular mercenary Jayne Cobb; young mechanic Kaylee

@@ -5,4 +5,3 @@ schema:
   type: integer
   example: 9518
 required: true
-

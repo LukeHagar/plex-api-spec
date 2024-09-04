@@ -5,10 +5,10 @@ get:
   description: Retrieves media providers and their features from the Plex server.
   operationId: get-media-providers
   parameters:
-    - $ref: '../../../parameters/accept-application-json.yaml'
-    - $ref: '../../../parameters/plex/x-plex-token.yaml'
+    - $ref: "../../../parameters/accept-application-json.yaml"
+    - $ref: "../../../parameters/plex/x-plex-token.yaml"
   responses:
-    '200':
+    "200":
       description: Media providers and their features
       content:
         application/json:

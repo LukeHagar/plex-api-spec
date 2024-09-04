@@ -16,7 +16,7 @@ get:
       description: |
         Adds additional elements to the response. Supported types are (Stream)
       in: query
-      schema: 
+      schema:
         type: string
       required: false
       examples:

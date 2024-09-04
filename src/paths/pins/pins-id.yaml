@@ -16,15 +16,15 @@ get:
       schema:
         type: integer
   responses:
-    '200':
+    "200":
       description: The Pin with a non-null authToken when it has been verified by the user
       content:
         application/json:
           schema:
             $ref: ../../models/AuthPinContainer.yaml
-    '400':
+    "400":
       $ref: ../../responses/400-MissingIdentifier.yaml
-    '404':
+    "404":
       description: Not Found or Expired
       content:
         application/json:

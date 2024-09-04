@@ -1,6 +1,6 @@
 get:
   servers:
-    - url: 'https://plex.tv/api/v2'
+    - url: "https://plex.tv/api/v2"
   security: []
   tags:
     - Plex
@@ -34,7 +34,7 @@ get:
           - 0
           - 1
   responses:
-    '200':
+    "200":
       description: List of Plex Devices. This includes Plex hosted servers and clients
       content:
         application/json:
@@ -42,7 +42,7 @@ get:
             type: array
             items:
               $ref: ../../models/PlexDevice.yaml
-    '400':
-      $ref: '../../responses/400.yaml'
-    '401':
-      $ref: '../../responses/401.yaml'
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

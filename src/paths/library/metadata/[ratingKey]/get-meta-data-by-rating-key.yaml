@@ -89,7 +89,8 @@ get:
                           example: PG-13
                         summary:
                           type: string
-                          example: Serenity continues the story of the TV series it was based upon
+                          example:
+                            Serenity continues the story of the TV series it was based upon
                             ("Firefly"). River Tam had a secret - one in which she's not
                             even aware - so dangerous, no one's safe, as an Alliance
                             operative's sent to capture her, and all others are considered

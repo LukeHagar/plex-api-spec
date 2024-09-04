@@ -4,16 +4,10 @@
     "outDir": "./output",
     "paths": {
       "@/*": ["./src/*"],
-      "@utils": [
-        "./tests/utils/index.ts"
-      ]
+      "@utils": ["./tests/utils/index.ts"]
     },
-    "types": [
-      "@modyfi/vite-plugin-yaml/modules"
-    ],
+    "types": ["@modyfi/vite-plugin-yaml/modules"],
     "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
