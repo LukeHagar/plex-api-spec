@@ -1,0 +1,8 @@
+type: integer
+format: int32
+enum:
+  - 0
+  - 1
+example: 1
+default: 0
+

@@ -11,6 +11,20 @@ required:
   - createdAt
   - lastSeenAt
   - provides
+  - ownerId
+  - sourceTitle
+  - publicAddress
+  - accessToken
+  - owned
+  - home
+  - synced
+  - relay
+  - presence
+  - httpsRequired
+  - publicAddressMatches
+  - dnsRebindingProtection
+  - natLoopbackSupported
+  - connections
 properties:
   name:
     type: string
@@ -19,11 +33,17 @@ properties:
   productVersion:
     type: string
   platform:
-    type: string
+    type:
+      - "null"
+      - string
   platformVersion:
-    type: string
+    type:
+      - "null"
+      - string
   device:
-    type: string
+    type:
+      - "null"
+      - string
   clientIdentifier:
     type: string
   createdAt:
@@ -35,11 +55,14 @@ properties:
   provides:
     type: string
   ownerId:
-    type: string
-    format: nullable
+    description: ownerId is null when the device is owned by the token used to send the request
+    type:
+      - "null"
+      - integer
   sourceTitle:
-    type: string
-    format: nullable
+    type:
+      - "null"
+      - string
   publicAddress:
     type: string
   accessToken:
@@ -66,6 +89,14 @@ properties:
     type: array
     items:
       type: object
+      required:
+        - protocol
+        - address
+        - port
+        - uri
+        - local
+        - relay
+        - IPv6
       properties:
         protocol:
           type: string
