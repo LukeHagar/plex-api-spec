@@ -2,8 +2,9 @@ get:
   tags:
     - Server
   summary: Get Server Identity
-  description: Get Server Identity
-  operationId: getServerIdentity
+  description: This request is useful to determine if the server is online or offline
+  operationId: get-server-identity
+  security: []
   responses:
     "200":
       description: The Server Identity information
@@ -26,7 +27,5 @@ get:
                   version:
                     type: string
                     example: 1.31.3.6868-28fc46b27
-    "400":
-      $ref: "../responses/400.yaml"
-    "401":
-      $ref: "../responses/401.yaml"
+    "408":
+      $ref: "../../responses/408.yaml"

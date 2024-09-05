@@ -109,7 +109,7 @@ paths:
     $ref: "./paths/hubs/section.yaml"
 
   /identity:
-    $ref: "./paths/identity.yaml"
+    $ref: "./paths/identity/identity.yaml"
 
   # Library
   # Folder: pms/paths/library
@@ -136,7 +136,6 @@ paths:
     $ref: "./paths/library/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionKey}/search:
     $ref: "./paths/library/[sectionKey]/get-search-library.yaml"
-
 
   /library/metadata/{ratingKey}:
     $ref: "./paths/library/metadata/[ratingKey]/get-meta-data-by-rating-key.yaml"
@@ -238,8 +237,6 @@ paths:
 
   /users/signin:
     $ref: "./paths/users/post-sign-in.yaml"
-
-
 
 tags:
   - name: Activities
