@@ -3,8 +3,8 @@ get:
     - url: "https://plex.tv/api/v2"
   tags:
     - Plex
-  summary: Get Plex Server ResourcesEr9BHH7xBPCvFTb_btcr
-  description: Get Plex Server access and server connections
+  summary: Get Server Resources
+  description: Get Plex server access tokens and server connections
   operationId: get-server-resources
   parameters:
     - $ref: "../../parameters/plex/x-plex-identifier.yaml"
