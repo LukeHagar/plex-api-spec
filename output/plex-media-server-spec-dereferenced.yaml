@@ -2046,8 +2046,9 @@ paths:
       tags:
         - Server
       summary: Get Server Identity
-      description: Get Server Identity
-      operationId: getServerIdentity
+      description: This request is useful to determine if the server is online or offline
+      operationId: get-server-identity
+      security: []
       responses:
         '200':
           description: The Server Identity information
@@ -2070,29 +2071,19 @@ paths:
                       version:
                         type: string
                         example: 1.31.3.6868-28fc46b27
-        '400':
-          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
-        '401':
-          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+        '408':
+          description: Request Timeout
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        code:
-                          type: number
-                          example: 1001
-                        message:
-                          type: string
-                          example: User could not be authenticated
-                        status:
-                          type: number
-                          example: 401
+                  code:
+                    type: integer
+                    example: 408
+                  message:
+                    type: string
+                    example: The server timed out waiting for the request.
   /library/hashes:
     get:
       tags:
@@ -5524,12 +5515,11 @@ paths:
     get:
       servers:
         - url: 'https://plex.tv/api/v2'
-      security: []
       tags:
         - Plex
-      summary: Get Resources
-      description: Get Resources
-      operationId: getResources
+      summary: Get Server Resources
+      description: Get Plex server access tokens and server connections
+      operationId: get-server-resources
       parameters:
         - name: X-Plex-Client-Identifier
           description: |
@@ -5541,30 +5531,57 @@ paths:
             type: string
             example: gcgzw5rz2xovp84b4vha3a40
           required: true
+        - name: X-Plex-Token
+          in: query
+          description: Plex Authentication Token
+          schema:
+            type: string
+            example: CV5xoxjTpFKUzBTShsaf
+          required: true
         - name: includeHttps
           in: query
           description: Include Https entries in the results
           schema:
             type: integer
+            format: int32
             enum:
               - 0
               - 1
+            example: 1
+            default: 0
         - name: includeRelay
           in: query
-          description: Include Relay addresses in the results
+          description: |
+            Include Relay addresses in the results 
+            E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
           schema:
             type: integer
+            format: int32
             enum:
               - 0
               - 1
+            example: 1
+            default: 0
         - name: includeIPv6
           in: query
           description: Include IPv6 entries in the results
           schema:
             type: integer
+            format: int32
             enum:
               - 0
               - 1
+            example: 1
+            default: 0
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/json
+              - application/xml
+            example: application/json
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -5586,6 +5603,20 @@ paths:
                     - createdAt
                     - lastSeenAt
                     - provides
+                    - ownerId
+                    - sourceTitle
+                    - publicAddress
+                    - accessToken
+                    - owned
+                    - home
+                    - synced
+                    - relay
+                    - presence
+                    - httpsRequired
+                    - publicAddressMatches
+                    - dnsRebindingProtection
+                    - natLoopbackSupported
+                    - connections
                   properties:
                     name:
                       type: string
@@ -5594,11 +5625,17 @@ paths:
                     productVersion:
                       type: string
                     platform:
-                      type: string
+                      type:
+                        - 'null'
+                        - string
                     platformVersion:
-                      type: string
+                      type:
+                        - 'null'
+                        - string
                     device:
-                      type: string
+                      type:
+                        - 'null'
+                        - string
                     clientIdentifier:
                       type: string
                     createdAt:
@@ -5610,11 +5647,14 @@ paths:
                     provides:
                       type: string
                     ownerId:
-                      type: string
-                      format: nullable
+                      description: ownerId is null when the device is owned by the token used to send the request
+                      type:
+                        - 'null'
+                        - integer
                     sourceTitle:
-                      type: string
-                      format: nullable
+                      type:
+                        - 'null'
+                        - string
                     publicAddress:
                       type: string
                     accessToken:
@@ -5641,6 +5681,14 @@ paths:
                       type: array
                       items:
                         type: object
+                        required:
+                          - protocol
+                          - address
+                          - port
+                          - uri
+                          - local
+                          - relay
+                          - IPv6
                         properties:
                           protocol:
                             type: string
