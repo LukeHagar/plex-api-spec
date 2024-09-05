@@ -154,7 +154,7 @@ paths:
   # Resources
   # Folder: pms/resources
   /resources:
-    $ref: "./paths/resources/resources.yaml"
+    $ref: "./paths/resources/get-server-resources.yaml"
 
   # Logs
   # Folder: pms/paths/logs
