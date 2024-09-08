@@ -7,3 +7,4 @@ apis:
 
 rules:
   no-ambiguous-paths: off
+  no-server-trailing-slash: off
