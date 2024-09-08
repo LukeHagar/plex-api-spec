@@ -14,6 +14,7 @@ content:
                 example: 1001
               message:
                 type: string
+                x-speakeasy-error-message: true
                 example: User could not be authenticated
               status:
                 type: integer

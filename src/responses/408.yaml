@@ -9,4 +9,5 @@ content:
           example: 408
         message:
           type: string
+          x-speakeasy-error-message: true
           example: The server timed out waiting for the request.

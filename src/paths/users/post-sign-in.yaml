@@ -9,6 +9,7 @@ post:
   operationId: post-users-sign-in-data
   parameters:
     - $ref: "../../parameters/plex/x-plex-identifier.yaml"
+    - $ref: "../../parameters/accept-application-json.yaml"
   requestBody:
     content:
       application/x-www-form-urlencoded:
@@ -28,7 +29,6 @@ post:
               example: password123
             rememberMe:
               type: boolean
-              format: password
               default: false
             verificationCode:
               type: string
