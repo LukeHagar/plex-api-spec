@@ -4,11 +4,12 @@ post:
   security: []
   tags:
     - Authentication
-  summary: Get User SignIn Data
+  summary: Get User Sign In Data
   description: Sign in user with username and password and return user data with Plex authentication token
   operationId: post-users-sign-in-data
   parameters:
     - $ref: "../../parameters/plex/x-plex-identifier.yaml"
+    - $ref: "../../parameters/accept-application-json.yaml"
   requestBody:
     content:
       application/x-www-form-urlencoded:
@@ -29,6 +30,9 @@ post:
             rememberMe:
               type: boolean
               default: false
+            verificationCode:
+              type: string
+              example: 123456
     description: Login credentials
   responses:
     "201":
