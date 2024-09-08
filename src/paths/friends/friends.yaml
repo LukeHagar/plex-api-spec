@@ -1,6 +1,6 @@
 get:
   servers:
-    - url: "https://plex.tv/api/v2"
+    - url: https://plex.tv/api/v2/
   tags:
     - Plex
   summary: Get list of friends of the user logged in
