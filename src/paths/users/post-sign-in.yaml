@@ -28,7 +28,11 @@ post:
               example: password123
             rememberMe:
               type: boolean
+              format: password
               default: false
+            verificationCode:
+              type: string
+              example: 123456
     description: Login credentials
   responses:
     "201":

@@ -10,11 +10,11 @@ content:
             type: object
             properties:
               code:
-                type: number
+                type: integer
                 example: 1001
               message:
                 type: string
                 example: User could not be authenticated
               status:
-                type: number
+                type: integer
                 example: 401
