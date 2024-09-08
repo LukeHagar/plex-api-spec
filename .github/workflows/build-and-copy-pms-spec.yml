@@ -30,15 +30,3 @@ jobs:
           add_options: "-f"
           file_pattern: "./output/*.yaml"
           skip_dirty_check: true
-
-      - name: Pushes Dereferenced Specification File
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_file: ./output/plex-media-server-spec-dereferenced.yaml
-          destination_repo: lukehagar/plex-docs
-          destination_folder: static
-          user_email: lukeslakemail@gmail.com
-          user_name: lukehagar
-          commit_message: Updating PMS Spec
