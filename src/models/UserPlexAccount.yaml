@@ -220,10 +220,7 @@ properties:
     example: 13692262
     format: int32
   joinedAt:
-    type: integer
-    description: Unix epoch datetime the account joined Plex
-    format: int32
-    example: 1721154902
+    $ref: "./common/PlexDateTime.yaml"
   locale:
     type:
       - string
@@ -254,10 +251,7 @@ properties:
     description: If the account has a Plex Home PIN enabled
     default: false
   rememberExpiresAt:
-    type: integer
-    description: Unix epoch datetime the authtoken expires
-    format: int32
-    example: 1722364046
+    $ref: "./common/PlexDateTime.yaml"
   restricted:
     type: boolean
     description: If the account is a Plex Home managed user

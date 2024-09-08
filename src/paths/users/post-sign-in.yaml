@@ -4,7 +4,7 @@ post:
   security: []
   tags:
     - Authentication
-  summary: Get User SignIn Data
+  summary: Get User Sign In Data
   description: Sign in user with username and password and return user data with Plex authentication token
   operationId: post-users-sign-in-data
   parameters:
