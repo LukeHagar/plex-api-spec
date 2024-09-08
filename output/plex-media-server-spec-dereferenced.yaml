@@ -1032,7 +1032,7 @@ paths:
   /companions:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       tags:
         - Plex
       summary: Get Companions Data
@@ -1100,7 +1100,7 @@ paths:
   /friends:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       tags:
         - Plex
       summary: Get list of friends of the user logged in
@@ -1224,7 +1224,7 @@ paths:
   /geoip:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       security: []
       tags:
         - Plex
@@ -5514,7 +5514,7 @@ paths:
   /resources:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       tags:
         - Plex
       summary: Get Server Resources
@@ -6064,7 +6064,7 @@ paths:
   /pins:
     post:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       tags:
         - Plex
       summary: Get a Pin
@@ -6302,7 +6302,7 @@ paths:
   '/pins/{pinID}':
     get:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       security: []
       tags:
         - Plex
@@ -9673,7 +9673,7 @@ paths:
   /user:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       tags:
         - Authentication
       summary: Get User Data By Token
@@ -10300,7 +10300,7 @@ paths:
   /users/signin:
     post:
       servers:
-        - url: 'https://plex.tv/api/v2'
+        - url: 'https://plex.tv/api/v2/'
       security: []
       tags:
         - Authentication
