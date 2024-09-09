@@ -28,4 +28,4 @@ post:
           schema:
             $ref: ../../models/AuthPinContainer.yaml
     "400":
-      $ref: ../../responses/400-MissingIdentifier.yaml
+      $ref: ../../responses/400.yaml

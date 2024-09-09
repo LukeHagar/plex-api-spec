@@ -2,6 +2,7 @@ description: Request Timeout
 content:
   application/json:
     schema:
+      x-speakeasy-name-override: RequestTimeout
       type: object
       properties:
         code:

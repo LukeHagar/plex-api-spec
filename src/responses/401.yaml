@@ -2,6 +2,7 @@ description: Unauthorized - Returned if the X-Plex-Token is missing from the hea
 content:
   application/json:
     schema:
+      x-speakeasy-name-override: Unauthorized
       type: object
       properties:
         errors:

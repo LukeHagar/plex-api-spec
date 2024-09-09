@@ -8,7 +8,6 @@ get:
   operationId: get-server-resources
   parameters:
     - $ref: "../../parameters/plex/x-plex-identifier.yaml"
-    - $ref: "../../parameters/plex/x-plex-token.yaml"
     - name: includeHttps
       in: query
       description: Include Https entries in the results
@@ -26,7 +25,6 @@ get:
       description: Include IPv6 entries in the results
       schema:
         $ref: "../../models/common/PlexBoolean.yaml"
-    - $ref: "../../parameters/accept-application-json.yaml"
   responses:
     "200":
       description: List of Plex Devices. This includes Plex hosted servers and clients

@@ -2,6 +2,7 @@ description: Bad Request - A parameter was not specified, or was specified incor
 content:
   application/json:
     schema:
+      x-speakeasy-name-override: BadRequest
       type: object
       properties:
         errors:

@@ -16,7 +16,6 @@ get:
           - server://client-identifier
           - provider://provider-identifier
       required: true
-
   responses:
     "200":
       description: Source Connection Information
