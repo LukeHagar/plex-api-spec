@@ -182,6 +182,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -204,6 +205,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -283,6 +285,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -305,6 +308,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -345,6 +349,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -367,6 +372,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -407,6 +413,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -429,6 +436,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -483,6 +491,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -505,6 +514,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -612,6 +622,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -634,6 +645,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -700,6 +712,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -722,6 +735,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -762,6 +776,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -784,6 +799,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -845,6 +861,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -867,6 +884,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -903,6 +921,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -925,6 +944,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -957,6 +977,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -979,6 +1000,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1040,6 +1062,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1062,6 +1085,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1116,6 +1140,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1138,6 +1163,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1221,6 +1247,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1243,6 +1270,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1308,6 +1336,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1330,6 +1359,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1397,6 +1427,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1419,6 +1450,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1542,6 +1574,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1564,6 +1597,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1677,6 +1711,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1699,6 +1734,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1752,6 +1788,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1774,6 +1811,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -1938,6 +1976,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -1960,6 +1999,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -2027,6 +2067,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -2049,6 +2090,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -2108,6 +2150,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -2130,6 +2173,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -2488,6 +2532,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -2510,6 +2555,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -2562,6 +2608,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: RequestTimeout
                 type: object
                 properties:
                   code:
@@ -2600,6 +2647,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -2622,6 +2670,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -2648,15 +2697,6 @@ paths:
         This endpoint will return the recently added content.
       operationId: getRecentlyAdded
       parameters:
-        - name: Accept
-          in: header
-          required: false
-          schema:
-            type: string
-            enum:
-              - application/json
-              - application/xml
-            example: application/json
         - name: X-Plex-Container-Start
           in: query
           description: |
@@ -2918,6 +2958,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -2940,6 +2981,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -3088,6 +3130,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -3110,6 +3153,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -3368,6 +3412,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -3390,6 +3435,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -3432,6 +3478,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -3454,6 +3501,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -3700,6 +3748,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -3722,6 +3771,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -4236,6 +4286,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -4258,6 +4309,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -4312,6 +4364,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -4334,6 +4387,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -4539,6 +4593,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -4561,6 +4616,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -5074,6 +5130,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -5096,6 +5153,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -5227,6 +5285,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -5249,6 +5308,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -5380,6 +5440,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -5402,6 +5463,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -5659,6 +5721,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -5681,6 +5744,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -5930,6 +5994,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -5952,6 +6017,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6274,6 +6340,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6296,6 +6363,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6333,13 +6401,6 @@ paths:
             type: string
             example: gcgzw5rz2xovp84b4vha3a40
           required: true
-        - name: X-Plex-Token
-          in: query
-          description: Plex Authentication Token
-          schema:
-            type: string
-            example: CV5xoxjTpFKUzBTShsaf
-          required: true
         - name: includeHttps
           in: query
           description: Include Https entries in the results
@@ -6375,15 +6436,6 @@ paths:
               - 1
             example: 1
             default: 0
-        - name: Accept
-          in: header
-          required: false
-          schema:
-            type: string
-            enum:
-              - application/json
-              - application/xml
-            example: application/json
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -6511,6 +6563,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6533,6 +6586,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6599,6 +6653,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6621,6 +6676,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6683,6 +6739,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6705,6 +6762,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6738,6 +6796,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6760,6 +6819,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6836,6 +6896,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6858,6 +6919,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -6950,6 +7012,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -6972,6 +7035,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -7207,10 +7271,11 @@ paths:
                   newRegistration:
                     type: 'null'
         '400':
-          description: Bad Request response when the X-Plex-Client-Identifier is missing
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -7436,10 +7501,11 @@ paths:
                   newRegistration:
                     type: 'null'
         '400':
-          description: Bad Request response when the X-Plex-Client-Identifier is missing
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -7606,6 +7672,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -7628,6 +7695,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -7750,6 +7818,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -7772,6 +7841,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -7879,6 +7949,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -7901,6 +7972,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -7940,6 +8012,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -7962,6 +8035,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -8013,6 +8087,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -8035,6 +8110,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -8358,6 +8434,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -8380,6 +8457,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -8419,6 +8497,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -8441,6 +8520,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -8563,6 +8643,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -8585,6 +8666,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -8645,6 +8727,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -8667,6 +8750,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -8880,6 +8964,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -8902,6 +8987,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9180,6 +9266,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9202,6 +9289,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9223,7 +9311,7 @@ paths:
     get:
       tags:
         - Authentication
-      summary: Get a Transient Token.
+      summary: Get a Transient Token
       description: |
         This endpoint provides the caller with a temporary token with the same access level as the caller's token. These tokens are valid for up to 48 hours and are destroyed if the server instance is restarted.
       operationId: getTransientToken
@@ -9252,6 +9340,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9274,6 +9363,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9318,6 +9408,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9340,6 +9431,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9406,6 +9498,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9428,6 +9521,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9568,6 +9662,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9590,6 +9685,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9671,6 +9767,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9693,6 +9790,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -9826,6 +9924,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -9848,6 +9947,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10212,6 +10312,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10234,6 +10335,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10398,6 +10500,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10420,6 +10523,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10570,6 +10674,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10592,6 +10697,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10632,6 +10738,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10654,6 +10761,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10776,6 +10884,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10798,6 +10907,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10841,6 +10951,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10863,6 +10974,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -10917,6 +11029,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -10939,6 +11052,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -11086,6 +11200,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -11108,6 +11223,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -11131,26 +11247,9 @@ paths:
         - url: 'https://plex.tv/api/v2/'
       tags:
         - Authentication
-      summary: Get User Data By Token
+      summary: Get Token Details
       description: Get the User data from the provided X-Plex-Token
-      operationId: getUserDetails
-      parameters:
-        - name: X-Plex-Token
-          in: query
-          description: Plex Authentication Token
-          schema:
-            type: string
-            example: CV5xoxjTpFKUzBTShsaf
-          required: true
-        - name: Accept
-          in: header
-          required: false
-          schema:
-            type: string
-            enum:
-              - application/json
-              - application/xml
-            example: application/json
+      operationId: getTokenDetails
       responses:
         '200':
           description: Logged in user details
@@ -11736,6 +11835,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -11758,6 +11858,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
@@ -11796,15 +11897,6 @@ paths:
             type: string
             example: gcgzw5rz2xovp84b4vha3a40
           required: true
-        - name: Accept
-          in: header
-          required: false
-          schema:
-            type: string
-            enum:
-              - application/json
-              - application/xml
-            example: application/json
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -12521,6 +12613,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: BadRequest
                 type: object
                 properties:
                   errors:
@@ -12543,6 +12636,7 @@ paths:
           content:
             application/json:
               schema:
+                x-speakeasy-name-override: Unauthorized
                 type: object
                 properties:
                   errors:
