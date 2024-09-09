@@ -17,13 +17,16 @@ servers:
     variables:
       protocol:
         default: "https"
+        description: The protocol to use for the server connection
         enum:
           - "http"
           - "https"
       ip:
         default: "10.10.10.47"
+        description: The IP address or hostname of your Plex Server
       port:
         default: "32400"
+        description: The port of your Plex Server
 
 x-speakeasy-globals:
   parameters:
