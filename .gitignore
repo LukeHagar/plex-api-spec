@@ -5,3 +5,4 @@
 .stoplight.json
 node_modules
 output
+build

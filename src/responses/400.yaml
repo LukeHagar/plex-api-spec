@@ -1,1 +1,21 @@
 description: Bad Request - A parameter was not specified, or was specified incorrectly.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 1000
+              message:
+                type: string
+                x-speakeasy-error-message: true
+                example: X-Plex-Client-Identifier is missing
+              status:
+                type: integer
+                example: 400

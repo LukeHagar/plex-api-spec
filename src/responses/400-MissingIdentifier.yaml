@@ -14,6 +14,7 @@ content:
                 example: 1000
               message:
                 type: string
+                x-speakeasy-error-message: true
                 example: X-Plex-Client-Identifier is missing
               status:
                 type: integer

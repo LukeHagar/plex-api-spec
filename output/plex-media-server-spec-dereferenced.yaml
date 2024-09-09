@@ -176,6 +176,26 @@ paths:
                               type: string
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -189,13 +209,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/:/prefs':
     get:
@@ -256,6 +277,26 @@ paths:
                               example: '1:admin only|2:everyone'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -269,13 +310,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/:/scrobble':
     get:
@@ -297,6 +339,26 @@ paths:
           description: Media is marked Played
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -310,13 +372,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/:/unscrobble':
     get:
@@ -338,6 +401,26 @@ paths:
           description: Media is marked Unplayed
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -351,13 +434,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/:/progress':
     post:
@@ -393,6 +477,26 @@ paths:
           description: Success - The request was successful.
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -406,13 +510,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/:/timeline':
     get:
@@ -501,6 +606,26 @@ paths:
           description: The timeline for the media item
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -514,13 +639,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /activities:
     get:
@@ -568,6 +694,26 @@ paths:
                                   type: string
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -581,13 +727,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/activities/{activityUUID}':
     delete:
@@ -609,6 +756,26 @@ paths:
           description: The Server Activity was canceled
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -622,13 +789,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /butler:
     get:
@@ -671,6 +839,26 @@ paths:
                               example: Create a backup copy of the server's database in the configured backup directory
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -684,13 +872,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     post:
       tags:
@@ -708,6 +897,26 @@ paths:
           description: All tasks were started
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -721,13 +930,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     delete:
       tags:
@@ -741,6 +951,26 @@ paths:
           description: All tasks were stopped
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -754,13 +984,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/butler/{taskName}':
     post:
@@ -803,6 +1034,26 @@ paths:
           description: The task was already running.
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -816,13 +1067,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     delete:
       tags:
@@ -858,6 +1110,26 @@ paths:
           description: The task was stopped
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -871,13 +1143,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
         '404':
           description: The task was not running
@@ -942,6 +1215,26 @@ paths:
                               example: 'playback,playqueues,timeline,provider-playback'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -955,13 +1248,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /devices:
     get:
@@ -1008,6 +1302,26 @@ paths:
                               example: 1654131230
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1021,13 +1335,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /companions:
     get:
@@ -1076,6 +1391,26 @@ paths:
                       description: The plex authtoken used to identify with
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1089,13 +1424,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /friends:
     get:
@@ -1200,6 +1536,26 @@ paths:
                       description: The account Universally Unique Identifier (UUID)
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1213,13 +1569,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /geoip:
     get:
@@ -1314,6 +1671,26 @@ paths:
                     example: '18.3381, -64.8941'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1327,13 +1704,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /home:
     get:
@@ -1368,6 +1746,26 @@ paths:
                     type: boolean
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1381,13 +1779,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /hubs:
     get:
@@ -1533,6 +1932,26 @@ paths:
                                     example: 1668787730
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1546,13 +1965,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /hubs/search:
     get:
@@ -1601,6 +2021,26 @@ paths:
           description: The search results
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1614,13 +2054,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /hubs/search/voice:
     get:
@@ -1661,6 +2102,26 @@ paths:
           description: The search results
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -1674,13 +2135,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/hubs/sections/{sectionId}':
     get:
@@ -2020,6 +2482,26 @@ paths:
                               example: true
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2033,13 +2515,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /identity:
     get:
@@ -2083,6 +2566,7 @@ paths:
                     example: 408
                   message:
                     type: string
+                    x-speakeasy-error-message: true
                     example: The server timed out waiting for the request.
   /library/hashes:
     get:
@@ -2110,6 +2594,26 @@ paths:
           description: The hash of the file
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2123,13 +2627,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /library/recentlyAdded:
     get:
@@ -2407,6 +2912,26 @@ paths:
                                     example: Paul Rudd
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2420,13 +2945,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /library/sections:
     get:
@@ -2515,19 +3041,19 @@ paths:
                                 - integer
                               example: 1556281940
                               description: Unix epoch datetime
-                              format: int32
+                              format: int64
                             createdAt:
                               type:
                                 - integer
                               example: 1556281940
                               description: Unix epoch datetime
-                              format: int32
+                              format: int64
                             scannedAt:
                               type:
                                 - integer
                               example: 1556281940
                               description: Unix epoch datetime
-                              format: int32
+                              format: int64
                             content:
                               type: boolean
                               example: true
@@ -2556,6 +3082,26 @@ paths:
                                     example: /movies
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2569,13 +3115,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/sections/{sectionKey}':
     get:
@@ -2815,6 +3362,26 @@ paths:
                                     example: is
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2828,13 +3395,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     delete:
       tags:
@@ -2858,6 +3426,26 @@ paths:
           description: The library is deleted
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -2871,13 +3459,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/sections/watchlist/{filter}':
     servers:
@@ -3105,6 +3694,26 @@ paths:
                           type: string
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3118,13 +3727,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/sections/{sectionKey}/{tag}':
     get:
@@ -3620,6 +4230,26 @@ paths:
                               example: /library/metadata/66/theme/1705716261
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3633,13 +4263,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/sections/{sectionKey}/refresh':
     get:
@@ -3675,6 +4306,26 @@ paths:
           description: The library is refreshing
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3688,13 +4339,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/sections/{sectionKey}/search':
     get:
@@ -3881,6 +4533,26 @@ paths:
                               example: 1705636920
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -3894,13 +4566,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/metadata/{ratingKey}':
     get:
@@ -4395,6 +5068,26 @@ paths:
                                     example: 'https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -4408,13 +5101,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/metadata/{ratingKey}/banner':
     get:
@@ -4527,6 +5221,26 @@ paths:
                 format: binary
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -4540,13 +5254,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/metadata/{ratingKey}/thumb':
     get:
@@ -4659,6 +5374,26 @@ paths:
                 format: binary
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -4672,13 +5407,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/library/metadata/{ratingKey}/children':
     get:
@@ -4917,6 +5653,26 @@ paths:
                               example: 1703881224
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -4930,13 +5686,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /library/all/top:
     get:
@@ -5167,6 +5924,26 @@ paths:
                                     example: 220
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5180,13 +5957,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /library/onDeck:
     get:
@@ -5490,6 +6268,26 @@ paths:
                                     example: 'imdb://tt13303712'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5503,13 +6301,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /resources:
     get:
@@ -5706,6 +6505,26 @@ paths:
                             type: boolean
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5719,13 +6538,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /log:
     get:
@@ -5773,6 +6593,26 @@ paths:
           description: Log Message Posted successfully
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5786,13 +6626,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     post:
       tags:
@@ -5836,6 +6677,26 @@ paths:
           description: Multi-Line Log Message Posted successfully
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5849,13 +6710,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /log/networked:
     get:
@@ -5870,6 +6732,26 @@ paths:
           description: Papertrail enabled successfully
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5883,13 +6765,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
         '403':
           description: the user was not signed in
@@ -5947,6 +6830,26 @@ paths:
                         example: Active
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -5960,13 +6863,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/photo/:/transcode':
     get:
@@ -6040,6 +6944,26 @@ paths:
           description: Resized Image
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -6053,13 +6977,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /pins:
     post:
@@ -6295,6 +7220,7 @@ paths:
                           example: 1000
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
@@ -6523,6 +7449,7 @@ paths:
                           example: 1000
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
@@ -6673,6 +7600,26 @@ paths:
                               example: 141000
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -6686,13 +7633,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     get:
       tags:
@@ -6796,6 +7744,26 @@ paths:
                               example: 1705716440
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -6809,13 +7777,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/playlists/{playlistID}':
     get:
@@ -6904,6 +7873,26 @@ paths:
                               example: 1705717387
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -6917,13 +7906,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     delete:
       tags:
@@ -6944,6 +7934,26 @@ paths:
           description: The playlist is deleted
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -6957,13 +7967,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     put:
       tags:
@@ -6996,6 +8007,26 @@ paths:
           description: The playlist is deleted
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -7009,13 +8040,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/playlists/{playlistID}/items':
     get:
@@ -7320,6 +8352,26 @@ paths:
                                     example: Gina Torres
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -7333,13 +8385,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     delete:
       tags:
@@ -7360,6 +8413,26 @@ paths:
           description: The playlist contents are cleared
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -7373,13 +8446,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
     put:
       tags:
@@ -7483,6 +8557,26 @@ paths:
                               example: 1705800070
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -7496,13 +8590,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /playlists/upload:
     post:
@@ -7544,6 +8639,26 @@ paths:
           description: The playlist is uploaded
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -7557,13 +8672,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /media/providers:
     get:
@@ -7758,6 +8874,26 @@ paths:
                                                 type: string
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -7771,13 +8907,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /search:
     get:
@@ -8037,6 +9174,26 @@ paths:
                               example: mixed
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8050,13 +9207,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /security/token:
     get:
@@ -8088,6 +9246,26 @@ paths:
           description: A Transient Token
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8101,13 +9279,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /security/resources:
     get:
@@ -8133,6 +9312,26 @@ paths:
           description: Source Connection Information
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8146,13 +9345,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /servers:
     get:
@@ -8200,6 +9400,26 @@ paths:
                               example: 1.31.3.6868-28fc46b27
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8213,13 +9433,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /statistics/media:
     get:
@@ -8341,6 +9562,26 @@ paths:
                               example: 1555
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8354,13 +9595,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /statistics/resources:
     get:
@@ -8423,6 +9665,26 @@ paths:
                               example: 0.493
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8436,13 +9698,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /statistics/bandwidth:
     get:
@@ -8557,6 +9820,26 @@ paths:
                               example: 22
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8570,13 +9853,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /status/sessions:
     get:
@@ -8922,6 +10206,26 @@ paths:
                                   example: lan
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -8935,13 +10239,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /status/sessions/history/all:
     get:
@@ -9087,6 +10392,26 @@ paths:
                               example: 5
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9100,13 +10425,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /transcode/sessions:
     get:
@@ -9238,6 +10564,26 @@ paths:
                             minOffsetAvailable: 3.003000020980835
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9251,13 +10597,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   '/transcode/sessions/{sessionKey}':
     delete:
@@ -9279,6 +10626,26 @@ paths:
           description: The Transcode Session ended
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9292,13 +10659,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /updater/status:
     get:
@@ -9402,6 +10770,26 @@ paths:
                             state: notify
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9415,13 +10803,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /updater/check:
     put:
@@ -9446,6 +10835,26 @@ paths:
           description: 'The update check is started, if download is set to 1 and the system is able to update automatically, the update download will start.'
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9459,13 +10868,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /updater/apply:
     put:
@@ -9501,6 +10911,26 @@ paths:
           description: If the update process started correctly
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9514,13 +10944,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
         '500':
           description: If the update process failed to start
@@ -9649,6 +11080,26 @@ paths:
           description: The transcode session has started
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -9662,13 +11113,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /user:
     get:
@@ -9924,10 +11376,11 @@ paths:
                     example: 13692262
                     format: int32
                   joinedAt:
-                    type: integer
-                    description: Unix epoch datetime the account joined Plex
-                    format: int32
-                    example: 1721154902
+                    type:
+                      - integer
+                    example: 1556281940
+                    description: Unix epoch datetime
+                    format: int64
                   locale:
                     type:
                       - string
@@ -10009,10 +11462,11 @@ paths:
                     description: If the account has a Plex Home PIN enabled
                     default: false
                   rememberExpiresAt:
-                    type: integer
-                    description: Unix epoch datetime the authtoken expires
-                    format: int32
-                    example: 1722364046
+                    type:
+                      - integer
+                    example: 1556281940
+                    description: Unix epoch datetime
+                    format: int64
                   restricted:
                     type: boolean
                     description: If the account is a Plex Home managed user
@@ -10276,6 +11730,26 @@ paths:
                     example: dae343c1f45beb4f
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -10289,13 +11763,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
   /users/signin:
     post:
@@ -10304,7 +11779,7 @@ paths:
       security: []
       tags:
         - Authentication
-      summary: Get User SignIn Data
+      summary: Get User Sign In Data
       description: Sign in user with username and password and return user data with Plex authentication token
       operationId: post-users-sign-in-data
       parameters:
@@ -10318,6 +11793,15 @@ paths:
             type: string
             example: gcgzw5rz2xovp84b4vha3a40
           required: true
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/json
+              - application/xml
+            example: application/json
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -10338,6 +11822,9 @@ paths:
                 rememberMe:
                   type: boolean
                   default: false
+                verificationCode:
+                  type: string
+                  example: 123456
         description: Login credentials
       responses:
         '201':
@@ -10568,10 +12055,11 @@ paths:
                         example: 13692262
                         format: int32
                       joinedAt:
-                        type: integer
-                        description: Unix epoch datetime the account joined Plex
-                        format: int32
-                        example: 1721154902
+                        type:
+                          - integer
+                        example: 1556281940
+                        description: Unix epoch datetime
+                        format: int64
                       locale:
                         type:
                           - string
@@ -10653,10 +12141,11 @@ paths:
                         description: If the account has a Plex Home PIN enabled
                         default: false
                       rememberExpiresAt:
-                        type: integer
-                        description: Unix epoch datetime the authtoken expires
-                        format: int32
-                        example: 1722364046
+                        type:
+                          - integer
+                        example: 1556281940
+                        description: Unix epoch datetime
+                        format: int64
                       restricted:
                         type: boolean
                         description: If the account is a Plex Home managed user
@@ -10959,7 +12448,7 @@ paths:
                                     - integer
                                   example: 1556281940
                                   description: Unix epoch datetime
-                                  format: int32
+                                  format: int64
                                 - type: 'null'
                             endsAt:
                               oneOf:
@@ -10967,7 +12456,7 @@ paths:
                                     - integer
                                   example: 1556281940
                                   description: Unix epoch datetime
-                                  format: int32
+                                  format: int64
                                 - type: 'null'
                             canceled:
                               type: boolean
@@ -11026,6 +12515,26 @@ paths:
                           type: object
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -11039,13 +12548,14 @@ paths:
                       type: object
                       properties:
                         code:
-                          type: number
+                          type: integer
                           example: 1001
                         message:
                           type: string
+                          x-speakeasy-error-message: true
                           example: User could not be authenticated
                         status:
-                          type: number
+                          type: integer
                           example: 401
 tags:
   - name: Activities
