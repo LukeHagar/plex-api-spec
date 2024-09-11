@@ -73,7 +73,7 @@ The file should contain data in the following order:
 
 - A property in the response is only marked as required if it is always returned, regardless of the parameters sent with the request.
 - Although Plex.tv API uses the `X-Plex-Token` as a query parameter, this specification will always define this as a header parameter where supported since this follows industry security standards.
-- Though Plex does default return `XML` unless the `accept` header is set to `application/json`, this specification will not include the `accept` header in the endpoints. Generally the accept value should come from the specified responses content type.
+- Though Plex does default return `XML` unless the `accept` header is set to `application/json`, this specification will not include the `accept` header in the endpoints. Assume it should always be included in the request.
 
 ## Questions?
 
