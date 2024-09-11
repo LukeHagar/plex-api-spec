@@ -53,7 +53,7 @@ The file should contain data in the following order:
     - example # a list of tags that the endpoint belongs to, this is used for grouping in the documentation and SDKs
   summary: a brief description of the endpoint
   description: a more detailed description of the endpoint
-  operationId: getLibrarySections # camel case summarizing the action being performed.
+  operationId: anExampleOperationId # camel case summarizing the action being performed.
   parameters: # parameters are defined in the /parameters directory, or inline if they are not reused very much
     - $ref: "../../parameters/..." # a reference to a parameter file in the /parameters directory
     - name: example # a parameter that is not a reference
