@@ -23,6 +23,58 @@ The following SDKs are generated from the OpenAPI Specification. They are automa
 | Java                  | [GitHub](https://github.com/LukeHagar/plexjava)   | [Releases](https://github.com/LukeHagar/plexjava/releases)                                       | -                                                       |
 | C#                    | [GitHub](https://github.com/LukeHagar/plexcsharp) | [Releases](https://github.com/LukeHagar/plexcsharp/releases)                                     | -                                                       |
 
+## Project Structure
+
+The main OpenAPI Specification is located in the root directory as [pms-spec.yaml](https://github.com/LukeHagar/plex-api-spec/blob/main/pms-spec.yaml). Which references 
+
+- [**/paths**](https://github.com/LukeHagar/plex-api-spec/tree/main/paths): The endpoints for the Plex Media Server API. Each endpoint is defined in a separate file.
+- [**/models**](https://github.com/LukeHagar/plex-api-spec/tree/main/models): The schema models used in the specification.
+- [**/parameters**](https://github.com/LukeHagar/plex-api-spec/tree/main/parameters): The parameters used in the specification.
+- [**/responses**](https://github.com/LukeHagar/plex-api-spec/tree/main/responses): The responses used in the specification.
+
+In addition, there is a bundled single file OpenAPI Specification, [plex-media-server-spec-dereferenced.yaml](https://github.com/LukeHagar/plex-api-spec/blob/main/plex-media-server-spec-dereferenced.yaml) which is automatically bundled on any changes to the main specification.
+
+## Style Guide
+
+All spec files should adhere to the 3.1 OpenAPI Specification.
+
+Reference documentation can be found [Here](https://www.speakeasy.com/openapi) and [Here](https://spec.openapis.org/oas/v3.1.0.html#openapi-specification).
+
+Every endpoint is defined in the `/paths` directory, with Each endpoint defined in a separate file.
+The file name should be the endpoint name with the method type. For example, the endpoint `/library/sections` is defined in the file `/paths/library_sections.get.yaml`.
+
+The file should contain data in the following order:
+
+```yaml
+[get/post/put/delete]:
+  servers: # only specify if the endpoint requires a different server than the users plex server
+  security: # only specify if the endpoint requires authentication different from the global security
+  tags: 
+    - example # a list of tags that the endpoint belongs to, this is used for grouping in the documentation and SDKs
+  summary: a brief description of the endpoint
+  description: a more detailed description of the endpoint
+  operationId: anExampleOperationId # camel case summarizing the action being performed.
+  parameters: # parameters are defined in the /parameters directory, or inline if they are not reused very much
+    - $ref: "../../parameters/..." # a reference to a parameter file in the /parameters directory
+    - name: example # a parameter that is not a reference
+      in: query # the location of the parameter, can be query, path, header, or cookie
+      description: an example parameter
+      required: true # whether the parameter is required or not, path parameters are always required. Only specify this key if the parameter is required
+      schema:
+        type: string
+  responses:
+    2XX:
+      $ref: "../../responses/..." # a reference to a response file in the /responses directory
+    4XX:
+    5XX:
+```
+
+### Rules
+
+- A property in the response is only marked as required if it is always returned, regardless of the parameters sent with the request.
+- Although Plex.tv API uses the `X-Plex-Token` as a query parameter, this specification will always define this as a header parameter where supported since this follows industry security standards.
+- Though Plex does default return `XML` unless the `accept` header is set to `application/json`, this specification will not include the `accept` header in the endpoints. Assume it should always be included in the request.
+
 ## Questions?
 
 Reach out to me on the [Discord Server](https://discord.gg/mxqjsJHwUm)
