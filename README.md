@@ -65,7 +65,7 @@ The file should contain data in the following order:
 
 ### Rules
  - A property in the response is only marked as required if it is always returned, regardless of the parameters sent with the request.
-
+ - Although Plex.tv API uses the `X-Plex-Token` as a query parameter, the specification will always define this as a header since this follows industry standard.
 ## Questions?
 
 Reach out to me on the [Discord Server](https://discord.gg/mxqjsJHwUm)
