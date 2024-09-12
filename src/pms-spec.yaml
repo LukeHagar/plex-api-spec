@@ -12,7 +12,21 @@ info:
     name: MIT
 
 servers:
-  - $ref: "./servers/dynamic-server.yaml"
+  - url: "{protocol}://{ip}:{port}"
+    description: The full address of your Plex Server
+    variables:
+      protocol:
+        default: "https"
+        description: The protocol to use for the server connection
+        enum:
+          - "http"
+          - "https"
+      ip:
+        default: "10.10.10.47"
+        description: The IP address or hostname of your Plex Server
+      port:
+        default: "32400"
+        description: The port of your Plex Server
 
 x-speakeasy-globals:
   parameters:
@@ -26,7 +40,7 @@ components:
     accessToken:
       description: Plex Authentication Token
       type: apiKey
-      in: query
+      in: header
       name: X-Plex-Token
 
 paths:
