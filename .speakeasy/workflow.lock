@@ -1,8 +1,8 @@
-speakeasyVersion: 1.396.9
+speakeasyVersion: 1.397.2
 sources:
     Plex-API:
         sourceNamespace: plex-api
-        sourceRevisionDigest: sha256:90da815184f89206abe4694aca05802c71d19c10d572a0a1f84d89883e5fce45
+        sourceRevisionDigest: sha256:1b8840d540c66b58d1009ec2581fb18464158ec9aa00464eac05ba737f31207e
         sourceBlobDigest: sha256:f7e2709f52370dff16c1851a7a4e44a89f2e978e9cae335bffc10625950b3bd9
         tags:
             - latest
@@ -16,5 +16,5 @@ workflow:
             inputs:
                 - location: ./output/plex-media-server-spec-dereferenced.yaml
             registry:
-                location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api
+                location: registry.speakeasyapi.dev/plexapi/plexapi/plex-api
     targets: {}
