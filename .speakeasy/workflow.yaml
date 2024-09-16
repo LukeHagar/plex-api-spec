@@ -5,5 +5,5 @@ sources:
     inputs:
       - location: ./output/plex-media-server-spec-dereferenced.yaml
     registry:
-      location: registry.speakeasyapi.dev/lukehagar/lukehagar/plex-api
+      location: registry.speakeasyapi.dev/plexapi/plexapi/plex-api
 targets: {}
