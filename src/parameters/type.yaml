@@ -15,4 +15,9 @@ schema:
     - 3
     - 4
   example: 2
+  x-speakeasy-enums:
+    - MOVIE
+    - SHOW
+    - SEASON
+    - EPISODE
 required: true
