@@ -47,11 +47,13 @@ properties:
   clientIdentifier:
     type: string
   createdAt:
-    type: string
-    format: date-time
+    allOf:
+      - $ref: "./common/PlexDateTimeISO.yaml"
+      - description: The time the device was created/registered
   lastSeenAt:
-    type: string
-    format: date-time
+    allOf:
+      - $ref: "./common/PlexDateTimeISO.yaml"
+      - description: The last time the device was seen
   provides:
     type: string
   ownerId:
@@ -99,16 +101,27 @@ properties:
         - IPv6
       properties:
         protocol:
+          description: The protocol used for the connection (http, https, etc)
           type: string
+          enum:
+            - http
+            - https
         address:
+          description: The (ip) address or domain name used for the connection
           type: string
         port:
-          type: number
+          description: The port used for the connection
+          type: integer
+          format: int32
         uri:
+          description: The full URI of the connection
           type: string
         local:
+          description: If the connection is local address
           type: boolean
         relay:
+          description: If the connection is relayed through plex.direct
           type: boolean
         IPv6:
+          description: If the connection is using IPv6
           type: boolean

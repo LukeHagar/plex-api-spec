@@ -1,5 +1,5 @@
 type:
   - integer
 example: 1556281940
-description: Unix epoch datetime
+description: Unix epoch datetime in seconds
 format: int64
