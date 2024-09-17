@@ -18,7 +18,6 @@ post:
         type: boolean
         default: false
       required: false
-    - $ref: ../../parameters/plex/x-plex-identifier.yaml
     - $ref: ../../parameters/plex/x-plex-product.yaml
   responses:
     "200":
