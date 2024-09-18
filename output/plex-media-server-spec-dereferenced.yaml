@@ -46,13 +46,6 @@ x-speakeasy-globals:
       schema:
         type: string
       example: Plex Web
-    - name: X-Plex-Device
-      x-speakeasy-name-override: DeviceName
-      in: query
-      required: false
-      schema:
-        type: string
-      example: Linux
     - name: X-Plex-Version
       x-speakeasy-name-override: ClientVersion
       in: query
@@ -61,11 +54,19 @@ x-speakeasy-globals:
         type: string
       example: 4.133.0
     - name: X-Plex-Platform
+      x-speakeasy-name-override: ClientPlatform
       in: query
       required: false
       schema:
         type: string
       example: Chrome
+    - name: X-Plex-Device
+      x-speakeasy-name-override: DeviceName
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Linux
 security:
   - accessToken: []
 components:
@@ -7136,6 +7137,7 @@ paths:
             type: string
           example: 4.133.0
         - name: X-Plex-Platform
+          x-speakeasy-name-override: ClientPlatform
           in: query
           required: false
           schema:
