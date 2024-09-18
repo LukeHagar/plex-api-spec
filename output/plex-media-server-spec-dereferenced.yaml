@@ -29,6 +29,7 @@ servers:
 x-speakeasy-globals:
   parameters:
     - name: X-Plex-Client-Identifier
+      x-speakeasy-name-override: ClientID
       description: |
         The unique identifier for the client application
         This is used to track the client application and its usage
@@ -38,6 +39,33 @@ x-speakeasy-globals:
         type: string
         example: gcgzw5rz2xovp84b4vha3a40
       required: true
+    - name: X-Plex-Product
+      x-speakeasy-name-override: ClientName
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Plex Web
+    - name: X-Plex-Device
+      x-speakeasy-name-override: DeviceName
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Linux
+    - name: X-Plex-Version
+      x-speakeasy-name-override: ClientVersion
+      in: query
+      required: false
+      schema:
+        type: string
+      example: 4.133.0
+    - name: X-Plex-Platform
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Chrome
 security:
   - accessToken: []
 components:
@@ -6392,6 +6420,7 @@ paths:
       operationId: get-server-resources
       parameters:
         - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
           description: |
             The unique identifier for the client application
             This is used to track the client application and its usage
@@ -7061,7 +7090,7 @@ paths:
         - Plex
       summary: Get a Pin
       operationId: getPin
-      description: Retrieve a Pin from Plex.tv for authentication flows
+      description: Retrieve a Pin ID from Plex.tv to use for authentication flows
       security: []
       parameters:
         - name: strong
@@ -7075,6 +7104,7 @@ paths:
             default: false
           required: false
         - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
           description: |
             The unique identifier for the client application
             This is used to track the client application and its usage
@@ -7085,11 +7115,32 @@ paths:
             example: gcgzw5rz2xovp84b4vha3a40
           required: true
         - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
           in: query
           required: false
           schema:
             type: string
           example: Plex Web
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceName
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Linux
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          in: query
+          required: false
+          schema:
+            type: string
+          example: 4.133.0
+        - name: X-Plex-Platform
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Chrome
       responses:
         '200':
           description: Requests a new pin id used in the authentication flow
@@ -7305,6 +7356,7 @@ paths:
       operationId: getTokenByPinId
       parameters:
         - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
           description: |
             The unique identifier for the client application
             This is used to track the client application and its usage
@@ -11888,6 +11940,7 @@ paths:
       operationId: post-users-sign-in-data
       parameters:
         - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
           description: |
             The unique identifier for the client application
             This is used to track the client application and its usage
