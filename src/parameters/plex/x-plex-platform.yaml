@@ -1,4 +1,5 @@
 name: X-Plex-Platform
+x-speakeasy-name-override: ClientPlatform
 in: query
 required: false
 schema:

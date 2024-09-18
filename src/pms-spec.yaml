@@ -32,9 +32,9 @@ x-speakeasy-globals:
   parameters:
     - $ref: "./parameters/plex/x-plex-identifier.yaml"
     - $ref: "./parameters/plex/x-plex-product.yaml"
-    - $ref: "./parameters/plex/x-plex-device.yaml"
     - $ref: "./parameters/plex/x-plex-version.yaml"
     - $ref: "./parameters/plex/x-plex-platform.yaml"
+    - $ref: "./parameters/plex/x-plex-device.yaml"
 
 security:
   - accessToken: []
