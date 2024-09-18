@@ -24,7 +24,7 @@ post:
     - $ref: ../../parameters/plex/x-plex-version.yaml
     - $ref: ../../parameters/plex/x-plex-platform.yaml
   responses:
-    "200":
+    "201":
       description: Requests a new pin id used in the authentication flow
       content:
         application/json:
