@@ -52,9 +52,9 @@ properties:
     description: The time zone of the country.
     example: America/St_Thomas
   postal_code:
-    type: integer
+    type: string
     description: The postal code of the location.
-    example: 802
+    example: "802"
   in_privacy_restricted_country:
     type: boolean
     description: Indicates if the country has privacy restrictions.
