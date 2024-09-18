@@ -7144,7 +7144,7 @@ paths:
             type: string
           example: Chrome
       responses:
-        '200':
+        '201':
           description: Requests a new pin id used in the authentication flow
           content:
             application/json:
