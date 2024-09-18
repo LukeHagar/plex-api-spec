@@ -1,4 +1,5 @@
 name: X-Plex-Device
+x-speakeasy-name-override: DeviceName
 in: query
 required: false
 schema:

@@ -5,7 +5,7 @@ post:
     - Plex
   summary: Get a Pin
   operationId: getPin
-  description: Retrieve a Pin from Plex.tv for authentication flows
+  description: Retrieve a Pin ID from Plex.tv to use for authentication flows
   security: [] # No security required
   parameters:
     - name: strong
@@ -20,6 +20,9 @@ post:
       required: false
     - $ref: ../../parameters/plex/x-plex-identifier.yaml
     - $ref: ../../parameters/plex/x-plex-product.yaml
+    - $ref: ../../parameters/plex/x-plex-device.yaml
+    - $ref: ../../parameters/plex/x-plex-version.yaml
+    - $ref: ../../parameters/plex/x-plex-platform.yaml
   responses:
     "200":
       description: Requests a new pin id used in the authentication flow

@@ -1,4 +1,5 @@
 name: X-Plex-Version
+x-speakeasy-name-override: ClientVersion
 in: query
 required: false
 schema:
