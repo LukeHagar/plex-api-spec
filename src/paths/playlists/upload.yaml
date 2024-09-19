@@ -32,6 +32,14 @@ post:
           - 0
           - 1
       required: true
+    - name: sectionID
+      description: Possibly the section ID to upload the playlist to, we are not certain.
+      in: query
+      schema:
+        type: integer
+        example: 1
+        default: 1
+      required: true
   responses:
     "200":
       description: The playlist is uploaded
