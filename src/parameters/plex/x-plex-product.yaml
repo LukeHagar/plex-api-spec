@@ -1,4 +1,5 @@
 name: X-Plex-Product
+x-speakeasy-name-override: ClientName
 in: query
 required: false
 schema:
