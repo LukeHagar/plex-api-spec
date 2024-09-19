@@ -4,12 +4,13 @@ import { describe, it } from "vitest"
 describe("GET /library/sections", () => {
   it("should validate the 200 response without includeGuids and includeMeta queryParam when the API spec is valid", () => {
     // Response from the API endpoint
+    // Thu, 19 Sep 2024 12:08:46 GMT
     // {{baseUrl}}/library/sections/1/all?X-Plex-Container-Start=1&X-Plex-Container-Size=5
     const response = {
       MediaContainer: {
-        size: 5,
-        totalSize: 357,
-        offset: 1,
+        size: 10,
+        totalSize: 358,
+        offset: 0,
         allowSync: true,
         art: "/:/resources/movie-fanart.jpg",
         content: "secondary",
@@ -18,12 +19,118 @@ describe("GET /library/sections", () => {
         librarySectionTitle: "Movies",
         librarySectionUUID: "0e71027d-88bc-4413-9927-5aad992d3d19",
         mediaTagPrefix: "/system/bundle/media/flags/",
-        mediaTagVersion: 1724161316,
+        mediaTagVersion: 1726069332,
         thumb: "/:/resources/movie.png",
         title1: "Movies",
         title2: "All Movies",
         viewGroup: "movie",
         Metadata: [
+          {
+            ratingKey: "28550",
+            key: "/library/metadata/28550",
+            guid: "plex://movie/5d776841103a2d001f56a97b",
+            slug: "4-for-texas",
+            studio: "The Sam Company",
+            type: "movie",
+            title: "4 for Texas",
+            contentRating: "nl/14",
+            summary:
+              "In the 1870s, two rival businessmen, Zack Thomas and Joe Jarrett, on a stagecoach heading to Galveston, Texas, must pull together to protect $100,000 from an outlaw named Matson. Once in Galveston, however, their rivalry continues, as Thomas joins up with Elya Carlson and Jarret with Maxine Richter. But Matson is still on the loose, and a scheming banker threatens both Thomas and Jarrett.",
+            rating: 1.1,
+            audienceRating: 3.7,
+            year: 1963,
+            tagline: "The far out story of the far west",
+            thumb: "/library/metadata/28550/thumb/1719370467",
+            art: "/library/metadata/28550/art/1719370467",
+            duration: 6908735,
+            originallyAvailableAt: "1963-12-21",
+            addedAt: 1586886369,
+            updatedAt: 1719370467,
+            audienceRatingImage: "rottentomatoes://image.rating.spilled",
+            ratingImage: "rottentomatoes://image.rating.rotten",
+            Media: [
+              {
+                id: 31687,
+                duration: 6908735,
+                bitrate: 1694,
+                width: 640,
+                height: 368,
+                aspectRatio: 1.78,
+                audioChannels: 1,
+                audioCodec: "ac3",
+                videoCodec: "mpeg4",
+                videoResolution: "sd",
+                container: "avi",
+                videoFrameRate: "24p",
+                videoProfile: "advanced simple",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 47070,
+                    key: "/library/parts/47070/1586877036/file.avi",
+                    duration: 6908735,
+                    file: "/Movies/4 for Texas (1963)/4 for Texas (1963).avi",
+                    size: 1468592128,
+                    container: "avi",
+                    indexes: "sd",
+                    videoProfile: "advanced simple"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "4 for Texas",
+                type: "coverPoster",
+                url: "/library/metadata/28550/thumb/1719370467"
+              },
+              {
+                alt: "4 for Texas",
+                type: "background",
+                url: "/library/metadata/28550/art/1719370467"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0b0b0b",
+              topRight: "232222",
+              bottomRight: "030403",
+              bottomLeft: "101110"
+            },
+            Genre: [
+              {
+                tag: "Comedy"
+              },
+              {
+                tag: "Western"
+              }
+            ],
+            Country: [
+              {
+                tag: "United States of America"
+              }
+            ],
+            Director: [
+              {
+                tag: "Robert Aldrich"
+              }
+            ],
+            Writer: [
+              {
+                tag: "W.R. Burnett"
+              }
+            ],
+            Role: [
+              {
+                tag: "Frank Sinatra"
+              },
+              {
+                tag: "Dean Martin"
+              },
+              {
+                tag: "Anita Ekberg"
+              }
+            ]
+          },
           {
             ratingKey: "9881",
             key: "/library/metadata/9881",
@@ -40,12 +147,12 @@ describe("GET /library/sections", () => {
             audienceRating: 5.6,
             year: 1986,
             tagline: "They Broke Every Rule.",
-            thumb: "/library/metadata/9881/thumb/1723182007",
-            art: "/library/metadata/9881/art/1723182007",
+            thumb: "/library/metadata/9881/thumb/1726724715",
+            art: "/library/metadata/9881/art/1726724715",
             duration: 7011007,
             originallyAvailableAt: "1986-02-09",
             addedAt: 1560801795,
-            updatedAt: 1723182007,
+            updatedAt: 1726724715,
             audienceRatingImage: "rottentomatoes://image.rating.spilled",
             chapterSource: "media",
             ratingImage: "rottentomatoes://image.rating.ripe",
@@ -65,6 +172,7 @@ describe("GET /library/sections", () => {
                 videoFrameRate: "24p",
                 audioProfile: "dts",
                 videoProfile: "high",
+                hasVoiceActivity: false,
                 Part: [
                   {
                     id: 41930,
@@ -78,6 +186,23 @@ describe("GET /library/sections", () => {
                     videoProfile: "high"
                   }
                 ]
+              }
+            ],
+            Image: [
+              {
+                alt: "9½ Weeks",
+                type: "coverPoster",
+                url: "/library/metadata/9881/thumb/1726724715"
+              },
+              {
+                alt: "9½ Weeks",
+                type: "background",
+                url: "/library/metadata/9881/art/1726724715"
+              },
+              {
+                alt: "9½ Weeks",
+                type: "clearLogo",
+                url: "/library/metadata/9881/clearLogo/1726724715"
               }
             ],
             UltraBlurColors: {
@@ -141,12 +266,12 @@ describe("GET /library/sections", () => {
             lastViewedAt: 1563831721,
             year: 2008,
             tagline: "The legend. The battle. The first hero.",
-            thumb: "/library/metadata/20936/thumb/1721967792",
-            art: "/library/metadata/20936/art/1721967792",
+            thumb: "/library/metadata/20936/thumb/1726724759",
+            art: "/library/metadata/20936/art/1726724759",
             duration: 6535680,
             originallyAvailableAt: "2008-03-05",
             addedAt: 1558940057,
-            updatedAt: 1721967792,
+            updatedAt: 1726724759,
             audienceRatingImage: "rottentomatoes://image.rating.spilled",
             chapterSource: "media",
             ratingImage: "rottentomatoes://image.rating.rotten",
@@ -165,6 +290,7 @@ describe("GET /library/sections", () => {
                 container: "mkv",
                 videoFrameRate: "24p",
                 videoProfile: "advanced",
+                hasVoiceActivity: false,
                 Part: [
                   {
                     id: 41744,
@@ -177,6 +303,23 @@ describe("GET /library/sections", () => {
                     videoProfile: "advanced"
                   }
                 ]
+              }
+            ],
+            Image: [
+              {
+                alt: "10,000 BC",
+                type: "coverPoster",
+                url: "/library/metadata/20936/thumb/1726724759"
+              },
+              {
+                alt: "10,000 BC",
+                type: "background",
+                url: "/library/metadata/20936/art/1726724759"
+              },
+              {
+                alt: "10,000 BC",
+                type: "clearLogo",
+                url: "/library/metadata/20936/clearLogo/1726724759"
               }
             ],
             UltraBlurColors: {
@@ -213,10 +356,10 @@ describe("GET /library/sections", () => {
             ],
             Writer: [
               {
-                tag: "Harald Kloser"
+                tag: "Roland Emmerich"
               },
               {
-                tag: "Roland Emmerich"
+                tag: "Harald Kloser"
               }
             ],
             Role: [
@@ -269,6 +412,7 @@ describe("GET /library/sections", () => {
                 container: "mkv",
                 videoFrameRate: "24p",
                 videoProfile: "main 10",
+                hasVoiceActivity: false,
                 Part: [
                   {
                     id: 79867,
@@ -281,6 +425,18 @@ describe("GET /library/sections", () => {
                     videoProfile: "main 10"
                   }
                 ]
+              }
+            ],
+            Image: [
+              {
+                alt: "22 July",
+                type: "coverPoster",
+                url: "/library/metadata/47175/thumb/1721705174"
+              },
+              {
+                alt: "22 July",
+                type: "background",
+                url: "/library/metadata/47175/art/1721705174"
               }
             ],
             UltraBlurColors: {
@@ -369,6 +525,7 @@ describe("GET /library/sections", () => {
                 container: "mkv",
                 videoFrameRate: "24p",
                 videoProfile: "high",
+                hasVoiceActivity: false,
                 Part: [
                   {
                     id: 41819,
@@ -381,6 +538,18 @@ describe("GET /library/sections", () => {
                     videoProfile: "high"
                   }
                 ]
+              }
+            ],
+            Image: [
+              {
+                alt: "The 24 Hour War",
+                type: "coverPoster",
+                url: "/library/metadata/21488/thumb/1721967875"
+              },
+              {
+                alt: "The 24 Hour War",
+                type: "background",
+                url: "/library/metadata/21488/art/1721967875"
               }
             ],
             UltraBlurColors: {
@@ -465,6 +634,7 @@ describe("GET /library/sections", () => {
                 videoFrameRate: "24p",
                 audioProfile: "dts",
                 videoProfile: "high",
+                hasVoiceActivity: false,
                 Part: [
                   {
                     id: 41881,
@@ -478,6 +648,18 @@ describe("GET /library/sections", () => {
                     videoProfile: "high"
                   }
                 ]
+              }
+            ],
+            Image: [
+              {
+                alt: "28 Days Later",
+                type: "coverPoster",
+                url: "/library/metadata/21050/thumb/1721967834"
+              },
+              {
+                alt: "28 Days Later",
+                type: "background",
+                url: "/library/metadata/21050/art/1721967834"
               }
             ],
             UltraBlurColors: {
@@ -518,6 +700,471 @@ describe("GET /library/sections", () => {
               },
               {
                 tag: "Brendan Gleeson"
+              }
+            ]
+          },
+          {
+            ratingKey: "8535",
+            key: "/library/metadata/8535",
+            guid: "plex://movie/5d77682aeb5d26001f1de2ba",
+            slug: "50-first-dates",
+            studio: "Columbia Pictures",
+            type: "movie",
+            title: "50 First Dates",
+            contentRating: "nl/6",
+            summary:
+              "Henry Roth is a man afraid of commitment until he meets the beautiful Lucy. They hit it off and Henry think he's finally found the girl of his dreams until discovering she has short-term memory loss and forgets him the next day.",
+            rating: 4.5,
+            audienceRating: 6.5,
+            year: 2004,
+            tagline:
+              "Imagine having to win over the girl of your dreams... every friggin' day.",
+            thumb: "/library/metadata/8535/thumb/1726724604",
+            art: "/library/metadata/8535/art/1726724604",
+            duration: 5943968,
+            originallyAvailableAt: "2004-02-13",
+            addedAt: 1558937609,
+            updatedAt: 1726724604,
+            audienceRatingImage: "rottentomatoes://image.rating.upright",
+            ratingImage: "rottentomatoes://image.rating.rotten",
+            Media: [
+              {
+                id: 10660,
+                duration: 5943968,
+                bitrate: 11481,
+                width: 1920,
+                height: 800,
+                aspectRatio: 2.35,
+                audioChannels: 6,
+                audioCodec: "ac3",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "high",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 41925,
+                    key: "/library/parts/41925/1207831515/file.mkv",
+                    duration: 5943968,
+                    file: "/Movies/50 First Dates (2004)/50.first.dates.2004.1080p.bluray.x264-wpi.mkv",
+                    size: 8533075307,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "high"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "50 First Dates",
+                type: "coverPoster",
+                url: "/library/metadata/8535/thumb/1726724604"
+              },
+              {
+                alt: "50 First Dates",
+                type: "background",
+                url: "/library/metadata/8535/art/1726724604"
+              },
+              {
+                alt: "50 First Dates",
+                type: "clearLogo",
+                url: "/library/metadata/8535/clearLogo/1726724604"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "123145",
+              topRight: "8c341f",
+              bottomRight: "842e1d",
+              bottomLeft: "9f332e"
+            },
+            Genre: [
+              {
+                tag: "Comedy"
+              },
+              {
+                tag: "Romance"
+              }
+            ],
+            Country: [
+              {
+                tag: "United States of America"
+              }
+            ],
+            Collection: [
+              {
+                tag: "Working NL Subs"
+              }
+            ],
+            Director: [
+              {
+                tag: "Peter Segal"
+              }
+            ],
+            Writer: [
+              {
+                tag: "George Wing"
+              }
+            ],
+            Role: [
+              {
+                tag: "Adam Sandler"
+              },
+              {
+                tag: "Drew Barrymore"
+              },
+              {
+                tag: "Rob Schneider"
+              }
+            ]
+          },
+          {
+            ratingKey: "20995",
+            key: "/library/metadata/20995",
+            guid: "plex://movie/5d77687d7e5fa10020bf080d",
+            slug: "127-hours",
+            studio: "Fox Searchlight Pictures",
+            type: "movie",
+            title: "127 Hours",
+            contentRating: "nl/16",
+            summary:
+              "A mountain climber becomes trapped under a boulder while canyoneering alone near Moab, Utah and resorts to desperate measures in order to survive.",
+            rating: 9.3,
+            audienceRating: 8.5,
+            skipCount: 1,
+            year: 2011,
+            tagline: "There is no force more powerful than the will to live.",
+            thumb: "/library/metadata/20995/thumb/1721967796",
+            art: "/library/metadata/20995/art/1721967796",
+            duration: 5621696,
+            originallyAvailableAt: "2011-01-06",
+            addedAt: 1563639698,
+            updatedAt: 1721967796,
+            audienceRatingImage: "rottentomatoes://image.rating.upright",
+            chapterSource: "media",
+            ratingImage: "rottentomatoes://image.rating.ripe",
+            Media: [
+              {
+                id: 21391,
+                duration: 5621696,
+                bitrate: 15196,
+                width: 1920,
+                height: 1040,
+                aspectRatio: 1.85,
+                audioChannels: 6,
+                audioCodec: "ac3",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "high",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 41899,
+                    key: "/library/parts/41899/1299056035/file.mkv",
+                    duration: 5621696,
+                    file: "/Movies/127 Hours (2010)/127.Hours.2010.1080p.BluRay.x264-EbP.mkv",
+                    size: 10680320550,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "high"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "127 Hours",
+                type: "coverPoster",
+                url: "/library/metadata/20995/thumb/1721967796"
+              },
+              {
+                alt: "127 Hours",
+                type: "background",
+                url: "/library/metadata/20995/art/1721967796"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "48210a",
+              topRight: "92440f",
+              bottomRight: "7d330c",
+              bottomLeft: "4f1904"
+            },
+            Genre: [
+              {
+                tag: "Drama"
+              },
+              {
+                tag: "Adventure"
+              }
+            ],
+            Country: [
+              {
+                tag: "France"
+              },
+              {
+                tag: "United Kingdom"
+              }
+            ],
+            Collection: [
+              {
+                tag: "Working NL Subs"
+              }
+            ],
+            Director: [
+              {
+                tag: "Danny Boyle"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Danny Boyle"
+              },
+              {
+                tag: "Simon Beaufoy"
+              }
+            ],
+            Role: [
+              {
+                tag: "James Franco"
+              },
+              {
+                tag: "Amber Tamblyn"
+              },
+              {
+                tag: "Kate Mara"
+              }
+            ]
+          },
+          {
+            ratingKey: "44645",
+            key: "/library/metadata/44645",
+            guid: "plex://movie/5d7768296f4521001ea99959",
+            slug: "300",
+            studio: "Virtual Studios",
+            type: "movie",
+            title: "300",
+            contentRating: "nl/16",
+            summary:
+              "Based on Frank Miller's graphic novel, \"300\" is very loosely based the 480 B.C. Battle of Thermopylae, where the King of Sparta led his army against the advancing Persians; the battle is said to have inspired all of Greece to band together against the Persians, and helped usher in the world's first democracy.",
+            rating: 6.1,
+            audienceRating: 8.9,
+            year: 2007,
+            tagline: "Prepare for glory!",
+            thumb: "/library/metadata/44645/thumb/1722057391",
+            art: "/library/metadata/44645/art/1722057391",
+            duration: 6998208,
+            originallyAvailableAt: "2007-03-07",
+            addedAt: 1628685751,
+            updatedAt: 1722057391,
+            audienceRatingImage: "rottentomatoes://image.rating.upright",
+            chapterSource: "media",
+            ratingImage: "rottentomatoes://image.rating.ripe",
+            Media: [
+              {
+                id: 47012,
+                duration: 6998208,
+                bitrate: 64719,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 8,
+                audioCodec: "truehd",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 76355,
+                    key: "/library/parts/76355/1601695383/file.mkv",
+                    duration: 6998208,
+                    file: "/Movies/300 (2007)/300 (2007) Remux-2160p.mkv",
+                    size: 56679095113,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "300",
+                type: "coverPoster",
+                url: "/library/metadata/44645/thumb/1722057391"
+              },
+              {
+                alt: "300",
+                type: "background",
+                url: "/library/metadata/44645/art/1722057391"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "280405",
+              topRight: "0d0202",
+              bottomRight: "7a312c",
+              bottomLeft: "120303"
+            },
+            Genre: [
+              {
+                tag: "Action"
+              },
+              {
+                tag: "Adventure"
+              }
+            ],
+            Country: [
+              {
+                tag: "Bulgaria"
+              },
+              {
+                tag: "Canada"
+              }
+            ],
+            Director: [
+              {
+                tag: "Zack Snyder"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Zack Snyder"
+              },
+              {
+                tag: "Kurt Johnstad"
+              }
+            ],
+            Role: [
+              {
+                tag: "Gerard Butler"
+              },
+              {
+                tag: "Lena Headey"
+              },
+              {
+                tag: "Dominic West"
+              }
+            ]
+          },
+          {
+            ratingKey: "23922",
+            key: "/library/metadata/23922",
+            guid: "plex://movie/5d77682c8718ba001e312aee",
+            slug: "1408",
+            studio: "Dimension Films",
+            type: "movie",
+            title: "1408",
+            contentRating: "nl/16",
+            summary:
+              "Author Michael Enslin specializes in debunking paranormal occurrences, checks into the fabled room 1408 in the Dolphin Hotel in New York City, settles in, and soon confronts genuine terror.",
+            rating: 8.0,
+            audienceRating: 6.1,
+            viewCount: 1,
+            lastViewedAt: 1563149090,
+            year: 2007,
+            tagline:
+              "The Dolphin Hotel invites you to stay in any of its stunning rooms. Except one.",
+            thumb: "/library/metadata/23922/thumb/1721967895",
+            art: "/library/metadata/23922/art/1721967895",
+            duration: 6746516,
+            originallyAvailableAt: "2007-06-22",
+            addedAt: 1575713145,
+            updatedAt: 1721967895,
+            audienceRatingImage: "rottentomatoes://image.rating.upright",
+            chapterSource: "media",
+            ratingImage: "rottentomatoes://image.rating.ripe",
+            Media: [
+              {
+                id: 25705,
+                duration: 6746516,
+                bitrate: 17466,
+                width: 1920,
+                height: 800,
+                aspectRatio: 2.35,
+                audioChannels: 6,
+                audioCodec: "dca",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                audioProfile: "dts",
+                videoProfile: "high",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 41711,
+                    key: "/library/parts/41711/1563893631/file.mkv",
+                    duration: 6746516,
+                    file: "/Movies/1408 (2007)/1408.2007.Directors.Cut.Hybrid.1080p.BluRay.DTS.x264-VietHD.mkv",
+                    size: 14732413639,
+                    audioProfile: "dts",
+                    container: "mkv",
+                    hasThumbnail: "1",
+                    indexes: "sd",
+                    videoProfile: "high"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "1408",
+                type: "coverPoster",
+                url: "/library/metadata/23922/thumb/1721967895"
+              },
+              {
+                alt: "1408",
+                type: "background",
+                url: "/library/metadata/23922/art/1721967895"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4b1e0f",
+              topRight: "4b1b0b",
+              bottomRight: "602313",
+              bottomLeft: "89381e"
+            },
+            Genre: [
+              {
+                tag: "Horror"
+              },
+              {
+                tag: "Fantasy"
+              }
+            ],
+            Country: [
+              {
+                tag: "United States of America"
+              }
+            ],
+            Director: [
+              {
+                tag: "Mikael Håfström"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Matt Greenberg"
+              },
+              {
+                tag: "Scott Alexander"
+              }
+            ],
+            Role: [
+              {
+                tag: "John Cusack"
+              },
+              {
+                tag: "Samuel L. Jackson"
+              },
+              {
+                tag: "Mary McCormack"
               }
             ]
           }

@@ -121,11 +121,22 @@ get:
                           type: array
                           items:
                             type: object
+                            required:
+                              - type
                             properties:
                               key:
                                 type: string
                               type:
                                 type: string
+                              flavor:
+                                type: string
+                                example: "global"
+                              scrobbleKey:
+                                type: string
+                                example: "/:/scrobble/new"
+                              unscrobbleKey:
+                                type: string
+                                example: "/:/unscrobble/new"
                               Directory:
                                 type: array
                                 items:
@@ -174,6 +185,21 @@ get:
                                             type: string
                                           symbol:
                                             type: string
+                              Action:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - id
+                                    - key
+                                  properties:
+                                    id:
+                                      type: string
+                                      example: "addToContinueWatching"
+                                    key:
+                                      type: string
+                                      example: "/actions/addToContinueWatching"
+
     "400":
       $ref: "../../../responses/400.yaml"
     "401":

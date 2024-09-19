@@ -176,7 +176,6 @@ get:
                         - duration
                         - Media
                         - UltraBlurColors
-                        - Image
                       properties:
                         ratingKey:
                           type: string
@@ -196,6 +195,9 @@ get:
                         title:
                           type: string
                           example: "Avatar: The Way of Water"
+                        slug:
+                          type: string
+                          example: "4-for-texas"
                         contentRating:
                           type: string
                           example: PG-13
@@ -320,6 +322,9 @@ get:
                               aspectRatio:
                                 type: number
                                 example: 1.85
+                              audioProfile:
+                                type: string
+                                example: "dts"
                               audioChannels:
                                 type: integer
                                 format: int32
@@ -382,12 +387,17 @@ get:
                                       description: |
                                         The container format of the media file.
                                       example: mkv
+                                    audioProfile:
+                                      type: string
+                                      example: "dts"
                                     videoProfile:
                                       type: string
                                       example: main 10
                                     indexes:
                                       type: string
                                       example: sd
+                                    hasThumbnail:
+                                      $ref: "../../../models/common/PlexBooleanString.yaml"
 
                         Genre:
                           type: array
@@ -421,6 +431,14 @@ get:
                               tag:
                                 type: string
                                 example: James Cameron
+                        Collection:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              tag:
+                                type: string
+                                example: Working NL Subs
                         Role:
                           type: array
                           items:
@@ -483,6 +501,7 @@ get:
                                   - coverPoster
                                   - background
                                   - snapshot
+                                  - clearLogo
                                 example: "background"
                               url:
                                 type: string
@@ -628,9 +647,13 @@ get:
                                   default:
                                     type: string
                                     example: "asc"
+                                  active:
+                                    type: boolean
+                                    example: false
+                                  activeDirection:
+                                    $ref: "../../../models/common/PlexSortDirection.yaml"
                                   defaultDirection:
-                                    type: string
-                                    example: "asc"
+                                    $ref: "../../../models/common/PlexSortDirection.yaml"
                                   descKey:
                                     type: string
                                     example: "titleSort:desc"
