@@ -534,7 +534,7 @@ describe("GET /library/sections", () => {
   })
 
   it("should validate the 200 response with includeGuids and includeMeta queryParam when the API spec is valid", () => {
-    // {{baseUrl}}/library/sections/1/all?includeGuids=1&includeMeta=1&X-Plex-Container-Start=1&X-Plex-Container-Size=5
+    // {{baseUrl}}/library/sections/1/all?type=2&includeGuids=1&includeMeta=1&X-Plex-Container-Start=1&X-Plex-Container-Size=5
     const response = {
       MediaContainer: {
         size: 5,
@@ -1599,6 +1599,1202 @@ describe("GET /library/sections", () => {
               },
               {
                 tag: "Brendan Gleeson"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+    validateResponseSpec(
+      "/library/sections/{sectionKey}/{tag}",
+      "get",
+      200,
+      response
+    )
+  })
+
+  it("should validate the 200 response with type 4 and includeGuids queryParam when the API spec is valid", () => {
+    // {{baseUrl}}/library/sections/1/all?type=4&includeGuids=1&includeMeta=1&X-Plex-Container-Start=1&X-Plex-Container-Size=5
+    const response = {
+      MediaContainer: {
+        size: 10,
+        totalSize: 3438,
+        offset: 0,
+        allowSync: true,
+        art: "/:/resources/show-fanart.jpg",
+        content: "secondary",
+        identifier: "com.plexapp.plugins.library",
+        librarySectionID: 2,
+        librarySectionTitle: "TV Series ",
+        librarySectionUUID: "c33ef369-636a-4ad7-b5a7-6e384aa87a14",
+        mediaTagPrefix: "/system/bundle/media/flags/",
+        mediaTagVersion: 1726069332,
+        nocache: true,
+        thumb: "/:/resources/show.png",
+        title1: "TV Series ",
+        title2: "All Shows",
+        viewGroup: "show",
+        Metadata: [
+          {
+            ratingKey: "45522",
+            key: "/library/metadata/45522",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5f68d2a93109960041ef8aed",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 1",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード１",
+            contentRating: "TV-MA",
+            summary:
+              "Arisu and his friends run into a public bathroom to hide from the police, but when they reemerge, the streets of Tokyo are suddenly completely empty.",
+            index: 1,
+            parentIndex: 1,
+            audienceRating: 6.9,
+            viewCount: 1,
+            lastViewedAt: 1633889060,
+            year: 2020,
+            thumb: "/library/metadata/45522/thumb/1633811171",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 2911520,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811171,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49519,
+                duration: 2911520,
+                bitrate: 11961,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78862,
+                    key: "/library/parts/78862/1644697576/file.mkv",
+                    duration: 2911520,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E01 - Episode 1 WEBDL-2160p.mkv",
+                    size: 4354485068,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 1",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 1",
+                type: "snapshot",
+                url: "/library/metadata/45522/thumb/1633811171"
+              },
+              {
+                alt: "Episode 1",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "11333b",
+              topRight: "0a232d",
+              bottomRight: "073958",
+              bottomLeft: "1f5066"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13015952"
+              },
+              {
+                id: "tmdb://2434012"
+              },
+              {
+                id: "tvdb://7945991"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ]
+          },
+          {
+            ratingKey: "45530",
+            key: "/library/metadata/45530",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977a559365b002fe74016",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 2",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード２",
+            contentRating: "TV-MA",
+            summary:
+              "Leaving an injured Chota, Arisu and Karube head out to gain more experience. They come to a sprawling apartment, where a deadly game of tag awaits.",
+            index: 2,
+            parentIndex: 1,
+            audienceRating: 7.6,
+            viewCount: 1,
+            lastViewedAt: 1633892225,
+            year: 2020,
+            thumb: "/library/metadata/45530/thumb/1633811716",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 3039776,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811716,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49521,
+                duration: 3039776,
+                bitrate: 12046,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78864,
+                    key: "/library/parts/78864/1644721302/file.mkv",
+                    duration: 3039776,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E02 - Episode 2 WEBDL-2160p.mkv",
+                    size: 4578487305,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 2",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 2",
+                type: "snapshot",
+                url: "/library/metadata/45530/thumb/1633811716"
+              },
+              {
+                alt: "Episode 2",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "113337",
+              topRight: "184149",
+              bottomRight: "12343c",
+              bottomLeft: "0e4751"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618826"
+              },
+              {
+                id: "tmdb://2552012"
+              },
+              {
+                id: "tvdb://8073634"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Kanon Hanakage"
+              },
+              {
+                tag: "Chigusa Yasuzawa"
+              },
+              {
+                tag: "Riku Matsuda"
+              }
+            ]
+          },
+          {
+            ratingKey: "45523",
+            key: "/library/metadata/45523",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977a759365b002fe7402e",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 3",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード３",
+            contentRating: "TV-MA",
+            summary:
+              "With Chota and Shibuki’s visas fast expiring, the four enter a vast botanical garden in Shinjuku, where they take part in a cruel game of betrayal.",
+            index: 3,
+            parentIndex: 1,
+            audienceRating: 7.6,
+            viewCount: 1,
+            lastViewedAt: 1643663885,
+            year: 2020,
+            thumb: "/library/metadata/45523/thumb/1633811541",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 2549024,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811541,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49520,
+                duration: 2549024,
+                bitrate: 11992,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78863,
+                    key: "/library/parts/78863/1644721444/file.mkv",
+                    duration: 2549024,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E03 - Episode 3 WEBDL-2160p.mkv",
+                    size: 3821961043,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 3",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 3",
+                type: "snapshot",
+                url: "/library/metadata/45523/thumb/1633811541"
+              },
+              {
+                alt: "Episode 3",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "043344",
+              topRight: "031b1a",
+              bottomRight: "8f4524",
+              bottomLeft: "174453"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618828"
+              },
+              {
+                id: "tmdb://2552013"
+              },
+              {
+                id: "tvdb://8073638"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Yuya Matsuura"
+              },
+              {
+                tag: "Chizuko Akiba"
+              },
+              {
+                tag: "Tetsuya Nakanishi"
+              }
+            ]
+          },
+          {
+            ratingKey: "45531",
+            key: "/library/metadata/45531",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977a859365b002fe74031",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 4",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード４",
+            contentRating: "TV-MA",
+            summary:
+              "Arisu is overwhelmed with guilt and ready to give up, but Usagi urges him to keep going. Next up is a game of endurance in an underground highway.",
+            index: 4,
+            parentIndex: 1,
+            audienceRating: 7.2,
+            year: 2020,
+            thumb: "/library/metadata/45531/thumb/1633811716",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 2829344,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811716,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49522,
+                duration: 2829344,
+                bitrate: 12036,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78865,
+                    key: "/library/parts/78865/1644698196/file.mkv",
+                    duration: 2829344,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E04 - Episode 4 WEBDL-2160p.mkv",
+                    size: 4257792611,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 4",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 4",
+                type: "snapshot",
+                url: "/library/metadata/45531/thumb/1633811716"
+              },
+              {
+                alt: "Episode 4",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0c3435",
+              topRight: "7c531b",
+              bottomRight: "24280d",
+              bottomLeft: "275e58"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618830"
+              },
+              {
+                id: "tmdb://2552014"
+              },
+              {
+                id: "tvdb://8073641"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Kazuma Sano"
+              },
+              {
+                tag: "Kazuma Yamane"
+              },
+              {
+                tag: "Yusuke Hirayama"
+              }
+            ]
+          },
+          {
+            ratingKey: "45524",
+            key: "/library/metadata/45524",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977a859365b002fe74034",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 5",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード５",
+            contentRating: "TV-MA",
+            summary:
+              "After Arisu and Usagi find their way to the Beach, the king of the so-called utopian haven forces them to help gather the remaining playing cards.",
+            index: 5,
+            parentIndex: 1,
+            audienceRating: 6.7,
+            year: 2020,
+            thumb: "/library/metadata/45524/thumb/1644710590",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 3101600,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811541,
+            updatedAt: 1644710590,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49512,
+                duration: 3101600,
+                bitrate: 11733,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78855,
+                    key: "/library/parts/78855/1644697248/file.mkv",
+                    duration: 3101600,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E05 - Episode 5 WEBDL-2160p.mkv",
+                    size: 4550234744,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 5",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 5",
+                type: "snapshot",
+                url: "/library/metadata/45524/thumb/1644710590"
+              },
+              {
+                alt: "Episode 5",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "3f1a10",
+              topRight: "5b2817",
+              bottomRight: "54271a",
+              bottomLeft: "161313"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618832"
+              },
+              {
+                id: "tmdb://2552015"
+              },
+              {
+                id: "tvdb://8073643"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Natsumi Eto"
+              },
+              {
+                tag: "Masato Ijiri"
+              },
+              {
+                tag: "Yua Fuwari"
+              }
+            ]
+          },
+          {
+            ratingKey: "45525",
+            key: "/library/metadata/45525",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977a859365b002fe74035",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 6",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード６",
+            contentRating: "TV-MA",
+            summary:
+              "Chishiya recruits Arisu and Usagi to help him change the status quo. An unforeseen event rocks the fragile power dynamics of the Beach.",
+            index: 6,
+            parentIndex: 1,
+            audienceRating: 7.3,
+            year: 2020,
+            thumb: "/library/metadata/45525/thumb/1633811541",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 2492960,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811541,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49523,
+                duration: 2492960,
+                bitrate: 11946,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78866,
+                    key: "/library/parts/78866/1644698881/file.mkv",
+                    duration: 2492960,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E06 - Episode 6 WEBDL-2160p.mkv",
+                    size: 3723808490,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 6",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 6",
+                type: "snapshot",
+                url: "/library/metadata/45525/thumb/1633811541"
+              },
+              {
+                alt: "Episode 6",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "093242",
+              topRight: "045474",
+              bottomRight: "2b6776",
+              bottomLeft: "2c6679"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618834"
+              },
+              {
+                id: "tmdb://2552016"
+              },
+              {
+                id: "tvdb://8073645"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Daisuke Suzuki"
+              },
+              {
+                tag: "Haro Aso"
+              },
+              {
+                tag: "Takumi Iwasaka"
+              }
+            ]
+          },
+          {
+            ratingKey: "45539",
+            key: "/library/metadata/45539",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977a959365b002fe74039",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 7",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード７",
+            contentRating: "TV-MA",
+            summary:
+              "Once a safe haven, the Beach becomes the arena for the next stage, where an epic witch hunt turns everyone against each other in a hostile showdown.",
+            index: 7,
+            parentIndex: 1,
+            audienceRating: 7.7,
+            year: 2020,
+            thumb: "/library/metadata/45539/thumb/1633812575",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 2893472,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633812575,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49524,
+                duration: 2893472,
+                bitrate: 12077,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78867,
+                    key: "/library/parts/78867/1644698863/file.mkv",
+                    duration: 2893472,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E07 - Episode 7 WEBDL-2160p.mkv",
+                    size: 4369277863,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 7",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 7",
+                type: "snapshot",
+                url: "/library/metadata/45539/thumb/1633812575"
+              },
+              {
+                alt: "Episode 7",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4a1f17",
+              topRight: "7e3f15",
+              bottomRight: "7c2b07",
+              bottomLeft: "8a4422"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618836"
+              },
+              {
+                id: "tmdb://2552017"
+              },
+              {
+                id: "tvdb://8073647"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Shohei Abe"
+              },
+              {
+                tag: "Kosuke Kubota"
+              },
+              {
+                tag: "Yukina Fukushima"
+              }
+            ]
+          },
+          {
+            ratingKey: "45526",
+            key: "/library/metadata/45526",
+            parentRatingKey: "45521",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/5fc977aa59365b002fe7403b",
+            parentGuid: "plex://season/602e7872c47d69002c8ce7b3",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 8",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/45521",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 1",
+            originalTitle: "エピソード８",
+            contentRating: "TV-MA",
+            summary:
+              "Tensions inside the resort reach a boiling point. As the game clock nears zero, those who’ve survived the onslaught now face an uncertain future.",
+            index: 8,
+            parentIndex: 1,
+            audienceRating: 8.4,
+            year: 2020,
+            thumb: "/library/metadata/45526/thumb/1633811541",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/45521/thumb/1644710589",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 3175712,
+            originallyAvailableAt: "2020-12-10",
+            addedAt: 1633811541,
+            audienceRatingImage: "themoviedb://image.rating",
+            Media: [
+              {
+                id: 49516,
+                duration: 3175712,
+                bitrate: 11974,
+                width: 3840,
+                height: 2160,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "hevc",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main 10",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 78859,
+                    key: "/library/parts/78859/1644697257/file.mkv",
+                    duration: 3175712,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 01/Alice in Borderland (2020) - S01E08 - Episode 8 WEBDL-2160p.mkv",
+                    size: 4754593020,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main 10"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 8",
+                type: "coverPoster",
+                url: "/library/metadata/45521/thumb/1644710589"
+              },
+              {
+                alt: "Episode 8",
+                type: "snapshot",
+                url: "/library/metadata/45526/thumb/1633811541"
+              },
+              {
+                alt: "Episode 8",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "402809",
+              topRight: "704817",
+              bottomRight: "764e11",
+              bottomLeft: "481f0b"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13618838"
+              },
+              {
+                id: "tmdb://2552018"
+              },
+              {
+                id: "tvdb://8073649"
+              }
+            ],
+            Director: [
+              {
+                tag: "Shinsuke Sato"
+              }
+            ],
+            Writer: [
+              {
+                tag: "Yoshiki Watabe"
+              },
+              {
+                tag: "Yasuko Kuramitsu"
+              }
+            ],
+            Role: [
+              {
+                tag: "Kina Yazaki"
+              },
+              {
+                tag: "Kento Shibuya"
+              },
+              {
+                tag: "Takashi Kitadai"
+              }
+            ]
+          },
+          {
+            ratingKey: "48049",
+            key: "/library/metadata/48049",
+            parentRatingKey: "48047",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/6332ef1e8848240ba522f9df",
+            parentGuid: "plex://season/618b89208dde18df707ad15c",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 1",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/48047",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 2",
+            originalTitle: "Alice in Borderland (2020)",
+            contentRating: "TV-MA",
+            summary:
+              "Arisu, Usagi, Kuina and Chishiya have been waiting for over an hour in Shibuya crossing for the next stage to start, but nothing seems to be happening.",
+            index: 1,
+            parentIndex: 2,
+            audienceRating: 9.2,
+            year: 2020,
+            thumb: "/library/metadata/48049/thumb/1672202197",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/48047/thumb/1671800243",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 2915744,
+            originallyAvailableAt: "2022-12-22",
+            addedAt: 1671801218,
+            updatedAt: 1672202197,
+            audienceRatingImage: "themoviedb://image.rating",
+            chapterSource: "media",
+            Media: [
+              {
+                id: 51375,
+                duration: 2915744,
+                bitrate: 6109,
+                width: 1920,
+                height: 1080,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 80750,
+                    key: "/library/parts/80750/1671790200/file.mkv",
+                    duration: 2915744,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 02/Alice in Borderland (2020) - S02E01 - Episode 1 WEBDL-1080p.mkv",
+                    size: 2227846737,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 1",
+                type: "coverPoster",
+                url: "/library/metadata/48047/thumb/1671800243"
+              },
+              {
+                alt: "Episode 1",
+                type: "snapshot",
+                url: "/library/metadata/48049/thumb/1672202197"
+              },
+              {
+                alt: "Episode 1",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "1a1d1a",
+              topRight: "030403",
+              bottomRight: "90423a",
+              bottomLeft: "0f2c39"
+            },
+            Guid: [
+              {
+                id: "imdb://tt13702212"
+              },
+              {
+                id: "tmdb://3975867"
+              },
+              {
+                id: "tvdb://8830735"
+              }
+            ]
+          },
+          {
+            ratingKey: "48050",
+            key: "/library/metadata/48050",
+            parentRatingKey: "48047",
+            grandparentRatingKey: "45520",
+            guid: "plex://episode/63853f646063789db0efe845",
+            parentGuid: "plex://season/618b89208dde18df707ad15c",
+            grandparentGuid: "plex://show/5e16253691c20300412003a8",
+            grandparentSlug: "alice-in-borderland-2020",
+            type: "episode",
+            title: "Episode 2",
+            grandparentKey: "/library/metadata/45520",
+            parentKey: "/library/metadata/48047",
+            grandparentTitle: "Alice in Borderland",
+            parentTitle: "Season 2",
+            originalTitle: "Alice in Borderland (2020)",
+            contentRating: "TV-MA",
+            summary:
+              "Now that the King of Clubs has revealed himself in his full glory, the game finally begins. Much to Arisu's surprise, things are going pretty well.",
+            index: 2,
+            parentIndex: 2,
+            audienceRating: 8.0,
+            year: 2020,
+            thumb: "/library/metadata/48050/thumb/1672202197",
+            art: "/library/metadata/45520/art/1724304813",
+            parentThumb: "/library/metadata/48047/thumb/1671800243",
+            grandparentThumb: "/library/metadata/45520/thumb/1724304813",
+            grandparentArt: "/library/metadata/45520/art/1724304813",
+            duration: 3616544,
+            originallyAvailableAt: "2022-12-22",
+            addedAt: 1671801219,
+            updatedAt: 1672202197,
+            audienceRatingImage: "themoviedb://image.rating",
+            chapterSource: "media",
+            Media: [
+              {
+                id: 51376,
+                duration: 3616544,
+                bitrate: 6188,
+                width: 1920,
+                height: 1080,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "eac3",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                videoProfile: "main",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 80751,
+                    key: "/library/parts/80751/1671790197/file.mkv",
+                    duration: 3616544,
+                    file: "/TV Shows/Alice in Borderland (2020)/Season 02/Alice in Borderland (2020) - S02E02 - Episode 2 WEBDL-1080p.mkv",
+                    size: 2799175661,
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "main"
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Episode 2",
+                type: "coverPoster",
+                url: "/library/metadata/48047/thumb/1671800243"
+              },
+              {
+                alt: "Episode 2",
+                type: "snapshot",
+                url: "/library/metadata/48050/thumb/1672202197"
+              },
+              {
+                alt: "Episode 2",
+                type: "background",
+                url: "/library/metadata/45520/art/1724304813"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "123240",
+              topRight: "91413e",
+              bottomRight: "753230",
+              bottomLeft: "91413d"
+            },
+            Guid: [
+              {
+                id: "imdb://tt22865046"
+              },
+              {
+                id: "tmdb://4110585"
+              },
+              {
+                id: "tvdb://9476213"
               }
             ]
           }

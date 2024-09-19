@@ -82,6 +82,7 @@ get:
                   - size
                   - totalSize
                   - offset
+                  - content
                   - allowSync
                   - art
                   - content
@@ -95,12 +96,27 @@ get:
                   - title1
                   - title2
                   - viewGroup
+                  - Metadata
                 properties:
                   size:
                     type: integer
                     format: int32
                     example: 70
+                  totalSize:
+                    type: integer
+                    format: int32
+                    example: 170
+                  offset:
+                    type: integer
+                    format: int32
+                    example: 0
+                  content:
+                    type: string
+                    example: secondary
                   allowSync:
+                    type: boolean
+                    example: true
+                  nocache:
                     type: boolean
                     example: true
                   art:
@@ -159,6 +175,8 @@ get:
                         - year
                         - duration
                         - Media
+                        - UltraBlurColors
+                        - Image
                       properties:
                         ratingKey:
                           type: string
@@ -250,6 +268,9 @@ get:
                         grandparentThumb:
                           type: string
                           example: /library/metadata/66/thumb/1705716261
+                        grandparentSlug:
+                          type: string
+                          example: alice-in-borderland-2020
                         grandparentArt:
                           type: string
                           example: /library/metadata/66/art/1705716261
@@ -260,6 +281,21 @@ get:
                           type: array
                           items:
                             type: object
+                            required:
+                              - id
+                              - duration
+                              - bitrate
+                              - width
+                              - height
+                              - aspectRatio
+                              - audioChannels
+                              - audioCodec
+                              - videoCodec
+                              - videoResolution
+                              - container
+                              - videoFrameRate
+                              - videoProfile
+                              - Part
                             properties:
                               id:
                                 type: integer
@@ -306,10 +342,21 @@ get:
                               videoProfile:
                                 type: string
                                 example: main 10
+                              hasVoiceActivity:
+                                type: boolean
+                                example: false
                               Part:
                                 type: array
                                 items:
                                   type: object
+                                  required:
+                                    - id
+                                    - key
+                                    - duration
+                                    - file
+                                    - size
+                                    - container
+                                    - videoProfile
                                   properties:
                                     id:
                                       type: integer
@@ -332,10 +379,16 @@ get:
                                       example: 36158371307
                                     container:
                                       type: string
+                                      description: |
+                                        The container format of the media file.
                                       example: mkv
                                     videoProfile:
                                       type: string
                                       example: main 10
+                                    indexes:
+                                      type: string
+                                      example: sd
+
                         Genre:
                           type: array
                           items:
@@ -392,6 +445,48 @@ get:
                                   Can be one of the following formats:
                                   imdb://tt13015952, tmdb://2434012, tvdb://7945991
                                 example: imdb://tt13015952
+                        UltraBlurColors:
+                          type: object
+                          required:
+                            - topLeft
+                            - topRight
+                            - bottomRight
+                            - bottomLeft
+                          properties:
+                            topLeft:
+                              type: string
+                              example: "11333b"
+                            topRight:
+                              type: string
+                              example: "0a232d"
+                            bottomRight:
+                              type: string
+                              example: "073958"
+                            bottomLeft:
+                              type: string
+                              example: "1f5066"
+                        Image:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - alt
+                              - type
+                              - url
+                            properties:
+                              alt:
+                                type: string
+                                example: "Episode 1"
+                              type:
+                                type: string
+                                enum:
+                                  - coverPoster
+                                  - background
+                                  - snapshot
+                                example: "background"
+                              url:
+                                type: string
+                                example: "/library/metadata/45521/thumb/1644710589"
                         titleSort:
                           type: string
                           example: Whale
