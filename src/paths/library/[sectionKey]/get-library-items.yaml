@@ -482,8 +482,6 @@ get:
                             - type
                             - title
                             - active
-                            - Filter
-                            - Sort
                           properties:
                             key:
                               type: string
