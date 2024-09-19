@@ -14,3 +14,9 @@ description: |
   3 = season
   4 = episode
   E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+x-speakeasy-enums:
+  - NONE
+  - MOVIE
+  - TV_SHOW
+  - SEASON
+  - EPISODE

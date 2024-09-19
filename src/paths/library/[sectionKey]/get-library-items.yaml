@@ -174,12 +174,16 @@ get:
                         - type
                         - year
                         - duration
+                        - addedAt
                         - Media
                         - UltraBlurColors
                       properties:
                         ratingKey:
                           type: string
                           example: "58683"
+                          description: |
+                            The rating key (Media ID) of this media item.
+                            Note: This is always an integer, but is represented as a string in the API.
                         key:
                           type: string
                           example: /library/metadata/58683
@@ -190,8 +194,7 @@ get:
                           type: string
                           example: 20th Century Studios
                         type:
-                          type: string
-                          example: movie
+                          $ref: "../../../models/common/PlexMediaTypeString.yaml"
                         title:
                           type: string
                           example: "Avatar: The Way of Water"
@@ -227,6 +230,9 @@ get:
                         art:
                           type: string
                           example: /library/metadata/58683/art/1703239236
+                        banner:
+                          type: string
+                          example: /library/metadata/58683/banner/1703239236
                         duration:
                           type: integer
                           format: int32
@@ -236,13 +242,9 @@ get:
                           format: date
                           example: 2022-12-14
                         addedAt:
-                          type: integer
-                          format: int32
-                          example: 1680457607
+                          $ref: "../../../models/common/PlexDateTime.yaml"
                         updatedAt:
-                          type: integer
-                          format: int32
-                          example: 1703239236
+                          $ref: "../../../models/common/PlexDateTime.yaml"
                         audienceRatingImage:
                           type: string
                           example: rottentomatoes://image.rating.upright
@@ -555,6 +557,8 @@ get:
                           example: "1"
                         parentRatingKey:
                           type: string
+                          description: |
+                            The rating key of the parent item.
                           example: "66"
                         parentGuid:
                           type: string
