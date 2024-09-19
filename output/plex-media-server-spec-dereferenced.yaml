@@ -29,6 +29,7 @@ servers:
 x-speakeasy-globals:
   parameters:
     - name: X-Plex-Client-Identifier
+      x-speakeasy-name-override: ClientID
       description: |
         The unique identifier for the client application
         This is used to track the client application and its usage
@@ -38,6 +39,34 @@ x-speakeasy-globals:
         type: string
         example: gcgzw5rz2xovp84b4vha3a40
       required: true
+    - name: X-Plex-Product
+      x-speakeasy-name-override: ClientName
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Plex Web
+    - name: X-Plex-Version
+      x-speakeasy-name-override: ClientVersion
+      in: query
+      required: false
+      schema:
+        type: string
+      example: 4.133.0
+    - name: X-Plex-Platform
+      x-speakeasy-name-override: ClientPlatform
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Chrome
+    - name: X-Plex-Device
+      x-speakeasy-name-override: DeviceName
+      in: query
+      required: false
+      schema:
+        type: string
+      example: Linux
 security:
   - accessToken: []
 components:
@@ -1685,9 +1714,9 @@ paths:
                     description: The time zone of the country.
                     example: America/St_Thomas
                   postal_code:
-                    type: integer
+                    type: string
                     description: The postal code of the location.
-                    example: 802
+                    example: '802'
                   in_privacy_restricted_country:
                     type: boolean
                     description: Indicates if the country has privacy restrictions.
@@ -3019,8 +3048,6 @@ paths:
             application/json:
               schema:
                 type: object
-                required:
-                  - MediaContainer
                 properties:
                   MediaContainer:
                     type: object
@@ -3028,7 +3055,6 @@ paths:
                       - size
                       - allowSync
                       - title1
-                      - Directory
                     properties:
                       size:
                         type: integer
@@ -3044,28 +3070,6 @@ paths:
                         type: array
                         items:
                           type: object
-                          required:
-                            - allowSync
-                            - art
-                            - composite
-                            - filters
-                            - refreshing
-                            - thumb
-                            - key
-                            - type
-                            - title
-                            - agent
-                            - scanner
-                            - language
-                            - uuid
-                            - updatedAt
-                            - createdAt
-                            - scannedAt
-                            - content
-                            - directory
-                            - contentChangedAt
-                            - hidden
-                            - Location
                           properties:
                             allowSync:
                               type: boolean
@@ -3110,19 +3114,19 @@ paths:
                               type:
                                 - integer
                               example: 1556281940
-                              description: Unix epoch datetime in seconds
+                              description: Unix epoch datetime
                               format: int64
                             createdAt:
                               type:
                                 - integer
                               example: 1556281940
-                              description: Unix epoch datetime in seconds
+                              description: Unix epoch datetime
                               format: int64
                             scannedAt:
                               type:
                                 - integer
                               example: 1556281940
-                              description: Unix epoch datetime in seconds
+                              description: Unix epoch datetime
                               format: int64
                             content:
                               type: boolean
@@ -3142,9 +3146,6 @@ paths:
                               type: array
                               items:
                                 type: object
-                                required:
-                                  - id
-                                  - path
                                 properties:
                                   id:
                                     type: integer
@@ -3887,30 +3888,22 @@ paths:
             Adds the Guids object to the response
           schema:
             type: integer
-            format: int32
             enum:
               - 0
               - 1
-            example: 1
-            default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
+          example: 1
+          required: false
         - name: includeMeta
           in: query
           description: |
             Adds the Meta object to the response
           schema:
             type: integer
-            format: int32
             enum:
               - 0
               - 1
-            example: 1
-            default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
+          example: 1
+          required: false
         - name: type
           in: query
           description: |
@@ -3928,11 +3921,6 @@ paths:
               - 3
               - 4
             example: 2
-            x-speakeasy-enums:
-              - MOVIE
-              - SHOW
-              - SEASON
-              - EPISODE
           required: true
         - name: X-Plex-Container-Start
           in: query
@@ -3977,23 +3965,6 @@ paths:
                 properties:
                   MediaContainer:
                     type: object
-                    required:
-                      - size
-                      - totalSize
-                      - offset
-                      - allowSync
-                      - art
-                      - content
-                      - identifier
-                      - librarySectionID
-                      - librarySectionTitle
-                      - librarySectionUUID
-                      - mediaTagPrefix
-                      - mediaTagVersion
-                      - thumb
-                      - title1
-                      - title2
-                      - viewGroup
                     properties:
                       size:
                         type: integer
@@ -4051,15 +4022,6 @@ paths:
                         type: array
                         items:
                           type: object
-                          required:
-                            - ratingKey
-                            - key
-                            - guid
-                            - title
-                            - type
-                            - year
-                            - duration
-                            - Media
                           properties:
                             ratingKey:
                               type: string
@@ -4272,22 +4234,6 @@ paths:
                                   tag:
                                     type: string
                                     example: Sigourney Weaver
-                            Guid:
-                              x-speakeasy-name-override: MediaGuid
-                              description: |
-                                The Guid object is only included in the response if the `includeGuids` parameter is set to `1`.
-                              type: array
-                              items:
-                                type: object
-                                required:
-                                  - id
-                                properties:
-                                  id:
-                                    type: string
-                                    description: |
-                                      Can be one of the following formats:
-                                      imdb://tt13015952, tmdb://2434012, tvdb://7945991
-                                    example: 'imdb://tt13015952'
                             titleSort:
                               type: string
                               example: Whale
@@ -4364,132 +4310,6 @@ paths:
                             parentTheme:
                               type: string
                               example: /library/metadata/66/theme/1705716261
-                      Meta:
-                        description: |
-                          The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
-                        type: object
-                        properties:
-                          Type:
-                            type: array
-                            items:
-                              type: object
-                              required:
-                                - key
-                                - type
-                                - title
-                                - active
-                              properties:
-                                key:
-                                  type: string
-                                  example: /library/sections/2/all?type=2
-                                type:
-                                  type: string
-                                  example: show
-                                title:
-                                  type: string
-                                  example: TV Shows
-                                active:
-                                  type: boolean
-                                  example: false
-                                Filter:
-                                  type: array
-                                  items:
-                                    type: object
-                                    required:
-                                      - filter
-                                      - filterType
-                                      - key
-                                      - title
-                                      - type
-                                    properties:
-                                      filter:
-                                        type: string
-                                        example: genre
-                                      filterType:
-                                        type: string
-                                        example: string
-                                      key:
-                                        type: string
-                                        example: /library/sections/2/genre?type=2
-                                      title:
-                                        type: string
-                                        example: Genre
-                                      type:
-                                        type: string
-                                        example: filter
-                                Sort:
-                                  type: array
-                                  items:
-                                    type: object
-                                    required:
-                                      - key
-                                      - title
-                                      - defaultDirection
-                                    properties:
-                                      default:
-                                        type: string
-                                        example: asc
-                                      defaultDirection:
-                                        type: string
-                                        example: asc
-                                      descKey:
-                                        type: string
-                                        example: 'titleSort:desc'
-                                      firstCharacterKey:
-                                        type: string
-                                        example: /library/sections/2/firstCharacter
-                                      key:
-                                        type: string
-                                        example: titleSort
-                                      title:
-                                        type: string
-                                        example: Title
-                                Field:
-                                  type: array
-                                  items:
-                                    type: object
-                                    required:
-                                      - key
-                                      - title
-                                      - type
-                                    properties:
-                                      key:
-                                        type: string
-                                        example: show.title
-                                      title:
-                                        type: string
-                                        example: Show Title
-                                      type:
-                                        type: string
-                                        example: string
-                                      subType:
-                                        type: string
-                                        example: rating
-                          FieldType:
-                            type: array
-                            items:
-                              type: object
-                              required:
-                                - type
-                                - Operator
-                              properties:
-                                type:
-                                  type: string
-                                  example: tag
-                                Operator:
-                                  type: array
-                                  items:
-                                    type: object
-                                    required:
-                                      - key
-                                      - title
-                                    properties:
-                                      key:
-                                        type: string
-                                        example: '='
-                                      title:
-                                        type: string
-                                        example: is
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
@@ -4676,11 +4496,6 @@ paths:
               - 3
               - 4
             example: 2
-            x-speakeasy-enums:
-              - MOVIE
-              - SHOW
-              - SEASON
-              - EPISODE
           required: true
       responses:
         '200':
@@ -6002,11 +5817,6 @@ paths:
               - 3
               - 4
             example: 2
-            x-speakeasy-enums:
-              - MOVIE
-              - SHOW
-              - SEASON
-              - EPISODE
           required: true
         - name: includeGuids
           in: query
@@ -6610,6 +6420,17 @@ paths:
       description: Get Plex server access tokens and server connections
       operationId: get-server-resources
       parameters:
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
         - name: includeHttps
           in: query
           description: Include Https entries in the results
@@ -6621,9 +6442,6 @@ paths:
               - 1
             example: 1
             default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
         - name: includeRelay
           in: query
           description: |
@@ -6637,9 +6455,6 @@ paths:
               - 1
             example: 1
             default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
         - name: includeIPv6
           in: query
           description: Include IPv6 entries in the results
@@ -6651,9 +6466,6 @@ paths:
               - 1
             example: 1
             default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -6711,17 +6523,11 @@ paths:
                     clientIdentifier:
                       type: string
                     createdAt:
-                      allOf:
-                        - type: string
-                          format: date-time
-                          example: '2019-06-24T11:38:02Z'
-                        - description: The time the device was created/registered
+                      type: string
+                      format: date-time
                     lastSeenAt:
-                      allOf:
-                        - type: string
-                          format: date-time
-                          example: '2019-06-24T11:38:02Z'
-                        - description: The last time the device was seen
+                      type: string
+                      format: date-time
                     provides:
                       type: string
                     ownerId:
@@ -6769,29 +6575,18 @@ paths:
                           - IPv6
                         properties:
                           protocol:
-                            description: 'The protocol used for the connection (http, https, etc)'
                             type: string
-                            enum:
-                              - http
-                              - https
                           address:
-                            description: The (ip) address or domain name used for the connection
                             type: string
                           port:
-                            description: The port used for the connection
-                            type: integer
-                            format: int32
+                            type: number
                           uri:
-                            description: The full URI of the connection
                             type: string
                           local:
-                            description: If the connection is local address
                             type: boolean
                           relay:
-                            description: If the connection is relayed through plex.direct
                             type: boolean
                           IPv6:
-                            description: If the connection is using IPv6
                             type: boolean
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
@@ -7296,7 +7091,7 @@ paths:
         - Plex
       summary: Get a Pin
       operationId: getPin
-      description: Retrieve a Pin from Plex.tv for authentication flows
+      description: Retrieve a Pin ID from Plex.tv to use for authentication flows
       security: []
       parameters:
         - name: strong
@@ -7309,14 +7104,47 @@ paths:
             type: boolean
             default: false
           required: false
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
         - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
           in: query
           required: false
           schema:
             type: string
           example: Plex Web
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceName
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Linux
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          in: query
+          required: false
+          schema:
+            type: string
+          example: 4.133.0
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: ClientPlatform
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Chrome
       responses:
-        '200':
+        '201':
           description: Requests a new pin id used in the authentication flow
           content:
             application/json:
@@ -7392,7 +7220,7 @@ paths:
                     example: 7RQZ
                   product:
                     type: string
-                    example: '0'
+                    example: Tautulli
                   trusted:
                     type: boolean
                     default: false
@@ -7402,6 +7230,7 @@ paths:
                   clientIdentifier:
                     type: string
                     description: The X-Client-Identifier used in the request
+                    example: Tautulli
                   location:
                     title: GeoData
                     type: object
@@ -7457,9 +7286,9 @@ paths:
                         description: The time zone of the country.
                         example: America/St_Thomas
                       postal_code:
-                        type: integer
+                        type: string
                         description: The postal code of the location.
-                        example: 802
+                        example: '802'
                       in_privacy_restricted_country:
                         type: boolean
                         description: Indicates if the country has privacy restrictions.
@@ -7492,7 +7321,10 @@ paths:
                     format: date-time
                     example: '2024-07-16T17:18:05Z'
                   authToken:
-                    type: 'null'
+                    type:
+                      - string
+                      - 'null'
+                    example: gcgzw5rz2xovp84b4vha3a40
                   newRegistration:
                     type: 'null'
         '400':
@@ -7529,6 +7361,17 @@ paths:
       description: Retrieve an Access Token from Plex.tv after the Pin has been authenticated
       operationId: getTokenByPinId
       parameters:
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
         - name: pinID
           description: The PinID to retrieve an access token for
           in: path
@@ -7612,7 +7455,7 @@ paths:
                     example: 7RQZ
                   product:
                     type: string
-                    example: '0'
+                    example: Tautulli
                   trusted:
                     type: boolean
                     default: false
@@ -7622,6 +7465,7 @@ paths:
                   clientIdentifier:
                     type: string
                     description: The X-Client-Identifier used in the request
+                    example: Tautulli
                   location:
                     title: GeoData
                     type: object
@@ -7677,9 +7521,9 @@ paths:
                         description: The time zone of the country.
                         example: America/St_Thomas
                       postal_code:
-                        type: integer
+                        type: string
                         description: The postal code of the location.
-                        example: 802
+                        example: '802'
                       in_privacy_restricted_country:
                         type: boolean
                         description: Indicates if the country has privacy restrictions.
@@ -7712,7 +7556,10 @@ paths:
                     format: date-time
                     example: '2024-07-16T17:18:05Z'
                   authToken:
-                    type: 'null'
+                    type:
+                      - string
+                      - 'null'
+                    example: gcgzw5rz2xovp84b4vha3a40
                   newRegistration:
                     type: 'null'
         '400':
@@ -8378,11 +8225,6 @@ paths:
               - 3
               - 4
             example: 2
-            x-speakeasy-enums:
-              - MOVIE
-              - SHOW
-              - SEASON
-              - EPISODE
           required: true
       responses:
         '200':
@@ -8938,6 +8780,14 @@ paths:
             enum:
               - 0
               - 1
+          required: true
+        - name: sectionID
+          description: 'Possibly the section ID to upload the playlist to, we are not certain.'
+          in: query
+          schema:
+            type: integer
+            example: 1
+            default: 1
           required: true
       responses:
         '200':
@@ -11701,7 +11551,7 @@ paths:
                     type:
                       - integer
                     example: 1556281940
-                    description: Unix epoch datetime in seconds
+                    description: Unix epoch datetime
                     format: int64
                   locale:
                     type:
@@ -11730,97 +11580,55 @@ paths:
                     title: UserProfile
                     type: object
                     required:
-                      - autoSelectAudio
                       - defaultAudioLanguage
                       - defaultSubtitleLanguage
-                      - autoSelectSubtitle
-                      - defaultSubtitleAccessibility
-                      - defaultSubtitleForced
-                      - watchedIndicator
-                      - mediaReviewsVisibility
                     properties:
                       autoSelectAudio:
-                        description: If the account has automatically select audio and subtitle tracks enabled
                         type: boolean
                         example: true
                         default: true
+                        description: If the account has automatically select audio and subtitle tracks enabled
                       defaultAudioLanguage:
-                        description: The preferred audio language for the account
                         type:
                           - string
                           - 'null'
                         example: ja
+                        description: The preferred audio language for the account
                       defaultSubtitleLanguage:
-                        description: The preferred subtitle language for the account
                         type:
                           - string
                           - 'null'
                         example: en
+                        description: The preferred subtitle language for the account
                       autoSelectSubtitle:
-                        allOf:
-                          - type: integer
-                            format: int32
-                            enum:
-                              - 0
-                              - 1
-                            example: 1
-                            default: 0
-                            x-speakeasy-enums:
-                              - DISABLE
-                              - ENABLE
-                          - description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+                        example: 1
+                        description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+                        enum:
+                          - 0
+                          - 1
                       defaultSubtitleAccessibility:
-                        allOf:
-                          - type: integer
-                            format: int32
-                            enum:
-                              - 0
-                              - 1
-                            example: 1
-                            default: 0
-                            x-speakeasy-enums:
-                              - DISABLE
-                              - ENABLE
-                          - description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only show non-SDH subtitles)'
+                        enum:
+                          - 0
+                          - 1
+                        example: 1
+                        description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)'
                       defaultSubtitleForced:
-                        allOf:
-                          - type: integer
-                            format: int32
-                            enum:
-                              - 0
-                              - 1
-                            example: 1
-                            default: 0
-                            x-speakeasy-enums:
-                              - DISABLE
-                              - ENABLE
-                          - description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
+                        enum:
+                          - 0
+                          - 1
+                        example: 0
+                        description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
                       watchedIndicator:
-                        allOf:
-                          - type: integer
-                            format: int32
-                            enum:
-                              - 0
-                              - 1
-                            example: 1
-                            default: 0
-                            x-speakeasy-enums:
-                              - DISABLE
-                              - ENABLE
-                          - description: Whether or not media watched indicators are enabled (little orange dot on media)
+                        enum:
+                          - 0
+                          - 1
+                        example: 1
                       mediaReviewsVisibility:
-                        allOf:
-                          - type: integer
-                            format: int32
-                            enum:
-                              - 0
-                              - 1
-                            example: 1
-                            default: 0
-                            x-speakeasy-enums:
-                              - DISABLE
-                              - ENABLE
-                          - description: Whether or not the account has media reviews visibility enabled
+                        enum:
+                          - 0
+                          - 1
+                        type: integer
+                        example: 0
                   protected:
                     type: boolean
                     description: If the account has a Plex Home PIN enabled
@@ -11829,7 +11637,7 @@ paths:
                     type:
                       - integer
                     example: 1556281940
-                    description: Unix epoch datetime in seconds
+                    description: Unix epoch datetime
                     format: int64
                   restricted:
                     type: boolean
@@ -12148,6 +11956,18 @@ paths:
       summary: Get User Sign In Data
       description: Sign in user with username and password and return user data with Plex authentication token
       operationId: post-users-sign-in-data
+      parameters:
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -12404,7 +12224,7 @@ paths:
                         type:
                           - integer
                         example: 1556281940
-                        description: Unix epoch datetime in seconds
+                        description: Unix epoch datetime
                         format: int64
                       locale:
                         type:
@@ -12433,97 +12253,55 @@ paths:
                         title: UserProfile
                         type: object
                         required:
-                          - autoSelectAudio
                           - defaultAudioLanguage
                           - defaultSubtitleLanguage
-                          - autoSelectSubtitle
-                          - defaultSubtitleAccessibility
-                          - defaultSubtitleForced
-                          - watchedIndicator
-                          - mediaReviewsVisibility
                         properties:
                           autoSelectAudio:
-                            description: If the account has automatically select audio and subtitle tracks enabled
                             type: boolean
                             example: true
                             default: true
+                            description: If the account has automatically select audio and subtitle tracks enabled
                           defaultAudioLanguage:
-                            description: The preferred audio language for the account
                             type:
                               - string
                               - 'null'
                             example: ja
+                            description: The preferred audio language for the account
                           defaultSubtitleLanguage:
-                            description: The preferred subtitle language for the account
                             type:
                               - string
                               - 'null'
                             example: en
+                            description: The preferred subtitle language for the account
                           autoSelectSubtitle:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+                            example: 1
+                            description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+                            enum:
+                              - 0
+                              - 1
                           defaultSubtitleAccessibility:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only show non-SDH subtitles)'
+                            enum:
+                              - 0
+                              - 1
+                            example: 1
+                            description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only shown non-SDH subtitles)'
                           defaultSubtitleForced:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
+                            enum:
+                              - 0
+                              - 1
+                            example: 0
+                            description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
                           watchedIndicator:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: Whether or not media watched indicators are enabled (little orange dot on media)
+                            enum:
+                              - 0
+                              - 1
+                            example: 1
                           mediaReviewsVisibility:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: Whether or not the account has media reviews visibility enabled
+                            enum:
+                              - 0
+                              - 1
+                            type: integer
+                            example: 0
                       protected:
                         type: boolean
                         description: If the account has a Plex Home PIN enabled
@@ -12532,7 +12310,7 @@ paths:
                         type:
                           - integer
                         example: 1556281940
-                        description: Unix epoch datetime in seconds
+                        description: Unix epoch datetime
                         format: int64
                       restricted:
                         type: boolean
@@ -12835,7 +12613,7 @@ paths:
                                 - type:
                                     - integer
                                   example: 1556281940
-                                  description: Unix epoch datetime in seconds
+                                  description: Unix epoch datetime
                                   format: int64
                                 - type: 'null'
                             endsAt:
@@ -12843,7 +12621,7 @@ paths:
                                 - type:
                                     - integer
                                   example: 1556281940
-                                  description: Unix epoch datetime in seconds
+                                  description: Unix epoch datetime
                                   format: int64
                                 - type: 'null'
                             canceled:
