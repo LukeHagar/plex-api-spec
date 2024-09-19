@@ -57,23 +57,13 @@ get:
       description: |
         Adds the Guids object to the response
       schema:
-        type: integer
-        enum:
-          - 0
-          - 1
-      example: 1
-      required: false
+        $ref: "../../../models/common/PlexBoolean.yaml"
     - name: includeMeta
       in: query
       description: |
         Adds the Meta object to the response
       schema:
-        type: integer
-        enum:
-          - 0
-          - 1
-      example: 1
-      required: false
+        $ref: "../../../models/common/PlexBoolean.yaml"
     - $ref: "../../../parameters/type.yaml"
     - $ref: "../../../parameters/container-start.yaml"
     - $ref: "../../../parameters/container-size.yaml"
@@ -88,6 +78,23 @@ get:
             properties:
               MediaContainer:
                 type: object
+                required:
+                  - size
+                  - totalSize
+                  - offset
+                  - allowSync
+                  - art
+                  - content
+                  - identifier
+                  - librarySectionID
+                  - librarySectionTitle
+                  - librarySectionUUID
+                  - mediaTagPrefix
+                  - mediaTagVersion
+                  - thumb
+                  - title1
+                  - title2
+                  - viewGroup
                 properties:
                   size:
                     type: integer
@@ -143,6 +150,15 @@ get:
                     type: array
                     items:
                       type: object
+                      required:
+                        - ratingKey
+                        - key
+                        - guid
+                        - title
+                        - type
+                        - year
+                        - duration
+                        - Media
                       properties:
                         ratingKey:
                           type: string
@@ -360,6 +376,22 @@ get:
                               tag:
                                 type: string
                                 example: Sigourney Weaver
+                        Guid:
+                          x-speakeasy-name-override: MediaGuid
+                          description: |
+                            The Guid object is only included in the response if the `includeGuids` parameter is set to `1`.
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - id
+                            properties:
+                              id:
+                                type: string
+                                description: |
+                                  Can be one of the following formats:
+                                  imdb://tt13015952, tmdb://2434012, tvdb://7945991
+                                example: imdb://tt13015952
                         titleSort:
                           type: string
                           example: Whale
@@ -436,6 +468,133 @@ get:
                         parentTheme:
                           type: string
                           example: /library/metadata/66/theme/1705716261
+                  Meta:
+                    description: |
+                      The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
+                    type: object
+                    properties:
+                      Type:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - key
+                            - type
+                            - title
+                            - active
+                          properties:
+                            key:
+                              type: string
+                              example: "/library/sections/2/all?type=2"
+                            type:
+                              type: string
+                              example: "show"
+                            title:
+                              type: string
+                              example: "TV Shows"
+                            active:
+                              type: boolean
+                              example: false
+                            Filter:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - filter
+                                  - filterType
+                                  - key
+                                  - title
+                                  - type
+                                properties:
+                                  filter:
+                                    type: string
+                                    example: "genre"
+                                  filterType:
+                                    type: string
+                                    example: "string"
+                                  key:
+                                    type: string
+                                    example: "/library/sections/2/genre?type=2"
+                                  title:
+                                    type: string
+                                    example: "Genre"
+                                  type:
+                                    type: string
+                                    example: "filter"
+                            Sort:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - key
+                                  - title
+                                  - defaultDirection
+                                properties:
+                                  default:
+                                    type: string
+                                    example: "asc"
+                                  defaultDirection:
+                                    type: string
+                                    example: "asc"
+                                  descKey:
+                                    type: string
+                                    example: "titleSort:desc"
+                                  firstCharacterKey:
+                                    type: string
+                                    example: "/library/sections/2/firstCharacter"
+                                  key:
+                                    type: string
+                                    example: "titleSort"
+                                  title:
+                                    type: string
+                                    example: "Title"
+                            Field:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - key
+                                  - title
+                                  - type
+                                properties:
+                                  key:
+                                    type: string
+                                    example: "show.title"
+                                  title:
+                                    type: string
+                                    example: "Show Title"
+                                  type:
+                                    type: string
+                                    example: "string"
+                                  subType:
+                                    type: string
+                                    example: "rating"
+                      FieldType:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - type
+                            - Operator
+                          properties:
+                            type:
+                              type: string
+                              example: "tag"
+                            Operator:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - key
+                                  - title
+                                properties:
+                                  key:
+                                    type: string
+                                    example: "="
+                                  title:
+                                    type: string
+                                    example: "is"
+
     "400":
       $ref: "../../../responses/400.yaml"
     "401":

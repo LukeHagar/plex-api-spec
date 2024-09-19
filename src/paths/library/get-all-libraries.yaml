@@ -17,6 +17,8 @@ get:
         application/json:
           schema:
             type: object
+            required:
+              - MediaContainer
             properties:
               MediaContainer:
                 type: object
@@ -24,6 +26,7 @@ get:
                   - size
                   - allowSync
                   - title1
+                  - Directory
                 properties:
                   size:
                     type: integer
@@ -39,6 +42,28 @@ get:
                     type: array
                     items:
                       type: object
+                      required:
+                        - allowSync
+                        - art
+                        - composite
+                        - filters
+                        - refreshing
+                        - thumb
+                        - key
+                        - type
+                        - title
+                        - agent
+                        - scanner
+                        - language
+                        - uuid
+                        - updatedAt
+                        - createdAt
+                        - scannedAt
+                        - content
+                        - directory
+                        - contentChangedAt
+                        - hidden
+                        - Location
                       properties:
                         allowSync:
                           type: boolean
@@ -103,6 +128,9 @@ get:
                           type: array
                           items:
                             type: object
+                            required:
+                              - id
+                              - path
                             properties:
                               id:
                                 type: integer

@@ -7,7 +7,6 @@ get:
   description: Get Plex server access tokens and server connections
   operationId: get-server-resources
   parameters:
-    - $ref: "../../parameters/plex/x-plex-identifier.yaml"
     - name: includeHttps
       in: query
       description: Include Https entries in the results
