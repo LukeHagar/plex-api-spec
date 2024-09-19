@@ -128,6 +128,7 @@ required:
   - twoFactorEnabled
   - username
   - uuid
+  - attributionPartner
 properties:
   adsConsent:
     type:
@@ -329,3 +330,8 @@ properties:
     type: string
     description: The account UUID
     example: dae343c1f45beb4f
+  attributionPartner:
+    type:
+      - string
+      - "null"
+    example: null
