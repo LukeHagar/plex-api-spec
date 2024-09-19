@@ -9,7 +9,7 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:327e4a83099f910e042784ecc571fcbc4c9a6d8ba169b4ba181afb890a9936cc
+        sourceRevisionDigest: sha256:31e943dab53dd0133fcd12a24e04d511637bd7f37b78fd71efded53c650bf729
         sourceBlobDigest: sha256:a652fa39754f0c22a1454f628fe84983b34662ee8a153a3461d50b833f8bc5c2
         tags:
             - latest
