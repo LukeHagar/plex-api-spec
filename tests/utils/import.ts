@@ -38,7 +38,7 @@ export function validateResponseSpec(
     console.error(ajv.errors)
   }
 
-  expect(validate).toBe(true)
+  expect(ajv.errors).toBe(null)
 }
 
 /**
