@@ -64,7 +64,18 @@ get:
         Adds the Meta object to the response
       schema:
         $ref: "../../../models/common/PlexBoolean.yaml"
-    - $ref: "../../../parameters/type.yaml"
+    - name: type
+      in: query
+      description: |
+        The type of media to retrieve.
+        1 = movie
+        2 = show
+        3 = season
+        4 = episode
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+      required: false
+      schema:
+        $ref: "../../../models/common/PlexMediaType.yaml"
     - $ref: "../../../parameters/container-start.yaml"
     - $ref: "../../../parameters/container-size.yaml"
     - $ref: "../../../parameters/accept-application-json.yaml"
@@ -172,11 +183,7 @@ get:
                         - guid
                         - title
                         - type
-                        - year
-                        - duration
                         - addedAt
-                        - Media
-                        - UltraBlurColors
                       properties:
                         ratingKey:
                           type: string
@@ -193,6 +200,9 @@ get:
                         studio:
                           type: string
                           example: 20th Century Studios
+                        skipChildren:
+                          type: boolean
+                          example: false
                         type:
                           $ref: "../../../models/common/PlexMediaTypeString.yaml"
                         title:
@@ -221,9 +231,37 @@ get:
                           type: integer
                           format: int32
                           example: 2022
+                        seasonCount:
+                          type: integer
+                          format: int32
+                          example: 2022
                         tagline:
                           type: string
                           example: Return to Pandora.
+                        flattenSeasons:
+                          $ref: "../../../models/common/PlexBooleanString.yaml"
+                        showOrdering:
+                          type: string
+                          description: |
+                            Setting that indicates the episode ordering for the show 
+                            None = Library default, 
+                            tmdbAiring = The Movie Database (Aired), 
+                            aired = TheTVDB (Aired), 
+                            dvd = TheTVDB (DVD), 
+                            absolute = TheTVDB (Absolute)).
+                          enum:
+                            - None
+                            - tmdbAiring
+                            - aired
+                            - dvd
+                            - absolute
+                          x-speakeasy-enums:
+                            - NONE
+                            - TMDB_AIRING
+                            - AIRED
+                            - DVD
+                            - ABSOLUTE
+                          example: dvd
                         thumb:
                           type: string
                           example: /library/metadata/58683/thumb/1703239236
@@ -282,6 +320,8 @@ get:
                           type: string
                           example: /library/metadata/66/theme/1705716261
                         Media:
+                          description: |
+                            The Media object is only included when type query is `4` or higher.
                           type: array
                           items:
                             type: object

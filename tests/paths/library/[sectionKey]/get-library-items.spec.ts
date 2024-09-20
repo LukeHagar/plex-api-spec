@@ -3456,4 +3456,1598 @@ describe("GET /library/sections", () => {
       response
     )
   })
+
+  it("should validate the 200 response with type 2 and with includeGuids and includeMeta queryParam when the API spec is valid", () => {
+    // {{baseUrl}}/library/sections/1/all?type=4&includeGuids=1&includeMeta=1&X-Plex-Container-Start=1&X-Plex-Container-Size=5
+    const response = {
+      MediaContainer: {
+        size: 26,
+        totalSize: 26,
+        offset: 0,
+        allowSync: true,
+        art: "/:/resources/show-fanart.jpg",
+        content: "secondary",
+        identifier: "com.plexapp.plugins.library",
+        librarySectionID: 3,
+        librarySectionTitle: "Anime",
+        librarySectionUUID: "96204dfc-eabd-4328-8186-8330fda0b888",
+        mediaTagPrefix: "/system/bundle/media/flags/",
+        mediaTagVersion: 1726069332,
+        nocache: true,
+        thumb: "/:/resources/show.png",
+        title1: "Anime",
+        title2: "All Shows",
+        viewGroup: "show",
+        Metadata: [
+          {
+            ratingKey: "28580",
+            key: "/library/metadata/28580/children",
+            guid: "com.plexapp.agents.thetvdb://88651?lang=en",
+            studio: "CTC (JA)",
+            type: "show",
+            title: "07-Ghost",
+            contentRating: "TV-PG",
+            summary:
+              "Set in a gothic fantasy world, this is the story of Teito Klein, an orphaned slave who became the top military academy student. However, an unexpected turn of events left him pursued by the forces of the Barsburg Empire. Now an escaping convict, Teito's sheltered by the church and it’s law of sanctuary. Here, he discovered many mysteries surrounding himself, the church, and the Empire itself. The fact that he might be connected to a dethroned king and the mystical stone of god, 'The Eye of Mikhael' made him the target of the empire more than ever. Fortunately the church is under the mythical 7 Ghost protection. But who are the Ghosts really. Will Teito be free from the military's clutch, And what of his said mission to uncover the history. And who is the military's Chief-of-Staff Ayanami exactly. Teito's future seems to have spiraled into an unexpectedly perilous path.",
+            index: 1,
+            rating: 6.9,
+            year: 2009,
+            thumb: "/library/metadata/28580/thumb/1640367138",
+            art: "/library/metadata/28580/art/1640367138",
+            banner: "/library/metadata/28580/banner/1640367138",
+            duration: 1500000,
+            originallyAvailableAt: "2009-04-06",
+            leafCount: 26,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1586886437,
+            updatedAt: 1640367138,
+            Image: [
+              {
+                alt: "07-Ghost",
+                type: "coverPoster",
+                url: "/library/metadata/28580/thumb/1640367138"
+              },
+              {
+                alt: "07-Ghost",
+                type: "background",
+                url: "/library/metadata/28580/art/1640367138"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "040404",
+              topRight: "903b67",
+              bottomRight: "18250e",
+              bottomLeft: "923f43"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Animation"
+              }
+            ],
+            Role: [
+              {
+                tag: "Mitsuki Saiga"
+              },
+              {
+                tag: "Shou Hayami"
+              },
+              {
+                tag: "Jun'ichi Suwabe"
+              }
+            ]
+          },
+          {
+            ratingKey: "57",
+            key: "/library/metadata/57/children",
+            guid: "com.plexapp.agents.thetvdb://267440?lang=en",
+            studio: "NHK",
+            type: "show",
+            title: "Attack on Titan",
+            contentRating: "TV-14",
+            summary:
+              "After his hometown is destroyed and his mother is killed, young Eren Yeager vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.",
+            index: 1,
+            rating: 2049.0,
+            viewCount: 95,
+            skipCount: 6,
+            lastViewedAt: 1723324718,
+            year: 2013,
+            thumb: "/library/metadata/57/thumb/1724061366",
+            art: "/library/metadata/57/art/1724061366",
+            banner: "/library/metadata/57/banner/1724061366",
+            theme: "/library/metadata/57/theme/1724061366",
+            duration: 1500000,
+            originallyAvailableAt: "2013-04-06",
+            leafCount: 99,
+            viewedLeafCount: 89,
+            childCount: 5,
+            seasonCount: 4,
+            addedAt: 1542821672,
+            updatedAt: 1724061366,
+            Image: [
+              {
+                alt: "Attack on Titan",
+                type: "coverPoster",
+                url: "/library/metadata/57/thumb/1724061366"
+              },
+              {
+                alt: "Attack on Titan",
+                type: "background",
+                url: "/library/metadata/57/art/1724061366"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4e1c05",
+              topRight: "4f1e0a",
+              bottomRight: "993c1a",
+              bottomLeft: "4b1709"
+            },
+            Genre: [
+              {
+                tag: "Horror"
+              },
+              {
+                tag: "Fantasy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Yuki Kaji"
+              },
+              {
+                tag: "Yui Ishikawa"
+              },
+              {
+                tag: "Marina Inoue"
+              }
+            ]
+          },
+          {
+            ratingKey: "3556",
+            key: "/library/metadata/3556/children",
+            guid: "com.plexapp.agents.thetvdb://78987?lang=en",
+            studio: "Tokyo Broadcasting System",
+            type: "show",
+            title: "Black Cat",
+            contentRating: "TV-14",
+            summary:
+              "A group of assasins are controled by Chronos. They all have a number on their neck. But number 13 which is Black Cat has the characteristics of a cat, because a witch cursed him. He is supposed to kill people but he also hates the thought of killing people.\r\nThe world is secretly controlled by a secret organizition, Chronos. Under the command of this mysterious organization, are the Chronos Numbers, a group of powerful assasins, taking orders to eliminate certain target secretly to keep the so-called `peace`. One of the most powerful is the Number XIII, Train Hartnett, or known as Black Cat. At first he seems to be a cruel killer, a meeting with a girl Sweeper changed him completely. Now as a Sweeper, Train travelled with his partner Sven Volfied to hunt down criminals.",
+            index: 1,
+            rating: 8.9,
+            year: 2005,
+            thumb: "/library/metadata/3556/thumb/1640367137",
+            art: "/library/metadata/3556/art/1640367137",
+            banner: "/library/metadata/3556/banner/1640367137",
+            duration: 1500000,
+            originallyAvailableAt: "2005-10-07",
+            leafCount: 24,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1552930790,
+            updatedAt: 1640367137,
+            Image: [
+              {
+                alt: "Black Cat",
+                type: "coverPoster",
+                url: "/library/metadata/3556/thumb/1640367137"
+              },
+              {
+                alt: "Black Cat",
+                type: "background",
+                url: "/library/metadata/3556/art/1640367137"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0c2f50",
+              topRight: "113858",
+              bottomRight: "3e57a8",
+              bottomLeft: "245284"
+            },
+            Genre: [
+              {
+                tag: "Crime"
+              },
+              {
+                tag: "Action"
+              }
+            ],
+            Role: [
+              {
+                tag: "Keiji Fujiwara"
+              },
+              {
+                tag: "Misato Fukuen"
+              },
+              {
+                tag: "Takashi Kondou"
+              }
+            ]
+          },
+          {
+            ratingKey: "1221",
+            key: "/library/metadata/1221/children",
+            guid: "com.plexapp.agents.thetvdb://79604?lang=en",
+            studio: "Tokyo MX",
+            type: "show",
+            title: "Black Lagoon",
+            contentRating: "TV-MA",
+            summary:
+              "Okajima Rokuro - now known almost exclusively as 'Rock' - was once a typical, put-upon Japanese businessman. Then, on a routine business trip, he was kidnapped and ransomed by the Lagoon Company: a band of mercenary pirates operating out of the crime-riddled city of Roanapur. Abandoned by his bosses, he joined the Lagoon Company. Now he must try and stay afloat amongst the ever-shifting politics of the criminal underworld, while simultaneously avoiding death at the hands of his quick-tempered, gun-toting co-worker, 'Two Hand' Revy. ",
+            index: 1,
+            rating: 8.0,
+            year: 2006,
+            thumb: "/library/metadata/1221/thumb/1640367168",
+            art: "/library/metadata/1221/art/1640367168",
+            banner: "/library/metadata/1221/banner/1640367168",
+            theme: "/library/metadata/1221/theme/1640367168",
+            duration: 1500000,
+            originallyAvailableAt: "2006-04-09",
+            leafCount: 29,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1552687240,
+            updatedAt: 1640367168,
+            Image: [
+              {
+                alt: "Black Lagoon",
+                type: "coverPoster",
+                url: "/library/metadata/1221/thumb/1640367168"
+              },
+              {
+                alt: "Black Lagoon",
+                type: "background",
+                url: "/library/metadata/1221/art/1640367168"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "162e4f",
+              topRight: "9c3631",
+              bottomRight: "1a4c96",
+              bottomLeft: "182b54"
+            },
+            Genre: [
+              {
+                tag: "Animation"
+              },
+              {
+                tag: "Adventure"
+              }
+            ],
+            Role: [
+              {
+                tag: "Jun Karasawa"
+              },
+              {
+                tag: "Daisuke Namikawa"
+              },
+              {
+                tag: "Megumi Toyoguchi"
+              }
+            ]
+          },
+          {
+            ratingKey: "5604",
+            key: "/library/metadata/5604/children",
+            guid: "com.plexapp.agents.thetvdb://74796?lang=en",
+            studio: "TV Tokyo",
+            type: "show",
+            title: "Bleach",
+            contentRating: "TV-MA",
+            summary:
+              "For as long as he can remember, Ichigo Kurosaki has been able to see ghosts. But when he meets Rukia, a Soul Reaper who battles evil spirits known as Hollows, he finds his life is changed forever when Rukia transfers most of her powers to him. Now a Soul Reaper himself with a newfound wealth of spiritual energy, Ichigo discovers his true calling: to protect the living and the dead from evil.",
+            index: 1,
+            rating: 7.9,
+            viewCount: 5,
+            skipCount: 1,
+            lastViewedAt: 1720283316,
+            year: 2004,
+            thumb: "/library/metadata/5604/thumb/1726582203",
+            art: "/library/metadata/5604/art/1726582203",
+            banner: "/library/metadata/5604/banner/1726582203",
+            theme: "/library/metadata/5604/theme/1726582203",
+            duration: 1500000,
+            originallyAvailableAt: "2004-10-04",
+            leafCount: 393,
+            viewedLeafCount: 2,
+            childCount: 18,
+            seasonCount: 17,
+            addedAt: 1553396573,
+            updatedAt: 1726582203,
+            Image: [
+              {
+                alt: "Bleach",
+                type: "coverPoster",
+                url: "/library/metadata/5604/thumb/1726582203"
+              },
+              {
+                alt: "Bleach",
+                type: "background",
+                url: "/library/metadata/5604/art/1726582203"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "00314c",
+              topRight: "770b37",
+              bottomRight: "360c19",
+              bottomLeft: "0b4a64"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Animation"
+              }
+            ],
+            Role: [
+              {
+                tag: "Masakazu Morita"
+              },
+              {
+                tag: "Fumiko Orikasa"
+              },
+              {
+                tag: "Yuki Matsuoka"
+              }
+            ]
+          },
+          {
+            ratingKey: "1733",
+            key: "/library/metadata/1733/children",
+            guid: "com.plexapp.agents.thetvdb://79995?lang=en",
+            studio: "Nippon TV",
+            type: "show",
+            title: "Claymore",
+            contentRating: "TV-MA",
+            summary:
+              "Based on a shounen manga by Yagi Norihiro serialised in Monthly Shounen Jump.\r\n\r\nThe setting of the story is a fictional world of abundant towns where humans coexist with demons called Yoma. These monsters feed on humans as their main source of food, hiding themselves in human society until they strike.\r\n\r\nA group of skilled warriors form a nameless organization to protect humans from these demons. These warriors are called Claymores, after their immense Claymore weapons. They willingly infuse themselves with demon flesh and blood to become powerful half-human hybrids. Villages in danger of attack hire warriors from the organisation for protection.\r\n\r\nThe story of Claymore follows the adventures of the beautiful Claymore warrior Claire, who fights demons and struggles to hold on to her humanity.\r\n\r\nLong ago, the Yoma, the shape changing demons, took human form to live in disguise among human society. They feed on human innards, and take possession of memories from the brains of people they eat. These acquired memories help them better disguise themselves within human society.\r\n\r\nIn recent years, a secret society discovers a way of implanting demon bodies and body parts into humans, to create hybrids more powerful than the original demons. A hybrid's standard abilities include faster healing, limited shape modification, the ability to detect other demons and hybrids, and overall enhanced physical prowess. Almost all hybrids are created against their will; they are typically survivors of families attacked by demons. The only exception is the lead character, who volunteered to become a hybrid to avenge her family. The society sends hybrids to towns that can afford their fares to kill demons, although not every hybrid does so willingly (this is implied in the manga.) The society is often strict and harsh; hybrids who break the rules risk being hunted down by their fellow hybrids.",
+            index: 1,
+            rating: 8.0,
+            viewCount: 21,
+            skipCount: 3,
+            lastViewedAt: 1564758734,
+            year: 2007,
+            thumb: "/library/metadata/1733/thumb/1640367193",
+            art: "/library/metadata/1733/art/1640367193",
+            banner: "/library/metadata/1733/banner/1640367193",
+            theme: "/library/metadata/1733/theme/1640367193",
+            duration: 1500000,
+            originallyAvailableAt: "2007-04-03",
+            leafCount: 26,
+            viewedLeafCount: 18,
+            childCount: 1,
+            addedAt: 1552727021,
+            updatedAt: 1640367193,
+            Image: [
+              {
+                alt: "Claymore",
+                type: "coverPoster",
+                url: "/library/metadata/1733/thumb/1640367193"
+              },
+              {
+                alt: "Claymore",
+                type: "background",
+                url: "/library/metadata/1733/art/1640367193"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0c0b0d",
+              topRight: "1a1716",
+              bottomRight: "3e3a39",
+              bottomLeft: "211f1f"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Animation"
+              }
+            ],
+            Role: [
+              {
+                tag: "Houko Kuwashima"
+              },
+              {
+                tag: "Motoki Takagi"
+              },
+              {
+                tag: "Ai Orikasa"
+              }
+            ]
+          },
+          {
+            ratingKey: "979",
+            key: "/library/metadata/979/children",
+            guid: "com.plexapp.agents.thetvdb://76885?lang=en",
+            studio: "TV Tokyo",
+            type: "show",
+            title: "Cowboy Bebop",
+            contentRating: "TV-MA",
+            summary:
+              'In the year 2071 humanity has colonized the entire Solar System through the use of "Phase Difference Space Gates". A catastrophic accident occurred during the development of the Gates, damaging both the Earth and the Moon, heavily irradiating the surface, and forcing most of mankind to evacuate to other planets of the Solar System.\r\n\r\nWherever humanity goes, so goes its criminal element, and thus the need for those who hunt criminals. The newly formed solar system police reinstated the bounty scheme of the Wild West. Cowboy Bebop is the story of the four inhabitants of the spaceship Bebop, and the living they barely make at bounty hunting.',
+            index: 1,
+            rating: 9.1,
+            year: 1998,
+            thumb: "/library/metadata/979/thumb/1640367200",
+            art: "/library/metadata/979/art/1640367200",
+            banner: "/library/metadata/979/banner/1640367200",
+            theme: "/library/metadata/979/theme/1640367200",
+            duration: 1500000,
+            originallyAvailableAt: "1998-04-03",
+            leafCount: 26,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1552685855,
+            updatedAt: 1640367200,
+            Image: [
+              {
+                alt: "Cowboy Bebop",
+                type: "coverPoster",
+                url: "/library/metadata/979/thumb/1640367200"
+              },
+              {
+                alt: "Cowboy Bebop",
+                type: "background",
+                url: "/library/metadata/979/art/1640367200"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "122d54",
+              topRight: "29529a",
+              bottomRight: "80521d",
+              bottomLeft: "92413f"
+            },
+            Genre: [
+              {
+                tag: "Science Fiction"
+              },
+              {
+                tag: "Adventure"
+              }
+            ],
+            Role: [
+              {
+                tag: "Kouichi Yamadera"
+              },
+              {
+                tag: "Unshou Ishizuka"
+              },
+              {
+                tag: "Megumi Hayashibara"
+              }
+            ]
+          },
+          {
+            ratingKey: "4269",
+            key: "/library/metadata/4269/children",
+            guid: "com.plexapp.agents.thetvdb://79481?lang=en",
+            studio: "Nippon TV",
+            type: "show",
+            title: "Death Note",
+            contentRating: "TV-MA",
+            summary:
+              "When a Japanese high schooler comes into possession of a mystical notebook, he finds he has the power to kill anybody whose name he enters in it.",
+            index: 1,
+            rating: 9.0,
+            year: 2006,
+            thumb: "/library/metadata/4269/thumb/1640367238",
+            art: "/library/metadata/4269/art/1640367238",
+            banner: "/library/metadata/4269/banner/1640367238",
+            theme: "/library/metadata/4269/theme/1640367238",
+            duration: 1320000,
+            originallyAvailableAt: "2006-10-04",
+            leafCount: 37,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1552931028,
+            updatedAt: 1640367238,
+            Image: [
+              {
+                alt: "Death Note",
+                type: "coverPoster",
+                url: "/library/metadata/4269/thumb/1640367238"
+              },
+              {
+                alt: "Death Note",
+                type: "background",
+                url: "/library/metadata/4269/art/1640367238"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4a2013",
+              topRight: "864e21",
+              bottomRight: "1c1717",
+              bottomLeft: "973a2f"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Drama"
+              }
+            ],
+            Role: [
+              {
+                tag: "Mamoru Miyano"
+              },
+              {
+                tag: "Nakamura Shidō II"
+              },
+              {
+                tag: "Masaya Matsukaze"
+              }
+            ]
+          },
+          {
+            ratingKey: "4386",
+            key: "/library/metadata/4386/children",
+            guid: "com.plexapp.agents.thetvdb://289177?lang=en",
+            studio: "Nippon TV",
+            type: "show",
+            title: "Death Parade",
+            contentRating: "TV-MA",
+            summary:
+              '"Welcome to QuinnDecim." What greets two unsuspecting guests is a strange bar, QuinnDecim, and the white-haired bartender, Decim. "From here you two shall begin a battle where your lives hang in the balance," he says to introduce the Death Game. Before long the guests\' true natures become apparent. As a matter of course, at the game\'s end Decim is revealed to be the "arbiter." Decim\'s judgement on the two guests is...',
+            index: 1,
+            rating: 8.1,
+            year: 2015,
+            thumb: "/library/metadata/4386/thumb/1640367215",
+            art: "/library/metadata/4386/art/1640367215",
+            banner: "/library/metadata/4386/banner/1640367215",
+            theme: "/library/metadata/4386/theme/1640367215",
+            duration: 1320000,
+            originallyAvailableAt: "2015-01-10",
+            leafCount: 12,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1552964652,
+            updatedAt: 1640367215,
+            Image: [
+              {
+                alt: "Death Parade",
+                type: "coverPoster",
+                url: "/library/metadata/4386/thumb/1640367215"
+              },
+              {
+                alt: "Death Parade",
+                type: "background",
+                url: "/library/metadata/4386/art/1640367215"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0c0417",
+              topRight: "331a44",
+              bottomRight: "27163d",
+              bottomLeft: "070312"
+            },
+            Genre: [
+              {
+                tag: "Drama"
+              },
+              {
+                tag: "Animation"
+              }
+            ],
+            Role: [
+              {
+                tag: "Ikuko Tani"
+              },
+              {
+                tag: "Takahiro Sakurai"
+              },
+              {
+                tag: "Keiji Fujiwara"
+              }
+            ]
+          },
+          {
+            ratingKey: "27380",
+            key: "/library/metadata/27380/children",
+            guid: "com.plexapp.agents.thetvdb://88031?lang=en",
+            studio: "Fuji TV",
+            type: "show",
+            title: "Dragon Ball Kai",
+            contentRating: "TV-14",
+            summary:
+              "Rejoin Goku and his friends in a series of cosmic battles!  Toei has redubbed, recut, and cleaned up the animation of the original 1989 animated series.  The show's story arc has been refined to better follow the comic book series on which it is based.  The show also features a new opening and ending.\r\n\r\nIn the series, martial artist Goku, and his various friends, battle increasingly powerful enemies to defend the world against evil.  Can Earth's defender defeat demons, aliens, and other villains?  ",
+            index: 1,
+            rating: 8.9,
+            year: 2009,
+            thumb: "/library/metadata/27380/thumb/1640367321",
+            art: "/library/metadata/27380/art/1640367321",
+            banner: "/library/metadata/27380/banner/1640367321",
+            duration: 1500000,
+            originallyAvailableAt: "2009-04-05",
+            leafCount: 105,
+            viewedLeafCount: 0,
+            childCount: 2,
+            addedAt: 1586252029,
+            updatedAt: 1640367321,
+            Image: [
+              {
+                alt: "Dragon Ball Kai",
+                type: "coverPoster",
+                url: "/library/metadata/27380/thumb/1640367321"
+              },
+              {
+                alt: "Dragon Ball Kai",
+                type: "background",
+                url: "/library/metadata/27380/art/1640367321"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0b3815",
+              topRight: "8d4823",
+              bottomRight: "4b54a4",
+              bottomLeft: "2d6d3c"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Animation"
+              }
+            ],
+            Role: [
+              {
+                tag: "Masako Nozawa"
+              },
+              {
+                tag: "Ryo Horikawa"
+              },
+              {
+                tag: "Toshio Furukawa"
+              }
+            ]
+          },
+          {
+            ratingKey: "22398",
+            key: "/library/metadata/22398/children",
+            guid: "com.plexapp.agents.thetvdb://75941?lang=en",
+            studio: "AT-X",
+            type: "show",
+            title: "Elfen Lied",
+            contentRating: "TV-MA",
+            summary:
+              'The diclonius, otherwise known as a two-horned human, are mutants of the human species, and may well be the next step in human evolution. The diclonius have horns and strong telekinetic powers represented by "vectors". However with this great power, they can easily destroy the human race. Fearful of their power, humans quarantined the diclonius into secret research facilities to study. However, in a freak accident, a enraged female diclonius escaped, killing many guards in the process. While escaping, she is shot in the head, and falls into the ocean. As a result she has waves of amnesia. Later, she washes ashore. There, she meets two people named Kouta and Yuka, who name the female diclonius "Nyuu", after the only word she can say. They decide to watch after her, but of course, the research facility can\'t have this, and begin trying to retrieve her by any means necessary.',
+            index: 1,
+            rating: 8.2,
+            viewCount: 1,
+            skipCount: 1,
+            lastViewedAt: 1586810201,
+            year: 2004,
+            thumb: "/library/metadata/22398/thumb/1640367247",
+            art: "/library/metadata/22398/art/1640367247",
+            banner: "/library/metadata/22398/banner/1640367247",
+            duration: 1500000,
+            originallyAvailableAt: "2004-07-25",
+            leafCount: 13,
+            viewedLeafCount: 1,
+            childCount: 1,
+            addedAt: 1566759226,
+            updatedAt: 1640367247,
+            Image: [
+              {
+                alt: "Elfen Lied",
+                type: "coverPoster",
+                url: "/library/metadata/22398/thumb/1640367247"
+              },
+              {
+                alt: "Elfen Lied",
+                type: "background",
+                url: "/library/metadata/22398/art/1640367247"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "570e10",
+              topRight: "5f1619",
+              bottomRight: "300808",
+              bottomLeft: "751e22"
+            },
+            Genre: [
+              {
+                tag: "Horror"
+              },
+              {
+                tag: "Drama"
+              }
+            ],
+            Role: [
+              {
+                tag: "Eriko Ishihara"
+              },
+              {
+                tag: "Hagiwara Emiko"
+              },
+              {
+                tag: "Mamiko Noto"
+              }
+            ]
+          },
+          {
+            ratingKey: "9359",
+            key: "/library/metadata/9359/children",
+            guid: "com.plexapp.agents.thetvdb://114801?lang=en",
+            studio: "TV Tokyo",
+            type: "show",
+            title: "Fairy Tail",
+            contentRating: "TV-14",
+            summary:
+              'In the land of Fiore, magic is everywhere. Sorcerers are like skilled tradesmen who band together in "guilds" and take on paying assignments for non-magic wielders, like hunting monsters, retrieving lost items or running odd errands. Lucy is an aspiring wizard who wants to hook up with the coolest guild around, Fairy Tail. One day, she meets a red-headed boy who saves her from a unscrupulous wizard, and before she knows it, she\'s introduced to the wild and wacky band of wizards of Fairy Tail and begins the adventure of a lifetime.',
+            index: 1,
+            rating: 7.9,
+            year: 2009,
+            thumb: "/library/metadata/9359/thumb/1640367377",
+            art: "/library/metadata/9359/art/1640367377",
+            banner: "/library/metadata/9359/banner/1640367377",
+            duration: 1500000,
+            originallyAvailableAt: "2009-10-12",
+            leafCount: 179,
+            viewedLeafCount: 0,
+            childCount: 5,
+            addedAt: 1560023608,
+            updatedAt: 1640367377,
+            Image: [
+              {
+                alt: "Fairy Tail",
+                type: "coverPoster",
+                url: "/library/metadata/9359/thumb/1640367377"
+              },
+              {
+                alt: "Fairy Tail",
+                type: "background",
+                url: "/library/metadata/9359/art/1640367377"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "561109",
+              topRight: "332c65",
+              bottomRight: "272e68",
+              bottomLeft: "9c3727"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Comedy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Tetsuya Kakihara"
+              },
+              {
+                tag: "Aya Hirano"
+              },
+              {
+                tag: "Rie Kugimiya"
+              }
+            ]
+          },
+          {
+            ratingKey: "9461",
+            key: "/library/metadata/9461/children",
+            guid: "com.plexapp.agents.thetvdb://75579?lang=en",
+            studio: "Animax",
+            type: "show",
+            title: "Fullmetal Alchemist",
+            contentRating: "TV-14",
+            summary:
+              "Two young brothers are raised as alchemists, but when they are severely injured trying to perform a forbidden act, they begin searching for the one thing that can save them; the fabled philosopher's stone.",
+            index: 1,
+            rating: 8.8,
+            viewCount: 28,
+            skipCount: 2,
+            lastViewedAt: 1560528627,
+            year: 2003,
+            thumb: "/library/metadata/9461/thumb/1640367328",
+            art: "/library/metadata/9461/art/1640367328",
+            banner: "/library/metadata/9461/banner/1640367328",
+            duration: 1500000,
+            originallyAvailableAt: "2003-10-04",
+            leafCount: 51,
+            viewedLeafCount: 28,
+            childCount: 1,
+            addedAt: 1560025033,
+            updatedAt: 1640367328,
+            Image: [
+              {
+                alt: "Fullmetal Alchemist",
+                type: "coverPoster",
+                url: "/library/metadata/9461/thumb/1640367328"
+              },
+              {
+                alt: "Fullmetal Alchemist",
+                type: "background",
+                url: "/library/metadata/9461/art/1640367328"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4c1b22",
+              topRight: "893b3d",
+              bottomRight: "973b3f",
+              bottomLeft: "904529"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Drama"
+              }
+            ],
+            Role: [
+              {
+                tag: "Romi Paku"
+              },
+              {
+                tag: "Rie Kugimiya"
+              },
+              {
+                tag: "Tooru Ookawa"
+              }
+            ]
+          },
+          {
+            ratingKey: "8310",
+            key: "/library/metadata/8310/children",
+            guid: "com.plexapp.agents.thetvdb://307375?lang=en",
+            studio: "Tokyo MX",
+            type: "show",
+            title: "Mob Psycho 100",
+            contentRating: "TV-14",
+            summary:
+              'Kageyama Shigeo (a.k.a. "Mob") is a 8th grader with psychic abilities. He could bend spoons and lift objects with his mind from a young age, but he slowly began to withhold from using his abilities in public due to the negative attention he kept receiving. Now, the only thing he wants is to become friends with a girl in his class, Tsubomi. With his psychic "mentor" (who has no psychic powers), he continues his daily life, attempting to realize his purpose in life.',
+            index: 1,
+            rating: 9.0,
+            year: 2016,
+            thumb: "/library/metadata/8310/thumb/1671643061",
+            art: "/library/metadata/8310/art/1671643061",
+            banner: "/library/metadata/8310/banner/1671643061",
+            duration: 1440000,
+            originallyAvailableAt: "2016-07-11",
+            leafCount: 38,
+            viewedLeafCount: 0,
+            childCount: 3,
+            addedAt: 1557941187,
+            updatedAt: 1671643061,
+            Image: [
+              {
+                alt: "Mob Psycho 100",
+                type: "coverPoster",
+                url: "/library/metadata/8310/thumb/1671643061"
+              },
+              {
+                alt: "Mob Psycho 100",
+                type: "background",
+                url: "/library/metadata/8310/art/1671643061"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "282658",
+              topRight: "5e4da2",
+              bottomRight: "4d53a4",
+              bottomLeft: "273064"
+            },
+            Genre: [
+              {
+                tag: "Science Fiction"
+              },
+              {
+                tag: "Comedy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Setsuo Itou"
+              },
+              {
+                tag: "Takahiro Sakurai"
+              },
+              {
+                tag: "Akio Ootsuka"
+              }
+            ]
+          },
+          {
+            ratingKey: "43906",
+            key: "/library/metadata/43906/children",
+            guid: "com.plexapp.agents.hama://anidb-2127?lang=en",
+            studio: "Toei Animation",
+            type: "show",
+            title: "Mushrambo",
+            summary:
+              "Humanity is exterminated by a genetic race they created to fight a deadly virus. One of the scientist brings his young daughter in a cryogenic sleep, hoping that she will awaken one day and find surviving humans, so that she can bring peace between them and the genetic beings, the Enterrans. The girl, Yakumo received special powers at the impact of a meteorite, the impact after which the Enterrans went evil. When she awakens, 500 years later, she goes on her journey and meets three Enterrans who join her. Together with them she slowly finds from the secrets of the past, what happened to her home planet in reality.\nThere is a third season made by a smaller Japanese organisation, not by Toei. This season was half aired in Japan, under a new name. It aired in its entirety in Germany and a few other countries. There are also unverified rumours of a fourth season.",
+            index: 1,
+            rating: 4.4,
+            lastViewedAt: 1622468470,
+            year: 2000,
+            thumb: "/library/metadata/43906/thumb/1622069087",
+            duration: 1500000,
+            originallyAvailableAt: "2000-02-05",
+            leafCount: 32,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1622069051,
+            updatedAt: 1622069087,
+            Image: [
+              {
+                alt: "Mushrambo",
+                type: "coverPoster",
+                url: "/library/metadata/43906/thumb/1622069087"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4c1d1d",
+              topRight: "7c1a1c",
+              bottomRight: "af1317",
+              bottomLeft: "ab1d1e"
+            },
+            Genre: [
+              {
+                tag: "Adventure"
+              },
+              {
+                tag: "Angst"
+              }
+            ],
+            Role: [
+              {
+                tag: "Minaguchi Yuuko"
+              },
+              {
+                tag: "Takayama Minami"
+              },
+              {
+                tag: "Kawazu Yasuhiko"
+              }
+            ]
+          },
+          {
+            ratingKey: "9518",
+            key: "/library/metadata/9518/children",
+            guid: "com.plexapp.agents.thetvdb://305074?lang=en",
+            studio: "Nippon TV",
+            type: "show",
+            title: "My Hero Academia",
+            contentRating: "TV-14",
+            summary:
+              "A superhero-loving boy without any powers is determined to enroll in a prestigious hero academy and learn what it really means to be a hero.\r\n",
+            index: 1,
+            rating: 8.8,
+            lastViewedAt: 1726348188,
+            year: 2016,
+            thumb: "/library/metadata/9518/thumb/1726307093",
+            art: "/library/metadata/9518/art/1726307093",
+            banner: "/library/metadata/9518/banner/1726307093",
+            duration: 1380000,
+            originallyAvailableAt: "2016-04-02",
+            leafCount: 163,
+            viewedLeafCount: 0,
+            childCount: 8,
+            seasonCount: 7,
+            addedAt: 1560197575,
+            updatedAt: 1726307093,
+            Image: [
+              {
+                alt: "My Hero Academia",
+                type: "coverPoster",
+                url: "/library/metadata/9518/thumb/1726307093"
+              },
+              {
+                alt: "My Hero Academia",
+                type: "background",
+                url: "/library/metadata/9518/art/1726307093"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4c1d14",
+              topRight: "933d4e",
+              bottomRight: "276d49",
+              bottomLeft: "216b60"
+            },
+            Genre: [
+              {
+                tag: "Science Fiction"
+              },
+              {
+                tag: "Fantasy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Daiki Yamashita"
+              },
+              {
+                tag: "Nobuhiko Okamoto"
+              },
+              {
+                tag: "Ayane Sakura"
+              }
+            ]
+          },
+          {
+            ratingKey: "40081",
+            key: "/library/metadata/40081/children",
+            guid: "com.plexapp.agents.none://40081?lang=xn",
+            type: "show",
+            title: "Naruto Kai",
+            summary: "",
+            index: 1,
+            viewCount: 12,
+            skipCount: 2,
+            lastViewedAt: 1674322575,
+            leafCount: 72,
+            viewedLeafCount: 59,
+            childCount: 3,
+            addedAt: 1604671304,
+            updatedAt: 1605008899
+          },
+          {
+            ratingKey: "40166",
+            key: "/library/metadata/40166/children",
+            skipChildren: true,
+            guid: "com.plexapp.agents.hama://anidb-4880?lang=en",
+            studio: "Studio Pierrot",
+            type: "show",
+            title: "Naruto: Shippuden",
+            titleSort: "Naruto Shippuuden",
+            contentRating: "TV-PG",
+            summary:
+              "Naruto Uzumaki, is a loud, hyperactive, adolescent ninja who constantly searches for approval and recognition, as well as to become Hokage, who is acknowledged as the leader and strongest of all ninja in the village.",
+            index: 1,
+            rating: 5.8,
+            viewCount: 101,
+            skipCount: 5,
+            lastViewedAt: 1718737376,
+            year: 2007,
+            thumb: "/library/metadata/40166/thumb/1605009080",
+            art: "/library/metadata/40166/art/1605009080",
+            banner: "/library/metadata/40166/banner/1605009080",
+            theme: "/library/metadata/40166/theme/1605009080",
+            duration: 1380000,
+            originallyAvailableAt: "2007-02-15",
+            leafCount: 500,
+            viewedLeafCount: 98,
+            childCount: 1,
+            addedAt: 1604971385,
+            updatedAt: 1605009080,
+            flattenSeasons: "1",
+            showOrdering: "absolute",
+            Image: [
+              {
+                alt: "Naruto: Shippuden",
+                type: "coverPoster",
+                url: "/library/metadata/40166/thumb/1605009080"
+              },
+              {
+                alt: "Naruto: Shippuden",
+                type: "background",
+                url: "/library/metadata/40166/art/1605009080"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "4e1a1d",
+              topRight: "814729",
+              bottomRight: "264f78",
+              bottomLeft: "9d3245"
+            },
+            Genre: [
+              {
+                tag: "Action"
+              },
+              {
+                tag: "Adventure"
+              }
+            ],
+            Role: [
+              {
+                tag: "Takeuchi Junko"
+              },
+              {
+                tag: "Ootsuka Houchuu"
+              },
+              {
+                tag: "Inoue Kazuhiko"
+              }
+            ]
+          },
+          {
+            ratingKey: "2905",
+            key: "/library/metadata/2905/children",
+            guid: "com.plexapp.agents.thetvdb://81797?lang=en",
+            studio: "Fuji TV",
+            type: "show",
+            title: "One Piece",
+            contentRating: "TV-Y7",
+            summary:
+              'The adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named "One Piece".\r\n',
+            index: 1,
+            rating: 1521628.0,
+            viewCount: 237,
+            skipCount: 6,
+            lastViewedAt: 1722875639,
+            year: 1999,
+            thumb: "/library/metadata/2905/thumb/1711868578",
+            art: "/library/metadata/2905/art/1711868578",
+            banner: "/library/metadata/2905/banner/1711868578",
+            theme: "/library/metadata/2905/theme/1711868578",
+            duration: 1500000,
+            originallyAvailableAt: "1999-10-19",
+            leafCount: 428,
+            viewedLeafCount: 394,
+            childCount: 12,
+            addedAt: 1552907862,
+            updatedAt: 1711868578,
+            Image: [
+              {
+                alt: "One Piece",
+                type: "coverPoster",
+                url: "/library/metadata/2905/thumb/1711868578"
+              },
+              {
+                alt: "One Piece",
+                type: "background",
+                url: "/library/metadata/2905/art/1711868578"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "53160d",
+              topRight: "7e5316",
+              bottomRight: "8d3c29",
+              bottomLeft: "813a33"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Drama"
+              }
+            ],
+            Role: [
+              {
+                tag: "Mayumi Tanaka"
+              },
+              {
+                tag: "Kazuya Nakai"
+              },
+              {
+                tag: "Wakana Yamazaki"
+              }
+            ]
+          },
+          {
+            ratingKey: "1252",
+            key: "/library/metadata/1252/children",
+            guid: "com.plexapp.agents.thetvdb://293088?lang=en",
+            studio: "TV Tokyo",
+            type: "show",
+            title: "One-Punch Man",
+            contentRating: "TV-14",
+            summary:
+              "Saitama is a superhero who has trained so hard that his hair has fallen out, and who can overcome any enemy with one punch. However, because he is so strong, he has become bored and frustrated that he wins all of his battles too easily.",
+            index: 1,
+            rating: 8.9,
+            viewCount: 41,
+            skipCount: 3,
+            lastViewedAt: 1650482934,
+            year: 2015,
+            thumb: "/library/metadata/1252/thumb/1640367444",
+            art: "/library/metadata/1252/art/1640367444",
+            banner: "/library/metadata/1252/banner/1640367444",
+            theme: "/library/metadata/1252/theme/1640367444",
+            duration: 1500000,
+            originallyAvailableAt: "2015-10-04",
+            leafCount: 25,
+            viewedLeafCount: 25,
+            childCount: 3,
+            seasonCount: 2,
+            addedAt: 1552687243,
+            updatedAt: 1640367444,
+            Image: [
+              {
+                alt: "One-Punch Man",
+                type: "coverPoster",
+                url: "/library/metadata/1252/thumb/1640367444"
+              },
+              {
+                alt: "One-Punch Man",
+                type: "background",
+                url: "/library/metadata/1252/art/1640367444"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "501910",
+              topRight: "28396e",
+              bottomRight: "9d3621",
+              bottomLeft: "346a50"
+            },
+            Genre: [
+              {
+                tag: "Science Fiction"
+              },
+              {
+                tag: "Comedy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Kaito Ishikawa"
+              },
+              {
+                tag: "Makoto Furukawa"
+              },
+              {
+                tag: "Kenjirou Tsuda"
+              }
+            ]
+          },
+          {
+            ratingKey: "9712",
+            key: "/library/metadata/9712/children",
+            guid: "com.plexapp.agents.thetvdb://79654?lang=en",
+            studio: "TV Asahi",
+            type: "show",
+            title: "Shin Chan",
+            contentRating: "TV-PG",
+            summary:
+              "Crayon Shin-chan is a popular yet controversial Japanese anime series. FUNimation made their dub more mature in content compared to the original. Shin is a 5-year-old boy who is constantly doing and saying inappropriate things, much to the dismay and annoyance of those around him, with hilarious results. Shin along with his family including his little sister Himawari and his dog Shiro, as well as his friends from kindergarten, ends up turning everyday situations into funny adventures.",
+            index: 1,
+            rating: 9.6,
+            skipCount: 2,
+            lastViewedAt: 1562173684,
+            year: 1992,
+            thumb: "/library/metadata/9712/thumb/1640367457",
+            art: "/library/metadata/9712/art/1640367457",
+            banner: "/library/metadata/9712/banner/1640367457",
+            duration: 1500000,
+            originallyAvailableAt: "1992-04-13",
+            leafCount: 1,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1560580971,
+            updatedAt: 1640367457,
+            Image: [
+              {
+                alt: "Shin Chan",
+                type: "coverPoster",
+                url: "/library/metadata/9712/thumb/1640367457"
+              },
+              {
+                alt: "Shin Chan",
+                type: "background",
+                url: "/library/metadata/9712/art/1640367457"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0d3243",
+              topRight: "83501a",
+              bottomRight: "24573a",
+              bottomLeft: "1c6e44"
+            },
+            Genre: [
+              {
+                tag: "Family"
+              },
+              {
+                tag: "Comedy"
+              }
+            ]
+          },
+          {
+            ratingKey: "907",
+            key: "/library/metadata/907/children",
+            guid: "com.plexapp.agents.thetvdb://81751?lang=en",
+            studio: "TV Tokyo",
+            type: "show",
+            title: "Soul Eater",
+            contentRating: "TV-14",
+            summary:
+              "At the Death Weapon Meister Academy, humans known as Meisters study. Each Meister have their own partner, which is a weapon capable of taking on a human form. The story follows three of these Meisters and their Weapon. They are Maka Alban and her weapon Soul Eater, Black Star and his weapon Tsubaki, and Death the Kid and his weapons Patricia and Elizabeth Thompson. They attend school, do homework, fight evil souls, and most important, they try to help their weapons reach Death Scythe status, in which they are eligible for use by the leader of all the Meisters and Weapons, Death(The Grim Reaper) himself.",
+            index: 1,
+            rating: 7.7,
+            viewCount: 52,
+            skipCount: 2,
+            lastViewedAt: 1575713332,
+            year: 2008,
+            thumb: "/library/metadata/907/thumb/1640367490",
+            art: "/library/metadata/907/art/1640367490",
+            banner: "/library/metadata/907/banner/1640367490",
+            theme: "/library/metadata/907/theme/1640367490",
+            duration: 1500000,
+            originallyAvailableAt: "2008-04-07",
+            leafCount: 51,
+            viewedLeafCount: 51,
+            childCount: 1,
+            addedAt: 1552685841,
+            updatedAt: 1640367490,
+            Image: [
+              {
+                alt: "Soul Eater",
+                type: "coverPoster",
+                url: "/library/metadata/907/thumb/1640367490"
+              },
+              {
+                alt: "Soul Eater",
+                type: "background",
+                url: "/library/metadata/907/art/1640367490"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "0c343b",
+              topRight: "9a3355",
+              bottomRight: "983163",
+              bottomLeft: "773997"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Comedy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Koike Izumi"
+              },
+              {
+                tag: "Shouzou Iizuka"
+              },
+              {
+                tag: "Tomie Kataoka"
+              }
+            ]
+          },
+          {
+            ratingKey: "53972",
+            key: "/library/metadata/53972/children",
+            guid: "com.plexapp.agents.hama://anidb-17061?lang=en",
+            studio: "Wit Studio",
+            type: "show",
+            title: "Spy x Family (2022)",
+            summary:
+              "World peace is at stake and secret agent Twilight must undergo his most difficult mission yet—pretend to be a family man. Posing as a loving husband and father, he’ll infiltrate an elite school to get close to a high-profile politician. He has the perfect cover, except his wife’s a deadly assassin and neither knows each other’s identity. But someone does, his adopted daughter who’s a telepath!",
+            index: 1,
+            rating: 7.8,
+            year: 2022,
+            thumb: "/library/metadata/53972/thumb/1703533045",
+            banner: "/library/metadata/53972/banner/1703533045",
+            duration: 1500000,
+            originallyAvailableAt: "2022-09-30",
+            leafCount: 37,
+            viewedLeafCount: 0,
+            childCount: 2,
+            addedAt: 1703533009,
+            updatedAt: 1703533045,
+            Image: [
+              {
+                alt: "Spy x Family (2022)",
+                type: "coverPoster",
+                url: "/library/metadata/53972/thumb/1703533045"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "003051",
+              topRight: "25677b",
+              bottomRight: "884c1d",
+              bottomLeft: "864e1f"
+            },
+            Genre: [
+              {
+                tag: "Action"
+              },
+              {
+                tag: "Comedy"
+              }
+            ],
+            Role: [
+              {
+                tag: "Eguchi Takuya"
+              },
+              {
+                tag: "Tanezaki Atsumi"
+              },
+              {
+                tag: "Hayami Saori"
+              }
+            ]
+          },
+          {
+            ratingKey: "54464",
+            key: "/library/metadata/54464/children",
+            guid: "com.plexapp.agents.hama://tvdb-347734?lang=en",
+            studio: "Toei Animation",
+            type: "show",
+            title: "Super Dragon Ball Heroes",
+            contentRating: "TV-Y7",
+            summary:
+              "Trunks returns from the future to train with Goku and Vegeta. However, he disappears without warning. Then the mysterious Fu bursts in, telling them that Trunks has been imprisoned in the Prison Planet, a mysterious complex in an unknown place in the universes. The group seeks the dragon balls to free Trunks, but an endless battle awaits them! Will Goku and the others rescue Trunks and escape the Prison Planet?",
+            index: 1,
+            rating: 2.2,
+            year: 2018,
+            thumb: "/library/metadata/54464/thumb/1723200736",
+            art: "/library/metadata/54464/art/1723200736",
+            banner: "/library/metadata/54464/banner/1723200736",
+            duration: 600000,
+            originallyAvailableAt: "2018-06-30",
+            leafCount: 8,
+            viewedLeafCount: 0,
+            childCount: 2,
+            addedAt: 1708341242,
+            updatedAt: 1723200736,
+            Image: [
+              {
+                alt: "Super Dragon Ball Heroes",
+                type: "coverPoster",
+                url: "/library/metadata/54464/thumb/1723200736"
+              },
+              {
+                alt: "Super Dragon Ball Heroes",
+                type: "background",
+                url: "/library/metadata/54464/art/1723200736"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "472304",
+              topRight: "874d10",
+              bottomRight: "874d14",
+              bottomLeft: "8c4a0d"
+            },
+            Genre: [
+              {
+                tag: "Action"
+              },
+              {
+                tag: "Adventure"
+              }
+            ],
+            Role: [
+              {
+                tag: "Nozawa Masako"
+              },
+              {
+                tag: "Horikawa Ryou"
+              },
+              {
+                tag: "Kusao Takeshi"
+              }
+            ]
+          },
+          {
+            ratingKey: "54979",
+            key: "/library/metadata/54979/children",
+            guid: "com.plexapp.agents.hama://anidb-673?lang=en",
+            studio: "Madhouse",
+            type: "show",
+            title: "Texhnolyze",
+            contentRating: "TV-MA",
+            summary:
+              "In the experimental underground city of Lux, the human spirit is crushed by a Hobbesian nightmare of tribal and ideological conflict. When ‘wild dog’ prize fighter Ichise is brutally maimed, a chance encounter with a rogue doctor of cybernetic Texhnolyze body parts draws him into a spiral of escalating chaos with consequences for the evolution and survival of humanity itself.",
+            index: 1,
+            rating: 7.1,
+            year: 2003,
+            thumb: "/library/metadata/54979/thumb/1725051561",
+            art: "/library/metadata/54979/art/1725051561",
+            banner: "/library/metadata/54979/banner/1725051561",
+            theme: "/library/metadata/54979/theme/1725051561",
+            duration: 1500000,
+            originallyAvailableAt: "2003-04-16",
+            leafCount: 22,
+            viewedLeafCount: 0,
+            childCount: 1,
+            addedAt: 1725051486,
+            updatedAt: 1725051561,
+            Image: [
+              {
+                alt: "Texhnolyze",
+                type: "coverPoster",
+                url: "/library/metadata/54979/thumb/1725051561"
+              },
+              {
+                alt: "Texhnolyze",
+                type: "background",
+                url: "/library/metadata/54979/art/1725051561"
+              }
+            ],
+            Genre: [
+              {
+                tag: "Animation"
+              },
+              {
+                tag: "Anime"
+              }
+            ],
+            Role: [
+              {
+                tag: "Inoue Takashi"
+              },
+              {
+                tag: "Tsuchida Hiroshi"
+              },
+              {
+                tag: "Itou Shizuka"
+              }
+            ]
+          },
+          {
+            ratingKey: "19388",
+            key: "/library/metadata/19388/children",
+            guid: "com.plexapp.agents.thetvdb://76894?lang=en",
+            studio: "TV Tokyo",
+            type: "show",
+            title: "Yu-Gi-Oh! Duel Monsters",
+            summary:
+              "Follows the adventures of high school student Yugi, who has a magical secret that comes to life when he plays his favorite card game: 'Duel Monsters.",
+            index: 1,
+            rating: 9.5,
+            year: 2000,
+            thumb: "/library/metadata/19388/thumb/1640367593",
+            art: "/library/metadata/19388/art/1640367593",
+            banner: "/library/metadata/19388/banner/1640367593",
+            duration: 1500000,
+            originallyAvailableAt: "2000-04-18",
+            leafCount: 190,
+            viewedLeafCount: 0,
+            childCount: 5,
+            addedAt: 1562618943,
+            updatedAt: 1640367593,
+            Image: [
+              {
+                alt: "Yu-Gi-Oh! Duel Monsters",
+                type: "coverPoster",
+                url: "/library/metadata/19388/thumb/1640367593"
+              },
+              {
+                alt: "Yu-Gi-Oh! Duel Monsters",
+                type: "background",
+                url: "/library/metadata/19388/art/1640367593"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "231d69",
+              topRight: "353ea3",
+              bottomRight: "2b368e",
+              bottomLeft: "0f104b"
+            },
+            Genre: [
+              {
+                tag: "Fantasy"
+              },
+              {
+                tag: "Animation"
+              }
+            ],
+            Role: [
+              {
+                tag: "KONTA"
+              },
+              {
+                tag: "Nozomu Sasaki"
+              },
+              {
+                tag: "Megumi Ogata"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+    validateResponseSpec(
+      "/library/sections/{sectionKey}/{tag}",
+      "get",
+      200,
+      response
+    )
+  })
 })
