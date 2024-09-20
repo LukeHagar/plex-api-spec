@@ -12,6 +12,7 @@ content:
             properties:
               code:
                 type: integer
+                format: int32
                 example: 1001
               message:
                 type: string
@@ -19,4 +20,5 @@ content:
                 example: User could not be authenticated
               status:
                 type: integer
+                format: int32
                 example: 401
