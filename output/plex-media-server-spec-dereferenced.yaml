@@ -221,6 +221,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -228,6 +229,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -244,6 +246,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -251,6 +254,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/:/prefs':
     get:
@@ -324,6 +328,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -331,6 +336,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -347,6 +353,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -354,6 +361,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/:/scrobble':
     get:
@@ -388,6 +396,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -395,6 +404,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -411,6 +421,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -418,6 +429,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/:/unscrobble':
     get:
@@ -452,6 +464,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -459,6 +472,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -475,6 +489,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -482,6 +497,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/:/progress':
     post:
@@ -530,6 +546,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -537,6 +554,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -553,6 +571,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -560,6 +579,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/:/timeline':
     get:
@@ -661,6 +681,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -668,6 +689,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -684,6 +706,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -691,6 +714,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /activities:
     get:
@@ -751,6 +775,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -758,6 +783,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -774,6 +800,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -781,6 +808,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/activities/{activityUUID}':
     delete:
@@ -815,6 +843,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -822,6 +851,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -838,6 +868,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -845,6 +876,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /butler:
     get:
@@ -900,6 +932,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -907,6 +940,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -923,6 +957,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -930,6 +965,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     post:
       tags:
@@ -960,6 +996,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -967,6 +1004,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -983,6 +1021,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -990,6 +1029,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     delete:
       tags:
@@ -1016,6 +1056,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1023,6 +1064,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1039,6 +1081,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1046,6 +1089,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/butler/{taskName}':
     post:
@@ -1101,6 +1145,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1108,6 +1153,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1124,6 +1170,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1131,6 +1178,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     delete:
       tags:
@@ -1179,6 +1227,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1186,6 +1235,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1202,6 +1252,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1209,6 +1260,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
         '404':
           description: The task was not running
@@ -1286,6 +1338,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1293,6 +1346,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1309,6 +1363,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1316,6 +1371,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /devices:
     get:
@@ -1375,6 +1431,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1382,6 +1439,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1398,6 +1456,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1405,6 +1464,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /companions:
     get:
@@ -1466,6 +1526,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1473,6 +1534,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1489,6 +1551,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1496,6 +1559,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /friends:
     get:
@@ -1613,6 +1677,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1620,6 +1685,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1636,6 +1702,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1643,6 +1710,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /geoip:
     get:
@@ -1750,6 +1818,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1757,6 +1826,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1773,6 +1843,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1780,6 +1851,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /home:
     get:
@@ -1827,6 +1899,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -1834,6 +1907,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -1850,6 +1924,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -1857,6 +1932,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /hubs:
     get:
@@ -2015,6 +2091,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -2022,6 +2099,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -2038,6 +2116,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -2045,6 +2124,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /hubs/search:
     get:
@@ -2106,6 +2186,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -2113,6 +2194,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -2129,6 +2211,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -2136,6 +2219,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /hubs/search/voice:
     get:
@@ -2189,6 +2273,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -2196,6 +2281,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -2212,6 +2298,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -2219,6 +2306,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/hubs/sections/{sectionId}':
     get:
@@ -2571,6 +2659,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -2578,6 +2667,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -2594,6 +2684,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -2601,6 +2692,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /identity:
     get:
@@ -2642,6 +2734,7 @@ paths:
                 properties:
                   code:
                     type: integer
+                    format: int32
                     example: 408
                   message:
                     type: string
@@ -2686,6 +2779,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -2693,6 +2787,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -2709,6 +2804,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -2716,6 +2812,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /library/recentlyAdded:
     get:
@@ -2997,6 +3094,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -3004,6 +3102,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -3020,6 +3119,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -3027,6 +3127,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /library/sections:
     get:
@@ -3197,6 +3298,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -3204,6 +3306,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -3220,6 +3323,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -3227,6 +3331,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/sections/{sectionKey}':
     get:
@@ -3479,6 +3584,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -3486,6 +3592,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -3502,6 +3609,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -3509,6 +3617,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     delete:
       tags:
@@ -3545,6 +3654,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -3552,6 +3662,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -3568,6 +3679,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -3575,6 +3687,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/sections/watchlist/{filter}':
     servers:
@@ -3815,6 +3928,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -3822,6 +3936,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -3838,6 +3953,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -3845,6 +3961,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/sections/{sectionKey}/{tag}':
     get:
@@ -3949,6 +4066,7 @@ paths:
             3 = season
             4 = episode
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+          required: false
           schema:
             type: integer
             enum:
@@ -3959,10 +4077,9 @@ paths:
             example: 2
             x-speakeasy-enums:
               - MOVIE
-              - SHOW
+              - TV_SHOW
               - SEASON
               - EPISODE
-          required: true
         - name: X-Plex-Container-Start
           in: query
           description: |
@@ -4010,6 +4127,7 @@ paths:
                       - size
                       - totalSize
                       - offset
+                      - content
                       - allowSync
                       - art
                       - content
@@ -4023,12 +4141,27 @@ paths:
                       - title1
                       - title2
                       - viewGroup
+                      - Metadata
                     properties:
                       size:
                         type: integer
                         format: int32
                         example: 70
+                      totalSize:
+                        type: integer
+                        format: int32
+                        example: 170
+                      offset:
+                        type: integer
+                        format: int32
+                        example: 0
+                      content:
+                        type: string
+                        example: secondary
                       allowSync:
+                        type: boolean
+                        example: true
+                      nocache:
                         type: boolean
                         example: true
                       art:
@@ -4086,13 +4219,15 @@ paths:
                             - guid
                             - title
                             - type
-                            - year
-                            - duration
-                            - Media
+                            - addedAt
+                            - summary
                           properties:
                             ratingKey:
                               type: string
                               example: '58683'
+                              description: |
+                                The rating key (Media ID) of this media item.
+                                Note: This is always an integer, but is represented as a string in the API.
                             key:
                               type: string
                               example: /library/metadata/58683
@@ -4102,12 +4237,30 @@ paths:
                             studio:
                               type: string
                               example: 20th Century Studios
+                            skipChildren:
+                              type: boolean
+                              example: false
                             type:
                               type: string
+                              enum:
+                                - movie
+                                - show
+                                - season
+                                - episode
                               example: movie
+                              description: |
+                                The type of media content
+                              x-speakeasy-enums:
+                                - MOVIE
+                                - TV_SHOW
+                                - SEASON
+                                - EPISODE
                             title:
                               type: string
                               example: 'Avatar: The Way of Water'
+                            slug:
+                              type: string
+                              example: 4-for-texas
                             contentRating:
                               type: string
                               example: PG-13
@@ -4124,15 +4277,54 @@ paths:
                               type: integer
                               format: int32
                               example: 2022
+                            seasonCount:
+                              type: integer
+                              format: int32
+                              example: 2022
                             tagline:
                               type: string
                               example: Return to Pandora.
+                            flattenSeasons:
+                              type: string
+                              enum:
+                                - '0'
+                                - '1'
+                              example: '1'
+                              default: '0'
+                              x-speakeasy-enums:
+                                - false
+                                - true
+                            showOrdering:
+                              type: string
+                              description: |
+                                Setting that indicates the episode ordering for the show 
+                                None = Library default, 
+                                tmdbAiring = The Movie Database (Aired), 
+                                aired = TheTVDB (Aired), 
+                                dvd = TheTVDB (DVD), 
+                                absolute = TheTVDB (Absolute)).
+                              enum:
+                                - None
+                                - tmdbAiring
+                                - aired
+                                - dvd
+                                - absolute
+                              x-speakeasy-enums:
+                                - NONE
+                                - TMDB_AIRING
+                                - AIRED
+                                - DVD
+                                - ABSOLUTE
+                              example: dvd
                             thumb:
                               type: string
                               example: /library/metadata/58683/thumb/1703239236
                             art:
                               type: string
                               example: /library/metadata/58683/art/1703239236
+                            banner:
+                              type: string
+                              example: /library/metadata/58683/banner/1703239236
                             duration:
                               type: integer
                               format: int32
@@ -4142,13 +4334,17 @@ paths:
                               format: date
                               example: 2022-12-14T00:00:00.000Z
                             addedAt:
-                              type: integer
-                              format: int32
-                              example: 1680457607
+                              type:
+                                - integer
+                              example: 1556281940
+                              description: Unix epoch datetime in seconds
+                              format: int64
                             updatedAt:
-                              type: integer
-                              format: int32
-                              example: 1703239236
+                              type:
+                                - integer
+                              example: 1556281940
+                              description: Unix epoch datetime in seconds
+                              format: int64
                             audienceRatingImage:
                               type: string
                               example: 'rottentomatoes://image.rating.upright'
@@ -4176,6 +4372,9 @@ paths:
                             grandparentThumb:
                               type: string
                               example: /library/metadata/66/thumb/1705716261
+                            grandparentSlug:
+                              type: string
+                              example: alice-in-borderland-2020
                             grandparentArt:
                               type: string
                               example: /library/metadata/66/art/1705716261
@@ -4183,9 +4382,26 @@ paths:
                               type: string
                               example: /library/metadata/66/theme/1705716261
                             Media:
+                              description: |
+                                The Media object is only included when type query is `4` or higher.
                               type: array
                               items:
                                 type: object
+                                required:
+                                  - id
+                                  - duration
+                                  - bitrate
+                                  - width
+                                  - height
+                                  - aspectRatio
+                                  - audioChannels
+                                  - audioCodec
+                                  - videoCodec
+                                  - videoResolution
+                                  - container
+                                  - videoFrameRate
+                                  - videoProfile
+                                  - Part
                                 properties:
                                   id:
                                     type: integer
@@ -4210,6 +4426,9 @@ paths:
                                   aspectRatio:
                                     type: number
                                     example: 1.85
+                                  audioProfile:
+                                    type: string
+                                    example: dts
                                   audioChannels:
                                     type: integer
                                     format: int32
@@ -4232,10 +4451,21 @@ paths:
                                   videoProfile:
                                     type: string
                                     example: main 10
+                                  hasVoiceActivity:
+                                    type: boolean
+                                    example: false
                                   Part:
                                     type: array
                                     items:
                                       type: object
+                                      required:
+                                        - id
+                                        - key
+                                        - duration
+                                        - file
+                                        - size
+                                        - container
+                                        - videoProfile
                                       properties:
                                         id:
                                           type: integer
@@ -4257,10 +4487,28 @@ paths:
                                           example: 36158371307
                                         container:
                                           type: string
+                                          description: |
+                                            The container format of the media file.
                                           example: mkv
+                                        audioProfile:
+                                          type: string
+                                          example: dts
                                         videoProfile:
                                           type: string
                                           example: main 10
+                                        indexes:
+                                          type: string
+                                          example: sd
+                                        hasThumbnail:
+                                          type: string
+                                          enum:
+                                            - '0'
+                                            - '1'
+                                          example: '1'
+                                          default: '0'
+                                          x-speakeasy-enums:
+                                            - false
+                                            - true
                             Genre:
                               type: array
                               items:
@@ -4293,6 +4541,14 @@ paths:
                                   tag:
                                     type: string
                                     example: James Cameron
+                            Collection:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  tag:
+                                    type: string
+                                    example: Working NL Subs
                             Role:
                               type: array
                               items:
@@ -4317,6 +4573,49 @@ paths:
                                       Can be one of the following formats:
                                       imdb://tt13015952, tmdb://2434012, tvdb://7945991
                                     example: 'imdb://tt13015952'
+                            UltraBlurColors:
+                              type: object
+                              required:
+                                - topLeft
+                                - topRight
+                                - bottomRight
+                                - bottomLeft
+                              properties:
+                                topLeft:
+                                  type: string
+                                  example: 11333b
+                                topRight:
+                                  type: string
+                                  example: 0a232d
+                                bottomRight:
+                                  type: string
+                                  example: 073958
+                                bottomLeft:
+                                  type: string
+                                  example: 1f5066
+                            Image:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - alt
+                                  - type
+                                  - url
+                                properties:
+                                  alt:
+                                    type: string
+                                    example: Episode 1
+                                  type:
+                                    type: string
+                                    enum:
+                                      - coverPoster
+                                      - background
+                                      - snapshot
+                                      - clearLogo
+                                    example: background
+                                  url:
+                                    type: string
+                                    example: /library/metadata/45521/thumb/1644710589
                             titleSort:
                               type: string
                               example: Whale
@@ -4366,6 +4665,8 @@ paths:
                               example: '1'
                             parentRatingKey:
                               type: string
+                              description: |
+                                The rating key of the parent item.
                               example: '66'
                             parentGuid:
                               type: string
@@ -4458,9 +4759,33 @@ paths:
                                       default:
                                         type: string
                                         example: asc
+                                      active:
+                                        type: boolean
+                                        example: false
+                                      activeDirection:
+                                        type: string
+                                        enum:
+                                          - asc
+                                          - desc
+                                        example: asc
+                                        default: asc
+                                        description: |
+                                          The direction of the sort. Can be either `asc` or `desc`.
+                                        x-speakeasy-enums:
+                                          - ASCENDING
+                                          - DESCENDING
                                       defaultDirection:
                                         type: string
+                                        enum:
+                                          - asc
+                                          - desc
                                         example: asc
+                                        default: asc
+                                        description: |
+                                          The direction of the sort. Can be either `asc` or `desc`.
+                                        x-speakeasy-enums:
+                                          - ASCENDING
+                                          - DESCENDING
                                       descKey:
                                         type: string
                                         example: 'titleSort:desc'
@@ -4534,6 +4859,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -4541,6 +4867,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -4557,6 +4884,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -4564,6 +4892,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/sections/{sectionKey}/refresh':
     get:
@@ -4612,6 +4941,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -4619,6 +4949,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -4635,6 +4966,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -4642,6 +4974,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/sections/{sectionKey}/search':
     get:
@@ -4707,7 +5040,7 @@ paths:
             example: 2
             x-speakeasy-enums:
               - MOVIE
-              - SHOW
+              - TV_SHOW
               - SEASON
               - EPISODE
           required: true
@@ -4846,6 +5179,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -4853,6 +5187,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -4869,6 +5204,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -4876,6 +5212,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/metadata/{ratingKey}':
     get:
@@ -5383,6 +5720,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -5390,6 +5728,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -5406,6 +5745,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -5413,6 +5753,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/metadata/{ratingKey}/banner':
     get:
@@ -5538,6 +5879,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -5545,6 +5887,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -5561,6 +5904,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -5568,6 +5912,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/metadata/{ratingKey}/thumb':
     get:
@@ -5693,6 +6038,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -5700,6 +6046,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -5716,6 +6063,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -5723,6 +6071,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/library/metadata/{ratingKey}/children':
     get:
@@ -5974,6 +6323,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -5981,6 +6331,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -5997,6 +6348,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -6004,6 +6356,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /library/all/top:
     get:
@@ -6033,7 +6386,7 @@ paths:
             example: 2
             x-speakeasy-enums:
               - MOVIE
-              - SHOW
+              - TV_SHOW
               - SEASON
               - EPISODE
           required: true
@@ -6252,6 +6605,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -6259,6 +6613,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -6275,6 +6630,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -6282,6 +6638,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /library/onDeck:
     get:
@@ -6598,6 +6955,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -6605,6 +6963,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -6621,6 +6980,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -6628,6 +6988,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /resources:
     get:
@@ -6837,6 +7198,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -6844,6 +7206,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -6860,6 +7223,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -6867,6 +7231,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /log:
     get:
@@ -6927,6 +7292,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -6934,6 +7300,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -6950,6 +7317,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -6957,6 +7325,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     post:
       tags:
@@ -7013,6 +7382,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7020,6 +7390,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -7036,6 +7407,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -7043,6 +7415,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /log/networked:
     get:
@@ -7070,6 +7443,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7077,6 +7451,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -7093,6 +7468,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -7100,6 +7476,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
         '403':
           description: the user was not signed in
@@ -7170,6 +7547,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7177,6 +7555,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -7193,6 +7572,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -7200,6 +7580,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/photo/:/transcode':
     get:
@@ -7286,6 +7667,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7293,6 +7675,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -7309,6 +7692,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -7316,6 +7700,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /pins:
     post:
@@ -7565,6 +7950,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7572,6 +7958,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
   '/pins/{pinID}':
     get:
@@ -7789,6 +8176,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7796,6 +8184,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '404':
           description: Not Found or Expired
@@ -7956,6 +8345,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -7963,6 +8353,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -7979,6 +8370,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -7986,6 +8378,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     get:
       tags:
@@ -8102,6 +8495,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8109,6 +8503,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8125,6 +8520,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8132,6 +8528,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/playlists/{playlistID}':
     get:
@@ -8233,6 +8630,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8240,6 +8638,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8256,6 +8655,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8263,6 +8663,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     delete:
       tags:
@@ -8296,6 +8697,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8303,6 +8705,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8319,6 +8722,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8326,6 +8730,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     put:
       tags:
@@ -8371,6 +8776,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8378,6 +8784,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8394,6 +8801,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8401,6 +8809,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/playlists/{playlistID}/items':
     get:
@@ -8439,7 +8848,7 @@ paths:
             example: 2
             x-speakeasy-enums:
               - MOVIE
-              - SHOW
+              - TV_SHOW
               - SEASON
               - EPISODE
           required: true
@@ -8723,6 +9132,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8730,6 +9140,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8746,6 +9157,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8753,6 +9165,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     delete:
       tags:
@@ -8786,6 +9199,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8793,6 +9207,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8809,6 +9224,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8816,6 +9232,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
     put:
       tags:
@@ -8932,6 +9349,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -8939,6 +9357,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -8955,6 +9374,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -8962,6 +9382,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /playlists/upload:
     post:
@@ -9024,6 +9445,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9031,6 +9453,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9047,6 +9470,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9054,6 +9478,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /media/providers:
     get:
@@ -9193,11 +9618,22 @@ paths:
                               type: array
                               items:
                                 type: object
+                                required:
+                                  - type
                                 properties:
                                   key:
                                     type: string
                                   type:
                                     type: string
+                                  flavor:
+                                    type: string
+                                    example: global
+                                  scrobbleKey:
+                                    type: string
+                                    example: '/:/scrobble/new'
+                                  unscrobbleKey:
+                                    type: string
+                                    example: '/:/unscrobble/new'
                                   Directory:
                                     type: array
                                     items:
@@ -9246,6 +9682,20 @@ paths:
                                                 type: string
                                               symbol:
                                                 type: string
+                                  Action:
+                                    type: array
+                                    items:
+                                      type: object
+                                      required:
+                                        - id
+                                        - key
+                                      properties:
+                                        id:
+                                          type: string
+                                          example: addToContinueWatching
+                                        key:
+                                          type: string
+                                          example: /actions/addToContinueWatching
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
@@ -9261,6 +9711,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9268,6 +9719,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9284,6 +9736,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9291,6 +9744,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /search:
     get:
@@ -9563,6 +10017,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9570,6 +10025,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9586,6 +10042,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9593,6 +10050,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /security/token:
     get:
@@ -9637,6 +10095,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9644,6 +10103,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9660,6 +10120,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9667,6 +10128,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /security/resources:
     get:
@@ -9705,6 +10167,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9712,6 +10175,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9728,6 +10192,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9735,6 +10200,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /servers:
     get:
@@ -9795,6 +10261,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9802,6 +10269,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9818,6 +10286,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9825,6 +10294,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /statistics/media:
     get:
@@ -9959,6 +10429,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -9966,6 +10437,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -9982,6 +10454,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -9989,6 +10462,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /statistics/resources:
     get:
@@ -10064,6 +10538,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -10071,6 +10546,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -10087,6 +10563,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -10094,6 +10571,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /statistics/bandwidth:
     get:
@@ -10221,6 +10699,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -10228,6 +10707,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -10244,6 +10724,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -10251,6 +10732,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /status/sessions:
     get:
@@ -10609,6 +11091,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -10616,6 +11099,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -10632,6 +11116,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -10639,6 +11124,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /status/sessions/history/all:
     get:
@@ -10797,6 +11283,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -10804,6 +11291,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -10820,6 +11308,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -10827,6 +11316,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /transcode/sessions:
     get:
@@ -10971,6 +11461,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -10978,6 +11469,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -10994,6 +11486,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -11001,6 +11494,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   '/transcode/sessions/{sessionKey}':
     delete:
@@ -11035,6 +11529,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -11042,6 +11537,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -11058,6 +11554,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -11065,6 +11562,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /updater/status:
     get:
@@ -11181,6 +11679,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -11188,6 +11687,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -11204,6 +11704,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -11211,6 +11712,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /updater/check:
     put:
@@ -11248,6 +11750,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -11255,6 +11758,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -11271,6 +11775,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -11278,6 +11783,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /updater/apply:
     put:
@@ -11326,6 +11832,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -11333,6 +11840,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -11349,6 +11857,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -11356,6 +11865,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
         '500':
           description: If the update process failed to start
@@ -11497,6 +12007,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -11504,6 +12015,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -11520,6 +12032,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -11527,6 +12040,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /user:
     get:
@@ -11673,6 +12187,7 @@ paths:
                   - twoFactorEnabled
                   - username
                   - uuid
+                  - attributionPartner
                 properties:
                   adsConsent:
                     type:
@@ -12159,6 +12674,11 @@ paths:
                     type: string
                     description: The account UUID
                     example: dae343c1f45beb4f
+                  attributionPartner:
+                    type:
+                      - string
+                      - 'null'
+                    example: null
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
@@ -12174,6 +12694,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -12181,6 +12702,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -12197,6 +12719,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -12204,6 +12727,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
   /users/signin:
     post:
@@ -12376,6 +12900,7 @@ paths:
                       - twoFactorEnabled
                       - username
                       - uuid
+                      - attributionPartner
                     properties:
                       adsConsent:
                         type:
@@ -12862,6 +13387,11 @@ paths:
                         type: string
                         description: The account UUID
                         example: dae343c1f45beb4f
+                      attributionPartner:
+                        type:
+                          - string
+                          - 'null'
+                        example: null
                   - type: object
                     required:
                       - pastSubscriptions
@@ -12983,6 +13513,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1000
                         message:
                           type: string
@@ -12990,6 +13521,7 @@ paths:
                           example: X-Plex-Client-Identifier is missing
                         status:
                           type: integer
+                          format: int32
                           example: 400
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
@@ -13006,6 +13538,7 @@ paths:
                       properties:
                         code:
                           type: integer
+                          format: int32
                           example: 1001
                         message:
                           type: string
@@ -13013,6 +13546,7 @@ paths:
                           example: User could not be authenticated
                         status:
                           type: integer
+                          format: int32
                           example: 401
 tags:
   - name: Activities
