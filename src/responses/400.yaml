@@ -12,6 +12,7 @@ content:
             properties:
               code:
                 type: integer
+                format: int32
                 example: 1000
               message:
                 type: string
@@ -19,4 +20,5 @@ content:
                 example: X-Plex-Client-Identifier is missing
               status:
                 type: integer
+                format: int32
                 example: 400

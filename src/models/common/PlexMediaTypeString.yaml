@@ -1,0 +1,14 @@
+type: string
+enum:
+  - movie
+  - show
+  - season
+  - episode
+example: "movie"
+description: |
+  The type of media content
+x-speakeasy-enums:
+  - MOVIE
+  - TV_SHOW
+  - SEASON
+  - EPISODE
