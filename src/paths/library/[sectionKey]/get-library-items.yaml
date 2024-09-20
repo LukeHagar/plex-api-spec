@@ -184,6 +184,8 @@ get:
                         - title
                         - type
                         - addedAt
+                        - summary
+                        - index
                       properties:
                         ratingKey:
                           type: string
