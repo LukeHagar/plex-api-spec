@@ -117,9 +117,7 @@ get:
                           type: boolean
                           example: true
                         contentChangedAt:
-                          type: integer
-                          format: int32
-                          example: 3192854
+                          $ref: "../../models/common/PlexDateTime.yaml"
                         hidden:
                           type: integer
                           format: int32
