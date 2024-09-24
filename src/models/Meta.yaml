@@ -1,6 +1,6 @@
+type: object
 description: |
   The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
-type: object
 properties:
   Type:
     type: array

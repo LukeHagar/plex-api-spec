@@ -34,7 +34,12 @@ get:
               MediaContainer:
                 allOf:
                   - $ref: "../../../models/MediaContainer.yaml"
-                  - $ref: "../../../models/Meta.yaml"
+                  - type: object
+                    properties:
+                      Meta:
+                        $ref: "../../../models/Meta.yaml"
+                      Metadata:
+                        $ref: "../../../models/MetaData.yaml"
 
     "401":
       description: Unauthorized, invalid Plex token.
