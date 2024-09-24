@@ -1,0 +1,19 @@
+title: MediaContainer
+type: object
+required:
+  - size
+properties:
+  size:
+    type: number
+    example: 50
+  offset:
+    type: integer
+    format: int32
+  totalSize:
+    type: integer
+    format: int32
+  identifier:
+    type: string
+    example: "com.plexapp.plugins.library"
+  allowSync:
+    type: boolean

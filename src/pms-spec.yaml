@@ -108,6 +108,8 @@ paths:
   # Folder: pms/paths/hubs
   /hubs:
     $ref: "./paths/hubs/hubs.yaml"
+  /hubs/home/recentlyAdded:
+    $ref: "./paths/hubs/home/get-recently-added.yaml"
   /hubs/search:
     $ref: "./paths/hubs/search.yaml"
   /hubs/search/voice:

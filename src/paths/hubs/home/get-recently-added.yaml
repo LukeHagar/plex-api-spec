@@ -1,0 +1,42 @@
+get:
+  tags:
+    - Hubs
+  summary: Get Recently Added
+  description: |
+    This endpoint will return the recently added content.
+  operationId: get-recently-added
+  parameters:
+    - name: contentDirectoryID
+      in: query
+      required: true
+      schema:
+        type: integer
+      description: The content directory ID.
+    - name: pinnedContentDirectoryID
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Comma-separated list of pinned content directory IDs.
+    - $ref: "../../../parameters/section-id.yaml"
+    - $ref: "../../../parameters/type.yaml"
+    - $ref: "../../../parameters/include-meta.yaml"
+    - $ref: "../../../parameters/container-start.yaml"
+    - $ref: "../../../parameters/container-size.yaml"
+  responses:
+    "200":
+      description: A successful response with recently added content.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                allOf:
+                  - $ref: "../../../models/MediaContainer.yaml"
+                  - $ref: "../../../models/Meta.yaml"
+
+    "401":
+      description: Unauthorized, invalid Plex token.
+    "400":
+      description: Bad request, invalid parameters.
