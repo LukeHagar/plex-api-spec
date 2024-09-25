@@ -9324,6 +9324,17 @@ paths:
             type: boolean
             default: false
           required: false
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
           in: query
@@ -14340,6 +14351,46 @@ paths:
       summary: Get User Sign In Data
       description: Sign in user with username and password and return user data with Plex authentication token
       operationId: post-users-sign-in-data
+      parameters:
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
+        - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Plex Web
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceName
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Linux
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          in: query
+          required: false
+          schema:
+            type: string
+          example: 4.133.0
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: ClientPlatform
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Chrome
       requestBody:
         content:
           application/x-www-form-urlencoded:
