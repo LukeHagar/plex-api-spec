@@ -2745,15 +2745,15 @@ paths:
                                                     example: 272796
                                                   streamType:
                                                     type: integer
-                                                    description: 'Type of the stream (e.g., 1 for video, 2 for audio, etc.)'
+                                                    description: 'Type of stream (1 = video, 2 = audio, 3 = subtitle)'
                                                     example: 1
                                                   default:
                                                     type: boolean
-                                                    description: Whether this stream is the default stream
+                                                    description: Indicates if this is the default stream
                                                     example: true
                                                   selected:
                                                     type: boolean
-                                                    description: Whether this stream is selected
+                                                    description: Indicates if the stream is selected
                                                     example: true
                                                   codec:
                                                     type: string
@@ -2761,64 +2761,133 @@ paths:
                                                     example: h264
                                                   index:
                                                     type: integer
-                                                    description: Index of the stream in the file
+                                                    description: The index of the stream
                                                     example: 0
                                                   bitrate:
                                                     type: integer
-                                                    description: Bitrate of the stream in kbps
+                                                    description: The bitrate of the stream in kbps
                                                     example: 6273
+                                                  colorPrimaries:
+                                                    type: string
+                                                    description: The color primaries of the video stream
+                                                    example: bt709
+                                                  colorRange:
+                                                    type: string
+                                                    description: The color range of the video stream
+                                                    example: tv
+                                                  colorSpace:
+                                                    type: string
+                                                    description: The color space of the video stream
+                                                    example: bt709
+                                                  colorTrc:
+                                                    type: string
+                                                    description: The transfer characteristics (TRC) of the video stream
+                                                    example: bt709
                                                   bitDepth:
                                                     type: integer
-                                                    description: Bit depth of the video stream (only for video streams)
+                                                    description: The bit depth of the video stream
                                                     example: 8
                                                   chromaLocation:
                                                     type: string
+                                                    description: The chroma location of the video stream
                                                     example: left
+                                                  streamIdentifier:
+                                                    type: string
+                                                    description: The identifier of the video stream
+                                                    example: '2'
                                                   chromaSubsampling:
                                                     type: string
+                                                    description: The chroma subsampling format
                                                     example: '4:2:0'
                                                   codedHeight:
                                                     type: integer
+                                                    description: The coded height of the video stream
                                                     example: 1088
                                                   codedWidth:
                                                     type: integer
+                                                    description: The coded width of the video stream
                                                     example: 1920
                                                   frameRate:
                                                     type: number
-                                                    format: float
+                                                    description: The frame rate of the video stream
                                                     example: 29.97
                                                   hasScalingMatrix:
                                                     type: boolean
+                                                    description: Indicates if the stream has a scaling matrix
                                                     example: false
+                                                  hearingImpaired:
+                                                    type: boolean
+                                                    example: false
+                                                  closedCaptions:
+                                                    type: boolean
+                                                    example: false
+                                                  embeddedInVideo:
+                                                    type: string
+                                                    example: '1'
                                                   height:
                                                     type: integer
+                                                    description: The height of the video stream
                                                     example: 1080
-                                                  width:
-                                                    type: integer
-                                                    example: 1920
                                                   level:
                                                     type: integer
+                                                    description: The level of the video codec
                                                     example: 40
                                                   profile:
                                                     type: string
-                                                    description: Video or audio profile
+                                                    description: The profile of the video codec
                                                     example: main
                                                   refFrames:
                                                     type: integer
+                                                    description: Number of reference frames
                                                     example: 4
                                                   scanType:
                                                     type: string
+                                                    description: The scan type (progressive or interlaced)
                                                     example: progressive
+                                                  width:
+                                                    type: integer
+                                                    description: The width of the video stream
+                                                    example: 1920
                                                   displayTitle:
                                                     type: string
+                                                    description: Display title of the stream
                                                     example: 1080p (H.264)
                                                   extendedDisplayTitle:
                                                     type: string
+                                                    description: Extended display title of the stream
                                                     example: 1080p (H.264)
                                                   channels:
                                                     type: integer
-                                                    description: Number of audio channels (only for audio streams)
+                                                    description: Number of audio channels (for audio streams)
                                                     example: 2
+                                                  language:
+                                                    type: string
+                                                    description: The language of the stream (for audio/subtitle streams)
+                                                    example: English
+                                                  languageTag:
+                                                    type: string
+                                                    description: Language tag of the stream
+                                                    example: en
+                                                  languageCode:
+                                                    type: string
+                                                    description: Language code of the stream
+                                                    example: eng
+                                                  audioChannelLayout:
+                                                    type: string
+                                                    description: The audio channel layout
+                                                    example: stereo
+                                                  samplingRate:
+                                                    type: integer
+                                                    description: Sampling rate of the audio stream in Hz
+                                                    example: 48000
+                                                  title:
+                                                    type: string
+                                                    description: Title of the subtitle track (for subtitle streams)
+                                                    example: English
+                                                  canAutoSync:
+                                                    type: boolean
+                                                    description: Indicates if the subtitle stream can auto-sync
+                                                    example: false
                                 Genre:
                                   type: array
                                   items:
@@ -5854,15 +5923,15 @@ paths:
                                                     example: 272796
                                                   streamType:
                                                     type: integer
-                                                    description: 'Type of the stream (e.g., 1 for video, 2 for audio, etc.)'
+                                                    description: 'Type of stream (1 = video, 2 = audio, 3 = subtitle)'
                                                     example: 1
                                                   default:
                                                     type: boolean
-                                                    description: Whether this stream is the default stream
+                                                    description: Indicates if this is the default stream
                                                     example: true
                                                   selected:
                                                     type: boolean
-                                                    description: Whether this stream is selected
+                                                    description: Indicates if the stream is selected
                                                     example: true
                                                   codec:
                                                     type: string
@@ -5870,64 +5939,133 @@ paths:
                                                     example: h264
                                                   index:
                                                     type: integer
-                                                    description: Index of the stream in the file
+                                                    description: The index of the stream
                                                     example: 0
                                                   bitrate:
                                                     type: integer
-                                                    description: Bitrate of the stream in kbps
+                                                    description: The bitrate of the stream in kbps
                                                     example: 6273
+                                                  colorPrimaries:
+                                                    type: string
+                                                    description: The color primaries of the video stream
+                                                    example: bt709
+                                                  colorRange:
+                                                    type: string
+                                                    description: The color range of the video stream
+                                                    example: tv
+                                                  colorSpace:
+                                                    type: string
+                                                    description: The color space of the video stream
+                                                    example: bt709
+                                                  colorTrc:
+                                                    type: string
+                                                    description: The transfer characteristics (TRC) of the video stream
+                                                    example: bt709
                                                   bitDepth:
                                                     type: integer
-                                                    description: Bit depth of the video stream (only for video streams)
+                                                    description: The bit depth of the video stream
                                                     example: 8
                                                   chromaLocation:
                                                     type: string
+                                                    description: The chroma location of the video stream
                                                     example: left
+                                                  streamIdentifier:
+                                                    type: string
+                                                    description: The identifier of the video stream
+                                                    example: '2'
                                                   chromaSubsampling:
                                                     type: string
+                                                    description: The chroma subsampling format
                                                     example: '4:2:0'
                                                   codedHeight:
                                                     type: integer
+                                                    description: The coded height of the video stream
                                                     example: 1088
                                                   codedWidth:
                                                     type: integer
+                                                    description: The coded width of the video stream
                                                     example: 1920
                                                   frameRate:
                                                     type: number
-                                                    format: float
+                                                    description: The frame rate of the video stream
                                                     example: 29.97
                                                   hasScalingMatrix:
                                                     type: boolean
+                                                    description: Indicates if the stream has a scaling matrix
                                                     example: false
+                                                  hearingImpaired:
+                                                    type: boolean
+                                                    example: false
+                                                  closedCaptions:
+                                                    type: boolean
+                                                    example: false
+                                                  embeddedInVideo:
+                                                    type: string
+                                                    example: '1'
                                                   height:
                                                     type: integer
+                                                    description: The height of the video stream
                                                     example: 1080
-                                                  width:
-                                                    type: integer
-                                                    example: 1920
                                                   level:
                                                     type: integer
+                                                    description: The level of the video codec
                                                     example: 40
                                                   profile:
                                                     type: string
-                                                    description: Video or audio profile
+                                                    description: The profile of the video codec
                                                     example: main
                                                   refFrames:
                                                     type: integer
+                                                    description: Number of reference frames
                                                     example: 4
                                                   scanType:
                                                     type: string
+                                                    description: The scan type (progressive or interlaced)
                                                     example: progressive
+                                                  width:
+                                                    type: integer
+                                                    description: The width of the video stream
+                                                    example: 1920
                                                   displayTitle:
                                                     type: string
+                                                    description: Display title of the stream
                                                     example: 1080p (H.264)
                                                   extendedDisplayTitle:
                                                     type: string
+                                                    description: Extended display title of the stream
                                                     example: 1080p (H.264)
                                                   channels:
                                                     type: integer
-                                                    description: Number of audio channels (only for audio streams)
+                                                    description: Number of audio channels (for audio streams)
                                                     example: 2
+                                                  language:
+                                                    type: string
+                                                    description: The language of the stream (for audio/subtitle streams)
+                                                    example: English
+                                                  languageTag:
+                                                    type: string
+                                                    description: Language tag of the stream
+                                                    example: en
+                                                  languageCode:
+                                                    type: string
+                                                    description: Language code of the stream
+                                                    example: eng
+                                                  audioChannelLayout:
+                                                    type: string
+                                                    description: The audio channel layout
+                                                    example: stereo
+                                                  samplingRate:
+                                                    type: integer
+                                                    description: Sampling rate of the audio stream in Hz
+                                                    example: 48000
+                                                  title:
+                                                    type: string
+                                                    description: Title of the subtitle track (for subtitle streams)
+                                                    example: English
+                                                  canAutoSync:
+                                                    type: boolean
+                                                    description: Indicates if the subtitle stream can auto-sync
+                                                    example: false
                                 Genre:
                                   type: array
                                   items:
