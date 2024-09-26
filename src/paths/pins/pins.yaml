@@ -1,6 +1,6 @@
 post:
   servers:
-    - url: https://plex.tv/api/v2/
+    - url: https://plex.tv/api/v2
   tags:
     - Plex
   summary: Get a Pin
