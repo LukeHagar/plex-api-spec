@@ -102,10 +102,8 @@ properties:
       properties:
         protocol:
           description: The protocol used for the connection (http, https, etc)
+          example: "http"
           type: string
-          enum:
-            - http
-            - https
         address:
           description: The (ip) address or domain name used for the connection
           type: string

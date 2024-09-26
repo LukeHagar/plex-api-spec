@@ -1,6 +1,6 @@
 get:
   servers:
-    - url: https://plex.tv/api/v2/
+    - url: https://plex.tv/api/v2
   tags:
     - Authentication
   summary: Get Token Details
