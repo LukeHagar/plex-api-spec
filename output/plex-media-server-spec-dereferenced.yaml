@@ -9589,6 +9589,45 @@ paths:
           required: true
           schema:
             type: integer
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
+        - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Plex Web
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceName
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Linux
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          in: query
+          required: false
+          schema:
+            type: string
+          example: 4.133.0
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: ClientPlatform
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Chrome
       responses:
         '200':
           description: The Pin with a non-null authToken when it has been verified by the user
