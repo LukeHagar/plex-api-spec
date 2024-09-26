@@ -1470,7 +1470,7 @@ paths:
   /companions:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       tags:
         - Plex
       summary: Get Companions Data
@@ -1565,7 +1565,7 @@ paths:
   /friends:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       tags:
         - Plex
       summary: Get list of friends of the user logged in
@@ -1716,7 +1716,7 @@ paths:
   /geoip:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       security: []
       tags:
         - Plex
@@ -8595,7 +8595,7 @@ paths:
   /resources:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       tags:
         - Plex
       summary: Get Server Resources
@@ -8762,10 +8762,8 @@ paths:
                         properties:
                           protocol:
                             description: 'The protocol used for the connection (http, https, etc)'
+                            example: http
                             type: string
-                            enum:
-                              - http
-                              - https
                           address:
                             description: The (ip) address or domain name used for the connection
                             type: string
@@ -9307,7 +9305,7 @@ paths:
   /pins:
     post:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       tags:
         - Plex
       summary: Get a Pin
@@ -9576,7 +9574,7 @@ paths:
   '/pins/{pinID}':
     get:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       security: []
       tags:
         - Plex
@@ -13697,7 +13695,7 @@ paths:
   /user:
     get:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       tags:
         - Authentication
       summary: Get Token Details
@@ -13947,10 +13945,9 @@ paths:
                     description: If you are subscribed to the Plex newsletter
                     default: false
                   mailingListStatus:
-                    description: Your current mailing list status
-                    enum:
-                      - active
-                      - unsubscribed
+                    description: Your current mailing list status (active or unsubscribed)
+                    type: string
+                    example: subscribed
                   maxHomeSize:
                     type: integer
                     description: The maximum number of accounts allowed in the Plex Home
@@ -14384,7 +14381,7 @@ paths:
   /users/signin:
     post:
       servers:
-        - url: 'https://plex.tv/api/v2/'
+        - url: 'https://plex.tv/api/v2'
       security: []
       tags:
         - Authentication
@@ -14700,10 +14697,9 @@ paths:
                         description: If you are subscribed to the Plex newsletter
                         default: false
                       mailingListStatus:
-                        description: Your current mailing list status
-                        enum:
-                          - active
-                          - unsubscribed
+                        description: Your current mailing list status (active or unsubscribed)
+                        type: string
+                        example: subscribed
                       maxHomeSize:
                         type: integer
                         description: The maximum number of accounts allowed in the Plex Home
