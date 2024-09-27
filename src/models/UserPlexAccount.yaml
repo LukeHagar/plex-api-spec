@@ -234,7 +234,7 @@ properties:
   mailingListStatus:
     description: Your current mailing list status (active or unsubscribed)
     type: string
-    example: subscribed
+    example: active
     enum:
       - active
       - unsubscribed
