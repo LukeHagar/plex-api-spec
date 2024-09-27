@@ -232,10 +232,12 @@ properties:
     description: If you are subscribed to the Plex newsletter
     default: false
   mailingListStatus:
-    # TODO - This should be an enum but there is a bug in the generator
     description: Your current mailing list status (active or unsubscribed)
     type: string
-    example: subscribed
+    example: active
+    enum:
+      - active
+      - unsubscribed
   maxHomeSize:
     type: integer
     description: The maximum number of accounts allowed in the Plex Home
