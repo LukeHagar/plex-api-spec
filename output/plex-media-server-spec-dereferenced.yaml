@@ -8764,6 +8764,9 @@ paths:
                             description: 'The protocol used for the connection (http, https, etc)'
                             example: http
                             type: string
+                            enum:
+                              - http
+                              - https
                           address:
                             description: The (ip) address or domain name used for the connection
                             type: string
@@ -13947,7 +13950,10 @@ paths:
                   mailingListStatus:
                     description: Your current mailing list status (active or unsubscribed)
                     type: string
-                    example: subscribed
+                    example: active
+                    enum:
+                      - active
+                      - unsubscribed
                   maxHomeSize:
                     type: integer
                     description: The maximum number of accounts allowed in the Plex Home
@@ -14699,7 +14705,10 @@ paths:
                       mailingListStatus:
                         description: Your current mailing list status (active or unsubscribed)
                         type: string
-                        example: subscribed
+                        example: active
+                        enum:
+                          - active
+                          - unsubscribed
                       maxHomeSize:
                         type: integer
                         description: The maximum number of accounts allowed in the Plex Home
