@@ -8671,6 +8671,17 @@ paths:
             x-speakeasy-enums:
               - DISABLE
               - ENABLE
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: |
+            The unique identifier for the client application
+            This is used to track the client application and its usage
+            (UUID, serial number, or other number unique per device)
+          in: query
+          schema:
+            type: string
+            example: gcgzw5rz2xovp84b4vha3a40
+          required: true
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -14146,6 +14157,8 @@ paths:
                         description: List of features allowed on your Plex Pass subscription
                         type: array
                         items:
+                          type: string
+                          x-speakeasy-unknown-values: allow
                           enum:
                             - Android - Dolby Vision
                             - Android - PiP
@@ -14154,28 +14167,43 @@ paths:
                             - TREBLE-show-features
                             - ad-countdown-timer
                             - adaptive_bitrate
+                            - album-types
+                            - allow_dvr
                             - amazon-loop-debug
                             - avod-ad-analysis
                             - avod-new-media
                             - blacklist_get_signin
+                            - boost-voices
+                            - camera_upload
                             - client-radio-stations
                             - cloudflare-turnstile-required
+                            - cloudsync
                             - collections
                             - comments_and_replies_push_notifications
                             - community_access_plex_tv
                             - companions_sonos
+                            - content_filter
                             - custom-home-removal
                             - disable_home_user_friendships
                             - disable_sharing_friendships
+                            - downloads-gating
                             - drm_support
+                            - dvr
+                            - dvr-block-unsupported-countries
+                            - epg-recent-channels
                             - exclude restrictions
                             - federated-auth
                             - friend_request_push_notifications
+                            - grandfather-sync
                             - guided-upgrade
+                            - hardware_transcoding
                             - home
+                            - hwtranscode
+                            - imagga-v2
                             - increase-password-complexity
                             - ios14-privacy-banner
                             - iterable-notification-tokens
+                            - item_clusters
                             - keep-payment-method
                             - kevin-bacon
                             - korea-consent
@@ -14184,28 +14212,49 @@ paths:
                             - lightning-dvr-pivot
                             - live-tv-support-incomplete-segments
                             - livetv
+                            - lyrics
                             - metadata_search
+                            - music-analysis
+                            - music_videos
                             - new_plex_pass_prices
                             - news-provider-sunset-modal
+                            - nominatim
+                            - pass
                             - photos-favorites
                             - photos-metadata-edition
+                            - photosV6-edit
+                            - photosV6-tv-albums
                             - pms_health
+                            - premium-dashboard
+                            - premium_music_metadata
                             - radio
                             - rate-limit-client-token
                             - scrobbling-service-plex-tv
+                            - session_bandwidth_restrictions
+                            - session_kick
                             - shared_server_notification
                             - shared_source_notification
+                            - signin_notification
                             - signin_with_apple
+                            - silence-removal
+                            - sleep-timer
                             - spring_serve_ad_provider
+                            - sync
+                            - sweet-fades
                             - transcoder_cache
+                            - trailers
                             - tuner-sharing
                             - two-factor-authentication
                             - unsupportedtuners
                             - upgrade-3ds2
+                            - visualizers
                             - vod-schema
                             - vod_cloudflare
+                            - volume-leveling
                             - watch-together-invite
+                            - watchlist-rss
                             - web_server_dashboard
+                            - webhooks
                       active:
                         description: If the account's Plex Pass subscription is active
                         type: boolean
@@ -14247,6 +14296,8 @@ paths:
                           description: List of features allowed on your Plex Pass subscription
                           type: array
                           items:
+                            type: string
+                            x-speakeasy-unknown-values: allow
                             enum:
                               - Android - Dolby Vision
                               - Android - PiP
@@ -14255,28 +14306,43 @@ paths:
                               - TREBLE-show-features
                               - ad-countdown-timer
                               - adaptive_bitrate
+                              - album-types
+                              - allow_dvr
                               - amazon-loop-debug
                               - avod-ad-analysis
                               - avod-new-media
                               - blacklist_get_signin
+                              - boost-voices
+                              - camera_upload
                               - client-radio-stations
                               - cloudflare-turnstile-required
+                              - cloudsync
                               - collections
                               - comments_and_replies_push_notifications
                               - community_access_plex_tv
                               - companions_sonos
+                              - content_filter
                               - custom-home-removal
                               - disable_home_user_friendships
                               - disable_sharing_friendships
+                              - downloads-gating
                               - drm_support
+                              - dvr
+                              - dvr-block-unsupported-countries
+                              - epg-recent-channels
                               - exclude restrictions
                               - federated-auth
                               - friend_request_push_notifications
+                              - grandfather-sync
                               - guided-upgrade
+                              - hardware_transcoding
                               - home
+                              - hwtranscode
+                              - imagga-v2
                               - increase-password-complexity
                               - ios14-privacy-banner
                               - iterable-notification-tokens
+                              - item_clusters
                               - keep-payment-method
                               - kevin-bacon
                               - korea-consent
@@ -14285,28 +14351,49 @@ paths:
                               - lightning-dvr-pivot
                               - live-tv-support-incomplete-segments
                               - livetv
+                              - lyrics
                               - metadata_search
+                              - music-analysis
+                              - music_videos
                               - new_plex_pass_prices
                               - news-provider-sunset-modal
+                              - nominatim
+                              - pass
                               - photos-favorites
                               - photos-metadata-edition
+                              - photosV6-edit
+                              - photosV6-tv-albums
                               - pms_health
+                              - premium-dashboard
+                              - premium_music_metadata
                               - radio
                               - rate-limit-client-token
                               - scrobbling-service-plex-tv
+                              - session_bandwidth_restrictions
+                              - session_kick
                               - shared_server_notification
                               - shared_source_notification
+                              - signin_notification
                               - signin_with_apple
+                              - silence-removal
+                              - sleep-timer
                               - spring_serve_ad_provider
+                              - sync
+                              - sweet-fades
                               - transcoder_cache
+                              - trailers
                               - tuner-sharing
                               - two-factor-authentication
                               - unsupportedtuners
                               - upgrade-3ds2
+                              - visualizers
                               - vod-schema
                               - vod_cloudflare
+                              - volume-leveling
                               - watch-together-invite
+                              - watchlist-rss
                               - web_server_dashboard
+                              - webhooks
                         active:
                           description: If the account's Plex Pass subscription is active
                           type: boolean
@@ -14901,6 +14988,8 @@ paths:
                             description: List of features allowed on your Plex Pass subscription
                             type: array
                             items:
+                              type: string
+                              x-speakeasy-unknown-values: allow
                               enum:
                                 - Android - Dolby Vision
                                 - Android - PiP
@@ -14909,28 +14998,43 @@ paths:
                                 - TREBLE-show-features
                                 - ad-countdown-timer
                                 - adaptive_bitrate
+                                - album-types
+                                - allow_dvr
                                 - amazon-loop-debug
                                 - avod-ad-analysis
                                 - avod-new-media
                                 - blacklist_get_signin
+                                - boost-voices
+                                - camera_upload
                                 - client-radio-stations
                                 - cloudflare-turnstile-required
+                                - cloudsync
                                 - collections
                                 - comments_and_replies_push_notifications
                                 - community_access_plex_tv
                                 - companions_sonos
+                                - content_filter
                                 - custom-home-removal
                                 - disable_home_user_friendships
                                 - disable_sharing_friendships
+                                - downloads-gating
                                 - drm_support
+                                - dvr
+                                - dvr-block-unsupported-countries
+                                - epg-recent-channels
                                 - exclude restrictions
                                 - federated-auth
                                 - friend_request_push_notifications
+                                - grandfather-sync
                                 - guided-upgrade
+                                - hardware_transcoding
                                 - home
+                                - hwtranscode
+                                - imagga-v2
                                 - increase-password-complexity
                                 - ios14-privacy-banner
                                 - iterable-notification-tokens
+                                - item_clusters
                                 - keep-payment-method
                                 - kevin-bacon
                                 - korea-consent
@@ -14939,28 +15043,49 @@ paths:
                                 - lightning-dvr-pivot
                                 - live-tv-support-incomplete-segments
                                 - livetv
+                                - lyrics
                                 - metadata_search
+                                - music-analysis
+                                - music_videos
                                 - new_plex_pass_prices
                                 - news-provider-sunset-modal
+                                - nominatim
+                                - pass
                                 - photos-favorites
                                 - photos-metadata-edition
+                                - photosV6-edit
+                                - photosV6-tv-albums
                                 - pms_health
+                                - premium-dashboard
+                                - premium_music_metadata
                                 - radio
                                 - rate-limit-client-token
                                 - scrobbling-service-plex-tv
+                                - session_bandwidth_restrictions
+                                - session_kick
                                 - shared_server_notification
                                 - shared_source_notification
+                                - signin_notification
                                 - signin_with_apple
+                                - silence-removal
+                                - sleep-timer
                                 - spring_serve_ad_provider
+                                - sync
+                                - sweet-fades
                                 - transcoder_cache
+                                - trailers
                                 - tuner-sharing
                                 - two-factor-authentication
                                 - unsupportedtuners
                                 - upgrade-3ds2
+                                - visualizers
                                 - vod-schema
                                 - vod_cloudflare
+                                - volume-leveling
                                 - watch-together-invite
+                                - watchlist-rss
                                 - web_server_dashboard
+                                - webhooks
                           active:
                             description: If the account's Plex Pass subscription is active
                             type: boolean
@@ -15002,6 +15127,8 @@ paths:
                               description: List of features allowed on your Plex Pass subscription
                               type: array
                               items:
+                                type: string
+                                x-speakeasy-unknown-values: allow
                                 enum:
                                   - Android - Dolby Vision
                                   - Android - PiP
@@ -15010,28 +15137,43 @@ paths:
                                   - TREBLE-show-features
                                   - ad-countdown-timer
                                   - adaptive_bitrate
+                                  - album-types
+                                  - allow_dvr
                                   - amazon-loop-debug
                                   - avod-ad-analysis
                                   - avod-new-media
                                   - blacklist_get_signin
+                                  - boost-voices
+                                  - camera_upload
                                   - client-radio-stations
                                   - cloudflare-turnstile-required
+                                  - cloudsync
                                   - collections
                                   - comments_and_replies_push_notifications
                                   - community_access_plex_tv
                                   - companions_sonos
+                                  - content_filter
                                   - custom-home-removal
                                   - disable_home_user_friendships
                                   - disable_sharing_friendships
+                                  - downloads-gating
                                   - drm_support
+                                  - dvr
+                                  - dvr-block-unsupported-countries
+                                  - epg-recent-channels
                                   - exclude restrictions
                                   - federated-auth
                                   - friend_request_push_notifications
+                                  - grandfather-sync
                                   - guided-upgrade
+                                  - hardware_transcoding
                                   - home
+                                  - hwtranscode
+                                  - imagga-v2
                                   - increase-password-complexity
                                   - ios14-privacy-banner
                                   - iterable-notification-tokens
+                                  - item_clusters
                                   - keep-payment-method
                                   - kevin-bacon
                                   - korea-consent
@@ -15040,28 +15182,49 @@ paths:
                                   - lightning-dvr-pivot
                                   - live-tv-support-incomplete-segments
                                   - livetv
+                                  - lyrics
                                   - metadata_search
+                                  - music-analysis
+                                  - music_videos
                                   - new_plex_pass_prices
                                   - news-provider-sunset-modal
+                                  - nominatim
+                                  - pass
                                   - photos-favorites
                                   - photos-metadata-edition
+                                  - photosV6-edit
+                                  - photosV6-tv-albums
                                   - pms_health
+                                  - premium-dashboard
+                                  - premium_music_metadata
                                   - radio
                                   - rate-limit-client-token
                                   - scrobbling-service-plex-tv
+                                  - session_bandwidth_restrictions
+                                  - session_kick
                                   - shared_server_notification
                                   - shared_source_notification
+                                  - signin_notification
                                   - signin_with_apple
+                                  - silence-removal
+                                  - sleep-timer
                                   - spring_serve_ad_provider
+                                  - sync
+                                  - sweet-fades
                                   - transcoder_cache
+                                  - trailers
                                   - tuner-sharing
                                   - two-factor-authentication
                                   - unsupportedtuners
                                   - upgrade-3ds2
+                                  - visualizers
                                   - vod-schema
                                   - vod_cloudflare
+                                  - volume-leveling
                                   - watch-together-invite
+                                  - watchlist-rss
                                   - web_server_dashboard
+                                  - webhooks
                             active:
                               description: If the account's Plex Pass subscription is active
                               type: boolean
