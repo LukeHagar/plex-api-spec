@@ -103,29 +103,29 @@ properties:
         - watchlist-rss
         - web_server_dashboard
         - webhooks
-    active:
-      description: If the account's Plex Pass subscription is active
-      type: boolean
-      example: true
-    subscribedAt:
-      description: Date the account subscribed to Plex Pass
-      type:
-        - string
-        - "null"
-      example: "2021-04-12T18:21:12Z"
-    status:
-      description: String representation of subscriptionActive
-      example: Inactive
-      enum:
-        - Inactive
-        - Active
-    paymentService:
-      description: Payment service used for your Plex Pass subscription
-      type:
-        - string
-        - "null"
-    plan:
-      description: Name of Plex Pass subscription plan
-      type:
-        - string
-        - "null"
+  active:
+    description: If the account's Plex Pass subscription is active
+    type: boolean
+    example: true
+  subscribedAt:
+    description: Date the account subscribed to Plex Pass
+    type:
+      - string
+      - "null"
+    example: "2021-04-12T18:21:12Z"
+  status:
+    description: String representation of subscriptionActive
+    example: Inactive
+    enum:
+      - Inactive
+      - Active
+  paymentService:
+    description: Payment service used for your Plex Pass subscription
+    type:
+      - string
+      - "null"
+  plan:
+    description: Name of Plex Pass subscription plan
+    type:
+      - string
+      - "null"
