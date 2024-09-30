@@ -1,0 +1,6 @@
+name: query
+in: query
+required: true
+schema:
+  type: string
+description: The search query term.
