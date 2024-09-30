@@ -55,10 +55,7 @@ x-speakeasy-globals:
   parameters:
     - name: X-Plex-Client-Identifier
       x-speakeasy-name-override: ClientID
-      description: |
-        The unique identifier for the client application
-        This is used to track the client application and its usage
-        (UUID, serial number, or other number unique per device)
+      description: 'The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)'
       in: query
       schema:
         type: string
@@ -8672,10 +8669,7 @@ paths:
               - ENABLE
         - name: X-Plex-Client-Identifier
           x-speakeasy-name-override: ClientID
-          description: |
-            The unique identifier for the client application
-            This is used to track the client application and its usage
-            (UUID, serial number, or other number unique per device)
+          description: 'The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)'
           in: query
           schema:
             type: string
@@ -9363,10 +9357,7 @@ paths:
           required: false
         - name: X-Plex-Client-Identifier
           x-speakeasy-name-override: ClientID
-          description: |
-            The unique identifier for the client application
-            This is used to track the client application and its usage
-            (UUID, serial number, or other number unique per device)
+          description: 'The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)'
           in: query
           schema:
             type: string
@@ -9628,10 +9619,7 @@ paths:
             type: integer
         - name: X-Plex-Client-Identifier
           x-speakeasy-name-override: ClientID
-          description: |
-            The unique identifier for the client application
-            This is used to track the client application and its usage
-            (UUID, serial number, or other number unique per device)
+          description: 'The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)'
           in: query
           schema:
             type: string
@@ -14508,10 +14496,7 @@ paths:
       parameters:
         - name: X-Plex-Client-Identifier
           x-speakeasy-name-override: ClientID
-          description: |
-            The unique identifier for the client application
-            This is used to track the client application and its usage
-            (UUID, serial number, or other number unique per device)
+          description: 'The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)'
           in: query
           schema:
             type: string
