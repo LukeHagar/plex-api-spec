@@ -63,6 +63,7 @@ x-speakeasy-globals:
       required: true
     - name: X-Plex-Product
       x-speakeasy-name-override: ClientName
+      description: 'The name of the client application. This is used to track the client application and its usage. (Plex Web, Plex Media Server, etc.)'
       in: query
       required: false
       schema:
@@ -70,6 +71,7 @@ x-speakeasy-globals:
       example: Plex Web
     - name: X-Plex-Version
       x-speakeasy-name-override: ClientVersion
+      description: 'The version of the client application. This is used to track the client application and its usage. (4.133.0, 5.0.0, etc.)'
       in: query
       required: false
       schema:
@@ -77,6 +79,7 @@ x-speakeasy-globals:
       example: 4.133.0
     - name: X-Plex-Platform
       x-speakeasy-name-override: ClientPlatform
+      description: 'The platform of the client application. This is used to track the client application and its usage. (Chrome, Safari, etc.)'
       in: query
       required: false
       schema:
@@ -84,6 +87,7 @@ x-speakeasy-globals:
       example: Chrome
     - name: X-Plex-Device
       x-speakeasy-name-override: DeviceName
+      description: 'The name of the device the client application is running on. This is used to track the client application and its usage. (Linux, iOS, Android, etc.)'
       in: query
       required: false
       schema:
@@ -9365,6 +9369,7 @@ paths:
           required: true
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. This is used to track the client application and its usage. (Plex Web, Plex Media Server, etc.)'
           in: query
           required: false
           schema:
@@ -9372,6 +9377,7 @@ paths:
           example: Plex Web
         - name: X-Plex-Device
           x-speakeasy-name-override: DeviceName
+          description: 'The name of the device the client application is running on. This is used to track the client application and its usage. (Linux, iOS, Android, etc.)'
           in: query
           required: false
           schema:
@@ -9379,6 +9385,7 @@ paths:
           example: Linux
         - name: X-Plex-Version
           x-speakeasy-name-override: ClientVersion
+          description: 'The version of the client application. This is used to track the client application and its usage. (4.133.0, 5.0.0, etc.)'
           in: query
           required: false
           schema:
@@ -9386,6 +9393,7 @@ paths:
           example: 4.133.0
         - name: X-Plex-Platform
           x-speakeasy-name-override: ClientPlatform
+          description: 'The platform of the client application. This is used to track the client application and its usage. (Chrome, Safari, etc.)'
           in: query
           required: false
           schema:
@@ -9627,6 +9635,7 @@ paths:
           required: true
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. This is used to track the client application and its usage. (Plex Web, Plex Media Server, etc.)'
           in: query
           required: false
           schema:
@@ -9634,6 +9643,7 @@ paths:
           example: Plex Web
         - name: X-Plex-Device
           x-speakeasy-name-override: DeviceName
+          description: 'The name of the device the client application is running on. This is used to track the client application and its usage. (Linux, iOS, Android, etc.)'
           in: query
           required: false
           schema:
@@ -9641,6 +9651,7 @@ paths:
           example: Linux
         - name: X-Plex-Version
           x-speakeasy-name-override: ClientVersion
+          description: 'The version of the client application. This is used to track the client application and its usage. (4.133.0, 5.0.0, etc.)'
           in: query
           required: false
           schema:
@@ -9648,6 +9659,7 @@ paths:
           example: 4.133.0
         - name: X-Plex-Platform
           x-speakeasy-name-override: ClientPlatform
+          description: 'The platform of the client application. This is used to track the client application and its usage. (Chrome, Safari, etc.)'
           in: query
           required: false
           schema:
@@ -14504,6 +14516,7 @@ paths:
           required: true
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. This is used to track the client application and its usage. (Plex Web, Plex Media Server, etc.)'
           in: query
           required: false
           schema:
@@ -14511,6 +14524,7 @@ paths:
           example: Plex Web
         - name: X-Plex-Device
           x-speakeasy-name-override: DeviceName
+          description: 'The name of the device the client application is running on. This is used to track the client application and its usage. (Linux, iOS, Android, etc.)'
           in: query
           required: false
           schema:
@@ -14518,6 +14532,7 @@ paths:
           example: Linux
         - name: X-Plex-Version
           x-speakeasy-name-override: ClientVersion
+          description: 'The version of the client application. This is used to track the client application and its usage. (4.133.0, 5.0.0, etc.)'
           in: query
           required: false
           schema:
@@ -14525,6 +14540,7 @@ paths:
           example: 4.133.0
         - name: X-Plex-Platform
           x-speakeasy-name-override: ClientPlatform
+          description: 'The platform of the client application. This is used to track the client application and its usage. (Chrome, Safari, etc.)'
           in: query
           required: false
           schema:
