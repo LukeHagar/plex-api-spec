@@ -1,4 +1,5 @@
 name: X-Plex-Device-Name
+description: The name of the device the client application is running on. This is used to track the client application and its usage. (Chrome, Safari, etc.)
 in: query
 required: false
 schema:
