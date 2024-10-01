@@ -4634,16 +4634,6 @@ paths:
         > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
       operationId: get-library-details
       parameters:
-        - name: sectionKey
-          description: |
-            The unique key of the Plex library. 
-            Note: This is unique in the context of the Plex server.
-          in: path
-          schema:
-            type: integer
-            format: int32
-            example: 9518
-          required: true
         - name: includeDetails
           description: |
             Whether or not to include details for a section (types, filters, and sorts). 
@@ -4656,6 +4646,16 @@ paths:
               - 1
             default: 0
           required: false
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
+          in: path
+          schema:
+            type: integer
+            format: int32
+            example: 9518
+          required: true
       responses:
         '200':
           description: The details of the library
@@ -5245,16 +5245,6 @@ paths:
         - `firstCharacter`: Items categorized by the first letter.
         - `folder`: Items categorized by folder.
       parameters:
-        - name: sectionKey
-          description: |
-            The unique key of the Plex library. 
-            Note: This is unique in the context of the Plex server.
-          in: path
-          schema:
-            type: integer
-            format: int32
-            example: 9518
-          required: true
         - name: tag
           in: path
           required: true
@@ -5319,6 +5309,16 @@ paths:
               - TV_SHOW
               - SEASON
               - EPISODE
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
+          in: path
+          schema:
+            type: integer
+            format: int32
+            example: 9518
+          required: true
         - name: includeMeta
           in: query
           description: |
@@ -6540,16 +6540,6 @@ paths:
         This endpoint Refreshes all the Metadata of the library.
       operationId: get-refresh-library-metadata
       parameters:
-        - name: sectionKey
-          description: |
-            The unique key of the Plex library. 
-            Note: This is unique in the context of the Plex server.
-          in: path
-          schema:
-            type: integer
-            format: int32
-            example: 9518
-          required: true
         - name: force
           description: Force the refresh even if the library is already being refreshed.
           in: query
@@ -6560,6 +6550,16 @@ paths:
               - 0
               - 1
           required: false
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
+          in: path
+          schema:
+            type: integer
+            format: int32
+            example: 9518
+          required: true
       responses:
         '200':
           description: The library is refreshing
@@ -7733,12 +7733,9 @@ paths:
             type: string
           required: false
           examples:
-            include-stream:
-              value: Stream
-            include-stream-otheritem:
-              value: 'Stream,OtherItem'
-            include-stream-otheritem-anotheritem:
-              value: 'Stream,OtherItem,AnotherItem'
+            - Stream
+            - 'Stream,OtherItem'
+            - 'Stream,OtherItem,AnotherItem'
       responses:
         '200':
           description: The children of the library item.
@@ -7884,7 +7881,7 @@ paths:
                               example: Reacher
                             summary:
                               type: string
-                              example: 'Based on"Bad Luck and Trouble," when members of Reacher''s old military unit start turning up dead, Reacher has just one thing on his mind—revenge.'
+                              example: 'Based on"Bad Luck and Trouble," when members of Reacher''s old military unit start turning up dead, Reacher has just one thing on his mind-revenge.'
                             index:
                               type: integer
                               format: int32
@@ -8004,6 +8001,14 @@ paths:
         This endpoint will return the top watched content from libraries of a certain type
       operationId: getTopWatchedContent
       parameters:
+        - name: includeGuids
+          in: query
+          description: |
+            Adds the Guids object to the response
+          schema:
+            type: integer
+          required: false
+          example: 1
         - name: type
           in: query
           description: |
@@ -8027,14 +8032,6 @@ paths:
               - SEASON
               - EPISODE
           required: true
-        - name: includeGuids
-          in: query
-          description: |
-            Adds the Guids object to the response
-          schema:
-            type: integer
-          required: false
-          example: 1
       responses:
         '200':
           description: The metadata of the library item.
