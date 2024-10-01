@@ -103,6 +103,16 @@ x-speakeasy-globals:
         type: string
       examples:
         - Roku 3
+x-speakeasy-retries:
+  strategy: backoff
+  backoff:
+    initialInterval: 500
+    maxInterval: 60000
+    maxElapsedTime: 3600000
+    exponent: 1.5
+  statusCodes:
+    - 5XX
+  retryConnectionErrors: true
 security:
   - accessToken: []
 components:
