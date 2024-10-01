@@ -1,8 +1,10 @@
 name: X-Plex-Version
 x-speakeasy-name-override: ClientVersion
-description: The version of the client application. This is used to track the client application and its usage. (4.133.0, 5.0.0, etc.)
-in: query
+description: The version of the client application.
+in: header
 required: false
 schema:
   type: string
-example: "4.133.0"
+examples: 
+  - "2.4.1"
+  - "4.133.0"

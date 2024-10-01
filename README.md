@@ -69,6 +69,28 @@ The file should contain data in the following order:
     5XX:
 ```
 
+### Headers
+
+Plex Media Server accept a variety of custom headers that follow the pattern `X-Plex-{name}`.
+
+The full set of headers isn't enumerated here since some may only apply to certain endpoints, but common headers that can be included on all requests include:
+
+| Header | Description | Sample |
+| --- | --- | --- |
+| X-Plex-Client-Identifier | An opaque identifier unique to the client | abc123 |
+| X-Plex-Token | An authentication token, obtained from plex.tv | XXXXXXXXXXXX |
+| X-Plex-Product | The name of the client product | Plex for Roku |
+| X-Plex-Version | The version of the client application | 2.4.1 |
+| X-Plex-Platform | The platform of the client | Roku |
+| X-Plex-Platform-Version | The version of the platform | 4.3 build 1057 |
+| X-Plex-Device | A relatively friendly name for the client device | Roku 3 |
+| X-Plex-Model | A potentially less friendly identifier for the device model | 4200X |
+| X-Plex-Device-Vendor | The device vendor | Roku |
+| X-Plex-Device-Name | A friendly name for the client | Living Room TV |
+| X-Plex-Marketplace | The marketplace on which the client application is distributed  | googlePlay |
+
+X-Plex-Client-Identifier is typically required, as is X-Plex-Token for authentication.
+
 ### Rules
 
 - A property in the response is only marked as required if it is always returned, regardless of the parameters sent with the request.

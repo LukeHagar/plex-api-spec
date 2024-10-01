@@ -1,8 +1,12 @@
 name: X-Plex-Client-Identifier
 x-speakeasy-name-override: ClientID
-description: The unique identifier for the client application. This is used to track the client application and its usage. (UUID, serial number, or other number unique per device)
-in: query
+description: An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
+required: true
+in: header
 schema:
   type: string
-  example: gcgzw5rz2xovp84b4vha3a40
-required: true
+  examples: 
+    - 3381b62b-9ab7-4e37-827b-203e9809eb58
+    - SMPH00123
+    - 4CE0460D0G
+

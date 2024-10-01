@@ -1,7 +1,7 @@
 name: X-Plex-Token
-in: query
-description: Plex Authentication Token
+in: header
+description: An authentication token, obtained from plex.tv
+required: true
 schema:
   type: string
   example: CV5xoxjTpFKUzBTShsaf
-required: true

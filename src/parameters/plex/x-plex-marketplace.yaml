@@ -1,0 +1,9 @@
+name: X-Plex-Marketplace
+x-speakeasy-name-override: Marketplace
+description: The marketplace on which the client application is distributed  
+in: header
+required: false
+schema:
+  type: string
+examples: 
+  - googlePlay
