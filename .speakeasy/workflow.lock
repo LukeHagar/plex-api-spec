@@ -21,7 +21,8 @@ workflow:
     sources:
         plexapi:
             inputs:
-                - location: ./output/plex-media-server-spec-dereferenced.yaml
+                - location: ./src/pms-spec.yaml
+            ruleset: Hyruleset
             registry:
                 location: registry.speakeasyapi.dev/plexapi/plexapi/plexapi
     targets: {}

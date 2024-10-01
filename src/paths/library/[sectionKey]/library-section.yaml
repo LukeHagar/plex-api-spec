@@ -229,3 +229,19 @@ get:
       $ref: "../../../responses/400.yaml"
     "401":
       $ref: "../../../responses/401.yaml"
+
+delete:
+  tags:
+    - Library
+  summary: Delete Library Section
+  description: Delete a library using a specific section id
+  operationId: deleteLibrary
+  parameters:
+    - $ref: "../../../parameters/library/section-key.yaml"
+  responses:
+    "200":
+      description: The library is deleted
+    "400":
+      $ref: "../../../responses/400.yaml"
+    "401":
+      $ref: "../../../responses/401.yaml"
