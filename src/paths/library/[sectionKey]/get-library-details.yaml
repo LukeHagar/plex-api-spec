@@ -45,7 +45,6 @@ get:
 
   operationId: get-library-details
   parameters:
-    - $ref: "../../../parameters/library/section-key.yaml"
     - name: includeDetails
       description: |
         Whether or not to include details for a section (types, filters, and sorts). 
@@ -58,6 +57,7 @@ get:
           - 1
         default: 0
       required: false
+    - $ref: "../../../parameters/library/section-key.yaml"
   responses:
     "200":
       description: The details of the library

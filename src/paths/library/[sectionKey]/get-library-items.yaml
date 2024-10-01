@@ -25,7 +25,6 @@ get:
     - `firstCharacter`: Items categorized by the first letter.
     - `folder`: Items categorized by folder.
   parameters:
-    - $ref: "../../../parameters/library/section-key.yaml"
     - name: tag
       in: path
       required: true
@@ -71,6 +70,7 @@ get:
       required: false
       schema:
         $ref: "../../../models/common/PlexMediaType.yaml"
+    - $ref: "../../../parameters/library/section-key.yaml"
     - $ref: "../../../parameters/include-meta.yaml"
     - $ref: "../../../parameters/container-start.yaml"
     - $ref: "../../../parameters/container-size.yaml"

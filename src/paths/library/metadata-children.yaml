@@ -20,12 +20,9 @@ get:
         type: string
       required: false
       examples:
-        include-stream:
-          value: Stream
-        include-stream-otheritem:
-          value: Stream,OtherItem
-        include-stream-otheritem-anotheritem:
-          value: Stream,OtherItem,AnotherItem
+        - Stream
+        - Stream,OtherItem
+        - Stream,OtherItem,AnotherItem
   responses:
     "200":
       description: The children of the library item.
@@ -179,7 +176,7 @@ get:
                           example:
                             Based on"Bad Luck and Trouble," when members of Reacher's old military
                             unit start turning up dead, Reacher has just one thing on his
-                            mind—revenge.
+                            mind-revenge.
                         index:
                           type: integer
                           format: int32

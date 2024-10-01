@@ -96,6 +96,7 @@ X-Plex-Client-Identifier is typically required, as is X-Plex-Token for authentic
 - A property in the response is only marked as required if it is always returned, regardless of the parameters sent with the request.
 - Although Plex.tv API uses the `X-Plex-Token` as a query parameter, this specification will always define this as a header parameter where supported since this follows industry security standards.
 - Though Plex does default return `XML` unless the `accept` header is set to `application/json`, this specification will not include the `accept` header in the endpoints. Assume it should always be included in the request.
+- Parameters added to endpoints via reference should always be specified at the bottom of the paramters set, since there is a large set of common parameters that are used across all endpoints.
 
 ## Questions?
 

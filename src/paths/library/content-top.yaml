@@ -6,7 +6,6 @@ get:
     This endpoint will return the top watched content from libraries of a certain type
   operationId: getTopWatchedContent
   parameters:
-    - $ref: "../../parameters/type.yaml"
     - name: includeGuids
       in: query
       description: |
@@ -15,6 +14,7 @@ get:
         type: integer
       required: false
       example: 1
+    - $ref: "../../parameters/type.yaml"
   responses:
     "200":
       description: The metadata of the library item.

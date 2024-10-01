@@ -35,12 +35,12 @@ post:
   responses:
     "200":
       description: The task was started successfully
+    "202":
+      description: The task was already running.
     "400":
       $ref: "../../responses/400.yaml"
     "401":
       $ref: "../../responses/401.yaml"
-    "202":
-      description: The task was already running.
 
 delete:
   tags:

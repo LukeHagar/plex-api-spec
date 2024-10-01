@@ -6,7 +6,6 @@ get:
     This endpoint Refreshes all the Metadata of the library.
   operationId: get-refresh-library-metadata
   parameters:
-    - $ref: "../../../../parameters/library/section-key.yaml"
     - name: force
       description: Force the refresh even if the library is already being refreshed.
       in: query
@@ -17,6 +16,7 @@ get:
           - 0
           - 1
       required: false
+    - $ref: "../../../../parameters/library/section-key.yaml"
 
   responses:
     "200":
