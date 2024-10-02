@@ -17,7 +17,7 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/sdk_generation.yaml
+      - .github/workflows/build-and-push-pms-spec.yaml
       - src/**
 
 jobs:
@@ -45,7 +45,7 @@ jobs:
   generate:
     needs: build
     name: Push to Speakeasy API
-    uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15 # Already pulls the latest spec version
+    uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
     with:
       force: ${{ github.event.inputs.force }}
       mode: direct
