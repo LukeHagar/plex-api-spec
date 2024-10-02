@@ -60,10 +60,7 @@ x-speakeasy-globals:
       in: header
       schema:
         type: string
-        examples:
-          - 3381b62b-9ab7-4e37-827b-203e9809eb58
-          - SMPH00123
-          - 4CE0460D0G
+      example: 3381b62b-9ab7-4e37-827b-203e9809eb58
     - name: X-Plex-Product
       x-speakeasy-name-override: ClientName
       description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
@@ -71,9 +68,7 @@ x-speakeasy-globals:
       required: false
       schema:
         type: string
-      examples:
-        - Plex Web
-        - Plex for Roku
+      example: Plex for Roku
     - name: X-Plex-Version
       x-speakeasy-name-override: ClientVersion
       description: The version of the client application.
@@ -81,9 +76,7 @@ x-speakeasy-globals:
       required: false
       schema:
         type: string
-      examples:
-        - 2.4.1
-        - 4.133.0
+      examples: 2.4.1
     - name: X-Plex-Platform
       x-speakeasy-name-override: Platform
       description: The platform of the client application.
@@ -91,9 +84,7 @@ x-speakeasy-globals:
       required: false
       schema:
         type: string
-      examples:
-        - Chrome
-        - Roku
+      example: Roku
     - name: X-Plex-Device
       x-speakeasy-name-override: DeviceNickname
       description: A relatively friendly name for the client device
@@ -101,8 +92,7 @@ x-speakeasy-globals:
       required: false
       schema:
         type: string
-      examples:
-        - Roku 3
+      example: Roku 3
 x-speakeasy-retries:
   strategy: backoff
   backoff:
@@ -8698,10 +8688,7 @@ paths:
           in: header
           schema:
             type: string
-            examples:
-              - 3381b62b-9ab7-4e37-827b-203e9809eb58
-              - SMPH00123
-              - 4CE0460D0G
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -9389,10 +9376,7 @@ paths:
           in: header
           schema:
             type: string
-            examples:
-              - 3381b62b-9ab7-4e37-827b-203e9809eb58
-              - SMPH00123
-              - 4CE0460D0G
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
           description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
@@ -9400,9 +9384,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Plex Web
-            - Plex for Roku
+          example: Plex for Roku
         - name: X-Plex-Device
           x-speakeasy-name-override: DeviceNickname
           description: A relatively friendly name for the client device
@@ -9410,8 +9392,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Roku 3
+          example: Roku 3
         - name: X-Plex-Version
           x-speakeasy-name-override: ClientVersion
           description: The version of the client application.
@@ -9419,9 +9400,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - 2.4.1
-            - 4.133.0
+          examples: 2.4.1
         - name: X-Plex-Platform
           x-speakeasy-name-override: Platform
           description: The platform of the client application.
@@ -9429,9 +9408,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Chrome
-            - Roku
+          example: Roku
       responses:
         '201':
           description: Requests a new pin id used in the authentication flow
@@ -9665,10 +9642,7 @@ paths:
           in: header
           schema:
             type: string
-            examples:
-              - 3381b62b-9ab7-4e37-827b-203e9809eb58
-              - SMPH00123
-              - 4CE0460D0G
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
           description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
@@ -9676,9 +9650,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Plex Web
-            - Plex for Roku
+          example: Plex for Roku
         - name: X-Plex-Device
           x-speakeasy-name-override: DeviceNickname
           description: A relatively friendly name for the client device
@@ -9686,8 +9658,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Roku 3
+          example: Roku 3
         - name: X-Plex-Version
           x-speakeasy-name-override: ClientVersion
           description: The version of the client application.
@@ -9695,9 +9666,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - 2.4.1
-            - 4.133.0
+          examples: 2.4.1
         - name: X-Plex-Platform
           x-speakeasy-name-override: Platform
           description: The platform of the client application.
@@ -9705,9 +9674,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Chrome
-            - Roku
+          example: Roku
       responses:
         '200':
           description: The Pin with a non-null authToken when it has been verified by the user
@@ -14556,10 +14523,7 @@ paths:
           in: header
           schema:
             type: string
-            examples:
-              - 3381b62b-9ab7-4e37-827b-203e9809eb58
-              - SMPH00123
-              - 4CE0460D0G
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
         - name: X-Plex-Product
           x-speakeasy-name-override: ClientName
           description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
@@ -14567,9 +14531,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Plex Web
-            - Plex for Roku
+          example: Plex for Roku
         - name: X-Plex-Device
           x-speakeasy-name-override: DeviceNickname
           description: A relatively friendly name for the client device
@@ -14577,8 +14539,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Roku 3
+          example: Roku 3
         - name: X-Plex-Version
           x-speakeasy-name-override: ClientVersion
           description: The version of the client application.
@@ -14586,9 +14547,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - 2.4.1
-            - 4.133.0
+          examples: 2.4.1
         - name: X-Plex-Platform
           x-speakeasy-name-override: Platform
           description: The platform of the client application.
@@ -14596,9 +14555,7 @@ paths:
           required: false
           schema:
             type: string
-          examples:
-            - Chrome
-            - Roku
+          example: Roku
       requestBody:
         content:
           application/x-www-form-urlencoded:
