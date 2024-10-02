@@ -5,4 +5,4 @@ in: header
 required: false
 schema:
   type: string
-example: "external-media,indirect-media,hub-style-list"
+example: external-media,indirect-media,hub-style-list

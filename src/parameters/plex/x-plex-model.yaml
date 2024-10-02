@@ -5,5 +5,4 @@ in: header
 required: false
 schema:
   type: string
-examples:
-  - 4200X
+example: 4200X

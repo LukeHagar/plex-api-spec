@@ -5,6 +5,4 @@ in: header
 required: false
 schema:
   type: string
-examples: 
-  - Chrome
-  - Roku
+example: Roku

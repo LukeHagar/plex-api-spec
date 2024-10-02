@@ -5,6 +5,4 @@ in: header
 required: false
 schema:
   type: string
-examples: 
-  - Plex Web
-  - Plex for Roku
+example: Plex for Roku

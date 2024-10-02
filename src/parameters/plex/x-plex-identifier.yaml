@@ -5,8 +5,4 @@ required: true
 in: header
 schema:
   type: string
-  examples: 
-    - 3381b62b-9ab7-4e37-827b-203e9809eb58
-    - SMPH00123
-    - 4CE0460D0G
-
+example: 3381b62b-9ab7-4e37-827b-203e9809eb58

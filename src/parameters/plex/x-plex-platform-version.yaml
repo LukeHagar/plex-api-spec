@@ -5,5 +5,4 @@ in: header
 required: false
 schema:
   type: string
-examples: 
-  - 4.3 build 1057
+example: 4.3 build 1057

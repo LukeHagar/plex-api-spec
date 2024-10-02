@@ -5,5 +5,4 @@ in: header
 required: false
 schema:
   type: string
-examples:
-  - Roku
+example: Roku
