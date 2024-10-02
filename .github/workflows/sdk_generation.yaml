@@ -18,7 +18,7 @@ permissions:
       - main
     paths:
       - .github/workflows/sdk_generation.yaml
-      - src/**/*
+      - output/**/*
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
@@ -26,7 +26,6 @@ jobs:
       force: ${{ github.event.inputs.force }}
       mode: direct
       speakeasy_version: latest
-      working_directory: src
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
