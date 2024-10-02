@@ -1,0 +1,81 @@
+get:
+  tags:
+    - Library
+  summary: Search All Libraries
+  operationId: get-search-all-libraries
+  description: |
+    Search the provided query across all library sections, or a single section, and return matches as hubs, split up by type.
+  parameters:
+    - $ref: "../../parameters/query.yaml"
+    - $ref: "../../parameters/plex/x-plex-identifier.yaml"
+    - name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: Limit the number of results returned.
+    - name: searchTypes
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - movies
+            - music
+            - otherVideos
+            - people
+            - tv
+        example: movies,music,otherVideos,people,tv
+      style: form
+      explode: false
+      description: |
+        A comma-separated list of search types to include. Valid values are: movies, music, otherVideos, people, tv.
+    - name: includeCollections
+      in: query
+      required: false
+      schema:
+        $ref: "../../models/common/PlexBoolean.yaml"
+      description: Whether to include collections in the search results.
+    - name: includeExternalMedia
+      in: query
+      required: false
+      schema:
+        $ref: "../../models/common/PlexBoolean.yaml"
+      description: Whether to include external media in the search results.
+  responses:
+    "200":
+      description: The libraries available on the Server
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - MediaContainer
+            properties:
+              MediaContainer:
+                type: object
+                required:
+                  - size
+                  - SearchResult
+                properties:
+                  size:
+                    type: number
+                  SearchResult:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - score
+                        - Metadata
+                      properties:
+                        score:
+                          type: number
+                          format: float # This is correct for 32-bit floating-point numbers
+                        Metadata:
+                          $ref: "../../models/MetaData.yaml"
+    "400":
+      $ref: "../../responses/400.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"

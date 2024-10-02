@@ -6,8 +6,8 @@ properties:
     type: array
     items:
       type: string
-      x-speakeasy-unknown-values: allow
-      enum:
+      #TODO This should become an enum once all values are known
+      description: |
         - Android - Dolby Vision
         - Android - PiP
         - CU Sunset
@@ -103,6 +103,15 @@ properties:
         - watchlist-rss
         - web_server_dashboard
         - webhooks
+        - blacklist-subnets
+        - chromecast-music-mp
+        - Sync v3
+        - livetv-platform-specific
+        - nonAnonymousAccount
+        - parental-controls
+        - Subtitles on Demand
+        - ultrablur
+        - web-desktop-gracenote-banner
   active:
     description: If the account's Plex Pass subscription is active
     type: boolean

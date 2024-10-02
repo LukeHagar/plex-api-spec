@@ -39,7 +39,9 @@ get:
                       Meta:
                         $ref: "../../../models/Meta.yaml"
                       Metadata:
-                        $ref: "../../../models/MetaData.yaml"
+                        type: array
+                        items:
+                          $ref: "../../../models/MetaData.yaml"
 
     "401":
       description: Unauthorized, invalid Plex token.

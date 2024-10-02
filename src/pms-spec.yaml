@@ -27,7 +27,7 @@ info:
     | Swift                 | [GitHub](https://github.com/LukeHagar/plexswift)  | [Releases](https://github.com/LukeHagar/plexswift/releases)                                      | -                                                       |
     | PHP                   | [GitHub](https://github.com/LukeHagar/plexphp)    | [Releases](https://github.com/LukeHagar/plexphp/releases)                                        | -                                                       |
     | Java                  | [GitHub](https://github.com/LukeHagar/plexjava)   | [Releases](https://github.com/LukeHagar/plexjava/releases)                                       | -                                                       |
-    | C#                    | [GitHub](https://github.com/LukeHagar/plexcsharp) | [Releases](https://github.com/LukeHagar/plexcsharp/releases)                                     | -     
+    | C#                    | [GitHub](https://github.com/LukeHagar/plexcsharp) | [Releases](https://github.com/LukeHagar/plexcsharp/releases)                                     | -
   contact:
     name: Luke Hagar
     url: "https://www.LukeHagar.com"
@@ -178,6 +178,9 @@ paths:
     $ref: "./paths/library/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionKey}/search:
     $ref: "./paths/library/[sectionKey]/get-search-library.yaml"
+
+  /library/search:
+    $ref: "./paths/library/get-search-all-libraries.yaml"
 
   /library/metadata/{ratingKey}:
     $ref: "./paths/library/metadata/[ratingKey]/get-meta-data-by-rating-key.yaml"
