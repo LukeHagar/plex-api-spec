@@ -30,10 +30,10 @@ jobs:
       - name: Project Setup
         uses: ./.github/workflows/steps/project-setup
 
-      - name: Dereference Plex Media Server Specification
+      - name: Build Plex Media Server Specification
         run: bun run build
 
-      - name: Commit Dereferenced Specification File
+      - name: Commit Build Specification Files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "build: dereferenced Plex Media Server API Spec updated"
