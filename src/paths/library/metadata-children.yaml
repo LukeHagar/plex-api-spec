@@ -20,9 +20,12 @@ get:
         type: string
       required: false
       examples:
-        - Stream
-        - Stream,OtherItem
-        - Stream,OtherItem,AnotherItem
+        include-stream:
+          value: Stream
+        include-stream-otheritem:
+          value: Stream,OtherItem
+        include-stream-otheritem-anotheritem:
+          value: Stream,OtherItem,AnotherItem
   responses:
     "200":
       description: The children of the library item.
