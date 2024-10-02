@@ -9,8 +9,8 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:6a7123f5dc92eabd17f6bf4167c5ece7c9402d54d17fe1dad91ae3df08519c01
-        sourceBlobDigest: sha256:ad0b537e13c8c6c9bc61f21e32351698fd3a1983e6899c7b4156c504d08722b4
+        sourceRevisionDigest: sha256:f1d0acfca0427bd91edafcee5307d6999a62db715d2d233ff46066ef8d241ab3
+        sourceBlobDigest: sha256:8ce05d5965182eb3fe9376715c269b9e1c7f3e2d90273c175a4181735f41daa0
         tags:
             - latest
             - main
@@ -21,8 +21,7 @@ workflow:
     sources:
         plexapi:
             inputs:
-                - location: ./pms-spec.yaml
-            ruleset: PathParamRuleset
+                - location: ./output/plex-media-server-spec-dereferenced.yaml
             registry:
                 location: registry.speakeasyapi.dev/plexapi/plexapi/plexapi
     targets: {}
