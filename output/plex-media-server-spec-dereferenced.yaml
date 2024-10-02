@@ -76,7 +76,7 @@ x-speakeasy-globals:
       required: false
       schema:
         type: string
-      examples: 2.4.1
+      example: 2.4.1
     - name: X-Plex-Platform
       x-speakeasy-name-override: Platform
       description: The platform of the client application.
@@ -9400,7 +9400,7 @@ paths:
           required: false
           schema:
             type: string
-          examples: 2.4.1
+          example: 2.4.1
         - name: X-Plex-Platform
           x-speakeasy-name-override: Platform
           description: The platform of the client application.
@@ -9666,7 +9666,7 @@ paths:
           required: false
           schema:
             type: string
-          examples: 2.4.1
+          example: 2.4.1
         - name: X-Plex-Platform
           x-speakeasy-name-override: Platform
           description: The platform of the client application.
@@ -14547,7 +14547,7 @@ paths:
           required: false
           schema:
             type: string
-          examples: 2.4.1
+          example: 2.4.1
         - name: X-Plex-Platform
           x-speakeasy-name-override: Platform
           description: The platform of the client application.
