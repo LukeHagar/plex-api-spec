@@ -105,7 +105,6 @@ get:
                       - title1
                       - title2
                       - viewGroup
-                      - Metadata
                     properties:
                       size:
                         type: integer
