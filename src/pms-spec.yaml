@@ -61,17 +61,6 @@ x-speakeasy-globals:
     - $ref: "./parameters/plex/x-plex-platform.yaml"
     - $ref: "./parameters/plex/x-plex-device.yaml"
 
-x-speakeasy-retries:
-  strategy: backoff
-  backoff:
-    initialInterval: 500        # 500 milliseconds
-    maxInterval: 60000          # 60 seconds
-    maxElapsedTime: 3600000     # 5 minutes
-    exponent: 1.5
-  statusCodes:
-    - 5XX
-  retryConnectionErrors: true
-
 security:
   - accessToken: []
 
@@ -167,7 +156,7 @@ paths:
 
   /library/sections/{sectionKey}:
     $ref: "./paths/library/[sectionKey]/library-section.yaml"
-    
+
   # Watchlist
   /library/sections/watchlist/{filter}:
     $ref: "./paths/library/sections/watchlist/get-watch-list.yaml"
