@@ -93,16 +93,6 @@ x-speakeasy-globals:
       schema:
         type: string
       example: Roku 3
-x-speakeasy-retries:
-  strategy: backoff
-  backoff:
-    initialInterval: 500
-    maxInterval: 60000
-    maxElapsedTime: 3600000
-    exponent: 1.5
-  statusCodes:
-    - 5XX
-  retryConnectionErrors: true
 security:
   - accessToken: []
 components:
@@ -5540,7 +5530,6 @@ paths:
                           - title1
                           - title2
                           - viewGroup
-                          - Metadata
                         properties:
                           size:
                             type: integer
@@ -14617,95 +14606,6 @@ paths:
               schema:
                 title: UserPlexAccount
                 type: object
-                examples:
-                  - adsConsent: true
-                    adsConsentReminderAt: '2019-08-24T14:15:22Z'
-                    adsConsentSetAt: '2019-08-24T14:15:22Z'
-                    anonymous: false
-                    authToken: CxoUzBTSV5hsxjTpFKaf
-                    backupCodesCreated: false
-                    confirmed: false
-                    country: US
-                    email: username@email.com
-                    emailOnlyAuth: false
-                    experimentalFeatures: false
-                    friendlyName: friendlyUsername
-                    entitlements: []
-                    guest: false
-                    hasPassword: true
-                    home: false
-                    homeAdmin: false
-                    homeSize: 1
-                    id: 13692262
-                    joinedAt: 1721154902
-                    locale: null
-                    mailingListActive: false
-                    mailingListStatus: subscribed
-                    maxHomeSize: 15
-                    pastSubscriptions:
-                      - id: string
-                        mode: string
-                        renewsAt: string
-                        endsAt: '1556281940'
-                        canceled: '0'
-                        gracePeriod: '0'
-                        onHold: '0'
-                        canReactivate: '0'
-                        canUpgrade: '0'
-                        canDowngrade: '0'
-                        canConvert: '0'
-                        type: plexpass
-                        transfer: string
-                        state: ended
-                        billing:
-                          - internalPaymentMethod: string
-                            paymentMethodId: string
-                    pin: string
-                    profile:
-                      - autoSelectAudio: true
-                        defaultAudioLanguage: ja
-                        defaultSubtitleLanguage: en
-                        autoSelectSubtitle: 1
-                        defaultSubtitleAccessibility: 1
-                        defaultSubtitleForced: 0
-                        watchedIndicator: 1
-                        mediaReviewsVisibility: 0
-                    protected: false
-                    rememberExpiresAt: 1722364046
-                    restricted: false
-                    roles:
-                      - string
-                    scrobbleTypes: ''
-                    services:
-                      - identifier: metadata-dev
-                        endpoint: 'https://epg.provider.plex.tv'
-                        token: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
-                        secret: string
-                        status: online
-                    subscription:
-                      features:
-                        - Android - Dolby Vision
-                      active: true
-                      subscribedAt: '2021-04-12T18:21:12Z'
-                      status: Inactive
-                      paymentService: string
-                      plan: string
-                    subscriptionDescription: string
-                    subscriptions:
-                      - features:
-                          - Android - Dolby Vision
-                        active: true
-                        subscribedAt: '2021-04-12T18:21:12Z'
-                        status: Inactive
-                        paymentService: string
-                        plan: string
-                    thumb: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
-                    title: UsernameTitle
-                    trials:
-                      - {}
-                    twoFactorEnabled: false
-                    username: Username
-                    uuid: dae343c1f45beb4f
                 required:
                   - adsConsent
                   - adsConsentReminderAt
@@ -14753,17 +14653,21 @@ paths:
                       - 'null'
                     description: Unknown
                   adsConsentReminderAt:
-                    type:
-                      - string
-                      - 'null'
-                    description: Unknown
-                    format: date-time
+                    oneOf:
+                      - type:
+                          - integer
+                        example: 1556281940
+                        description: Unix epoch datetime in seconds
+                        format: int64
+                      - type: 'null'
                   adsConsentSetAt:
-                    type:
-                      - string
-                      - 'null'
-                    description: Unknown
-                    format: date-time
+                    oneOf:
+                      - type:
+                          - integer
+                        example: 1556281940
+                        description: Unix epoch datetime in seconds
+                        format: int64
+                      - type: 'null'
                   anonymous:
                     type:
                       - boolean
@@ -15465,95 +15369,6 @@ paths:
                 allOf:
                   - title: UserPlexAccount
                     type: object
-                    examples:
-                      - adsConsent: true
-                        adsConsentReminderAt: '2019-08-24T14:15:22Z'
-                        adsConsentSetAt: '2019-08-24T14:15:22Z'
-                        anonymous: false
-                        authToken: CxoUzBTSV5hsxjTpFKaf
-                        backupCodesCreated: false
-                        confirmed: false
-                        country: US
-                        email: username@email.com
-                        emailOnlyAuth: false
-                        experimentalFeatures: false
-                        friendlyName: friendlyUsername
-                        entitlements: []
-                        guest: false
-                        hasPassword: true
-                        home: false
-                        homeAdmin: false
-                        homeSize: 1
-                        id: 13692262
-                        joinedAt: 1721154902
-                        locale: null
-                        mailingListActive: false
-                        mailingListStatus: subscribed
-                        maxHomeSize: 15
-                        pastSubscriptions:
-                          - id: string
-                            mode: string
-                            renewsAt: string
-                            endsAt: '1556281940'
-                            canceled: '0'
-                            gracePeriod: '0'
-                            onHold: '0'
-                            canReactivate: '0'
-                            canUpgrade: '0'
-                            canDowngrade: '0'
-                            canConvert: '0'
-                            type: plexpass
-                            transfer: string
-                            state: ended
-                            billing:
-                              - internalPaymentMethod: string
-                                paymentMethodId: string
-                        pin: string
-                        profile:
-                          - autoSelectAudio: true
-                            defaultAudioLanguage: ja
-                            defaultSubtitleLanguage: en
-                            autoSelectSubtitle: 1
-                            defaultSubtitleAccessibility: 1
-                            defaultSubtitleForced: 0
-                            watchedIndicator: 1
-                            mediaReviewsVisibility: 0
-                        protected: false
-                        rememberExpiresAt: 1722364046
-                        restricted: false
-                        roles:
-                          - string
-                        scrobbleTypes: ''
-                        services:
-                          - identifier: metadata-dev
-                            endpoint: 'https://epg.provider.plex.tv'
-                            token: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
-                            secret: string
-                            status: online
-                        subscription:
-                          features:
-                            - Android - Dolby Vision
-                          active: true
-                          subscribedAt: '2021-04-12T18:21:12Z'
-                          status: Inactive
-                          paymentService: string
-                          plan: string
-                        subscriptionDescription: string
-                        subscriptions:
-                          - features:
-                              - Android - Dolby Vision
-                            active: true
-                            subscribedAt: '2021-04-12T18:21:12Z'
-                            status: Inactive
-                            paymentService: string
-                            plan: string
-                        thumb: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
-                        title: UsernameTitle
-                        trials:
-                          - {}
-                        twoFactorEnabled: false
-                        username: Username
-                        uuid: dae343c1f45beb4f
                     required:
                       - adsConsent
                       - adsConsentReminderAt
@@ -15601,17 +15416,21 @@ paths:
                           - 'null'
                         description: Unknown
                       adsConsentReminderAt:
-                        type:
-                          - string
-                          - 'null'
-                        description: Unknown
-                        format: date-time
+                        oneOf:
+                          - type:
+                              - integer
+                            example: 1556281940
+                            description: Unix epoch datetime in seconds
+                            format: int64
+                          - type: 'null'
                       adsConsentSetAt:
-                        type:
-                          - string
-                          - 'null'
-                        description: Unknown
-                        format: date-time
+                        oneOf:
+                          - type:
+                              - integer
+                            example: 1556281940
+                            description: Unix epoch datetime in seconds
+                            format: int64
+                          - type: 'null'
                       anonymous:
                         type:
                           - boolean
