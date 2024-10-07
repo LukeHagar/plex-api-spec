@@ -4,8 +4,6 @@ sources:
   plexapi:
     inputs:
       - location: ./src/pms-spec.yaml
-      # - location: ./output/plex-media-server-spec-dereferenced.yaml
-    # ruleset: PathParamRuleset
     registry:
       location: registry.speakeasyapi.dev/plexapi/plexapi/plexapi
 targets: {}
