@@ -4,9 +4,11 @@ enum:
   - 2
   - 3
   - 4
+  - 8
 example: 2
 x-speakeasy-enums:
   - MOVIE
   - TV_SHOW
   - SEASON
   - EPISODE
+  - AUDIO
