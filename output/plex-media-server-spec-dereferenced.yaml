@@ -2196,12 +2196,14 @@ paths:
               - 2
               - 3
               - 4
+              - 8
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
+              - AUDIO
           required: true
         - name: includeMeta
           in: query
@@ -3888,12 +3890,14 @@ paths:
               - 2
               - 3
               - 4
+              - 8
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
+              - AUDIO
           required: true
         - name: includeMeta
           in: query
@@ -5288,12 +5292,14 @@ paths:
               - 2
               - 3
               - 4
+              - 8
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
+              - AUDIO
         - name: sectionKey
           description: |
             The unique key of the Plex library. 
@@ -6653,12 +6659,14 @@ paths:
               - 2
               - 3
               - 4
+              - 8
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
+              - AUDIO
           required: true
       responses:
         '200':
@@ -8877,12 +8885,14 @@ paths:
               - 2
               - 3
               - 4
+              - 8
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
+              - AUDIO
           required: true
       responses:
         '200':
@@ -11392,12 +11402,14 @@ paths:
               - 2
               - 3
               - 4
+              - 8
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
+              - AUDIO
           required: true
       responses:
         '200':
