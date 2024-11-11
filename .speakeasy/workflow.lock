@@ -9,10 +9,11 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:287360e746eda6ac0ca8c4b623030ea44c8c5d17bf785c3f9f83752575d01133
-        sourceBlobDigest: sha256:a4c942ef75e5dee62681d94924ba19bfd3fe69454c47a1e0f5ba79abc8088b10
+        sourceRevisionDigest: sha256:15e040d800921ded49cf84650ef2bc8fb1acf32c885ee193c42e838d754bf345
+        sourceBlobDigest: sha256:c178be2b4bfefb37d76c0fdaef37c51f9b6ab1410422d3698a41bb6a8d79a79f
         tags:
             - latest
+            - main
 targets: {}
 workflow:
     workflowVersion: 1.0.0
