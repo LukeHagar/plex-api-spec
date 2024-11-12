@@ -5,7 +5,7 @@ get:
   description: This will return the resources for the server
   operationId: getResourcesStatistics
   parameters:
-    - name: Timespan
+    - name: timespan
       description: |
         The timespan to retrieve statistics for
         the exact meaning of this parameter is not known
