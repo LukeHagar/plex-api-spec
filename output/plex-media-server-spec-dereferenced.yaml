@@ -12863,7 +12863,7 @@ paths:
       description: This will return the media statistics for the server
       operationId: getStatistics
       parameters:
-        - name: Timespan
+        - name: timespan
           description: |
             The timespan to retrieve statistics for
             the exact meaning of this parameter is not known
@@ -13031,7 +13031,7 @@ paths:
       description: This will return the resources for the server
       operationId: getResourcesStatistics
       parameters:
-        - name: Timespan
+        - name: timespan
           description: |
             The timespan to retrieve statistics for
             the exact meaning of this parameter is not known
@@ -13140,7 +13140,7 @@ paths:
       description: This will return the bandwidth statistics for the server
       operationId: getBandwidthStatistics
       parameters:
-        - name: Timespan
+        - name: timespan
           description: |
             The timespan to retrieve statistics for
             the exact meaning of this parameter is not known
