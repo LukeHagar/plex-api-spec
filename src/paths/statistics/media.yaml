@@ -5,7 +5,7 @@ get:
   description: This will return the media statistics for the server
   operationId: getStatistics
   parameters:
-    - name: Timespan
+    - name: timespan
       description: |
         The timespan to retrieve statistics for
         the exact meaning of this parameter is not known
