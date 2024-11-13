@@ -9,8 +9,8 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:8a77cec315f46e7136ee20fd232b7d21a285752b61986b5c28727ae5b209aba9
-        sourceBlobDigest: sha256:c178be2b4bfefb37d76c0fdaef37c51f9b6ab1410422d3698a41bb6a8d79a79f
+        sourceRevisionDigest: sha256:37c6bfb15f4154eb89b112465107f20757411f22bd1cc7d0a04335df7127fcb4
+        sourceBlobDigest: sha256:290473ebc909cada80ff428c685b897f4621cf121397e1417355e06d334e7206
         tags:
             - latest
             - main
