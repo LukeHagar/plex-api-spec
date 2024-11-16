@@ -2197,6 +2197,8 @@ paths:
               - 3
               - 4
               - 8
+              - 9
+              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
@@ -2204,6 +2206,8 @@ paths:
               - SEASON
               - EPISODE
               - AUDIO
+              - ALBUM
+              - TRACK
           required: true
         - name: includeMeta
           in: query
@@ -3891,6 +3895,8 @@ paths:
               - 3
               - 4
               - 8
+              - 9
+              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
@@ -3898,6 +3904,8 @@ paths:
               - SEASON
               - EPISODE
               - AUDIO
+              - ALBUM
+              - TRACK
           required: true
         - name: includeMeta
           in: query
@@ -5233,6 +5241,7 @@ paths:
         - `resolution`: Items categorized by resolution.
         - `firstCharacter`: Items categorized by the first letter.
         - `folder`: Items categorized by folder.
+        - `albums`: Items categorized by album.
       parameters:
         - name: tag
           in: path
@@ -5260,6 +5269,7 @@ paths:
               - resolution
               - firstCharacter
               - folder
+              - albums
         - name: includeGuids
           in: query
           description: |
@@ -5293,6 +5303,8 @@ paths:
               - 3
               - 4
               - 8
+              - 9
+              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
@@ -5300,6 +5312,8 @@ paths:
               - SEASON
               - EPISODE
               - AUDIO
+              - ALBUM
+              - TRACK
         - name: sectionKey
           description: |
             The unique key of the Plex library. 
@@ -6660,6 +6674,8 @@ paths:
               - 3
               - 4
               - 8
+              - 9
+              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
@@ -6667,6 +6683,8 @@ paths:
               - SEASON
               - EPISODE
               - AUDIO
+              - ALBUM
+              - TRACK
           required: true
       responses:
         '200':
@@ -8886,6 +8904,8 @@ paths:
               - 3
               - 4
               - 8
+              - 9
+              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
@@ -8893,6 +8913,8 @@ paths:
               - SEASON
               - EPISODE
               - AUDIO
+              - ALBUM
+              - TRACK
           required: true
       responses:
         '200':
@@ -11403,6 +11425,8 @@ paths:
               - 3
               - 4
               - 8
+              - 9
+              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
@@ -11410,6 +11434,8 @@ paths:
               - SEASON
               - EPISODE
               - AUDIO
+              - ALBUM
+              - TRACK
           required: true
       responses:
         '200':
