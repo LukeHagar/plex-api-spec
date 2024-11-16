@@ -24,6 +24,7 @@ get:
     - `resolution`: Items categorized by resolution.
     - `firstCharacter`: Items categorized by the first letter.
     - `folder`: Items categorized by folder.
+    - `albums`: Items categorized by album.
   parameters:
     - name: tag
       in: path
@@ -51,6 +52,7 @@ get:
           - resolution
           - firstCharacter
           - folder
+          - albums
     - name: includeGuids
       in: query
       description: |
