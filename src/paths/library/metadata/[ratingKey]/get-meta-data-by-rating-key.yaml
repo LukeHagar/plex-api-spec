@@ -84,6 +84,12 @@ get:
                         librarySectionKey:
                           type: string
                           example: /library/sections/1
+                        grandparentTitle:
+                          type: string
+                        parentTitle:
+                          type: string
+                        originalTitle:
+                          type: string
                         contentRating:
                           type: string
                           example: PG-13
