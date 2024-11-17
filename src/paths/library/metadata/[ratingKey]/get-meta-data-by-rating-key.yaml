@@ -86,10 +86,13 @@ get:
                           example: /library/sections/1
                         grandparentTitle:
                           type: string
+                          description: The name of the album artist for the track when audio, and the name of the TV show for the episode when video.
                         parentTitle:
                           type: string
+                          description: The name of the album for the track when audio, and the name of the season for the episode when video.
                         originalTitle:
                           type: string
+                          description: The name of the artist for the track when audio.
                         contentRating:
                           type: string
                           example: PG-13
