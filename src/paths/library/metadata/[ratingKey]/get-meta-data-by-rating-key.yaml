@@ -93,6 +93,12 @@ get:
                         originalTitle:
                           type: string
                           description: The name of the artist for the track when audio.
+                        index:
+                          type: integer
+                          description: The track number when audio, and the episode number when video.
+                        parentIndex:
+                          type: integer
+                          description: The disc number when audio, and the season number when video.
                         contentRating:
                           type: string
                           example: PG-13
