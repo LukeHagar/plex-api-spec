@@ -89,16 +89,16 @@ get:
                           description: The name of the album artist for the track when audio, and the name of the TV show for the episode when video.
                         parentTitle:
                           type: string
-                          description: The name of the album for the track when audio, and the name of the season for the episode when video.
+                          description: The name of the album for the track when audio, and the name of the season for the episode when TV show.
                         originalTitle:
                           type: string
-                          description: The name of the artist for the track when audio.
+                          description: The orginal untranslated name of the media item when non-english.
                         index:
                           type: integer
-                          description: The track number when audio, and the episode number when video.
+                          description: The index starting from 0 of this media item in the MetaData array.
                         parentIndex:
                           type: integer
-                          description: The disc number when audio, and the season number when video.
+                          description: The parent index starting from 0 of this media item in the parent MetaData array.
                         contentRating:
                           type: string
                           example: PG-13
