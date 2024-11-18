@@ -7813,6 +7813,21 @@ paths:
                             librarySectionKey:
                               type: string
                               example: /library/sections/1
+                            grandparentTitle:
+                              type: string
+                              description: 'The name of the album artist for the track when audio, and the name of the TV show for the episode when video.'
+                            parentTitle:
+                              type: string
+                              description: 'The name of the album for the track when audio, and the name of the season for the episode when TV show.'
+                            originalTitle:
+                              type: string
+                              description: The orginal untranslated name of the media item when non-english.
+                            index:
+                              type: integer
+                              description: The index starting from 0 of this media item in the MetaData array.
+                            parentIndex:
+                              type: integer
+                              description: The parent index starting from 0 of this media item in the parent MetaData array.
                             contentRating:
                               type: string
                               example: PG-13
