@@ -76,18 +76,18 @@ properties:
   showOrdering:
     type: string
     description: |
-      Setting that indicates the episode ordering for the show 
-      None = Library default, 
-      tmdbAiring = The Movie Database (Aired), 
-      aired = TheTVDB (Aired), 
-      dvd = TheTVDB (DVD), 
-      absolute = TheTVDB (Absolute)).
+      Setting that indicates the episode ordering for the show
+      None = Library default,
+      tmdbAiring = The Movie Database (Aired),
+      tvdbAiring = TheTVDB (Aired),
+      tvdbDvd = TheTVDB (DVD),
+      tvdbAbsolute = TheTVDB (Absolute)).
     enum:
       - None
       - tmdbAiring
-      - aired
-      - dvd
-      - absolute
+      - tvdbAiring
+      - tvdbDvd
+      - tvdbAbsolute
     x-speakeasy-enums:
       - NONE
       - TMDB_AIRING
