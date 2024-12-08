@@ -25,7 +25,7 @@ The following SDKs are generated from the OpenAPI Specification. They are automa
 
 ## Project Structure
 
-The main OpenAPI Specification is located in the root directory as [pms-spec.yaml](https://github.com/LukeHagar/plex-api-spec/blob/main/pms-spec.yaml). Which references 
+The main OpenAPI Specification is located in the root directory as [pms-spec.yaml](https://github.com/LukeHagar/plex-api-spec/blob/main/src/pms-spec.yaml). Which references 
 
 - [**/paths**](https://github.com/LukeHagar/plex-api-spec/tree/main/paths): The endpoints for the Plex Media Server API. Each endpoint is defined in a separate file.
 - [**/models**](https://github.com/LukeHagar/plex-api-spec/tree/main/models): The schema models used in the specification.
