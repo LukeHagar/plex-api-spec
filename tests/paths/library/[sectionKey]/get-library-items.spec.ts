@@ -4521,7 +4521,7 @@ describe("GET /library/sections", () => {
             addedAt: 1604971385,
             updatedAt: 1605009080,
             flattenSeasons: "1",
-            showOrdering: "absolute",
+            showOrdering: "tvdbAbsolute",
             Image: [
               {
                 alt: "Naruto: Shippuden",
@@ -6115,7 +6115,7 @@ describe("GET /library/sections", () => {
             addedAt: 1604971385,
             updatedAt: 1605009080,
             flattenSeasons: "1",
-            showOrdering: "absolute",
+            showOrdering: "tvdbAbsolute",
             Image: [
               {
                 alt: "Naruto: Shippuden",
