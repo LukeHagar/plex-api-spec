@@ -94,7 +94,7 @@ properties:
       - TVDB_AIRING
       - TVDB_DVD
       - TVDB_ABSOLUTE
-    example: dvd
+    example: tvdbDvd
   thumb:
     type: string
     example: /library/metadata/58683/thumb/1703239236
