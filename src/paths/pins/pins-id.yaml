@@ -14,11 +14,6 @@ get:
       required: true
       schema:
         type: integer
-    - $ref: ../../parameters/plex/x-plex-identifier.yaml
-    - $ref: ../../parameters/plex/x-plex-product.yaml
-    - $ref: ../../parameters/plex/x-plex-device.yaml
-    - $ref: ../../parameters/plex/x-plex-version.yaml
-    - $ref: ../../parameters/plex/x-plex-platform.yaml
   responses:
     "200":
       description: The Pin with a non-null authToken when it has been verified by the user
