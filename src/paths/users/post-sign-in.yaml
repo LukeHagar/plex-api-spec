@@ -7,6 +7,12 @@ post:
   summary: Get User Sign In Data
   description: Sign in user with username and password and return user data with Plex authentication token
   operationId: post-users-sign-in-data
+  parameters:
+    - $ref: ../../parameters/plex/x-plex-identifier.yaml
+    - $ref: ../../parameters/plex/x-plex-product.yaml
+    - $ref: ../../parameters/plex/x-plex-device.yaml
+    - $ref: ../../parameters/plex/x-plex-version.yaml
+    - $ref: ../../parameters/plex/x-plex-platform.yaml
   requestBody:
     content:
       application/x-www-form-urlencoded:
