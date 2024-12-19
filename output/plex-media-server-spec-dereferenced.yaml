@@ -51,48 +51,6 @@ servers:
       port:
         default: '32400'
         description: The port of your Plex Server
-x-speakeasy-globals:
-  parameters:
-    - name: X-Plex-Client-Identifier
-      x-speakeasy-name-override: ClientID
-      description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
-      required: true
-      in: header
-      schema:
-        type: string
-      example: 3381b62b-9ab7-4e37-827b-203e9809eb58
-    - name: X-Plex-Product
-      x-speakeasy-name-override: ClientName
-      description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
-      in: header
-      required: false
-      schema:
-        type: string
-      example: Plex for Roku
-    - name: X-Plex-Version
-      x-speakeasy-name-override: ClientVersion
-      description: The version of the client application.
-      in: header
-      required: false
-      schema:
-        type: string
-      example: 2.4.1
-    - name: X-Plex-Platform
-      x-speakeasy-name-override: Platform
-      description: The platform of the client application.
-      in: header
-      required: false
-      schema:
-        type: string
-      example: Roku
-    - name: X-Plex-Device
-      x-speakeasy-name-override: DeviceNickname
-      description: A relatively friendly name for the client device
-      in: header
-      required: false
-      schema:
-        type: string
-      example: Roku 3
 security:
   - accessToken: []
 components:
@@ -6871,6 +6829,14 @@ paths:
           schema:
             type: string
           description: The search query term.
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
+          required: true
+          in: header
+          schema:
+            type: string
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
         - name: limit
           in: query
           required: false
@@ -9569,6 +9535,14 @@ paths:
             x-speakeasy-enums:
               - DISABLE
               - ENABLE
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
+          required: true
+          in: header
+          schema:
+            type: string
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -10249,6 +10223,46 @@ paths:
             type: boolean
             default: false
           required: false
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
+          required: true
+          in: header
+          schema:
+            type: string
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
+        - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Plex for Roku
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceNickname
+          description: A relatively friendly name for the client device
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku 3
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          description: The version of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 2.4.1
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: Platform
+          description: The platform of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku
       responses:
         '201':
           description: Requests a new pin id used in the authentication flow
@@ -10475,6 +10489,46 @@ paths:
           required: true
           schema:
             type: integer
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
+          required: true
+          in: header
+          schema:
+            type: string
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
+        - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Plex for Roku
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceNickname
+          description: A relatively friendly name for the client device
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku 3
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          description: The version of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 2.4.1
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: Platform
+          description: The platform of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku
       responses:
         '200':
           description: The Pin with a non-null authToken when it has been verified by the user
@@ -15252,6 +15306,47 @@ paths:
       summary: Get User Sign In Data
       description: Sign in user with username and password and return user data with Plex authentication token
       operationId: post-users-sign-in-data
+      parameters:
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
+          required: true
+          in: header
+          schema:
+            type: string
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
+        - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Plex for Roku
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceNickname
+          description: A relatively friendly name for the client device
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku 3
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          description: The version of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 2.4.1
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: Platform
+          description: The platform of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku
       requestBody:
         content:
           application/x-www-form-urlencoded:
