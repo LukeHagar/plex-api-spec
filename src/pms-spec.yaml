@@ -53,13 +53,15 @@ servers:
         default: "32400"
         description: The port of your Plex Server
 
-x-speakeasy-globals:
-  parameters:
-    - $ref: "./parameters/plex/x-plex-identifier.yaml"
-    - $ref: "./parameters/plex/x-plex-product.yaml"
-    - $ref: "./parameters/plex/x-plex-version.yaml"
-    - $ref: "./parameters/plex/x-plex-platform.yaml"
-    - $ref: "./parameters/plex/x-plex-device.yaml"
+# TODO: Enable this when the SDK generation bug has been resolved:
+# https://github.com/LukeHagar/plexjs/issues/26#issuecomment-2547058955
+#x-speakeasy-globals:
+#  parameters:
+#    - $ref: "./parameters/plex/x-plex-identifier.yaml"
+#    - $ref: "./parameters/plex/x-plex-product.yaml"
+#    - $ref: "./parameters/plex/x-plex-version.yaml"
+#    - $ref: "./parameters/plex/x-plex-platform.yaml"
+#    - $ref: "./parameters/plex/x-plex-device.yaml"
 
 security:
   - accessToken: []
