@@ -13370,6 +13370,10 @@ paths:
                             musicAnalysisVersion:
                               type: string
                               example: '1'
+                            originalTitle:
+                              type: string
+                              description: 'The original untranslated name of the media item when non-english, or the track artist if an audio Item has an album artist'
+                              example: The American Dream Is Killing Me
                             parentGuid:
                               type: string
                               example: 'plex://album/65394d6d472b8ab03ef47f12'
