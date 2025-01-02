@@ -9,11 +9,11 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:3526e6d8b7f715e8fd247e57f0171bea8f4a3e30418a66d769741708183925f6
+        sourceRevisionDigest: sha256:d3da952785a137adc243ca04029491b67bdc92ec49ea330e394dbca404034bc7
         sourceBlobDigest: sha256:fa76c39de0ff801844dd56a76c26ab6ca88695fc9b42bb9ff9a8aab5b2b21277
         tags:
             - latest
-            - speakeasy-sdk-regen-1735798070
+            - speakeasy-sdk-regen-1735801578
             - 0.0.3
 targets: {}
 workflow:
