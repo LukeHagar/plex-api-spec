@@ -4,6 +4,9 @@ enum:
   - show
   - season
   - episode
+  - artist
+  - album
+  - track
 example: "movie"
 description: |
   The type of media content
@@ -12,3 +15,6 @@ x-speakeasy-enums:
   - TV_SHOW
   - SEASON
   - EPISODE
+  - AUDIO
+  - ALBUM
+  - TRACK
