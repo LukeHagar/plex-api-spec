@@ -84,6 +84,7 @@ properties:
       - LIBRARY_DEFAULT
       - HIDE
       - SHOW
+    example: "1"
   episodeSort:
     type: string
     description: >-
@@ -97,6 +98,7 @@ properties:
       - LIBRARY_DEFAULT
       - OLDEST_FIRST
       - NEWEST_FIRST
+    example: "0"
   enableCreditsMarkerGeneration:
     type: string
     description: >-
@@ -108,6 +110,7 @@ properties:
     x-speakeasy-enums:
       - LIBRARY_DEFAULT
       - DISABLED
+    example: "-1"
   showOrdering:
     type: string
     description: |
