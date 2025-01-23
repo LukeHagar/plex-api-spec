@@ -2473,14 +2473,38 @@ paths:
                                   example: Return to Pandora.
                                 flattenSeasons:
                                   type: string
+                                  description: 'Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).'
                                   enum:
+                                    - '-1'
                                     - '0'
                                     - '1'
-                                  example: '1'
-                                  default: '0'
                                   x-speakeasy-enums:
-                                    - false
-                                    - true
+                                    - LIBRARY_DEFAULT
+                                    - HIDE
+                                    - SHOW
+                                  example: '1'
+                                episodeSort:
+                                  type: string
+                                  description: 'Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).'
+                                  enum:
+                                    - '-1'
+                                    - '0'
+                                    - '1'
+                                  x-speakeasy-enums:
+                                    - LIBRARY_DEFAULT
+                                    - OLDEST_FIRST
+                                    - NEWEST_FIRST
+                                  example: '0'
+                                enableCreditsMarkerGeneration:
+                                  type: string
+                                  description: 'Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).'
+                                  enum:
+                                    - '-1'
+                                    - '0'
+                                  x-speakeasy-enums:
+                                    - LIBRARY_DEFAULT
+                                    - DISABLED
+                                  example: '-1'
                                 showOrdering:
                                   type: string
                                   description: |
@@ -5659,14 +5683,38 @@ paths:
                                   example: Return to Pandora.
                                 flattenSeasons:
                                   type: string
+                                  description: 'Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).'
                                   enum:
+                                    - '-1'
                                     - '0'
                                     - '1'
-                                  example: '1'
-                                  default: '0'
                                   x-speakeasy-enums:
-                                    - false
-                                    - true
+                                    - LIBRARY_DEFAULT
+                                    - HIDE
+                                    - SHOW
+                                  example: '1'
+                                episodeSort:
+                                  type: string
+                                  description: 'Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).'
+                                  enum:
+                                    - '-1'
+                                    - '0'
+                                    - '1'
+                                  x-speakeasy-enums:
+                                    - LIBRARY_DEFAULT
+                                    - OLDEST_FIRST
+                                    - NEWEST_FIRST
+                                  example: '0'
+                                enableCreditsMarkerGeneration:
+                                  type: string
+                                  description: 'Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).'
+                                  enum:
+                                    - '-1'
+                                    - '0'
+                                  x-speakeasy-enums:
+                                    - LIBRARY_DEFAULT
+                                    - DISABLED
+                                  example: '-1'
                                 showOrdering:
                                   type: string
                                   description: |
@@ -7005,14 +7053,38 @@ paths:
                                   example: Return to Pandora.
                                 flattenSeasons:
                                   type: string
+                                  description: 'Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).'
                                   enum:
+                                    - '-1'
                                     - '0'
                                     - '1'
-                                  example: '1'
-                                  default: '0'
                                   x-speakeasy-enums:
-                                    - false
-                                    - true
+                                    - LIBRARY_DEFAULT
+                                    - HIDE
+                                    - SHOW
+                                  example: '1'
+                                episodeSort:
+                                  type: string
+                                  description: 'Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).'
+                                  enum:
+                                    - '-1'
+                                    - '0'
+                                    - '1'
+                                  x-speakeasy-enums:
+                                    - LIBRARY_DEFAULT
+                                    - OLDEST_FIRST
+                                    - NEWEST_FIRST
+                                  example: '0'
+                                enableCreditsMarkerGeneration:
+                                  type: string
+                                  description: 'Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).'
+                                  enum:
+                                    - '-1'
+                                    - '0'
+                                  x-speakeasy-enums:
+                                    - LIBRARY_DEFAULT
+                                    - DISABLED
+                                  example: '-1'
                                 showOrdering:
                                   type: string
                                   description: |
