@@ -114,7 +114,7 @@ properties:
   showOrdering:
     type: string
     description: |
-      Setting that indicates the episode ordering for the show
+      Setting that indicates the episode ordering for the show.
       None = Library default,
       tmdbAiring = The Movie Database (Aired),
       aired = TheTVDB (Aired),
