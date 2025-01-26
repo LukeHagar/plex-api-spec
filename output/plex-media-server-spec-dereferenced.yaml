@@ -2511,22 +2511,22 @@ paths:
                                     Setting that indicates the episode ordering for the show
                                     None = Library default,
                                     tmdbAiring = The Movie Database (Aired),
-                                    tvdbAiring = TheTVDB (Aired),
-                                    tvdbDvd = TheTVDB (DVD),
-                                    tvdbAbsolute = TheTVDB (Absolute)).
+                                    aired = TheTVDB (Aired),
+                                    dvd = TheTVDB (DVD),
+                                    absolute = TheTVDB (Absolute)).
                                   enum:
                                     - None
                                     - tmdbAiring
-                                    - tvdbAiring
-                                    - tvdbDvd
-                                    - tvdbAbsolute
+                                    - aired
+                                    - dvd
+                                    - absolute
                                   x-speakeasy-enums:
                                     - NONE
                                     - TMDB_AIRING
-                                    - TVDB_AIRING
+                                    - TVDB_AIRED
                                     - TVDB_DVD
                                     - TVDB_ABSOLUTE
-                                  example: tvdbDvd
+                                  example: absolute
                                 thumb:
                                   type: string
                                   example: /library/metadata/58683/thumb/1703239236
@@ -5721,22 +5721,22 @@ paths:
                                     Setting that indicates the episode ordering for the show
                                     None = Library default,
                                     tmdbAiring = The Movie Database (Aired),
-                                    tvdbAiring = TheTVDB (Aired),
-                                    tvdbDvd = TheTVDB (DVD),
-                                    tvdbAbsolute = TheTVDB (Absolute)).
+                                    aired = TheTVDB (Aired),
+                                    dvd = TheTVDB (DVD),
+                                    absolute = TheTVDB (Absolute)).
                                   enum:
                                     - None
                                     - tmdbAiring
-                                    - tvdbAiring
-                                    - tvdbDvd
-                                    - tvdbAbsolute
+                                    - aired
+                                    - dvd
+                                    - absolute
                                   x-speakeasy-enums:
                                     - NONE
                                     - TMDB_AIRING
-                                    - TVDB_AIRING
+                                    - TVDB_AIRED
                                     - TVDB_DVD
                                     - TVDB_ABSOLUTE
-                                  example: tvdbDvd
+                                  example: absolute
                                 thumb:
                                   type: string
                                   example: /library/metadata/58683/thumb/1703239236
@@ -7091,22 +7091,22 @@ paths:
                                     Setting that indicates the episode ordering for the show
                                     None = Library default,
                                     tmdbAiring = The Movie Database (Aired),
-                                    tvdbAiring = TheTVDB (Aired),
-                                    tvdbDvd = TheTVDB (DVD),
-                                    tvdbAbsolute = TheTVDB (Absolute)).
+                                    aired = TheTVDB (Aired),
+                                    dvd = TheTVDB (DVD),
+                                    absolute = TheTVDB (Absolute)).
                                   enum:
                                     - None
                                     - tmdbAiring
-                                    - tvdbAiring
-                                    - tvdbDvd
-                                    - tvdbAbsolute
+                                    - aired
+                                    - dvd
+                                    - absolute
                                   x-speakeasy-enums:
                                     - NONE
                                     - TMDB_AIRING
-                                    - TVDB_AIRING
+                                    - TVDB_AIRED
                                     - TVDB_DVD
                                     - TVDB_ABSOLUTE
-                                  example: tvdbDvd
+                                  example: absolute
                                 thumb:
                                   type: string
                                   example: /library/metadata/58683/thumb/1703239236
