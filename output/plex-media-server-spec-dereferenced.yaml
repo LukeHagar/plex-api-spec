@@ -2234,6 +2234,7 @@ paths:
                             example: com.plexapp.plugins.library
                           allowSync:
                             type: boolean
+                            example: false
                       - type: object
                         properties:
                           Meta:
@@ -2508,7 +2509,7 @@ paths:
                                 showOrdering:
                                   type: string
                                   description: |
-                                    Setting that indicates the episode ordering for the show
+                                    Setting that indicates the episode ordering for the show.
                                     None = Library default,
                                     tmdbAiring = The Movie Database (Aired),
                                     aired = TheTVDB (Aired),
@@ -5718,7 +5719,7 @@ paths:
                                 showOrdering:
                                   type: string
                                   description: |
-                                    Setting that indicates the episode ordering for the show
+                                    Setting that indicates the episode ordering for the show.
                                     None = Library default,
                                     tmdbAiring = The Movie Database (Aired),
                                     aired = TheTVDB (Aired),
@@ -6862,6 +6863,167 @@ paths:
                           type: integer
                           format: int32
                           example: 401
+  '/library/sections/{sectionKey}/country':
+    get:
+      tags:
+        - Library
+      summary: Search Library
+      operationId: get-countries-library
+      description: |
+        Retrieves a list of all the countries that are found for the media in this library.
+      responses:
+        '200':
+          description: Successful response containing media container data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    allOf:
+                      - type: object
+                        required:
+                          - size
+                        properties:
+                          size:
+                            type: number
+                            example: 50
+                          offset:
+                            type: integer
+                            format: int32
+                          totalSize:
+                            type: integer
+                            format: int32
+                          identifier:
+                            type: string
+                            example: com.plexapp.plugins.library
+                          allowSync:
+                            type: boolean
+                            example: false
+                      - type: object
+                        required:
+                          - size
+                          - allowSync
+                          - art
+                          - content
+                          - identifier
+                          - mediaTagPrefix
+                          - mediaTagVersion
+                          - nocache
+                          - thumb
+                          - title1
+                          - title2
+                          - viewGroup
+                        properties:
+                          art:
+                            type: string
+                            example: '/:/resources/show-fanart.jpg'
+                          content:
+                            type: string
+                            example: secondary
+                          mediaTagPrefix:
+                            type: string
+                            example: /system/bundle/media/flags/
+                          mediaTagVersion:
+                            type: integer
+                            example: 1734362201
+                          nocache:
+                            type: boolean
+                            example: true
+                          thumb:
+                            type: string
+                            example: '/:/resources/show.png'
+                          title1:
+                            type: string
+                            example: TV Series
+                          title2:
+                            type: string
+                            example: By Country
+                          viewGroup:
+                            type: string
+                            example: secondary
+                          Directory:
+                            type: array
+                            items:
+                              type: object
+                              required:
+                                - fastKey
+                                - key
+                                - title
+                              properties:
+                                fastKey:
+                                  type: string
+                                  example: /library/sections/2/all?country=15491
+                                key:
+                                  type: string
+                                  example: '15491'
+                                title:
+                                  type: string
+                                  example: Japan
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
   /library/search:
     get:
       tags:
@@ -7088,7 +7250,7 @@ paths:
                                 showOrdering:
                                   type: string
                                   description: |
-                                    Setting that indicates the episode ordering for the show
+                                    Setting that indicates the episode ordering for the show.
                                     None = Library default,
                                     tmdbAiring = The Movie Database (Aired),
                                     aired = TheTVDB (Aired),

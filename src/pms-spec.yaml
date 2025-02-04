@@ -169,6 +169,8 @@ paths:
     $ref: "./paths/library/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionKey}/search:
     $ref: "./paths/library/[sectionKey]/get-search-library.yaml"
+  /library/sections/{sectionKey}/country:
+    $ref: "./paths/library/[sectionKey]/get-library-countries.yaml"
 
   /library/search:
     $ref: "./paths/library/get-search-all-libraries.yaml"
