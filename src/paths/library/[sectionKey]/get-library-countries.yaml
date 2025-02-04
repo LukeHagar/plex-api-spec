@@ -1,0 +1,87 @@
+get:
+  tags:
+    - Library
+  summary: Get Countries of library media
+  operationId: get-countries-library
+  description: |
+    Retrieves a list of all the countries that are found for the media in this library.
+  parameters:
+    - $ref: "../../../parameters/library/section-key.yaml"
+    - $ref: "../../../parameters/accept-application-json.yaml"
+  responses:
+    "200":
+      description: Successful response containing media container data.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                allOf:
+                  - $ref: "../../../models/MediaContainer.yaml"
+                  - type: object
+                    required:
+                      - size
+                      - allowSync
+                      - art
+                      - content
+                      - identifier
+                      - mediaTagPrefix
+                      - mediaTagVersion
+                      - nocache
+                      - thumb
+                      - title1
+                      - title2
+                      - viewGroup
+                    properties:
+                      art:
+                        type: string
+                        example: "/:/resources/show-fanart.jpg"
+                      content:
+                        type: string
+                        example: "secondary"
+                      mediaTagPrefix:
+                        type: string
+                        example: "/system/bundle/media/flags/"
+                      mediaTagVersion:
+                        type: integer
+                        example: 1734362201
+                      nocache:
+                        type: boolean
+                        example: true
+                      thumb:
+                        type: string
+                        example: "/:/resources/show.png"
+                      title1:
+                        type: string
+                        example: "TV Series"
+                      title2:
+                        type: string
+                        example: "By Country"
+                      viewGroup:
+                        type: string
+                        example: "secondary"
+                      Directory:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - fastKey
+                            - key
+                            - title
+                          properties:
+                            fastKey:
+                              type: string
+                              example: "/library/sections/2/all?country=15491"
+                            key:
+                              type: string
+                              example: "15491"
+                            title:
+                              type: string
+                              example: "Japan"
+    "400":
+      $ref: "../../../responses/400.yaml"
+    "401":
+      $ref: "../../../responses/401.yaml"
+    "404":
+      $ref: "../../../responses/404-html.yaml"

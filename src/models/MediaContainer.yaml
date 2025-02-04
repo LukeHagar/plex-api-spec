@@ -16,3 +16,4 @@ properties:
     example: "com.plexapp.plugins.library"
   allowSync:
     type: boolean
+    example: false
