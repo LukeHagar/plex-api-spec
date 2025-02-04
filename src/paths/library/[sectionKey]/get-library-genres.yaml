@@ -5,6 +5,9 @@ get:
   operationId: get-genres-library
   description: |
     Retrieves a list of all the genres that are found for the media in this library.
+  parameters:
+    - $ref: "../../../parameters/library/section-key.yaml"
+    - $ref: "../../../parameters/accept-application-json.yaml"
   responses:
     "200":
       description: Successful response containing media container data.
