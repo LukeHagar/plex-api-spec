@@ -16608,6 +16608,468 @@ paths:
                           type: integer
                           format: int32
                           example: 401
+  /users:
+    get:
+      servers:
+        - url: 'https://plex.tv/api'
+      security: []
+      tags:
+        - Users
+      summary: Get list of all connected users
+      description: Get list of all users that are friends and have library access with the provided Plex authentication token
+      operationId: get-users
+      parameters:
+        - name: X-Plex-Client-Identifier
+          x-speakeasy-name-override: ClientID
+          description: 'An opaque identifier unique to the client (UUID, serial number, or other unique device ID)'
+          required: true
+          in: header
+          schema:
+            type: string
+          example: 3381b62b-9ab7-4e37-827b-203e9809eb58
+        - name: X-Plex-Product
+          x-speakeasy-name-override: ClientName
+          description: 'The name of the client application. (Plex Web, Plex Media Server, etc.)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Plex for Roku
+        - name: X-Plex-Device
+          x-speakeasy-name-override: DeviceNickname
+          description: A relatively friendly name for the client device
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku 3
+        - name: X-Plex-Device-Name
+          x-speakeasy-name-override: DeviceName
+          description: 'The name of the device the client application is running on. This is used to track the client application and its usage. (Chrome, Safari, etc.)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Chrome
+        - name: X-Plex-Device-Screen-Resolution
+          x-speakeasy-name-override: DeviceScreenResolution
+          description: 'The resolution of the device the client application is running on. This is used to track the client application and its usage. (1487x1165,2560x1440)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: '1487x1165,2560x1440'
+        - name: X-Plex-Version
+          x-speakeasy-name-override: ClientVersion
+          description: The version of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 2.4.1
+        - name: X-Plex-Platform
+          x-speakeasy-name-override: Platform
+          description: The platform of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: Roku
+        - name: X-Plex-Features
+          x-speakeasy-name-override: ClientFeatures
+          description: 'The features of the client application. This is used to track the client application and its usage. (external-media,indirect-media,hub-style-list)'
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 'external-media,indirect-media,hub-style-list'
+        - name: X-Plex-Model
+          x-speakeasy-name-override: Model
+          description: A potentially less friendly identifier for the device model
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 4200X
+        - name: X-Plex-Session-Id
+          description: The session ID of the client application. This is used to track the client application and its usage. (97e136ef-4ddd-4ff3-89a7-a5820c96c2ca)
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 97e136ef-4ddd-4ff3-89a7-a5820c96c2ca
+        - name: X-Plex-Language
+          description: The language of the client application.
+          in: header
+          required: false
+          schema:
+            type: string
+          example: en
+        - name: X-Plex-Platform-Version
+          x-speakeasy-name-override: PlatformVersion
+          description: The version of the platform
+          in: header
+          required: false
+          schema:
+            type: string
+          example: 4.3 build 1057
+        - name: X-Plex-Token
+          in: header
+          description: 'An authentication token, obtained from plex.tv'
+          required: true
+          schema:
+            type: string
+            example: CV5xoxjTpFKUzBTShsaf
+      responses:
+        '200':
+          description: Successful response with media container data in XML
+          content:
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    description: Container holding user and server details.
+                    required:
+                      - friendlyName
+                      - identifier
+                      - machineIdentifier
+                      - totalSize
+                      - size
+                      - User
+                    properties:
+                      friendlyName:
+                        type: string
+                        description: The friendly name of the Plex instance.
+                        example: myPlex
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.myplex
+                      machineIdentifier:
+                        type: string
+                        description: Unique Machine identifier of the Plex server.
+                        example: 3dff4c4da3b1229a649aa574a9e2b419a684a20e
+                      totalSize:
+                        type: integer
+                        description: Total number of users.
+                        example: 30
+                      size:
+                        type: integer
+                        description: Number of users in the current response.
+                        example: 30
+                      User:
+                        type: array
+                        description: List of users with access to the Plex server.
+                        items:
+                          type: object
+                          required:
+                            - id
+                            - title
+                            - username
+                            - email
+                            - thumb
+                            - protected
+                            - home
+                            - allowTuners
+                            - allowSync
+                            - allowCameraUpload
+                            - allowChannels
+                            - allowSubtitleAdmin
+                            - restricted
+                            - Server
+                          properties:
+                            id:
+                              type: integer
+                              description: User's unique ID.
+                              example: 22526914
+                            title:
+                              type: string
+                              description: User's display name.
+                              example: Plex User
+                            username:
+                              type: string
+                              description: User's username.
+                              example: zgfuc7krcqfimrmb9lsl5j
+                            email:
+                              type: string
+                              description: User's email address.
+                              example: zgfuc7krcqfimrmb9lsl5j@protonmail.com
+                            recommendationsPlaylistId:
+                              description: ID of the user's recommendation playlist.
+                              type:
+                                - 'null'
+                                - string
+                              example: ''
+                            thumb:
+                              type: string
+                              description: URL to the user's avatar image.
+                              example: 'https://plex.tv/users/3346028014e93acd/avatar?c=1731605021'
+                            protected:
+                              allOf:
+                                - description: Indicates whether the account is protected.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            home:
+                              allOf:
+                                - description: Indicates if the user is part of a home group.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowTuners:
+                              allOf:
+                                - description: Indicates if the user is allowed to use tuners.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowSync:
+                              allOf:
+                                - description: Indicates if the user is allowed to sync media.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowCameraUpload:
+                              allOf:
+                                - description: Indicates if the user is allowed to upload from a camera.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowChannels:
+                              allOf:
+                                - description: Indicates if the user has access to channels.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowSubtitleAdmin:
+                              allOf:
+                                - description: Indicates if the user can manage subtitles.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            filterAll:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for all content.
+                              example: ''
+                            filterMovies:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for movies.
+                              example: ''
+                            filterMusic:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for music.
+                              example: ''
+                            filterPhotos:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for photos.
+                              example: ''
+                            filterTelevision:
+                              type: string
+                              description: Filters applied for television.
+                              example: ''
+                            restricted:
+                              allOf:
+                                - description: Indicates if the user has restricted access.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            Server:
+                              type: array
+                              description: List of servers owned by the user.
+                              items:
+                                type: object
+                                required:
+                                  - id
+                                  - serverId
+                                  - machineIdentifier
+                                  - name
+                                  - lastSeenAt
+                                  - numLibraries
+                                  - allLibraries
+                                  - owned
+                                  - pending
+                                properties:
+                                  id:
+                                    type: integer
+                                    description: Unique ID of the server of the connected user
+                                    example: 907759180
+                                  serverId:
+                                    type: integer
+                                    description: ID of the actual Plex server.
+                                    example: 9999999
+                                  machineIdentifier:
+                                    type: string
+                                    description: Machine identifier of the Plex server.
+                                    example: fbb8aa6be6e0c997c6268bc2b4431c8807f70a3
+                                  name:
+                                    type: string
+                                    description: Name of the Plex server of the connected user.
+                                    example: ConnectedUserFlix
+                                  lastSeenAt:
+                                    allOf:
+                                      - description: Timestamp of the last time the server was seen.
+                                      - type:
+                                          - integer
+                                        example: 1556281940
+                                        description: Unix epoch datetime in seconds
+                                        format: int64
+                                  numLibraries:
+                                    type: integer
+                                    description: Number of libraries in the server this user has access to.
+                                    example: 16
+                                  allLibraries:
+                                    allOf:
+                                      - description: Indicates if the user has access to all libraries.
+                                      - type: integer
+                                        format: int32
+                                        enum:
+                                          - 0
+                                          - 1
+                                        example: 1
+                                        default: 0
+                                        x-speakeasy-enums:
+                                          - DISABLE
+                                          - ENABLE
+                                  owned:
+                                    allOf:
+                                      - description: Indicates if the user owns the server.
+                                      - type: integer
+                                        format: int32
+                                        enum:
+                                          - 0
+                                          - 1
+                                        example: 1
+                                        default: 0
+                                        x-speakeasy-enums:
+                                          - DISABLE
+                                          - ENABLE
+                                  pending:
+                                    allOf:
+                                      - description: Indicates if the server is pending approval.
+                                      - type: integer
+                                        format: int32
+                                        enum:
+                                          - 0
+                                          - 1
+                                        example: 1
+                                        default: 0
+                                        x-speakeasy-enums:
+                                          - DISABLE
+                                          - ENABLE
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
 tags:
   - name: Activities
     description: |
