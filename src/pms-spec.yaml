@@ -271,12 +271,15 @@ paths:
   /video/:/transcode/universal/start.mpd:
     $ref: "./paths/video-transcode-universal-start.yaml"
 
-  # User
+  # User - plex.tv/api
   /user:
     $ref: "./paths/user/get-user-data-by-token.yaml"
 
   /users/signin:
     $ref: "./paths/users/post-sign-in.yaml"
+
+  /users:
+    $ref: "./paths/users/get-users.yaml"
 
 tags:
   - name: Activities
