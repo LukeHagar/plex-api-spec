@@ -3,6 +3,7 @@ import Ajv from "ajv"
 import addFormats from "ajv-formats"
 import { expect } from "vitest"
 import { merge } from "lodash-es"
+import { xml2json } from "xml-js"
 /**
  * Validate a response against the OpenAPI spec
  * NOTE: It accounts for the following scenarios:
@@ -13,12 +14,14 @@ import { merge } from "lodash-es"
  * @param type
  * @param statusCode
  * @param response
+ * @param responseType
  */
 export function validateResponseSpec(
   path: string,
   type: "get" | "post" | "delete",
   statusCode: number,
-  response: any
+  response: any,
+  responseType: "json" | "xml" = "json"
 ): void {
   const ajv = new Ajv({ allErrors: true, strict: false })
 
@@ -30,9 +33,28 @@ export function validateResponseSpec(
   addFormats(ajv)
 
   // Convert JSONPath to JSON Pointer
-  const pathPointer = `/paths/${path.replace(/\//g, `~1`)}/${type}/responses/${statusCode}/content/application~1json/schema`
+  const pathPointer = `/paths/${path.replace(/\//g, `~1`)}/${type}/responses/${statusCode}/content/application~1${responseType}/schema`
 
-  const validate = ajv.validate({ $ref: "API.yaml#" + pathPointer }, response)
+  let jsonResponse = response
+  if (responseType === "xml") {
+    const x = response.replace(/=""/g, '="a"')
+    jsonResponse = flattenAttributes(
+      JSON.parse(
+        xml2json(x, {
+          compact: true,
+          ignoreDeclaration: true,
+          nativeType: true,
+          // @ts-ignore
+          nativeTypeAttributes: true
+        })
+      )
+    )
+  }
+
+  const validate = ajv.validate(
+    { $ref: "API.yaml#" + pathPointer },
+    jsonResponse
+  )
 
   if (!validate) {
     console.error(ajv.errors)
@@ -77,4 +99,20 @@ function addAdditionalProperties(schema) {
       addAdditionalProperties(value)
     }
   }
+}
+
+function flattenAttributes(obj: any): any {
+  if (Array.isArray(obj)) {
+    return obj.map(flattenAttributes)
+  } else if (typeof obj === "object" && obj !== null) {
+    if ("_attributes" in obj) {
+      Object.assign(obj, obj._attributes)
+      delete obj._attributes
+    }
+    // Recursively process all properties
+    for (const key in obj) {
+      obj[key] = flattenAttributes(obj[key])
+    }
+  }
+  return obj
 }

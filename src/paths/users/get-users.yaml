@@ -97,8 +97,8 @@ get:
                           description: "User's email address."
                           example: "zgfuc7krcqfimrmb9lsl5j@protonmail.com"
                         recommendationsPlaylistId:
-                          type: string
                           description: "ID of the user's recommendation playlist."
+                          type: ["null", string]
                           example: ""
                         thumb:
                           type: string
@@ -133,19 +133,19 @@ get:
                             - description: "Indicates if the user can manage subtitles."
                             - $ref: "../../models/common/PlexBoolean.yaml"
                         filterAll:
-                          type: string
+                          type: ["null", string]
                           description: "Filters applied for all content."
                           example: ""
                         filterMovies:
-                          type: string
+                          type: ["null", string]
                           description: "Filters applied for movies."
                           example: ""
                         filterMusic:
-                          type: string
+                          type: ["null", string]
                           description: "Filters applied for music."
                           example: ""
                         filterPhotos:
-                          type: string
+                          type: ["null", string]
                           description: "Filters applied for photos."
                           example: ""
                         filterTelevision:
