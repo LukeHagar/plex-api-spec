@@ -1,0 +1,6 @@
+type: object
+properties:
+  grandparentKey:
+    type: string
+    description: "The key of the grandparent media item."
+    example: "/library/metadata/66"

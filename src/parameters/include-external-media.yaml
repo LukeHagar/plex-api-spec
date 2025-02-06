@@ -1,0 +1,4 @@
+name: includeExternalMedia
+in: query
+schema:
+  $ref: "../models/common/PlexBoolean.yaml"

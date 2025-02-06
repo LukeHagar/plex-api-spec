@@ -1,0 +1,4 @@
+name: includeAdvanced
+in: query
+schema:
+  $ref: "../models/common/PlexBoolean.yaml"

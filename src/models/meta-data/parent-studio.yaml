@@ -1,0 +1,8 @@
+type: object
+required:
+  - parentStudio
+properties:
+  parentStudio:
+    type: string
+    description: "The studio of the parent media item."
+    example: "UCP"

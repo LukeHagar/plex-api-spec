@@ -33,7 +33,6 @@ get:
       schema:
         type: string
         enum:
-          - all
           - unwatched
           - newest
           - recentlyAdded
@@ -41,12 +40,9 @@ get:
           - onDeck
           - collection
           - edition
-          - genre
           - year
           - decade
           - director
-          - actor
-          - country
           - contentRating
           - rating
           - resolution

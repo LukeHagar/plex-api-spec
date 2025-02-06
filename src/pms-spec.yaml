@@ -165,6 +165,8 @@ paths:
 
   /library/sections/{sectionKey}/{tag}:
     $ref: "./paths/library/[sectionKey]/get-library-items.yaml"
+  /library/sections/{sectionKey}/all:
+    $ref: "./paths/library/[sectionKey]/get-library-all.yaml"
   /library/sections/{sectionKey}/refresh:
     $ref: "./paths/library/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionKey}/search:

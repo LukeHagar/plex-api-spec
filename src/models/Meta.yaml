@@ -17,7 +17,10 @@ properties:
           example: "/library/sections/2/all?type=2"
         type:
           type: string
-          example: "show"
+          example: filter
+        subtype:
+          type: string
+          example: "clip"
         title:
           type: string
           example: "TV Shows"
@@ -50,6 +53,10 @@ properties:
               type:
                 type: string
                 example: "filter"
+              advanced:
+                type: boolean
+                example: true
+
         Sort:
           type: array
           items:
