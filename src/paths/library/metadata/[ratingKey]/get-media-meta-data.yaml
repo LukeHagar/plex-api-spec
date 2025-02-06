@@ -6,7 +6,13 @@ get:
     This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
   operationId: get-media-meta-data
   parameters:
-    - $ref: "../../../../parameters/library/rating-key.yaml"
+    - name: ratingKey
+      in: path
+      description: the id of the library item to return the children of.
+      schema:
+        type: integer
+        example: 9518
+      required: true
     - name: includeConcerts
       in: query
       description: "Include concerts data if set to true."
