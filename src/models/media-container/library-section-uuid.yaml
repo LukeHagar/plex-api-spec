@@ -1,0 +1,8 @@
+type: object
+required:
+  - librarySectionTitle
+properties:
+  librarySectionUUID:
+    type: string
+    description: "The universally unique identifier for the library section."
+    example: "e69655a2-ef48-4aba-bb19-0cc34d1e7d36"
