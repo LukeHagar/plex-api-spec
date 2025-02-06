@@ -434,6 +434,7 @@ get:
                                     description: "The country name."
                                     example: "United States of America"
                             Guid:
+                              x-speakeasy-name-override: Guids
                               type: array
                               description: "An array of GUID objects."
                               items:
