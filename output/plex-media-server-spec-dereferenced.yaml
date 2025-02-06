@@ -2141,7 +2141,7 @@ paths:
         - name: type
           in: query
           description: |
-            The type of media to retrieve.
+            The type of media to retrieve or filter by.
             1 = movie
             2 = show
             3 = season
@@ -3864,7 +3864,7 @@ paths:
         - name: type
           in: query
           description: |
-            The type of media to retrieve.
+            The type of media to retrieve or filter by.
             1 = movie
             2 = show
             3 = season
@@ -5271,13 +5271,12 @@ paths:
         - name: type
           in: query
           description: |
-            The type of media to retrieve.
+            The type of media to retrieve or filter by.
             1 = movie
             2 = show
             3 = season
             4 = episode
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
-          required: false
           schema:
             type: integer
             enum:
@@ -5297,6 +5296,7 @@ paths:
               - AUDIO
               - ALBUM
               - TRACK
+          required: true
         - name: sectionKey
           description: |
             The unique key of the Plex library. 
@@ -6667,7 +6667,7 @@ paths:
         - name: type
           in: query
           description: |
-            The type of media to retrieve.
+            The type of media to retrieve or filter by.
             1 = movie
             2 = show
             3 = season
@@ -6882,6 +6882,35 @@ paths:
             format: int32
             example: 9518
           required: true
+        - name: type
+          in: query
+          description: |
+            The type of media to retrieve or filter by.
+            1 = movie
+            2 = show
+            3 = season
+            4 = episode
+            E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 8
+              - 9
+              - 10
+            example: 2
+            x-speakeasy-enums:
+              - MOVIE
+              - TV_SHOW
+              - SEASON
+              - EPISODE
+              - AUDIO
+              - ALBUM
+              - TRACK
+          required: true
         - name: Accept
           in: header
           required: false
@@ -7067,6 +7096,35 @@ paths:
             format: int32
             example: 9518
           required: true
+        - name: type
+          in: query
+          description: |
+            The type of media to retrieve or filter by.
+            1 = movie
+            2 = show
+            3 = season
+            4 = episode
+            E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 8
+              - 9
+              - 10
+            example: 2
+            x-speakeasy-enums:
+              - MOVIE
+              - TV_SHOW
+              - SEASON
+              - EPISODE
+              - AUDIO
+              - ALBUM
+              - TRACK
+          required: true
         - name: Accept
           in: header
           required: false
@@ -7165,6 +7223,261 @@ paths:
                                 title:
                                   type: string
                                   example: Japan
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
+  '/library/sections/{sectionKey}/actor':
+    get:
+      tags:
+        - Library
+      summary: Get Actors of library media
+      operationId: get-actors-library
+      description: |
+        Retrieves a list of all the actors that are found for the media in this library.
+      parameters:
+        - name: sectionKey
+          description: |
+            The unique key of the Plex library. 
+            Note: This is unique in the context of the Plex server.
+          in: path
+          schema:
+            type: integer
+            format: int32
+            example: 9518
+          required: true
+        - name: type
+          in: query
+          description: |
+            The type of media to retrieve or filter by.
+            1 = movie
+            2 = show
+            3 = season
+            4 = episode
+            E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 8
+              - 9
+              - 10
+            example: 2
+            x-speakeasy-enums:
+              - MOVIE
+              - TV_SHOW
+              - SEASON
+              - EPISODE
+              - AUDIO
+              - ALBUM
+              - TRACK
+          required: true
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - application/json
+              - application/xml
+            example: application/json
+      responses:
+        '200':
+          description: Successful response containing media container data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    allOf:
+                      - type: object
+                        required:
+                          - size
+                        properties:
+                          size:
+                            type: number
+                            example: 50
+                      - type: object
+                        required:
+                          - allowSync
+                        properties:
+                          allowSync:
+                            type: boolean
+                            description: Indicates whether syncing is allowed.
+                            example: false
+                      - type: object
+                        required:
+                          - art
+                        properties:
+                          art:
+                            type: string
+                            description: URL for the background artwork of the media container.
+                            example: '/:/resources/show-fanart.jpg'
+                      - type: object
+                        required:
+                          - identifier
+                        properties:
+                          identifier:
+                            type: string
+                            description: An plugin identifier for the media container.
+                            example: com.plexapp.plugins.library
+                      - type: object
+                        required:
+                          - mediaTagPrefix
+                        properties:
+                          mediaTagPrefix:
+                            type: string
+                            description: The prefix used for media tag resource paths.
+                            example: /system/bundle/media/flags/
+                      - type: object
+                        required:
+                          - mediaTagVersion
+                        properties:
+                          mediaTagVersion:
+                            type: integer
+                            description: The version number for media tags.
+                            example: 1734362201
+                      - type: object
+                        required:
+                          - nocache
+                        properties:
+                          nocache:
+                            type: boolean
+                            description: Specifies whether caching is disabled.
+                            example: true
+                      - type: object
+                        required:
+                          - thumb
+                        properties:
+                          thumb:
+                            type: string
+                            description: URL for the thumbnail image of the media container.
+                            example: '/:/resources/show.png'
+                      - type: object
+                        required:
+                          - title1
+                        properties:
+                          title1:
+                            type: string
+                            description: The primary title of the media container.
+                            example: TV Series
+                      - type: object
+                        required:
+                          - title2
+                        properties:
+                          title2:
+                            type: string
+                            description: The secondary title of the media container.
+                            example: By Starring Actor
+                      - type: object
+                        required:
+                          - viewGroup
+                        properties:
+                          viewGroup:
+                            type: string
+                            description: Identifier for the view group layout.
+                            example: secondary
+                      - type: object
+                        required:
+                          - viewMode
+                        properties:
+                          viewMode:
+                            type: string
+                            description: Identifier for the view mode.
+                            example: '131131'
+                      - type: object
+                        properties:
+                          Directory:
+                            type: array
+                            description: An array of actor entries for media items.
+                            items:
+                              type: object
+                              required:
+                                - fastKey
+                                - thumb
+                                - key
+                                - title
+                              properties:
+                                fastKey:
+                                  type: string
+                                  description: A fast lookup key for the actor relative url.
+                                  example: /library/sections/2/all?actor=134671
+                                thumb:
+                                  type: string
+                                  description: URL for the thumbnail image of the actor.
+                                  example: 'https://metadata-static.plex.tv/e/people/e2a915b537ef720252b6d408bc1f91b3.jpg'
+                                key:
+                                  type: string
+                                  description: A unique key representing the actor.
+                                  example: '134671'
+                                title:
+                                  type: string
+                                  description: The name of the actor.
+                                  example: Aaron Paul
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
@@ -9302,7 +9615,7 @@ paths:
         - name: type
           in: query
           description: |
-            The type of media to retrieve.
+            The type of media to retrieve or filter by.
             1 = movie
             2 = show
             3 = season
@@ -11823,7 +12136,7 @@ paths:
         - name: type
           in: query
           description: |
-            The type of media to retrieve.
+            The type of media to retrieve or filter by.
             1 = movie
             2 = show
             3 = season
