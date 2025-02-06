@@ -180,7 +180,7 @@ paths:
     $ref: "./paths/library/get-search-all-libraries.yaml"
 
   /library/metadata/{ratingKey}:
-    $ref: "./paths/library/metadata/[ratingKey]/get-meta-data-by-rating-key.yaml"
+    $ref: "./paths/library/metadata/[ratingKey]/get-media-meta-data.yaml"
   /library/metadata/{ratingKey}/banner:
     $ref: "./paths/library/metadata/[ratingKey]/banner/get-banner-image.yaml"
   /library/metadata/{ratingKey}/thumb:

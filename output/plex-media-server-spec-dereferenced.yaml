@@ -8992,6 +8992,20 @@ paths:
                           type: integer
                           format: int32
                           example: 401
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
   '/library/metadata/{ratingKey}/banner':
     get:
       tags:
