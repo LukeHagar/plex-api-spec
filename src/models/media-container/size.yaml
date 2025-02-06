@@ -1,0 +1,7 @@
+type: object
+required:
+  - size
+properties:
+  size:
+    type: number
+    example: 50

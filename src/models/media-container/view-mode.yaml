@@ -1,0 +1,8 @@
+type: object
+required:
+  - viewMode
+properties:
+  viewMode:
+    type: string
+    description: "Identifier for the view mode."
+    example: "131131"

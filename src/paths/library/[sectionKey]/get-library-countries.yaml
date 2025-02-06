@@ -7,6 +7,7 @@ get:
     Retrieves a list of all the countries that are found for the media in this library.
   parameters:
     - $ref: "../../../parameters/library/section-key.yaml"
+    - $ref: "../../../parameters/type.yaml"
     - $ref: "../../../parameters/accept-application-json.yaml"
   responses:
     "200":

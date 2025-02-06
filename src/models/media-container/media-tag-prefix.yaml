@@ -1,0 +1,8 @@
+type: object
+required:
+  - mediaTagPrefix
+properties:
+  mediaTagPrefix:
+    type: string
+    description: "The prefix used for media tag resource paths."
+    example: "/system/bundle/media/flags/"

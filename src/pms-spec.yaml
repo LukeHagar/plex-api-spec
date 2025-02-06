@@ -173,6 +173,8 @@ paths:
     $ref: "./paths/library/[sectionKey]/get-library-genres.yaml"
   /library/sections/{sectionKey}/country:
     $ref: "./paths/library/[sectionKey]/get-library-countries.yaml"
+  /library/sections/{sectionKey}/actor:
+    $ref: "./paths/library/[sectionKey]/get-library-actors.yaml"
 
   /library/search:
     $ref: "./paths/library/get-search-all-libraries.yaml"
