@@ -1,0 +1,331 @@
+type: array
+description: "An array of media file data items."
+items:
+  type: object
+  required:
+    - id
+    - duration
+    - bitrate
+    - width
+    - height
+    - aspectRatio
+    - audioChannels
+    - audioCodec
+    - videoCodec
+    - videoResolution
+    - container
+    - videoFrameRate
+    - videoProfile
+    - hasVoiceActivity
+    - Part
+  properties:
+    id:
+      type: integer
+      description: "Unique media identifier."
+      example: 387322
+    duration:
+      type: integer
+      description: "Duration of the media in milliseconds."
+      example: 9610350
+    bitrate:
+      type: integer
+      description: "Bitrate in bits per second."
+      example: 25512
+    width:
+      type: integer
+      description: "Video width in pixels."
+      example: 3840
+    height:
+      type: integer
+      description: "Video height in pixels."
+      example: 1602
+    aspectRatio:
+      type: number
+      format: float
+      description: "Aspect ratio of the video."
+      example: 2.35
+    audioChannels:
+      type: integer
+      description: "Number of audio channels."
+      example: 6
+    audioCodec:
+      type: string
+      description: "Audio codec used."
+      example: "eac3"
+    videoCodec:
+      type: string
+      description: "Video codec used."
+      example: "hevc"
+    videoResolution:
+      type: string
+      description: "Video resolution (e.g., 4k)."
+      example: "4k"
+    container:
+      type: string
+      description: "File container type."
+      example: "mkv"
+    videoFrameRate:
+      type: string
+      description: "Frame rate of the video (e.g., 24p)."
+      example: "24p"
+    videoProfile:
+      type: string
+      description: "Video profile (e.g., main 10)."
+      example: "main 10"
+    hasVoiceActivity:
+      type: boolean
+      description: "Indicates whether voice activity is detected."
+      example: false
+    Part:
+      type: array
+      description: "An array of parts for this media item."
+      items:
+        type: object
+        required:
+          - id
+          - key
+          - duration
+          - file
+          - size
+          - container
+          - videoProfile
+          - Stream
+        properties:
+          accessible:
+            type: boolean
+            description: "Indicates if the part is accessible."
+            example: true
+          exists:
+            type: boolean
+            description: "Indicates if the part exists."
+            example: true
+          id:
+            type: integer
+            description: "Unique part identifier."
+            example: 418385
+          key:
+            type: string
+            description: "Key to access this part."
+            example: "/library/parts/418385/1735864239/file.mkv"
+          indexes:
+            type: string
+            example: "sd"
+          duration:
+            type: integer
+            description: "Duration of the part in milliseconds."
+            example: 9610350
+          file:
+            type: string
+            description: "File path for the part."
+            example: "/mnt/Movies_1/W/Wicked (2024).mkv"
+          size:
+            type: integer
+            description: "File size in bytes."
+            example: 30649952104
+          container:
+            type: string
+            description: "Container format of the part."
+            example: "mkv"
+          videoProfile:
+            type: string
+            description: "Video profile for the part."
+            example: "main 10"
+          Stream:
+            type: array
+            description: "An array of streams for this part."
+            items:
+              type: object
+              required:
+                - id
+                - streamType
+                - codec
+                - index
+                - bitrate
+                - language
+                - languageTag
+                - languageCode
+                - displayTitle
+                - extendedDisplayTitle
+              properties:
+                id:
+                  type: integer
+                  description: "Unique stream identifier."
+                  example: 1002625
+                streamType:
+                  type: integer
+                  description: "Stream type (1=video, 2=audio, 3=subtitle)."
+                  example: 1
+                default:
+                  type: boolean
+                  description: "Indicates if this stream is default."
+                  example: true
+                codec:
+                  type: string
+                  description: "Codec used by the stream."
+                  example: "hevc"
+                index:
+                  type: integer
+                  description: "Index of the stream."
+                  example: 0
+                bitrate:
+                  type: integer
+                  description: "Bitrate of the stream."
+                  example: 24743
+                language:
+                  type: string
+                  description: "Language of the stream."
+                  example: "English"
+                languageTag:
+                  type: string
+                  description: "Language tag (e.g., en)."
+                  example: "en"
+                languageCode:
+                  type: string
+                  description: "ISO language code."
+                  example: "eng"
+                DOVIBLCompatID:
+                  type: integer
+                  description: "Dolby Vision BL compatibility ID."
+                  example: 1
+                DOVIBLPresent:
+                  type: boolean
+                  description: "Indicates if Dolby Vision BL is present."
+                  example: true
+                DOVIELPresent:
+                  type: boolean
+                  description: "Indicates if Dolby Vision EL is present."
+                  example: false
+                DOVILevel:
+                  type: integer
+                  description: "Dolby Vision level."
+                  example: 6
+                DOVIPresent:
+                  type: boolean
+                  description: "Indicates if Dolby Vision is present."
+                  example: true
+                DOVIProfile:
+                  type: integer
+                  description: "Dolby Vision profile."
+                  example: 8
+                DOVIRPUPresent:
+                  type: boolean
+                  description: "Indicates if Dolby Vision RPU is present."
+                  example: true
+                DOVIVersion:
+                  type: string
+                  description: "Dolby Vision version."
+                  example: "1.0"
+                bitDepth:
+                  type: integer
+                  description: "Bit depth of the video stream."
+                  example: 10
+                chromaLocation:
+                  type: string
+                  description: "Chroma sample location."
+                  example: "topleft"
+                chromaSubsampling:
+                  type: string
+                  description: "Chroma subsampling format."
+                  example: "4:2:0"
+                codedHeight:
+                  type: integer
+                  description: "Coded video height."
+                  example: 1608
+                codedWidth:
+                  type: integer
+                  description: "Coded video width."
+                  example: 3840
+                colorPrimaries:
+                  type: string
+                  description: "Color primaries used."
+                  example: "bt2020"
+                colorRange:
+                  type: string
+                  description: "Color range (e.g., tv)."
+                  example: "tv"
+                colorSpace:
+                  type: string
+                  description: "Color space."
+                  example: "bt2020nc"
+                colorTrc:
+                  type: string
+                  description: "Color transfer characteristics."
+                  example: "smpte2084"
+                frameRate:
+                  type: number
+                  format: float
+                  description: "Frame rate of the stream."
+                  example: 23.976
+                height:
+                  type: integer
+                  description: "Height of the video stream."
+                  example: 1602
+                level:
+                  type: integer
+                  description: "Video level."
+                  example: 150
+                original:
+                  type: boolean
+                  description: "Indicates if this is the original stream."
+                  example: true
+                hasScalingMatrix:
+                  type: boolean
+                  example: false
+                profile:
+                  type: string
+                  description: "Video profile."
+                  example: "main 10"
+                scanType:
+                  type: string
+                  example: "progressive"
+                refFrames:
+                  type: integer
+                  description: "Number of reference frames."
+                  example: 1
+                width:
+                  type: integer
+                  description: "Width of the video stream."
+                  example: 3840
+                displayTitle:
+                  type: string
+                  description: "Display title for the stream."
+                  example: "4K DoVi/HDR10 (HEVC Main 10)"
+                extendedDisplayTitle:
+                  type: string
+                  description: "Extended display title for the stream."
+                  example: "4K DoVi/HDR10 (HEVC Main 10)"
+                selected:
+                  type: boolean
+                  description: "Indicates if this stream is selected (applicable for audio streams)."
+                  example: true
+                forced:
+                  type: boolean
+                  example: true
+                channels:
+                  type: integer
+                  description: "Number of audio channels (for audio streams)."
+                  example: 6
+                audioChannelLayout:
+                  type: string
+                  description: "Audio channel layout."
+                  example: "5.1(side)"
+                samplingRate:
+                  type: integer
+                  description: "Sampling rate for the audio stream."
+                  example: 48000
+                canAutoSync:
+                  type: boolean
+                  description: "Indicates if the stream can auto-sync."
+                  example: false
+                hearingImpaired:
+                  type: boolean
+                  description: "Indicates if the stream is for the hearing impaired."
+                  example: true
+                dub:
+                  type: boolean
+                  description: "Indicates if the stream is a dub."
+                  example: true
+                title:
+                  type: string
+                  description: "Optional title for the stream (e.g., language variant)."
+                  example: "SDH"
