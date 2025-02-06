@@ -8440,10 +8440,10 @@ paths:
     get:
       tags:
         - Library
-      summary: Get Metadata by RatingKey
+      summary: Get Media Metadata
       description: |
-        This endpoint will return the metadata of a library item specified with the ratingKey.
-      operationId: get-meta-data-by-rating-key
+        This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
+      operationId: get-media-meta-data
       parameters:
         - name: ratingKey
           in: path
@@ -8452,6 +8452,97 @@ paths:
             type: integer
             example: 9518
           required: true
+        - name: includeConcerts
+          in: query
+          description: Include concerts data if set to true.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includeExtras
+          in: query
+          description: Include extra content (e.g. bonus features).
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includeOnDeck
+          in: query
+          description: Include on-deck items.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includePopularLeaves
+          in: query
+          description: Include popular leaves (episodes/chapters).
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includePreferences
+          in: query
+          description: Include preferences information.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includeReviews
+          in: query
+          description: Include reviews for the content.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includeChapters
+          in: query
+          description: Include chapter details.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includeStations
+          in: query
+          description: Include station data.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: includeExternalMedia
+          in: query
+          description: Include external media data.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: asyncAugmentMetadata
+          in: query
+          description: Trigger asynchronous metadata augmentation.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: asyncCheckFiles
+          in: query
+          description: Trigger asynchronous file checking.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: asyncRefreshAnalysis
+          in: query
+          description: Trigger asynchronous refresh of analysis.
+          required: false
+          schema:
+            type: boolean
+            example: true
+        - name: asyncRefreshLocalMediaAgent
+          in: query
+          description: Trigger asynchronous refresh of the local media agent.
+          required: false
+          schema:
+            type: boolean
+            example: true
       responses:
         '200':
           description: The metadata of the library item.
@@ -8461,487 +8552,921 @@ paths:
                 type: object
                 properties:
                   MediaContainer:
-                    type: object
-                    properties:
-                      size:
-                        type: integer
-                        format: int32
-                        example: 1
-                      allowSync:
-                        type: boolean
-                        example: true
-                      identifier:
-                        type: string
-                        example: com.plexapp.plugins.library
-                      librarySectionID:
-                        type: integer
-                        format: int32
-                        example: 1
-                      librarySectionTitle:
-                        type: string
-                        example: Movies
-                      librarySectionUUID:
-                        type: string
-                        example: cfc899d7-3000-46f6-8489-b9592714ada5
-                      mediaTagPrefix:
-                        type: string
-                        example: /system/bundle/media/flags/
-                      mediaTagVersion:
-                        type: integer
-                        format: int32
-                        example: 1698860922
-                      Metadata:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            ratingKey:
-                              type: string
-                              example: '17'
-                            key:
-                              type: string
-                              example: /library/metadata/17
-                            guid:
-                              type: string
-                              example: 'plex://movie/5d77683f6f4521001ea9dc53'
-                            studio:
-                              type: string
-                              example: Universal Pictures
-                            type:
-                              type: string
-                              example: movie
-                            title:
-                              type: string
-                              example: Serenity
-                            librarySectionTitle:
-                              type: string
-                              example: Movies
-                            librarySectionID:
-                              type: integer
-                              format: int32
-                              example: 1
-                            librarySectionKey:
-                              type: string
-                              example: /library/sections/1
-                            grandparentTitle:
-                              type: string
-                              description: 'The name of the album artist for the track when audio, and the name of the TV show for the episode when video.'
-                            parentTitle:
-                              type: string
-                              description: 'The name of the album for the track when audio, and the name of the season for the episode when TV show.'
-                            originalTitle:
-                              type: string
-                              description: The orginal untranslated name of the media item when non-english.
-                            index:
-                              type: integer
-                              description: The index starting from 0 of this media item in the MetaData array.
-                            parentIndex:
-                              type: integer
-                              description: The parent index starting from 0 of this media item in the parent MetaData array.
-                            contentRating:
-                              type: string
-                              example: PG-13
-                            summary:
-                              type: string
-                              example: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
-                            rating:
-                              type: number
-                              example: 8.2
-                            audienceRating:
-                              type: number
-                              example: 9.1
-                            year:
-                              type: integer
-                              format: int32
-                              example: 2005
-                            tagline:
-                              type: string
-                              example: They aim to misbehave.
-                            thumb:
-                              type: string
-                              example: /library/metadata/17/thumb/1705637165
-                            art:
-                              type: string
-                              example: /library/metadata/17/art/1705637165
-                            duration:
-                              type: integer
-                              format: int32
-                              example: 141417
-                            originallyAvailableAt:
-                              type: string
-                              format: date
-                              example: 2005-09-29T00:00:00.000Z
-                            addedAt:
-                              type: integer
-                              format: int32
-                              example: 1705637164
-                            updatedAt:
-                              type: integer
-                              format: int32
-                              example: 1705637165
-                            audienceRatingImage:
-                              type: string
-                              example: 'rottentomatoes://image.rating.upright'
-                            hasPremiumPrimaryExtra:
-                              type: string
-                              example: '1'
-                            ratingImage:
-                              type: string
-                              example: 'rottentomatoes://image.rating.ripe'
-                            Media:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 15
-                                  duration:
-                                    type: integer
-                                    format: int32
-                                    example: 141417
-                                  bitrate:
-                                    type: integer
-                                    format: int32
-                                    example: 2278
-                                  width:
-                                    type: integer
-                                    format: int32
-                                    example: 1920
-                                  height:
-                                    type: integer
-                                    format: int32
-                                    example: 814
-                                  aspectRatio:
-                                    type: number
-                                    example: 2.35
-                                  audioChannels:
-                                    type: integer
-                                    format: int32
-                                    example: 2
-                                  audioCodec:
-                                    type: string
-                                    example: aac
-                                  videoCodec:
-                                    type: string
-                                    example: h264
-                                  videoResolution:
-                                    type: string
-                                    example: '1080'
-                                  container:
-                                    type: string
-                                    example: mp4
-                                  videoFrameRate:
-                                    type: string
-                                    example: 24p
-                                  optimizedForStreaming:
-                                    type: integer
-                                    format: int32
-                                    example: 0
-                                  audioProfile:
-                                    type: string
-                                    example: lc
-                                  has64bitOffsets:
-                                    type: boolean
-                                    example: false
-                                  videoProfile:
-                                    type: string
-                                    example: high
-                                  Part:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: integer
-                                          format: int32
-                                          example: 15
-                                        key:
-                                          type: string
-                                          example: /library/parts/15/1705637151/file.mp4
-                                        duration:
-                                          type: integer
-                                          format: int32
-                                          example: 141417
-                                        file:
-                                          type: string
-                                          example: /movies/Serenity (2005)/Serenity (2005).mp4
-                                        size:
-                                          type: integer
-                                          format: int32
-                                          example: 40271948
-                                        audioProfile:
-                                          type: string
-                                          example: lc
-                                        container:
-                                          type: string
-                                          example: mp4
-                                        has64bitOffsets:
-                                          type: boolean
-                                          example: false
-                                        optimizedForStreaming:
-                                          type: boolean
-                                          example: false
-                                        videoProfile:
-                                          type: string
-                                          example: high
-                                        Stream:
-                                          type: array
-                                          items:
-                                            type: object
-                                            properties:
-                                              id:
-                                                type: integer
-                                                format: int32
-                                                example: 29
-                                              streamType:
-                                                type: integer
-                                                format: int32
-                                                example: 2
-                                              default:
-                                                type: boolean
-                                                example: true
-                                              codec:
-                                                type: string
-                                                example: aac
-                                              index:
-                                                type: integer
-                                                format: int32
-                                                example: 0
-                                              bitrate:
-                                                type: integer
-                                                format: int32
-                                                example: 128
-                                              bitDepth:
-                                                type: integer
-                                                format: int32
-                                                example: 8
-                                              chromaLocation:
-                                                type: string
-                                                example: left
-                                              chromaSubsampling:
-                                                type: string
-                                                example: 14520
-                                              codedHeight:
-                                                type: integer
-                                                format: int32
-                                                example: 816
-                                              codedWidth:
-                                                type: integer
-                                                format: int32
-                                                example: 1920
-                                              colorPrimaries:
-                                                type: string
-                                                example: bt709
-                                              colorRange:
-                                                type: string
-                                                example: tv
-                                              colorSpace:
-                                                type: string
-                                                example: bt709
-                                              colorTrc:
-                                                type: string
-                                                example: bt709
-                                              frameRate:
-                                                type: integer
-                                                format: int32
-                                                example: 24
-                                              hasScalingMatrix:
-                                                type: boolean
-                                                example: false
-                                              height:
-                                                type: integer
-                                                format: int32
-                                                example: 814
-                                              level:
-                                                type: integer
-                                                format: int32
-                                                example: 40
-                                              profile:
-                                                type: string
-                                                example: lc
-                                              refFrames:
-                                                type: integer
-                                                format: int32
-                                                example: 4
-                                              scanType:
-                                                type: string
-                                                example: progressive
-                                              streamIdentifier:
-                                                type: string
-                                                example: '1'
-                                              width:
-                                                type: integer
-                                                format: int32
-                                                example: 1920
-                                              displayTitle:
-                                                type: string
-                                                example: English (AAC Stereo)
-                                              extendedDisplayTitle:
-                                                type: string
-                                                example: English (AAC Stereo)
-                                              selected:
-                                                type: boolean
-                                                example: true
-                                              channels:
-                                                type: integer
-                                                format: int32
-                                                example: 2
-                                              language:
-                                                type: string
-                                                example: English
-                                              languageTag:
-                                                type: string
-                                                example: en
-                                              languageCode:
-                                                type: string
-                                                example: eng
-                                              samplingRate:
-                                                type: integer
-                                                format: int32
-                                                example: 44100
-                            Genre:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 184
-                                  filter:
-                                    type: string
-                                    example: genre=184
-                                  tag:
-                                    type: string
-                                    example: Thriller
-                            Country:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 116
-                                  filter:
-                                    type: string
-                                    example: country=116
-                                  tag:
-                                    type: string
-                                    example: United States of America
-                            Guid:
-                              x-speakeasy-name-override: guids
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    example: 'tvdb://2337'
-                            Rating:
-                              x-speakeasy-name-override: ratings
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  image:
-                                    type: string
-                                    example: 'themoviedb://image.rating'
-                                  value:
-                                    type: number
-                                    example: 7.4
-                                  type:
-                                    type: string
-                                    example: audience
-                            Director:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 130
-                                  filter:
-                                    type: string
-                                    example: director=130
-                                  tag:
-                                    type: string
-                                    example: Joss Whedon
-                                  tagKey:
-                                    type: string
-                                    example: 5d776828880197001ec90e8f
-                                  thumb:
-                                    type: string
-                                    example: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
-                            Writer:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 132
-                                  filter:
-                                    type: string
-                                    example: writer=132
-                                  tag:
-                                    type: string
-                                    example: Joss Whedon
-                                  tagKey:
-                                    type: string
-                                    example: 5d776828880197001ec90e8f
-                                  thumb:
-                                    type: string
-                                    example: 'https://metadata-static.plex.tv/people/5d776828880197001ec90e8f.jpg'
-                            Role:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 220
-                                  filter:
-                                    type: string
-                                    example: actor=220
-                                  tag:
-                                    type: string
-                                    example: Dennis Keiffer
-                                  tagKey:
-                                    type: string
-                                    example: 5d77683554f42c001f8c4708
-                                  role:
-                                    type: string
-                                    example: Bar Guy (uncredited)
-                                  thumb:
-                                    type: string
-                                    example: 'https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg'
-                            Producer:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 221
-                                  filter:
-                                    type: string
-                                    example: producer=221
-                                  tag:
-                                    type: string
-                                    example: Barry Mendel
-                                  tagKey:
-                                    type: string
-                                    example: 5d776826961905001eb90e2b
-                                  thumb:
-                                    type: string
-                                    example: 'https://metadata-static.plex.tv/8/people/87877371326a964634d18556d94547e1.jpg'
+                    allOf:
+                      - type: object
+                        required:
+                          - size
+                        properties:
+                          size:
+                            type: number
+                            example: 50
+                      - type: object
+                        required:
+                          - allowSync
+                        properties:
+                          allowSync:
+                            type: boolean
+                            description: Indicates whether syncing is allowed.
+                            example: false
+                      - type: object
+                        required:
+                          - identifier
+                        properties:
+                          identifier:
+                            type: string
+                            description: An plugin identifier for the media container.
+                            example: com.plexapp.plugins.library
+                      - type: object
+                        required:
+                          - librarySectionID
+                        properties:
+                          librarySectionID:
+                            type: integer
+                            description: The unique identifier for the library section.
+                            example: 2
+                      - type: object
+                        required:
+                          - librarySectionTitle
+                        properties:
+                          librarySectionTitle:
+                            type: string
+                            description: The title of the library section.
+                            example: TV Series
+                      - type: object
+                        required:
+                          - librarySectionTitle
+                        properties:
+                          librarySectionUUID:
+                            type: string
+                            description: The universally unique identifier for the library section.
+                            example: e69655a2-ef48-4aba-bb19-0cc34d1e7d36
+                      - type: object
+                        required:
+                          - mediaTagPrefix
+                        properties:
+                          mediaTagPrefix:
+                            type: string
+                            description: The prefix used for media tag resource paths.
+                            example: /system/bundle/media/flags/
+                      - type: object
+                        required:
+                          - mediaTagVersion
+                        properties:
+                          mediaTagVersion:
+                            type: integer
+                            description: The version number for media tags.
+                            example: 1734362201
+                      - type: object
+                        required:
+                          - Metadata
+                        properties:
+                          Metadata:
+                            type: array
+                            description: An array of metadata items.
+                            items:
+                              type: object
+                              required:
+                                - ratingKey
+                                - key
+                                - guid
+                                - type
+                                - title
+                                - librarySectionTitle
+                                - librarySectionID
+                                - librarySectionKey
+                                - contentRating
+                                - summary
+                                - audienceRating
+                                - year
+                                - thumb
+                                - art
+                                - duration
+                                - originallyAvailableAt
+                                - addedAt
+                                - updatedAt
+                                - audienceRatingImage
+                                - Image
+                                - UltraBlurColors
+                                - Guid
+                                - Rating
+                              properties:
+                                ratingKey:
+                                  type: string
+                                  description: The rating key of the metadata item.
+                                  example: '44288'
+                                parentRatingKey:
+                                  type: string
+                                  description: The rating key of the parent of this metadata item.
+                                  example: '48047'
+                                grandparentRatingKey:
+                                  type: string
+                                  description: The rating key of the grandparent of this metadata item.
+                                  example: '45520'
+                                parentGuid:
+                                  type: string
+                                  description: 'A GUID identifying the parent entity (e.g., season) for the item.'
+                                  example: 'plex://season/618b89208dde18df707ad15c'
+                                grandparentGuid:
+                                  type: string
+                                  description: 'A GUID identifying the grandparent entity (e.g., show).'
+                                  example: 'plex://show/5e16253691c20300412003a8'
+                                grandparentSlug:
+                                  type: string
+                                  description: A URL-friendly identifier (slug) for the grandparent entity.
+                                  example: alice-in-borderland-2020
+                                grandparentKey:
+                                  type: string
+                                  description: A key identifying the grandparent metadata in the library.
+                                  example: /library/metadata/45520
+                                parentKey:
+                                  type: string
+                                  description: A key identifying the parent metadata in the library.
+                                  example: /library/metadata/48047
+                                key:
+                                  type: string
+                                  description: The API key to access metadata details.
+                                  example: /library/metadata/44288/children
+                                guid:
+                                  type: string
+                                  description: The globally unique identifier for the item.
+                                  example: 'plex://show/5d9c08254eefaa001f5d6dcb'
+                                slug:
+                                  type: string
+                                  description: A URL-friendly identifier for the item.
+                                  example: better-call-saul
+                                studio:
+                                  type: string
+                                  description: The studio that produced the content.
+                                  example: Sony Pictures Television
+                                type:
+                                  type: string
+                                  description: 'The type of content (e.g., show, movie).'
+                                  example: show
+                                title:
+                                  type: string
+                                  description: The title of the content.
+                                  example: Better Call Saul
+                                originalTitle:
+                                  type: string
+                                  description: The original title of the content.
+                                  example: 'Wicked: Part I'
+                                librarySectionTitle:
+                                  type: string
+                                  description: The title of the library section.
+                                  example: 'TV Series '
+                                librarySectionID:
+                                  type: integer
+                                  description: The ID of the library section.
+                                  example: 2
+                                librarySectionKey:
+                                  type: string
+                                  description: The key of the library section.
+                                  example: /library/sections/2
+                                contentRating:
+                                  type: string
+                                  description: 'The content rating (e.g., TV-MA).'
+                                  example: TV-MA
+                                summary:
+                                  type: string
+                                  description: A summary of the content.
+                                  example: 'Before Saul Goodman, he was Jimmy McGill. And if you''re calling Jimmy, you''re in real trouble. The prequel to "Breaking Bad" follows small-time attorney, Jimmy McGill, as he transforms into Walter White''s morally challenged lawyer, Saul Goodman.'
+                                index:
+                                  type: integer
+                                  description: The index or order of the item.
+                                  example: 1
+                                grandparentTitle:
+                                  type: string
+                                  description: The title of the grandparent entity (typically the show's title).
+                                  example: Alice in Borderland
+                                parentTitle:
+                                  type: string
+                                  description: The title of the parent entity (typically the season's title).
+                                  example: Season 2
+                                audienceRating:
+                                  type: number
+                                  format: float
+                                  description: The audience rating for the content.
+                                  example: 8.7
+                                viewCount:
+                                  type: integer
+                                  description: The number of times the item has been viewed.
+                                  example: 4
+                                skipCount:
+                                  type: integer
+                                  description: The number of times the item has been skipped.
+                                  example: 1
+                                lastViewedAt:
+                                  type: integer
+                                  description: Unix timestamp of when the item was last viewed.
+                                  example: 1625764795
+                                year:
+                                  type: integer
+                                  description: The release year.
+                                  example: 2015
+                                tagline:
+                                  type: string
+                                  description: The tagline of the content.
+                                  example: Make the call
+                                chapterSource:
+                                  type: string
+                                  example: media
+                                primaryExtraKey:
+                                  type: string
+                                  example: /library/metadata/134704
+                                thumb:
+                                  type: string
+                                  description: URL of the thumbnail image.
+                                  example: /library/metadata/44288/thumb/1736487993
+                                art:
+                                  type: string
+                                  description: URL of the art image.
+                                  example: /library/metadata/44288/art/1736487993
+                                theme:
+                                  type: string
+                                  description: URL of the theme image.
+                                  example: /library/metadata/44288/theme/1736487993
+                                duration:
+                                  type: integer
+                                  description: Duration of the content in milliseconds.
+                                  example: 2700000
+                                originallyAvailableAt:
+                                  type: string
+                                  format: date
+                                  description: The original release date.
+                                  example: '2015-02-08'
+                                leafCount:
+                                  type: integer
+                                  description: The total number of episodes (or leaves).
+                                  example: 63
+                                viewedLeafCount:
+                                  type: integer
+                                  description: The number of episodes that have been viewed.
+                                  example: 4
+                                childCount:
+                                  type: integer
+                                  description: The number of child items.
+                                  example: 6
+                                addedAt:
+                                  type: integer
+                                  description: Unix timestamp when the item was added.
+                                  example: 1625505101
+                                updatedAt:
+                                  type: integer
+                                  description: Unix timestamp when the item was last updated.
+                                  example: 1736487993
+                                audienceRatingImage:
+                                  type: string
+                                  description: The URL for the audience rating image.
+                                  example: 'themoviedb://image.rating'
+                                parentIndex:
+                                  type: integer
+                                  description: 'The index number of the parent entity, which could indicate its order or position.'
+                                  example: 2
+                                parentThumb:
+                                  type: string
+                                  description: The URL of the parent's thumbnail image.
+                                  example: /library/metadata/48047/thumb/1671800243
+                                grandparentThumb:
+                                  type: string
+                                  description: The URL of the grandparent's thumbnail image.
+                                  example: /library/metadata/45520/thumb/1736488003
+                                grandparentArt:
+                                  type: string
+                                  description: The URL of the grandparent's art image.
+                                  example: /library/metadata/45520/art/1736488003
+                                Media:
+                                  allOf:
+                                    - type: array
+                                      description: An array of media file data items.
+                                      items:
+                                        type: object
+                                        required:
+                                          - id
+                                          - duration
+                                          - bitrate
+                                          - width
+                                          - height
+                                          - aspectRatio
+                                          - audioChannels
+                                          - audioCodec
+                                          - videoCodec
+                                          - videoResolution
+                                          - container
+                                          - videoFrameRate
+                                          - videoProfile
+                                          - hasVoiceActivity
+                                          - Part
+                                        properties:
+                                          id:
+                                            type: integer
+                                            description: Unique media identifier.
+                                            example: 387322
+                                          duration:
+                                            type: integer
+                                            description: Duration of the media in milliseconds.
+                                            example: 9610350
+                                          bitrate:
+                                            type: integer
+                                            description: Bitrate in bits per second.
+                                            example: 25512
+                                          width:
+                                            type: integer
+                                            description: Video width in pixels.
+                                            example: 3840
+                                          height:
+                                            type: integer
+                                            description: Video height in pixels.
+                                            example: 1602
+                                          aspectRatio:
+                                            type: number
+                                            format: float
+                                            description: Aspect ratio of the video.
+                                            example: 2.35
+                                          audioChannels:
+                                            type: integer
+                                            description: Number of audio channels.
+                                            example: 6
+                                          audioCodec:
+                                            type: string
+                                            description: Audio codec used.
+                                            example: eac3
+                                          videoCodec:
+                                            type: string
+                                            description: Video codec used.
+                                            example: hevc
+                                          videoResolution:
+                                            type: string
+                                            description: 'Video resolution (e.g., 4k).'
+                                            example: 4k
+                                          container:
+                                            type: string
+                                            description: File container type.
+                                            example: mkv
+                                          videoFrameRate:
+                                            type: string
+                                            description: 'Frame rate of the video (e.g., 24p).'
+                                            example: 24p
+                                          videoProfile:
+                                            type: string
+                                            description: 'Video profile (e.g., main 10).'
+                                            example: main 10
+                                          hasVoiceActivity:
+                                            type: boolean
+                                            description: Indicates whether voice activity is detected.
+                                            example: false
+                                          Part:
+                                            type: array
+                                            description: An array of parts for this media item.
+                                            items:
+                                              type: object
+                                              required:
+                                                - id
+                                                - key
+                                                - duration
+                                                - file
+                                                - size
+                                                - container
+                                                - videoProfile
+                                                - Stream
+                                              properties:
+                                                accessible:
+                                                  type: boolean
+                                                  description: Indicates if the part is accessible.
+                                                  example: true
+                                                exists:
+                                                  type: boolean
+                                                  description: Indicates if the part exists.
+                                                  example: true
+                                                id:
+                                                  type: integer
+                                                  description: Unique part identifier.
+                                                  example: 418385
+                                                key:
+                                                  type: string
+                                                  description: Key to access this part.
+                                                  example: /library/parts/418385/1735864239/file.mkv
+                                                indexes:
+                                                  type: string
+                                                  example: sd
+                                                duration:
+                                                  type: integer
+                                                  description: Duration of the part in milliseconds.
+                                                  example: 9610350
+                                                file:
+                                                  type: string
+                                                  description: File path for the part.
+                                                  example: /mnt/Movies_1/W/Wicked (2024).mkv
+                                                size:
+                                                  type: integer
+                                                  description: File size in bytes.
+                                                  example: 30649952104
+                                                container:
+                                                  type: string
+                                                  description: Container format of the part.
+                                                  example: mkv
+                                                videoProfile:
+                                                  type: string
+                                                  description: Video profile for the part.
+                                                  example: main 10
+                                                Stream:
+                                                  type: array
+                                                  description: An array of streams for this part.
+                                                  items:
+                                                    type: object
+                                                    required:
+                                                      - id
+                                                      - streamType
+                                                      - codec
+                                                      - index
+                                                      - bitrate
+                                                      - language
+                                                      - languageTag
+                                                      - languageCode
+                                                      - displayTitle
+                                                      - extendedDisplayTitle
+                                                    properties:
+                                                      id:
+                                                        type: integer
+                                                        description: Unique stream identifier.
+                                                        example: 1002625
+                                                      streamType:
+                                                        type: integer
+                                                        description: 'Stream type (1=video, 2=audio, 3=subtitle).'
+                                                        example: 1
+                                                      default:
+                                                        type: boolean
+                                                        description: Indicates if this stream is default.
+                                                        example: true
+                                                      codec:
+                                                        type: string
+                                                        description: Codec used by the stream.
+                                                        example: hevc
+                                                      index:
+                                                        type: integer
+                                                        description: Index of the stream.
+                                                        example: 0
+                                                      bitrate:
+                                                        type: integer
+                                                        description: Bitrate of the stream.
+                                                        example: 24743
+                                                      language:
+                                                        type: string
+                                                        description: Language of the stream.
+                                                        example: English
+                                                      languageTag:
+                                                        type: string
+                                                        description: 'Language tag (e.g., en).'
+                                                        example: en
+                                                      languageCode:
+                                                        type: string
+                                                        description: ISO language code.
+                                                        example: eng
+                                                      DOVIBLCompatID:
+                                                        type: integer
+                                                        description: Dolby Vision BL compatibility ID.
+                                                        example: 1
+                                                      DOVIBLPresent:
+                                                        type: boolean
+                                                        description: Indicates if Dolby Vision BL is present.
+                                                        example: true
+                                                      DOVIELPresent:
+                                                        type: boolean
+                                                        description: Indicates if Dolby Vision EL is present.
+                                                        example: false
+                                                      DOVILevel:
+                                                        type: integer
+                                                        description: Dolby Vision level.
+                                                        example: 6
+                                                      DOVIPresent:
+                                                        type: boolean
+                                                        description: Indicates if Dolby Vision is present.
+                                                        example: true
+                                                      DOVIProfile:
+                                                        type: integer
+                                                        description: Dolby Vision profile.
+                                                        example: 8
+                                                      DOVIRPUPresent:
+                                                        type: boolean
+                                                        description: Indicates if Dolby Vision RPU is present.
+                                                        example: true
+                                                      DOVIVersion:
+                                                        type: string
+                                                        description: Dolby Vision version.
+                                                        example: '1.0'
+                                                      bitDepth:
+                                                        type: integer
+                                                        description: Bit depth of the video stream.
+                                                        example: 10
+                                                      chromaLocation:
+                                                        type: string
+                                                        description: Chroma sample location.
+                                                        example: topleft
+                                                      chromaSubsampling:
+                                                        type: string
+                                                        description: Chroma subsampling format.
+                                                        example: '4:2:0'
+                                                      codedHeight:
+                                                        type: integer
+                                                        description: Coded video height.
+                                                        example: 1608
+                                                      codedWidth:
+                                                        type: integer
+                                                        description: Coded video width.
+                                                        example: 3840
+                                                      colorPrimaries:
+                                                        type: string
+                                                        description: Color primaries used.
+                                                        example: bt2020
+                                                      colorRange:
+                                                        type: string
+                                                        description: 'Color range (e.g., tv).'
+                                                        example: tv
+                                                      colorSpace:
+                                                        type: string
+                                                        description: Color space.
+                                                        example: bt2020nc
+                                                      colorTrc:
+                                                        type: string
+                                                        description: Color transfer characteristics.
+                                                        example: smpte2084
+                                                      frameRate:
+                                                        type: number
+                                                        format: float
+                                                        description: Frame rate of the stream.
+                                                        example: 23.976
+                                                      height:
+                                                        type: integer
+                                                        description: Height of the video stream.
+                                                        example: 1602
+                                                      level:
+                                                        type: integer
+                                                        description: Video level.
+                                                        example: 150
+                                                      original:
+                                                        type: boolean
+                                                        description: Indicates if this is the original stream.
+                                                        example: true
+                                                      hasScalingMatrix:
+                                                        type: boolean
+                                                        example: false
+                                                      profile:
+                                                        type: string
+                                                        description: Video profile.
+                                                        example: main 10
+                                                      scanType:
+                                                        type: string
+                                                        example: progressive
+                                                      refFrames:
+                                                        type: integer
+                                                        description: Number of reference frames.
+                                                        example: 1
+                                                      width:
+                                                        type: integer
+                                                        description: Width of the video stream.
+                                                        example: 3840
+                                                      displayTitle:
+                                                        type: string
+                                                        description: Display title for the stream.
+                                                        example: 4K DoVi/HDR10 (HEVC Main 10)
+                                                      extendedDisplayTitle:
+                                                        type: string
+                                                        description: Extended display title for the stream.
+                                                        example: 4K DoVi/HDR10 (HEVC Main 10)
+                                                      selected:
+                                                        type: boolean
+                                                        description: Indicates if this stream is selected (applicable for audio streams).
+                                                        example: true
+                                                      forced:
+                                                        type: boolean
+                                                        example: true
+                                                      channels:
+                                                        type: integer
+                                                        description: Number of audio channels (for audio streams).
+                                                        example: 6
+                                                      audioChannelLayout:
+                                                        type: string
+                                                        description: Audio channel layout.
+                                                        example: 5.1(side)
+                                                      samplingRate:
+                                                        type: integer
+                                                        description: Sampling rate for the audio stream.
+                                                        example: 48000
+                                                      canAutoSync:
+                                                        type: boolean
+                                                        description: Indicates if the stream can auto-sync.
+                                                        example: false
+                                                      hearingImpaired:
+                                                        type: boolean
+                                                        description: Indicates if the stream is for the hearing impaired.
+                                                        example: true
+                                                      dub:
+                                                        type: boolean
+                                                        description: Indicates if the stream is a dub.
+                                                        example: true
+                                                      title:
+                                                        type: string
+                                                        description: 'Optional title for the stream (e.g., language variant).'
+                                                        example: SDH
+                                Image:
+                                  type: array
+                                  description: An array of image objects.
+                                  items:
+                                    type: object
+                                    required:
+                                      - alt
+                                      - type
+                                      - url
+                                    properties:
+                                      alt:
+                                        type: string
+                                        description: Alternate text for the image.
+                                        example: Better Call Saul
+                                      type:
+                                        type: string
+                                        description: 'The type of image (e.g., coverPoster, background, clearLogo).'
+                                        example: coverPoster
+                                      url:
+                                        type: string
+                                        description: The URL of the image.
+                                        example: /library/metadata/44288/thumb/1736487993
+                                UltraBlurColors:
+                                  type: object
+                                  required:
+                                    - topLeft
+                                    - topRight
+                                    - bottomRight
+                                    - bottomLeft
+                                  properties:
+                                    topLeft:
+                                      type: string
+                                      description: The top-left color value.
+                                      example: 11333a
+                                    topRight:
+                                      type: string
+                                      description: The top-right color value.
+                                      example: 1d2721
+                                    bottomRight:
+                                      type: string
+                                      description: The bottom-right color value.
+                                      example: 5c451d
+                                    bottomLeft:
+                                      type: string
+                                      description: The bottom-left color value.
+                                      example: 372c10
+                                Genre:
+                                  type: array
+                                  description: An array of genre tags.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique genre identifier.
+                                        example: 1057
+                                      filter:
+                                        type: string
+                                        description: The filter string for the genre.
+                                        example: genre=1057
+                                      tag:
+                                        type: string
+                                        description: The genre name.
+                                        example: Crime
+                                Country:
+                                  type: array
+                                  description: An array of country tags.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique country identifier.
+                                        example: 58591
+                                      filter:
+                                        type: string
+                                        description: The filter string for the country.
+                                        example: country=58591
+                                      tag:
+                                        type: string
+                                        description: The country name.
+                                        example: United States of America
+                                Guid:
+                                  x-speakeasy-name-override: Guids
+                                  type: array
+                                  description: An array of GUID objects.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: The GUID value.
+                                        example: 'imdb://tt3032476'
+                                Rating:
+                                  type: array
+                                  description: An array of rating objects.
+                                  items:
+                                    type: object
+                                    required:
+                                      - image
+                                      - value
+                                      - type
+                                    properties:
+                                      image:
+                                        type: string
+                                        description: The image or reference for the rating.
+                                        example: 'imdb://image.rating'
+                                      value:
+                                        type: number
+                                        format: float
+                                        description: The rating value.
+                                        example: 9
+                                      type:
+                                        type: string
+                                        description: 'The type of rating (e.g., audience, critic).'
+                                        example: audience
+                                Role:
+                                  type: array
+                                  description: An array of Actor roles.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                      - tagKey
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique role identifier.
+                                        example: 109501
+                                      filter:
+                                        type: string
+                                        description: The filter string for the role.
+                                        example: actor=109501
+                                      tag:
+                                        type: string
+                                        description: The actor's name.
+                                        example: Bob Odenkirk
+                                      tagKey:
+                                        type: string
+                                        description: A key associated with the actor tag.
+                                        example: 5d77683254f42c001f8c3f69
+                                      role:
+                                        type: string
+                                        description: The character name or role.
+                                        example: Jimmy McGill
+                                      thumb:
+                                        type: string
+                                        description: URL for the role thumbnail image.
+                                        example: 'https://metadata-static.plex.tv/f/people/f2ca7b474cc984efbdd5c503a096285a.jpg'
+                                Director:
+                                  type: array
+                                  description: An array of Director roles.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                      - tagKey
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique role identifier.
+                                        example: 109501
+                                      filter:
+                                        type: string
+                                        description: The filter string for the role.
+                                        example: actor=109501
+                                      tag:
+                                        type: string
+                                        description: The actor's name.
+                                        example: Bob Odenkirk
+                                      tagKey:
+                                        type: string
+                                        description: A key associated with the actor tag.
+                                        example: 5d77683254f42c001f8c3f69
+                                      role:
+                                        type: string
+                                        description: The character name or role.
+                                        example: Jimmy McGill
+                                      thumb:
+                                        type: string
+                                        description: URL for the role thumbnail image.
+                                        example: 'https://metadata-static.plex.tv/f/people/f2ca7b474cc984efbdd5c503a096285a.jpg'
+                                Writer:
+                                  type: array
+                                  description: An array of Writer roles.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                      - tagKey
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique role identifier.
+                                        example: 109501
+                                      filter:
+                                        type: string
+                                        description: The filter string for the role.
+                                        example: actor=109501
+                                      tag:
+                                        type: string
+                                        description: The actor's name.
+                                        example: Bob Odenkirk
+                                      tagKey:
+                                        type: string
+                                        description: A key associated with the actor tag.
+                                        example: 5d77683254f42c001f8c3f69
+                                      role:
+                                        type: string
+                                        description: The character name or role.
+                                        example: Jimmy McGill
+                                      thumb:
+                                        type: string
+                                        description: URL for the role thumbnail image.
+                                        example: 'https://metadata-static.plex.tv/f/people/f2ca7b474cc984efbdd5c503a096285a.jpg'
+                                Producer:
+                                  type: array
+                                  description: An array of Writer roles.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                      - tagKey
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique role identifier.
+                                        example: 109501
+                                      filter:
+                                        type: string
+                                        description: The filter string for the role.
+                                        example: actor=109501
+                                      tag:
+                                        type: string
+                                        description: The actor's name.
+                                        example: Bob Odenkirk
+                                      tagKey:
+                                        type: string
+                                        description: A key associated with the actor tag.
+                                        example: 5d77683254f42c001f8c3f69
+                                      role:
+                                        type: string
+                                        description: The character name or role.
+                                        example: Jimmy McGill
+                                      thumb:
+                                        type: string
+                                        description: URL for the role thumbnail image.
+                                        example: 'https://metadata-static.plex.tv/f/people/f2ca7b474cc984efbdd5c503a096285a.jpg'
+                                Similar:
+                                  type: array
+                                  description: An array of similar content objects.
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: The unique similar item identifier.
+                                        example: 26
+                                      filter:
+                                        type: string
+                                        description: The filter string for similar items.
+                                        example: similar=26
+                                      tag:
+                                        type: string
+                                        description: The tag or title of the similar content.
+                                        example: Breaking Bad
+                                Location:
+                                  type: array
+                                  description: An array of location objects.
+                                  items:
+                                    type: object
+                                    required:
+                                      - path
+                                    properties:
+                                      path:
+                                        type: string
+                                        description: The file path for the location.
+                                        example: /TV Shows/Better Call Saul
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
