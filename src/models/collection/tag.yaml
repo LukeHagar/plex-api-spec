@@ -4,5 +4,5 @@ required:
 properties:
   tag:
     type: string
-    description: The user made collection this media item belongs too
+    description: The user-made collection this media item belongs to
     example: My Awesome Collection
