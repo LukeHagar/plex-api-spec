@@ -1,0 +1,8 @@
+type: object
+required:
+  - parentSlug
+properties:
+  parentSlug:
+    type: string
+    description: "The slug for the parent media item."
+    example: "alice-in-borderland-2020"

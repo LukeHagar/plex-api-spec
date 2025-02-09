@@ -1,0 +1,8 @@
+type: object
+required:
+  - tag
+properties:
+  tag:
+    type: string
+    description: The country of origin of this media item
+    example: United States of America

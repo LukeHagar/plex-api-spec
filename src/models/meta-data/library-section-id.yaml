@@ -1,0 +1,8 @@
+type: object
+required:
+  - librarySectionID
+properties:
+  librarySectionID:
+    type: integer
+    description: "The identifier for the library section."
+    example: 1

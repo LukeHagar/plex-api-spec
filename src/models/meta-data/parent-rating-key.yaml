@@ -1,0 +1,6 @@
+type: object
+properties:
+  parentRatingKey:
+    type: string
+    description: "The rating key of the parent media item."
+    example: "66"

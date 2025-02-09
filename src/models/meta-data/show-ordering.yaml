@@ -1,0 +1,27 @@
+type: object
+required:
+  - showOrdering
+properties:
+  showOrdering:
+    type: string
+    description: |
+      Setting that indicates the episode ordering for the show.
+      Options:
+        - None = Library default
+        - tmdbAiring = The Movie Database (Aired)
+        - aired = TheTVDB (Aired)
+        - dvd = TheTVDB (DVD)
+        - absolute = TheTVDB (Absolute)
+    enum:
+      - None
+      - tmdbAiring
+      - aired
+      - dvd
+      - absolute
+    x-speakeasy-enums:
+      - NONE
+      - TMDB_AIRING
+      - TVDB_AIRED
+      - TVDB_DVD
+      - TVDB_ABSOLUTE
+    example: "absolute"

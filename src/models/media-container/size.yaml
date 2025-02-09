@@ -3,5 +3,7 @@ required:
   - size
 properties:
   size:
-    type: number
+    description: "Number of media items returned in this response."
+    type: integer
+    format: int32
     example: 50

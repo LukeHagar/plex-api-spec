@@ -3,7 +3,7 @@ required:
   - size
 properties:
   size:
-    type: number
+    type: integer
     example: 50
   offset:
     type: integer

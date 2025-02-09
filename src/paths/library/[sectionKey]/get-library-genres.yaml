@@ -19,49 +19,20 @@ get:
             properties:
               MediaContainer:
                 allOf:
-                  - $ref: "../../../models/MediaContainer.yaml"
+                  - $ref: "../../../models/media-container/size.yaml"
+                  - $ref: "../../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../../models/media-container/art.yaml"
+                  - $ref: "../../../models/media-container/content.yaml"
+                  - $ref: "../../../models/media-container/identifier.yaml"
+                  - $ref: "../../../models/media-container/media-tag-prefix.yaml"
+                  - $ref: "../../../models/media-container/media-tag-version.yaml"
+                  - $ref: "../../../models/media-container/nocache.yaml"
+                  - $ref: "../../../models/media-container/thumb.yaml"
+                  - $ref: "../../../models/media-container/title1.yaml"
+                  - $ref: "../../../models/media-container/title2.yaml"
+                  - $ref: "../../../models/media-container/view-group.yaml"
                   - type: object
-                    required:
-                      - size
-                      - allowSync
-                      - art
-                      - content
-                      - identifier
-                      - mediaTagPrefix
-                      - mediaTagVersion
-                      - nocache
-                      - thumb
-                      - title1
-                      - title2
-                      - viewGroup
                     properties:
-                      art:
-                        type: string
-                        example: "/:/resources/show-fanart.jpg"
-                      content:
-                        type: string
-                        example: "secondary"
-                      mediaTagPrefix:
-                        type: string
-                        example: "/system/bundle/media/flags/"
-                      mediaTagVersion:
-                        type: integer
-                        example: 1734362201
-                      nocache:
-                        type: boolean
-                        example: true
-                      thumb:
-                        type: string
-                        example: "/:/resources/show.png"
-                      title1:
-                        type: string
-                        example: "TV Shows (Reality)"
-                      title2:
-                        type: string
-                        example: "By Genre"
-                      viewGroup:
-                        type: string
-                        example: "secondary"
                       Directory:
                         type: array
                         items:

@@ -4,18 +4,6 @@ items:
   type: object
   required:
     - id
-    - duration
-    - bitrate
-    - width
-    - height
-    - aspectRatio
-    - audioChannels
-    - audioCodec
-    - videoCodec
-    - videoResolution
-    - container
-    - videoFrameRate
-    - videoProfile
     - hasVoiceActivity
     - Part
   properties:
@@ -25,20 +13,24 @@ items:
       example: 387322
     duration:
       type: integer
+      format: int32
       description: "Duration of the media in milliseconds."
       example: 9610350
     bitrate:
       type: integer
+      format: int32
       description: "Bitrate in bits per second."
       example: 25512
     width:
       type: integer
       description: "Video width in pixels."
       example: 3840
+      format: int32
     height:
       type: integer
       description: "Video height in pixels."
       example: 1602
+      format: int32
     aspectRatio:
       type: number
       format: float
@@ -48,6 +40,11 @@ items:
       type: integer
       description: "Number of audio channels."
       example: 6
+      format: int32
+    displayOffset:
+      type: integer
+      format: int32
+      example: 50
     audioCodec:
       type: string
       description: "Audio codec used."
@@ -66,7 +63,8 @@ items:
       example: "mkv"
     videoFrameRate:
       type: string
-      description: "Frame rate of the video (e.g., 24p)."
+      description: |
+        Frame rate of the video. Values found include NTSC, PAL, 24p
       example: "24p"
     videoProfile:
       type: string
@@ -76,6 +74,21 @@ items:
       type: boolean
       description: "Indicates whether voice activity is detected."
       example: false
+    audioProfile:
+      type: string
+      description: "The audio profile used for the media (e.g., DTS, Dolby Digital, etc.)."
+      example: "dts"
+    optimizedForStreaming:
+      description: "Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true"
+      oneOf:
+        - type: integer
+          format: int32
+          enum: [0, 1]
+        - type: boolean
+          enum: [true, false]
+    has64bitOffsets:
+      type: boolean
+      example: false
     Part:
       type: array
       description: "An array of parts for this media item."
@@ -84,12 +97,8 @@ items:
         required:
           - id
           - key
-          - duration
           - file
           - size
-          - container
-          - videoProfile
-          - Stream
         properties:
           accessible:
             type: boolean
@@ -112,6 +121,7 @@ items:
             example: "sd"
           duration:
             type: integer
+            format: int32
             description: "Duration of the part in milliseconds."
             example: 9610350
           file:
@@ -119,9 +129,13 @@ items:
             description: "File path for the part."
             example: "/mnt/Movies_1/W/Wicked (2024).mkv"
           size:
-            type: integer
             description: "File size in bytes."
+            type: integer
             example: 30649952104
+          packetLength:
+            type: integer
+            format: int32
+            example: 188
           container:
             type: string
             description: "Container format of the part."
@@ -130,6 +144,25 @@ items:
             type: string
             description: "Video profile for the part."
             example: "main 10"
+          audioProfile:
+            type: string
+            description: "The audio profile used for the media (e.g., DTS, Dolby Digital, etc.)."
+            example: "dts"
+          has64bitOffsets:
+            type: boolean
+            example: false
+          optimizedForStreaming:
+            description: "Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true"
+            oneOf:
+              - type: integer
+                format: int32
+                enum: [0, 1]
+              - type: boolean
+                enum: [true, false]
+          hasThumbnail:
+            allOf:
+              - description: "Indicates if the part has a thumbnail."
+              - $ref: "../models/common/PlexBooleanString.yaml"
           Stream:
             type: array
             description: "An array of streams for this part."
@@ -140,7 +173,6 @@ items:
                 - streamType
                 - codec
                 - index
-                - bitrate
                 - language
                 - languageTag
                 - languageCode
@@ -153,6 +185,7 @@ items:
                   example: 1002625
                 streamType:
                   type: integer
+                  format: int32
                   description: "Stream type (1=video, 2=audio, 3=subtitle)."
                   example: 1
                 default:
@@ -165,10 +198,12 @@ items:
                   example: "hevc"
                 index:
                   type: integer
+                  format: int32
                   description: "Index of the stream."
                   example: 0
                 bitrate:
                   type: integer
+                  format: int32
                   description: "Bitrate of the stream."
                   example: 24743
                 language:
@@ -183,8 +218,13 @@ items:
                   type: string
                   description: "ISO language code."
                   example: "eng"
+                headerCompression:
+                  type: boolean
+                  description: "Indicates whether header compression is enabled."
+                  example: true
                 DOVIBLCompatID:
                   type: integer
+                  format: int32
                   description: "Dolby Vision BL compatibility ID."
                   example: 1
                 DOVIBLPresent:
@@ -197,6 +237,7 @@ items:
                   example: false
                 DOVILevel:
                   type: integer
+                  format: int32
                   description: "Dolby Vision level."
                   example: 6
                 DOVIPresent:
@@ -205,6 +246,7 @@ items:
                   example: true
                 DOVIProfile:
                   type: integer
+                  format: int32
                   description: "Dolby Vision profile."
                   example: 8
                 DOVIRPUPresent:
@@ -217,6 +259,7 @@ items:
                   example: "1.0"
                 bitDepth:
                   type: integer
+                  format: int32
                   description: "Bit depth of the video stream."
                   example: 10
                 chromaLocation:
@@ -229,10 +272,12 @@ items:
                   example: "4:2:0"
                 codedHeight:
                   type: integer
+                  format: int32
                   description: "Coded video height."
                   example: 1608
                 codedWidth:
                   type: integer
+                  format: int32
                   description: "Coded video width."
                   example: 3840
                 colorPrimaries:
@@ -258,10 +303,12 @@ items:
                   example: 23.976
                 height:
                   type: integer
+                  format: int32
                   description: "Height of the video stream."
                   example: 1602
                 level:
                   type: integer
+                  format: int32
                   description: "Video level."
                   example: 150
                 original:
@@ -280,10 +327,12 @@ items:
                   example: "progressive"
                 refFrames:
                   type: integer
+                  format: int32
                   description: "Number of reference frames."
                   example: 1
                 width:
                   type: integer
+                  format: int32
                   description: "Width of the video stream."
                   example: 3840
                 displayTitle:
@@ -303,6 +352,7 @@ items:
                   example: true
                 channels:
                   type: integer
+                  format: int32
                   description: "Number of audio channels (for audio streams)."
                   example: 6
                 audioChannelLayout:
@@ -311,6 +361,7 @@ items:
                   example: "5.1(side)"
                 samplingRate:
                   type: integer
+                  format: int32
                   description: "Sampling rate for the audio stream."
                   example: 48000
                 canAutoSync:

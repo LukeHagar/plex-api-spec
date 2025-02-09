@@ -4488,4 +4488,900 @@ describe("GET /library/metadata/[RatingKey]/", () => {
 
     validateResponseSpec("/library/metadata/{ratingKey}", "get", 200, response)
   })
+
+  it("should validate the 200 response when the response is from Episode", () => {
+    const response = {
+      MediaContainer: {
+        size: 1,
+        allowSync: true,
+        identifier: "com.plexapp.plugins.library",
+        librarySectionID: 1,
+        librarySectionTitle: "Movies",
+        librarySectionUUID: "0e71027d-88bc-4413-9927-5aad992d3d19",
+        mediaTagPrefix: "/system/bundle/media/flags/",
+        mediaTagVersion: 1734362201,
+        Metadata: [
+          {
+            ratingKey: "9881",
+            key: "/library/metadata/9881",
+            guid: "plex://movie/5d776834961905001eb939ac",
+            slug: "91-2-weeks",
+            studio: "Jonesfilm",
+            type: "movie",
+            title: "9½ Weeks",
+            librarySectionTitle: "Movies",
+            librarySectionID: 1,
+            librarySectionKey: "/library/sections/1",
+            originalTitle: "Nine 1/2 Weeks",
+            contentRating: "nl/12",
+            summary:
+              "An erotic story about a woman, the assistant of an art gallery, who gets involved in an impersonal affair with a man. She barely knows about his life, only about the sex games they play, so the relationship begins to get complicated.",
+            rating: 6.0,
+            audienceRating: 5.5,
+            year: 1986,
+            tagline: "They Broke Every Rule.",
+            thumb: "/library/metadata/9881/thumb/1732511607",
+            art: "/library/metadata/9881/art/1732511607",
+            duration: 7011007,
+            originallyAvailableAt: "1986-02-09",
+            addedAt: 1560801795,
+            updatedAt: 1732511607,
+            audienceRatingImage: "rottentomatoes://image.rating.spilled",
+            chapterSource: "media",
+            ratingImage: "rottentomatoes://image.rating.ripe",
+            Media: [
+              {
+                id: 12306,
+                duration: 7011007,
+                bitrate: 13003,
+                width: 1920,
+                height: 1080,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "dca",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                audioProfile: "dts",
+                videoProfile: "high",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 41930,
+                    key: "/library/parts/41930/1501053187/file.mkv",
+                    duration: 7011007,
+                    file: "/Movies/Nine 1+2 Weeks (1986)/Nine.and.a.Half.Weeks.1986.1080p.BluRay.DTS.x264-HDMaNiAcS.mkv",
+                    size: 11394952434,
+                    audioProfile: "dts",
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "high",
+                    Stream: [
+                      {
+                        id: 100031,
+                        streamType: 1,
+                        default: true,
+                        codec: "h264",
+                        index: 0,
+                        bitrate: 11494,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        bitDepth: 8,
+                        chromaLocation: "left",
+                        chromaSubsampling: "4:2:0",
+                        codedHeight: 1088,
+                        codedWidth: 1920,
+                        frameRate: 23.976,
+                        hasScalingMatrix: false,
+                        headerCompression: true,
+                        height: 1080,
+                        level: 41,
+                        profile: "high",
+                        refFrames: 4,
+                        scanType: "progressive",
+                        title:
+                          "Nine.Half.Weeks.1986.1080p.BluRay.DTS.x264-HDMaNiAcS",
+                        width: 1920,
+                        displayTitle: "1080p",
+                        extendedDisplayTitle:
+                          "Nine.Half.Weeks.1986.1080p.BluRay.DTS.x264-HDMaNiAcS (1080p H.264)"
+                      },
+                      {
+                        id: 100032,
+                        streamType: 2,
+                        selected: true,
+                        default: true,
+                        codec: "dca",
+                        index: 1,
+                        channels: 6,
+                        bitrate: 1509,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        audioChannelLayout: "5.1(side)",
+                        bitDepth: 24,
+                        headerCompression: true,
+                        profile: "dts",
+                        samplingRate: 48000,
+                        displayTitle: "English (DTS 5.1)",
+                        extendedDisplayTitle: "English (DTS 5.1)"
+                      },
+                      {
+                        id: 100033,
+                        streamType: 3,
+                        canAutoSync: false,
+                        default: true,
+                        codec: "srt",
+                        index: 2,
+                        bitrate: 0,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        displayTitle: "English",
+                        extendedDisplayTitle: "English (SRT)"
+                      },
+                      {
+                        id: 100034,
+                        streamType: 3,
+                        canAutoSync: false,
+                        codec: "srt",
+                        index: 3,
+                        bitrate: 0,
+                        language: "Greek",
+                        languageTag: "el",
+                        languageCode: "ell",
+                        displayTitle: "Greek",
+                        extendedDisplayTitle: "Greek (SRT)"
+                      },
+                      {
+                        id: 100035,
+                        streamType: 3,
+                        canAutoSync: false,
+                        codec: "srt",
+                        index: 4,
+                        bitrate: 0,
+                        language: "Dutch",
+                        languageTag: "nl",
+                        languageCode: "nld",
+                        displayTitle: "Dutch",
+                        extendedDisplayTitle: "Dutch (SRT)"
+                      },
+                      {
+                        id: 100036,
+                        streamType: 3,
+                        canAutoSync: false,
+                        codec: "srt",
+                        index: 5,
+                        bitrate: 0,
+                        language: "French",
+                        languageTag: "fr",
+                        languageCode: "fra",
+                        displayTitle: "French",
+                        extendedDisplayTitle: "French (SRT)"
+                      },
+                      {
+                        id: 100037,
+                        streamType: 3,
+                        canAutoSync: false,
+                        codec: "srt",
+                        index: 6,
+                        bitrate: 0,
+                        language: "Spanish",
+                        languageTag: "es",
+                        languageCode: "spa",
+                        displayTitle: "Spanish",
+                        extendedDisplayTitle: "Spanish (SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "9½ Weeks",
+                type: "coverPoster",
+                url: "/library/metadata/9881/thumb/1732511607"
+              },
+              {
+                alt: "9½ Weeks",
+                type: "background",
+                url: "/library/metadata/9881/art/1732511607"
+              },
+              {
+                alt: "9½ Weeks",
+                type: "clearLogo",
+                url: "/library/metadata/9881/clearLogo/1732511607"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "452410",
+              topRight: "0d0202",
+              bottomRight: "0d0202",
+              bottomLeft: "272223"
+            },
+            Genre: [
+              { id: 91, filter: "genre=91", tag: "Drama" },
+              { id: 2313, filter: "genre=2313", tag: "Romance" }
+            ],
+            Country: [
+              {
+                id: 58591,
+                filter: "country=58591",
+                tag: "United States of America"
+              }
+            ],
+            Guid: [
+              { id: "imdb://tt0091635" },
+              { id: "tmdb://10068" },
+              { id: "tvdb://1165" }
+            ],
+            Rating: [
+              { image: "imdb://image.rating", value: 5.9, type: "audience" },
+              {
+                image: "rottentomatoes://image.rating.ripe",
+                value: 6.0,
+                type: "critic"
+              },
+              {
+                image: "rottentomatoes://image.rating.spilled",
+                value: 5.5,
+                type: "audience"
+              },
+              {
+                image: "themoviedb://image.rating",
+                value: 6.1,
+                type: "audience"
+              }
+            ],
+            Director: [
+              {
+                id: 115243,
+                filter: "director=115243",
+                tag: "Adrian Lyne",
+                tagKey: "5d776827151a60001f24aac6",
+                thumb:
+                  "https://metadata-static.plex.tv/6/people/6f6d8e5aefcae45e3ccb7843de68c905.jpg"
+              }
+            ],
+            Writer: [
+              {
+                id: 119473,
+                filter: "writer=119473",
+                tag: "Sarah Kernochan",
+                tagKey: "5d776829eb5d26001f1ddfcd",
+                thumb:
+                  "https://metadata-static.plex.tv/9/people/96dfb2020c32ddae0345c4a0aee59414.jpg"
+              },
+              {
+                id: 119474,
+                filter: "writer=119474",
+                tag: "Zalman King",
+                tagKey: "5d77682ff54112001f5bcc2e",
+                thumb:
+                  "https://metadata-static.plex.tv/5/people/57a351f9a4343dca762ee432544bf34e.jpg"
+              },
+              {
+                id: 119475,
+                filter: "writer=119475",
+                tag: "Patricia Louisianna Knop",
+                tagKey: "5d77682ff54112001f5bcc3f",
+                thumb:
+                  "https://metadata-static.plex.tv/4/people/46956d0e94d2446fb7c1e46d247d645a.jpg"
+              },
+              {
+                id: 119476,
+                filter: "writer=119476",
+                tag: "Elizabeth McNeill",
+                tagKey: "5dcd37dc27f42b001fe2a264"
+              }
+            ],
+            Role: [
+              {
+                id: 112471,
+                filter: "actor=112471",
+                tag: "Mickey Rourke",
+                tagKey: "5d7768254de0ee001fcc8142",
+                role: "John",
+                thumb:
+                  "https://metadata-static.plex.tv/9/people/957b644e5f8a141ae9715d7208ed11c7.jpg"
+              },
+              {
+                id: 114907,
+                filter: "actor=114907",
+                tag: "Kim Basinger",
+                tagKey: "5d776826e6d55c002040af92",
+                role: "Elizabeth",
+                thumb:
+                  "https://metadata-static.plex.tv/4/people/4b7cdc723474d2effa3e53e37db88f0b.jpg"
+              },
+              {
+                id: 119477,
+                filter: "actor=119477",
+                tag: "Margaret Whitton",
+                tagKey: "5d77683454f42c001f8c42c9",
+                role: "Molly",
+                thumb:
+                  "https://metadata-static.plex.tv/b/people/ba5f44eec74e0c12e4cb8924e88bb688.jpg"
+              },
+              {
+                id: 119478,
+                filter: "actor=119478",
+                tag: "David Margulies",
+                tagKey: "5d7768273c3c2a001fbcb1ca",
+                role: "Harvey",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d7768273c3c2a001fbcb1ca.jpg"
+              },
+              {
+                id: 118305,
+                filter: "actor=118305",
+                tag: "Christine Baranski",
+                tagKey: "5d776828151a60001f24af12",
+                role: "Thea",
+                thumb:
+                  "https://metadata-static.plex.tv/f/people/f9f3e932357029ab6ec4bf0c128c2cb4.jpg"
+              },
+              {
+                id: 119479,
+                filter: "actor=119479",
+                tag: "Karen Young",
+                tagKey: "5d77682754f42c001f8c2a3c",
+                role: "Sue",
+                thumb:
+                  "https://metadata-static.plex.tv/3/people/36d0e412b0d58d6939d1976d306c10c4.jpg"
+              },
+              {
+                id: 119480,
+                filter: "actor=119480",
+                tag: "Dwight Weist",
+                tagKey: "5d776835961905001eb93cd7",
+                role: "Farnsworth",
+                thumb:
+                  "https://metadata-static.plex.tv/4/people/4cf65442c74948fcd6758c6b77165019.jpg"
+              },
+              {
+                id: 119481,
+                filter: "actor=119481",
+                tag: "Roderick Cook",
+                tagKey: "5d776825151a60001f24a6d2",
+                role: "Sinclair - the Critic",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d776825151a60001f24a6d2.jpg"
+              },
+              {
+                id: 119482,
+                filter: "actor=119482",
+                tag: "Victor Truro",
+                tagKey: "5d7768278718ba001e311e97",
+                role: "Gallery Client",
+                thumb:
+                  "https://metadata-static.plex.tv/a/people/ac35e61b7f92d7e71f676c5742972a6f.jpg"
+              },
+              {
+                id: 119483,
+                filter: "actor=119483",
+                tag: "Justine Johnston",
+                tagKey: "5d776835961905001eb93cd8",
+                role: "Bedding Saleswoman",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d776835961905001eb93cd8.jpg"
+              },
+              {
+                id: 119484,
+                filter: "actor=119484",
+                tag: "Julian Beck",
+                tagKey: "5d776835961905001eb93cd9",
+                role: "Dinner Guest",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d776835961905001eb93cd9.jpg"
+              },
+              {
+                id: 203253,
+                filter: "actor=203253",
+                tag: "Michael Margotta",
+                tagKey: "5d776835961905001eb93cda",
+                role: "Michael",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d776835961905001eb93cda.jpg"
+              },
+              {
+                id: 203254,
+                filter: "actor=203254",
+                tag: "Petina Cole",
+                tagKey: "5dd2c65235afd6001e030cf2",
+                role: "Woman on Stage at Porno House",
+                thumb:
+                  "https://metadata-static.plex.tv/f/people/f9ab0a292d3d5d2a59a99bd80341a11d.jpg"
+              },
+              {
+                id: 119487,
+                filter: "actor=119487",
+                tag: "Joey Silvera",
+                tagKey: "5d776835961905001eb93cdc",
+                role: "Man on Stage at Porno House",
+                thumb:
+                  "https://metadata-static.plex.tv/8/people/8c4772b1fb3490c51e723d7aa8a1ed27.jpg"
+              },
+              {
+                id: 119488,
+                filter: "actor=119488",
+                tag: "Sarah Kernochan",
+                tagKey: "5d776829eb5d26001f1ddfcd",
+                role: "Gallery Guest",
+                thumb:
+                  "https://metadata-static.plex.tv/9/people/96dfb2020c32ddae0345c4a0aee59414.jpg"
+              },
+              {
+                id: 113440,
+                filter: "actor=113440",
+                tag: "Helen Hanft",
+                tagKey: "5d7768278718ba001e311e99",
+                role: "Flea Market Shawl Seller",
+                thumb:
+                  "https://metadata-static.plex.tv/5/people/5f0b6b7603e7201abc7ae7a178dd7a3b.jpg"
+              },
+              {
+                id: 203255,
+                filter: "actor=203255",
+                tag: "William De Acutis",
+                tagKey: "5d77683185719b001f3a2bb3",
+                role: "Ted",
+                thumb:
+                  "https://metadata-static.plex.tv/e/people/ebf48881699b18061c49cea38d8a8768.jpg"
+              },
+              {
+                id: 203256,
+                filter: "actor=203256",
+                tag: "Cintia Cruz",
+                tagKey: "5d776835961905001eb93cdd",
+                role: "Whore"
+              },
+              {
+                id: 119491,
+                filter: "actor=119491",
+                tag: "Kim Chan",
+                tagKey: "5d776824103a2d001f563ad5",
+                role: "Chinatown Butcher",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d776824103a2d001f563ad5.jpg"
+              },
+              {
+                id: 181883,
+                filter: "actor=181883",
+                tag: "Lee Lai Sing",
+                tagKey: "632092957b6301b7f349c8d4",
+                role: "Angry Chinese Customer"
+              },
+              {
+                id: 119493,
+                filter: "actor=119493",
+                tag: "Rudolph Willrich",
+                tagKey: "5d776835961905001eb93cdf",
+                role: "Chinatown Shopper",
+                thumb:
+                  "https://metadata-static.plex.tv/8/people/82fa468de3861338bfe4959523a8cb0a.jpg"
+              },
+              {
+                id: 119494,
+                filter: "actor=119494",
+                tag: "Michael P. Moran",
+                tagKey: "5d7768262e80df001ebdce0b",
+                role: "Flea Market Chicken Seller",
+                thumb:
+                  "https://metadata-static.plex.tv/f/people/fd5f72c277bcd9935d3e29241e220714.jpg"
+              },
+              {
+                id: 118024,
+                filter: "actor=118024",
+                tag: "Raynor Scheine",
+                tagKey: "5d776827880197001ec90a05",
+                role: "Flower Delivery Boy",
+                thumb:
+                  "https://metadata-static.plex.tv/5/people/58ba341047a2498f2eb90ffef11c29b4.jpg"
+              },
+              {
+                id: 119495,
+                filter: "actor=119495",
+                tag: "Olek Krupa",
+                tagKey: "5d7768265af944001f1f6658",
+                role: "Bruce",
+                thumb:
+                  "https://metadata-static.plex.tv/d/people/db7a5a43bba485d18322846dc2f37bf4.jpg"
+              },
+              {
+                id: 119496,
+                filter: "actor=119496",
+                tag: "John P. Connolly",
+                tagKey: "5d776835961905001eb93ce0",
+                role: "Dinner Guest"
+              },
+              {
+                id: 119497,
+                filter: "actor=119497",
+                tag: "Cassandra Danz",
+                tagKey: "5d776835961905001eb93ce1",
+                role: "Dinner Guest"
+              },
+              {
+                id: 119498,
+                filter: "actor=119498",
+                tag: "Beata Jachulski",
+                tagKey: "5d776835961905001eb93ce2",
+                role: "Dinner Guest"
+              },
+              {
+                id: 119499,
+                filter: "actor=119499",
+                tag: "Peter Pagan",
+                tagKey: "5d776835961905001eb93ce3",
+                role: "Riding Crop Salesman"
+              },
+              {
+                id: 119500,
+                filter: "actor=119500",
+                tag: "Terri Perri",
+                tagKey: "5d776826a091de001f2e61f9",
+                role: "Italian Singer"
+              },
+              {
+                id: 119501,
+                filter: "actor=119501",
+                tag: "Charles Malota",
+                tagKey: "5d776835961905001eb93ce4",
+                role: "Coney Island Boy"
+              },
+              {
+                id: 119502,
+                filter: "actor=119502",
+                tag: "Daniel E. Amrich",
+                tagKey: "5d776835961905001eb93ce5",
+                role: "Coney Island Boy"
+              },
+              {
+                id: 119503,
+                filter: "actor=119503",
+                tag: "Salvatore Sciangula",
+                tagKey: "5d776835961905001eb93ce6",
+                role: "Coney Island Boy"
+              },
+              {
+                id: 119504,
+                filter: "actor=119504",
+                tag: "Kim Michel",
+                tagKey: "5d776835961905001eb93ce7",
+                role: "Soap Opera Woman"
+              },
+              {
+                id: 119505,
+                filter: "actor=119505",
+                tag: "Jeff Severson",
+                tagKey: "5d776835961905001eb93ce8",
+                role: "Soap Opera Man"
+              },
+              {
+                id: 119506,
+                filter: "actor=119506",
+                tag: "Dan Lauria",
+                tagKey: "5d77682cf59e580021897bee",
+                role: "Janitor",
+                thumb:
+                  "https://metadata-static.plex.tv/d/people/d222064496a31fbcaa8992db0d2283dc.jpg"
+              },
+              {
+                id: 119507,
+                filter: "actor=119507",
+                tag: "Corey Parker",
+                tagKey: "5d776835961905001eb93ce9",
+                role: "Janitor",
+                thumb:
+                  "https://metadata-static.plex.tv/3/people/3f539205130ec7b6729a7b4af0de2db9.jpg"
+              },
+              {
+                id: 119508,
+                filter: "actor=119508",
+                tag: "Joe Maruzzo",
+                tagKey: "5d776835961905001eb93cea",
+                role: "Garbageman",
+                thumb:
+                  "https://metadata-static.plex.tv/people/5d776835961905001eb93cea.jpg"
+              },
+              {
+                id: 119509,
+                filter: "actor=119509",
+                tag: "Tom Traino",
+                tagKey: "5d776835961905001eb93ceb",
+                role: "Garbageman"
+              },
+              {
+                id: 119510,
+                filter: "actor=119510",
+                tag: "Corvova Choy Lee",
+                tagKey: "5d776835961905001eb93cec",
+                role: "Clothing Saleswoman"
+              },
+              {
+                id: 119511,
+                filter: "actor=119511",
+                tag: "Ellen Barber",
+                tagKey: "5d776835961905001eb93ced",
+                role: "John's Secretary",
+                thumb:
+                  "https://metadata-static.plex.tv/8/people/8c94f4c0c043cdcbfb1ebdfdd5c3b7cc.jpg"
+              },
+              {
+                id: 119512,
+                filter: "actor=119512",
+                tag: "Ethel Ayler",
+                tagKey: "5d7768276f4521001ea99134",
+                role: "Jewelry Saleswoman",
+                thumb:
+                  "https://metadata-static.plex.tv/6/people/6455789c1c3f3e7225a1274637a2d279.jpg"
+              },
+              {
+                id: 119513,
+                filter: "actor=119513",
+                tag: "Elisabeth Senn",
+                tagKey: "5d776835961905001eb93cee",
+                role: "Perfume Lady"
+              },
+              {
+                id: 119514,
+                filter: "actor=119514",
+                tag: "Gittan Goding",
+                tagKey: "5d776835961905001eb93cef",
+                role: "Dancer at Porno House"
+              },
+              {
+                id: 119515,
+                filter: "actor=119515",
+                tag: "David M. Everard",
+                tagKey: "5d776835961905001eb93cf0",
+                role: "Bearded Man at Porno House"
+              },
+              {
+                id: 119516,
+                filter: "actor=119516",
+                tag: "Luther Rucker",
+                tagKey: "5d776835961905001eb93cf1",
+                role: "Barker at Porno House"
+              },
+              {
+                id: 119517,
+                filter: "actor=119517",
+                tag: "Merry Clayton",
+                tagKey: "5d77682b999c64001ec2d6c9",
+                role: "Background Vocal at Porno House",
+                thumb:
+                  "https://metadata-static.plex.tv/1/people/1a4a170d5cf2ba3eecacb9e54002e5c0.jpg"
+              },
+              {
+                id: 119518,
+                filter: "actor=119518",
+                tag: "Kim Isaacson",
+                tagKey: "5d776835961905001eb93cf2",
+                role: "Gallery Guest"
+              },
+              {
+                id: 255665,
+                filter: "actor=255665",
+                tag: "David Tabor",
+                tagKey: "5d776835961905001eb93cf3",
+                role: "Leon Berger"
+              }
+            ],
+            Producer: [
+              {
+                id: 203257,
+                filter: "producer=203257",
+                tag: "Alan M. Harris",
+                tagKey: "5d77682f151a60001f24c92f",
+                thumb:
+                  "https://metadata-static.plex.tv/c/people/cb6864282bb169e153b82f642af74010.jpg"
+              },
+              {
+                id: 119521,
+                filter: "producer=119521",
+                tag: "Sidney Kimmel",
+                tagKey: "5d776831103a2d001f566d79",
+                thumb:
+                  "https://metadata-static.plex.tv/5/people/533a50f9436f9ba20ecd5b0d164c374c.jpg"
+              },
+              {
+                id: 119522,
+                filter: "producer=119522",
+                tag: "Zalman King",
+                tagKey: "5d77682ff54112001f5bcc2e",
+                thumb:
+                  "https://metadata-static.plex.tv/5/people/57a351f9a4343dca762ee432544bf34e.jpg"
+              },
+              {
+                id: 119523,
+                filter: "producer=119523",
+                tag: "Antony Rufus-Isaacs",
+                tagKey: "5d776835961905001eb93cd6"
+              }
+            ],
+            Similar: [
+              { id: 16619, filter: "similar=16619", tag: "Wild Orchid" },
+              { id: 16521, filter: "similar=16521", tag: "Fatal Attraction" },
+              { id: 16522, filter: "similar=16522", tag: "Indecent Proposal" },
+              { id: 16485, filter: "similar=16485", tag: "Striptease" },
+              { id: 5014, filter: "similar=5014", tag: "Disclosure" },
+              { id: 16434, filter: "similar=16434", tag: "Tequila Sunrise" },
+              { id: 16614, filter: "similar=16614", tag: "No Way Out" },
+              {
+                id: 5641,
+                filter: "similar=5641",
+                tag: "The Jewel of the Nile"
+              },
+              {
+                id: 16617,
+                filter: "similar=16617",
+                tag: "The Witches of Eastwick"
+              },
+              {
+                id: 16616,
+                filter: "similar=16616",
+                tag: "The Bonfire of the Vanities"
+              },
+              { id: 16436, filter: "similar=16436", tag: "The Getaway" },
+              { id: 16610, filter: "similar=16610", tag: "Cocktail" },
+              { id: 12196, filter: "similar=12196", tag: "Working Girl" },
+              { id: 16609, filter: "similar=16609", tag: "Blind Date" },
+              {
+                id: 46198,
+                filter: "similar=46198",
+                tag: "The War of the Roses"
+              },
+              { id: 16484, filter: "similar=16484", tag: "Sliver" },
+              {
+                id: 46199,
+                filter: "similar=46199",
+                tag: "The Postman Always Rings Twice"
+              },
+              { id: 5639, filter: "similar=5639", tag: "Romancing the Stone" },
+              { id: 16615, filter: "similar=16615", tag: "Sea of Love" },
+              { id: 16611, filter: "similar=16611", tag: "Frankie and Johnny" }
+            ]
+          }
+        ]
+      }
+    }
+
+    validateResponseSpec("/library/metadata/{ratingKey}", "get", 200, response)
+  })
+  it("should validate the 200 response when the response is from Episode", () => {
+    const response = {
+      MediaContainer: {
+        size: 1,
+        allowSync: true,
+        identifier: "com.plexapp.plugins.library",
+        librarySectionID: 6,
+        librarySectionTitle: "Movies (Documentaries)",
+        librarySectionUUID: "d6a09f3a-3027-4a2f-bb0d-14d6d2b93533",
+        mediaTagPrefix: "/system/bundle/media/flags/",
+        mediaTagVersion: 1734362201,
+        Metadata: [
+          {
+            ratingKey: "56939",
+            key: "/library/metadata/56939",
+            guid: "local://56939",
+            type: "movie",
+            title: "Boiling Point",
+            librarySectionTitle: "Movies (Documentaries)",
+            librarySectionID: 6,
+            librarySectionKey: "/library/sections/6",
+            summary: "",
+            year: 1999,
+            thumb: "/library/metadata/56939/thumb/1737312638",
+            art: "/library/metadata/56939/art/1737312638",
+            duration: 8109499,
+            addedAt: 1622054437,
+            updatedAt: 1737312638,
+            Media: [
+              {
+                id: 60981,
+                duration: 8109499,
+                bitrate: 11710,
+                width: 2880,
+                height: 2160,
+                aspectRatio: 1.33,
+                audioChannels: 2,
+                audioCodec: "aac",
+                videoCodec: "vp9",
+                videoResolution: "4k",
+                container: "mkv",
+                videoFrameRate: "PAL",
+                audioProfile: "lc",
+                videoProfile: "profile 0",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    id: 92023,
+                    key: "/library/parts/92023/1602116112/file.mkv",
+                    duration: 8109499,
+                    file: "/Movies (Documentaries)/Boiling Point (1999)/Boiling Point (1999) WEBDL-2160p.mkv",
+                    size: 11874057616,
+                    audioProfile: "lc",
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "profile 0",
+                    Stream: [
+                      {
+                        id: 304223,
+                        streamType: 1,
+                        default: true,
+                        codec: "vp9",
+                        index: 0,
+                        bitrate: 11582,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        bitDepth: 8,
+                        chromaSubsampling: "4:2:0",
+                        codedHeight: 2160,
+                        codedWidth: 2880,
+                        colorPrimaries: "bt709",
+                        colorRange: "tv",
+                        colorSpace: "bt709",
+                        colorTrc: "bt709",
+                        frameRate: 25.0,
+                        height: 2160,
+                        profile: "profile 0",
+                        refFrames: 1,
+                        width: 2880,
+                        displayTitle: "4K",
+                        extendedDisplayTitle: "4K (VP9)"
+                      },
+                      {
+                        id: 304224,
+                        streamType: 2,
+                        selected: true,
+                        default: true,
+                        codec: "aac",
+                        index: 1,
+                        channels: 2,
+                        bitrate: 128,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        audioChannelLayout: "stereo",
+                        profile: "lc",
+                        samplingRate: 44100,
+                        displayTitle: "English (AAC Stereo)",
+                        extendedDisplayTitle: "English (AAC Stereo)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Boiling Point",
+                type: "coverPoster",
+                url: "/library/metadata/56939/thumb/1737312638"
+              },
+              {
+                alt: "Boiling Point",
+                type: "background",
+                url: "/library/metadata/56939/art/1737312638"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "421b15",
+              topRight: "170405",
+              bottomRight: "2a174e",
+              bottomLeft: "6f5b24"
+            }
+          }
+        ]
+      }
+    }
+
+    validateResponseSpec("/library/metadata/{ratingKey}", "get", 200, response)
+  })
 })

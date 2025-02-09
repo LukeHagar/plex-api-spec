@@ -140,21 +140,15 @@ get:
                             - librarySectionTitle
                             - librarySectionID
                             - librarySectionKey
-                            - contentRating
                             - summary
-                            - audienceRating
                             - year
                             - thumb
                             - art
                             - duration
-                            - originallyAvailableAt
                             - addedAt
                             - updatedAt
-                            - audienceRatingImage
                             - Image
                             - UltraBlurColors
-                            - Guid
-                            - Rating
                           properties:
                             ratingKey:
                               type: string
@@ -268,7 +262,17 @@ get:
                             year:
                               type: integer
                               description: "The release year."
+                              format: int32
                               example: 2015
+                            rating:
+                              type: number
+                              format: float
+                              description: "The general rating"
+                              example: 6.0
+                            ratingImage:
+                              type: string
+                              description: "The URL or identifier for the rating image (e.g., Rotten Tomatoes rating image)."
+                              example: "rottentomatoes://image.rating.ripe"
                             tagline:
                               type: string
                               description: "The tagline of the content."
@@ -295,6 +299,7 @@ get:
                               type: integer
                               description: "Duration of the content in milliseconds."
                               example: 2700000
+                              format: int32
                             originallyAvailableAt:
                               type: string
                               format: date
@@ -311,15 +316,16 @@ get:
                             childCount:
                               type: integer
                               description: "The number of child items."
+                              format: int32
                               example: 6
                             addedAt:
-                              type: integer
-                              description: "Unix timestamp when the item was added."
-                              example: 1625505101
+                              allOf:
+                                - description: "Unix timestamp when the item was added."
+                                - $ref: "../../../../models/common/PlexDateTime.yaml"
                             updatedAt:
-                              type: integer
-                              description: "Unix timestamp when the item was last updated."
-                              example: 1736487993
+                              allOf:
+                                - description: "Unix timestamp when the item was last updated."
+                                - $ref: "../../../../models/common/PlexDateTime.yaml"
                             audienceRatingImage:
                               type: string
                               description: "The URL for the audience rating image."
@@ -424,6 +430,7 @@ get:
                                   id:
                                     type: integer
                                     description: "The unique country identifier."
+                                    format: int32
                                     example: 58591
                                   filter:
                                     type: string
@@ -447,6 +454,7 @@ get:
                                     description: "The GUID value."
                                     example: "imdb://tt3032476"
                             Rating:
+                              x-speakeasy-name-override: Ratings
                               type: array
                               description: "An array of rating objects."
                               items:
