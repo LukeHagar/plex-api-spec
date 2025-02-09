@@ -1,0 +1,8 @@
+type: object
+required:
+  - id
+properties:
+  id:
+    description: "Unique identifier for the writer."
+    type: integer
+    example: 126522

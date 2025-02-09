@@ -119,7 +119,7 @@ get:
                                   type: array
                                   items:
                                     allOf:
-                                      - $ref: "../../../models/country/tag.yaml"
+                                      - $ref: "../../../models/genre/tag.yaml"
                                 Country:
                                   type: array
                                   items:

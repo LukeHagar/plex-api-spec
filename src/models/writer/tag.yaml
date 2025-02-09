@@ -5,4 +5,4 @@ properties:
   tag:
     type: string
     description: The role of Writer
-    example: Danny Boyle
+    example: Jamie P. Hanson

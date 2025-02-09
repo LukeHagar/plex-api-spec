@@ -1,6 +1,4 @@
 type: object
-required:
-  - parentSlug
 properties:
   parentSlug:
     type: string
