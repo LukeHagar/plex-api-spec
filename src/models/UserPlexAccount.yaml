@@ -33,7 +33,6 @@ required:
   - services
   - subscription
   - subscriptionDescription
-  - subscriptions
   - thumb
   - title
   - twoFactorEnabled
