@@ -17604,7 +17604,6 @@ paths:
                   - services
                   - subscription
                   - subscriptionDescription
-                  - subscriptions
                   - thumb
                   - title
                   - twoFactorEnabled
@@ -18367,7 +18366,6 @@ paths:
                       - services
                       - subscription
                       - subscriptionDescription
-                      - subscriptions
                       - thumb
                       - title
                       - twoFactorEnabled
