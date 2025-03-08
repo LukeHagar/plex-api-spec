@@ -3,6 +3,6 @@ required:
   - tag
 properties:
   tag:
+    description: "The display tag for the actor (typically the actor's name)."
     type: string
-    description: The name of the actor for this role
-    example: Danny Boyle
+    example: "Teller"

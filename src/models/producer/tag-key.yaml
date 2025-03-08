@@ -1,0 +1,6 @@
+type: object
+properties:
+  tagKey:
+    description: "A unique key associated with the producer's tag, used for internal identification."
+    type: string
+    example: "5d77683d85719b001f3a535e"

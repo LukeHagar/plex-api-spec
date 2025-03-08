@@ -191,8 +191,6 @@ paths:
     $ref: "./paths/library/metadata-children.yaml"
   /library/all/top:
     $ref: "./paths/library/content-top.yaml"
-  /library/onDeck:
-    $ref: "./paths/library/ondeck.yaml"
 
   # Resources
   # Folder: pms/resources

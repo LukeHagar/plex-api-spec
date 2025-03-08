@@ -1,0 +1,8 @@
+type: object
+required:
+  - id
+description: "The identifier for the genre"
+properties:
+  id:
+    type: integer
+    example: 259

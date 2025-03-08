@@ -1,0 +1,6 @@
+type: object
+description: "The filter query string for country media items."
+properties:
+  filter:
+    type: string
+    example: "country=19"

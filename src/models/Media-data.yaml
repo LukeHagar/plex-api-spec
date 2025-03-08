@@ -4,8 +4,6 @@ items:
   type: object
   required:
     - id
-    - hasVoiceActivity
-    - Part
   properties:
     id:
       type: integer
@@ -173,9 +171,6 @@ items:
                 - streamType
                 - codec
                 - index
-                - language
-                - languageTag
-                - languageCode
                 - displayTitle
                 - extendedDisplayTitle
               properties:
@@ -280,6 +275,9 @@ items:
                   format: int32
                   description: "Coded video width."
                   example: 3840
+                closedCaptions:
+                  type: boolean
+                  example: true
                 colorPrimaries:
                   type: string
                   description: "Color primaries used."
@@ -323,6 +321,9 @@ items:
                   description: "Video profile."
                   example: "main 10"
                 scanType:
+                  type: string
+                  example: "progressive"
+                embeddedInVideo:
                   type: string
                   example: "progressive"
                 refFrames:
