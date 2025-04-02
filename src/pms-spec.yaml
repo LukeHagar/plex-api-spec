@@ -183,8 +183,18 @@ paths:
 
   /library/metadata/{ratingKey}:
     $ref: "./paths/library/metadata/[ratingKey]/get-media-meta-data.yaml"
+  /library/metadata/{ratingKey}/arts:
+    get:
+      $ref: "./paths/library/metadata/[ratingKey]/arts/get-media-arts.yaml"
+    post:
+      $ref: "./paths/library/metadata/[ratingKey]/arts/post-media-arts.yaml"
   /library/metadata/{ratingKey}/banner:
     $ref: "./paths/library/metadata/[ratingKey]/banner/get-banner-image.yaml"
+  /library/metadata/{ratingKey}/posters:
+    get:
+      $ref: "./paths/library/metadata/[ratingKey]/posters/get-media-posters.yaml"
+    post:
+      $ref: "./paths/library/metadata/[ratingKey]/posters/post-media-poster.yaml"
   /library/metadata/{ratingKey}/thumb:
     $ref: "./paths/library/metadata/[ratingKey]/thumb/get-thumb-image.yaml"
   /library/metadata/{ratingKey}/children:
