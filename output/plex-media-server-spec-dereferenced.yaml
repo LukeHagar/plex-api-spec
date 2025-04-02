@@ -11667,6 +11667,157 @@ paths:
                     <h1>404 Not Found</h1>
                 </body>
                 </html>
+  '/library/metadata/{ratingKey}/arts':
+    get:
+      tags:
+        - Library
+      summary: Get Media Background Artwork
+      description: Returns the background artwork for a library item.
+      operationId: get-media-arts
+      parameters:
+        - name: ratingKey
+          in: path
+          description: the id of the library item to return the artwork of.
+          schema:
+            type: integer
+            example: 16099
+          required: true
+      responses:
+        '200':
+          description: The available background artwork for the library item.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    allOf:
+                      - type: object
+                        required:
+                          - size
+                        properties:
+                          size:
+                            description: Number of media items returned in this response.
+                            type: integer
+                            format: int32
+                            example: 50
+                      - type: object
+                        required:
+                          - mediaTagVersion
+                        properties:
+                          mediaTagVersion:
+                            type: integer
+                            description: The version number for media tags.
+                            example: 1734362201
+                      - type: object
+                        required:
+                          - mediaTagPrefix
+                        properties:
+                          mediaTagPrefix:
+                            type: string
+                            description: The prefix used for media tag resource paths.
+                            example: /system/bundle/media/flags/
+                      - type: object
+                        required:
+                          - identifier
+                        properties:
+                          identifier:
+                            type: string
+                            description: An plugin identifier for the media container.
+                            example: com.plexapp.plugins.library
+                      - type: object
+                        required:
+                          - Metadata
+                        properties:
+                          Metadata:
+                            type: array
+                            items:
+                              type: object
+                              required:
+                                - key
+                                - ratingKey
+                                - selected
+                                - thumb
+                              properties:
+                                key:
+                                  type: string
+                                  description: The URL of the artwork.
+                                  example: 'https://image.tmdb.org/t/p/original/ixgFmf1X59PUZam2qbAfskx2gQr.jpg'
+                                provider:
+                                  type: string
+                                  description: The provider of the artwork.
+                                  example: tmdb
+                                ratingKey:
+                                  type: string
+                                  description: The URL of the artwork.
+                                  example: 'https://image.tmdb.org/t/p/original/ixgFmf1X59PUZam2qbAfskx2gQr.jpg'
+                                selected:
+                                  type: boolean
+                                  description: Whether this is the selected artwork.
+                                  example: true
+                                thumb:
+                                  type: string
+                                  description: The URL of the artwork thumbnail.
+                                  example: 'https://images.plex.tv/photo?height=270&width=480&minSize=1&upscale=1&url=https%3A%2F%2Fimage%2Etmdb%2Eorg%2Ft%2Fp%2Foriginal%2FixgFmf1X59PUZam2qbAfskx2gQr%2Ejpg'
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
+    post:
+      tags:
+        - Library
+      summary: Upload Media Background Artwork
+      description: 'Uploads an image to use as the background artwork for a library item, either from a local file or a remote URL'
+      operationId: post-media-arts
+      parameters:
+        - name: ratingKey
+          in: path
+          description: the id of the library item to return the posters of.
+          schema:
+            type: integer
+            example: 2268
+          required: true
+        - name: url
+          in: query
+          description: 'The URL of the image, if uploading a remote image'
+          schema:
+            type: string
+            example: 'https://api.mediux.pro/assets/fcfdc487-dd07-4993-a0c1-0a3015362e5b'
+          required: false
+      requestBody:
+        description: 'The contents of the image, if uploading a local file'
+        content:
+          image/*:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: The background artwork was uploaded successfully.
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
   '/library/metadata/{ratingKey}/banner':
     get:
       tags:
@@ -11826,6 +11977,157 @@ paths:
                           type: integer
                           format: int32
                           example: 401
+  '/library/metadata/{ratingKey}/posters':
+    get:
+      tags:
+        - Library
+      summary: Get Media Posters
+      description: Returns the available posters for a library item.
+      operationId: get-media-posters
+      parameters:
+        - name: ratingKey
+          in: path
+          description: the id of the library item to return the posters of.
+          schema:
+            type: integer
+            example: 16099
+          required: true
+      responses:
+        '200':
+          description: The available posters for the library item.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    allOf:
+                      - type: object
+                        required:
+                          - size
+                        properties:
+                          size:
+                            description: Number of media items returned in this response.
+                            type: integer
+                            format: int32
+                            example: 50
+                      - type: object
+                        required:
+                          - mediaTagVersion
+                        properties:
+                          mediaTagVersion:
+                            type: integer
+                            description: The version number for media tags.
+                            example: 1734362201
+                      - type: object
+                        required:
+                          - mediaTagPrefix
+                        properties:
+                          mediaTagPrefix:
+                            type: string
+                            description: The prefix used for media tag resource paths.
+                            example: /system/bundle/media/flags/
+                      - type: object
+                        required:
+                          - identifier
+                        properties:
+                          identifier:
+                            type: string
+                            description: An plugin identifier for the media container.
+                            example: com.plexapp.plugins.library
+                      - type: object
+                        required:
+                          - Metadata
+                        properties:
+                          Metadata:
+                            type: array
+                            items:
+                              type: object
+                              required:
+                                - key
+                                - ratingKey
+                                - selected
+                                - thumb
+                              properties:
+                                key:
+                                  type: string
+                                  description: The URL of the poster.
+                                  example: 'https://image.tmdb.org/t/p/original/hntBJjqbv4m0Iyniqaztv9xaudI.jpg'
+                                provider:
+                                  type: string
+                                  description: The provider of the poster.
+                                  example: tmdb
+                                ratingKey:
+                                  type: string
+                                  description: The URL of the poster.
+                                  example: 'https://image.tmdb.org/t/p/original/hntBJjqbv4m0Iyniqaztv9xaudI.jpg'
+                                selected:
+                                  type: boolean
+                                  description: Whether this is the selected poster.
+                                  example: true
+                                thumb:
+                                  type: string
+                                  description: The URL of the poster thumbnail.
+                                  example: 'https://images.plex.tv/photo?height=336&width=225&minSize=1&upscale=1&url=https%3A%2F%2Fimage%2Etmdb%2Eorg%2Ft%2Fp%2Foriginal%2FhntBJjqbv4m0Iyniqaztv9xaudI%2Ejpg'
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
+    post:
+      tags:
+        - Library
+      summary: Upload Media Poster
+      description: 'Uploads a poster to a library item, either from a local file or a remote URL'
+      operationId: post-media-poster
+      parameters:
+        - name: ratingKey
+          in: path
+          description: the id of the library item to return the posters of.
+          schema:
+            type: integer
+            example: 2268
+          required: true
+        - name: url
+          in: query
+          description: 'The URL of the image, if uploading a remote image'
+          schema:
+            type: string
+            example: 'https://api.mediux.pro/assets/fcfdc487-dd07-4993-a0c1-0a3015362e5b'
+          required: false
+      requestBody:
+        description: 'The contents of the image, if uploading a local file'
+        content:
+          image/*:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: The poster was uploaded successfully.
+        '404':
+          description: Not Found - Returned if the resource could not be found
+          content:
+            text/html:
+              example: |
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Not Found</title>
+                </head>
+                <body>
+                    <h1>404 Not Found</h1>
+                </body>
+                </html>
   '/library/metadata/{ratingKey}/thumb':
     get:
       tags:
