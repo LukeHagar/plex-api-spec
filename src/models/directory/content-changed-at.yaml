@@ -1,0 +1,9 @@
+type: object
+required:
+  - contentChangedAt
+properties:
+  contentChangedAt:
+    type: integer
+    format: int32
+    description: The number of seconds since the content was last changed relative to now.
+    example: 9173960

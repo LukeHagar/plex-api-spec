@@ -1,0 +1,8 @@
+type: object
+required:
+  - scanner
+properties:
+  scanner:
+    type: string
+    description: UNKNOWN
+    example: Plex Movie
