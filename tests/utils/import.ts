@@ -2,7 +2,7 @@ import PMSSpec from "../../output/plex-media-server-spec-dereferenced.yaml"
 import Ajv from "ajv"
 import addFormats from "ajv-formats"
 import { expect } from "vitest"
-import { merge } from "lodash-es"
+import { isArray, merge } from "lodash-es"
 import { xml2json } from "xml-js"
 /**
  * Validate a response against the OpenAPI spec
@@ -57,7 +57,19 @@ export function validateResponseSpec(
   )
 
   if (!validate) {
+    for (const error of ajv.errors) {
+      if (
+        error.hasOwnProperty("params") &&
+        error.params.hasOwnProperty("allowedValues") &&
+        isArray(error.params.allowedValues)
+      ) {
+        // Format the allowedValues to be a string to make it visible in the error message
+        error.params.allowedValues = error.params.allowedValues.join(", ")
+      }
+    }
+
     console.error(ajv.errors)
+    console.error(JSON.stringify(jsonResponse, null, 2))
   }
 
   expect(ajv.errors).toBe(null)

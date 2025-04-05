@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.0",
+    "@ngneat/falso": "^7.3.0",
     "@redocly/cli": "^1.28.1",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.5.0",
