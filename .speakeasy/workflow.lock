@@ -1,4 +1,4 @@
-speakeasyVersion: 1.531.2
+speakeasyVersion: 1.531.3
 sources:
     Plex-API:
         sourceNamespace: plex-api
@@ -9,11 +9,11 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:a91d0c598b5d6f5904cebb4ae7b4ef8fcf0bc44208ddca2383e8c5d8e1b5b179
+        sourceRevisionDigest: sha256:7a6abffeac0762c354909b7835f694aee7ef53c91ef508752aca5c236274e29a
         sourceBlobDigest: sha256:c210adbd02b0213b9e6f95ffc27f60ec38f8f9040137d55ccf2b650d92ab0ff5
         tags:
             - latest
-            - speakeasy-sdk-regen-1744366012
+            - speakeasy-sdk-regen-1744369559
             - 0.0.3
 targets: {}
 workflow:
