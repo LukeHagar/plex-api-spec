@@ -141,6 +141,7 @@ properties:
     description: Your current mailing list status (active or unsubscribed)
     type: string
     example: active
+    x-speakeasy-unknown-values: allow
     enum:
       - active
       - unsubscribed
@@ -202,6 +203,7 @@ properties:
             - "null"
         status:
           example: online
+          x-speakeasy-unknown-values: allow
           enum:
             - online
             - offline

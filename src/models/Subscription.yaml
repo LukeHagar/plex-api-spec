@@ -125,6 +125,7 @@ properties:
   status:
     description: String representation of subscriptionActive
     example: Inactive
+    x-speakeasy-unknown-values: allow
     enum:
       - Inactive
       - Active

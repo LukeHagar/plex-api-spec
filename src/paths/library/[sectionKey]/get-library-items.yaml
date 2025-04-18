@@ -32,6 +32,7 @@ get:
       description: A key representing a specific tag within the section.
       schema:
         type: string
+        x-speakeasy-unknown-values: allow
         enum:
           - unwatched
           - newest

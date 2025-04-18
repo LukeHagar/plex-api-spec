@@ -1,4 +1,5 @@
 type: integer
+x-speakeasy-unknown-values: allow
 enum:
   - 1
   - 2

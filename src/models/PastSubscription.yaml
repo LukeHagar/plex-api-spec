@@ -70,6 +70,7 @@ properties:
       - "null"
   state:
     example: ended
+    x-speakeasy-unknown-values: allow
     enum:
       - ended
   billing:
