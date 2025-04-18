@@ -593,6 +593,7 @@ paths:
           in: query
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - playing
               - paused
@@ -1093,6 +1094,7 @@ paths:
           in: path
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - BackupDatabase
               - BuildGracenoteCollections
@@ -1177,6 +1179,7 @@ paths:
           in: path
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - BackupDatabase
               - BuildGracenoteCollections
@@ -1626,6 +1629,7 @@ paths:
                     status:
                       examples:
                         - accepted
+                      x-speakeasy-unknown-values: allow
                       enum:
                         - accepted
                       description: Current friend request status
@@ -2149,6 +2153,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -2821,6 +2826,7 @@ paths:
                                     type:
                                       allOf:
                                         - type: string
+                                          x-speakeasy-unknown-values: allow
                                           enum:
                                             - movie
                                             - show
@@ -2899,6 +2905,7 @@ paths:
                                             example: Episode 1
                                           type:
                                             type: string
+                                            x-speakeasy-unknown-values: allow
                                             enum:
                                               - coverPoster
                                               - background
@@ -4358,6 +4365,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -4982,6 +4990,7 @@ paths:
                                     type:
                                       allOf:
                                         - type: string
+                                          x-speakeasy-unknown-values: allow
                                           enum:
                                             - movie
                                             - show
@@ -5196,14 +5205,14 @@ paths:
       description: |
         ## Library Details Endpoint
 
-        This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.   
+        This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.
 
         The details include:
 
         ### Directories
         Organized into three categories:
 
-        - **Primary Directories**: 
+        - **Primary Directories**:
           - Used in some clients for quick access to media subsets (e.g., "All", "On Deck").
           - Most can be replicated via media queries.
           - Customizable by users.
@@ -5237,7 +5246,7 @@ paths:
       parameters:
         - name: includeDetails
           description: |
-            Whether or not to include details for a section (types, filters, and sorts). 
+            Whether or not to include details for a section (types, filters, and sorts).
             Only exists for backwards compatibility, media providers other than the server libraries have it on always.
           in: query
           schema:
@@ -5561,6 +5570,7 @@ paths:
           required: true
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - all
               - available
@@ -5581,6 +5591,7 @@ paths:
           required: false
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - movie
               - show
@@ -5853,6 +5864,7 @@ paths:
           description: A key representing a specific tag within the section.
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - unwatched
               - newest
@@ -5896,6 +5908,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -6263,6 +6276,7 @@ paths:
                                   example: /library/sections/1
                                 type:
                                   type: string
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - movie
                                     - show
@@ -6312,6 +6326,7 @@ paths:
                                 flattenSeasons:
                                   type: string
                                   description: 'Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).'
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - '-1'
                                     - '0'
@@ -6324,6 +6339,7 @@ paths:
                                 episodeSort:
                                   type: string
                                   description: 'Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).'
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - '-1'
                                     - '0'
@@ -6336,6 +6352,7 @@ paths:
                                 enableCreditsMarkerGeneration:
                                   type: string
                                   description: 'Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).'
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - '-1'
                                     - '0'
@@ -6352,6 +6369,7 @@ paths:
                                     aired = TheTVDB (Aired),
                                     dvd = TheTVDB (DVD),
                                     absolute = TheTVDB (Absolute)).
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - None
                                     - tmdbAiring
@@ -6877,6 +6895,7 @@ paths:
                                         example: Episode 1
                                       type:
                                         type: string
+                                        x-speakeasy-unknown-values: allow
                                         enum:
                                           - coverPoster
                                           - background
@@ -7194,6 +7213,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -7672,6 +7692,7 @@ paths:
                                     type:
                                       allOf:
                                         - type: string
+                                          x-speakeasy-unknown-values: allow
                                           enum:
                                             - movie
                                             - show
@@ -8050,6 +8071,7 @@ paths:
                                             example: Episode 1
                                           type:
                                             type: string
+                                            x-speakeasy-unknown-values: allow
                                             enum:
                                               - coverPoster
                                               - background
@@ -8772,6 +8794,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -8990,6 +9013,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -9242,6 +9266,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -9490,6 +9515,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -9753,6 +9779,7 @@ paths:
             type: array
             items:
               type: string
+              x-speakeasy-unknown-values: allow
               enum:
                 - movies
                 - music
@@ -9864,6 +9891,7 @@ paths:
                                   example: /library/sections/1
                                 type:
                                   type: string
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - movie
                                     - show
@@ -9913,6 +9941,7 @@ paths:
                                 flattenSeasons:
                                   type: string
                                   description: 'Setting that indicates if seasons are set to hidden for the show. (-1 = Library default, 0 = Hide, 1 = Show).'
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - '-1'
                                     - '0'
@@ -9925,6 +9954,7 @@ paths:
                                 episodeSort:
                                   type: string
                                   description: 'Setting that indicates how episodes are sorted for the show. (-1 = Library default, 0 = Oldest first, 1 = Newest first).'
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - '-1'
                                     - '0'
@@ -9937,6 +9967,7 @@ paths:
                                 enableCreditsMarkerGeneration:
                                   type: string
                                   description: 'Setting that indicates if credits markers detection is enabled. (-1 = Library default, 0 = Disabled).'
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - '-1'
                                     - '0'
@@ -9953,6 +9984,7 @@ paths:
                                     aired = TheTVDB (Aired),
                                     dvd = TheTVDB (DVD),
                                     absolute = TheTVDB (Absolute)).
+                                  x-speakeasy-unknown-values: allow
                                   enum:
                                     - None
                                     - tmdbAiring
@@ -10478,6 +10510,7 @@ paths:
                                         example: Episode 1
                                       type:
                                         type: string
+                                        x-speakeasy-unknown-values: allow
                                         enum:
                                           - coverPoster
                                           - background
@@ -12729,6 +12762,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -13252,15 +13286,16 @@ paths:
       parameters:
         - name: level
           description: |
-            An integer log level to write to the PMS log with.  
-            0: Error  
-            1: Warning  
-            2: Info  
-            3: Debug  
+            An integer log level to write to the PMS log with.
+            0: Error
+            1: Warning
+            2: Info
+            3: Debug
             4: Verbose
           in: query
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 0
               - 1
@@ -13340,13 +13375,13 @@ paths:
         - Log
       summary: Logging a multi-line message
       description: |
-        This endpoint allows for the batch addition of log entries to the main Plex Media Server log.  
-        It accepts a text/plain request body, where each line represents a distinct log entry.  
-        Each log entry consists of URL-encoded key-value pairs, specifying log attributes such as 'level', 'message', and 'source'.  
+        This endpoint allows for the batch addition of log entries to the main Plex Media Server log.
+        It accepts a text/plain request body, where each line represents a distinct log entry.
+        Each log entry consists of URL-encoded key-value pairs, specifying log attributes such as 'level', 'message', and 'source'.
 
-        Log entries are separated by a newline character (`\n`).  
-        Each entry's parameters should be URL-encoded to ensure accurate parsing and handling of special characters.  
-        This method is efficient for logging multiple entries in a single API call, reducing the overhead of multiple individual requests.  
+        Log entries are separated by a newline character (`\n`).
+        Each entry's parameters should be URL-encoded to ensure accurate parsing and handling of special characters.
+        This method is efficient for logging multiple entries in a single API call, reducing the overhead of multiple individual requests.
 
         The 'level' parameter specifies the log entry's severity or importance, with the following integer values:
         - `0`: Error - Critical issues that require immediate attention.
@@ -14290,6 +14325,7 @@ paths:
           in: query
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - audio
               - video
@@ -14452,6 +14488,7 @@ paths:
           in: query
           schema:
             type: string
+            x-speakeasy-unknown-values: allow
             enum:
               - audio
               - video
@@ -14462,6 +14499,7 @@ paths:
           in: query
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 0
               - 1
@@ -14900,6 +14938,7 @@ paths:
             E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
           schema:
             type: integer
+            x-speakeasy-unknown-values: allow
             enum:
               - 1
               - 2
@@ -15461,11 +15500,11 @@ paths:
       parameters:
         - name: path
           description: |
-            absolute path to a directory on the server where m3u files are stored, or the absolute path to a playlist file on the server. 
-            If the `path` argument is a directory, that path will be scanned for playlist files to be processed. 
-            Each file in that directory creates a separate playlist, with a name based on the filename of the file that created it. 
-            The GUID of each playlist is based on the filename. 
-            If the `path` argument is a file, that file will be used to create a new playlist, with the name based on the filename of the file that created it. 
+            absolute path to a directory on the server where m3u files are stored, or the absolute path to a playlist file on the server.
+            If the `path` argument is a directory, that path will be scanned for playlist files to be processed.
+            Each file in that directory creates a separate playlist, with a name based on the filename of the file that created it.
+            The GUID of each playlist is based on the filename.
+            If the `path` argument is a file, that file will be used to create a new playlist, with the name based on the filename of the file that created it.
             The GUID of each playlist is based on the filename.
           in: query
           schema:
@@ -15474,9 +15513,9 @@ paths:
           required: true
         - name: force
           description: |
-            Force overwriting of duplicate playlists.  
-            By default, a playlist file uploaded with the same path will overwrite the existing playlist. 
-            The `force` argument is used to disable overwriting.  
+            Force overwriting of duplicate playlists.
+            By default, a playlist file uploaded with the same path will overwrite the existing playlist.
+            The `force` argument is used to disable overwriting.
             If the `force` argument is set to 0, a new playlist will be created suffixed with the date and time that the duplicate was uploaded.
           in: query
           schema:
@@ -18282,6 +18321,7 @@ paths:
                     description: Your current mailing list status (active or unsubscribed)
                     type: string
                     example: active
+                    x-speakeasy-unknown-values: allow
                     enum:
                       - active
                       - unsubscribed
@@ -18440,6 +18480,7 @@ paths:
                             - 'null'
                         status:
                           example: online
+                          x-speakeasy-unknown-values: allow
                           enum:
                             - online
                             - offline
@@ -18571,6 +18612,7 @@ paths:
                       status:
                         description: String representation of subscriptionActive
                         example: Inactive
+                        x-speakeasy-unknown-values: allow
                         enum:
                           - Inactive
                           - Active
@@ -18718,6 +18760,7 @@ paths:
                         status:
                           description: String representation of subscriptionActive
                           example: Inactive
+                          x-speakeasy-unknown-values: allow
                           enum:
                             - Inactive
                             - Active
@@ -19044,6 +19087,7 @@ paths:
                         description: Your current mailing list status (active or unsubscribed)
                         type: string
                         example: active
+                        x-speakeasy-unknown-values: allow
                         enum:
                           - active
                           - unsubscribed
@@ -19202,6 +19246,7 @@ paths:
                                 - 'null'
                             status:
                               example: online
+                              x-speakeasy-unknown-values: allow
                               enum:
                                 - online
                                 - offline
@@ -19333,6 +19378,7 @@ paths:
                           status:
                             description: String representation of subscriptionActive
                             example: Inactive
+                            x-speakeasy-unknown-values: allow
                             enum:
                               - Inactive
                               - Active
@@ -19480,6 +19526,7 @@ paths:
                             status:
                               description: String representation of subscriptionActive
                               example: Inactive
+                              x-speakeasy-unknown-values: allow
                               enum:
                                 - Inactive
                                 - Active
@@ -19607,6 +19654,7 @@ paths:
                                 - 'null'
                             state:
                               example: ended
+                              x-speakeasy-unknown-values: allow
                               enum:
                                 - ended
                             billing:
@@ -20174,9 +20222,9 @@ tags:
       Hubs are a structured two-dimensional container for media, generally represented by multiple horizontal rows.
   - name: Playlists
     description: |
-      Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017"). 
+      Playlists are ordered collections of media. They can be dumb (just a list of media) or smart (based on a media query, such as "all albums from 2017").
       They can be organized in (optionally nesting) folders.
-      Retrieving a playlist, or its items, will trigger a refresh of its metadata. 
+      Retrieving a playlist, or its items, will trigger a refresh of its metadata.
       This may cause the duration and number of items to change.
   - name: Search
     description: |
