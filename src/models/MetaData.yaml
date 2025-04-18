@@ -76,6 +76,7 @@ properties:
     description: >-
       Setting that indicates if seasons are set to hidden for the show.
       (-1 = Library default, 0 = Hide, 1 = Show).
+    x-speakeasy-unknown-values: allow
     enum:
       - "-1"
       - "0"
@@ -90,6 +91,7 @@ properties:
     description: >-
       Setting that indicates how episodes are sorted for the show.
       (-1 = Library default, 0 = Oldest first, 1 = Newest first).
+    x-speakeasy-unknown-values: allow
     enum:
       - "-1"
       - "0"
@@ -104,6 +106,7 @@ properties:
     description: >-
       Setting that indicates if credits markers detection is enabled.
       (-1 = Library default, 0 = Disabled).
+    x-speakeasy-unknown-values: allow
     enum:
       - "-1"
       - "0"
@@ -120,6 +123,7 @@ properties:
       aired = TheTVDB (Aired),
       dvd = TheTVDB (DVD),
       absolute = TheTVDB (Absolute)).
+    x-speakeasy-unknown-values: allow
     enum:
       - None
       - tmdbAiring
@@ -621,6 +625,7 @@ properties:
           example: "Episode 1"
         type:
           type: string
+          x-speakeasy-unknown-values: allow
           enum:
             - coverPoster
             - background

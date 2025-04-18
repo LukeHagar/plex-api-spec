@@ -62,6 +62,7 @@ properties:
   status:
     examples:
       - accepted
+    x-speakeasy-unknown-values: allow
     enum:
       - accepted
     description: Current friend request status

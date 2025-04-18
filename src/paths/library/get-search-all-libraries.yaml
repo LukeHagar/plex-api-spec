@@ -21,6 +21,7 @@ get:
         type: array
         items:
           type: string
+          x-speakeasy-unknown-values: allow
           enum:
             - movies
             - music

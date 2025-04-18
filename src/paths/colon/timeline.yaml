@@ -27,6 +27,7 @@ get:
       in: query
       schema:
         type: string
+        x-speakeasy-unknown-values: allow
         enum: ["playing", "paused", "stopped"]
       example: "playing"
 

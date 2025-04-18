@@ -7,6 +7,7 @@ properties:
     description: >
       Setting that indicates if credits marker detection is enabled.
       (-1 = Library default, 0 = Disabled).
+    x-speakeasy-unknown-values: allow
     enum:
       - "-1"
       - "0"

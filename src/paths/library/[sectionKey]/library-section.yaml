@@ -5,14 +5,14 @@ get:
   description: |
     ## Library Details Endpoint
 
-    This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.   
+    This endpoint provides comprehensive details about the library, focusing on organizational aspects rather than the content itself.
 
     The details include:
 
     ### Directories
     Organized into three categories:
 
-    - **Primary Directories**: 
+    - **Primary Directories**:
       - Used in some clients for quick access to media subsets (e.g., "All", "On Deck").
       - Most can be replicated via media queries.
       - Customizable by users.
@@ -47,7 +47,7 @@ get:
   parameters:
     - name: includeDetails
       description: |
-        Whether or not to include details for a section (types, filters, and sorts). 
+        Whether or not to include details for a section (types, filters, and sorts).
         Only exists for backwards compatibility, media providers other than the server libraries have it on always.
       in: query
       schema:

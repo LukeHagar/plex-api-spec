@@ -1,4 +1,5 @@
 type: string
+x-speakeasy-unknown-values: allow
 enum:
   - movie
   - show

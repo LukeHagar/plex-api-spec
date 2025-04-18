@@ -16,6 +16,7 @@ properties:
           example: "Episode 1"
         type:
           type: string
+          x-speakeasy-unknown-values: allow
           enum:
             - coverPoster
             - background
