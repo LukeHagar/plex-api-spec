@@ -2274,7 +2274,7 @@ describe("GET /library/sections", () => {
         identifier: "com.plexapp.plugins.library",
         librarySectionID: 2,
         librarySectionTitle: "TV Series ",
-        librarySectionUUID: "c33ef369-636a-4ad7-b5a7-6e384aa87a14",
+        librarySectionUUID: "b611bd29-cd72-4e30-ad86-34d06b7a0153",
         mediaTagPrefix: "/system/bundle/media/flags/",
         mediaTagVersion: 1726069332,
         nocache: true,

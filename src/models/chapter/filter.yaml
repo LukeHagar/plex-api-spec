@@ -1,0 +1,8 @@
+type: object
+required:
+  - filter
+description: "The filter for the chapter"
+properties:
+  filter:
+    type: string
+    example: "thumb=4" 

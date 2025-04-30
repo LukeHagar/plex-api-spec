@@ -5,4 +5,5 @@ properties:
   id:
     description: "Unique identifier for the writer."
     type: integer
+    format: int32
     example: 126522
