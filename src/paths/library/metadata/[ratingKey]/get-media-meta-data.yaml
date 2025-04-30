@@ -311,6 +311,36 @@ get:
                                         type: string
                                         description: "The file path for the location."
                                         example: "/TV Shows/Better Call Saul"
+                                Chapter:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/chapter/id.yaml"
+                                      - $ref: "../../../../models/chapter/filter.yaml"
+                                      - $ref: "../../../../models/chapter/index.yaml"
+                                      - $ref: "../../../../models/chapter/start-time-offset.yaml"
+                                      - $ref: "../../../../models/chapter/end-time-offset.yaml"
+                                      - $ref: "../../../../models/chapter/thumb.yaml"
+                                Marker:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/marker/id.yaml"
+                                      - $ref: "../../../../models/marker/type.yaml"
+                                      - $ref: "../../../../models/marker/start-time-offset.yaml"
+                                      - $ref: "../../../../models/marker/end-time-offset.yaml"
+                                      - $ref: "../../../../models/marker/final.yaml"
+                                      - type: object
+                                        properties:
+                                          Attributes:
+                                            - $ref: "../../../../models/marker/attributes.yaml"
+                                Extras:
+                                  type: object
+                                  properties:
+                                    size:
+                                      type: integer
+                                      description: "The size of the extras."
+                                      example: 1
     "400":
       $ref: "../../../../responses/400.yaml"
     "401":

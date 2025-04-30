@@ -170,7 +170,6 @@ items:
                 - id
                 - streamType
                 - codec
-                - index
                 - displayTitle
                 - extendedDisplayTitle
               properties:
@@ -183,6 +182,10 @@ items:
                   format: int32
                   description: "Stream type (1=video, 2=audio, 3=subtitle)."
                   example: 1
+                format:
+                  type: string
+                  description: "Format of the stream (e.g., srt)."
+                  example: "srt"
                 default:
                   type: boolean
                   description: "Indicates if this stream is default."
@@ -299,6 +302,10 @@ items:
                   format: float
                   description: "Frame rate of the stream."
                   example: 23.976
+                key:
+                  type: string
+                  description: "Key to access this stream part."
+                  example: "/library/streams/216389"
                 height:
                   type: integer
                   format: int32

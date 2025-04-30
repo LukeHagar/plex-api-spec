@@ -5,4 +5,5 @@ description: "The identifier for the country"
 properties:
   id:
     type: integer
+    format: int32
     example: 259
