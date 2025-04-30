@@ -3,4 +3,5 @@ properties:
   tagKey:
     description: "A unique key associated with the writers tag, used for internal identification."
     type: string
+    pattern: "^[a-fA-F0-9]{24}$"
     example: "5d77683d85719b001f3a535e"

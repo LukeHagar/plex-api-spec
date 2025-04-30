@@ -130,408 +130,196 @@ get:
                         type: array
                         description: "An array of metadata items."
                         items:
-                          type: object
                           required:
-                            - ratingKey
-                            - key
-                            - guid
                             - type
-                            - title
-                            - librarySectionTitle
-                            - librarySectionID
-                            - librarySectionKey
-                            - summary
-                            - year
-                            - thumb
-                            - art
-                            - duration
-                            - addedAt
-                            - updatedAt
-                            - Image
-                            - UltraBlurColors
-                          properties:
-                            ratingKey:
-                              type: string
-                              description: "The rating key of the metadata item."
-                              example: "44288"
-                            parentRatingKey:
-                              type: string
-                              description: "The rating key of the parent of this metadata item."
-                              example: "48047"
-                            grandparentRatingKey:
-                              type: string
-                              description: "The rating key of the grandparent of this metadata item."
-                              example: "45520"
-                            parentGuid:
-                              type: string
-                              description: "A GUID identifying the parent entity (e.g., season) for the item."
-                              example: "plex://season/618b89208dde18df707ad15c"
-                            grandparentGuid:
-                              type: string
-                              description: "A GUID identifying the grandparent entity (e.g., show)."
-                              example: "plex://show/5e16253691c20300412003a8"
-                            grandparentSlug:
-                              type: string
-                              description: "A URL-friendly identifier (slug) for the grandparent entity."
-                              example: "alice-in-borderland-2020"
-                            grandparentKey:
-                              type: string
-                              description: "A key identifying the grandparent metadata in the library."
-                              example: "/library/metadata/45520"
-                            parentKey:
-                              type: string
-                              description: "A key identifying the parent metadata in the library."
-                              example: "/library/metadata/48047"
-                            key:
-                              type: string
-                              description: "The API key to access metadata details."
-                              example: "/library/metadata/44288/children"
-                            guid:
-                              type: string
-                              description: "The globally unique identifier for the item."
-                              example: "plex://show/5d9c08254eefaa001f5d6dcb"
-                            slug:
-                              type: string
-                              description: "A URL-friendly identifier for the item."
-                              example: "better-call-saul"
-                            studio:
-                              type: string
-                              description: "The studio that produced the content."
-                              example: "Sony Pictures Television"
-                            type:
-                              type: string
-                              description: "The type of content (e.g., show, movie)."
-                              example: "show"
-                            title:
-                              type: string
-                              description: "The title of the content."
-                              example: "Better Call Saul"
-                            originalTitle:
-                              type: string
-                              description: "The original title of the content."
-                              example: "Wicked: Part I"
-                            librarySectionTitle:
-                              type: string
-                              description: "The title of the library section."
-                              example: "TV Series "
-                            librarySectionID:
-                              type: integer
-                              description: "The ID of the library section."
-                              example: 2
-                            librarySectionKey:
-                              type: string
-                              description: "The key of the library section."
-                              example: "/library/sections/2"
-                            contentRating:
-                              type: string
-                              description: "The content rating (e.g., TV-MA)."
-                              example: "TV-MA"
-                            summary:
-                              type: string
-                              description: "A summary of the content."
-                              example: 'Before Saul Goodman, he was Jimmy McGill. And if you''re calling Jimmy, you''re in real trouble. The prequel to "Breaking Bad" follows small-time attorney, Jimmy McGill, as he transforms into Walter White''s morally challenged lawyer, Saul Goodman.'
-                            index:
-                              type: integer
-                              description: "The index or order of the item."
-                              example: 1
-                            grandparentTitle:
-                              type: string
-                              description: "The title of the grandparent entity (typically the show's title)."
-                              example: "Alice in Borderland"
-                            parentTitle:
-                              type: string
-                              description: "The title of the parent entity (typically the season's title)."
-                              example: "Season 2"
-                            audienceRating:
-                              type: number
-                              format: float
-                              description: "The audience rating for the content."
-                              example: 8.7
-                            viewCount:
-                              type: integer
-                              description: "The number of times the item has been viewed."
-                              example: 4
-                            skipCount:
-                              type: integer
-                              description: "The number of times the item has been skipped."
-                              example: 1
-                            lastViewedAt:
-                              type: integer
-                              description: "Unix timestamp of when the item was last viewed."
-                              example: 1625764795
-                            year:
-                              type: integer
-                              description: "The release year."
-                              format: int32
-                              example: 2015
-                            rating:
-                              type: number
-                              format: float
-                              description: "The general rating"
-                              example: 6.0
-                            ratingImage:
-                              type: string
-                              description: "The URL or identifier for the rating image (e.g., Rotten Tomatoes rating image)."
-                              example: "rottentomatoes://image.rating.ripe"
-                            tagline:
-                              type: string
-                              description: "The tagline of the content."
-                              example: "Make the call"
-                            chapterSource:
-                              type: string
-                              example: "media"
-                            primaryExtraKey:
-                              type: string
-                              example: "/library/metadata/134704"
-                            thumb:
-                              type: string
-                              description: "URL of the thumbnail image."
-                              example: "/library/metadata/44288/thumb/1736487993"
-                            art:
-                              type: string
-                              description: "URL of the art image."
-                              example: "/library/metadata/44288/art/1736487993"
-                            theme:
-                              type: string
-                              description: "URL of the theme image."
-                              example: "/library/metadata/44288/theme/1736487993"
-                            duration:
-                              type: integer
-                              description: "Duration of the content in milliseconds."
-                              example: 2700000
-                              format: int32
-                            originallyAvailableAt:
-                              type: string
-                              format: date
-                              description: "The original release date."
-                              example: "2015-02-08"
-                            leafCount:
-                              type: integer
-                              description: "The total number of episodes (or leaves)."
-                              example: 63
-                            viewedLeafCount:
-                              type: integer
-                              description: "The number of episodes that have been viewed."
-                              example: 4
-                            childCount:
-                              type: integer
-                              description: "The number of child items."
-                              format: int32
-                              example: 6
-                            addedAt:
-                              allOf:
-                                - description: "Unix timestamp when the item was added."
-                                - $ref: "../../../../models/common/PlexDateTime.yaml"
-                            updatedAt:
-                              allOf:
-                                - description: "Unix timestamp when the item was last updated."
-                                - $ref: "../../../../models/common/PlexDateTime.yaml"
-                            audienceRatingImage:
-                              type: string
-                              description: "The URL for the audience rating image."
-                              example: "themoviedb://image.rating"
-                            parentIndex:
-                              type: integer
-                              description: "The index number of the parent entity, which could indicate its order or position."
-                              example: 2
-                            parentThumb:
-                              type: string
-                              description: "The URL of the parent's thumbnail image."
-                              example: "/library/metadata/48047/thumb/1671800243"
-                            grandparentThumb:
-                              type: string
-                              description: "The URL of the grandparent's thumbnail image."
-                              example: "/library/metadata/45520/thumb/1736488003"
-                            grandparentArt:
-                              type: string
-                              description: "The URL of the grandparent's art image."
-                              example: "/library/metadata/45520/art/1736488003"
-                            Media:
-                              allOf:
-                                - $ref: "../../../../models/Media-data.yaml"
-                            Image:
-                              type: array
-                              description: "An array of image objects."
-                              items:
-                                type: object
-                                required:
-                                  - alt
-                                  - type
-                                  - url
-                                properties:
-                                  alt:
-                                    type: string
-                                    description: "Alternate text for the image."
-                                    example: "Better Call Saul"
-                                  type:
-                                    type: string
-                                    description: "The type of image (e.g., coverPoster, background, clearLogo)."
-                                    example: "coverPoster"
-                                  url:
-                                    type: string
-                                    description: "The URL of the image."
-                                    example: "/library/metadata/44288/thumb/1736487993"
-                            UltraBlurColors:
-                              type: object
-                              required:
-                                - topLeft
-                                - topRight
-                                - bottomRight
-                                - bottomLeft
+                          allOf:
+                            - $ref: "../../../../models/meta-data/rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/key.yaml"
+                            - $ref: "../../../../models/meta-data/guid.yaml"
+                            - $ref: "../../../../models/meta-data/slug.yaml"
+                            - $ref: "../../../../models/meta-data/studio.yaml"
+                            - $ref: "../../../../models/meta-data/type.yaml"
+                            - $ref: "../../../../models/meta-data/title.yaml"
+                            - $ref: "../../../../models/meta-data/title-sort.yaml"
+                            - $ref: "../../../../models/meta-data/content-rating.yaml"
+                            - $ref: "../../../../models/meta-data/summary.yaml"
+                            - $ref: "../../../../models/meta-data/rating.yaml"
+                            - $ref: "../../../../models/meta-data/audience-rating.yaml"
+                            - $ref: "../../../../models/meta-data/year.yaml"
+                            - $ref: "../../../../models/meta-data/tagline.yaml"
+                            - $ref: "../../../../models/meta-data/thumb.yaml"
+                            - $ref: "../../../../models/meta-data/art.yaml"
+                            - $ref: "../../../../models/meta-data/theme.yaml"
+                            - $ref: "../../../../models/meta-data/index.yaml"
+                            - $ref: "../../../../models/meta-data/leaf-count.yaml"
+                            - $ref: "../../../../models/meta-data/viewed-leaf-count.yaml"
+                            - $ref: "../../../../models/meta-data/child-count.yaml"
+                            - $ref: "../../../../models/meta-data/season-count.yaml"
+                            - $ref: "../../../../models/meta-data/duration.yaml"
+                            - $ref: "../../../../models/meta-data/originally-available-at.yaml"
+                            - $ref: "../../../../models/meta-data/added-at.yaml"
+                            - $ref: "../../../../models/meta-data/updated-at.yaml"
+                            - $ref: "../../../../models/meta-data/audience-rating-image.yaml"
+                            - $ref: "../../../../models/meta-data/chapter-source.yaml"
+                            - $ref: "../../../../models/meta-data/primary-extra-key.yaml"
+                            - $ref: "../../../../models/meta-data/original-title.yaml"
+                            - $ref: "../../../../models/meta-data/parent-rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/parent-guid.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-guid.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-slug.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-key.yaml"
+                            - $ref: "../../../../models/meta-data/parent-key.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-title.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-thumb.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-theme.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-art.yaml"
+                            - $ref: "../../../../models/meta-data/parent-title.yaml"
+                            - $ref: "../../../../models/meta-data/parent-index.yaml"
+                            - $ref: "../../../../models/meta-data/parent-thumb.yaml"
+                            - $ref: "../../../../models/meta-data/rating-image.yaml"
+                            - $ref: "../../../../models/meta-data/view-count.yaml"
+                            - $ref: "../../../../models/meta-data/view-offset.yaml"
+                            - $ref: "../../../../models/meta-data/skip-count.yaml"
+                            - $ref: "../../../../models/meta-data/subtype.yaml"
+                            - $ref: "../../../../models/meta-data/last-rated-at.yaml"
+                            - $ref: "../../../../models/meta-data/created-at-accuracy.yaml"
+                            - $ref: "../../../../models/meta-data/created-at-tz-offset.yaml"
+                            - $ref: "../../../../models/meta-data/last-viewed-at.yaml"
+                            - $ref: "../../../../models/meta-data/user-rating.yaml"
+                            - $ref: "../../../../models/meta-data/objects/image.yaml"
+                            - $ref: "../../../../models/meta-data/objects/ultra-blur-colors.yaml"
+                            - type: object
                               properties:
-                                topLeft:
+                                librarySectionTitle:
                                   type: string
-                                  description: "The top-left color value."
-                                  example: "11333a"
-                                topRight:
+                                  description: "The title of the library section."
+                                  example: "TV Series "
+                                librarySectionID:
+                                  type: integer
+                                  description: "The ID of the library section."
+                                  example: 2
+                                librarySectionKey:
                                   type: string
-                                  description: "The top-right color value."
-                                  example: "1d2721"
-                                bottomRight:
-                                  type: string
-                                  description: "The bottom-right color value."
-                                  example: "5c451d"
-                                bottomLeft:
-                                  type: string
-                                  description: "The bottom-left color value."
-                                  example: "372c10"
-                            Genre:
-                              type: array
-                              description: "An array of genre tags."
-                              items:
-                                type: object
-                                required:
-                                  - id
-                                  - filter
-                                  - tag
-                                properties:
-                                  id:
-                                    type: integer
-                                    description: "The unique genre identifier."
-                                    example: 1057
-                                  filter:
-                                    type: string
-                                    description: "The filter string for the genre."
-                                    example: "genre=1057"
-                                  tag:
-                                    type: string
-                                    description: "The genre name."
-                                    example: "Crime"
-                            Country:
-                              type: array
-                              description: "An array of country tags."
-                              items:
-                                type: object
-                                required:
-                                  - id
-                                  - filter
-                                  - tag
-                                properties:
-                                  id:
-                                    type: integer
-                                    description: "The unique country identifier."
-                                    format: int32
-                                    example: 58591
-                                  filter:
-                                    type: string
-                                    description: "The filter string for the country."
-                                    example: "country=58591"
-                                  tag:
-                                    type: string
-                                    description: "The country name."
-                                    example: "United States of America"
-                            Guid:
-                              x-speakeasy-name-override: Guids
-                              type: array
-                              description: "An array of GUID objects."
-                              items:
-                                type: object
-                                required:
-                                  - id
-                                properties:
-                                  id:
-                                    type: string
-                                    description: "The GUID value."
-                                    example: "imdb://tt3032476"
-                            Rating:
-                              x-speakeasy-name-override: Ratings
-                              type: array
-                              description: "An array of rating objects."
-                              items:
-                                type: object
-                                required:
-                                  - image
-                                  - value
-                                  - type
-                                properties:
-                                  image:
-                                    type: string
-                                    description: "The image or reference for the rating."
-                                    example: "imdb://image.rating"
-                                  value:
-                                    type: number
-                                    format: float
-                                    description: "The rating value."
-                                    example: 9.0
-                                  type:
-                                    type: string
-                                    description: "The type of rating (e.g., audience, critic)."
-                                    example: "audience"
-                            Role:
-                              type: array
-                              description: "An array of Actor roles."
-                              items:
-                                $ref: "../../../../models/meta-data/role.yaml"
-                            Director:
-                              type: array
-                              description: "An array of Director roles."
-                              items:
-                                $ref: "../../../../models/meta-data/role.yaml"
-                            Writer:
-                              type: array
-                              description: "An array of Writer roles."
-                              items:
-                                $ref: "../../../../models/meta-data/role.yaml"
-                            Producer:
-                              type: array
-                              description: "An array of Writer roles."
-                              items:
-                                $ref: "../../../../models/meta-data/role.yaml"
-
-                            Similar:
-                              type: array
-                              description: "An array of similar content objects."
-                              items:
-                                type: object
-                                required:
-                                  - id
-                                  - filter
-                                  - tag
-                                properties:
-                                  id:
-                                    type: integer
-                                    description: "The unique similar item identifier."
-                                    example: 26
-                                  filter:
-                                    type: string
-                                    description: "The filter string for similar items."
-                                    example: "similar=26"
-                                  tag:
-                                    type: string
-                                    description: "The tag or title of the similar content."
-                                    example: "Breaking Bad"
-                            Location:
-                              type: array
-                              description: "An array of location objects."
-                              items:
-                                type: object
-                                required:
-                                  - path
-                                properties:
-                                  path:
-                                    type: string
-                                    description: "The file path for the location."
-                                    example: "/TV Shows/Better Call Saul"
+                                  description: "The key of the library section."
+                                  example: "/library/sections/2"
+                                Media:
+                                  allOf:
+                                    - $ref: "../../../../models/Media-data.yaml"
+                                Genre:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/genre/id.yaml"
+                                      - $ref: "../../../../models/genre/tag.yaml"
+                                      - $ref: "../../../../models/genre/filter.yaml"
+                                Country:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/country/id.yaml"
+                                      - $ref: "../../../../models/country/tag.yaml"
+                                      - $ref: "../../../../models/country/filter.yaml"
+                                Director:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/director/id.yaml"
+                                      - $ref: "../../../../models/director/tag.yaml"
+                                      - $ref: "../../../../models/director/filter.yaml"
+                                      - $ref: "../../../../models/director/tag-key.yaml"
+                                      - $ref: "../../../../models/director/thumb.yaml"
+                                Writer:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/writer/id.yaml"
+                                      - $ref: "../../../../models/writer/tag.yaml"
+                                      - $ref: "../../../../models/writer/filter.yaml"
+                                      - $ref: "../../../../models/writer/thumb.yaml"
+                                      - $ref: "../../../../models/writer/tag-key.yaml"
+                                Producer:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/meta-data/role.yaml"
+                                Role:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/role/id.yaml"
+                                      - $ref: "../../../../models/role/tag.yaml"
+                                      - $ref: "../../../../models/role/role.yaml"
+                                      - $ref: "../../../../models/role/filter.yaml"
+                                      - $ref: "../../../../models/role/tag-key.yaml"
+                                      - $ref: "../../../../models/role/thumb.yaml"
+                                Guid:
+                                  x-speakeasy-name-override: Guids
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: "The GUID value."
+                                        example: "imdb://tt3032476"
+                                Rating:
+                                  x-speakeasy-name-override: Ratings
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - image
+                                      - value
+                                      - type
+                                    properties:
+                                      image:
+                                        type: string
+                                        description: "The image or reference for the rating."
+                                        example: "imdb://image.rating"
+                                      value:
+                                        type: number
+                                        format: float
+                                        description: "The rating value."
+                                        example: 9.0
+                                      type:
+                                        type: string
+                                        description: "The type of rating (e.g., audience, critic)."
+                                        example: "audience"
+                                Similar:
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: "The unique similar item identifier."
+                                        example: 26
+                                      filter:
+                                        type: string
+                                        description: "The filter string for similar items."
+                                        example: "similar=26"
+                                      tag:
+                                        type: string
+                                        description: "The tag or title of the similar content."
+                                        example: "Breaking Bad"
+                                Location:
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - path
+                                    properties:
+                                      path:
+                                        type: string
+                                        description: "The file path for the location."
+                                        example: "/TV Shows/Better Call Saul"
     "400":
       $ref: "../../../../responses/400.yaml"
     "401":
