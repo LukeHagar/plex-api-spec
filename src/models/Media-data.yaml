@@ -180,8 +180,18 @@ items:
                 streamType:
                   type: integer
                   format: int32
-                  description: "Stream type (1=video, 2=audio, 3=subtitle)."
+                  description: |
+                    Stream type:
+                      - 1 = video
+                      - 2 = audio
+                      - 3 = subtitle
+                  enum: [1, 2, 3]
                   example: 1
+                  x-speakeasy-unknown-values: allow
+                  x-speakeasy-enums:
+                    - VIDEO
+                    - AUDIO
+                    - SUBTITLE
                 format:
                   type: string
                   description: "Format of the stream (e.g., srt)."
