@@ -333,7 +333,7 @@ get:
                                       - type: object
                                         properties:
                                           Attributes:
-                                            - $ref: "../../../../models/marker/attributes.yaml"
+                                            $ref: "../../../../models/marker/attributes.yaml"
                                 Extras:
                                   type: object
                                   properties:
