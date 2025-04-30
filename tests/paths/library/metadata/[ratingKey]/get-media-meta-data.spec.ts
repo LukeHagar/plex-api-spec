@@ -3788,7 +3788,7 @@ describe("GET /library/metadata/[RatingKey]/", () => {
         allowSync: true,
         librarySectionID: 2,
         librarySectionTitle: "TV Series ",
-        librarySectionUUID: "c33ef369-636a-4ad7-b5a7-6e384aa87a14",
+        librarySectionUUID: "b611bd29-cd72-4e30-ad86-34d06b7a0153",
         Metadata: [
           {
             ratingKey: "48049",
@@ -5253,6 +5253,7 @@ describe("GET /library/metadata/[RatingKey]/", () => {
 
     validateResponseSpec("/library/metadata/{ratingKey}", "get", 200, response)
   })
+
   it("should validate the 200 response when the response is from Episode", () => {
     const response = {
       MediaContainer: {
@@ -5376,6 +5377,320 @@ describe("GET /library/metadata/[RatingKey]/", () => {
               topRight: "170405",
               bottomRight: "2a174e",
               bottomLeft: "6f5b24"
+            }
+          }
+        ]
+      }
+    }
+
+    validateResponseSpec("/library/metadata/{ratingKey}", "get", 200, response)
+  })
+
+  it("should validate the 200 response when the response is from Episode about to play", () => {
+    // URL: http://192.168.200.95:32400/library/metadata/44547?Accept-Language=en&includeConcerts=1&includeExtras=1&includeOnDeck=1&includePopularLeaves=1&includePreferences=1&includeChapters=1&includeStations=1&includeMarkers=1&includeExternalMedia=1&asyncAugmentMetadata=1&checkFiles=1&X-Plex-Language=en
+
+    const response = {
+      MediaContainer: {
+        size: 1,
+        allowSync: true,
+        identifier: "com.plexapp.plugins.library",
+        librarySectionID: 2,
+        librarySectionTitle: "TV Series ",
+        librarySectionUUID: "b611bd29-cd72-4e30-ad86-34d06b7a0153",
+        mediaTagPrefix: "/system/bundle/media/flags/",
+        mediaTagVersion: 1744189307,
+        Metadata: [
+          {
+            ratingKey: "44547",
+            key: "/library/metadata/44547",
+            parentRatingKey: "44546",
+            grandparentRatingKey: "44545",
+            guid: "com.plexapp.agents.thetvdb://74205/1/1?lang=en",
+            parentGuid: "com.plexapp.agents.thetvdb://74205/1?lang=en",
+            grandparentGuid: "com.plexapp.agents.thetvdb://74205?lang=en",
+            type: "episode",
+            title: "Currahee",
+            grandparentKey: "/library/metadata/44545",
+            parentKey: "/library/metadata/44546",
+            librarySectionTitle: "TV Series ",
+            librarySectionID: 2,
+            librarySectionKey: "/library/sections/2",
+            grandparentTitle: "Band of Brothers",
+            parentTitle: "Season 1",
+            contentRating: "TV-MA",
+            summary:
+              "Easy Company is introduced to Captain Sobel, who has the group undergo hard and unfair training. As a result, Sobel comes into conflict with his men, including Richard Winters, his executive officer. The company is shipped to England to prepare for D-Day. ",
+            index: 1,
+            parentIndex: 1,
+            rating: 8.4,
+            skipCount: 1,
+            year: 2001,
+            thumb: "/library/metadata/44547/thumb/1627400191",
+            art: "/library/metadata/44545/art/1627399570",
+            grandparentThumb: "/library/metadata/44545/thumb/1627399570",
+            grandparentArt: "/library/metadata/44545/art/1627399570",
+            duration: 4393389,
+            originallyAvailableAt: "2001-09-09",
+            addedAt: 1627399550,
+            updatedAt: 1627400191,
+            chapterSource: "media",
+            Media: [
+              {
+                id: 46883,
+                duration: 4393389,
+                bitrate: 39770,
+                width: 1920,
+                height: 1080,
+                aspectRatio: 1.78,
+                audioChannels: 6,
+                audioCodec: "dca-ma",
+                videoCodec: "h264",
+                videoResolution: "1080",
+                container: "mkv",
+                videoFrameRate: "24p",
+                audioProfile: "ma",
+                videoProfile: "high",
+                hasVoiceActivity: false,
+                Part: [
+                  {
+                    accessible: true,
+                    exists: true,
+                    id: 76226,
+                    key: "/library/parts/76226/1518019646/file.mkv",
+                    duration: 4393389,
+                    file: "/TV Shows/Band of Brothers/Season 01/Band of Brothers - S01E01 - Currahee Bluray-1080p Remux.mkv",
+                    size: 21840734461,
+                    audioProfile: "ma",
+                    container: "mkv",
+                    indexes: "sd",
+                    videoProfile: "high",
+                    Stream: [
+                      {
+                        id: 216275,
+                        streamType: 1,
+                        codec: "h264",
+                        index: 2,
+                        bitrate: 38234,
+                        bitDepth: 8,
+                        chromaLocation: "left",
+                        chromaSubsampling: "4:2:0",
+                        codedHeight: 1088,
+                        codedWidth: 1920,
+                        colorPrimaries: "bt709",
+                        colorRange: "tv",
+                        colorSpace: "bt709",
+                        colorTrc: "bt709",
+                        frameRate: 23.976,
+                        hasScalingMatrix: false,
+                        height: 1080,
+                        level: 41,
+                        profile: "high",
+                        refFrames: 4,
+                        scanType: "progressive",
+                        width: 1920,
+                        displayTitle: "1080p (H.264)",
+                        extendedDisplayTitle: "1080p (H.264)"
+                      },
+                      {
+                        id: 216273,
+                        streamType: 2,
+                        selected: true,
+                        default: true,
+                        codec: "dca",
+                        index: 0,
+                        channels: 6,
+                        bitrate: 1536,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        audioChannelLayout: "5.1(side)",
+                        bitDepth: 16,
+                        profile: "ma",
+                        samplingRate: 48000,
+                        displayTitle: "English (DTS-HD MA 5.1)",
+                        extendedDisplayTitle: "English (DTS-HD MA 5.1)"
+                      },
+                      {
+                        id: 216274,
+                        streamType: 3,
+                        canAutoSync: false,
+                        codec: "pgs",
+                        index: 1,
+                        bitrate: 12,
+                        language: "English",
+                        languageTag: "en",
+                        languageCode: "eng",
+                        headerCompression: true,
+                        displayTitle: "English (PGS)",
+                        extendedDisplayTitle: "English (PGS)"
+                      },
+                      {
+                        id: 216389,
+                        key: "/library/streams/216389",
+                        streamType: 3,
+                        canAutoSync: false,
+                        codec: "srt",
+                        language: "Portuguese",
+                        languageTag: "pt",
+                        languageCode: "por",
+                        format: "srt",
+                        displayTitle: "Portuguese (SRT External)",
+                        extendedDisplayTitle: "Portuguese (SRT External)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            Image: [
+              {
+                alt: "Currahee",
+                type: "coverPoster",
+                url: "/library/metadata/44545/thumb/1627399570"
+              },
+              {
+                alt: "Currahee",
+                type: "snapshot",
+                url: "/library/metadata/44547/thumb/1627400191"
+              },
+              {
+                alt: "Currahee",
+                type: "background",
+                url: "/library/metadata/44545/art/1627399570"
+              }
+            ],
+            UltraBlurColors: {
+              topLeft: "231003",
+              topRight: "180903",
+              bottomRight: "241406",
+              bottomLeft: "38210d"
+            },
+            Writer: [
+              {
+                id: 85341,
+                filter: "writer=85341",
+                tag: "Erik Jendreson"
+              },
+              {
+                id: 85342,
+                filter: "writer=85342",
+                tag: "Tom Hanks"
+              }
+            ],
+            Chapter: [
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 1,
+                startTimeOffset: 0,
+                endTimeOffset: 100100,
+                thumb: "/library/media/46883/chapterImages/1"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 2,
+                startTimeOffset: 100100,
+                endTimeOffset: 243743,
+                thumb: "/library/media/46883/chapterImages/2"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 3,
+                startTimeOffset: 243743,
+                endTimeOffset: 505505,
+                thumb: "/library/media/46883/chapterImages/3"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 4,
+                startTimeOffset: 505505,
+                endTimeOffset: 1423630,
+                thumb: "/library/media/46883/chapterImages/4"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 5,
+                startTimeOffset: 1423630,
+                endTimeOffset: 1691110,
+                thumb: "/library/media/46883/chapterImages/5"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 6,
+                startTimeOffset: 1691110,
+                endTimeOffset: 2014850,
+                thumb: "/library/media/46883/chapterImages/6"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 7,
+                startTimeOffset: 2014850,
+                endTimeOffset: 2181810,
+                thumb: "/library/media/46883/chapterImages/7"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 8,
+                startTimeOffset: 2181810,
+                endTimeOffset: 3135130,
+                thumb: "/library/media/46883/chapterImages/8"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 9,
+                startTimeOffset: 3135130,
+                endTimeOffset: 3718210,
+                thumb: "/library/media/46883/chapterImages/9"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 10,
+                startTimeOffset: 3718210,
+                endTimeOffset: 4206200,
+                thumb: "/library/media/46883/chapterImages/10"
+              },
+              {
+                id: 4,
+                filter: "thumb=4",
+                index: 11,
+                startTimeOffset: 4206200,
+                endTimeOffset: 4393390,
+                thumb: "/library/media/46883/chapterImages/11"
+              }
+            ],
+            Marker: [
+              {
+                final: true,
+                id: 306970,
+                type: "credits",
+                startTimeOffset: 4176050,
+                endTimeOffset: 4393389,
+                Attributes: {
+                  id: 306970,
+                  version: 4
+                }
+              },
+              {
+                id: 306970,
+                type: "intro",
+                startTimeOffset: 96192,
+                endTimeOffset: 240386,
+                Attributes: {
+                  id: 306970
+                }
+              }
+            ],
+            Extras: {
+              size: 0
             }
           }
         ]

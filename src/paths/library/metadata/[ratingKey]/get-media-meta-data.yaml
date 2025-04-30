@@ -189,20 +189,11 @@ get:
                             - $ref: "../../../../models/meta-data/user-rating.yaml"
                             - $ref: "../../../../models/meta-data/objects/image.yaml"
                             - $ref: "../../../../models/meta-data/objects/ultra-blur-colors.yaml"
+                            - $ref: "../../../../models/meta-data/library-section-id.yaml"
+                            - $ref: "../../../../models/meta-data/library-section-title.yaml"
+                            - $ref: "../../../../models/meta-data/library-section-key.yaml"
                             - type: object
                               properties:
-                                librarySectionTitle:
-                                  type: string
-                                  description: "The title of the library section."
-                                  example: "TV Series "
-                                librarySectionID:
-                                  type: integer
-                                  description: "The ID of the library section."
-                                  example: 2
-                                librarySectionKey:
-                                  type: string
-                                  description: "The key of the library section."
-                                  example: "/library/sections/2"
                                 Media:
                                   allOf:
                                     - $ref: "../../../../models/Media-data.yaml"
