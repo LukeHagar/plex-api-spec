@@ -3,8 +3,16 @@ required:
   - hidden
 properties:
   hidden:
-    allOf:
-      - $ref: "../common/PlexBoolean.yaml"
-      - type: integer
-        format: int32
-        description: UNKNOWN
+    type: integer
+    format: int32
+    enum:
+      - 0
+      - 1
+      - 2
+    example: 1
+    default: 0
+    x-speakeasy-enums:
+      - VISIBLE
+      - EXCLUDE_HOME_SCREEN
+      - EXCLUDE_HOME_SCREEN_AND_GLOBAL_SEARCH
+    description: The Plex library visibility setting
