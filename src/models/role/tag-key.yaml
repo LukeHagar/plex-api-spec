@@ -1,6 +1,11 @@
 type: object
+required:
+  - tagKey
 properties:
   tagKey:
-    description: "A unique key associated with the actor's tag, used for internal identification."
+    description: |
+      A 24-character hexadecimal unique key associated with the actor's tag, used for internal identification.
+      NOTE: This is globally unique across all Plex Servers.
     type: string
+    pattern: "^[a-fA-F0-9]{24}$"
     example: "5d77683d85719b001f3a535e"

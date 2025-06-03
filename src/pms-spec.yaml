@@ -157,26 +157,26 @@ paths:
     $ref: "./paths/library/get-all-libraries.yaml"
 
   /library/sections/{sectionKey}:
-    $ref: "./paths/library/[sectionKey]/library-section.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/library-section.yaml"
 
   # Watchlist
   /library/sections/watchlist/{filter}:
     $ref: "./paths/library/sections/watchlist/get-watch-list.yaml"
 
   /library/sections/{sectionKey}/{tag}:
-    $ref: "./paths/library/[sectionKey]/get-library-items.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/get-library-items.yaml"
   /library/sections/{sectionKey}/all:
-    $ref: "./paths/library/[sectionKey]/get-library-all.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/get-library-sections-all.yaml"
   /library/sections/{sectionKey}/refresh:
-    $ref: "./paths/library/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/refresh/get-refresh-library-metadata.yaml"
   /library/sections/{sectionKey}/search:
-    $ref: "./paths/library/[sectionKey]/get-search-library.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/get-search-library.yaml"
   /library/sections/{sectionKey}/genre:
-    $ref: "./paths/library/[sectionKey]/get-library-genres.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/get-library-genres.yaml"
   /library/sections/{sectionKey}/country:
-    $ref: "./paths/library/[sectionKey]/get-library-countries.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/get-library-countries.yaml"
   /library/sections/{sectionKey}/actor:
-    $ref: "./paths/library/[sectionKey]/get-library-actors.yaml"
+    $ref: "./paths/library/sections/[sectionKey]/get-library-actors.yaml"
 
   /library/search:
     $ref: "./paths/library/get-search-all-libraries.yaml"

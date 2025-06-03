@@ -57,7 +57,7 @@ get:
           - 1
         default: 0
       required: false
-    - $ref: "../../../parameters/library/section-key.yaml"
+    - $ref: "../../../../parameters/library/section-key.yaml"
   responses:
     "200":
       description: The details of the library
@@ -226,9 +226,9 @@ get:
                                 type: string
                                 example: is
     "400":
-      $ref: "../../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"
 
 delete:
   tags:
@@ -237,11 +237,11 @@ delete:
   description: Delete a library using a specific section id
   operationId: deleteLibrary
   parameters:
-    - $ref: "../../../parameters/library/section-key.yaml"
+    - $ref: "../../../../parameters/library/section-key.yaml"
   responses:
     "200":
       description: The library is deleted
     "400":
-      $ref: "../../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"

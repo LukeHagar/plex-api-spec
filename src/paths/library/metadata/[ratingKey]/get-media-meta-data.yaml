@@ -3,15 +3,17 @@ get:
     - Library
   summary: Get Media Metadata
   description: |
-    This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
+    This endpoint will return all the (meta)data of one or more library items specified by the ratingKey.
+    Multiple rating keys can be provided as a comma-separated list (e.g., "21119,21617").
   operationId: get-media-meta-data
   parameters:
     - name: ratingKey
       in: path
-      description: the id of the library item to return the children of.
+      description: The id(s) of the library item(s) to return metadata for. Can be a single ID or comma-separated list of IDs.
       schema:
-        type: integer
-        example: 9518
+        type: string
+        pattern: "^[0-9]+(,[0-9]+)*$"
+        example: "21119,21617"
       required: true
     - name: includeConcerts
       in: query
@@ -192,6 +194,7 @@ get:
                             - $ref: "../../../../models/meta-data/library-section-id.yaml"
                             - $ref: "../../../../models/meta-data/library-section-title.yaml"
                             - $ref: "../../../../models/meta-data/library-section-key.yaml"
+                            - $ref: "../../../../models/meta-data/guid/guid-array.yaml"
                             - type: object
                               properties:
                                 Media:
@@ -244,18 +247,6 @@ get:
                                       - $ref: "../../../../models/role/filter.yaml"
                                       - $ref: "../../../../models/role/tag-key.yaml"
                                       - $ref: "../../../../models/role/thumb.yaml"
-                                Guid:
-                                  x-speakeasy-name-override: Guids
-                                  type: array
-                                  items:
-                                    type: object
-                                    required:
-                                      - id
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: "The GUID value."
-                                        example: "imdb://tt3032476"
                                 Rating:
                                   x-speakeasy-name-override: Ratings
                                   type: array

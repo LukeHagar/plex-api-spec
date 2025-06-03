@@ -112,6 +112,7 @@ get:
                             - $ref: "../../../models/meta-data/year.yaml"
                             - $ref: "../../../models/meta-data/objects/image.yaml"
                             - $ref: "../../../models/meta-data/objects/ultra-blur-colors.yaml"
+                            - $ref: "../../../models/meta-data/guid/guid-array.yaml"
                             - type: object
                               properties:
                                 Media:
@@ -135,7 +136,11 @@ get:
                                   type: array
                                   items:
                                     allOf:
+                                      - $ref: "../../../models/director/id.yaml"
+                                      - $ref: "../../../models/director/filter.yaml"
                                       - $ref: "../../../models/director/tag.yaml"
+                                      - $ref: "../../../models/director/tag-key.yaml"
+                                      - $ref: "../../../models/director/thumb.yaml"
                                 Writer:
                                   type: array
                                   items:
@@ -144,6 +149,7 @@ get:
                                       - $ref: "../../../models/writer/filter.yaml"
                                       - $ref: "../../../models/writer/tag.yaml"
                                       - $ref: "../../../models/writer/tag-key.yaml"
+                                      - $ref: "../../../models/writer/thumb.yaml"
                                 Role:
                                   type: array
                                   items:
@@ -182,17 +188,6 @@ get:
                                   items:
                                     allOf:
                                       - $ref: "../../../models/meta-data/location/path.yaml"
-                                Guid:
-                                  x-speakeasy-name-override: guids
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: |
-                                          The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
-                                        example: tvdb://2337
                                 Collection:
                                   type: array
                                   items:

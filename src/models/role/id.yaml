@@ -3,6 +3,10 @@ required:
   - id
 properties:
   id:
-    description: "Unique identifier for the actor or role."
+    description: |
+      The unique identifier for the role.
+      NOTE: This is different for each Plex server and is not globally unique.
     type: integer
+    format: int32
+    minimum: 1
     example: 126522

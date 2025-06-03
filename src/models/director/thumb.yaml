@@ -1,6 +1,6 @@
 type: object
 properties:
   thumb:
-    description: "The URL of the thumbnail image for the director."
+    description: "The absolute URL of the thumbnail image for the director."
     type: string
     example: "https://metadata-static.plex.tv/8/people/8d65fa96804802e08f2de09fe014408e.jpg"

@@ -1,9 +1,12 @@
 type: object
 required:
   - id
-description: "The identifier for the country"
 properties:
   id:
+    description: |
+      The unique identifier for the country.
+      NOTE: This is different for each Plex server and is not globally unique.
     type: integer
     format: int32
+    minimum: 1
     example: 259
