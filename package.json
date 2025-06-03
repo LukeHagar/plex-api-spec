@@ -18,7 +18,7 @@
     "preview-docs": "redocly preview-docs src/pms-spec.yaml --config=./redocly.yaml",
     "stats": "redocly stats ./src/pms-spec.yaml",
     "build": "bun run build-referenced & bun run build-dereferenced & wait",
-    "build-referenced": "redocly bundle ./src/pms-spec.yaml --ext yaml -o ./output/plex-media-server-spec-referenced.yaml",
+    "build-referenced": "redocly bundle ./src/pms-spec.yaml --config ./redocly.yaml  --ext yaml -o ./output/plex-media-server-spec-referenced.yaml",
     "build-dereferenced": "swagger-cli bundle --dereference ./src/pms-spec.yaml -t yaml -o ./output/plex-media-server-spec-dereferenced.yaml",
     "build-watch": "bun run build && chokidar './src/**/*' -c 'bun run build'",
     "test": "bun run build && vitest --run",
