@@ -4,8 +4,8 @@ required:
 properties:
   id:
     description: |
-      The unique identifier for the genre. 
-      NOTE: This is different for each Plex server and is not globally unique
+      The unique identifier for the genre.
+      NOTE: This is different for each Plex server and is not globally unique.
     type: integer
     format: int32
     minimum: 1
