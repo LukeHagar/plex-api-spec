@@ -1,7 +1,7 @@
 get:
   tags:
     - Library
-  summary: Get all media of library
+  summary: Get Library section media by tag ALL
   operationId: get-library-sections-all
   description: |
     Retrieves a list of all general media data for this library.
