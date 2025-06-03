@@ -4,7 +4,7 @@ required:
 properties:
   id:
     description: |
-      The unique identifier for the country. 
+      The unique identifier for the country.
       NOTE: This is different for each Plex server and is not globally unique.
     type: integer
     format: int32
