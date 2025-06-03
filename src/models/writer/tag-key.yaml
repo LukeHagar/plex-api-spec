@@ -1,7 +1,7 @@
 type: object
 properties:
   tagKey:
-    description: "A 24-character hexadecimal unique key associated with the writers tag, used for internal identification."
+    description: "A 24-character hexadecimal unique key associated with the writer’s tag, used for internal identification."
     type: string
     pattern: "^[a-fA-F0-9]{24}$"
     example: "5d77683d85719b001f3a535e"
