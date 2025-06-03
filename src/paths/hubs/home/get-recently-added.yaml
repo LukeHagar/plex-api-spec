@@ -135,7 +135,11 @@ get:
                                   type: array
                                   items:
                                     allOf:
+                                      - $ref: "../../../models/director/id.yaml"
+                                      - $ref: "../../../models/director/filter.yaml"
                                       - $ref: "../../../models/director/tag.yaml"
+                                      - $ref: "../../../models/director/tag-key.yaml"
+                                      - $ref: "../../../models/director/thumb.yaml"
                                 Writer:
                                   type: array
                                   items:
@@ -144,6 +148,7 @@ get:
                                       - $ref: "../../../models/writer/filter.yaml"
                                       - $ref: "../../../models/writer/tag.yaml"
                                       - $ref: "../../../models/writer/tag-key.yaml"
+                                      - $ref: "../../../models/writer/thumb.yaml"
                                 Role:
                                   type: array
                                   items:

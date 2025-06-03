@@ -1,6 +1,4 @@
 type: object
-required:
-  - tagKey
 properties:
   tagKey:
     description: "A 24-character hexadecimal unique key associated with the writers tag, used for internal identification."

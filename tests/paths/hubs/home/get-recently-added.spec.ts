@@ -9940,2373 +9940,21916 @@ describe("GET /hubs/home/recentlyAdded", () => {
     validateResponseSpec("/hubs/home/recentlyAdded", "get", 200, response)
   })
 
-  it("should validate the 200 response with when the API spec is valid", () => {
+  it("should validate the 200 response when response are episodes", () => {
+    // /hubs/home/recentlyAdded?X-Plex-Language=en&type=2&sectionID=2&contentDirectoryID=2&X-Plex-Client-Identifier=wcna9rylardpxhyvbwa8m9ei&X-Plex-Container-Start=0&X-Plex-Container-Size=50&
     const response = {
-      MediaContainer: {
-        size: 20,
-        totalSize: 446,
-        offset: 0,
-        allowSync: true,
-        identifier: "com.plexapp.plugins.library",
-        Metadata: [
+      "MediaContainer": {
+        "size": 50,
+        "totalSize": 50,
+        "offset": 0,
+        "allowSync": true,
+        "identifier": "com.plexapp.plugins.library",
+        "Metadata": [
           {
-            ratingKey: "57301",
-            key: "/library/metadata/57301",
-            guid: "plex://movie/5d9f34ee4441b1001fa0cdff",
-            slug: "taxi-3",
-            studio: "EuropaCorp",
-            type: "movie",
-            title: "Taxi 3",
-            librarySectionTitle: "Movies",
-            librarySectionID: 1,
-            librarySectionKey: "/library/sections/1",
-            contentRating: "nl/12",
-            summary:
-              "A gang of thieves calling themselves the Santa Claus Gang are wreaking havoc, and the police can't keep up. Police Captain Gilbert is distracted by a Chinese reporter writing a story on his squad, and taxi driver Daniel is in the midst of a relationship crisis. After a string of mistakes in which the thieves outsmart the police time and time again, Daniel and his super-taxi pitch in.",
-            audienceRating: 5.1,
-            year: 2003,
-            tagline: "No speed limits the next 90 min.",
-            thumb: "/library/metadata/57301/thumb/1738890244",
-            art: "/library/metadata/57301/art/1738890244",
-            duration: 5237472,
-            originallyAvailableAt: "2003-01-29",
-            addedAt: 1738890239,
-            updatedAt: 1738890244,
-            audienceRatingImage: "rottentomatoes://image.rating.spilled",
-            chapterSource: "media",
-            Media: [
+            "ratingKey": "108858",
+            "key": "/library/metadata/108858",
+            "parentRatingKey": "103105",
+            "grandparentRatingKey": "4698",
+            "guid": "plex://episode/67b8c01b2a9d96fd61ecd975",
+            "parentGuid": "plex://season/67b8c01a2a9d96fd61ecd96f",
+            "grandparentGuid": "plex://show/606ef4be8736e5002c8f5c17",
+            "grandparentSlug": "game-changer",
+            "type": "episode",
+            "title": "Episode 5",
+            "grandparentKey": "/library/metadata/4698",
+            "parentKey": "/library/metadata/103105",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Game Changer",
+            "parentTitle": "Season 7",
+            "summary": "",
+            "index": 5,
+            "parentIndex": 7,
+            "year": 2025,
+            "thumb": "/library/metadata/108858/thumb/1748908722",
+            "art": "/library/metadata/4698/art/1748186936",
+            "parentThumb": "/library/metadata/103105/thumb/1745376038",
+            "grandparentThumb": "/library/metadata/4698/thumb/1748186936",
+            "grandparentArt": "/library/metadata/4698/art/1748186936",
+            "grandparentTheme": "/library/metadata/4698/theme/1748186936",
+            "duration": 2998720,
+            "originallyAvailableAt": "2025-06-02",
+            "addedAt": 1748908720,
+            "updatedAt": 1748908722,
+            "Media": [
               {
-                id: 61627,
-                duration: 5237472,
-                bitrate: 6757,
-                width: 1920,
-                height: 816,
-                aspectRatio: 2.35,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "hevc",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "main 10",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131469,
+                "duration": 2998720,
+                "bitrate": 5251,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92675,
-                    key: "/library/parts/92675/1738856445/file.mkv",
-                    duration: 5237472,
-                    file: "/Movies/Taxi 3 (2003)/Taxi 3 (2003) WEBDL-1080p.mkv",
-                    size: 4425021280,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "main 10"
+                    "id": 448505,
+                    "key": "/library/parts/448505/1748908403/file.mkv",
+                    "duration": 2998720,
+                    "file": "/data/Media/Tv Shows/Game Changer/Season 07/Game Changer (2019) - S07E05 - TBA [WEBDL-1080p][AAC 2.0][x264]-MuTT.mkv",
+                    "size": 1969307188,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1043515,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 5061,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 50,
+                        "original": true,
+                        "profile": "high",
+                        "refFrames": 5,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1043516,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 189,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "original": true,
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1043517,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "original": true,
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1043518,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Taxi 3",
-                type: "coverPoster",
-                url: "/library/metadata/57301/thumb/1738890244"
+                "alt": "Episode 5",
+                "type": "coverPoster",
+                "url": "/library/metadata/4698/thumb/1748186936"
               },
               {
-                alt: "Taxi 3",
-                type: "background",
-                url: "/library/metadata/57301/art/1738890244"
+                "alt": "Episode 5",
+                "type": "snapshot",
+                "url": "/library/metadata/108858/thumb/1748908722"
               },
               {
-                alt: "Taxi 3",
-                type: "clearLogo",
-                url: "/library/metadata/57301/clearLogo/1738890244"
+                "alt": "Episode 5",
+                "type": "background",
+                "url": "/library/metadata/4698/art/1748186936"
+              },
+              {
+                "alt": "Episode 5",
+                "type": "clearLogo",
+                "url": "/library/metadata/4698/clearLogo/1748186936"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "1e2a56",
-              topRight: "9d371c",
-              bottomRight: "7c481d",
-              bottomLeft: "252454"
+            "UltraBlurColors": {
+              "topLeft": "0e3439",
+              "topRight": "2c6967",
+              "bottomRight": "256871",
+              "bottomLeft": "226a69"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Action"
-              },
-              {
-                tag: "Comedy"
+                "id": "tmdb://5995159"
               }
             ],
-            Country: [
+            "Role": [
               {
-                tag: "France"
-              }
-            ],
-            Director: [
-              {
-                tag: "Gérard Krawczyk"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Luc Besson"
-              }
-            ],
-            Role: [
-              {
-                tag: "Samy Naceri"
-              },
-              {
-                tag: "Frédéric Diefenthal"
-              },
-              {
-                tag: "Bernard Farcy"
+                "id": 20075,
+                "filter": "actor=20075",
+                "tag": "Sam Reich",
+                "tagKey": "5d7769a2f617c900201628a0",
+                "role": "Self - Host",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e2c891b3cedad0ed91929e7ed98bfc5.jpg"
               }
             ]
           },
           {
-            ratingKey: "57244",
-            key: "/library/metadata/57244",
-            guid: "plex://movie/5d776c7096b655001fe30a64",
-            slug: "what-the-health",
-            studio: "Spark Media",
-            type: "movie",
-            title: "What the Health",
-            librarySectionTitle: "Movies (Documentaries)",
-            librarySectionID: 6,
-            librarySectionKey: "/library/sections/6",
-            contentRating: "nl/9",
-            summary:
-              "An intrepid filmmaker on a journey of discovery as he uncovers possibly the largest health secret of our time and the collusion between industry, government, pharmaceutical and health organizations keeping this information from us.",
-            audienceRating: 6.2,
-            year: 2017,
-            tagline:
-              "The health film that health organizations don't want you to see.",
-            thumb: "/library/metadata/57244/thumb/1738421415",
-            art: "/library/metadata/57244/art/1738421415",
-            duration: 5520416,
-            originallyAvailableAt: "2017-10-04",
-            addedAt: 1738421406,
-            updatedAt: 1738421415,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            Media: [
+            "ratingKey": "2066",
+            "key": "/library/metadata/2066/children",
+            "guid": "plex://show/5d9c0863ef619b002047f234",
+            "slug": "black-mirror",
+            "studio": "House of Tomorrow",
+            "type": "show",
+            "title": "Black Mirror",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-MA",
+            "summary": "Featuring stand-alone dramas -- sharp, suspenseful, satirical tales that explore techno-paranoia -- \"Black Mirror\" is a contemporary reworking of \"The Twilight Zone\" with stories that tap into the collective unease about the modern world.",
+            "index": 1,
+            "audienceRating": 8.3,
+            "year": 2011,
+            "tagline": ">> The future is bright./ (season 3)",
+            "thumb": "/library/metadata/2066/thumb/1747377866",
+            "art": "/library/metadata/2066/art/1747377866",
+            "theme": "/library/metadata/2066/theme/1747377866",
+            "duration": 3600000,
+            "originallyAvailableAt": "2011-12-04",
+            "leafCount": 32,
+            "viewedLeafCount": 6,
+            "childCount": 7,
+            "addedAt": 1748722272,
+            "updatedAt": 1747377866,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "primaryExtraKey": "/library/metadata/2089",
+            "Image": [
               {
-                id: 61538,
-                duration: 5520416,
-                bitrate: 23761,
-                width: 3840,
-                height: 1640,
-                aspectRatio: 2.35,
-                audioChannels: 2,
-                audioCodec: "eac3",
-                videoCodec: "h264",
-                videoResolution: "4k",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
-                  {
-                    id: 92586,
-                    key: "/library/parts/92586/1738421487/file.mkv",
-                    duration: 5520416,
-                    file: "/Movies (Documentaries)/What the Health/What the Health (2017) [WEBRip-2160p x264 8-bit EAC3 2.0]-TrollUHD.mkv",
-                    size: 16399586602,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
-                  }
-                ]
-              }
-            ],
-            Image: [
-              {
-                alt: "What the Health",
-                type: "coverPoster",
-                url: "/library/metadata/57244/thumb/1738421415"
+                "alt": "Black Mirror",
+                "type": "coverPoster",
+                "url": "/library/metadata/2066/thumb/1747377866"
               },
               {
-                alt: "What the Health",
-                type: "background",
-                url: "/library/metadata/57244/art/1738421415"
+                "alt": "Black Mirror",
+                "type": "background",
+                "url": "/library/metadata/2066/art/1747377866"
               },
               {
-                alt: "What the Health",
-                type: "clearLogo",
-                url: "/library/metadata/57244/clearLogo/1738421415"
+                "alt": "Black Mirror",
+                "type": "clearLogo",
+                "url": "/library/metadata/2066/clearLogo/1747377866"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "580c10",
-              topRight: "ae150b",
-              bottomRight: "1d6c5f",
-              bottomLeft: "a32e26"
+            "UltraBlurColors": {
+              "topLeft": "29235d",
+              "topRight": "9e3521",
+              "bottomRight": "99237d",
+              "bottomLeft": "382c68"
             },
-            Genre: [
+            "Genre": [
               {
-                tag: "Documentary"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Kip Andersen"
+                "id": 161,
+                "filter": "genre=161",
+                "tag": "Drama"
               },
               {
-                tag: "Keegan Kuhn"
+                "id": 683,
+                "filter": "genre=683",
+                "tag": "Mystery"
+              },
+              {
+                "id": 597,
+                "filter": "genre=597",
+                "tag": "Crime"
+              },
+              {
+                "id": 449,
+                "filter": "genre=449",
+                "tag": "Science Fiction"
+              },
+              {
+                "id": 92,
+                "filter": "genre=92",
+                "tag": "Thriller"
+              },
+              {
+                "id": 5785,
+                "filter": "genre=5785",
+                "tag": "Sci-Fi & Fantasy"
               }
             ],
-            Writer: [
+            "Country": [
               {
-                tag: "Kip Andersen"
-              },
-              {
-                tag: "Keegan Kuhn"
+                "id": 227,
+                "filter": "country=227",
+                "tag": "United Kingdom"
               }
             ],
-            Role: [
+            "Guid": [
               {
-                tag: "Kip Andersen"
+                "id": "imdb://tt2085059"
               },
               {
-                tag: "Larry Baldwin"
+                "id": "tmdb://42009"
               },
               {
-                tag: "Neal Barnard"
+                "id": "tvdb://253463"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.7,
+                "type": "audience"
+              },
+              {
+                "image": "rottentomatoes://image.rating.ripe",
+                "value": 8.3,
+                "type": "critic"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 8.0,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 8.3,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 11077,
+                "filter": "actor=11077",
+                "tag": "Jesse Plemons",
+                "tagKey": "5d77683c6f4521001ea9d771",
+                "role": "Robert Daly",
+                "thumb": "https://metadata-static.plex.tv/4/people/4779ba40c825b8f37f19a60b5318bc3d.jpg"
+              },
+              {
+                "id": 11079,
+                "filter": "actor=11079",
+                "tag": "Cristin Milioti",
+                "tagKey": "5d7768903ab0e7001f5044d8",
+                "role": "Nanette Cole",
+                "thumb": "https://metadata-static.plex.tv/2/people/2c460568526f1add80affda2ccb00221.jpg"
+              },
+              {
+                "id": 3601,
+                "filter": "actor=3601",
+                "tag": "Jimmi Simpson",
+                "tagKey": "5d776826999c64001ec2c5d3",
+                "role": "Walton",
+                "thumb": "https://metadata-static.plex.tv/f/people/f7e0fe1f87f164c6aee795f8a1586351.jpg"
+              },
+              {
+                "id": 11088,
+                "filter": "actor=11088",
+                "tag": "Milanka Brooks",
+                "tagKey": "5d776b927a53e9001e729c80",
+                "role": "Elena Tulaska",
+                "thumb": "https://metadata-static.plex.tv/5/people/54ab395a838e8b170d125c912f3fc5e1.jpg"
+              },
+              {
+                "id": 11089,
+                "filter": "actor=11089",
+                "tag": "Osy Ikhile",
+                "tagKey": "5d7769f87a53e9001e6f638a",
+                "role": "Nate Packer",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3484b16480c72bb110e272bf8af76bf.jpg"
+              },
+              {
+                "id": 11113,
+                "filter": "actor=11113",
+                "tag": "Paul G. Raymond",
+                "tagKey": "5dd879e08b72d8001d336cc1",
+                "role": "Kabir Dudani",
+                "thumb": "https://metadata-static.plex.tv/5/people/50b910dd56bebefdee8bc436176cc140.jpg"
+              },
+              {
+                "id": 11028,
+                "filter": "actor=11028",
+                "tag": "Monica Dolan",
+                "tagKey": "5d776852594b2b001e6887d7",
+                "role": "Janet McCardle",
+                "thumb": "https://metadata-static.plex.tv/3/people/344e40ffb8301a931249ff5a7f248532.jpg"
+              },
+              {
+                "id": 8728,
+                "filter": "actor=8728",
+                "tag": "Joshua James",
+                "tagKey": "5d7769fd594b2b001e6afefd",
+                "role": "Chris Holligan",
+                "thumb": "https://metadata-static.plex.tv/6/people/6b4920526d137ac355bde04e75e110b4.jpg"
+              },
+              {
+                "id": 11029,
+                "filter": "actor=11029",
+                "tag": "Daniel Lapaine",
+                "tagKey": "5d77682661141d001fb13404",
+                "role": "Dawson",
+                "thumb": "https://metadata-static.plex.tv/5/people/5c9ea16d66f25be8454c1dfa0fbff566.jpg"
+              },
+              {
+                "id": 2634,
+                "filter": "actor=2634",
+                "tag": "Michaela Coel",
+                "tagKey": "5d7769b396b655001fdd6fe9",
+                "role": "Airline Stewardess",
+                "thumb": "https://metadata-static.plex.tv/6/people/65a4b3aefd435f81e8397ee23e939115.jpg"
+              },
+              {
+                "id": 11030,
+                "filter": "actor=11030",
+                "tag": "Anjana Vasan",
+                "tagKey": "5d7769c1ad5437001f7671a8",
+                "role": "Nida Huq",
+                "thumb": "https://metadata-static.plex.tv/b/people/b9d69e41563d2aff7874bc18bf6b3f6d.jpg"
+              },
+              {
+                "id": 11031,
+                "filter": "actor=11031",
+                "tag": "Kenneth Collard",
+                "tagKey": "5d7768646f4521001eaa4fbb",
+                "role": "Jim",
+                "thumb": "https://metadata-static.plex.tv/e/people/e686debc204fe5361f08665b0d172985.jpg"
+              },
+              {
+                "id": 11032,
+                "filter": "actor=11032",
+                "tag": "Hannah John-Kamen",
+                "tagKey": "5d7769a9594b2b001e6a6c2a",
+                "role": "Sonja",
+                "thumb": "https://metadata-static.plex.tv/iva/person/299309/2a49b2c2ce68bd88aff779a3e401ea69.jpg"
+              },
+              {
+                "id": 10213,
+                "filter": "actor=10213",
+                "tag": "Aaron Paul",
+                "tagKey": "5d7768277228e5001f1dd058",
+                "role": "Gamer691 (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/b840eaf475cc59bd53a33aac7795b9c5.jpg"
+              },
+              {
+                "id": 11086,
+                "filter": "actor=11086",
+                "tag": "Billy Magnussen",
+                "tagKey": "5d77686ffb0d55001f5100fc",
+                "role": "Baldak",
+                "thumb": "https://metadata-static.plex.tv/1/people/1c2c343ce25a0eaefdac5bc1d520a533.jpg"
+              },
+              {
+                "id": 11033,
+                "filter": "actor=11033",
+                "tag": "Wunmi Mosaku",
+                "tagKey": "5d776881d11dd30020226f6e",
+                "role": "Katie",
+                "thumb": "https://metadata-static.plex.tv/5/people/52205759b7e3d4fab1c3a4f0a056f490.jpg"
+              },
+              {
+                "id": 15515,
+                "filter": "actor=15515",
+                "tag": "Jay Simpson",
+                "tagKey": "5d7768373c3c2a001fbcebb1",
+                "role": "Gordon",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768373c3c2a001fbcebb1.jpg"
+              },
+              {
+                "id": 193541,
+                "filter": "actor=193541",
+                "tag": "Kavé Niku",
+                "tagKey": "5d776f4547dd6e001f7044e9",
+                "role": "Villager",
+                "thumb": "https://metadata-static.plex.tv/5/people/5953c77ba7d598567b1a8a02e90d54bb.jpg"
+              },
+              {
+                "id": 193605,
+                "filter": "actor=193605",
+                "tag": "Tessa Wong",
+                "tagKey": "611e11d172fd9e002c17af82",
+                "role": "Crystal",
+                "thumb": "https://metadata-static.plex.tv/4/people/47d5d1c567b06f7f2669c96f54148bdc.jpg"
+              },
+              {
+                "id": 193606,
+                "filter": "actor=193606",
+                "tag": "Danielle Vitalis",
+                "tagKey": "5d77689f431c830024c110ea",
+                "role": "Mika",
+                "thumb": "https://metadata-static.plex.tv/5/people/5d13abe265e40eb9e5896c7631305861.jpg"
+              },
+              {
+                "id": 266959,
+                "filter": "actor=266959",
+                "tag": "Rebecca Ozer",
+                "tagKey": "649589e3c7495d4f09ad807b",
+                "role": "Ayla"
+              },
+              {
+                "id": 40947,
+                "filter": "actor=40947",
+                "tag": "Hayley Atwell",
+                "tagKey": "5d77682a103a2d001f56543b",
+                "role": "Martha Starmer",
+                "thumb": "https://metadata-static.plex.tv/b/people/b5b0bae6f18174fb1dbec49086ceec03.jpg"
+              },
+              {
+                "id": 101879,
+                "filter": "actor=101879",
+                "tag": "Domhnall Gleeson",
+                "tagKey": "5d776838151a60001f24e9df",
+                "role": "Ash Starmer",
+                "thumb": "https://metadata-static.plex.tv/7/people/757bae4fa83f72b22a9592127e60396f.jpg"
+              },
+              {
+                "id": 59414,
+                "filter": "actor=59414",
+                "tag": "Rory Kinnear",
+                "tagKey": "5d776837880197001ec93b64",
+                "role": "Michael Callow",
+                "thumb": "https://metadata-static.plex.tv/c/people/c30335c9097cc4f17040edef641102b8.jpg"
+              },
+              {
+                "id": 71691,
+                "filter": "actor=71691",
+                "tag": "Lindsay Duncan",
+                "tagKey": "5d77682b961905001eb923d1",
+                "role": "Alex Cairns",
+                "thumb": "https://metadata-static.plex.tv/f/people/f2d9fa03666b850f2c5c8c8ba12d1c72.jpg"
+              },
+              {
+                "id": 15503,
+                "filter": "actor=15503",
+                "tag": "Donald Sumpter",
+                "tagKey": "5d77682b3c3c2a001fbcc103",
+                "role": "Julian Hereford",
+                "thumb": "https://metadata-static.plex.tv/0/people/0614e14cf42fa2a77f53c9369f9ce34f.jpg"
+              },
+              {
+                "id": 8576,
+                "filter": "actor=8576",
+                "tag": "Tom Goodman-Hill",
+                "tagKey": "5d77683254f42c001f8c3e5d",
+                "role": "Tom Blice",
+                "thumb": "https://metadata-static.plex.tv/b/people/bd1c78360d37c62b0d7470f8d03ea875.jpg"
+              },
+              {
+                "id": 28579,
+                "filter": "actor=28579",
+                "tag": "Daniel Kaluuya",
+                "tagKey": "5d77683ce6d55c002040e655",
+                "role": "Bingham 'Bing' Madsen",
+                "thumb": "https://metadata-static.plex.tv/7/people/7b460872dc2bab978840733c652c0434.jpg"
+              },
+              {
+                "id": 193365,
+                "filter": "actor=193365",
+                "tag": "Jessica Brown Findlay",
+                "tagKey": "5d7768b41999bc0020dce84e",
+                "role": "Abi Khan",
+                "thumb": "https://metadata-static.plex.tv/c/people/c76dc43d9642868bf9034b130c38d0a2.jpg"
+              },
+              {
+                "id": 21335,
+                "filter": "actor=21335",
+                "tag": "Rupert Everett",
+                "tagKey": "5d7768253c3c2a001fbcac18",
+                "role": "Judge Hope",
+                "thumb": "https://metadata-static.plex.tv/d/people/d42862a9de6b0305f8ef5bfc7de24584.jpg"
+              },
+              {
+                "id": 117162,
+                "filter": "actor=117162",
+                "tag": "Toby Kebbell",
+                "tagKey": "5d77682b151a60001f24b9f8",
+                "role": "Liam Foxwell",
+                "thumb": "https://metadata-static.plex.tv/6/people/67c3bbd638637003999a76005d9fd468.jpg"
+              },
+              {
+                "id": 193360,
+                "filter": "actor=193360",
+                "tag": "Lenora Crichlow",
+                "tagKey": "5d7768385af944001f1faa2f",
+                "role": "Victoria Skillane",
+                "thumb": "https://metadata-static.plex.tv/1/people/171caf8d1dc016d17a8eb0a928a158f1.jpg"
+              },
+              {
+                "id": 124876,
+                "filter": "actor=124876",
+                "tag": "Michael Smiley",
+                "tagKey": "5d77682a54c0f0001f3022bc",
+                "role": "Baxter",
+                "thumb": "https://metadata-static.plex.tv/3/cc68393fae/people/3fc1a228a901ccd31997e2baed45b772.jpg"
+              },
+              {
+                "id": 136376,
+                "filter": "actor=136376",
+                "tag": "Wyatt Russell",
+                "tagKey": "5d776833961905001eb935cf",
+                "role": "Cooper Redfield",
+                "thumb": "https://metadata-static.plex.tv/9/people/9994082976a1b21ad621e550bfe14ef0.jpg"
+              },
+              {
+                "id": 193388,
+                "filter": "actor=193388",
+                "tag": "Daniel Rigby",
+                "tagKey": "5d7768921999bc0020dc96d5",
+                "role": "Jamie Salter",
+                "thumb": "https://metadata-static.plex.tv/a/people/a0fec1e83d76fb4bf01d006707827246.jpg"
+              },
+              {
+                "id": 86465,
+                "filter": "actor=86465",
+                "tag": "Douglas Hodge",
+                "tagKey": "5d77682deb5d26001f1df202",
+                "role": "Rolo Haynes",
+                "thumb": "https://metadata-static.plex.tv/f/people/f96e1a8832f71c00c989656acf77d135.jpg"
+              },
+              {
+                "id": 11034,
+                "filter": "actor=11034",
+                "tag": "Claire Keelan",
+                "tagKey": "5d7768a5ad5437001f74bf06",
+                "role": "Naomi",
+                "thumb": "https://metadata-static.plex.tv/8/people/8f6a3639d75d94576f0fc2cb9def91e8.jpg"
+              },
+              {
+                "id": 11035,
+                "filter": "actor=11035",
+                "tag": "Sinead Matthews",
+                "tagKey": "5d77682e961905001eb9299e",
+                "role": "Sarah",
+                "thumb": "https://metadata-static.plex.tv/7/people/79b9d5cf1a56b059ac63dd1ee7f7f854.jpg"
+              },
+              {
+                "id": 11036,
+                "filter": "actor=11036",
+                "tag": "Julia Davis",
+                "tagKey": "5d77682585719b001f3a04fa",
+                "role": "Judge Charity",
+                "thumb": "https://metadata-static.plex.tv/3/people/3bb3821859104947efda12a3695cd853.jpg"
+              },
+              {
+                "id": 11037,
+                "filter": "actor=11037",
+                "tag": "Ashley Thomas",
+                "tagKey": "5d776875594b2b001e68cedf",
+                "role": "Judge Wraith",
+                "thumb": "https://metadata-static.plex.tv/c/people/c7e260158f316da763d68a6e717b5d33.jpg"
+              },
+              {
+                "id": 11038,
+                "filter": "actor=11038",
+                "tag": "Alice Eve",
+                "tagKey": "5d776834961905001eb93af5",
+                "role": "Naomi Blestow",
+                "thumb": "https://metadata-static.plex.tv/e/people/edab612361173d56ff22e671bc6b27c0.jpg"
+              },
+              {
+                "id": 3426,
+                "filter": "actor=3426",
+                "tag": "Cherry Jones",
+                "tagKey": "5d7768262ec6b5001f6ba379",
+                "role": "Susan Taylor",
+                "thumb": "https://metadata-static.plex.tv/f/people/f5d1ff318368c1394c9cdc22a142b08f.jpg"
+              },
+              {
+                "id": 11039,
+                "filter": "actor=11039",
+                "tag": "Tuppence Middleton",
+                "tagKey": "5d77684ee870fd001f19dc65",
+                "role": "Jem",
+                "thumb": "https://metadata-static.plex.tv/a/people/a97c15bb19ab739f8341987607b8553e.jpg"
+              },
+              {
+                "id": 11040,
+                "filter": "actor=11040",
+                "tag": "Ian Bonar",
+                "tagKey": "5d77682e8a7581001f12cc3a",
+                "role": "Damien",
+                "thumb": "https://metadata-static.plex.tv/d/people/d34e45461124c082e8479865aa3e97b2.jpg"
+              },
+              {
+                "id": 11041,
+                "filter": "actor=11041",
+                "tag": "Elisabeth Hopper",
+                "tagKey": "5d776b5bf617c900201750b2",
+                "role": "Knife Woman",
+                "thumb": "https://metadata-static.plex.tv/3/people/3880492203cb6e185eb4afdd64c6688c.jpg"
+              },
+              {
+                "id": 11042,
+                "filter": "actor=11042",
+                "tag": "Nick Bartlett",
+                "tagKey": "5d77682a85719b001f3a1615",
+                "role": "Welder Guy",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a85719b001f3a1615.jpg"
+              },
+              {
+                "id": 11043,
+                "filter": "actor=11043",
+                "tag": "Nick Ofield",
+                "tagKey": "5f402793427eeb0041e9885d",
+                "role": "Iain Rannoch",
+                "thumb": "https://metadata-static.plex.tv/d/people/d6b1012868104df9ecbc1b3ca0eec0e2.jpg"
+              },
+              {
+                "id": 8666,
+                "filter": "actor=8666",
+                "tag": "Alex Lawther",
+                "tagKey": "5d7769de96b655001fddc0b3",
+                "role": "Kenny",
+                "thumb": "https://metadata-static.plex.tv/a/people/a4e9db691cb2e90cb1583ba1a2d42888.jpg"
+              },
+              {
+                "id": 11044,
+                "filter": "actor=11044",
+                "tag": "Jerome Flynn",
+                "tagKey": "5d77687c1999bc0020dc6631",
+                "role": "Hector",
+                "thumb": "https://metadata-static.plex.tv/f/people/f25f62a6882bb669b8870959ad46b986.jpg"
+              },
+              {
+                "id": 11045,
+                "filter": "actor=11045",
+                "tag": "Susannah Doyle",
+                "tagKey": "5d7768262ec6b5001f6ba25b",
+                "role": "Blackmailed Woman",
+                "thumb": "https://metadata-static.plex.tv/f/people/f077e909458d62d632cc57670b889693.jpg"
+              },
+              {
+                "id": 11046,
+                "filter": "actor=11046",
+                "tag": "Frankie Wilson",
+                "tagKey": "5d776d65f617c90020188a58",
+                "role": "Tom",
+                "thumb": "https://metadata-static.plex.tv/6/people/633383c0ce82e6b45b6ea231ed51319b.jpg"
+              },
+              {
+                "id": 11047,
+                "filter": "actor=11047",
+                "tag": "Jimmy Roye-Dunne",
+                "tagKey": "5e1645d3188587003d051a0e",
+                "role": "Red",
+                "thumb": "https://metadata-static.plex.tv/c/people/c413df7f6c4d903ce50c8880e0d42ca6.jpg"
+              },
+              {
+                "id": 11048,
+                "filter": "actor=11048",
+                "tag": "Hannah Steele",
+                "tagKey": "5d7768921999bc0020dc96d6",
+                "role": "Melissa",
+                "thumb": "https://metadata-static.plex.tv/e/people/e2b87d84a2e9d43af786543f8ffeb817.jpg"
+              },
+              {
+                "id": 11049,
+                "filter": "actor=11049",
+                "tag": "Sarah Beck Mather",
+                "tagKey": "5d7769a87a53e9001e6ec885",
+                "role": "Restaurant Mother",
+                "thumb": "https://metadata-static.plex.tv/8/people/8c97b6aaa416c00f3ffa610504999f5b.jpg"
+              },
+              {
+                "id": 11050,
+                "filter": "actor=11050",
+                "tag": "Malachi Kirby",
+                "tagKey": "5d77697b9ab54400214f26c4",
+                "role": "Stripe",
+                "thumb": "https://metadata-static.plex.tv/4/people/46206729a94d80ba995c9e3eb032102a.jpg"
+              },
+              {
+                "id": 11051,
+                "filter": "actor=11051",
+                "tag": "Madeline Brewer",
+                "tagKey": "5d776c95ad5437001f7c2842",
+                "role": "Raiman",
+                "thumb": "https://metadata-static.plex.tv/7/people/7b401a66273a60a1c3e161aab3cda68f.jpg"
+              },
+              {
+                "id": 11052,
+                "filter": "actor=11052",
+                "tag": "Ariane Labed",
+                "tagKey": "5d7768a223d5a3001f4ef5bd",
+                "role": "Catarina",
+                "thumb": "https://metadata-static.plex.tv/f/people/feaff9c93cbf8d73e0645896b893f8ff.jpg"
+              },
+              {
+                "id": 11053,
+                "filter": "actor=11053",
+                "tag": "Sarah Snook",
+                "tagKey": "5d7768a396b655001fdbda41",
+                "role": "Medina",
+                "thumb": "https://metadata-static.plex.tv/0/people/01a278d1d5970746eb424163e8eadd62.jpg"
+              },
+              {
+                "id": 11054,
+                "filter": "actor=11054",
+                "tag": "Michael Kelly",
+                "tagKey": "5d7768298a7581001f12c1df",
+                "role": "Arquette",
+                "thumb": "https://metadata-static.plex.tv/4/people/4460bf25e13caa01a4b6923504a2ed21.jpg"
+              },
+              {
+                "id": 11055,
+                "filter": "actor=11055",
+                "tag": "Kola Bokinni",
+                "tagKey": "5d776b3a7a53e9001e71ea43",
+                "role": "Lennard",
+                "thumb": "https://metadata-static.plex.tv/c/people/cd459f98ce66a282326fbcc5cabd17a4.jpg"
+              },
+              {
+                "id": 11056,
+                "filter": "actor=11056",
+                "tag": "Francis Magee",
+                "tagKey": "5d77682ff59e580021897fda",
+                "role": "Parn Heidekker",
+                "thumb": "https://metadata-static.plex.tv/b/people/b51dd884cc17259bb7ddd8b2502c09f9.jpg"
+              },
+              {
+                "id": 11057,
+                "filter": "actor=11057",
+                "tag": "Kelly Macdonald",
+                "tagKey": "5d7768276f4521001ea990aa",
+                "role": "Karin Parke",
+                "thumb": "https://metadata-static.plex.tv/d/people/d60e480058f3319db4bdd878f6e1285e.jpg"
+              },
+              {
+                "id": 8642,
+                "filter": "actor=8642",
+                "tag": "Faye Marsay",
+                "tagKey": "5d776a53ad5437001f779fbb",
+                "role": "Blue Colson",
+                "thumb": "https://metadata-static.plex.tv/1/people/17f076a650d3c65046a2960c915b0dfb.jpg"
+              },
+              {
+                "id": 11058,
+                "filter": "actor=11058",
+                "tag": "Benedict Wong",
+                "tagKey": "5d7768296f4521001ea99a08",
+                "role": "Shaun Li",
+                "thumb": "https://metadata-static.plex.tv/7/people/7091ffce5f776a29fd4a6ec0cad0ea42.jpg"
+              },
+              {
+                "id": 11059,
+                "filter": "actor=11059",
+                "tag": "Jonas Karlsson",
+                "tagKey": "5d776830f54112001f5bcd68",
+                "role": "Rasmus Sjolberg",
+                "thumb": "https://metadata-static.plex.tv/b/people/b015d36b289df732ff5bf05a5cd3e78c.jpg"
+              },
+              {
+                "id": 11060,
+                "filter": "actor=11060",
+                "tag": "Joe Armstrong",
+                "tagKey": "5d77690347dd6e001f6c1e9a",
+                "role": "Nick Shelton",
+                "thumb": "https://metadata-static.plex.tv/5/people/5c4f10e1f22d1fd6c73f98a8ef8ad60c.jpg"
+              },
+              {
+                "id": 11061,
+                "filter": "actor=11061",
+                "tag": "Chloe Pirrie",
+                "tagKey": "5d77699f7a53e9001e6eb653",
+                "role": "Gwendolyn Harris",
+                "thumb": "https://metadata-static.plex.tv/c/people/c9228d312d3d4862bcdcba7cef796b1a.jpg"
+              },
+              {
+                "id": 11062,
+                "filter": "actor=11062",
+                "tag": "Jason Flemyng",
+                "tagKey": "5d776826e6d55c002040af5e",
+                "role": "Jack Napier",
+                "thumb": "https://metadata-static.plex.tv/0/people/0bc329e31e172ba9ff228f2c60c3db82.jpg"
+              },
+              {
+                "id": 11063,
+                "filter": "actor=11063",
+                "tag": "Rosemarie DeWitt",
+                "tagKey": "5d7768298a7581001f12c16a",
+                "role": "Marie",
+                "thumb": "https://metadata-static.plex.tv/3/people/3104ffc87021ec978e453f1244141bed.jpg"
+              },
+              {
+                "id": 11064,
+                "filter": "actor=11064",
+                "tag": "Brenna Harding",
+                "tagKey": "5e16364691c2030041210930",
+                "role": "Sara",
+                "thumb": "https://metadata-static.plex.tv/d/people/d2f337eef4b4169a35427d1cc112b314.jpg"
+              },
+              {
+                "id": 11065,
+                "filter": "actor=11065",
+                "tag": "Owen Teague",
+                "tagKey": "5d7769a7ad5437001f763a0e",
+                "role": "Trick",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1134915a8c6195c82385cab25d56669.jpg"
+              },
+              {
+                "id": 11066,
+                "filter": "actor=11066",
+                "tag": "Sarah Abbott",
+                "tagKey": "5d776ba37a53e9001e72ba6c",
+                "role": "Sara age 9",
+                "thumb": "https://metadata-static.plex.tv/people/5d776ba37a53e9001e72ba6c.jpg"
+              },
+              {
+                "id": 11067,
+                "filter": "actor=11067",
+                "tag": "Matt Baram",
+                "tagKey": "5d77685f594b2b001e689fd0",
+                "role": "Dr. Usborne",
+                "thumb": "https://metadata-static.plex.tv/people/5d77685f594b2b001e689fd0.jpg"
+              },
+              {
+                "id": 11068,
+                "filter": "actor=11068",
+                "tag": "Dempsey Bryk",
+                "tagKey": "5d776cd3fb0d55001f592651",
+                "role": "Cal",
+                "thumb": "https://metadata-static.plex.tv/f/people/fff7d67532410c17e332866475d8f8a4.jpg"
+              },
+              {
+                "id": 11069,
+                "filter": "actor=11069",
+                "tag": "Aniya Hodge",
+                "tagKey": "5e1649ab91c20300412253d2",
+                "role": "Sara age 3",
+                "thumb": "https://image.tmdb.org/t/p/original/rG8RoTG7FwGlbMlneoJK0GUc5oU.jpg"
+              },
+              {
+                "id": 11070,
+                "filter": "actor=11070",
+                "tag": "Abby Quinn",
+                "tagKey": "5d776a3796b655001fde6e86",
+                "role": "Meryl",
+                "thumb": "https://metadata-static.plex.tv/c/people/c43557c1be1a1b0822df2600d663b18d.jpg"
+              },
+              {
+                "id": 11071,
+                "filter": "actor=11071",
+                "tag": "Jenny Raven",
+                "tagKey": "5d776bae47dd6e001f6e1e20",
+                "role": "Jasmine",
+                "thumb": "https://metadata-static.plex.tv/8/people/8ea4d7d14eab6be5fbe77ded7219c530.jpg"
+              },
+              {
+                "id": 11072,
+                "filter": "actor=11072",
+                "tag": "Nicky Torchia",
+                "tagKey": "5f402e1603883a0040b4cc97",
+                "role": "Trick age 12",
+                "thumb": "https://metadata-static.plex.tv/4/people/430be8642ec4b34d464e91afa5c5fde0.jpg"
+              },
+              {
+                "id": 11073,
+                "filter": "actor=11073",
+                "tag": "Mckayla Twiggs",
+                "tagKey": "5d7769a296b655001fdd4cc0",
+                "role": "Meryl age 9",
+                "thumb": "https://metadata-static.plex.tv/2/people/2f85d85f0a7ad098421fe8730c902640.jpg"
+              },
+              {
+                "id": 11074,
+                "filter": "actor=11074",
+                "tag": "Maxine Peake",
+                "tagKey": "5d77683a5af944001f1fb242",
+                "role": "Bella",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683a5af944001f1fb242.jpg"
+              },
+              {
+                "id": 11075,
+                "filter": "actor=11075",
+                "tag": "Jake Davies",
+                "tagKey": "5d776a5496b655001fdeb2f9",
+                "role": "Clarke",
+                "thumb": "https://metadata-static.plex.tv/1/people/132b5025bb20d35f25d700bca4a446eb.jpg"
+              },
+              {
+                "id": 11076,
+                "filter": "actor=11076",
+                "tag": "Clint Dyer",
+                "tagKey": "5d776831103a2d001f566d34",
+                "role": "Anthony",
+                "thumb": "https://metadata-static.plex.tv/e/cc68393fae/people/ef720e8b543cdea179657a5321cd85d2.jpg"
+              },
+              {
+                "id": 2626,
+                "filter": "actor=2626",
+                "tag": "Letitia Wright",
+                "tagKey": "5d77698896b655001fdd14d1",
+                "role": "Nish",
+                "thumb": "https://metadata-static.plex.tv/3/people/3989f77a06e24e9f7a63ba229fe6e2d3.jpg"
+              },
+              {
+                "id": 852,
+                "filter": "actor=852",
+                "tag": "Georgina Campbell",
+                "tagKey": "5d776a40ad5437001f77749c",
+                "role": "Amy",
+                "thumb": "https://metadata-static.plex.tv/c/people/c3a4ebd4034ce99ad50e0d78bae4b152.jpg"
+              },
+              {
+                "id": 11078,
+                "filter": "actor=11078",
+                "tag": "Joe Cole",
+                "tagKey": "5d77697b9ab54400214f26c1",
+                "role": "Frank",
+                "thumb": "https://metadata-static.plex.tv/b/people/b86f40ef5d786b9014da9c48f1c2346e.jpg"
+              },
+              {
+                "id": 11080,
+                "filter": "actor=11080",
+                "tag": "Gina Bramhill",
+                "tagKey": "5d7768a0d11dd30020228c20",
+                "role": "Coach (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e02a09c17bffd4e183bae43312253043.jpg"
+              },
+              {
+                "id": 11081,
+                "filter": "actor=11081",
+                "tag": "Andrea Riseborough",
+                "tagKey": "5d7768342ec6b5001f6bbd9c",
+                "role": "Mia Nolan",
+                "thumb": "https://metadata-static.plex.tv/b/people/bac6c41fa949d520af64a5c5035b30e4.jpg"
+              },
+              {
+                "id": 11082,
+                "filter": "actor=11082",
+                "tag": "Kiran Sonia Sawar",
+                "tagKey": "5d776c2f96b655001fe28e50",
+                "role": "Shazia Akhand",
+                "thumb": "https://metadata-static.plex.tv/b/people/b56e773638aca061bec0344f8cbcd319.jpg"
+              },
+              {
+                "id": 11083,
+                "filter": "actor=11083",
+                "tag": "Aldis Hodge",
+                "tagKey": "5d77682aeb5d26001f1de2e5",
+                "role": "Jack",
+                "thumb": "https://metadata-static.plex.tv/e/people/e92d3864673a0042affe488cf68bf20b.jpg"
+              },
+              {
+                "id": 11084,
+                "filter": "actor=11084",
+                "tag": "Andrew Gower",
+                "tagKey": "5d776915fb0d55001f5213d3",
+                "role": "Rob",
+                "thumb": "https://metadata-static.plex.tv/4/people/4ccf8d24fd2bb77010f23561a430799c.jpg"
+              },
+              {
+                "id": 11085,
+                "filter": "actor=11085",
+                "tag": "Alexandra Roach",
+                "tagKey": "5d7768a496b655001fdbdd09",
+                "role": "Carrie",
+                "thumb": "https://image.tmdb.org/t/p/original/qyaUWoAi6RFYEQcnFgrEZ4aWxS7.jpg"
+              },
+              {
+                "id": 11087,
+                "filter": "actor=11087",
+                "tag": "Anthony Welsh",
+                "tagKey": "5d7768b4431c830024c13c33",
+                "role": "Anan Akhand",
+                "thumb": "https://metadata-static.plex.tv/5/people/54bce95b7c85ebd5105d50f0aa3af868.jpg"
+              },
+              {
+                "id": 11090,
+                "filter": "actor=11090",
+                "tag": "Angela Vint",
+                "tagKey": "5d7768348718ba001e31445d",
+                "role": "Anaesthetist",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768348718ba001e31445d.jpg"
+              },
+              {
+                "id": 11091,
+                "filter": "actor=11091",
+                "tag": "Jason Weinberg",
+                "tagKey": "5d9f357e4441b1001fa0f2fc",
+                "role": "Surgeon",
+                "thumb": "https://metadata-static.plex.tv/9/people/9ec95d5e544c73edd26c9d5e5f7ae6b8.jpg"
+              },
+              {
+                "id": 11092,
+                "filter": "actor=11092",
+                "tag": "Nicholas Campbell",
+                "tagKey": "5d776828eb5d26001f1ddcb9",
+                "role": "Russ",
+                "thumb": "https://metadata-static.plex.tv/a/people/a60e450b431df8007110a64c249d90a6.jpg"
+              },
+              {
+                "id": 11093,
+                "filter": "actor=11093",
+                "tag": "Sabryn Rock",
+                "tagKey": "5d7769f551dd69001fe1e1f3",
+                "role": "Pippa",
+                "thumb": "https://metadata-static.plex.tv/c/people/c9dc507a7deaf5630979f998ea97d144.jpg"
+              },
+              {
+                "id": 11094,
+                "filter": "actor=11094",
+                "tag": "Paul Braunstein",
+                "tagKey": "5d7768a0431c830024c113d7",
+                "role": "Anthony",
+                "thumb": "https://metadata-static.plex.tv/f/people/f966867d312d01bc929cd09ce6f85df6.jpg"
+              },
+              {
+                "id": 11095,
+                "filter": "actor=11095",
+                "tag": "Claire Rushbrook",
+                "tagKey": "5d776830961905001eb92fb1",
+                "role": "Police Detective",
+                "thumb": "https://metadata-static.plex.tv/1/people/1d500bb7e11c8d499ee50f3e9570b30f.jpg"
+              },
+              {
+                "id": 11096,
+                "filter": "actor=11096",
+                "tag": "Adelle Leonce",
+                "tagKey": "5e1650b991c203004122d35e",
+                "role": "Noni Harper-Brown",
+                "thumb": "https://metadata-static.plex.tv/9/people/9918d2dd186ec380a0b5823f1f4af869.jpg"
+              },
+              {
+                "id": 11097,
+                "filter": "actor=11097",
+                "tag": "Brian Pettifer",
+                "tagKey": "5d776825151a60001f24a6dc",
+                "role": "William Grange, Dentist",
+                "thumb": "https://metadata-static.plex.tv/7/people/7a97725d47726e2f85ac6341c1dc8bbb.jpg"
+              },
+              {
+                "id": 8599,
+                "filter": "actor=8599",
+                "tag": "Jamie Michie",
+                "tagKey": "5d77684b5af944001f1fe340",
+                "role": "Simon Nolan",
+                "thumb": "https://metadata-static.plex.tv/3/people/3dd4fa884eee0c15c02f469a10d7d95f.jpg"
+              },
+              {
+                "id": 11098,
+                "filter": "actor=11098",
+                "tag": "Armin Karima",
+                "tagKey": "5d776c6ead5437001f7bdd93",
+                "role": "Farshad, Hotel Receptionist",
+                "thumb": "https://metadata-static.plex.tv/b/people/bee65fa7a7f89c5a18264cdb893adbbd.jpg"
+              },
+              {
+                "id": 11099,
+                "filter": "actor=11099",
+                "tag": "Stefán Örn Eggertsson",
+                "tagKey": "5d776d729ab544002151e9ce",
+                "role": "Finn Nolan"
+              },
+              {
+                "id": 11100,
+                "filter": "actor=11100",
+                "tag": "James Eeles",
+                "tagKey": "5d776c45fb0d55001f582954",
+                "role": "DC Lydon",
+                "thumb": "https://metadata-static.plex.tv/0/people/0239e53ef35980fc191d262af427cc35.jpg"
+              },
+              {
+                "id": 11101,
+                "filter": "actor=11101",
+                "tag": "Ólafía Hrönn Jónsdóttir",
+                "tagKey": "5d77683f54c0f0001f304983",
+                "role": "Felicity Carmichael",
+                "thumb": "https://metadata-static.plex.tv/9/people/9040ce2b9b05f009d9c091fbe3697e4f.jpg"
+              },
+              {
+                "id": 11102,
+                "filter": "actor=11102",
+                "tag": "Dilja Imana",
+                "tagKey": "5e1650b91493cd003f0f7afa",
+                "role": "Ali Akhand"
+              },
+              {
+                "id": 11103,
+                "filter": "actor=11103",
+                "tag": "Sigurður Sigurjónsson",
+                "tagKey": "5d77683f880197001ec959dd",
+                "role": "Room Service Man",
+                "thumb": "https://metadata-static.plex.tv/9/people/98fdd005324401a7898e8fa45730bc12.jpg"
+              },
+              {
+                "id": 11104,
+                "filter": "actor=11104",
+                "tag": "George Blagden",
+                "tagKey": "5d7768ca0ea56a001e2aa46c",
+                "role": "Lenny",
+                "thumb": "https://metadata-static.plex.tv/d/people/d07a9751f60657bdd39e428e1d03fdf5.jpg"
+              },
+              {
+                "id": 11105,
+                "filter": "actor=11105",
+                "tag": "Gwyneth Keyworth",
+                "tagKey": "5d7768c10ab2440020072b00",
+                "role": "Nicola",
+                "thumb": "https://metadata-static.plex.tv/2/people/275a28e5669b3b292e98fed39e481558.jpg"
+              },
+              {
+                "id": 11106,
+                "filter": "actor=11106",
+                "tag": "Jessie Cave",
+                "tagKey": "5d7768282e80df001ebdd095",
+                "role": "Edna",
+                "thumb": "https://metadata-static.plex.tv/5/people/574f23f335bbe4c6432ccaad17b3b550.jpg"
+              },
+              {
+                "id": 11107,
+                "filter": "actor=11107",
+                "tag": "Luke Manning",
+                "tagKey": "5e1650b991c203004122d363",
+                "role": "Mike",
+                "thumb": "https://metadata-static.plex.tv/3/people/38b3d3ae5644320b143a6ba99e3d1275.jpg"
+              },
+              {
+                "id": 11108,
+                "filter": "actor=11108",
+                "tag": "Tim Pritchett",
+                "tagKey": "5f400b53fea1a1003f9cee07",
+                "role": "Norman",
+                "thumb": "https://metadata-static.plex.tv/2/people/28e16c378e5627b5d1a17a20799e12f5.jpg"
+              },
+              {
+                "id": 11109,
+                "filter": "actor=11109",
+                "tag": "Alex Tamaro",
+                "tagKey": "5d776e09594b2b001e718b36",
+                "role": "Butch",
+                "thumb": "https://metadata-static.plex.tv/e/people/e3873940999034dbb8e961d41cf947d6.jpg"
+              },
+              {
+                "id": 11110,
+                "filter": "actor=11110",
+                "tag": "Che Watson",
+                "tagKey": "5e1650b9cd0850003b778863",
+                "role": "Silverfox",
+                "thumb": "https://metadata-static.plex.tv/2/people/2a374a77c89e2733ec43f1fae1af5de6.jpg"
+              },
+              {
+                "id": 11111,
+                "filter": "actor=11111",
+                "tag": "Bruce Chong",
+                "tagKey": "5d776b1f96b655001fe05194",
+                "role": "David",
+                "thumb": "https://metadata-static.plex.tv/9/people/959294650f5bd5256fd3b64709dc505d.jpg"
+              },
+              {
+                "id": 11112,
+                "filter": "actor=11112",
+                "tag": "Anna Dobrucki",
+                "tagKey": "5e1650b910faa500400f5555",
+                "role": "Patty",
+                "thumb": "https://metadata-static.plex.tv/7/people/73e8bab79c947dc1a73eb7f0a7093cde.jpg"
+              },
+              {
+                "id": 171,
+                "filter": "actor=171",
+                "tag": "Andrew Scott",
+                "tagKey": "5d7768286f4521001ea9944b",
+                "role": "Chris Gillhaney",
+                "thumb": "https://metadata-static.plex.tv/9/people/9fd24d8757f6ea55c1b2f672c504343a.jpg"
+              },
+              {
+                "id": 11114,
+                "filter": "actor=11114",
+                "tag": "Miley Cyrus",
+                "tagKey": "5d7768273c3c2a001fbcb266",
+                "role": "Ashley O",
+                "thumb": "https://metadata-static.plex.tv/b/people/b542cd63b44e92e2adc6a274c3d24c33.jpg"
+              },
+              {
+                "id": 11115,
+                "filter": "actor=11115",
+                "tag": "Angourie Rice",
+                "tagKey": "5d7768bdad5437001f74ea17",
+                "role": "Rachel",
+                "thumb": "https://metadata-static.plex.tv/c/cc68393fae/people/cd7fc7a38a767a3d415c40c3fee98933.jpg"
+              },
+              {
+                "id": 11116,
+                "filter": "actor=11116",
+                "tag": "Anthony Mackie",
+                "tagKey": "5d776824151a60001f24a321",
+                "role": "Danny",
+                "thumb": "https://metadata-static.plex.tv/0/people/0adee82fb613647af4c344310be99524.jpg"
+              },
+              {
+                "id": 11117,
+                "filter": "actor=11117",
+                "tag": "Yahya Abdul-Mateen II",
+                "tagKey": "5d776b329ab54400215088d4",
+                "role": "Karl",
+                "thumb": "https://metadata-static.plex.tv/0/people/086d44a37b26b880bc1e68d99ed1f12b.jpg"
+              },
+              {
+                "id": 11118,
+                "filter": "actor=11118",
+                "tag": "Nicole Beharie",
+                "tagKey": "5d77689c1999bc0020dcafc2",
+                "role": "Theo",
+                "thumb": "https://metadata-static.plex.tv/8/cc68393fae/people/84a527f5b0edeb5748cd22d6e34f9cb5.jpg"
+              },
+              {
+                "id": 11119,
+                "filter": "actor=11119",
+                "tag": "Pom Klementieff",
+                "tagKey": "5d7768900ea56a001e2a7167",
+                "role": "Roxette",
+                "thumb": "https://metadata-static.plex.tv/0/people/07d7a1f191b357b1b87dc1b8e250f772.jpg"
+              },
+              {
+                "id": 11120,
+                "filter": "actor=11120",
+                "tag": "Ludi Lin",
+                "tagKey": "5d7769bd23d5a3001f4fbb96",
+                "role": "Lance",
+                "thumb": "https://metadata-static.plex.tv/6/people/6ca0840ce02a32b02c23ec6358ec257b.jpg"
+              },
+              {
+                "id": 11121,
+                "filter": "actor=11121",
+                "tag": "Damson Idris",
+                "tagKey": "5d776c437a53e9001e73ea8b",
+                "role": "Jaden Tommins",
+                "thumb": "https://metadata-static.plex.tv/1/people/15908f9f455792961cbde5cdcb95d9db.jpg"
+              },
+              {
+                "id": 11122,
+                "filter": "actor=11122",
+                "tag": "Topher Grace",
+                "tagKey": "5d7768253c3c2a001fbca980",
+                "role": "Billy Bauer",
+                "thumb": "https://metadata-static.plex.tv/8/people/894bc498041522dd422478c12b12b38d.jpg"
+              },
+              {
+                "id": 11123,
+                "filter": "actor=11123",
+                "tag": "Madison Davenport",
+                "tagKey": "5d776832f59e580021898446",
+                "role": "Jack",
+                "thumb": "https://metadata-static.plex.tv/2/people/26cdf51583c9c3f796dd89103127dc64.jpg"
+              },
+              {
+                "id": 11124,
+                "filter": "actor=11124",
+                "tag": "August Muschett",
+                "tagKey": "5f3fc80bbf3e560040b08486",
+                "role": "Tyler"
+              },
+              {
+                "id": 6499,
+                "filter": "actor=6499",
+                "tag": "Susan Pourfar",
+                "tagKey": "5d77683d961905001eb959e4",
+                "role": "Catherine",
+                "thumb": "https://metadata-static.plex.tv/0/people/0b463ea62fd3744b65120d3d5105cf3a.jpg"
+              },
+              {
+                "id": 11125,
+                "filter": "actor=11125",
+                "tag": "Marc Menchaca",
+                "tagKey": "5d776880374a5b001fec75b0",
+                "role": "Kevin",
+                "thumb": "https://metadata-static.plex.tv/2/people/2dd277bebd804f789977c817b52395a6.jpg"
+              },
+              {
+                "id": 11126,
+                "filter": "actor=11126",
+                "tag": "Fola Evans-Akingbola",
+                "tagKey": "5d776e7bfb0d55001f5c2f38",
+                "role": "Mariella",
+                "thumb": "https://metadata-static.plex.tv/1/people/1b3f6268f2d5a50c29c10bb50a704022.jpg"
+              },
+              {
+                "id": 11127,
+                "filter": "actor=11127",
+                "tag": "Elizabeth Berrington",
+                "tagKey": "5d776826151a60001f24aa5b",
+                "role": "Jo Powers",
+                "thumb": "https://metadata-static.plex.tv/4/people/478b0fd6363234122ce378d066ad81f8.jpg"
+              },
+              {
+                "id": 11128,
+                "filter": "actor=11128",
+                "tag": "Annie Murphy",
+                "tagKey": "5d77683e961905001eb95bc6",
+                "role": "Joan / Annie Murphy",
+                "thumb": "https://metadata-static.plex.tv/9/people/9dc78ece091d09a32e918af36367901d.jpg"
+              },
+              {
+                "id": 2808,
+                "filter": "actor=2808",
+                "tag": "Zazie Beetz",
+                "tagKey": "5d776ae9594b2b001e6c9682",
+                "role": "Bo",
+                "thumb": "https://metadata-static.plex.tv/c/people/c6f194be045ce83ae14b27ad9b535bbb.jpg"
+              },
+              {
+                "id": 11129,
+                "filter": "actor=11129",
+                "tag": "Salma Hayek Pinault",
+                "tagKey": "5d7768256f4521001ea9899f",
+                "role": "TV Joan / Salma Hayek Pinault",
+                "thumb": "https://metadata-static.plex.tv/1/people/14409df544fb61ba19f957e2f72123af.jpg"
+              },
+              {
+                "id": 1220,
+                "filter": "actor=1220",
+                "tag": "Michael Cera",
+                "tagKey": "5d77682eeb5d26001f1df59f",
+                "role": "Beppe",
+                "thumb": "https://metadata-static.plex.tv/5/people/59a46eeb480d1d4ce4b288fb7407e85a.jpg"
+              },
+              {
+                "id": 11130,
+                "filter": "actor=11130",
+                "tag": "Samuel Blenkin",
+                "tagKey": "5e165b3acd0850003b783abe",
+                "role": "Davis McCardle",
+                "thumb": "https://metadata-static.plex.tv/d/people/decca1f9fcfc6191b181f4df6d30f052.jpg"
+              },
+              {
+                "id": 11131,
+                "filter": "actor=11131",
+                "tag": "Myha'la",
+                "tagKey": "5ee1b36496eb90003a231edc",
+                "role": "Pia",
+                "thumb": "https://metadata-static.plex.tv/5/people/522ce8aee380673844bc7077796e19aa.jpg"
+              },
+              {
+                "id": 11132,
+                "filter": "actor=11132",
+                "tag": "Daniel Portman",
+                "tagKey": "5d77687aeb5d26001f1ecf2c",
+                "role": "Stuart King",
+                "thumb": "https://metadata-static.plex.tv/4/cc68393fae/people/4e495f0c8acf4cb82c72d3577fdcb602.jpg"
+              },
+              {
+                "id": 11133,
+                "filter": "actor=11133",
+                "tag": "John Hannah",
+                "tagKey": "5d7768274de0ee001fcc89cc",
+                "role": "Richard King",
+                "thumb": "https://metadata-static.plex.tv/e/people/e9e39e589c8fa68aff149ab248b3d46e.jpg"
+              },
+              {
+                "id": 3567,
+                "filter": "actor=3567",
+                "tag": "Kate Mara",
+                "tagKey": "5d776825eb5d26001f1dd12e",
+                "role": "Lana Stanfield",
+                "thumb": "https://metadata-static.plex.tv/3/people/3575824b741a11601979fb13493f38af.jpg"
+              },
+              {
+                "id": 1822,
+                "filter": "actor=1822",
+                "tag": "Josh Hartnett",
+                "tagKey": "5d776826e6d55c002040b008",
+                "role": "David Ross",
+                "thumb": "https://metadata-static.plex.tv/1/people/12b7a02697bdb725d7c48d8c92164c1c.jpg"
+              },
+              {
+                "id": 11134,
+                "filter": "actor=11134",
+                "tag": "Auden Thornton",
+                "tagKey": "5d7768293c3c2a001fbcb9c7",
+                "role": "Jessica Ross",
+                "thumb": "https://metadata-static.plex.tv/c/people/cb1da5a96724b8bc8c5aa51a01e22db2.jpg"
+              },
+              {
+                "id": 11135,
+                "filter": "actor=11135",
+                "tag": "Rory Culkin",
+                "tagKey": "5d77682ceb5d26001f1ded52",
+                "role": "Kappa",
+                "thumb": "https://metadata-static.plex.tv/f/people/f313c7af3537f4a4219960e6be9624e4.jpg"
+              },
+              {
+                "id": 11136,
+                "filter": "actor=11136",
+                "tag": "Clara Rugaard",
+                "tagKey": "5d776a2896b655001fde4da7",
+                "role": "Mazey Day",
+                "thumb": "https://metadata-static.plex.tv/c/people/c2c5ae6117e6e3eefe93a40e36293f3c.jpg"
+              },
+              {
+                "id": 11137,
+                "filter": "actor=11137",
+                "tag": "Danny Ramirez",
+                "tagKey": "5d776be17a53e9001e732aee",
+                "role": "Hector",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e9b6fedc76a5963de05493e76ae8ce9.jpg"
+              },
+              {
+                "id": 11138,
+                "filter": "actor=11138",
+                "tag": "Paapa Essiedu",
+                "tagKey": "5d776ad196b655001fdfa5cb",
+                "role": "Gaap",
+                "thumb": "https://metadata-static.plex.tv/9/people/9f9d81ffb5f7b3c5c1bd7115adf53dba.jpg"
+              },
+              {
+                "id": 11139,
+                "filter": "actor=11139",
+                "tag": "Katherine Rose Morley",
+                "tagKey": "5d776c309ab5440021513dd5",
+                "role": "Vicky",
+                "thumb": "https://metadata-static.plex.tv/people/5d776c309ab5440021513dd5.jpg"
+              },
+              {
+                "id": 11140,
+                "filter": "actor=11140",
+                "tag": "David Shields",
+                "tagKey": "5d776b3c96b655001fe09766",
+                "role": "Michael Smart",
+                "thumb": "https://metadata-static.plex.tv/c/people/c33bb2c097152a6fb1f03ff519898ab7.jpg"
+              },
+              {
+                "id": 11141,
+                "filter": "actor=11141",
+                "tag": "Gregor Firth",
+                "tagKey": "5d77707fb2739400200e8140",
+                "role": "Kenneth McCardle",
+                "thumb": "https://metadata-static.plex.tv/9/people/9646f2fe5cebfc2e2213ac74272ff775.jpg"
+              },
+              {
+                "id": 11142,
+                "filter": "actor=11142",
+                "tag": "Ellie White",
+                "tagKey": "5f33f45a8c5eb10043ac502f",
+                "role": "Kate Cezar",
+                "thumb": "https://metadata-static.plex.tv/7/people/757593c4ba6b0b5e673f52dbd7af5986.jpg"
+              },
+              {
+                "id": 11143,
+                "filter": "actor=11143",
+                "tag": "Tom Crowhurst",
+                "tagKey": "5f406bc7cae2c60042f93b8c",
+                "role": "Iain Adair",
+                "thumb": "https://metadata-static.plex.tv/9/people/93878b5420d9bfe34aba9e87ba7526e0.jpg"
+              },
+              {
+                "id": 11144,
+                "filter": "actor=11144",
+                "tag": "Scott Mooney",
+                "tagKey": "5f3fd6085a76a80042ced630",
+                "role": "Simon Challis",
+                "thumb": "https://metadata-static.plex.tv/5/people/5e9871073568dcce1059e2d226d65cab.jpg"
+              },
+              {
+                "id": 11145,
+                "filter": "actor=11145",
+                "tag": "Beth Robb Adams",
+                "tagKey": "643e5209686511f8528e5f08",
+                "role": "Dawn Challis",
+                "thumb": "https://metadata-static.plex.tv/0/people/0440162840d6f1cfa840a257c77d616c.jpg"
+              },
+              {
+                "id": 11146,
+                "filter": "actor=11146",
+                "tag": "Alisa Gashi",
+                "tagKey": "5f3fd76902101b0040ee1579",
+                "role": "Reconstruction Dawn",
+                "thumb": "https://metadata-static.plex.tv/6/people/689b2c21928cff47738245cf6a9bc918.jpg"
+              },
+              {
+                "id": 11147,
+                "filter": "actor=11147",
+                "tag": "Kirsty Wark",
+                "tagKey": "5d77685f2e80df001ebe2694",
+                "role": "Award Presenter",
+                "thumb": "https://metadata-static.plex.tv/a/people/a7aae903902466b5ff3e2be2355d709d.jpg"
+              },
+              {
+                "id": 11148,
+                "filter": "actor=11148",
+                "tag": "Weruche Opia",
+                "tagKey": "5d776b7996b655001fe127b9",
+                "role": "Actress",
+                "thumb": "https://metadata-static.plex.tv/2/people/2bcbb04bc8cc012c934371113d8b8f4c.jpg"
+              },
+              {
+                "id": 11149,
+                "filter": "actor=11149",
+                "tag": "Laura Cairns",
+                "tagKey": "5f262b90d9f86200402cce17",
+                "role": "Doctor",
+                "thumb": "https://image.tmdb.org/t/p/original/qY8faK79w55SqUH1dNBJyXmq5cw.jpg"
+              },
+              {
+                "id": 11150,
+                "filter": "actor=11150",
+                "tag": "Marcella Whittingdale",
+                "tagKey": "648d6dd9dd1fe982d8f28c3b",
+                "role": "Reporter",
+                "thumb": "https://metadata-static.plex.tv/a/people/ad5928ad65913d7c6363c367b1f930aa.jpg"
+              },
+              {
+                "id": 11151,
+                "filter": "actor=11151",
+                "tag": "Clive Myrie",
+                "tagKey": "5f3ff46ecae2c60042eba5f9",
+                "role": "Clive Myrie",
+                "thumb": "https://metadata-static.plex.tv/3/people/3f0466c466f8cbc99e57fcb10f7bc73e.jpg"
+              },
+              {
+                "id": 11152,
+                "filter": "actor=11152",
+                "tag": "Richard Ayoade",
+                "tagKey": "5d7768545af944001f1ff955",
+                "role": "Richard Ayoade (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/6fe145a593938c6f5f317e52db22e6cc.jpg"
+              },
+              {
+                "id": 11153,
+                "filter": "actor=11153",
+                "tag": "Daniel Bell",
+                "tagKey": "62e7c1f3b62658a525c95ac3",
+                "role": "Henry Stanfield",
+                "thumb": "https://metadata-static.plex.tv/7/people/7e132e9129c013f8c62119352b6b54c6.jpg"
+              },
+              {
+                "id": 11154,
+                "filter": "actor=11154",
+                "tag": "Billie Sturrock Kewish",
+                "tagKey": "648c1d9c785bd6493377ea69",
+                "role": "Lily Ross",
+                "thumb": "https://metadata-static.plex.tv/d/people/dfb0dad9ff2aa7ee6257750f57279d71.jpg"
+              },
+              {
+                "id": 11155,
+                "filter": "actor=11155",
+                "tag": "Charlie Fidelski",
+                "tagKey": "648c4f373cb5daf3c08de06a",
+                "role": "Ricky Ross",
+                "thumb": "https://metadata-static.plex.tv/8/people/8854ad85b57c85fd8f2163ac3e5b31cf.jpg"
+              },
+              {
+                "id": 11156,
+                "filter": "actor=11156",
+                "tag": "Olen Gunn",
+                "tagKey": "5e17c21929246b0040053abc",
+                "role": "Kyle",
+                "thumb": "https://metadata-static.plex.tv/5/people/591a1873576962940769161d41951ce5.jpg"
+              },
+              {
+                "id": 11157,
+                "filter": "actor=11157",
+                "tag": "Lydia Cherry",
+                "tagKey": "5f15984627307d0040674117",
+                "role": "Sally",
+                "thumb": "https://metadata-static.plex.tv/4/people/4ad04d22738c1ef0678f2ca02e10023c.jpg"
+              },
+              {
+                "id": 11158,
+                "filter": "actor=11158",
+                "tag": "Marama Corlett",
+                "tagKey": "5d77690e7a53e9001e6e03a9",
+                "role": "Theta",
+                "thumb": "https://metadata-static.plex.tv/a/people/afdb2ed34d04dac52f62225cb5052cf8.jpg"
+              },
+              {
+                "id": 11159,
+                "filter": "actor=11159",
+                "tag": "Siân Davis",
+                "tagKey": "5f402739bf3e560040b949a8",
+                "role": "Sigma",
+                "thumb": "https://metadata-static.plex.tv/7/people/79aaa2ffb14bc819c78f73bb3ec37b97.jpg"
+              },
+              {
+                "id": 11160,
+                "filter": "actor=11160",
+                "tag": "Ioachim Ciobanu",
+                "tagKey": "5d776c067a53e9001e7373ca",
+                "role": "Epsilon",
+                "thumb": "https://image.tmdb.org/t/p/original/1MNbVDAVGMnUP6TrtqGsQej0r6k.jpg"
+              },
+              {
+                "id": 11161,
+                "filter": "actor=11161",
+                "tag": "Simon Markey",
+                "tagKey": "5d776cb6fb0d55001f590722",
+                "role": "Pastor",
+                "thumb": "https://metadata-static.plex.tv/6/people/64d00683de4ef6d9e74c36b093d8608e.jpg"
+              },
+              {
+                "id": 11162,
+                "filter": "actor=11162",
+                "tag": "Marceline Hugot",
+                "tagKey": "5d7768327e9a3c0020c6c15a",
+                "role": "Bookshop Clerk",
+                "thumb": "https://metadata-static.plex.tv/a/people/a38c0ab48e9cfb83040bcad62abdfde2.jpg"
+              },
+              {
+                "id": 11163,
+                "filter": "actor=11163",
+                "tag": "Robbie Tann",
+                "tagKey": "5d776b4cf617c90020174639",
+                "role": "Whitty",
+                "thumb": "https://metadata-static.plex.tv/8/people/8bb3e936df9dc13fa2165a8fef68e05c.jpg"
+              },
+              {
+                "id": 11164,
+                "filter": "actor=11164",
+                "tag": "James P. Rees",
+                "tagKey": "5e16513dfef2d4003e8b237a",
+                "role": "Duke",
+                "thumb": "https://metadata-static.plex.tv/4/people/4a4c85617da19e1a300eff6f3402635f.jpg"
+              },
+              {
+                "id": 11165,
+                "filter": "actor=11165",
+                "tag": "David Rysdahl",
+                "tagKey": "5d776bac96b655001fe18ddc",
+                "role": "Nathan",
+                "thumb": "https://metadata-static.plex.tv/e/people/ece32ffda81d86e410bbfd687bc17972.jpg"
+              },
+              {
+                "id": 11166,
+                "filter": "actor=11166",
+                "tag": "Jack Bandeira",
+                "tagKey": "5d776f09ad5437001f808d0c",
+                "role": "Terry",
+                "thumb": "https://metadata-static.plex.tv/e/people/e61681592f16162b9f724d8b00909198.jpg"
+              },
+              {
+                "id": 1858,
+                "filter": "actor=1858",
+                "tag": "Corey Johnson",
+                "tagKey": "5d7768274de0ee001fcc89d5",
+                "role": "Clay",
+                "thumb": "https://metadata-static.plex.tv/2/people/21947db7c049b94d3830d1d628f24b18.jpg"
+              },
+              {
+                "id": 285249,
+                "filter": "actor=285249",
+                "tag": "Charles Hagerty",
+                "tagKey": "5f403f1003883a0040b69436",
+                "role": "Justin",
+                "thumb": "https://metadata-static.plex.tv/e/people/e8c2bcc06f9e20e5b3f1c686f2bc191a.jpg"
+              },
+              {
+                "id": 11168,
+                "filter": "actor=11168",
+                "tag": "Patrick Toomey",
+                "tagKey": "5d7768373c3c2a001fbceb8f",
+                "role": "Nick",
+                "thumb": "https://metadata-static.plex.tv/9/people/9073a78bb1267f23621e93957b6233ea.jpg"
+              },
+              {
+                "id": 11169,
+                "filter": "actor=11169",
+                "tag": "Marieta Sánchez",
+                "tagKey": "5d77696647dd6e001f6c4f26",
+                "role": "Luisa",
+                "thumb": "https://metadata-static.plex.tv/8/people/8c3d4ddee8698bb0406332de3e70f654.jpg"
+              },
+              {
+                "id": 11170,
+                "filter": "actor=11170",
+                "tag": "Yoojin Lee",
+                "tagKey": "640d9ad3d7d42a0690841275",
+                "role": "Ji-Hoon",
+                "thumb": "https://metadata-static.plex.tv/7/people/73c5c5d4492e035faead5b787dcce546.jpg"
+              },
+              {
+                "id": 11171,
+                "filter": "actor=11171",
+                "tag": "Lucía Pemán",
+                "tagKey": "5f64693cfd3b52003f93c905",
+                "role": "Sydney Alberi",
+                "thumb": "https://metadata-static.plex.tv/b/people/b2b39666b7e5ac16c1aebec87601fef8.jpg"
+              },
+              {
+                "id": 11172,
+                "filter": "actor=11172",
+                "tag": "Marta Castellví",
+                "tagKey": "5e166c80bc1372003eaa095f",
+                "role": "Misty",
+                "thumb": "https://metadata-static.plex.tv/8/people/8a615438073fa0547b98bfc5573ccb2f.jpg"
+              },
+              {
+                "id": 11173,
+                "filter": "actor=11173",
+                "tag": "Alex Britt",
+                "tagKey": "5f40617dcae2c60042f828aa",
+                "role": "Edwin",
+                "thumb": "https://metadata-static.plex.tv/3/people/3038fb19ef679c2cecc1d0e73052e0d9.jpg"
+              },
+              {
+                "id": 11174,
+                "filter": "actor=11174",
+                "tag": "Julio Perillán",
+                "tagKey": "5d77682f6f4521001ea9ae09",
+                "role": "Mazey's Director",
+                "thumb": "https://metadata-static.plex.tv/1/people/1326ad8cff6e4ada74db4f9178825056.jpg"
+              },
+              {
+                "id": 11175,
+                "filter": "actor=11175",
+                "tag": "Gary Anthony Stennette",
+                "tagKey": "5d776a5096b655001fdea97c",
+                "role": "Mazey's 1st AD",
+                "thumb": "https://metadata-static.plex.tv/a/people/a7a15f46b3ef93c87564a543ff1e053b.jpg"
+              },
+              {
+                "id": 11176,
+                "filter": "actor=11176",
+                "tag": "Nicholas Burns",
+                "tagKey": "5d77688333f255001e858790",
+                "role": "Keith Holligan",
+                "thumb": "https://metadata-static.plex.tv/b/people/b5b5676c0df6cd63975b96c17edc6ab4.jpg"
+              },
+              {
+                "id": 11177,
+                "filter": "actor=11177",
+                "tag": "Shaun Dooley",
+                "tagKey": "5d77683beb5d26001f1e2066",
+                "role": "Len Fisher",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683beb5d26001f1e2066.jpg"
+              },
+              {
+                "id": 11178,
+                "filter": "actor=11178",
+                "tag": "Emily Fairn",
+                "tagKey": "5f3fceb4537293003d36c674",
+                "role": "Suzie",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e6872d0b567f57af2e3ae1f28fb016c.jpg"
+              },
+              {
+                "id": 11179,
+                "filter": "actor=11179",
+                "tag": "Nick Holder",
+                "tagKey": "5d776833eb5d26001f1e037c",
+                "role": "Mr. Duncan",
+                "thumb": "https://metadata-static.plex.tv/8/people/8145bc7cee9879807a364ef080c10488.jpg"
+              },
+              {
+                "id": 11180,
+                "filter": "actor=11180",
+                "tag": "Joe Evans",
+                "tagKey": "5e166bda91c2030041244169",
+                "role": "Tim Simons",
+                "thumb": "https://metadata-static.plex.tv/d/people/db1538ab99cb804f238e674173cc6e44.jpg"
+              },
+              {
+                "id": 11181,
+                "filter": "actor=11181",
+                "tag": "Hayley Considine",
+                "tagKey": "6320918893f9bde08fc2402c",
+                "role": "Jean Simons",
+                "thumb": "https://metadata-static.plex.tv/f/people/f0e612624f11f43d6abb4f18af138c63.jpg"
+              },
+              {
+                "id": 11182,
+                "filter": "actor=11182",
+                "tag": "Steve Garti",
+                "tagKey": "5d77682a151a60001f24b4e1",
+                "role": "Landlord",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a151a60001f24b4e1.jpg"
+              },
+              {
+                "id": 11183,
+                "filter": "actor=11183",
+                "tag": "Vicky Binns",
+                "tagKey": "5e16458cbc1372003ea7a98b",
+                "role": "Julie the Barmaid",
+                "thumb": "https://metadata-static.plex.tv/e/people/e023e2e895b3a3a6bfc0d5a2c417752a.jpg"
+              },
+              {
+                "id": 11184,
+                "filter": "actor=11184",
+                "tag": "Jonny Cordingley",
+                "tagKey": "5f3fd0a71ae7100041fe0c47",
+                "role": "Rod",
+                "thumb": "https://metadata-static.plex.tv/0/people/0c22cf6c80ecedcddc63194a2101e7fa.jpg"
+              },
+              {
+                "id": 11185,
+                "filter": "actor=11185",
+                "tag": "Joe Hughes",
+                "tagKey": "5d776c187a53e9001e73978e",
+                "role": "Husband",
+                "thumb": "https://metadata-static.plex.tv/7/people/765b8ed45bd25bf9b9d590fcfeef6301.jpg"
+              },
+              {
+                "id": 11186,
+                "filter": "actor=11186",
+                "tag": "Bethan Nash",
+                "tagKey": "5f405b9086422500428abaf2",
+                "role": "Wife",
+                "thumb": "https://metadata-static.plex.tv/3/people/3c6429d584623827ecc46fae7f251b06.jpg"
+              },
+              {
+                "id": 11187,
+                "filter": "actor=11187",
+                "tag": "Janie Booth",
+                "tagKey": "5d776a33fb0d55001f53da6f",
+                "role": "Sweet Gran",
+                "thumb": "https://metadata-static.plex.tv/f/people/f616d1666fd03b29e0a66a35dbe7295d.jpg"
+              },
+              {
+                "id": 11188,
+                "filter": "actor=11188",
+                "tag": "Joseph Aumeer",
+                "tagKey": "648ebbfca2b6a379a3c57519",
+                "role": "Demon Gaap",
+                "thumb": "https://metadata-static.plex.tv/6/people/6e6beef5922bff002ac2898bd689732b.jpg"
+              },
+              {
+                "id": 11189,
+                "filter": "actor=11189",
+                "tag": "Lillie Mae Law",
+                "tagKey": "648ebbfc8e29651c6c123e0d",
+                "role": "Laura Simons",
+                "thumb": "https://metadata-static.plex.tv/f/people/f840d357973c13c8f20fc95771249918.jpg"
+              },
+              {
+                "id": 11190,
+                "filter": "actor=11190",
+                "tag": "Jodie Whittaker",
+                "tagKey": "5d7768392ec6b5001f6bc911",
+                "role": "Ffion Foxwell",
+                "thumb": "https://metadata-static.plex.tv/f/people/f765dcd2cc5c705136a54764a3569c53.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Black Mirror"
               }
             ]
           },
           {
-            ratingKey: "57225",
-            key: "/library/metadata/57225",
-            guid: "plex://movie/5d7770de31d95e001f1aba2e",
-            slug: "sound-of-freedom",
-            studio: "Santa Fe Films",
-            type: "movie",
-            title: "Sound of Freedom",
-            librarySectionTitle: "Movies (Documentaries)",
-            librarySectionID: 6,
-            librarySectionKey: "/library/sections/6",
-            contentRating: "nl/12",
-            summary:
-              '"Sound of Freedom", based on the incredible true story, shines a light on even the darkest of places. After rescuing a young boy from ruthless child-traffickers, a federal agent learns that the boy\'s sister is still a captive and decides to embark on a dangerous mission to save her. With time running out, he quits his job and journeys deep into the Colombian jungle, putting his life on the line to free her from a fate worse than death.',
-            rating: 5.7,
-            audienceRating: 9.9,
-            year: 2023,
-            tagline: "Fight for the light. Silence the darkness.",
-            thumb: "/library/metadata/57225/thumb/1737645754",
-            art: "/library/metadata/57225/art/1737645754",
-            duration: 7896928,
-            originallyAvailableAt: "2023-07-04",
-            addedAt: 1737645751,
-            updatedAt: 1737645754,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "108730",
+            "key": "/library/metadata/108730/children",
+            "guid": "plex://show/5d9c086f2df347001e3b27b0",
+            "slug": "arrested-development",
+            "studio": "Imagine Television Studios",
+            "type": "show",
+            "title": "Arrested Development",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-MA",
+            "summary": "Level-headed son Michael Bluth takes over family affairs after his father is imprisoned. But the rest of his spoiled, dysfunctional family are making his job unbearable.",
+            "index": 1,
+            "audienceRating": 7.9,
+            "year": 2003,
+            "tagline": "Get Arrested",
+            "thumb": "/library/metadata/108730/thumb/1748712911",
+            "art": "/library/metadata/108730/art/1748712911",
+            "theme": "/library/metadata/108730/theme/1748712911",
+            "duration": 1320000,
+            "originallyAvailableAt": "2003-11-02",
+            "leafCount": 84,
+            "viewedLeafCount": 0,
+            "childCount": 5,
+            "addedAt": 1748715244,
+            "updatedAt": 1748712911,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Image": [
               {
-                id: 61489,
-                duration: 7896928,
-                bitrate: 18590,
-                width: 3840,
-                height: 1608,
-                aspectRatio: 2.35,
-                audioChannels: 6,
-                audioCodec: "eac3",
-                videoCodec: "hevc",
-                videoResolution: "4k",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "main 10",
-                hasVoiceActivity: false,
-                Part: [
-                  {
-                    id: 92536,
-                    key: "/library/parts/92536/1737644005/file.mkv",
-                    duration: 7896928,
-                    file: "/Movies (Documentaries)/Sound of Freedom (2023)/Sound of Freedom (2023) Bluray-2160p.mkv",
-                    size: 18337249680,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "main 10"
-                  }
-                ]
-              }
-            ],
-            Image: [
-              {
-                alt: "Sound of Freedom",
-                type: "coverPoster",
-                url: "/library/metadata/57225/thumb/1737645754"
+                "alt": "Arrested Development",
+                "type": "coverPoster",
+                "url": "/library/metadata/108730/thumb/1748712911"
               },
               {
-                alt: "Sound of Freedom",
-                type: "background",
-                url: "/library/metadata/57225/art/1737645754"
+                "alt": "Arrested Development",
+                "type": "background",
+                "url": "/library/metadata/108730/art/1748712911"
               },
               {
-                alt: "Sound of Freedom",
-                type: "clearLogo",
-                url: "/library/metadata/57225/clearLogo/1737645754"
+                "alt": "Arrested Development",
+                "type": "clearLogo",
+                "url": "/library/metadata/108730/clearLogo/1748712911"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "312f0d",
-              topRight: "37322c",
-              bottomRight: "150821",
-              bottomLeft: "020c15"
+            "UltraBlurColors": {
+              "topLeft": "0a3246",
+              "topRight": "1d658a",
+              "bottomRight": "91251c",
+              "bottomLeft": "ab1e0d"
             },
-            Genre: [
+            "Genre": [
               {
-                tag: "Drama"
-              },
-              {
-                tag: "Thriller"
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
               }
             ],
-            Country: [
+            "Country": [
               {
-                tag: "United States of America"
+                "id": 128,
+                "filter": "country=128",
+                "tag": "United States of America"
               }
             ],
-            Director: [
+            "Guid": [
               {
-                tag: "Alejandro Monteverde"
+                "id": "imdb://tt0367279"
+              },
+              {
+                "id": "tmdb://4589"
+              },
+              {
+                "id": "tvdb://72173"
               }
             ],
-            Writer: [
+            "Rating": [
               {
-                tag: "Rod Barr"
+                "image": "imdb://image.rating",
+                "value": 8.6,
+                "type": "audience"
               },
               {
-                tag: "Alejandro Monteverde"
+                "image": "rottentomatoes://image.rating.ripe",
+                "value": 7.5,
+                "type": "critic"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 8.5,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.9,
+                "type": "audience"
               }
             ],
-            Role: [
+            "Role": [
               {
-                tag: "Jim Caviezel"
+                "id": 60050,
+                "filter": "actor=60050",
+                "tag": "Jason Bateman",
+                "tagKey": "5d77682ea091de001f2e734e",
+                "role": "Michael Bluth",
+                "thumb": "https://metadata-static.plex.tv/3/people/3f24f53dc2648c333d333991b712d6da.jpg"
               },
               {
-                tag: "Mira Sorvino"
+                "id": 125911,
+                "filter": "actor=125911",
+                "tag": "Portia de Rossi",
+                "tagKey": "5d77682e54f42c001f8c35fc",
+                "role": "Lindsay Bluth Fünke",
+                "thumb": "https://metadata-static.plex.tv/6/people/6381cd7feea22f99bacbcf34f23d798d.jpg"
               },
               {
-                tag: "Bill Camp"
+                "id": 59433,
+                "filter": "actor=59433",
+                "tag": "Will Arnett",
+                "tagKey": "5d77682954f42c001f8c2e19",
+                "role": "Gob Bluth",
+                "thumb": "https://metadata-static.plex.tv/d/people/df6a143c44881e206dcbd4b4b697ae7a.jpg"
+              },
+              {
+                "id": 1220,
+                "filter": "actor=1220",
+                "tag": "Michael Cera",
+                "tagKey": "5d77682eeb5d26001f1df59f",
+                "role": "George Michael Bluth",
+                "thumb": "https://metadata-static.plex.tv/5/people/59a46eeb480d1d4ce4b288fb7407e85a.jpg"
+              },
+              {
+                "id": 13477,
+                "filter": "actor=13477",
+                "tag": "Alia Shawkat",
+                "tagKey": "5d77683585719b001f3a39d9",
+                "role": "Maeby Fünke",
+                "thumb": "https://metadata-static.plex.tv/a/people/ad4fa52f301810e6f521cceafe63e7aa.jpg"
+              },
+              {
+                "id": 48136,
+                "filter": "actor=48136",
+                "tag": "Tony Hale",
+                "tagKey": "5d776829151a60001f24b164",
+                "role": "Byron \"Buster\" Bluth",
+                "thumb": "https://metadata-static.plex.tv/1/people/1883a13b479a06453aa63e1e96364b4a.jpg"
+              },
+              {
+                "id": 45248,
+                "filter": "actor=45248",
+                "tag": "David Cross",
+                "tagKey": "5d776825880197001ec90315",
+                "role": "Tobias Fünke",
+                "thumb": "https://metadata-static.plex.tv/5/people/5de26ef0def573ecb36b0549d44f046c.jpg"
+              },
+              {
+                "id": 64549,
+                "filter": "actor=64549",
+                "tag": "Jeffrey Tambor",
+                "tagKey": "5d7768258718ba001e311902",
+                "role": "George Bluth Sr.",
+                "thumb": "https://metadata-static.plex.tv/e/people/e2c66261db408ac5ee649154e27d76fb.jpg"
+              },
+              {
+                "id": 77990,
+                "filter": "actor=77990",
+                "tag": "Jessica Walter",
+                "tagKey": "5d7768313c3c2a001fbcd4c3",
+                "role": "Lucille Bluth",
+                "thumb": "https://metadata-static.plex.tv/8/people/83935c5c5bb71d4cb03690657f3a7fea.jpg"
+              },
+              {
+                "id": 58221,
+                "filter": "actor=58221",
+                "tag": "Ron Howard",
+                "tagKey": "5d776826880197001ec90735",
+                "role": "Narrator",
+                "thumb": "https://metadata-static.plex.tv/e/people/edfb6d061575544c511412cf544a2122.jpg"
+              },
+              {
+                "id": 6524,
+                "filter": "actor=6524",
+                "tag": "Henry Winkler",
+                "tagKey": "5d77682d54f42c001f8c35f6",
+                "role": "Barry Zuckerkorn",
+                "thumb": "https://metadata-static.plex.tv/4/people/4a9619da9d0e5b3de35d5603703d6daa.jpg"
+              },
+              {
+                "id": 291908,
+                "filter": "actor=291908",
+                "tag": "John Beard",
+                "tagKey": "5ec4117a3173800041d43d72",
+                "role": "John Beard"
+              },
+              {
+                "id": 72085,
+                "filter": "actor=72085",
+                "tag": "Liza Minnelli",
+                "tagKey": "5d77682585719b001f3a05a5",
+                "role": "Lucille Austero",
+                "thumb": "https://metadata-static.plex.tv/9/people/9a2199121a59293e6875a16721fd13a8.jpg"
+              },
+              {
+                "id": 17719,
+                "filter": "actor=17719",
+                "tag": "Mae Whitman",
+                "tagKey": "5d776831103a2d001f566b27",
+                "role": "Ann Veal",
+                "thumb": "https://metadata-static.plex.tv/3/people/3dac388b462f04214bced361d4d6b433.jpg"
+              },
+              {
+                "id": 291909,
+                "filter": "actor=291909",
+                "tag": "Justin Grant Wade",
+                "tagKey": "5e1635b0a71f54003dba98c8",
+                "role": "Steve Holt",
+                "thumb": "https://metadata-static.plex.tv/people/5e1635b0a71f54003dba98c8.jpg"
+              },
+              {
+                "id": 10058,
+                "filter": "actor=10058",
+                "tag": "Ed Begley Jr.",
+                "tagKey": "5d7768265af944001f1f6707",
+                "role": "Stan Sitwell",
+                "thumb": "https://metadata-static.plex.tv/7/people/7c3ac0198e9c775a6df2fdb3640d9dee.jpg"
+              },
+              {
+                "id": 123903,
+                "filter": "actor=123903",
+                "tag": "Isla Fisher",
+                "tagKey": "5d776831151a60001f24d00a",
+                "role": "Rebel Alley",
+                "thumb": "https://metadata-static.plex.tv/c/people/cdca98890ab49d5b280e15eb490167c9.jpg"
+              },
+              {
+                "id": 12280,
+                "filter": "actor=12280",
+                "tag": "Maria Bamford",
+                "tagKey": "5d776834151a60001f24d6de",
+                "role": "Debrie",
+                "thumb": "https://metadata-static.plex.tv/2/cc68393fae/people/2676d64482b6d1989dcdf41afa10fa8f.jpg"
+              },
+              {
+                "id": 121919,
+                "filter": "actor=121919",
+                "tag": "Kyle Mooney",
+                "tagKey": "5d776aa17a53e9001e70acc8",
+                "role": "Murph",
+                "thumb": "https://metadata-static.plex.tv/b/people/b2f528ee3f71fa6642be2d5cf2fe8aaf.jpg"
+              },
+              {
+                "id": 42396,
+                "filter": "actor=42396",
+                "tag": "Judy Greer",
+                "tagKey": "5d77682b61141d001fb13eba",
+                "role": "Kitty Sanchez",
+                "thumb": "https://metadata-static.plex.tv/d/people/d0dc8b44e16e1921fc47731b90e88041.jpg"
+              },
+              {
+                "id": 69603,
+                "filter": "actor=69603",
+                "tag": "Justin Lee",
+                "tagKey": "5d776871eb5d26001f1eb9a3",
+                "role": "Annyong Bluth",
+                "thumb": "https://metadata-static.plex.tv/a/people/a3dd0bef614b82f7e5ce6a04a867c79f.jpg"
+              },
+              {
+                "id": 291910,
+                "filter": "actor=291910",
+                "tag": "B.W. Gonzalez",
+                "tagKey": "5f3fe3a1fea1a1003f9959bf",
+                "role": "Lupe"
+              },
+              {
+                "id": 96108,
+                "filter": "actor=96108",
+                "tag": "Jeff Garlin",
+                "tagKey": "5d7768283c3c2a001fbcb62e",
+                "role": "Mont Meyers",
+                "thumb": "https://metadata-static.plex.tv/5/people/5896d04c61115c4992fc2c22e419f5fd.jpg"
+              },
+              {
+                "id": 23676,
+                "filter": "actor=23676",
+                "tag": "Christine Taylor",
+                "tagKey": "5d77682d85719b001f3a2158",
+                "role": "Sally Sitwell",
+                "thumb": "https://metadata-static.plex.tv/a/people/a3d4a71d3814df8343d0bb7dee24b5d7.jpg"
+              },
+              {
+                "id": 55208,
+                "filter": "actor=55208",
+                "tag": "Jay Johnston",
+                "tagKey": "5d7768378a7581001f12d990",
+                "role": "Officer Taylor",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768378a7581001f12d990.jpg"
+              },
+              {
+                "id": 14315,
+                "filter": "actor=14315",
+                "tag": "Andy Richter",
+                "tagKey": "5d776828961905001eb91ab0",
+                "role": "Himself / Rocky Richter",
+                "thumb": "https://metadata-static.plex.tv/2/people/27b8dac97769043a90e51b68a9e33389.jpg"
+              },
+              {
+                "id": 107950,
+                "filter": "actor=107950",
+                "tag": "Kristen Wiig",
+                "tagKey": "5d776831961905001eb931bb",
+                "role": "Young Lucille Bluth",
+                "thumb": "https://metadata-static.plex.tv/6/people/6ad7e0ba9d55e6c59ddbb7630e7cde15.jpg"
+              },
+              {
+                "id": 24352,
+                "filter": "actor=24352",
+                "tag": "Ben Stiller",
+                "tagKey": "5d776826999c64001ec2c606",
+                "role": "Tony Wonder",
+                "thumb": "https://metadata-static.plex.tv/5/people/57bd7c7d6c5c9e2881251b30e5603d3d.jpg"
+              },
+              {
+                "id": 17913,
+                "filter": "actor=17913",
+                "tag": "Charlie Hartsock",
+                "tagKey": "5d7768313c3c2a001fbcd53d",
+                "role": "Ted",
+                "thumb": "https://metadata-static.plex.tv/7/people/7c9a0c33ef5997e6d6b9338d0c9f1ba5.jpg"
+              },
+              {
+                "id": 3456,
+                "filter": "actor=3456",
+                "tag": "Chris Diamantopoulos",
+                "tagKey": "5d776832a091de001f2e77a5",
+                "role": "Marky Bark",
+                "thumb": "https://metadata-static.plex.tv/b/people/bdc54eeb3b03e67b05016594c853dc63.jpg"
+              },
+              {
+                "id": 5112,
+                "filter": "actor=5112",
+                "tag": "Lauren Weedman",
+                "tagKey": "5d77684461141d001fb1764f",
+                "role": "Joni Beard",
+                "thumb": "https://metadata-static.plex.tv/5/people/548b476bb42a7b57e419238d6d9387c4.jpg"
+              },
+              {
+                "id": 40624,
+                "filter": "actor=40624",
+                "tag": "Michael Paul Chan",
+                "tagKey": "5d7768265af944001f1f66fc",
+                "role": "Judge Ping",
+                "thumb": "https://metadata-static.plex.tv/1/people/10b7724d340f947d0b3f6b3d2d5da68a.jpg"
+              },
+              {
+                "id": 188377,
+                "filter": "actor=188377",
+                "tag": "James Lipton",
+                "tagKey": "5d77683b880197001ec94a98",
+                "role": "Warden",
+                "thumb": "https://metadata-static.plex.tv/e/people/eb81eedc72e488b482988d0f437e98af.jpg"
+              },
+              {
+                "id": 14827,
+                "filter": "actor=14827",
+                "tag": "Ian Roberts",
+                "tagKey": "62fb7cb8443e060f7ad9453f",
+                "role": "Literal Doctor",
+                "thumb": "https://metadata-static.plex.tv/9/people/9449f8020616aaee2c96c1146ad2a0bd.jpg"
+              },
+              {
+                "id": 1268,
+                "filter": "actor=1268",
+                "tag": "Mac Brandt",
+                "tagKey": "5d77685f5af944001f2010f4",
+                "role": "Coast Guardsman",
+                "thumb": "https://metadata-static.plex.tv/8/people/85f98fff2bc01bc40603b31984d9f9e0.jpg"
+              },
+              {
+                "id": 15472,
+                "filter": "actor=15472",
+                "tag": "Martin Mull",
+                "tagKey": "5d776828151a60001f24aef0",
+                "role": "Gene Parmesan",
+                "thumb": "https://metadata-static.plex.tv/2/people/23494efe202b359a6cc31618e703135f.jpg"
+              },
+              {
+                "id": 7061,
+                "filter": "actor=7061",
+                "tag": "Dermot Mulroney",
+                "tagKey": "5d77682a151a60001f24b4f5",
+                "role": "Dusty",
+                "thumb": "https://metadata-static.plex.tv/a/people/aa6a15fe3e4b07cab008994a1c3f8d31.jpg"
+              },
+              {
+                "id": 47441,
+                "filter": "actor=47441",
+                "tag": "John Michael Higgins",
+                "tagKey": "5d776828a091de001f2e641c",
+                "role": "Wayne Jarvis",
+                "thumb": "https://metadata-static.plex.tv/a/people/a7cb03169d8c47fd981450466595f3ba.jpg"
+              },
+              {
+                "id": 275190,
+                "filter": "actor=275190",
+                "tag": "Bob Einstein",
+                "tagKey": "5d7768254de0ee001fcc8329",
+                "role": "Larry",
+                "thumb": "https://metadata-static.plex.tv/c/people/c80b31c156041bf8bea3ab2a86122704.jpg"
+              },
+              {
+                "id": 291911,
+                "filter": "actor=291911",
+                "tag": "Stacey Grenrock-Woods",
+                "tagKey": "5d776c17ad5437001f7b3694",
+                "role": "Trisha Thoon"
+              },
+              {
+                "id": 41027,
+                "filter": "actor=41027",
+                "tag": "Patricia Velásquez",
+                "tagKey": "5d7768274de0ee001fcc89d3",
+                "role": "Marta",
+                "thumb": "https://metadata-static.plex.tv/1/people/1f6fadbf4ec0b2c9b9836a11fb51a34f.jpg"
+              },
+              {
+                "id": 86430,
+                "filter": "actor=86430",
+                "tag": "Charlize Theron",
+                "tagKey": "5d776826999c64001ec2c65f",
+                "role": "Rita Leeds",
+                "thumb": "https://metadata-static.plex.tv/1/people/1ce550b93a6246536cf9e2b9a14b424a.jpg"
+              },
+              {
+                "id": 291912,
+                "filter": "actor=291912",
+                "tag": "Scott Baio",
+                "tagKey": "5d7768437e9a3c0020c6f75b",
+                "role": "Bob Loblaw",
+                "thumb": "https://metadata-static.plex.tv/6/people/6a6b90bdcd73ebbdc55c654d85f53c0b.jpg"
+              },
+              {
+                "id": 13538,
+                "filter": "actor=13538",
+                "tag": "Amy Poehler",
+                "tagKey": "5d7768283c3c2a001fbcb646",
+                "role": "Gob's Wife",
+                "thumb": "https://metadata-static.plex.tv/1/people/1119d84195fe37813ead60d4bca657ea.jpg"
+              },
+              {
+                "id": 44460,
+                "filter": "actor=44460",
+                "tag": "Dave Thomas",
+                "tagKey": "5d7768346f4521001ea9bdd7",
+                "role": "Trevor",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768346f4521001ea9bdd7.jpg"
+              },
+              {
+                "id": 34344,
+                "filter": "actor=34344",
+                "tag": "Mo Collins",
+                "tagKey": "5d7768313c3c2a001fbcd538",
+                "role": "Starla",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768313c3c2a001fbcd538.jpg"
+              },
+              {
+                "id": 5090,
+                "filter": "actor=5090",
+                "tag": "Jerry Minor",
+                "tagKey": "5d77682a54c0f0001f3022b4",
+                "role": "Officer Carter",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a54c0f0001f3022b4.jpg"
+              },
+              {
+                "id": 89265,
+                "filter": "actor=89265",
+                "tag": "Alan Tudyk",
+                "tagKey": "5d776826eb5d26001f1dd578",
+                "role": "Pastor Veal",
+                "thumb": "https://metadata-static.plex.tv/b/people/ba5a8c9127c1ee0c6696be5daac8ded2.jpg"
+              },
+              {
+                "id": 6938,
+                "filter": "actor=6938",
+                "tag": "Frances Conroy",
+                "tagKey": "5d7768268718ba001e311986",
+                "role": "Lottie Dottie",
+                "thumb": "https://metadata-static.plex.tv/8/people/8ce6d604b4b87a741413b3913a8700cf.jpg"
+              },
+              {
+                "id": 14229,
+                "filter": "actor=14229",
+                "tag": "Terry Crews",
+                "tagKey": "5d776829103a2d001f564c60",
+                "role": "Herbert Love",
+                "thumb": "https://metadata-static.plex.tv/3/people/3df86462ce4a7c195b0a35e5ba66a078.jpg"
+              },
+              {
+                "id": 29668,
+                "filter": "actor=29668",
+                "tag": "Debra Mooney",
+                "tagKey": "5d776832961905001eb93583",
+                "role": "Joan Bark",
+                "thumb": "https://metadata-static.plex.tv/4/people/452238241625197653693f2151f94da8.jpg"
+              },
+              {
+                "id": 291913,
+                "filter": "actor=291913",
+                "tag": "Michael Bartel",
+                "tagKey": "5e163570fef2d4003e897ce8",
+                "role": "Young Michael"
+              },
+              {
+                "id": 37668,
+                "filter": "actor=37668",
+                "tag": "Regi Davis",
+                "tagKey": "5d77682b961905001eb923ec",
+                "role": "Guard",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682b961905001eb923ec.jpg"
+              },
+              {
+                "id": 57706,
+                "filter": "actor=57706",
+                "tag": "Kristin Vahl",
+                "tagKey": "5d776b2bfb0d55001f55e750",
+                "role": "Krystal",
+                "thumb": "https://metadata-static.plex.tv/1/people/12d71d1e8cd80620bc5e5bb7e519e737.jpg"
+              },
+              {
+                "id": 2643,
+                "filter": "actor=2643",
+                "tag": "Julia Louis-Dreyfus",
+                "tagKey": "5d7768275af944001f1f6ec8",
+                "role": "Maggie Lizer",
+                "thumb": "https://metadata-static.plex.tv/6/people/648b8a419407acd8f532afffc9cc66d7.jpg"
+              },
+              {
+                "id": 87312,
+                "filter": "actor=87312",
+                "tag": "Carl Weathers",
+                "tagKey": "5d77682654c0f0001f301b5d",
+                "role": "Carl Weathers",
+                "thumb": "https://metadata-static.plex.tv/7/people/72314c262df6fea9b16c045723475f51.jpg"
+              },
+              {
+                "id": 13541,
+                "filter": "actor=13541",
+                "tag": "Seth Rogen",
+                "tagKey": "5d776825103a2d001f563c1e",
+                "role": "Young George Bluth",
+                "thumb": "https://metadata-static.plex.tv/1/people/136ae1d23b961770f9aa674b7ef7ea0d.jpg"
+              },
+              {
+                "id": 31888,
+                "filter": "actor=31888",
+                "tag": "Richard Jin Namkung",
+                "tagKey": "5d776bfe7a53e9001e7362e7",
+                "role": "Paul \"P Hound\" Huan",
+                "thumb": "https://metadata-static.plex.tv/8/people/81b5b61eeb7b615ca08e6231c5a92926.jpg"
+              },
+              {
+                "id": 291914,
+                "filter": "actor=291914",
+                "tag": "Bruce McCulloch",
+                "tagKey": "5d77683c103a2d001f56965f",
+                "role": "Father Marsala",
+                "thumb": "https://metadata-static.plex.tv/1/cc68393fae/people/1a5f536be36a526486ae2e75c1fac918.jpg"
+              },
+              {
+                "id": 291915,
+                "filter": "actor=291915",
+                "tag": "Adam Cardon",
+                "tagKey": "5d77686f6f4521001eaa6d6c",
+                "role": "Talent Agent",
+                "thumb": "https://metadata-static.plex.tv/9/people/9e1f5a916eff637173518b75b605be10.jpg"
+              },
+              {
+                "id": 18408,
+                "filter": "actor=18408",
+                "tag": "Bob Glouberman",
+                "tagKey": "5d7768893ab0e7001f504049",
+                "role": "David the Aide",
+                "thumb": "https://metadata-static.plex.tv/b/people/bd1a6f3a1cd1eb95f2ad0e35439c3b1f.jpg"
+              },
+              {
+                "id": 17690,
+                "filter": "actor=17690",
+                "tag": "Peter Jason",
+                "tagKey": "5d776825999c64001ec2bf86",
+                "role": "Storage Dave",
+                "thumb": "https://image.tmdb.org/t/p/original/y3kgIhfjGMSzq6qMzi6gUT7VQxQ.jpg"
+              },
+              {
+                "id": 291916,
+                "filter": "actor=291916",
+                "tag": "Bronwen Masters",
+                "tagKey": "5f3fed02cc4920003b2c78bc",
+                "role": "Adelaide",
+                "thumb": "https://image.tmdb.org/t/p/original/bdjCTzUv0uuMjAX0ofiewVsWiMH.jpg"
+              },
+              {
+                "id": 291917,
+                "filter": "actor=291917",
+                "tag": "J.J. Wall",
+                "tagKey": "5f3fb83703883a0040a99c69",
+                "role": "Uncle Paul"
+              },
+              {
+                "id": 87984,
+                "filter": "actor=87984",
+                "tag": "Daniel Amerman",
+                "tagKey": "5d776b3496b655001fe082cb",
+                "role": "Mark Cherry",
+                "thumb": "https://metadata-static.plex.tv/1/people/1e3588488ae7e3f951ae22c7bc34e3a9.jpg"
+              },
+              {
+                "id": 59427,
+                "filter": "actor=59427",
+                "tag": "Pedro Lopez",
+                "tagKey": "5d776a16fb0d55001f539fcc",
+                "role": "Mercado Salesman",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a16fb0d55001f539fcc.jpg"
+              },
+              {
+                "id": 23730,
+                "filter": "actor=23730",
+                "tag": "Sam Pancake",
+                "tagKey": "5d77683554f42c001f8c474e",
+                "role": "James Alan Spangler",
+                "thumb": "https://metadata-static.plex.tv/9/people/9373e6291388e672057fe075dc848db6.jpg"
+              },
+              {
+                "id": 14340,
+                "filter": "actor=14340",
+                "tag": "Ed Helms",
+                "tagKey": "5d77682ceb5d26001f1dee90",
+                "role": "James Carr",
+                "thumb": "https://metadata-static.plex.tv/b/people/b6333131be1b6f81dd7a87a4c1866534.jpg"
+              },
+              {
+                "id": 44260,
+                "filter": "actor=44260",
+                "tag": "Eli Vargas",
+                "tagKey": "5d77682ae6d55c002040b59c",
+                "role": "Perfecto Telles / Mexican Teenager"
+              },
+              {
+                "id": 42943,
+                "filter": "actor=42943",
+                "tag": "Cobie Smulders",
+                "tagKey": "5d7768385af944001f1fa9b1",
+                "role": "Young Lucille",
+                "thumb": "https://metadata-static.plex.tv/b/people/bd08ea270936ab31d31ac2b9b6c5eb58.jpg"
+              },
+              {
+                "id": 291918,
+                "filter": "actor=291918",
+                "tag": "Owen Vaccaro",
+                "tagKey": "5d776ae7fb0d55001f555004",
+                "role": "Young Buster",
+                "thumb": "https://metadata-static.plex.tv/c/people/c66318df6967870c88f75e90161a2fc1.jpg"
+              },
+              {
+                "id": 291919,
+                "filter": "actor=291919",
+                "tag": "Tommy Tune",
+                "tagKey": "5d77683b151a60001f24f2aa",
+                "role": "Argyle",
+                "thumb": "https://metadata-static.plex.tv/6/people/61ce77b136bde7ed445b90ec2df6de45.jpg"
+              },
+              {
+                "id": 105866,
+                "filter": "actor=105866",
+                "tag": "Ione Skye",
+                "tagKey": "5d7768256f4521001ea98998",
+                "role": "Mrs. Veal",
+                "thumb": "https://metadata-static.plex.tv/9/people/9e9f4df12799e9f13a57f662b014aff6.jpg"
+              },
+              {
+                "id": 18945,
+                "filter": "actor=18945",
+                "tag": "Fred Cross",
+                "tagKey": "5d776971594b2b001e6a1187",
+                "role": "Newport Bay boy Mikey",
+                "thumb": "https://metadata-static.plex.tv/1/people/1d0656f388d41d6c6c92050f821ccb36.jpg"
+              },
+              {
+                "id": 14238,
+                "filter": "actor=14238",
+                "tag": "Kevin Dorff",
+                "tagKey": "5d7769a6ad5437001f7636f8",
+                "role": "Eddie (evidence guy)",
+                "thumb": "https://metadata-static.plex.tv/people/5d7769a6ad5437001f7636f8.jpg"
+              },
+              {
+                "id": 122590,
+                "filter": "actor=122590",
+                "tag": "Adhir Kalyan",
+                "tagKey": "5d776842961905001eb96848",
+                "role": "Adhir",
+                "thumb": "https://metadata-static.plex.tv/f/people/f3ed7ca4169a02cd85c2bd2cc786f6b7.jpg"
+              },
+              {
+                "id": 20763,
+                "filter": "actor=20763",
+                "tag": "Taran Killam",
+                "tagKey": "5d7768386f4521001ea9caff",
+                "role": "Young George Sr.",
+                "thumb": "https://metadata-static.plex.tv/3/people/39d0da44b8767de550f4c9596276d3ec.jpg"
+              },
+              {
+                "id": 7073,
+                "filter": "actor=7073",
+                "tag": "Thomas Barbusca",
+                "tagKey": "5d776aeffb0d55001f55613f",
+                "role": "Young Gob",
+                "thumb": "https://metadata-static.plex.tv/6/people/6661366aa9e3e326c420f3aa174d260a.jpg"
+              },
+              {
+                "id": 291920,
+                "filter": "actor=291920",
+                "tag": "Steele Stebbins",
+                "tagKey": "5d776b1efb0d55001f55c8f4",
+                "role": "Young Michael",
+                "thumb": "https://metadata-static.plex.tv/4/people/44e2c0763f83455028cc5daf7520e61b.jpg"
+              },
+              {
+                "id": 291921,
+                "filter": "actor=291921",
+                "tag": "Savannah Kennick",
+                "tagKey": "5d776b70fb0d55001f5681da",
+                "role": "Young Lindsay",
+                "thumb": "https://metadata-static.plex.tv/c/people/cd90ddbb3265d8a52b25f9ea3375e903.jpg"
+              },
+              {
+                "id": 14256,
+                "filter": "actor=14256",
+                "tag": "Perry Brown",
+                "tagKey": "5d776844103a2d001f56b562",
+                "role": "Judge"
+              },
+              {
+                "id": 247908,
+                "filter": "actor=247908",
+                "tag": "Woon Young Park",
+                "tagKey": "5d77683254f42c001f8c3f61",
+                "role": "Marauder",
+                "thumb": "https://metadata-static.plex.tv/3/people/3fd24acaa07b2c75072214a2d3ddb913.jpg"
+              },
+              {
+                "id": 291922,
+                "filter": "actor=291922",
+                "tag": "David Reynolds",
+                "tagKey": "62fb7cb4aa71b877e94f7981",
+                "role": "White Power Bill",
+                "thumb": "https://metadata-static.plex.tv/7/people/752dbb16506514674cf95307ef51fb0b.jpg"
+              },
+              {
+                "id": 291923,
+                "filter": "actor=291923",
+                "tag": "Danielle Cipolla",
+                "tagKey": "5f3fe4b658b26e00425d5f18",
+                "role": "Young Maeby"
+              },
+              {
+                "id": 70125,
+                "filter": "actor=70125",
+                "tag": "Jonathan Schmock",
+                "tagKey": "5d77684c85719b001f3a7b21",
+                "role": "Lionel",
+                "thumb": "https://metadata-static.plex.tv/6/people/68aa7a5c095d119f5bcb220ce8f5a84e.jpg"
+              },
+              {
+                "id": 291924,
+                "filter": "actor=291924",
+                "tag": "Jason Aaron Tinero",
+                "tagKey": "5f3fe7e304a86500409a19cd",
+                "role": "Young Buster"
+              },
+              {
+                "id": 291925,
+                "filter": "actor=291925",
+                "tag": "Tom Saunders",
+                "tagKey": "5e1635b010faa500400dc580",
+                "role": "Tom"
+              },
+              {
+                "id": 115708,
+                "filter": "actor=115708",
+                "tag": "Jim Cramer",
+                "tagKey": "5d77682a151a60001f24b569",
+                "role": "Self",
+                "thumb": "https://metadata-static.plex.tv/5/people/55a15d2312e5242d5ef5d222c486fede.jpg"
+              },
+              {
+                "id": 14314,
+                "filter": "actor=14314",
+                "tag": "Becky Thyre",
+                "tagKey": "5d77683c7228e5001f1dfafb",
+                "role": "Loretta",
+                "thumb": "https://metadata-static.plex.tv/4/people/4cba16452b35667c3145d09012b80c13.jpg"
+              },
+              {
+                "id": 291926,
+                "filter": "actor=291926",
+                "tag": "John Yuan",
+                "tagKey": "5d776b6aad5437001f79eba3",
+                "role": "Doug Fleer",
+                "thumb": "https://metadata-static.plex.tv/5/people/5f0f22978a92b9c1e5a32d9a3f531453.jpg"
+              },
+              {
+                "id": 291927,
+                "filter": "actor=291927",
+                "tag": "Matt Yuan",
+                "tagKey": "5d776b6aad5437001f79eba4",
+                "role": "Dean Fleer",
+                "thumb": "https://metadata-static.plex.tv/2/people/22df73076801100a14cff8708c2511e7.jpg"
+              },
+              {
+                "id": 275194,
+                "filter": "actor=275194",
+                "tag": "Maggie Rowe",
+                "tagKey": "5d776aa1fb0d55001f54c008",
+                "role": "Juror",
+                "thumb": "https://metadata-static.plex.tv/0/people/09008137fd8de0018f42d9b882779ada.jpg"
+              },
+              {
+                "id": 26874,
+                "filter": "actor=26874",
+                "tag": "Karen Maruyama",
+                "tagKey": "5d776827103a2d001f56462a",
+                "role": "China Garden",
+                "thumb": "https://metadata-static.plex.tv/4/people/448a8a08486c86f98f2bd42135251a2c.jpg"
+              },
+              {
+                "id": 291928,
+                "filter": "actor=291928",
+                "tag": "Max Winkler",
+                "tagKey": "5d776839f59e580021899244",
+                "role": "Young Barry Zuckerkorn",
+                "thumb": "https://metadata-static.plex.tv/5/people/5996aa56cf9efd2c333c4a85e1f1dcbc.jpg"
+              },
+              {
+                "id": 34080,
+                "filter": "actor=34080",
+                "tag": "Bashir Salahuddin",
+                "tagKey": "5d776967ad5437001f75bea6",
+                "role": "David 'G-Man' Barnes",
+                "thumb": "https://metadata-static.plex.tv/7/people/7dcd755baf557f88d0361fcd30bc84e4.jpg"
+              },
+              {
+                "id": 32044,
+                "filter": "actor=32044",
+                "tag": "Bernie Kopell",
+                "tagKey": "5d77683feb5d26001f1e3416",
+                "role": "Judge Kornzucker",
+                "thumb": "https://metadata-static.plex.tv/f/people/fb83d34638bd50a4c1e516aa7b7ececb.jpg"
+              },
+              {
+                "id": 58621,
+                "filter": "actor=58621",
+                "tag": "Rebecca Drysdale",
+                "tagKey": "5d776aa17a53e9001e70acc1",
+                "role": "Lt. Toddler",
+                "thumb": "https://metadata-static.plex.tv/8/people/8b548e131b95c29173abb8ab89bb8e07.jpg"
+              },
+              {
+                "id": 291929,
+                "filter": "actor=291929",
+                "tag": "Frank Ashmore",
+                "tagKey": "5d776828eb5d26001f1ddb9f",
+                "role": "Mr. F",
+                "thumb": "https://metadata-static.plex.tv/people/5d776828eb5d26001f1ddb9f.jpg"
+              },
+              {
+                "id": 44630,
+                "filter": "actor=44630",
+                "tag": "Anthony De Longis",
+                "tagKey": "5d776826999c64001ec2c399",
+                "role": "Mr. F",
+                "thumb": "https://metadata-static.plex.tv/1/people/1b9611d0958999194554fc441aa4c189.jpg"
+              },
+              {
+                "id": 1273,
+                "filter": "actor=1273",
+                "tag": "Adam Ray",
+                "tagKey": "5d77687b23d5a3001f4ecda5",
+                "role": "Al",
+                "thumb": "https://metadata-static.plex.tv/4/people/46b6262e5cd7ad5a5e033367cde16e5e.jpg"
+              },
+              {
+                "id": 67629,
+                "filter": "actor=67629",
+                "tag": "Clint Howard",
+                "tagKey": "5d776827151a60001f24ab3a",
+                "role": "Johnny Bark",
+                "thumb": "https://metadata-static.plex.tv/1/people/13834bb39a274f564718a89631e0b219.jpg"
+              },
+              {
+                "id": 248336,
+                "filter": "actor=248336",
+                "tag": "Steve Ryan",
+                "tagKey": "5d77684f8a7581001f13034b",
+                "role": "J. Walter Weatherman",
+                "thumb": "https://metadata-static.plex.tv/people/5d77684f8a7581001f13034b.jpg"
+              },
+              {
+                "id": 18104,
+                "filter": "actor=18104",
+                "tag": "Jane Lynch",
+                "tagKey": "5d77682f2ec6b5001f6bb185",
+                "role": "Cindi Lightballoon",
+                "thumb": "https://metadata-static.plex.tv/5/people/5a154f824ece178afe60d9bcb874972a.jpg"
+              },
+              {
+                "id": 120925,
+                "filter": "actor=120925",
+                "tag": "Rob Corddry",
+                "tagKey": "5d7768317e9a3c0020c6beb6",
+                "role": "Moses Taylor",
+                "thumb": "https://metadata-static.plex.tv/4/people/49ec115baddf96f762c75e0dcb101e43.jpg"
+              },
+              {
+                "id": 129795,
+                "filter": "actor=129795",
+                "tag": "Bradley Stryker",
+                "tagKey": "5d7768550ea56a001e2a31bb",
+                "role": "Man (uncredited)",
+                "thumb": "https://metadata-static.plex.tv/6/people/6ba433e8aa08b823fc0efe63343b6bc7.jpg"
+              },
+              {
+                "id": 48138,
+                "filter": "actor=48138",
+                "tag": "Malik Yoba",
+                "tagKey": "5d77682985719b001f3a136e",
+                "role": "Ice",
+                "thumb": "https://metadata-static.plex.tv/1/people/132cb78de8600aa5a8058c77fa8edc4f.jpg"
+              },
+              {
+                "id": 291930,
+                "filter": "actor=291930",
+                "tag": "Leonor Varela",
+                "tagKey": "5d77682b103a2d001f565792",
+                "role": "Marta Estrella",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682b103a2d001f565792.jpg"
+              },
+              {
+                "id": 182048,
+                "filter": "actor=182048",
+                "tag": "Dick Van Patten",
+                "tagKey": "5d77682a7228e5001f1dd318",
+                "role": "Cal Cullen",
+                "thumb": "https://metadata-static.plex.tv/e/people/ecc9fb181aac0596e8c71241540d2858.jpg"
+              },
+              {
+                "id": 57988,
+                "filter": "actor=57988",
+                "tag": "Zach Braff",
+                "tagKey": "5d7768266f4521001ea98d35",
+                "role": "Phillip Litt",
+                "thumb": "https://metadata-static.plex.tv/f/people/fa09ca84758dc856c2aace80bcf19b12.jpg"
+              },
+              {
+                "id": 34898,
+                "filter": "actor=34898",
+                "tag": "Jack McBrayer",
+                "tagKey": "5d776831961905001eb931c5",
+                "role": "Country Club Waiter",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e61b2797cef3ae422f11732767e9131.jpg"
+              },
+              {
+                "id": 3413,
+                "filter": "actor=3413",
+                "tag": "Mary Lynn Rajskub",
+                "tagKey": "5d776828961905001eb916fa",
+                "role": "Heartfire",
+                "thumb": "https://metadata-static.plex.tv/8/people/8bbbb0e533b37e27c9ff613981426d7c.jpg"
+              },
+              {
+                "id": 88789,
+                "filter": "actor=88789",
+                "tag": "Ithamar Enriquez",
+                "tagKey": "5d77683a54f42c001f8c5445",
+                "role": "Carlos",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683a54f42c001f8c5445.jpg"
+              },
+              {
+                "id": 17666,
+                "filter": "actor=17666",
+                "tag": "John Slattery",
+                "tagKey": "5d7768283c3c2a001fbcb6a3",
+                "role": "Doctor Norman",
+                "thumb": "https://metadata-static.plex.tv/1/people/176e5d78b58ee4fdf6eef9e2215859d4.jpg"
+              },
+              {
+                "id": 63657,
+                "filter": "actor=63657",
+                "tag": "Jim Titus",
+                "tagKey": "5e163570ef1040003f24b8cf",
+                "role": "Officer Thumm",
+                "thumb": "https://metadata-static.plex.tv/3/people/32f18b009178d18c8c178db2d70a5cb8.jpg"
+              },
+              {
+                "id": 14582,
+                "filter": "actor=14582",
+                "tag": "Cici Lau",
+                "tagKey": "5d7768618718ba001e31a4dc",
+                "role": "Bev",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768618718ba001e31a4dc.jpg"
+              },
+              {
+                "id": 47049,
+                "filter": "actor=47049",
+                "tag": "Mele Ihara",
+                "tagKey": "5d776e9e96b655001fe6de50",
+                "role": "Coast Guard Janine",
+                "thumb": "https://metadata-static.plex.tv/1/people/16ba1258c615c5143e11c8e8a68dbf0f.jpg"
+              },
+              {
+                "id": 291931,
+                "filter": "actor=291931",
+                "tag": "B.J. Bales",
+                "tagKey": "5d77684e61141d001fb18225",
+                "role": "Jack Griffin",
+                "thumb": "https://metadata-static.plex.tv/b/people/b81f1a13bc1a4965f2da2b5e4006fd57.jpg"
+              },
+              {
+                "id": 245147,
+                "filter": "actor=245147",
+                "tag": "Richard Simmons",
+                "tagKey": "5d776837103a2d001f5682b5",
+                "role": "Richard Simmons",
+                "thumb": "https://metadata-static.plex.tv/people/5d776837103a2d001f5682b5.jpg"
+              },
+              {
+                "id": 3427,
+                "filter": "actor=3427",
+                "tag": "Jean Smart",
+                "tagKey": "5d7768266f4521001ea98d3b",
+                "role": "Mimi",
+                "thumb": "https://metadata-static.plex.tv/b/people/b44267ed7a17db286268977d19ef8fc9.jpg"
+              },
+              {
+                "id": 75955,
+                "filter": "actor=75955",
+                "tag": "Guy Stevenson",
+                "tagKey": "5d776bb0594b2b001e6e1036",
+                "role": "Hugo",
+                "thumb": "https://metadata-static.plex.tv/f/people/f6021927a194415efda2b0d6c44227cc.jpg"
+              },
+              {
+                "id": 50346,
+                "filter": "actor=50346",
+                "tag": "Emerson Brooks",
+                "tagKey": "5d7768313c3c2a001fbcd420",
+                "role": "Douglas",
+                "thumb": "https://metadata-static.plex.tv/9/people/9abd17c432cddf015de4691b0ce98fae.jpg"
+              },
+              {
+                "id": 13528,
+                "filter": "actor=13528",
+                "tag": "Will Hines",
+                "tagKey": "5d77686d6f4521001eaa679e",
+                "role": "CJ the Bailiff",
+                "thumb": "https://image.tmdb.org/t/p/original/99HKOhDLvp705ovAa9mK4Kj6jnZ.jpg"
+              },
+              {
+                "id": 291932,
+                "filter": "actor=291932",
+                "tag": "Wilky Lau",
+                "tagKey": "5d776efa594b2b001e7345cc",
+                "role": "Chen Wu",
+                "thumb": "https://metadata-static.plex.tv/d/people/d4ed9d211300292d30f87c784b75e8cf.jpg"
+              },
+              {
+                "id": 55952,
+                "filter": "actor=55952",
+                "tag": "Dave Attell",
+                "tagKey": "5d77682eeb5d26001f1df303",
+                "role": "Self",
+                "thumb": "https://metadata-static.plex.tv/6/people/68b8a7fa05989ef0967ac9f3773f7190.jpg"
+              },
+              {
+                "id": 15073,
+                "filter": "actor=15073",
+                "tag": "Rocky McMurray",
+                "tagKey": "5d776af996b655001fdff3d0",
+                "role": "Warden James Buck",
+                "thumb": "https://metadata-static.plex.tv/1/people/13cb5f055d7784719b6b7c57a9a26416.jpg"
+              },
+              {
+                "id": 7986,
+                "filter": "actor=7986",
+                "tag": "Bruno Oliver",
+                "tagKey": "5d7769abad5437001f7645af",
+                "role": "Guard",
+                "thumb": "https://metadata-static.plex.tv/people/5d7769abad5437001f7645af.jpg"
+              },
+              {
+                "id": 291933,
+                "filter": "actor=291933",
+                "tag": "Michael Blieden",
+                "tagKey": "5d77683c6f4521001ea9d4cd",
+                "role": "Agent Cummings",
+                "thumb": "https://metadata-static.plex.tv/9/people/995499ded304620688b1afbfcab7c893.jpg"
+              },
+              {
+                "id": 131610,
+                "filter": "actor=131610",
+                "tag": "Alden Ray",
+                "tagKey": "5d7768332ec6b5001f6bba39",
+                "role": "Little Justice",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768332ec6b5001f6bba39.jpg"
+              },
+              {
+                "id": 291934,
+                "filter": "actor=291934",
+                "tag": "Dan Horton",
+                "tagKey": "5d7768ac2d18a4001ff1090a",
+                "role": "Marcus - Hot Cop"
+              },
+              {
+                "id": 279259,
+                "filter": "actor=279259",
+                "tag": "Robb Skyler",
+                "tagKey": "5d77682654f42c001f8c268b",
+                "role": "Accountant",
+                "thumb": "https://metadata-static.plex.tv/7/people/76be86e4d2bb2e3c7d385cceaa24b077.jpg"
+              },
+              {
+                "id": 291935,
+                "filter": "actor=291935",
+                "tag": "Abraham Higginbotham",
+                "tagKey": "5e1635562d4d84003e490d37",
+                "role": "Gary",
+                "thumb": "https://metadata-static.plex.tv/a/people/a803b40e9690629bf5c7adf830159419.jpg"
+              },
+              {
+                "id": 201717,
+                "filter": "actor=201717",
+                "tag": "Jayden Maddux",
+                "tagKey": "5d77704b594b2b001e748604",
+                "role": "Young Buster Bluth",
+                "thumb": "https://metadata-static.plex.tv/6/people/6ada95c1898361a3427ee0fe51543c0a.jpg"
+              },
+              {
+                "id": 57777,
+                "filter": "actor=57777",
+                "tag": "Allan Wasserman",
+                "tagKey": "5d77682ca091de001f2e6dcf",
+                "role": "Herb Zuckerkorn",
+                "thumb": "https://metadata-static.plex.tv/4/people/42e89bb1f74d2267579381adcec0a593.jpg"
+              },
+              {
+                "id": 185487,
+                "filter": "actor=185487",
+                "tag": "Dan Harmon",
+                "tagKey": "5d7768335af944001f1f9481",
+                "role": "Yurt Clerk",
+                "thumb": "https://metadata-static.plex.tv/b/people/b0281e2264d166c611aedac6d297ca00.jpg"
+              },
+              {
+                "id": 56783,
+                "filter": "actor=56783",
+                "tag": "Jessica Chaffin",
+                "tagKey": "5d77687b23d5a3001f4ecda4",
+                "role": "Junkie",
+                "thumb": "https://metadata-static.plex.tv/0/people/0b6acf13834d6635f2b18f04b55b218f.jpg"
+              },
+              {
+                "id": 188379,
+                "filter": "actor=188379",
+                "tag": "Brian Grazer",
+                "tagKey": "5d776826e6d55c002040af8d",
+                "role": "Brian Grazer",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e4477cad086d19a7cefa2eb839f09e2.jpg"
+              },
+              {
+                "id": 291936,
+                "filter": "actor=291936",
+                "tag": "Louisa Velis",
+                "tagKey": "5d77683b880197001ec94d0f",
+                "role": "Luisa Velez"
+              },
+              {
+                "id": 47894,
+                "filter": "actor=47894",
+                "tag": "Parvesh Cheena",
+                "tagKey": "5d776829103a2d001f564cd5",
+                "role": "Kabir",
+                "thumb": "https://metadata-static.plex.tv/6/people/6030514fd39430dd46673dc54d67459d.jpg"
+              },
+              {
+                "id": 88860,
+                "filter": "actor=88860",
+                "tag": "Andrew Secunda",
+                "tagKey": "5d77683c2e80df001ebdefcb",
+                "role": "Process Server",
+                "thumb": "https://metadata-static.plex.tv/8/people/8ff5e4827596b3f80b8ab9fa166ae2c7.jpg"
+              },
+              {
+                "id": 15344,
+                "filter": "actor=15344",
+                "tag": "Scott Vance",
+                "tagKey": "5d776a3d7a53e9001e6febb7",
+                "role": "Fantastic Four Henchman",
+                "thumb": "https://image.tmdb.org/t/p/original/zxLJzFQ1wKBhikOU4VKeFmZb0eR.jpg"
+              },
+              {
+                "id": 27964,
+                "filter": "actor=27964",
+                "tag": "Nelson Franklin",
+                "tagKey": "5d77683f103a2d001f56a420",
+                "role": "Dr. Tilive",
+                "thumb": "https://metadata-static.plex.tv/3/people/36feede4a79f17c7a23f2cc4b04380b0.jpg"
+              },
+              {
+                "id": 15351,
+                "filter": "actor=15351",
+                "tag": "Peter Giles",
+                "tagKey": "5d776839a091de001f2e8849",
+                "role": "Raphocwcps Narrator",
+                "thumb": "https://metadata-static.plex.tv/people/5d776839a091de001f2e8849.jpg"
+              },
+              {
+                "id": 291937,
+                "filter": "actor=291937",
+                "tag": "Lonny Ross",
+                "tagKey": "5d776834f54112001f5bd720",
+                "role": "Jonah Feinberg",
+                "thumb": "https://metadata-static.plex.tv/a/people/a0e656a1f01b926f180d7bda0fd8ae01.jpg"
+              },
+              {
+                "id": 89006,
+                "filter": "actor=89006",
+                "tag": "Carter Hastings",
+                "tagKey": "5d77696147dd6e001f6c4a61",
+                "role": "Lem",
+                "thumb": "https://metadata-static.plex.tv/9/people/9f0d3863b303c205931b0d09816e1c50.jpg"
+              },
+              {
+                "id": 88721,
+                "filter": "actor=88721",
+                "tag": "Evan Gaustad",
+                "tagKey": "5f3fe85c03883a0040ae18c5",
+                "role": "Terry",
+                "thumb": "https://metadata-static.plex.tv/1/people/12338aa10ee0d37306e7c1c12c627a06.jpg"
+              },
+              {
+                "id": 46197,
+                "filter": "actor=46197",
+                "tag": "Kimmy Shields",
+                "tagKey": "5d776c7c23d5a3001f51c097",
+                "role": "Lisa",
+                "thumb": "https://metadata-static.plex.tv/8/people/89e017f8c1c60bba0c90d7a72b8139e1.jpg"
+              },
+              {
+                "id": 43818,
+                "filter": "actor=43818",
+                "tag": "Ryan Bailey",
+                "tagKey": "5d77689807c4a5001e67a0ba",
+                "role": "Cop"
+              },
+              {
+                "id": 75336,
+                "filter": "actor=75336",
+                "tag": "John F. Schaffer",
+                "tagKey": "5d7768a21999bc0020dcbd79",
+                "role": "Cop",
+                "thumb": "https://metadata-static.plex.tv/2/people/259deb45e4765e523e1cba8061e4bcc2.jpg"
+              },
+              {
+                "id": 46594,
+                "filter": "actor=46594",
+                "tag": "Jorge Diaz",
+                "tagKey": "5d7768d2decfcd001f2f32c6",
+                "role": "Worker Noah",
+                "thumb": "https://metadata-static.plex.tv/5/people/5c7bd9e42b874f9f460f6a328b4ecee3.jpg"
+              },
+              {
+                "id": 96855,
+                "filter": "actor=96855",
+                "tag": "Thomas Adoue Polk",
+                "tagKey": "5e164d29316a39003ef97233",
+                "role": "Noah",
+                "thumb": "https://metadata-static.plex.tv/people/5e164d29316a39003ef97233.jpg"
+              },
+              {
+                "id": 46631,
+                "filter": "actor=46631",
+                "tag": "Lidia Porto",
+                "tagKey": "5d77682ee6d55c002040be4e",
+                "role": "Flores",
+                "thumb": "https://metadata-static.plex.tv/a/people/ac9f39826f8f0645533cfc8d57b0979d.jpg"
+              },
+              {
+                "id": 69411,
+                "filter": "actor=69411",
+                "tag": "David Saucedo",
+                "tagKey": "5d776a47fb0d55001f540939",
+                "role": "Enrique",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a47fb0d55001f540939.jpg"
+              },
+              {
+                "id": 291938,
+                "filter": "actor=291938",
+                "tag": "Moses Storm",
+                "tagKey": "5d776af296b655001fdfe375",
+                "role": "Shane",
+                "thumb": "https://metadata-static.plex.tv/f/people/ffbec7485783f3758acd33d559a86fec.jpg"
+              },
+              {
+                "id": 291939,
+                "filter": "actor=291939",
+                "tag": "Allen Cort",
+                "tagKey": "5d776c3d9ab5440021514699",
+                "role": "Mr. F",
+                "thumb": "https://metadata-static.plex.tv/5/people/55296e85c3ac0176f8529add7d0b1d1a.jpg"
+              },
+              {
+                "id": 275032,
+                "filter": "actor=275032",
+                "tag": "Kevin Crowley",
+                "tagKey": "5d77682c8a7581001f12c869",
+                "role": "Mr. F",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682c8a7581001f12c869.jpg"
+              },
+              {
+                "id": 291940,
+                "filter": "actor=291940",
+                "tag": "Max Ruckle",
+                "tagKey": "5f4071205a76a80042ded1c0",
+                "role": "Other Noah"
+              },
+              {
+                "id": 62615,
+                "filter": "actor=62615",
+                "tag": "Edgar Blackmon",
+                "tagKey": "5d776ba4fb0d55001f56e45d",
+                "role": "Chuck",
+                "thumb": "https://metadata-static.plex.tv/people/5d776ba4fb0d55001f56e45d.jpg"
+              },
+              {
+                "id": 103966,
+                "filter": "actor=103966",
+                "tag": "Paul Jurewicz",
+                "tagKey": "5d77705223d5a3001f538d99",
+                "role": "Jake",
+                "thumb": "https://metadata-static.plex.tv/a/people/a32ff685204f7b0e2d226dc1a22ab373.jpg"
+              },
+              {
+                "id": 291941,
+                "filter": "actor=291941",
+                "tag": "Bernadette Birkett",
+                "tagKey": "5d77688bdecfcd001f2ec1b4",
+                "role": "Rose",
+                "thumb": "https://metadata-static.plex.tv/8/people/8c0cac287cbf878423d7101cb61bc230.jpg"
+              },
+              {
+                "id": 57540,
+                "filter": "actor=57540",
+                "tag": "Frank Birney",
+                "tagKey": "5d776835151a60001f24dcdb",
+                "role": "Sam",
+                "thumb": "https://metadata-static.plex.tv/e/people/e7122ee902ae07201d2d183c07186b31.jpg"
+              },
+              {
+                "id": 50594,
+                "filter": "actor=50594",
+                "tag": "Bill Lee Brown",
+                "tagKey": "5d77685d594b2b001e689d5e",
+                "role": "Manny",
+                "thumb": "https://metadata-static.plex.tv/5/people/521c3ae07d9d1b613eaede858930c36d.jpg"
+              },
+              {
+                "id": 137558,
+                "filter": "actor=137558",
+                "tag": "David E. Willis",
+                "tagKey": "5d77686dfb0d55001f50ff33",
+                "role": "Lou",
+                "thumb": "https://metadata-static.plex.tv/people/5d77686dfb0d55001f50ff33.jpg"
+              },
+              {
+                "id": 291942,
+                "filter": "actor=291942",
+                "tag": "Joey Manderino",
+                "tagKey": "5ec415e10d2c2c0040bd32ed",
+                "role": "Protester"
+              },
+              {
+                "id": 291943,
+                "filter": "actor=291943",
+                "tag": "Clayton Early",
+                "tagKey": "5f400d82bf3e560040b6c3ea",
+                "role": "Protestor"
+              },
+              {
+                "id": 89191,
+                "filter": "actor=89191",
+                "tag": "Jessica St. Clair",
+                "tagKey": "5d7768377e9a3c0020c6d217",
+                "role": "Anita Bramwell",
+                "thumb": "https://metadata-static.plex.tv/9/people/9cc31e2591ddbd3359db6d0bc89d020f.jpg"
+              },
+              {
+                "id": 15049,
+                "filter": "actor=15049",
+                "tag": "Todd Aaron Brotze",
+                "tagKey": "5d776aa896b655001fdf529e",
+                "role": "Garrison 'Harvard' Sweet",
+                "thumb": "https://metadata-static.plex.tv/9/people/9ad006e610e387ee57f297999ac66cd0.jpg"
+              },
+              {
+                "id": 8040,
+                "filter": "actor=8040",
+                "tag": "Monnae Michaell",
+                "tagKey": "5d776836999c64001ec2f7b9",
+                "role": "Shara Winfield",
+                "thumb": "https://metadata-static.plex.tv/6/people/6bd84538f7a07e551b4a6b85130845c1.jpg"
+              },
+              {
+                "id": 48760,
+                "filter": "actor=48760",
+                "tag": "Lillian Hurst",
+                "tagKey": "5d77683c6f4521001ea9d502",
+                "role": "Luz",
+                "thumb": "https://metadata-static.plex.tv/3/people/36a94fb24b3f99d3418e4cf686efd204.jpg"
+              },
+              {
+                "id": 10046,
+                "filter": "actor=10046",
+                "tag": "Bob Odenkirk",
+                "tagKey": "5d77683254f42c001f8c3f69",
+                "role": "Dr. Phil Gunty",
+                "thumb": "https://metadata-static.plex.tv/5/people/592f471ba9c48dfc0073f753e2235e22.jpg"
+              },
+              {
+                "id": 99539,
+                "filter": "actor=99539",
+                "tag": "Thomas Jane",
+                "tagKey": "5d7768253c3c2a001fbcac6a",
+                "role": "Himself",
+                "thumb": "https://metadata-static.plex.tv/6/people/6519192c99701dd17eceaf253931af4d.jpg"
+              },
+              {
+                "id": 14381,
+                "filter": "actor=14381",
+                "tag": "Rob Riggle",
+                "tagKey": "5d7768348718ba001e3144d7",
+                "role": "Congressman John Van Huesen",
+                "thumb": "https://metadata-static.plex.tv/0/people/0f398c36dfd7e10f957a602db56bb437.jpg"
+              },
+              {
+                "id": 92100,
+                "filter": "actor=92100",
+                "tag": "Richard Belzer",
+                "tagKey": "5d7768262e80df001ebdce11",
+                "role": "Detective Munch",
+                "thumb": "https://metadata-static.plex.tv/1/people/1e9c6d00301a168b97c3b64df3c965fc.jpg"
+              },
+              {
+                "id": 87970,
+                "filter": "actor=87970",
+                "tag": "Patrice O'Neal",
+                "tagKey": "5d77682a6f4521001ea99c5f",
+                "role": "T-Bone",
+                "thumb": "https://metadata-static.plex.tv/7/people/7ef1906df448c1856a4196688fcd4574.jpg"
+              },
+              {
+                "id": 107653,
+                "filter": "actor=107653",
+                "tag": "Jill Ritchie",
+                "tagKey": "5d776826999c64001ec2c5d0",
+                "role": "Jessie",
+                "thumb": "https://metadata-static.plex.tv/1/people/1343bd2200d56fb726173fd0169c7c1d.jpg"
+              },
+              {
+                "id": 19011,
+                "filter": "actor=19011",
+                "tag": "Ping Wu",
+                "tagKey": "5d77682785719b001f3a0ec2",
+                "role": "Proctor",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682785719b001f3a0ec2.jpg"
+              },
+              {
+                "id": 17880,
+                "filter": "actor=17880",
+                "tag": "Michael Hitchcock",
+                "tagKey": "5dcd38c5dea64c00203c6750",
+                "role": "Ira Gilligan",
+                "thumb": "https://metadata-static.plex.tv/5/people/5d2b47bf58f8ce3f46d2f7f8f4cf39e5.jpg"
+              },
+              {
+                "id": 181123,
+                "filter": "actor=181123",
+                "tag": "Dave Allen",
+                "tagKey": "5d7768415af944001f1fc675",
+                "role": "Activist",
+                "thumb": "https://metadata-static.plex.tv/d/people/d285e35b38757d7d51934973b7af4d7e.jpg"
+              },
+              {
+                "id": 68889,
+                "filter": "actor=68889",
+                "tag": "Jonathan Penner",
+                "tagKey": "5d776833f59e58002189882f",
+                "role": "Detective Fellows",
+                "thumb": "https://metadata-static.plex.tv/c/people/ccf66183eac8ce8b9b663aabc750f4d9.jpg"
+              },
+              {
+                "id": 7051,
+                "filter": "actor=7051",
+                "tag": "Alessandra Torresani",
+                "tagKey": "5d7768d747dd6e001f6bf58c",
+                "role": "Ann Veal",
+                "thumb": "https://metadata-static.plex.tv/0/people/08c65521d68ab14276ca7738b5b24fc0.jpg"
+              },
+              {
+                "id": 15454,
+                "filter": "actor=15454",
+                "tag": "J.K. Simmons",
+                "tagKey": "5d7768268718ba001e311bec",
+                "role": "General Anderson",
+                "thumb": "https://metadata-static.plex.tv/7/people/7ec7f7673ef9ae2dccd4e3a3fd98c34e.jpg"
+              },
+              {
+                "id": 1500,
+                "filter": "actor=1500",
+                "tag": "Martin Short",
+                "tagKey": "5d7768255af944001f1f63cd",
+                "role": "Uncle Jack",
+                "thumb": "https://metadata-static.plex.tv/5/people/5affff4ffb85f9371bdc953d82d0976e.jpg"
+              },
+              {
+                "id": 18750,
+                "filter": "actor=18750",
+                "tag": "Dan Castellaneta",
+                "tagKey": "5d7768267e9a3c0020c6ab0c",
+                "role": "Dr. Stein",
+                "thumb": "https://metadata-static.plex.tv/3/people/307d680de600bd5903167c20ffa494e1.jpg"
+              },
+              {
+                "id": 17163,
+                "filter": "actor=17163",
+                "tag": "Frankie Muniz",
+                "tagKey": "5d776831961905001eb931c8",
+                "role": "Himself",
+                "thumb": "https://metadata-static.plex.tv/d/people/d8ce2752fa47f20c9cbd905847f3a1ce.jpg"
+              },
+              {
+                "id": 67329,
+                "filter": "actor=67329",
+                "tag": "Judge Reinhold",
+                "tagKey": "5d776825eb5d26001f1dd1b5",
+                "role": "Himself",
+                "thumb": "https://metadata-static.plex.tv/4/people/4d7690c92715ec33f0d5c9037801ecca.jpg"
+              },
+              {
+                "id": 291944,
+                "filter": "actor=291944",
+                "tag": "Mel Gorham",
+                "tagKey": "5d776830880197001ec92822",
+                "role": "Helen Maria Delgado",
+                "thumb": "https://metadata-static.plex.tv/people/5d776830880197001ec92822.jpg"
+              },
+              {
+                "id": 291945,
+                "filter": "actor=291945",
+                "tag": "Mark Blankfield",
+                "tagKey": "5d77682c5af944001f1f7e3f",
+                "role": "Dr. Miller",
+                "thumb": "https://metadata-static.plex.tv/0/people/0b97f5629cc725956c070ec43169b16f.jpg"
+              },
+              {
+                "id": 221529,
+                "filter": "actor=221529",
+                "tag": "Marc Grapey",
+                "tagKey": "5d77682a54f42c001f8c318f",
+                "role": "Rollo",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a54f42c001f8c318f.jpg"
+              },
+              {
+                "id": 81696,
+                "filter": "actor=81696",
+                "tag": "John Rothman",
+                "tagKey": "5d77682a151a60001f24b4f6",
+                "role": "Charles Milford",
+                "thumb": "https://metadata-static.plex.tv/8/people/8d79ee9397744f03321479e6d1a50930.jpg"
+              },
+              {
+                "id": 93138,
+                "filter": "actor=93138",
+                "tag": "Heather Graham",
+                "tagKey": "5d77682685719b001f3a0b40",
+                "role": "Beth Baerly",
+                "thumb": "https://metadata-static.plex.tv/8/people/8cc2dcf5500dbcc37556f35e87eccb32.jpg"
+              },
+              {
+                "id": 42568,
+                "filter": "actor=42568",
+                "tag": "John Harrington Bland",
+                "tagKey": "5d77682d880197001ec921c4",
+                "role": "Clerk",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682d880197001ec921c4.jpg"
+              },
+              {
+                "id": 291946,
+                "filter": "actor=291946",
+                "tag": "William Hung",
+                "tagKey": "5d776dcf96b655001fe53f1d",
+                "role": "Himself",
+                "thumb": "https://metadata-static.plex.tv/people/5d776dcf96b655001fe53f1d.jpg"
+              },
+              {
+                "id": 17691,
+                "filter": "actor=17691",
+                "tag": "Gary Cole",
+                "tagKey": "5d77682a961905001eb91e4b",
+                "role": "Richard Shaw",
+                "thumb": "https://metadata-static.plex.tv/5/people/514ed7d32aebd3124b3920ec9196b9d6.jpg"
+              },
+              {
+                "id": 291947,
+                "filter": "actor=291947",
+                "tag": "Eduardo Palomo",
+                "tagKey": "5d7768402e80df001ebdf918",
+                "role": "Everado",
+                "thumb": "https://metadata-static.plex.tv/d/people/df14101606e433737c32718115af4b76.jpg"
+              },
+              {
+                "id": 291948,
+                "filter": "actor=291948",
+                "tag": "Robert Isaac Lee",
+                "tagKey": "5d9f35029dd5f4001e843406",
+                "role": "Worker"
+              },
+              {
+                "id": 24380,
+                "filter": "actor=24380",
+                "tag": "Iqbal Theba",
+                "tagKey": "5d7768a0decfcd001f2ee509",
+                "role": "Nazhgalia",
+                "thumb": "https://metadata-static.plex.tv/f/people/f07c640594975e0de418313177491585.jpg"
+              },
+              {
+                "id": 10188,
+                "filter": "actor=10188",
+                "tag": "Ethan Phillips",
+                "tagKey": "5d77682a151a60001f24b490",
+                "role": "Military Officer",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a151a60001f24b490.jpg"
+              },
+              {
+                "id": 96125,
+                "filter": "actor=96125",
+                "tag": "Jordan-Claire Green",
+                "tagKey": "5d77682a3c3c2a001fbcbd9c",
+                "role": "Supervisor's Daughter",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e27831be690718aec8d9b90ee7f389d.jpg"
+              },
+              {
+                "id": 25226,
+                "filter": "actor=25226",
+                "tag": "Troy Brenna",
+                "tagKey": "5d776a419ab54400214fcd74",
+                "role": "Dragon (uncredited)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a419ab54400214fcd74.jpg"
+              },
+              {
+                "id": 68028,
+                "filter": "actor=68028",
+                "tag": "Mario Joyner",
+                "tagKey": "5d77683561141d001fb1585a",
+                "role": "Mario",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e5d37c75a1868a17ba49df74717d78d.jpg"
+              },
+              {
+                "id": 28507,
+                "filter": "actor=28507",
+                "tag": "Harry Hamlin",
+                "tagKey": "5d77683685719b001f3a3eae",
+                "role": "Self",
+                "thumb": "https://metadata-static.plex.tv/0/people/07041d4c666ebdb0e688fee6905ae4be.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Arrested Development (2003) {tvdb-72173}"
               }
             ]
           },
           {
-            ratingKey: "57216",
-            key: "/library/metadata/57216",
-            guid: "plex://movie/5d776838961905001eb94a81",
-            slug: "horton-hears-a-who-2008",
-            studio: "Blue Sky Studios",
-            type: "movie",
-            title: "Horton",
-            librarySectionTitle: "Movies NL (Kids)",
-            librarySectionID: 7,
-            librarySectionKey: "/library/sections/7",
-            originalTitle: "Horton Hears a Who!",
-            contentRating: "nl/AL",
-            summary:
-              "Diep in de jungle hoort een kleine olifant plots een stem uit een klein stofdeeltje. Het blijkt een minuscule planeet te zijn waar de stad Who-Ville op gelegen is. De Who's geven Horton de opdracht hun planeet te beschermen met behulp van zijn vrienden. Naar het verhaal van Dr. Seuss.",
-            rating: 7.9,
-            audienceRating: 7.3,
-            year: 2008,
-            tagline: "Horton hears more than anyone believes.",
-            thumb: "/library/metadata/57216/thumb/1737377262",
-            duration: 4956900,
-            originallyAvailableAt: "2008-03-12",
-            addedAt: 1737377258,
-            updatedAt: 1737377262,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108725",
+            "key": "/library/metadata/108725",
+            "parentRatingKey": "108251",
+            "grandparentRatingKey": "108192",
+            "guid": "plex://episode/67efdce3009afa07864f3e64",
+            "parentGuid": "plex://season/6699953fb4fa9db7ec47a99d",
+            "grandparentGuid": "plex://show/5d9c090e705e7a001e6e95f9",
+            "grandparentSlug": "the-great-north",
+            "type": "episode",
+            "title": "Sunset Beeflevard Adventure",
+            "grandparentKey": "/library/metadata/108192",
+            "parentKey": "/library/metadata/108251",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Great North",
+            "parentTitle": "Season 5",
+            "contentRating": "TV-14",
+            "summary": "Judy joins the cast of a dinner theater production. Wolf and Honeybee help Moon sell jerky door-to-door.",
+            "index": 13,
+            "parentIndex": 5,
+            "year": 2025,
+            "thumb": "/library/metadata/108725/thumb/1748903979",
+            "art": "/library/metadata/108192/art/1748821045",
+            "parentThumb": "/library/metadata/108251/thumb/1747179819",
+            "grandparentThumb": "/library/metadata/108192/thumb/1748821045",
+            "grandparentArt": "/library/metadata/108192/art/1748821045",
+            "grandparentTheme": "/library/metadata/108192/theme/1748821045",
+            "duration": 1298015,
+            "originallyAvailableAt": "2025-05-29",
+            "addedAt": 1748590317,
+            "updatedAt": 1748903979,
+            "Media": [
               {
-                id: 61366,
-                duration: 4956900,
-                bitrate: 1679,
-                width: 640,
-                height: 352,
-                aspectRatio: 1.85,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "mpeg4",
-                videoResolution: "sd",
-                container: "avi",
-                videoFrameRate: "PAL",
-                videoProfile: "advanced simple",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131320,
+                "duration": 1298015,
+                "bitrate": 3816,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92412,
-                    key: "/library/parts/92412/1223571748/file.avi",
-                    duration: 4956900,
-                    file: "/Movies NL (Kids)/Horton Hears A Who/Horton Hears A Who!(2008) NL gesproken.avi",
-                    size: 1046626304,
-                    container: "avi",
-                    indexes: "sd",
-                    videoProfile: "advanced simple"
+                    "id": 448356,
+                    "key": "/library/parts/448356/1748676670/file.mkv",
+                    "duration": 1298015,
+                    "file": "/data/Media/Tv Shows/The Great North (2021) {tvdb-353887}/Season 05/The Great North (2021) - S05E13 - Sunset Beeflevard Adventure [WEBDL-1080p][EAC3 5.1][h264]-STC.mkv",
+                    "size": 619486793,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1042512,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 3560,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1042513,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 256,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1042514,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Horton",
-                type: "coverPoster",
-                url: "/library/metadata/57216/thumb/1737377262"
+                "alt": "Sunset Beeflevard Adventure",
+                "type": "coverPoster",
+                "url": "/library/metadata/108192/thumb/1748821045"
+              },
+              {
+                "alt": "Sunset Beeflevard Adventure",
+                "type": "snapshot",
+                "url": "/library/metadata/108725/thumb/1748903979"
+              },
+              {
+                "alt": "Sunset Beeflevard Adventure",
+                "type": "background",
+                "url": "/library/metadata/108192/art/1748821045"
+              },
+              {
+                "alt": "Sunset Beeflevard Adventure",
+                "type": "clearLogo",
+                "url": "/library/metadata/108192/clearLogo/1748821045"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "492200",
-              topRight: "75581b",
-              bottomRight: "8d4911",
-              bottomLeft: "53211f"
+            "UltraBlurColors": {
+              "topLeft": "541212",
+              "topRight": "5a0d13",
+              "bottomRight": "972d13",
+              "bottomLeft": "943a55"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Komedie"
+                "id": "imdb://tt35889771"
               },
               {
-                tag: "Animatie"
+                "id": "tmdb://6093887"
+              },
+              {
+                "id": "tvdb://11058175"
               }
             ],
-            Country: [
+            "Rating": [
               {
-                tag: "United States of America"
+                "image": "imdb://image.rating",
+                "value": 6.7,
+                "type": "audience"
               }
             ],
-            Director: [
+            "Director": [
               {
-                tag: "Jimmy Hayward"
-              },
-              {
-                tag: "Steve Martino"
+                "id": 286435,
+                "filter": "director=286435",
+                "tag": "Aimee Steinberger",
+                "tagKey": "5f3fe23dfea1a1003f99382c"
               }
             ],
-            Writer: [
+            "Writer": [
               {
-                tag: "Ken Daurio"
+                "id": 206273,
+                "filter": "writer=206273",
+                "tag": "Lizzie Molyneux-Logelin",
+                "tagKey": "5e1636252d4d84003e491a6c",
+                "thumb": "https://metadata-static.plex.tv/f/people/f644baba70e6ba4716ed885d8e884977.jpg"
               },
               {
-                tag: "Cinco Paul"
+                "id": 206274,
+                "filter": "writer=206274",
+                "tag": "Wendy Molyneux",
+                "tagKey": "5e163625cd0850003b75f59f",
+                "thumb": "https://metadata-static.plex.tv/a/people/a09a43e6add5e797f37e30bc41b60a05.jpg"
+              },
+              {
+                "id": 286210,
+                "filter": "writer=286210",
+                "tag": "Minty Lewis",
+                "tagKey": "5d776bcd96b655001fe1c634"
+              },
+              {
+                "id": 96913,
+                "filter": "writer=96913",
+                "tag": "Anthony Gioe",
+                "tagKey": "5d776a087a53e9001e6f829e",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a087a53e9001e6f829e.jpg"
+              },
+              {
+                "id": 286428,
+                "filter": "writer=286428",
+                "tag": "Nick Mandernach",
+                "tagKey": "5f40108152f20000414f4d1a"
               }
             ],
-            Role: [
+            "Role": [
               {
-                tag: "Jim Carrey"
+                "id": 3603,
+                "filter": "actor=3603",
+                "tag": "Nick Offerman",
+                "tagKey": "5d7768272ec6b5001f6ba430",
+                "role": "Beef Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/50cc00d2fadb7e3654c8897c68c9fa04.jpg"
               },
               {
-                tag: "Steve Carell"
+                "id": 14439,
+                "filter": "actor=14439",
+                "tag": "Jenny Slate",
+                "tagKey": "5d776896431c830024c100cd",
+                "role": "Judy Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/333646e1d2e58d829ad21dfd9c1364f5.jpg"
               },
               {
-                tag: "Carol Burnett"
+                "id": 25261,
+                "filter": "actor=25261",
+                "tag": "Will Forte",
+                "tagKey": "5d7768322ec6b5001f6bb737",
+                "role": "Wolf Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/400f25053044ae906567fe3644d16b44.jpg"
+              },
+              {
+                "id": 5671,
+                "filter": "actor=5671",
+                "tag": "Aparna Nancherla",
+                "tagKey": "5d776c4396b655001fe2b61f",
+                "role": "Moon Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/45fc6ce249bf70d3d69d63bd541cb8c5.jpg"
+              },
+              {
+                "id": 14385,
+                "filter": "actor=14385",
+                "tag": "Paul Rust",
+                "tagKey": "5d77683f880197001ec95a12",
+                "role": "Ham Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/88158aeb6c5f7bf345a76e6b264f1b02.jpg"
+              },
+              {
+                "id": 286168,
+                "filter": "actor=286168",
+                "tag": "Dulcé Sloan",
+                "tagKey": "5f0086917638690041f6a5c1",
+                "role": "Honeybee Shaw (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/8ba2cc45016c8e52fa775d4c566eefee.jpg"
               }
             ]
           },
           {
-            ratingKey: "57214",
-            key: "/library/metadata/57214",
-            guid: "plex://movie/5d77683aeb5d26001f1e1ccd",
-            slug: "one-magic-christmas",
-            studio: "Walt Disney Pictures",
-            type: "movie",
-            title: "One Magic Christmas",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "A Christmas angel named Gideon is sent by Santa Claus to help Ginny Grainger, who is a cynic and hates Christmas. She and her family have fallen on hard times, making it even harder to believe in anything that can't be seen. With help from her daughter, Abbie, and a trip to the North Pole to see Santa Claus himself, can Gideon find a way to make her believe again?",
-            rating: 4.7,
-            audienceRating: 6.8,
-            year: 1985,
-            tagline: "Miracles do happen!",
-            thumb: "/library/metadata/57214/thumb/1737429264",
-            art: "/library/metadata/57214/art/1737429264",
-            duration: 5330176,
-            originallyAvailableAt: "1985-11-22",
-            addedAt: 1737376659,
-            updatedAt: 1737429264,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "108724",
+            "key": "/library/metadata/108724",
+            "parentRatingKey": "108723",
+            "grandparentRatingKey": "96441",
+            "guid": "plex://episode/673f7ed9d2f5589307d792a7",
+            "parentGuid": "plex://season/6429a5df1936b5d18f0e03c4",
+            "grandparentGuid": "plex://show/5ffddc30cc0645002b786f28",
+            "grandparentSlug": "and-just-like-that",
+            "type": "episode",
+            "title": "Outlook Good",
+            "grandparentKey": "/library/metadata/96441",
+            "parentKey": "/library/metadata/108723",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "And Just Like That...",
+            "parentTitle": "Season 3",
+            "contentRating": "TV-MA",
+            "summary": "As Carrie navigates long-distance with Aidan, Miranda considers ghosting a hookup, and Charlotte tries to redeem Mr. Burton.",
+            "index": 1,
+            "parentIndex": 3,
+            "audienceRating": 7.5,
+            "year": 2025,
+            "thumb": "/library/metadata/108724/thumb/1748821003",
+            "art": "/library/metadata/96441/art/1748905444",
+            "parentThumb": "/library/metadata/108723/thumb/1748821003",
+            "grandparentThumb": "/library/metadata/96441/thumb/1748905444",
+            "grandparentArt": "/library/metadata/96441/art/1748905444",
+            "grandparentTheme": "/library/metadata/96441/theme/1748905444",
+            "duration": 2646477,
+            "originallyAvailableAt": "2025-05-29",
+            "addedAt": 1748569061,
+            "updatedAt": 1748821003,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
               {
-                id: 61364,
-                duration: 5330176,
-                bitrate: 8753,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "eac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131315,
+                "duration": 2646477,
+                "bitrate": 7147,
+                "width": 1920,
+                "height": 960,
+                "aspectRatio": 1.85,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92410,
-                    key: "/library/parts/92410/1709820515/file.mkv",
-                    duration: 5330176,
-                    file: "/Movies (Kids)/One Magic Christmas (1985)/One Magic Christmas (1985) WEBDL-1080p.mkv",
-                    size: 5831757820,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 448351,
+                    "key": "/library/parts/448351/1748568990/file.mkv",
+                    "duration": 2646477,
+                    "file": "/data/Media/Tv Shows/And Just Like That/Season 03/And Just Like That. (2021) - S03E01 - Outlook Good [WEBDL-1080p][EAC3 5.1][h264]-ETHEL.mkv",
+                    "size": 2365940179,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1042444,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 6505,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 960,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 960,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1042445,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1042446,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1042447,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English (SDH)",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SDH) (SRT)"
+                      },
+                      {
+                        "id": 1042448,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 4,
+                        "bitrate": 0,
+                        "language": "Bulgarian",
+                        "languageTag": "bg",
+                        "languageCode": "bul",
+                        "title": "Български",
+                        "displayTitle": "Bulgarian (SRT)",
+                        "extendedDisplayTitle": "Български (Bulgarian SRT)"
+                      },
+                      {
+                        "id": 1042449,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 5,
+                        "bitrate": 0,
+                        "language": "Czech",
+                        "languageTag": "cs",
+                        "languageCode": "ces",
+                        "title": "Čeština",
+                        "displayTitle": "Czech (SRT)",
+                        "extendedDisplayTitle": "Čeština (SRT)"
+                      },
+                      {
+                        "id": 1042450,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 6,
+                        "bitrate": 0,
+                        "language": "Danish",
+                        "languageTag": "da",
+                        "languageCode": "dan",
+                        "title": "Dansk",
+                        "displayTitle": "Danish (SRT)",
+                        "extendedDisplayTitle": "Dansk (SRT)"
+                      },
+                      {
+                        "id": 1042451,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 7,
+                        "bitrate": 0,
+                        "title": "Ekk",
+                        "displayTitle": "Unknown (SRT)",
+                        "extendedDisplayTitle": "Ekk (SRT)"
+                      },
+                      {
+                        "id": 1042452,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 8,
+                        "bitrate": 0,
+                        "language": "Greek",
+                        "languageTag": "el",
+                        "languageCode": "ell",
+                        "title": "Ελληνικά",
+                        "displayTitle": "Greek (SRT)",
+                        "extendedDisplayTitle": "Ελληνικά (SRT)"
+                      },
+                      {
+                        "id": 1042453,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 9,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Español (España)",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Español (España) (SRT)"
+                      },
+                      {
+                        "id": 1042454,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 10,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Español (Latinoamérica)",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Español (Latinoamérica) (SRT)"
+                      },
+                      {
+                        "id": 1042455,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 11,
+                        "bitrate": 0,
+                        "language": "Finnish",
+                        "languageTag": "fi",
+                        "languageCode": "fin",
+                        "title": "Suomi",
+                        "displayTitle": "Finnish (SRT)",
+                        "extendedDisplayTitle": "Suomi (SRT)"
+                      },
+                      {
+                        "id": 1042456,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 12,
+                        "bitrate": 0,
+                        "language": "French",
+                        "languageTag": "fr",
+                        "languageCode": "fra",
+                        "title": "Français",
+                        "displayTitle": "French (SRT)",
+                        "extendedDisplayTitle": "Français (SRT)"
+                      },
+                      {
+                        "id": 1042457,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 13,
+                        "bitrate": 0,
+                        "language": "Croatian",
+                        "languageTag": "hr",
+                        "languageCode": "hrv",
+                        "title": "Hrvatski",
+                        "displayTitle": "Croatian (SRT)",
+                        "extendedDisplayTitle": "Hrvatski (SRT)"
+                      },
+                      {
+                        "id": 1042458,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 14,
+                        "bitrate": 0,
+                        "language": "Hungarian",
+                        "languageTag": "hu",
+                        "languageCode": "hun",
+                        "title": "Magyar",
+                        "displayTitle": "Hungarian (SRT)",
+                        "extendedDisplayTitle": "Magyar (SRT)"
+                      },
+                      {
+                        "id": 1042459,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 15,
+                        "bitrate": 0,
+                        "language": "Indonesian",
+                        "languageTag": "id",
+                        "languageCode": "ind",
+                        "title": "Indonesia",
+                        "displayTitle": "Indonesian (SRT)",
+                        "extendedDisplayTitle": "Indonesia (SRT)"
+                      },
+                      {
+                        "id": 1042460,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 16,
+                        "bitrate": 0,
+                        "language": "Icelandic",
+                        "languageTag": "is",
+                        "languageCode": "isl",
+                        "title": "Íslenska",
+                        "displayTitle": "Icelandic (SRT)",
+                        "extendedDisplayTitle": "Íslenska (Icelandic SRT)"
+                      },
+                      {
+                        "id": 1042461,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 17,
+                        "bitrate": 0,
+                        "language": "Lithuanian",
+                        "languageTag": "lt",
+                        "languageCode": "lit",
+                        "title": "Lietuvių",
+                        "displayTitle": "Lithuanian (SRT)",
+                        "extendedDisplayTitle": "Lietuvių (SRT)"
+                      },
+                      {
+                        "id": 1042462,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 18,
+                        "bitrate": 0,
+                        "language": "Latvian",
+                        "languageTag": "lv",
+                        "languageCode": "lav",
+                        "title": "Lvs",
+                        "displayTitle": "Latvian (SRT)",
+                        "extendedDisplayTitle": "Lvs (Latvian SRT)"
+                      },
+                      {
+                        "id": 1042463,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 19,
+                        "bitrate": 0,
+                        "language": "Macedonian",
+                        "languageTag": "mk",
+                        "languageCode": "mkd",
+                        "title": "Македонски",
+                        "displayTitle": "Macedonian (SRT)",
+                        "extendedDisplayTitle": "Македонски (Macedonian SRT)"
+                      },
+                      {
+                        "id": 1042464,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 20,
+                        "bitrate": 0,
+                        "language": "Norwegian Bokmål",
+                        "languageTag": "nb",
+                        "languageCode": "nob",
+                        "title": "Norsk Bokmål",
+                        "displayTitle": "Norwegian Bokmål (SRT)",
+                        "extendedDisplayTitle": "Norsk Bokmål (Norwegian Bokmål SRT)"
+                      },
+                      {
+                        "id": 1042465,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 21,
+                        "bitrate": 0,
+                        "language": "Dutch",
+                        "languageTag": "nl",
+                        "languageCode": "nld",
+                        "title": "Nederlands",
+                        "displayTitle": "Dutch (SRT)",
+                        "extendedDisplayTitle": "Nederlands (SRT)"
+                      },
+                      {
+                        "id": 1042466,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 22,
+                        "bitrate": 0,
+                        "language": "Polish",
+                        "languageTag": "pl",
+                        "languageCode": "pol",
+                        "title": "Polski",
+                        "displayTitle": "Polish (SRT)",
+                        "extendedDisplayTitle": "Polski (SRT)"
+                      },
+                      {
+                        "id": 1042467,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 23,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Português (Brasil)",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Português (Brasil) (SRT)"
+                      },
+                      {
+                        "id": 1042468,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 24,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Português (Portugal)",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Português (Portugal) (SRT)"
+                      },
+                      {
+                        "id": 1042469,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 25,
+                        "bitrate": 0,
+                        "language": "Romanian",
+                        "languageTag": "ro",
+                        "languageCode": "ron",
+                        "title": "Română",
+                        "displayTitle": "Romanian (SRT)",
+                        "extendedDisplayTitle": "Română (SRT)"
+                      },
+                      {
+                        "id": 1042470,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 26,
+                        "bitrate": 0,
+                        "language": "Slovenian",
+                        "languageTag": "sl",
+                        "languageCode": "slv",
+                        "title": "Slovenščina",
+                        "displayTitle": "Slovenian (SRT)",
+                        "extendedDisplayTitle": "Slovenščina (SRT)"
+                      },
+                      {
+                        "id": 1042471,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 27,
+                        "bitrate": 0,
+                        "language": "Serbian",
+                        "languageTag": "sr",
+                        "languageCode": "srp",
+                        "title": "Srpski (Latinica)",
+                        "displayTitle": "Serbian (SRT)",
+                        "extendedDisplayTitle": "Srpski (Latinica) (Serbian SRT)"
+                      },
+                      {
+                        "id": 1042472,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 28,
+                        "bitrate": 0,
+                        "language": "Swedish",
+                        "languageTag": "sv",
+                        "languageCode": "swe",
+                        "title": "Svenska",
+                        "displayTitle": "Swedish (SRT)",
+                        "extendedDisplayTitle": "Svenska (SRT)"
+                      },
+                      {
+                        "id": 1042473,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 29,
+                        "bitrate": 0,
+                        "language": "Thai",
+                        "languageTag": "th",
+                        "languageCode": "tha",
+                        "title": "ไทย",
+                        "displayTitle": "Thai (SRT)",
+                        "extendedDisplayTitle": "ไทย (SRT)"
+                      },
+                      {
+                        "id": 1042474,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 30,
+                        "bitrate": 0,
+                        "language": "Turkish",
+                        "languageTag": "tr",
+                        "languageCode": "tur",
+                        "title": "Türkçe",
+                        "displayTitle": "Turkish (SRT)",
+                        "extendedDisplayTitle": "Türkçe (SRT)"
+                      },
+                      {
+                        "id": 1042475,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 31,
+                        "bitrate": 0,
+                        "language": "Malay",
+                        "languageTag": "ms",
+                        "languageCode": "msa",
+                        "title": "Zsm",
+                        "displayTitle": "Malay (SRT)",
+                        "extendedDisplayTitle": "Zsm (Malay SRT)"
+                      },
+                      {
+                        "id": 1042476,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 32,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Español (Latinoamérica) (SDH)",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Español (Latinoamérica) (SDH) (SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "One Magic Christmas",
-                type: "coverPoster",
-                url: "/library/metadata/57214/thumb/1737429264"
+                "alt": "Outlook Good",
+                "type": "coverPoster",
+                "url": "/library/metadata/96441/thumb/1748905444"
               },
               {
-                alt: "One Magic Christmas",
-                type: "background",
-                url: "/library/metadata/57214/art/1737429264"
+                "alt": "Outlook Good",
+                "type": "snapshot",
+                "url": "/library/metadata/108724/thumb/1748821003"
+              },
+              {
+                "alt": "Outlook Good",
+                "type": "background",
+                "url": "/library/metadata/96441/art/1748905444"
+              },
+              {
+                "alt": "Outlook Good",
+                "type": "clearLogo",
+                "url": "/library/metadata/96441/clearLogo/1748905444"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "1f2956",
-              topRight: "273b7e",
-              bottomRight: "9c3228",
-              bottomLeft: "2c2b61"
+            "UltraBlurColors": {
+              "topLeft": "15295f",
+              "topRight": "1b2453",
+              "bottomRight": "1c2d56",
+              "bottomLeft": "2b4587"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Fantasy"
+                "id": "imdb://tt28741203"
               },
               {
-                tag: "Family"
+                "id": "tmdb://5828324"
+              },
+              {
+                "id": "tvdb://11086945"
               }
             ],
-            Country: [
+            "Rating": [
               {
-                tag: "Canada"
+                "image": "imdb://image.rating",
+                "value": 5.0,
+                "type": "audience"
               },
               {
-                tag: "United States of America"
+                "image": "themoviedb://image.rating",
+                "value": 7.5,
+                "type": "audience"
               }
             ],
-            Director: [
+            "Director": [
               {
-                tag: "Phillip Borsos"
+                "id": 216584,
+                "filter": "director=216584",
+                "tag": "Michael Patrick King",
+                "tagKey": "5d77682e5af944001f1f86d8",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e2fd598ccdd0f07a1746a8b41913b87.jpg"
               }
             ],
-            Writer: [
+            "Writer": [
               {
-                tag: "Thomas Meehan"
-              },
-              {
-                tag: "Phillip Borsos"
+                "id": 216585,
+                "filter": "writer=216585",
+                "tag": "Michael Patrick King",
+                "tagKey": "5d77682e5af944001f1f86d8",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e2fd598ccdd0f07a1746a8b41913b87.jpg"
               }
             ],
-            Role: [
+            "Role": [
               {
-                tag: "Mary Steenburgen"
+                "id": 216506,
+                "filter": "actor=216506",
+                "tag": "Sarah Jessica Parker",
+                "tagKey": "5d7768255af944001f1f63ce",
+                "role": "Carrie Bradshaw",
+                "thumb": "https://metadata-static.plex.tv/7/people/7ca0ee6546a90b3915c2a14e5dcb7721.jpg"
               },
               {
-                tag: "Gary Basaraba"
+                "id": 13911,
+                "filter": "actor=13911",
+                "tag": "Cynthia Nixon",
+                "tagKey": "5d776825151a60001f24a6ce",
+                "role": "Miranda Hobbes",
+                "thumb": "https://metadata-static.plex.tv/4/people/4d7e55285a3a83de831125d448d2fab7.jpg"
               },
               {
-                tag: "Elisabeth Harnois"
+                "id": 24631,
+                "filter": "actor=24631",
+                "tag": "Kristin Davis",
+                "tagKey": "5d77682e5af944001f1f86dc",
+                "role": "Charlotte York",
+                "thumb": "https://metadata-static.plex.tv/6/people/6fe09ebfad9769cccb1e6376adcb1f9f.jpg"
+              },
+              {
+                "id": 64795,
+                "filter": "actor=64795",
+                "tag": "Mario Cantone",
+                "tagKey": "5d77682e5af944001f1f86dd",
+                "role": "Anthony Marentino",
+                "thumb": "https://metadata-static.plex.tv/0/people/034833400147fb5abdae6dd1a077677d.jpg"
+              },
+              {
+                "id": 22541,
+                "filter": "actor=22541",
+                "tag": "Sarita Choudhury",
+                "tagKey": "5d77682b151a60001f24b8e9",
+                "role": "Seema Patel",
+                "thumb": "https://metadata-static.plex.tv/7/people/769841e6e724d2a9df7c74ef8dbfd021.jpg"
+              },
+              {
+                "id": 4248,
+                "filter": "actor=4248",
+                "tag": "Evan Handler",
+                "tagKey": "5d776825880197001ec90529",
+                "role": "Harry Goldenblatt",
+                "thumb": "https://metadata-static.plex.tv/a/people/a82c07bcfbe596492cb19349a3f2fad9.jpg"
+              },
+              {
+                "id": 65598,
+                "filter": "actor=65598",
+                "tag": "Nicole Ari Parker",
+                "tagKey": "5d77682e4de0ee001fcca340",
+                "role": "Lisa Todd Wexley",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682e4de0ee001fcca340.jpg"
+              },
+              {
+                "id": 136322,
+                "filter": "actor=136322",
+                "tag": "Alexander Bello",
+                "tagKey": "5e16258a155ba6003e37bce8",
+                "role": "Henry Wexley",
+                "thumb": "https://metadata-static.plex.tv/7/people/7f198e71a2bf1be96d17e4c8a49eadbc.jpg"
+              },
+              {
+                "id": 216510,
+                "filter": "actor=216510",
+                "tag": "Ellie Reine",
+                "tagKey": "60b0a52cdeb88a002dca910f",
+                "role": "Gabrielle Wexley",
+                "thumb": "https://metadata-static.plex.tv/5/people/5be0cbfbafa647eebbc70f03d1500e92.jpg"
+              },
+              {
+                "id": 216515,
+                "filter": "actor=216515",
+                "tag": "Elijah Jacob",
+                "tagKey": "5d776cc57a53e9001e74c327",
+                "role": "Herbert Wexley Jr.",
+                "thumb": "https://metadata-static.plex.tv/0/people/0950542b0882e9ae9e44a711f3eb3e3c.jpg"
+              },
+              {
+                "id": 216511,
+                "filter": "actor=216511",
+                "tag": "Sebastiano Pigazzi",
+                "tagKey": "5f401e4f04a86500409ecd14",
+                "role": "Giuseppe",
+                "thumb": "https://metadata-static.plex.tv/1/people/179c8d99cd940d324bcb88db80b58bbd.jpg"
+              },
+              {
+                "id": 216513,
+                "filter": "actor=216513",
+                "tag": "Armin Amiri",
+                "tagKey": "5d7768337e9a3c0020c6c60a",
+                "role": "Ravi Gordi",
+                "thumb": "https://metadata-static.plex.tv/d/people/d7b459d85548623390a51ad9fd14e96f.jpg"
+              },
+              {
+                "id": 246951,
+                "filter": "actor=246951",
+                "tag": "Logan Souza",
+                "tagKey": "5f40433c1ae710004108e561",
+                "role": "Wyatt Shaw"
+              },
+              {
+                "id": 45238,
+                "filter": "actor=45238",
+                "tag": "Rosie O'Donnell",
+                "tagKey": "5d776828999c64001ec2cc9b",
+                "role": "Mary",
+                "thumb": "https://metadata-static.plex.tv/c/people/cac6d03a0567733721d6610bf2f554b7.jpg"
+              },
+              {
+                "id": 199634,
+                "filter": "actor=199634",
+                "tag": "David Carl",
+                "tagKey": "608ade6a0f0b9c002ced930f",
+                "role": "Location Manager",
+                "thumb": "https://metadata-static.plex.tv/0/people/06c11679131d6cc20fff7bf569fc40a7.jpg"
+              },
+              {
+                "id": 253426,
+                "filter": "actor=253426",
+                "tag": "Mihir Kumar",
+                "tagKey": "65e3136f8d26f08cd4c8cc15",
+                "role": "Artold"
+              },
+              {
+                "id": 289773,
+                "filter": "actor=289773",
+                "tag": "William Berloni",
+                "tagKey": "60995a588ceaf2002c784440",
+                "role": "Dog Owner"
+              },
+              {
+                "id": 289774,
+                "filter": "actor=289774",
+                "tag": "Brimstone",
+                "tagKey": "6787a3cc2fbd7052f48f5815",
+                "role": "Large Man"
+              },
+              {
+                "id": 95102,
+                "filter": "actor=95102",
+                "tag": "Ashley Bufkin",
+                "tagKey": "621b874d61beafe4a8c06b64",
+                "role": "Young Woman",
+                "thumb": "https://metadata-static.plex.tv/6/people/6453367e5930fd11ae6af5424bd2cb41.jpg"
+              },
+              {
+                "id": 289775,
+                "filter": "actor=289775",
+                "tag": "Eliazar Jimenez",
+                "tagKey": "5edbb05b129f8900402c7ee8",
+                "role": "Diego"
+              },
+              {
+                "id": 289776,
+                "filter": "actor=289776",
+                "tag": "Stephanie Seward",
+                "tagKey": "606f1698e3727a002d708ecb",
+                "role": "Intense Woman"
+              },
+              {
+                "id": 289777,
+                "filter": "actor=289777",
+                "tag": "Atra Asdou",
+                "tagKey": "5d776f117a53e9001e78a91d",
+                "role": "Cassandra"
+              },
+              {
+                "id": 289778,
+                "filter": "actor=289778",
+                "tag": "Theo Brown",
+                "tagKey": "63248c9668360d96e65f0d09",
+                "role": "Graduate Girl"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 292963,
+                "filter": "producer=292963",
+                "tag": "Michael Berenbaum",
+                "tagKey": "5d776846e6d55c002040fb46"
+              },
+              {
+                "id": 292964,
+                "filter": "producer=292964",
+                "tag": "Jason Fournet",
+                "tagKey": "5f401cd2c63b480040de17a3"
               }
             ]
           },
           {
-            ratingKey: "57210",
-            key: "/library/metadata/57210",
-            guid: "plex://movie/5d776d37594b2b001e70420b",
-            slug: "olafs-frozen-adventure",
-            studio: "Walt Disney Pictures",
-            type: "movie",
-            title: "Olaf's Frozen Adventure",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              'A Christmas-themed special featuring characters from Walt Disney Pictures\' 53rd full-length animated motion picture, "Frozen (2013)".',
-            rating: 5.7,
-            audienceRating: 4.3,
-            year: 2017,
-            tagline: "Let's go find a tradition!",
-            thumb: "/library/metadata/57210/thumb/1737376528",
-            art: "/library/metadata/57210/art/1737376528",
-            duration: 1333582,
-            originallyAvailableAt: "2017-10-27",
-            addedAt: 1737376523,
-            updatedAt: 1737376528,
-            audienceRatingImage: "rottentomatoes://image.rating.spilled",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57211",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "108722",
+            "key": "/library/metadata/108722",
+            "parentRatingKey": "108474",
+            "grandparentRatingKey": "8462",
+            "guid": "plex://episode/681571d73767b0b45d540a5e",
+            "parentGuid": "plex://season/680b81cde6b87f5a7f070c12",
+            "grandparentGuid": "plex://show/5d9c085508fddd001f297a07",
+            "grandparentSlug": "masterchef-us",
+            "type": "episode",
+            "title": "Audition Battles Continue",
+            "grandparentKey": "/library/metadata/8462",
+            "parentKey": "/library/metadata/108474",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "MasterChef (US)",
+            "parentTitle": "Season 15",
+            "originalTitle": "The Audition Battles Continue",
+            "contentRating": "TV-14",
+            "summary": "The remaining eight pairs of home cooks go head-to-head in the audition battles, for a chance to win coveted white aprons.",
+            "index": 2,
+            "parentIndex": 15,
+            "audienceRating": 7.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108722/thumb/1748904303",
+            "art": "/library/metadata/8462/art/1748905442",
+            "parentThumb": "/library/metadata/108474/thumb/1748186908",
+            "grandparentThumb": "/library/metadata/8462/thumb/1748905442",
+            "grandparentArt": "/library/metadata/8462/art/1748905442",
+            "grandparentTheme": "/library/metadata/8462/theme/1748905442",
+            "duration": 2532064,
+            "originallyAvailableAt": "2025-05-28",
+            "addedAt": 1748506963,
+            "updatedAt": 1748904303,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "chapterSource": "media",
+            "Media": [
               {
-                id: 61354,
-                duration: 1333582,
-                bitrate: 6251,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131308,
+                "duration": 2532064,
+                "bitrate": 7217,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92400,
-                    key: "/library/parts/92400/1710590934/file.mkv",
-                    duration: 1333582,
-                    file: "/Movies (Kids)/Olaf's Frozen Adventure (2017)/Olaf's Frozen Adventure (2017) WEBDL-1080p.mkv",
-                    size: 1042551393,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 448344,
+                    "key": "/library/parts/448344/1748506891/file.mkv",
+                    "duration": 2532064,
+                    "file": "/data/Media/Tv Shows/MasterChef (US)/Season 15/MasterChef (US) (2010) - S15E02 - Audition Battles Continue [WEBDL-1080p][EAC3 5.1][h264]-RAWR.mkv",
+                    "size": 2285078182,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1042428,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 6961,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "original": true,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1042429,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 256,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "original": true,
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1042430,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "dub": true,
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1042431,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "dub": true,
+                        "hearingImpaired": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Olaf's Frozen Adventure",
-                type: "coverPoster",
-                url: "/library/metadata/57210/thumb/1737376528"
+                "alt": "Audition Battles Continue",
+                "type": "coverPoster",
+                "url": "/library/metadata/8462/thumb/1748905442"
               },
               {
-                alt: "Olaf's Frozen Adventure",
-                type: "background",
-                url: "/library/metadata/57210/art/1737376528"
+                "alt": "Audition Battles Continue",
+                "type": "snapshot",
+                "url": "/library/metadata/108722/thumb/1748904303"
               },
               {
-                alt: "Olaf's Frozen Adventure",
-                type: "clearLogo",
-                url: "/library/metadata/57210/clearLogo/1737376528"
+                "alt": "Audition Battles Continue",
+                "type": "background",
+                "url": "/library/metadata/8462/art/1748905442"
+              },
+              {
+                "alt": "Audition Battles Continue",
+                "type": "clearLogo",
+                "url": "/library/metadata/8462/clearLogo/1748905442"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "142f4a",
-              topRight: "370c04",
-              bottomRight: "1a4a73",
-              bottomLeft: "206875"
+            "UltraBlurColors": {
+              "topLeft": "0d266a",
+              "topRight": "363d86",
+              "bottomRight": "3f3d83",
+              "bottomLeft": "3653b7"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Comedy"
+                "id": "imdb://tt37024129"
               },
               {
-                tag: "Animation"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Stevie Wermers-Skelton"
+                "id": "tmdb://6253799"
               },
               {
-                tag: "Kevin Deters"
+                "id": "tvdb://11102380"
               }
             ],
-            Writer: [
+            "Rating": [
               {
-                tag: "Jac Schaeffer"
+                "image": "imdb://image.rating",
+                "value": 6.5,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.0,
+                "type": "audience"
               }
             ],
-            Role: [
+            "Role": [
               {
-                tag: "Josh Gad"
-              },
+                "id": 28742,
+                "filter": "actor=28742",
+                "tag": "Gordon Ramsay",
+                "tagKey": "5d7768aa374a5b001fecc9c4",
+                "role": "Self - Judge",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd20a681247c97c89d9aa32747028ba3.jpg"
+              }
+            ],
+            "Producer": [
               {
-                tag: "Kristen Bell"
-              },
-              {
-                tag: "Idina Menzel"
+                "id": 41529,
+                "filter": "producer=41529",
+                "tag": "Gordon Ramsay",
+                "tagKey": "5d7768aa374a5b001fecc9c4",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd20a681247c97c89d9aa32747028ba3.jpg"
               }
             ]
           },
           {
-            ratingKey: "57209",
-            key: "/library/metadata/57209",
-            guid: "plex://movie/5d776b37ad5437001f797ccb",
-            slug: "northpole",
-            studio: "Muse Entertainment",
-            type: "movie",
-            title: "Northpole",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "When a loss of togetherness spreads across the globe and threatens the existence of Santa's Northpole, a little boy named Kevin is called upon to save the day.",
-            audienceRating: 4.5,
-            year: 2014,
-            tagline: "Where happiness makes magic.",
-            thumb: "/library/metadata/57209/thumb/1737376521",
-            art: "/library/metadata/57209/art/1737376521",
-            duration: 5074282,
-            originallyAvailableAt: "2014-11-15",
-            addedAt: 1737376517,
-            updatedAt: 1737376521,
-            audienceRatingImage: "rottentomatoes://image.rating.spilled",
-            chapterSource: "media",
-            Media: [
+            "ratingKey": "108721",
+            "key": "/library/metadata/108721",
+            "parentRatingKey": "103851",
+            "grandparentRatingKey": "103157",
+            "guid": "plex://episode/681edac3f260f52292a67668",
+            "parentGuid": "plex://season/67ee8b94f094e9eab1fac3bd",
+            "grandparentGuid": "plex://show/5d9c0867ba6eb9001fba2e1e",
+            "grandparentSlug": "guys-grocery-games",
+            "type": "episode",
+            "title": "The G.O.A.T. Tournament Pt 4",
+            "titleSort": "G.O.A.T. Tournament Pt 4",
+            "grandparentKey": "/library/metadata/103157",
+            "parentKey": "/library/metadata/103851",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Guy's Grocery Games",
+            "parentTitle": "Season 39",
+            "contentRating": "TV-G",
+            "summary": "Four chefs still have a shot at becoming the GGG Greatest of All Time and winning $70,000. Guy Fieri pairs the chefs into teams and spins the dish and game wheels to determine that they must make their best pork dish using only ingredients from the frozen section. The losing teammates face off in the elimination round by making a comfort classic using one ingredient from each aisle",
+            "index": 10,
+            "parentIndex": 39,
+            "year": 2025,
+            "thumb": "/library/metadata/108721/thumb/1748704235",
+            "art": "/library/metadata/103157/art/1748821044",
+            "grandparentThumb": "/library/metadata/103157/thumb/1748821044",
+            "grandparentArt": "/library/metadata/103157/art/1748821044",
+            "grandparentTheme": "/library/metadata/103157/theme/1748821044",
+            "duration": 2520895,
+            "originallyAvailableAt": "2025-05-28",
+            "addedAt": 1748493010,
+            "updatedAt": 1748704235,
+            "Media": [
               {
-                id: 61353,
-                duration: 5074282,
-                bitrate: 2635,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "aac",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mp4",
-                videoFrameRate: "24p",
-                optimizedForStreaming: 1,
-                audioProfile: "lc",
-                has64bitOffsets: false,
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131307,
+                "duration": 2520895,
+                "bitrate": 9922,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "main",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92399,
-                    key: "/library/parts/92399/1705524618/file.mp4",
-                    duration: 5074282,
-                    file: "/Movies (Kids)/Northpole (2014)/Northpole (2014) Bluray-1080p.mp4",
-                    size: 1674331331,
-                    audioProfile: "lc",
-                    container: "mp4",
-                    has64bitOffsets: false,
-                    indexes: "sd",
-                    optimizedForStreaming: true,
-                    videoProfile: "high"
+                    "id": 448343,
+                    "key": "/library/parts/448343/1748492945/file.mkv",
+                    "duration": 2520895,
+                    "file": "/data/Media/Tv Shows/Guy's Grocery Games (2013) {tvdb-274453}/Season 39/Guy's Grocery Games (2013) - S39E10 - The G.O.A.T. Tournament Pt 4 [WEBDL-1080p][AAC 2.0][h264]-FREQUENCY.mkv",
+                    "size": 3127456208,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "main",
+                    "Stream": [
+                      {
+                        "id": 1042425,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9797,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "main",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1042426,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 125,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1042427,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Northpole",
-                type: "coverPoster",
-                url: "/library/metadata/57209/thumb/1737376521"
+                "alt": "The G.O.A.T. Tournament Pt 4",
+                "type": "coverPoster",
+                "url": "/library/metadata/103157/thumb/1748821044"
               },
               {
-                alt: "Northpole",
-                type: "background",
-                url: "/library/metadata/57209/art/1737376521"
+                "alt": "The G.O.A.T. Tournament Pt 4",
+                "type": "snapshot",
+                "url": "/library/metadata/108721/thumb/1748704235"
               },
               {
-                alt: "Northpole",
-                type: "clearLogo",
-                url: "/library/metadata/57209/clearLogo/1737376521"
+                "alt": "The G.O.A.T. Tournament Pt 4",
+                "type": "background",
+                "url": "/library/metadata/103157/art/1748821044"
+              },
+              {
+                "alt": "The G.O.A.T. Tournament Pt 4",
+                "type": "clearLogo",
+                "url": "/library/metadata/103157/clearLogo/1748821044"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "0d2f51",
-              topRight: "2f1e4e",
-              bottomRight: "9d343a",
-              bottomLeft: "2d5a88"
+            "UltraBlurColors": {
+              "topLeft": "570e11",
+              "topRight": "a32818",
+              "bottomRight": "92403f",
+              "bottomLeft": "83282e"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Fantasy"
+                "id": "tmdb://6240449"
               },
               {
-                tag: "Family"
+                "id": "tvdb://11115359"
               }
             ],
-            Country: [
+            "Role": [
               {
-                tag: "Canada"
-              }
-            ],
-            Director: [
-              {
-                tag: "Douglas Barr"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Gregg Rossen"
-              },
-              {
-                tag: "Brian Sawyer"
-              }
-            ],
-            Role: [
-              {
-                tag: "Tiffani Thiessen"
-              },
-              {
-                tag: "Josh Hopkins"
-              },
-              {
-                tag: "Max Charles"
+                "id": 267515,
+                "filter": "actor=267515",
+                "tag": "Guy Fieri",
+                "tagKey": "5d776d6f96b655001fe48bbb",
+                "role": "Host",
+                "thumb": "https://metadata-static.plex.tv/2/people/25e37fe3b20cefd9d76186cdc0f99b8e.jpg"
               }
             ]
           },
           {
-            ratingKey: "57203",
-            key: "/library/metadata/57203",
-            guid: "plex://movie/5d776e7c96b655001fe690aa",
-            slug: "noelle-2019",
-            studio: "Walt Disney Pictures",
-            type: "movie",
-            title: "Noelle",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "Noelle has always had to support and encourage her brother Nick, who was ordained to take over as Santa. When Nick disappears right before Christmas, Noelle goes on a funny and heartfelt journey to find him and, ultimately, what Christmas is really about.",
-            rating: 5.6,
-            audienceRating: 5.9,
-            year: 2019,
-            tagline: "Saving Christmas together? Oh, joy.",
-            thumb: "/library/metadata/57203/thumb/1737376503",
-            art: "/library/metadata/57203/art/1737376503",
-            duration: 6052416,
-            originallyAvailableAt: "2019-11-12",
-            addedAt: 1737376498,
-            updatedAt: 1737376503,
-            audienceRatingImage: "rottentomatoes://image.rating.spilled",
-            primaryExtraKey: "/library/metadata/57204",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "108677",
+            "key": "/library/metadata/108677/children",
+            "guid": "plex://show/653663c304923574ca7c52b9",
+            "slug": "wondla",
+            "studio": "Skydance Animation",
+            "type": "show",
+            "title": "WondLa",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-PG",
+            "summary": "Forced to flee her underground sanctuary for Earth’s surface, Eva discovers a world unlike anything she expected. As she journeys across perilous terrain and unknown civilizations, Eva searches to answer the ultimate question: Is she the last human?",
+            "index": 1,
+            "audienceRating": 7.5,
+            "year": 2024,
+            "thumb": "/library/metadata/108677/thumb/1748366766",
+            "art": "/library/metadata/108677/art/1748366766",
+            "duration": 1440000,
+            "originallyAvailableAt": "2024-06-28",
+            "leafCount": 8,
+            "viewedLeafCount": 0,
+            "childCount": 2,
+            "addedAt": 1748366766,
+            "updatedAt": 1748366766,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "primaryExtraKey": "/library/metadata/108686",
+            "Image": [
               {
-                id: 61337,
-                duration: 6052416,
-                bitrate: 2523,
-                width: 1920,
-                height: 804,
-                aspectRatio: 2.35,
-                audioChannels: 6,
-                audioCodec: "eac3",
-                videoCodec: "hevc",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "main",
-                hasVoiceActivity: false,
-                Part: [
-                  {
-                    id: 92383,
-                    key: "/library/parts/92383/1705430240/file.mkv",
-                    duration: 6052416,
-                    file: "/Movies (Kids)/Noelle (2019)/Noelle (2019) WEBRip-1080p.mkv",
-                    size: 1911414256,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "main"
-                  }
-                ]
-              }
-            ],
-            Image: [
-              {
-                alt: "Noelle",
-                type: "coverPoster",
-                url: "/library/metadata/57203/thumb/1737376503"
+                "alt": "WondLa",
+                "type": "coverPoster",
+                "url": "/library/metadata/108677/thumb/1748366766"
               },
               {
-                alt: "Noelle",
-                type: "background",
-                url: "/library/metadata/57203/art/1737376503"
+                "alt": "WondLa",
+                "type": "background",
+                "url": "/library/metadata/108677/art/1748366766"
               },
               {
-                alt: "Noelle",
-                type: "clearLogo",
-                url: "/library/metadata/57203/clearLogo/1737376503"
+                "alt": "WondLa",
+                "type": "clearLogo",
+                "url": "/library/metadata/108677/clearLogo/1748366766"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "561011",
-              topRight: "ac0804",
-              bottomRight: "a11e1b",
-              bottomLeft: "a90509"
+            "UltraBlurColors": {
+              "topLeft": "152f4c",
+              "topRight": "1e4b5d",
+              "bottomRight": "15382f",
+              "bottomLeft": "37421c"
             },
-            Genre: [
+            "Genre": [
               {
-                tag: "Family"
+                "id": 1403,
+                "filter": "genre=1403",
+                "tag": "Family"
               },
               {
-                tag: "Fantasy"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Marc Lawrence"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Marc Lawrence"
-              }
-            ],
-            Role: [
-              {
-                tag: "Anna Kendrick"
+                "id": 1402,
+                "filter": "genre=1402",
+                "tag": "Animation"
               },
               {
-                tag: "Bill Hader"
+                "id": 1210,
+                "filter": "genre=1210",
+                "tag": "Adventure"
               },
               {
-                tag: "Kingsley Ben-Adir"
+                "id": 93,
+                "filter": "genre=93",
+                "tag": "Fantasy"
+              },
+              {
+                "id": 449,
+                "filter": "genre=449",
+                "tag": "Science Fiction"
+              },
+              {
+                "id": 5785,
+                "filter": "genre=5785",
+                "tag": "Sci-Fi & Fantasy"
+              }
+            ],
+            "Country": [
+              {
+                "id": 128,
+                "filter": "country=128",
+                "tag": "United States of America"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "imdb://tt14076044"
+              },
+              {
+                "id": "tmdb://237853"
+              },
+              {
+                "id": "tvdb://449634"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.5,
+                "type": "audience"
+              },
+              {
+                "image": "rottentomatoes://image.rating.rotten",
+                "value": 5.0,
+                "type": "critic"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 8.8,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.5,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 29671,
+                "filter": "actor=29671",
+                "tag": "Jeanine Mason",
+                "tagKey": "5d776969fb0d55001f52581f",
+                "role": "Eva (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/05421734f4acb93e5aa299eb45c13860.jpg"
+              },
+              {
+                "id": 17619,
+                "filter": "actor=17619",
+                "tag": "Teri Hatcher",
+                "tagKey": "5d776827103a2d001f564578",
+                "role": "Muthr (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/231c7bd579aca24a16a606d5ce1e96a6.jpg"
+              },
+              {
+                "id": 4409,
+                "filter": "actor=4409",
+                "tag": "D. C. Douglas",
+                "tagKey": "5d77682b961905001eb92588",
+                "role": "Omnipod (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2a5280fb7e9618660f56352044af6384.jpg"
+              },
+              {
+                "id": 18576,
+                "filter": "actor=18576",
+                "tag": "Gary Anthony Williams",
+                "tagKey": "5d7768398718ba001e315adb",
+                "role": "Rovender (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/af466d346286d095456b9fc2640f98c0.jpg"
+              },
+              {
+                "id": 41969,
+                "filter": "actor=41969",
+                "tag": "Brad Garrett",
+                "tagKey": "5d776824961905001eb9096c",
+                "role": "Otto (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/645d1e6cdb49bc9814dc6111776653c1.jpg"
+              },
+              {
+                "id": 289393,
+                "filter": "actor=289393",
+                "tag": "Chiké Okonkwo",
+                "tagKey": "5d776848103a2d001f56c052",
+                "role": "Besteel (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a1f6cac2686fcda1787442c22a0f66d2.jpg"
+              },
+              {
+                "id": 240634,
+                "filter": "actor=240634",
+                "tag": "Kingslei Michelle Love",
+                "tagKey": "667ea6a236c88fcec45aa31b",
+                "role": "Baby Sandsniper (voice)"
+              },
+              {
+                "id": 89265,
+                "filter": "actor=89265",
+                "tag": "Alan Tudyk",
+                "tagKey": "5d776826eb5d26001f1dd578",
+                "role": "Cadmus Pryde (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/ba5a8c9127c1ee0c6696be5daac8ded2.jpg"
+              },
+              {
+                "id": 289394,
+                "filter": "actor=289394",
+                "tag": "Micaiah Chen",
+                "tagKey": "62231a830ce3d76627df7c77",
+                "role": "Young Eva (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/9f3ebaf714a7fcea823db68ec2e37e5c.jpg"
+              },
+              {
+                "id": 289395,
+                "filter": "actor=289395",
+                "tag": "Christopher Swindle",
+                "tagKey": "5e1651cc316a39003ef9c389",
+                "role": "Meego (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/21e2dfb9e11474f49e264796236af024.jpg"
+              },
+              {
+                "id": 17126,
+                "filter": "actor=17126",
+                "tag": "John Ratzenberger",
+                "tagKey": "5d776824961905001eb9097e",
+                "role": "Caruncle (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/df4288c1598eb9a26649541c93d0ffa7.jpg"
+              },
+              {
+                "id": 68080,
+                "filter": "actor=68080",
+                "tag": "Sayed Badreya",
+                "tagKey": "5d77682a151a60001f24b555",
+                "role": "Bartender (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d650cb9be9893cb1a19f3fefce90f51b.jpg"
+              },
+              {
+                "id": 34500,
+                "filter": "actor=34500",
+                "tag": "T.J. Power",
+                "tagKey": "5d776c679ab544002151643b",
+                "role": "Fiscian (voice)",
+                "thumb": "https://metadata-static.plex.tv/1/people/1aba2159db1d2fea3c7eedfa39e23d25.jpg"
+              },
+              {
+                "id": 289396,
+                "filter": "actor=289396",
+                "tag": "Louella Edith Power",
+                "tagKey": "667ea6a1fc9371dd16fd734a",
+                "role": "Zoozi (voice)"
+              },
+              {
+                "id": 289397,
+                "filter": "actor=289397",
+                "tag": "Everly Carganilla",
+                "tagKey": "5f4062c302101b0040fd2242",
+                "role": "Maegden (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/3b798edd193326f4a4a76fa5c0577196.jpg"
+              },
+              {
+                "id": 182417,
+                "filter": "actor=182417",
+                "tag": "Larissa Gallagher",
+                "tagKey": "5d776c6c96b655001fe304ac",
+                "role": "Cashier / Hostia (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/91eb55f8719d8c9fadeedf8068ed4d29.jpg"
+              },
+              {
+                "id": 289398,
+                "filter": "actor=289398",
+                "tag": "Michael Wrona",
+                "tagKey": "667ea6a3872ded6878eb094d",
+                "role": "Race Announcer (voice)"
+              },
+              {
+                "id": 17984,
+                "filter": "actor=17984",
+                "tag": "Vernee Watson-Johnson",
+                "tagKey": "5d77682ee6d55c002040bea9",
+                "role": "Ol' Crusty (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f7a14a5d5464e87a81e857f2da51a9a1.jpg"
+              },
+              {
+                "id": 114606,
+                "filter": "actor=114606",
+                "tag": "Michael Corbett",
+                "tagKey": "5d776843103a2d001f56b04b",
+                "role": "Additional Voices (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776843103a2d001f56b04b.jpg"
+              },
+              {
+                "id": 289399,
+                "filter": "actor=289399",
+                "tag": "Tom Bromhead",
+                "tagKey": "5d7769a6f617c90020162cf8",
+                "role": "Additional Voices (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/8cb358441552b892c41a1098c67baeea.jpg"
+              },
+              {
+                "id": 289400,
+                "filter": "actor=289400",
+                "tag": "Claire Kniaz",
+                "tagKey": "63494fa0572868fb600a9056",
+                "role": "Additional Voices (voice)"
+              },
+              {
+                "id": 289401,
+                "filter": "actor=289401",
+                "tag": "Miranda O'Hare",
+                "tagKey": "5d776920594b2b001e69da2d",
+                "role": "Additional Voices (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/8ffac3ee0c194e3fe724b888f6e083db.jpg"
+              },
+              {
+                "id": 289402,
+                "filter": "actor=289402",
+                "tag": "Leigh Joel Scott",
+                "tagKey": "5d77704781ba41001faec5c2",
+                "role": "Additional Voices (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e884a981f5d349e34f17ba54c8679000.jpg"
+              },
+              {
+                "id": 3445,
+                "filter": "actor=3445",
+                "tag": "Shohreh Aghdashloo",
+                "tagKey": "5d77682a4de0ee001fcc97e0",
+                "role": "Darius (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/411d0233c6e8af31cd40c609b7a71752.jpg"
+              },
+              {
+                "id": 259305,
+                "filter": "actor=259305",
+                "tag": "Sarah Hollis",
+                "tagKey": "5d776e3e47dd6e001f6fada7",
+                "role": "Queen Ojo (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/b4f4331c0de52a0944425fb4b73d3208.jpg"
+              },
+              {
+                "id": 3909,
+                "filter": "actor=3909",
+                "tag": "Maz Jobrani",
+                "tagKey": "5d776826a091de001f2e612f",
+                "role": "Zin (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/5a5affa34c696e2217b0c0bf23e7d733.jpg"
+              },
+              {
+                "id": 1788,
+                "filter": "actor=1788",
+                "tag": "Navid Negahban",
+                "tagKey": "5d7768316f4521001ea9b492",
+                "role": "Loroc (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/cf3aceb57b59e98d9df7ac15a26130c2.jpg"
+              },
+              {
+                "id": 73142,
+                "filter": "actor=73142",
+                "tag": "Simon Pegg",
+                "tagKey": "5d7768287e9a3c0020c6ae80",
+                "role": "BOB (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/8f32b6c0ac102c44dd07a6bc602cad8f.jpg"
+              },
+              {
+                "id": 73128,
+                "filter": "actor=73128",
+                "tag": "Kari Wahlgren",
+                "tagKey": "5d7768283c3c2a001fbcb65d",
+                "role": "Dewey (voice)",
+                "thumb": "https://metadata-static.plex.tv/7/people/7df12d388d009ce201008baa6cca5625.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/WondLa (2024) {tvdb-449634}"
               }
             ]
           },
           {
-            ratingKey: "57202",
-            key: "/library/metadata/57202",
-            guid: "plex://movie/5d7768751999bc0020dc55b9",
-            slug: "noel",
-            studio: "The Convex Group",
-            type: "movie",
-            title: "Noel",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "PG",
-            summary:
-              "Five New Yorkers come together on Christmas Eve, seeking a miracle.",
-            rating: 2.8,
-            audienceRating: 4.8,
-            year: 2004,
-            tagline: "Miracles are closer than you think",
-            thumb: "/library/metadata/57202/thumb/1737376447",
-            art: "/library/metadata/57202/art/1737376447",
-            duration: 5804044,
-            originallyAvailableAt: "2004-11-26",
-            addedAt: 1737376442,
-            updatedAt: 1737376447,
-            audienceRatingImage: "rottentomatoes://image.rating.spilled",
-            chapterSource: "media",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "108674",
+            "key": "/library/metadata/108674",
+            "parentRatingKey": "103108",
+            "grandparentRatingKey": "14968",
+            "guid": "plex://episode/67adf818d10fdd1250401ebf",
+            "parentGuid": "plex://season/6586dfa92a1be8d158d96d5c",
+            "grandparentGuid": "plex://show/5d9c0815e9d5a1001f4d7202",
+            "grandparentSlug": "the-handmaids-tale",
+            "type": "episode",
+            "title": "The Handmaid's Tale",
+            "titleSort": "Handmaid's Tale",
+            "grandparentKey": "/library/metadata/14968",
+            "parentKey": "/library/metadata/103108",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Handmaid's Tale",
+            "parentTitle": "Season 6",
+            "contentRating": "TV-MA",
+            "summary": "June reflects on her experiences in Gilead and decides what to do next.",
+            "index": 10,
+            "parentIndex": 6,
+            "audienceRating": 5.6,
+            "year": 2025,
+            "thumb": "/library/metadata/108674/thumb/1748903168",
+            "art": "/library/metadata/14968/art/1748905442",
+            "parentThumb": "/library/metadata/103108/thumb/1748538515",
+            "grandparentThumb": "/library/metadata/14968/thumb/1748905442",
+            "grandparentArt": "/library/metadata/14968/art/1748905442",
+            "grandparentTheme": "/library/metadata/14968/theme/1748905442",
+            "duration": 3336352,
+            "originallyAvailableAt": "2025-05-27",
+            "addedAt": 1748320055,
+            "updatedAt": 1748903168,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
               {
-                id: 61336,
-                duration: 5804044,
-                bitrate: 18034,
-                width: 1916,
-                height: 816,
-                aspectRatio: 2.35,
-                audioChannels: 2,
-                audioCodec: "eac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "main",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131205,
+                "duration": 3336352,
+                "bitrate": 4608,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92382,
-                    key: "/library/parts/92382/1734169321/file.mkv",
-                    duration: 5804044,
-                    file: "/Movies (Kids)/Noel (2004)/Noel (2004) Bluray-1080p.mkv",
-                    size: 13085273333,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "main"
+                    "id": 448241,
+                    "key": "/library/parts/448241/1748319982/file.mkv",
+                    "duration": 3336352,
+                    "file": "/data/Media/Tv Shows/The Handmaid's Tale/Season 06/The Handmaid's Tale (2017) - S06E10 - The Handmaids Tale [WEBDL-1080p][EAC3 5.1][h264]-ETHEL.mkv",
+                    "size": 1922756848,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1041795,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 4352,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1041796,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 256,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1041797,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1041798,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Noel",
-                type: "coverPoster",
-                url: "/library/metadata/57202/thumb/1737376447"
+                "alt": "The Handmaid's Tale",
+                "type": "coverPoster",
+                "url": "/library/metadata/14968/thumb/1748905442"
               },
               {
-                alt: "Noel",
-                type: "background",
-                url: "/library/metadata/57202/art/1737376447"
+                "alt": "The Handmaid's Tale",
+                "type": "snapshot",
+                "url": "/library/metadata/108674/thumb/1748903168"
+              },
+              {
+                "alt": "The Handmaid's Tale",
+                "type": "background",
+                "url": "/library/metadata/14968/art/1748905442"
+              },
+              {
+                "alt": "The Handmaid's Tale",
+                "type": "clearLogo",
+                "url": "/library/metadata/14968/clearLogo/1748905442"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "4f1a18",
-              topRight: "351211",
-              bottomRight: "3b1417",
-              bottomLeft: "963f2b"
+            "UltraBlurColors": {
+              "topLeft": "0b0b0b",
+              "topRight": "1a1d1c",
+              "bottomRight": "12191b",
+              "bottomLeft": "272524"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Drama"
+                "id": "imdb://tt35707177"
               },
               {
-                tag: "Romance"
-              }
-            ],
-            Country: [
-              {
-                tag: "Canada"
+                "id": "tmdb://5978372"
               },
               {
-                tag: "United States of America"
+                "id": "tvdb://10964393"
               }
             ],
-            Director: [
+            "Rating": [
               {
-                tag: "Chazz Palminteri"
-              }
-            ],
-            Writer: [
-              {
-                tag: "David Hubbard"
-              }
-            ],
-            Role: [
-              {
-                tag: "Susan Sarandon"
+                "image": "imdb://image.rating",
+                "value": 5.8,
+                "type": "audience"
               },
               {
-                tag: "Paul Walker"
+                "image": "themoviedb://image.rating",
+                "value": 5.6,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 197290,
+                "filter": "director=197290",
+                "tag": "Elisabeth Moss",
+                "tagKey": "5d77682d4de0ee001fcc9e52",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1d43b4314a903ce160a53617cf1d755.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 77256,
+                "filter": "writer=77256",
+                "tag": "Bruce Miller",
+                "tagKey": "5d9c086f3c3f87001f34fd95",
+                "thumb": "https://metadata-static.plex.tv/people/5d9c086f3c3f87001f34fd95.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 27353,
+                "filter": "actor=27353",
+                "tag": "Elisabeth Moss",
+                "tagKey": "5d77682d4de0ee001fcc9e52",
+                "role": "June Osborne / Offred / Ofjoseph",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1d43b4314a903ce160a53617cf1d755.jpg"
               },
               {
-                tag: "Penélope Cruz"
+                "id": 3469,
+                "filter": "actor=3469",
+                "tag": "Yvonne Strahovski",
+                "tagKey": "5d77683585719b001f3a39e4",
+                "role": "Serena Joy Waterford",
+                "thumb": "https://metadata-static.plex.tv/9/people/9b0ac8ae5d6af304b31c1a63f7f8e71d.jpg"
+              },
+              {
+                "id": 58413,
+                "filter": "actor=58413",
+                "tag": "Samira Wiley",
+                "tagKey": "5d77689a1999bc0020dcaca0",
+                "role": "Moira Strand",
+                "thumb": "https://metadata-static.plex.tv/6/people/65e95b642de7da2e9e1d8f238cdf0823.jpg"
+              },
+              {
+                "id": 86620,
+                "filter": "actor=86620",
+                "tag": "Amanda Brugel",
+                "tagKey": "5d77684d5af944001f1fe881",
+                "role": "Rita Blue",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e71c2df5787249eb0dbca9ade814cf8.jpg"
+              },
+              {
+                "id": 67019,
+                "filter": "actor=67019",
+                "tag": "Nina Kiri",
+                "tagKey": "5d7768c5d95456001fd25fab",
+                "role": "Alma",
+                "thumb": "https://image.tmdb.org/t/p/original/hCELEsasRGhIsS7oRfdhfK3d1Jc.jpg"
+              },
+              {
+                "id": 20594,
+                "filter": "actor=20594",
+                "tag": "O-T Fagbenle",
+                "tagKey": "5d776829999c64001ec2cf20",
+                "role": "Luke Bankole",
+                "thumb": "https://metadata-static.plex.tv/7/people/78ffc53eb78f92af0fc2ccb5d0e605da.jpg"
+              },
+              {
+                "id": 86621,
+                "filter": "actor=86621",
+                "tag": "Sam Jaeger",
+                "tagKey": "5d776826e6d55c002040b010",
+                "role": "Mark Tuello",
+                "thumb": "https://image.tmdb.org/t/p/original/8t4wSekn6vUyEmg9etTnvTaGJEV.jpg"
+              },
+              {
+                "id": 86624,
+                "filter": "actor=86624",
+                "tag": "Bahia Watson",
+                "tagKey": "5d776b12fb0d55001f55aee2",
+                "role": "Brianna",
+                "thumb": "https://metadata-static.plex.tv/d/people/d10f2b4c6e6570167755c0914d726b38.jpg"
+              },
+              {
+                "id": 3426,
+                "filter": "actor=3426",
+                "tag": "Cherry Jones",
+                "tagKey": "5d7768262ec6b5001f6ba379",
+                "role": "Holly Maddox",
+                "thumb": "https://metadata-static.plex.tv/f/people/f5d1ff318368c1394c9cdc22a142b08f.jpg"
+              },
+              {
+                "id": 11051,
+                "filter": "actor=11051",
+                "tag": "Madeline Brewer",
+                "tagKey": "5d776c95ad5437001f7c2842",
+                "role": "Janine Lindo",
+                "thumb": "https://metadata-static.plex.tv/7/people/7b401a66273a60a1c3e161aab3cda68f.jpg"
+              },
+              {
+                "id": 66923,
+                "filter": "actor=66923",
+                "tag": "Ann Dowd",
+                "tagKey": "5d7768266f4521001ea98d43",
+                "role": "Aunt Lydia Clements",
+                "thumb": "https://metadata-static.plex.tv/7/people/76c88306b1506d7d3ab49179c4771e72.jpg"
+              },
+              {
+                "id": 50569,
+                "filter": "actor=50569",
+                "tag": "Alexis Bledel",
+                "tagKey": "5d7768272ec6b5001f6ba420",
+                "role": "Emily Malek",
+                "thumb": "https://metadata-static.plex.tv/2/people/2114e7d00bb76476dc7c2e55aee2434b.jpg"
+              },
+              {
+                "id": 191915,
+                "filter": "actor=191915",
+                "tag": "Harmeet Bhatti",
+                "tagKey": "5e1651d7cd0850003b779b61",
+                "role": "Volunteer",
+                "thumb": "https://metadata-static.plex.tv/1/people/187aee9d4517bfbf1f0043ce33477d44.jpg"
+              },
+              {
+                "id": 3556,
+                "filter": "actor=3556",
+                "tag": "Ever Carradine",
+                "tagKey": "5d77682c880197001ec91de1",
+                "role": "Naomi Lawrence",
+                "thumb": "https://metadata-static.plex.tv/6/people/67417b5358a2c7f5092413040e8b584f.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 197327,
+                "filter": "producer=197327",
+                "tag": "Nika Castillo",
+                "tagKey": "5f40140102101b0040f362c2"
+              },
+              {
+                "id": 197328,
+                "filter": "producer=197328",
+                "tag": "Michael Stoyanov",
+                "tagKey": "5ec40f4b0d2c2c0040bca5a6"
+              },
+              {
+                "id": 197329,
+                "filter": "producer=197329",
+                "tag": "Élisabeth Williams",
+                "tagKey": "5d77688a308bca002032cb9f"
               }
             ]
           },
           {
-            ratingKey: "57200",
-            key: "/library/metadata/57200",
-            guid: "plex://movie/5d9f3584d5fd3f001ee17875",
-            slug: "mister-magoos-christmas-carol",
-            studio: "United Productions of America",
-            type: "movie",
-            title: "Mister Magoo's Christmas Carol",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "Not Rated",
-            summary:
-              "In this animated musical version of Charles Dickens' \"A Christmas Carol\", Ebenezer Scrooge - via Mr. Magoo's starring performance in a stage production of the classic - doesn't have a ghost of a chance unless he learns the true meaning of Christmas from the three spirits who haunt him one Christmas Eve.",
-            audienceRating: 7.0,
-            year: 1962,
-            thumb: "/library/metadata/57200/thumb/1737376185",
-            art: "/library/metadata/57200/art/1737376185",
-            duration: 3135216,
-            originallyAvailableAt: "1962-12-18",
-            addedAt: 1737376181,
-            updatedAt: 1737376185,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57201",
-            Media: [
+            "ratingKey": "108671",
+            "key": "/library/metadata/108671",
+            "parentRatingKey": "101061",
+            "grandparentRatingKey": "101001",
+            "guid": "plex://episode/67ce4091cc3e6c9a867ef6fd",
+            "parentGuid": "plex://season/677e6a5bc634ffdd2e09637d",
+            "grandparentGuid": "plex://show/609ff8297702ff002cf15b20",
+            "grandparentSlug": "below-deck-down-under",
+            "type": "episode",
+            "title": "Never Can Sey' Goodbye",
+            "grandparentKey": "/library/metadata/101001",
+            "parentKey": "/library/metadata/101061",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Below Deck Down Under",
+            "parentTitle": "Season 3",
+            "contentRating": "TV-14",
+            "summary": "Capt. Jason reprimands the deck crew for their mistake; the final night of the charter season sparks an unlikely hook up and argument between crew members.",
+            "index": 17,
+            "parentIndex": 3,
+            "year": 2025,
+            "thumb": "/library/metadata/108671/thumb/1748341396",
+            "art": "/library/metadata/101001/art/1748538525",
+            "parentThumb": "/library/metadata/101061/thumb/1740254294",
+            "grandparentThumb": "/library/metadata/101001/thumb/1748538525",
+            "grandparentArt": "/library/metadata/101001/art/1748538525",
+            "grandparentTheme": "/library/metadata/101001/theme/1748538525",
+            "duration": 2564266,
+            "originallyAvailableAt": "2025-05-26",
+            "addedAt": 1748310749,
+            "updatedAt": 1748341396,
+            "Media": [
               {
-                id: 61333,
-                duration: 3135216,
-                bitrate: 2634,
-                width: 1444,
-                height: 1080,
-                aspectRatio: 1.33,
-                audioChannels: 6,
-                audioCodec: "aac",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mp4",
-                videoFrameRate: "24p",
-                optimizedForStreaming: 1,
-                audioProfile: "lc",
-                has64bitOffsets: false,
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 131208,
+                "duration": 2564266,
+                "bitrate": 15712,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92379,
-                    key: "/library/parts/92379/1702213088/file.mp4",
-                    duration: 3135216,
-                    file: "/Movies (Kids)/Mr. Magoo's Christmas Carol (1962)/Mister Magoo's Christmas Carol (1962) Bluray-1080p.mp4",
-                    size: 1034290558,
-                    audioProfile: "lc",
-                    container: "mp4",
-                    has64bitOffsets: false,
-                    indexes: "sd",
-                    optimizedForStreaming: true,
-                    videoProfile: "high"
+                    "id": 448244,
+                    "key": "/library/parts/448244/1748341324/file.mkv",
+                    "duration": 2564266,
+                    "file": "/data/Media/Tv Shows/Below Deck Down Under/Season 03/Below Deck Down Under (2022) - S03E17 - Never Can Sey Goodbye [WEBDL-1080p][AAC 2.0][x264]-EDITH.mkv",
+                    "size": 2539156229,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1041805,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7793,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1041807,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 125,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1041806,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7793,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1041808,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1041809,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Mister Magoo's Christmas Carol",
-                type: "coverPoster",
-                url: "/library/metadata/57200/thumb/1737376185"
+                "alt": "Never Can Sey' Goodbye",
+                "type": "coverPoster",
+                "url": "/library/metadata/101001/thumb/1748538525"
               },
               {
-                alt: "Mister Magoo's Christmas Carol",
-                type: "background",
-                url: "/library/metadata/57200/art/1737376185"
+                "alt": "Never Can Sey' Goodbye",
+                "type": "snapshot",
+                "url": "/library/metadata/108671/thumb/1748341396"
               },
               {
-                alt: "Mister Magoo's Christmas Carol",
-                type: "clearLogo",
-                url: "/library/metadata/57200/clearLogo/1737376185"
+                "alt": "Never Can Sey' Goodbye",
+                "type": "background",
+                "url": "/library/metadata/101001/art/1748538525"
+              },
+              {
+                "alt": "Never Can Sey' Goodbye",
+                "type": "clearLogo",
+                "url": "/library/metadata/101001/clearLogo/1748538525"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "4b1f07",
-              topRight: "8a4c0a",
-              bottomRight: "160303",
-              bottomLeft: "294d7e"
+            "UltraBlurColors": {
+              "topLeft": "202957",
+              "topRight": "2d6483",
+              "bottomRight": "612a23",
+              "bottomLeft": "7f343a"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Animation"
+                "id": "tmdb://6200111"
               },
               {
-                tag: "Comedy"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Abe Levitow"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Barbara Chain"
-              },
-              {
-                tag: "Bob Merrill"
-              }
-            ],
-            Role: [
-              {
-                tag: "Jim Backus"
-              },
-              {
-                tag: "Morey Amsterdam"
-              },
-              {
-                tag: "Jack Cassidy"
+                "id": "tvdb://11115910"
               }
             ]
           },
           {
-            ratingKey: "57198",
-            key: "/library/metadata/57198",
-            guid: "plex://movie/5d77683d2e80df001ebdf300",
-            slug: "mickeys-once-upon-a-christmas",
-            studio: "Disney Television Animation",
-            type: "movie",
-            title: "Mickey's Once Upon a Christmas",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "Three tales of Christmas past about Donald's nephews reliving the day on repeat, Max Goof's belief in Santa being challenged, and Mickey and Minnie making ends meet.",
-            rating: 5.0,
-            audienceRating: 6.7,
-            year: 1999,
-            tagline: "Mickey, Donald & Goofy Star In An All-New Movie",
-            thumb: "/library/metadata/57198/thumb/1737376157",
-            art: "/library/metadata/57198/art/1737376157",
-            duration: 3949952,
-            originallyAvailableAt: "1999-11-02",
-            addedAt: 1737376155,
-            updatedAt: 1737376157,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "108538",
+            "key": "/library/metadata/108538/children",
+            "guid": "plex://show/5d9c086c02391c001f5891af",
+            "slug": "glee",
+            "studio": "20th Century Fox Television",
+            "type": "show",
+            "title": "Glee",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-PG",
+            "summary": "In this musical comedy, optimistic high school teacher Will Schuester tries to refuel his own passion while reinventing the high school's glee club and challenging a group of outcasts to realize their star potential as they strive to outshine their singing competition while navigating the cruel halls of McKinley High.",
+            "index": 1,
+            "audienceRating": 6.8,
+            "year": 2009,
+            "tagline": "A biting comedy for the underdog in all of us.",
+            "thumb": "/library/metadata/108538/thumb/1748299920",
+            "art": "/library/metadata/108538/art/1748299920",
+            "theme": "/library/metadata/108538/theme/1748299920",
+            "duration": 2580000,
+            "originallyAvailableAt": "2009-05-19",
+            "leafCount": 121,
+            "viewedLeafCount": 0,
+            "childCount": 6,
+            "addedAt": 1748303145,
+            "updatedAt": 1748299920,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "primaryExtraKey": "/library/metadata/108541",
+            "Image": [
               {
-                id: 61331,
-                duration: 3949952,
-                bitrate: 3631,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "eac3",
-                videoCodec: "hevc",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "main 10",
-                hasVoiceActivity: false,
-                Part: [
-                  {
-                    id: 92377,
-                    key: "/library/parts/92377/1713303407/file.mkv",
-                    duration: 3949952,
-                    file: "/Movies (Kids)/Mickey's Once Upon a Christmas (1999)/Mickey's Once Upon a Christmas (1999) Bluray-1080p.mkv",
-                    size: 1775335339,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "main 10"
-                  }
-                ]
-              }
-            ],
-            Image: [
-              {
-                alt: "Mickey's Once Upon a Christmas",
-                type: "coverPoster",
-                url: "/library/metadata/57198/thumb/1737376157"
+                "alt": "Glee",
+                "type": "coverPoster",
+                "url": "/library/metadata/108538/thumb/1748299920"
               },
               {
-                alt: "Mickey's Once Upon a Christmas",
-                type: "background",
-                url: "/library/metadata/57198/art/1737376157"
+                "alt": "Glee",
+                "type": "background",
+                "url": "/library/metadata/108538/art/1748299920"
               },
               {
-                alt: "Mickey's Once Upon a Christmas",
-                type: "clearLogo",
-                url: "/library/metadata/57198/clearLogo/1737376157"
+                "alt": "Glee",
+                "type": "clearLogo",
+                "url": "/library/metadata/108538/clearLogo/1748299920"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "501913",
-              topRight: "a7271f",
-              bottomRight: "a8251d",
-              bottomLeft: "943f35"
+            "UltraBlurColors": {
+              "topLeft": "2f2d2f",
+              "topRight": "151c08",
+              "bottomRight": "365d98",
+              "bottomLeft": "444ea7"
             },
-            Genre: [
+            "Genre": [
               {
-                tag: "Animation"
+                "id": 161,
+                "filter": "genre=161",
+                "tag": "Drama"
               },
               {
-                tag: "Family"
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
+              },
+              {
+                "id": 742,
+                "filter": "genre=742",
+                "tag": "Music"
+              },
+              {
+                "id": 1494,
+                "filter": "genre=1494",
+                "tag": "Musical"
               }
             ],
-            Country: [
+            "Country": [
               {
-                tag: "United States of America"
+                "id": 128,
+                "filter": "country=128",
+                "tag": "United States of America"
               }
             ],
-            Director: [
+            "Guid": [
               {
-                tag: "Bill Speers"
+                "id": "imdb://tt1327801"
               },
               {
-                tag: "Toby Shelton"
+                "id": "tmdb://1417"
               },
               {
-                tag: "Jun Falkenstein"
+                "id": "tvdb://83610"
               }
             ],
-            Writer: [
+            "Rating": [
               {
-                tag: "Ross Hastings"
+                "image": "imdb://image.rating",
+                "value": 6.8,
+                "type": "audience"
+              },
+              {
+                "image": "rottentomatoes://image.rating.ripe",
+                "value": 7.0,
+                "type": "critic"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 7.2,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 6.8,
+                "type": "audience"
               }
             ],
-            Role: [
+            "Role": [
               {
-                tag: "Kelsey Grammer"
+                "id": 189554,
+                "filter": "actor=189554",
+                "tag": "Lea Michele",
+                "tagKey": "5d7768516f4521001eaa15ae",
+                "role": "Rachel Berry",
+                "thumb": "https://metadata-static.plex.tv/6/people/69850ab14ca1f9442b09bb09ee5987f3.jpg"
               },
               {
-                tag: "Wayne Allwine"
+                "id": 288788,
+                "filter": "actor=288788",
+                "tag": "Chris Colfer",
+                "tagKey": "5d7768acd11dd3002022974e",
+                "role": "Kurt Hummel",
+                "thumb": "https://metadata-static.plex.tv/6/people/600298f0d1d34e4e51f62975a6557ce3.jpg"
               },
               {
-                tag: "Russi Taylor"
+                "id": 6972,
+                "filter": "actor=6972",
+                "tag": "Matthew Morrison",
+                "tagKey": "5d77683154c0f0001f302fd0",
+                "role": "Will Schuester",
+                "thumb": "https://metadata-static.plex.tv/b/people/b33b11012588575647805d495a467348.jpg"
+              },
+              {
+                "id": 18104,
+                "filter": "actor=18104",
+                "tag": "Jane Lynch",
+                "tagKey": "5d77682f2ec6b5001f6bb185",
+                "role": "Sue Sylvester",
+                "thumb": "https://metadata-static.plex.tv/5/people/5a154f824ece178afe60d9bcb874972a.jpg"
+              },
+              {
+                "id": 6389,
+                "filter": "actor=6389",
+                "tag": "Kevin McHale",
+                "tagKey": "5d7768acd11dd3002022974f",
+                "role": "Artie Abrams",
+                "thumb": "https://metadata-static.plex.tv/f/people/fdcff204202e437473222273712c0e50.jpg"
+              },
+              {
+                "id": 84976,
+                "filter": "actor=84976",
+                "tag": "Naya Rivera",
+                "tagKey": "5d77683b54c0f0001f3041f7",
+                "role": "Santana Lopez",
+                "thumb": "https://metadata-static.plex.tv/1/people/10cd7fbb81359a83bdbd6144a07d8b98.jpg"
+              },
+              {
+                "id": 17159,
+                "filter": "actor=17159",
+                "tag": "Amber Riley",
+                "tagKey": "5d7768acd11dd30020229751",
+                "role": "Mercedes Jones",
+                "thumb": "https://metadata-static.plex.tv/a/people/a55d307a653f0530a2566b8ef716c5ab.jpg"
+              },
+              {
+                "id": 52029,
+                "filter": "actor=52029",
+                "tag": "Jenna Ushkowitz",
+                "tagKey": "5d7768acd11dd30020229752",
+                "role": "Tina Cohen-Chang",
+                "thumb": "https://metadata-static.plex.tv/9/people/9b59bfad66f1af584ddab693678d5906.jpg"
+              },
+              {
+                "id": 288789,
+                "filter": "actor=288789",
+                "tag": "Mark Salling",
+                "tagKey": "5d776850f59e58002189b893",
+                "role": "Noah Puckerman",
+                "thumb": "https://metadata-static.plex.tv/9/people/9f1fc419040d35b32e77c30e4b6522f9.jpg"
+              },
+              {
+                "id": 272907,
+                "filter": "actor=272907",
+                "tag": "Heather Morris",
+                "tagKey": "5d776834880197001ec93207",
+                "role": "Brittany S. Pierce",
+                "thumb": "https://metadata-static.plex.tv/e/people/e93d7367e021292218c86e8a02794714.jpg"
+              },
+              {
+                "id": 44756,
+                "filter": "actor=44756",
+                "tag": "Chord Overstreet",
+                "tagKey": "5d7768acd11dd30020229750",
+                "role": "Sam Evans",
+                "thumb": "https://metadata-static.plex.tv/b/people/b7d32e0ce50f71bc0314709ab47d2f4b.jpg"
+              },
+              {
+                "id": 7945,
+                "filter": "actor=7945",
+                "tag": "Darren Criss",
+                "tagKey": "5d776895431c830024c0fd5a",
+                "role": "Blaine Anderson",
+                "thumb": "https://metadata-static.plex.tv/d/people/d89cb943082bac23c80241b3d93346ff.jpg"
+              },
+              {
+                "id": 29627,
+                "filter": "actor=29627",
+                "tag": "Harry Shum Jr.",
+                "tagKey": "5d776831151a60001f24d03b",
+                "role": "Mike Chang",
+                "thumb": "https://metadata-static.plex.tv/b/people/b6d31a8df7ff46e091c17eac9cb7ef69.jpg"
+              },
+              {
+                "id": 52027,
+                "filter": "actor=52027",
+                "tag": "Cory Monteith",
+                "tagKey": "5d7768315af944001f1f8e62",
+                "role": "Finn Hudson",
+                "thumb": "https://metadata-static.plex.tv/b/people/bad7e371e71aae251a08be532b476a6b.jpg"
+              },
+              {
+                "id": 27229,
+                "filter": "actor=27229",
+                "tag": "Jayma Mays",
+                "tagKey": "5d77683485719b001f3a38b6",
+                "role": "Emma Pillsbury",
+                "thumb": "https://metadata-static.plex.tv/0/people/03b66ac17b3db44fdc1ca9c43bce551b.jpg"
+              },
+              {
+                "id": 21024,
+                "filter": "actor=21024",
+                "tag": "Dianna Agron",
+                "tagKey": "5d776835e6d55c002040d0f2",
+                "role": "Quinn Fabray",
+                "thumb": "https://metadata-static.plex.tv/f/people/ff3acfc42079a1d643bd74c3cc9ad06b.jpg"
+              },
+              {
+                "id": 24380,
+                "filter": "actor=24380",
+                "tag": "Iqbal Theba",
+                "tagKey": "5d7768a0decfcd001f2ee509",
+                "role": "Principal Figgins",
+                "thumb": "https://metadata-static.plex.tv/f/people/f07c640594975e0de418313177491585.jpg"
+              },
+              {
+                "id": 222206,
+                "filter": "actor=222206",
+                "tag": "Lauren Potter",
+                "tagKey": "5d7768b3ebdf2200209c69f4",
+                "role": "Becky Jackson",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768b3ebdf2200209c69f4.jpg"
+              },
+              {
+                "id": 288790,
+                "filter": "actor=288790",
+                "tag": "Brad Ellis",
+                "tagKey": "5e1635563d4bbb003758fcef",
+                "role": "Brad the Piano Player",
+                "thumb": "https://metadata-static.plex.tv/people/5e1635563d4bbb003758fcef.jpg"
+              },
+              {
+                "id": 288791,
+                "filter": "actor=288791",
+                "tag": "Becca Tobin",
+                "tagKey": "5d776d77f617c90020189422",
+                "role": "Kitty Wilde",
+                "thumb": "https://metadata-static.plex.tv/5/people/531de277b97322e030ca68bdf6641c72.jpg"
+              },
+              {
+                "id": 7188,
+                "filter": "actor=7188",
+                "tag": "Dot-Marie Jones",
+                "tagKey": "62fb8a652166c917875a7d27",
+                "role": "Sheldon Beiste",
+                "thumb": "https://metadata-static.plex.tv/c/people/c1a8eaac91e1e930c3a730e546f2b616.jpg"
+              },
+              {
+                "id": 64071,
+                "filter": "actor=64071",
+                "tag": "Jessalyn Gilsig",
+                "tagKey": "5d7768268718ba001e311c23",
+                "role": "Terri del Monico",
+                "thumb": "https://metadata-static.plex.tv/2/people/2c39371f5990cf15250f1b32af5091cd.jpg"
+              },
+              {
+                "id": 5124,
+                "filter": "actor=5124",
+                "tag": "Mike O'Malley",
+                "tagKey": "5d77682eeb5d26001f1df599",
+                "role": "Burt Hummel",
+                "thumb": "https://metadata-static.plex.tv/4/people/41ad8c4b85ba040cac24150ccac6962d.jpg"
+              },
+              {
+                "id": 8109,
+                "filter": "actor=8109",
+                "tag": "Jacob Artist",
+                "tagKey": "5d77696596b655001fdcda5f",
+                "role": "Jake Puckerman",
+                "thumb": "https://metadata-static.plex.tv/6/cc68393fae/people/6f5b8c552cf4c481657f953ee1d94a96.jpg"
+              },
+              {
+                "id": 52028,
+                "filter": "actor=52028",
+                "tag": "Alex Newell",
+                "tagKey": "5d776a22594b2b001e6b3df6",
+                "role": "Wade 'Unique' Adams",
+                "thumb": "https://metadata-static.plex.tv/3/people/381997406d7090453f2fe0777d1d2b11.jpg"
+              },
+              {
+                "id": 83310,
+                "filter": "actor=83310",
+                "tag": "Melissa Benoist",
+                "tagKey": "5d77687a594b2b001e68d523",
+                "role": "Marley Rose",
+                "thumb": "https://metadata-static.plex.tv/e/people/eafc5566cf4b38cb7365541462f912f6.jpg"
+              },
+              {
+                "id": 52030,
+                "filter": "actor=52030",
+                "tag": "Blake Jenner",
+                "tagKey": "5d776b1efb0d55001f55c8f3",
+                "role": "Ryder Lynn",
+                "thumb": "https://metadata-static.plex.tv/4/people/402208771c2df260449927121a6b9d70.jpg"
+              },
+              {
+                "id": 27132,
+                "filter": "actor=27132",
+                "tag": "Max Adler",
+                "tagKey": "5d7768b00ea56a001e2a8cf3",
+                "role": "Dave Karofsky",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768b00ea56a001e2a8cf3.jpg"
+              },
+              {
+                "id": 27329,
+                "filter": "actor=27329",
+                "tag": "Vanessa Lengies",
+                "tagKey": "5d776831103a2d001f566c6f",
+                "role": "Sugar Motta",
+                "thumb": "https://metadata-static.plex.tv/1/people/100889f2f8bd1b5c86a19334a6fb56c3.jpg"
+              },
+              {
+                "id": 104514,
+                "filter": "actor=104514",
+                "tag": "Samuel Larsen",
+                "tagKey": "5d776b1efb0d55001f55c90d",
+                "role": "Joe Hart",
+                "thumb": "https://metadata-static.plex.tv/4/people/4a0244bede4296e4efbc7b4fa4815d12.jpg"
+              },
+              {
+                "id": 288792,
+                "filter": "actor=288792",
+                "tag": "Ashley Fink",
+                "tagKey": "5d77686d103a2d001f5714a8",
+                "role": "Lauren Zizes",
+                "thumb": "https://metadata-static.plex.tv/9/people/968398c8da7b59a7e0d67a1932fbe8f7.jpg"
+              },
+              {
+                "id": 20743,
+                "filter": "actor=20743",
+                "tag": "Josh Sussman",
+                "tagKey": "5d7768740ab244002006e485",
+                "role": "Jacob Ben Israel",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768740ab244002006e485.jpg"
+              },
+              {
+                "id": 288793,
+                "filter": "actor=288793",
+                "tag": "Dijon Talton",
+                "tagKey": "5d7768a2ad5437001f74b925",
+                "role": "Matt Rutherford",
+                "thumb": "https://metadata-static.plex.tv/c/people/c1c50aad612bb30608087c56fa81c93e.jpg"
+              },
+              {
+                "id": 4873,
+                "filter": "actor=4873",
+                "tag": "Romy Rosemont",
+                "tagKey": "5d77682b999c64001ec2d66b",
+                "role": "Carole Hudson",
+                "thumb": "https://metadata-static.plex.tv/3/people/3c6ec4c879b97c4edf020c0704b5d0bb.jpg"
+              },
+              {
+                "id": 288794,
+                "filter": "actor=288794",
+                "tag": "Damian McGinty",
+                "tagKey": "5d77689023d5a3001f4ee0dc",
+                "role": "Rory Flanagan",
+                "thumb": "https://metadata-static.plex.tv/b/people/b4f6cf82eebedb4657c53e3f8c7420dc.jpg"
+              },
+              {
+                "id": 20730,
+                "filter": "actor=20730",
+                "tag": "James Earl",
+                "tagKey": "5f3fa57b52f200004146bf1b",
+                "role": "Azimio",
+                "thumb": "https://metadata-static.plex.tv/0/people/01d10542e1fc4f6f549efb736c27d0e6.jpg"
+              },
+              {
+                "id": 18801,
+                "filter": "actor=18801",
+                "tag": "Ryan Heinke",
+                "tagKey": "5d776a17f617c90020168a68",
+                "role": "Stoner Brett",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a17f617c90020168a68.jpg"
+              },
+              {
+                "id": 137560,
+                "filter": "actor=137560",
+                "tag": "Bill A. Jones",
+                "tagKey": "5d7768335af944001f1f94bb",
+                "role": "Rod Remington",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768335af944001f1f94bb.jpg"
+              },
+              {
+                "id": 288795,
+                "filter": "actor=288795",
+                "tag": "Dean Geyer",
+                "tagKey": "5d7768afad5437001f74d0fd",
+                "role": "Brody Weston",
+                "thumb": "https://metadata-static.plex.tv/2/people/2c05b28f482c4f6cab96ca9a1b754885.jpg"
+              },
+              {
+                "id": 53352,
+                "filter": "actor=53352",
+                "tag": "Jonathan Groff",
+                "tagKey": "5d77685285719b001f3a8b47",
+                "role": "Jesse St. James",
+                "thumb": "https://metadata-static.plex.tv/people/5d77685285719b001f3a8b47.jpg"
+              },
+              {
+                "id": 54743,
+                "filter": "actor=54743",
+                "tag": "Dominic Barnes",
+                "tagKey": "5d776b8dad5437001f7a30f7",
+                "role": "Trent"
+              },
+              {
+                "id": 229762,
+                "filter": "actor=229762",
+                "tag": "Curt Mega",
+                "tagKey": "5d7768acd11dd30020229754",
+                "role": "Nick",
+                "thumb": "https://metadata-static.plex.tv/0/people/00e4997fc01f5b727d88abdc6533524e.jpg"
+              },
+              {
+                "id": 288796,
+                "filter": "actor=288796",
+                "tag": "NeNe Leakes",
+                "tagKey": "5d776d6cad5437001f7d5940",
+                "role": "Roz Washington",
+                "thumb": "https://metadata-static.plex.tv/2/people/26a11e6c9ce1ee18a06dfdbe8dd06b38.jpg"
+              },
+              {
+                "id": 17107,
+                "filter": "actor=17107",
+                "tag": "Riker Lynch",
+                "tagKey": "5d7768acd11dd30020229753",
+                "role": "Jeff",
+                "thumb": "https://metadata-static.plex.tv/3/people/3c3ed5a881364edd532fbb0820208dbc.jpg"
+              },
+              {
+                "id": 111804,
+                "filter": "actor=111804",
+                "tag": "Idina Menzel",
+                "tagKey": "5d77682aeb5d26001f1de4b0",
+                "role": "Shelby Corcoran",
+                "thumb": "https://metadata-static.plex.tv/6/people/6e24934f37025d7f72426d5e804c95a3.jpg"
+              },
+              {
+                "id": 288797,
+                "filter": "actor=288797",
+                "tag": "Noah Guthrie",
+                "tagKey": "5e16572e4c78f7003e81595e",
+                "role": "Roderick Meeks",
+                "thumb": "https://metadata-static.plex.tv/people/5e16572e4c78f7003e81595e.jpg"
+              },
+              {
+                "id": 288798,
+                "filter": "actor=288798",
+                "tag": "Earlene Davis",
+                "tagKey": "5d776a8f51dd69001fe24ee4",
+                "role": "Andrea Carmichael",
+                "thumb": "https://metadata-static.plex.tv/9/people/928fd30dd8e8ed48932a3931626c8fbd.jpg"
+              },
+              {
+                "id": 288799,
+                "filter": "actor=288799",
+                "tag": "Billy Lewis Jr.",
+                "tagKey": "5d776f127a53e9001e78aa2c",
+                "role": "Mason McCarthy",
+                "thumb": "https://metadata-static.plex.tv/6/people/626801c8353c265ffccc4fb568c1086c.jpg"
+              },
+              {
+                "id": 285625,
+                "filter": "actor=285625",
+                "tag": "Laura Dreyfuss",
+                "tagKey": "5d776f21594b2b001e737b34",
+                "role": "Madison McCarthy",
+                "thumb": "https://metadata-static.plex.tv/5/people/52c4865703b8331e4dcbc607ccf2bd98.jpg"
+              },
+              {
+                "id": 221964,
+                "filter": "actor=221964",
+                "tag": "Samantha Marie Ware",
+                "tagKey": "5d776c4096b655001fe2b0c4",
+                "role": "Jane Hayward",
+                "thumb": "https://metadata-static.plex.tv/2/people/2eeec69741c3e22f00a047d8b24b4f88.jpg"
+              },
+              {
+                "id": 288800,
+                "filter": "actor=288800",
+                "tag": "Marshall Williams",
+                "tagKey": "5f40019a86422500428032c6",
+                "role": "Spencer Porter",
+                "thumb": "https://metadata-static.plex.tv/0/people/07e03108c0f6c3853d25328164f1015e.jpg"
+              },
+              {
+                "id": 39724,
+                "filter": "actor=39724",
+                "tag": "Patrick Gallagher",
+                "tagKey": "5d776829103a2d001f564c74",
+                "role": "Ken Tanaka",
+                "thumb": "https://metadata-static.plex.tv/e/people/e761204c3d51b342255087a83c8fe41c.jpg"
+              },
+              {
+                "id": 30851,
+                "filter": "actor=30851",
+                "tag": "Titus Makin Jr.",
+                "tagKey": "5d7768acd11dd30020229755",
+                "role": "David",
+                "thumb": "https://metadata-static.plex.tv/a/people/a63bb34004fb9fe3707d2f18daf67f36.jpg"
+              },
+              {
+                "id": 19247,
+                "filter": "actor=19247",
+                "tag": "Eddy Martin",
+                "tagKey": "5d77682b4de0ee001fcc99b2",
+                "role": "Thad",
+                "thumb": "https://metadata-static.plex.tv/d/people/d20e4ef47520ec067b1c45a66ef8a030.jpg"
+              },
+              {
+                "id": 18287,
+                "filter": "actor=18287",
+                "tag": "Stephen Tobolowsky",
+                "tagKey": "5d7768252ec6b5001f6ba1f9",
+                "role": "Sandy Ryerson",
+                "thumb": "https://metadata-static.plex.tv/9/people/92425530f0c712509996aff67bcad442.jpg"
+              },
+              {
+                "id": 288801,
+                "filter": "actor=288801",
+                "tag": "Trisha Rae Stahl",
+                "tagKey": "5d776846e6d55c002040fcaf",
+                "role": "Millie Rose",
+                "thumb": "https://metadata-static.plex.tv/people/5d776846e6d55c002040fcaf.jpg"
+              },
+              {
+                "id": 288802,
+                "filter": "actor=288802",
+                "tag": "Jeanine Anderson",
+                "tagKey": "5d7768393c3c2a001fbcf344",
+                "role": "Waitress"
+              },
+              {
+                "id": 83282,
+                "filter": "actor=83282",
+                "tag": "Grant Gustin",
+                "tagKey": "5d776835e6d55c002040d22b",
+                "role": "Sebastian Smythe",
+                "thumb": "https://metadata-static.plex.tv/7/people/7c6305c003feb739b594141513fbe225.jpg"
+              },
+              {
+                "id": 46198,
+                "filter": "actor=46198",
+                "tag": "Erinn Westbrook",
+                "tagKey": "5d7769ce594b2b001e6aa820",
+                "role": "Bree",
+                "thumb": "https://metadata-static.plex.tv/8/people/8912182d44ae2ae4c9176951d5e889d6.jpg"
+              },
+              {
+                "id": 259947,
+                "filter": "actor=259947",
+                "tag": "Telly Leung",
+                "tagKey": "5d776a947a53e9001e70938e",
+                "role": "Wes",
+                "thumb": "https://metadata-static.plex.tv/f/people/f9bc35a2983d383415a47ee5919f5431.jpg"
+              },
+              {
+                "id": 96139,
+                "filter": "actor=96139",
+                "tag": "Pamela Chan",
+                "tagKey": "5d77696196b655001fdcd0f0",
+                "role": "Dottie Kazatori"
+              },
+              {
+                "id": 288803,
+                "filter": "actor=288803",
+                "tag": "Lamarcus Tinker",
+                "tagKey": "5d776e3796b655001fe604bc",
+                "role": "Shane Tinsley",
+                "thumb": "https://metadata-static.plex.tv/3/people/3253d169e4528aac7e9cbedcc6999283.jpg"
+              },
+              {
+                "id": 5007,
+                "filter": "actor=5007",
+                "tag": "Christopher Cousins",
+                "tagKey": "5d77682a4de0ee001fcc9562",
+                "role": "Superintendent Bob Harris",
+                "thumb": "https://metadata-static.plex.tv/6/people/60d21b90cba005285c319d9b29268e8e.jpg"
+              },
+              {
+                "id": 288804,
+                "filter": "actor=288804",
+                "tag": "Taisha Monique Clark",
+                "tagKey": "5d776a61594b2b001e6bb38b",
+                "role": "Giselle",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a61594b2b001e6bb38b.jpg"
+              },
+              {
+                "id": 134682,
+                "filter": "actor=134682",
+                "tag": "Rock Anthony",
+                "tagKey": "5d776829999c64001ec2cf0d",
+                "role": "Rick 'The Stick'",
+                "thumb": "https://metadata-static.plex.tv/b/people/bea9ea6da64fdeef26853fba36a37bb9.jpg"
+              },
+              {
+                "id": 288805,
+                "filter": "actor=288805",
+                "tag": "Myko Olivier",
+                "tagKey": "5d776aa8594b2b001e6c286b",
+                "role": "Head Warbler",
+                "thumb": "https://metadata-static.plex.tv/8/people/80676310219d4543bfa1bf1f4a4a6d26.jpg"
+              },
+              {
+                "id": 13857,
+                "filter": "actor=13857",
+                "tag": "Whoopi Goldberg",
+                "tagKey": "5d776824151a60001f24a391",
+                "role": "Carmen Tibideaux",
+                "thumb": "https://metadata-static.plex.tv/b/people/bfa3e31ead777478daf3fdbc10ddca6e.jpg"
+              },
+              {
+                "id": 288806,
+                "filter": "actor=288806",
+                "tag": "Max George",
+                "tagKey": "5e163f68d92d86003d35b2e7",
+                "role": "Clint",
+                "thumb": "https://metadata-static.plex.tv/2/people/227cf6e1c5b423be19288d439042e79c.jpg"
+              },
+              {
+                "id": 44831,
+                "filter": "actor=44831",
+                "tag": "Kent Avenido",
+                "tagKey": "5d77682aeb5d26001f1de586",
+                "role": "Howard Bamboo",
+                "thumb": "https://metadata-static.plex.tv/f/people/fd1b7994551f055e50999c143e972b3f.jpg"
+              },
+              {
+                "id": 49978,
+                "filter": "actor=49978",
+                "tag": "Ryan Grainger",
+                "tagKey": "5f400bcd02101b0040f2b164",
+                "role": "Warbler",
+                "thumb": "https://metadata-static.plex.tv/8/people/8b1bb0b8c53fe521d03b1672fa8089bc.jpg"
+              },
+              {
+                "id": 38871,
+                "filter": "actor=38871",
+                "tag": "Jacy King",
+                "tagKey": "5d7768c12d18a4001ff1182e",
+                "role": "Janet",
+                "thumb": "https://metadata-static.plex.tv/b/people/bcb7c0cf39218277d88bb5a11ce3af12.jpg"
+              },
+              {
+                "id": 288807,
+                "filter": "actor=288807",
+                "tag": "J.P. Dubé",
+                "tagKey": "682e9378ab2ae5b4b80fa503",
+                "role": "Warbler #2"
+              },
+              {
+                "id": 288808,
+                "filter": "actor=288808",
+                "tag": "Rilan Roppolo",
+                "tagKey": "6569d963d79a1a728ef74409",
+                "role": "Warbler #7"
+              },
+              {
+                "id": 288809,
+                "filter": "actor=288809",
+                "tag": "Robin Trocki",
+                "tagKey": "5f4005aa52f20000414e67f0",
+                "role": "Jean Sylvester",
+                "thumb": "https://metadata-static.plex.tv/e/people/eaa103b3b81bfcfa6cd319db8254394e.jpg"
+              },
+              {
+                "id": 113294,
+                "filter": "actor=113294",
+                "tag": "Kate Hudson",
+                "tagKey": "5d776829e6d55c002040b360",
+                "role": "Cassandra July",
+                "thumb": "https://metadata-static.plex.tv/b/people/be4bb99542be8b4e53ab37ae4edea83d.jpg"
+              },
+              {
+                "id": 6248,
+                "filter": "actor=6248",
+                "tag": "Kristin Chenoweth",
+                "tagKey": "5d776829151a60001f24b174",
+                "role": "April Rhodes",
+                "thumb": "https://metadata-static.plex.tv/6/people/6887a44b6ae4152b61e672685dd5bc80.jpg"
+              },
+              {
+                "id": 63723,
+                "filter": "actor=63723",
+                "tag": "Adam Lambert",
+                "tagKey": "5d776865eb5d26001f1e972f",
+                "role": "Elliott 'Starchild' Gilbert",
+                "thumb": "https://metadata-static.plex.tv/people/5d776865eb5d26001f1e972f.jpg"
+              },
+              {
+                "id": 6470,
+                "filter": "actor=6470",
+                "tag": "Gwyneth Paltrow",
+                "tagKey": "5d7768284de0ee001fcc8ddd",
+                "role": "Holly Holliday",
+                "thumb": "https://metadata-static.plex.tv/1/people/19f7fd657b00f1433a3624fd8ca0f04f.jpg"
+              },
+              {
+                "id": 109650,
+                "filter": "actor=109650",
+                "tag": "Michael Lerner",
+                "tagKey": "5d776826151a60001f24a775",
+                "role": "Sidney Greene",
+                "thumb": "https://metadata-static.plex.tv/6/people/61c059ff1f3116fd5500533a6b7a7fac.jpg"
+              },
+              {
+                "id": 17880,
+                "filter": "actor=17880",
+                "tag": "Michael Hitchcock",
+                "tagKey": "5dcd38c5dea64c00203c6750",
+                "role": "Dalton Rumba",
+                "thumb": "https://metadata-static.plex.tv/5/people/5d2b47bf58f8ce3f46d2f7f8f4cf39e5.jpg"
+              },
+              {
+                "id": 43443,
+                "filter": "actor=43443",
+                "tag": "Mary Gillis",
+                "tagKey": "5d77682a5af944001f1f778c",
+                "role": "Mrs. Hagberg",
+                "thumb": "https://metadata-static.plex.tv/3/people/3a3a4f619f2a45335670b49d66d62b7e.jpg"
+              },
+              {
+                "id": 288810,
+                "filter": "actor=288810",
+                "tag": "Mason Trueblood",
+                "tagKey": "5d776a9c96b655001fdf3c8b",
+                "role": "Super Gay Warbler",
+                "thumb": "https://metadata-static.plex.tv/6/people/6197662bab14c29dc9d2492ad8c7aab8.jpg"
+              },
+              {
+                "id": 129427,
+                "filter": "actor=129427",
+                "tag": "Caitlynn Lawson",
+                "tagKey": "5d776ba4fb0d55001f56e479",
+                "role": "Shayna"
+              },
+              {
+                "id": 4937,
+                "filter": "actor=4937",
+                "tag": "Jennifer Aspen",
+                "tagKey": "5d7768556f4521001eaa22cd",
+                "role": "Kendra Giardi",
+                "thumb": "https://metadata-static.plex.tv/8/people/8efa9cadfebc6fd16369719e1d839471.jpg"
+              },
+              {
+                "id": 136062,
+                "filter": "actor=136062",
+                "tag": "Peter Facinelli",
+                "tagKey": "5d776833f54112001f5bd34f",
+                "role": "Rupert Campion",
+                "thumb": "https://metadata-static.plex.tv/1/people/13fa0e725d43cde80d2d1aa04fb3c9b5.jpg"
+              },
+              {
+                "id": 38809,
+                "filter": "actor=38809",
+                "tag": "Demi Lovato",
+                "tagKey": "5d776844f59e58002189a74b",
+                "role": "Dani",
+                "thumb": "https://metadata-static.plex.tv/1/people/1ac45e870f73910c2d13f4836c5ef95d.jpg"
+              },
+              {
+                "id": 47387,
+                "filter": "actor=47387",
+                "tag": "Josie Totah",
+                "tagKey": "5d776b5f7a53e9001e72396c",
+                "role": "Myron Muskovitz",
+                "thumb": "https://metadata-static.plex.tv/7/people/7e6f98ed103d5fe4825f3e8d06de0664.jpg"
+              },
+              {
+                "id": 25022,
+                "filter": "actor=25022",
+                "tag": "John Stamos",
+                "tagKey": "5d77682a6f4521001ea99bca",
+                "role": "Dr. Carl Howell",
+                "thumb": "https://image.tmdb.org/t/p/original/5hFEsxkqI6uGa9ltX2soVqt8r1M.jpg"
+              },
+              {
+                "id": 4408,
+                "filter": "actor=4408",
+                "tag": "Eric Bruskotter",
+                "tagKey": "5d776827151a60001f24ac1f",
+                "role": "Cooter Menkins",
+                "thumb": "https://metadata-static.plex.tv/d/people/df1316b7f825139f8a5a5a6078d002a6.jpg"
+              },
+              {
+                "id": 288811,
+                "filter": "actor=288811",
+                "tag": "Charlotte Ross",
+                "tagKey": "5d77683d7e9a3c0020c6e8ad",
+                "role": "Judy Fabray",
+                "thumb": "https://metadata-static.plex.tv/d/people/db8da26b8467267c5d59352b5f75f3a2.jpg"
+              },
+              {
+                "id": 38919,
+                "filter": "actor=38919",
+                "tag": "Keong Sim",
+                "tagKey": "5d77683685719b001f3a3dd7",
+                "role": "Mike Chang Sr.",
+                "thumb": "https://metadata-static.plex.tv/5/people/59c960f26fd4b9bc1a5f4f6a3a8dd36f.jpg"
+              },
+              {
+                "id": 4982,
+                "filter": "actor=4982",
+                "tag": "Daniel Curtis Lee",
+                "tagKey": "5d7768ddad5437001f751403",
+                "role": "Phil Lipoff",
+                "thumb": "https://metadata-static.plex.tv/c/people/c913a30394650c8cabec11dc26bd2fd9.jpg"
+              },
+              {
+                "id": 75200,
+                "filter": "actor=75200",
+                "tag": "Nolan Gerard Funk",
+                "tagKey": "5d776833f54112001f5bd358",
+                "role": "Hunter Clarington",
+                "thumb": "https://metadata-static.plex.tv/9/people/9e98bbeff68debe3f14e42d128b2e8ea.jpg"
+              },
+              {
+                "id": 28507,
+                "filter": "actor=28507",
+                "tag": "Harry Hamlin",
+                "tagKey": "5d77683685719b001f3a3eae",
+                "role": "Walter",
+                "thumb": "https://metadata-static.plex.tv/0/people/07041d4c666ebdb0e688fee6905ae4be.jpg"
+              },
+              {
+                "id": 53587,
+                "filter": "actor=53587",
+                "tag": "FINNEAS",
+                "tagKey": "5d77689151dd69001fe0e234",
+                "role": "Alistair",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e407a57ec4b01b77ca55e8fa61330da.jpg"
+              },
+              {
+                "id": 288812,
+                "filter": "actor=288812",
+                "tag": "Joseph Haro",
+                "tagKey": "5d776a61fb0d55001f544659",
+                "role": "Warbler #1",
+                "thumb": "https://metadata-static.plex.tv/a/people/af70aee09be8306c88c3fef7e8040ee9.jpg"
+              },
+              {
+                "id": 288813,
+                "filter": "actor=288813",
+                "tag": "Steven Skyler",
+                "tagKey": "5d77689547dd6e001f6bbcfc",
+                "role": "Warbler #2",
+                "thumb": "https://metadata-static.plex.tv/6/people/6be1b0e37503ea6f8005bbfa2276896f.jpg"
+              },
+              {
+                "id": 288814,
+                "filter": "actor=288814",
+                "tag": "Cooper Rowe",
+                "tagKey": "5d776c4d594b2b001e6f04df",
+                "role": "Warbler #3",
+                "thumb": "https://metadata-static.plex.tv/9/people/966a48a76983ce9dfadfdee7cbb4989f.jpg"
+              },
+              {
+                "id": 48099,
+                "filter": "actor=48099",
+                "tag": "Jesse Luken",
+                "tagKey": "5d776b9351dd69001fe31ae5",
+                "role": "Bobby 'Boom Boom' Surette",
+                "thumb": "https://metadata-static.plex.tv/e/people/ec241264b84d54fd3e9dff39c876a058.jpg"
+              },
+              {
+                "id": 285906,
+                "filter": "actor=285906",
+                "tag": "Jon Robert Hall",
+                "tagKey": "5d7768acd11dd30020229756",
+                "role": "Warbler John",
+                "thumb": "https://metadata-static.plex.tv/d/people/db9d6976a42f281dc2e0c410b34641a6.jpg"
+              },
+              {
+                "id": 288815,
+                "filter": "actor=288815",
+                "tag": "Austin Brue",
+                "tagKey": "5e1654bad92d86003d36f078",
+                "role": "Other Really Gay Warbler"
+              },
+              {
+                "id": 29650,
+                "filter": "actor=29650",
+                "tag": "Vivian Nixon",
+                "tagKey": "5d776846e6d55c002040fca7",
+                "role": "Andrea Cohen",
+                "thumb": "https://metadata-static.plex.tv/9/people/9cad081cf73bd88e4a7d39ceb23526b5.jpg"
+              },
+              {
+                "id": 45359,
+                "filter": "actor=45359",
+                "tag": "Jean Sincere",
+                "tagKey": "5d7768342e80df001ebde28f",
+                "role": "Ancient Librarian",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768342e80df001ebde28f.jpg"
+              },
+              {
+                "id": 4874,
+                "filter": "actor=4874",
+                "tag": "Daniel Roebuck",
+                "tagKey": "5d77682a151a60001f24b4c0",
+                "role": "Paul Karofsky",
+                "thumb": "https://metadata-static.plex.tv/9/people/99636a52ae77a3deb7f6a620b560ba39.jpg"
+              },
+              {
+                "id": 101566,
+                "filter": "actor=101566",
+                "tag": "Jake Zyrus",
+                "tagKey": "5d7768b0431c830024c13474",
+                "role": "Sunshine Corazón",
+                "thumb": "https://metadata-static.plex.tv/7/people/72d181624d63843bfd7ed59f9c6061e9.jpg"
+              },
+              {
+                "id": 6939,
+                "filter": "actor=6939",
+                "tag": "Cheyenne Jackson",
+                "tagKey": "5d7768c0594b2b001e694b67",
+                "role": "Dustin Goolsby",
+                "thumb": "https://metadata-static.plex.tv/e/people/eec7762b0f66155fab3fa7f45e28f4b9.jpg"
+              },
+              {
+                "id": 5121,
+                "filter": "actor=5121",
+                "tag": "Raven Goodwin",
+                "tagKey": "5d77682a4de0ee001fcc979d",
+                "role": "Sheila",
+                "thumb": "https://metadata-static.plex.tv/b/people/b2221e5cf8e9046f840984990452a983.jpg"
+              },
+              {
+                "id": 12550,
+                "filter": "actor=12550",
+                "tag": "Jolene Purdy",
+                "tagKey": "5d776825103a2d001f563c13",
+                "role": "Ronnie",
+                "thumb": "https://metadata-static.plex.tv/1/people/13385d875b9f977c9a702b9e8f274cbf.jpg"
+              },
+              {
+                "id": 3562,
+                "filter": "actor=3562",
+                "tag": "Tamlyn Tomita",
+                "tagKey": "5d7768256f4521001ea9899c",
+                "role": "Julia Chang",
+                "thumb": "https://metadata-static.plex.tv/8/people/8514acc248b23d3644f3cf0bdd6017c0.jpg"
+              },
+              {
+                "id": 18733,
+                "filter": "actor=18733",
+                "tag": "Gina Hecht",
+                "tagKey": "5d7768377228e5001f1ded55",
+                "role": "Mrs. Puckerman",
+                "thumb": "https://metadata-static.plex.tv/4/people/4bb1dc10819709838a14ef24ee1931d4.jpg"
+              },
+              {
+                "id": 17678,
+                "filter": "actor=17678",
+                "tag": "Valerie Mahaffey",
+                "tagKey": "5d77682ee6d55c002040bf52",
+                "role": "Rose Pillsbury",
+                "thumb": "https://metadata-static.plex.tv/4/people/49ca68d14f5978476035aaa6d95de45e.jpg"
+              },
+              {
+                "id": 182046,
+                "filter": "actor=182046",
+                "tag": "Don Most",
+                "tagKey": "5d77682f999c64001ec2e1b8",
+                "role": "Rusty Pillsbury",
+                "thumb": "https://metadata-static.plex.tv/3/people/344f9482339d6f1ae80d40018bd350c7.jpg"
+              },
+              {
+                "id": 63689,
+                "filter": "actor=63689",
+                "tag": "Oliver Kieran-Jones",
+                "tagKey": "5d77683d103a2d001f569c8a",
+                "role": "Adam Crawford",
+                "thumb": "https://metadata-static.plex.tv/a/people/a564ee8615dc635ac649020a910f0240.jpg"
+              },
+              {
+                "id": 216506,
+                "filter": "actor=216506",
+                "tag": "Sarah Jessica Parker",
+                "tagKey": "5d7768255af944001f1f63ce",
+                "role": "Isabelle Wright",
+                "thumb": "https://metadata-static.plex.tv/7/people/7ca0ee6546a90b3915c2a14e5dcb7721.jpg"
+              },
+              {
+                "id": 21860,
+                "filter": "actor=21860",
+                "tag": "Brian Stokes Mitchell",
+                "tagKey": "5d776834961905001eb93b16",
+                "role": "LeRoy Berry",
+                "thumb": "https://metadata-static.plex.tv/d/people/d88c817ffb1a1caa0007e09842b1ed3b.jpg"
+              },
+              {
+                "id": 46551,
+                "filter": "actor=46551",
+                "tag": "Ivonne Coll",
+                "tagKey": "5d776825961905001eb90b2a",
+                "role": "Alma Lopez",
+                "thumb": "https://metadata-static.plex.tv/f/people/fb33091e28d0286dad16a400124d1276.jpg"
+              },
+              {
+                "id": 271787,
+                "filter": "actor=271787",
+                "tag": "Courtney Platt",
+                "tagKey": "67ef51ce06bbcf9caa481800",
+                "role": "The Mack",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3e79f71652b429e1dfda66f32d85e5a.jpg"
+              },
+              {
+                "id": 288816,
+                "filter": "actor=288816",
+                "tag": "Ethan Freedman",
+                "tagKey": "5f4004b886422500428089b3",
+                "role": "Giardi Triplet #1"
+              },
+              {
+                "id": 288817,
+                "filter": "actor=288817",
+                "tag": "Aidan Freedman",
+                "tagKey": "5f4004b803883a0040b0b27b",
+                "role": "Giardi Triplet #2"
+              },
+              {
+                "id": 288818,
+                "filter": "actor=288818",
+                "tag": "Ben Freedman",
+                "tagKey": "5f4004cf5a76a80042d29f0b",
+                "role": "Giardi Triplet #3"
+              },
+              {
+                "id": 5390,
+                "filter": "actor=5390",
+                "tag": "Todd Sandler",
+                "tagKey": "5d7768680ea56a001e2a470d",
+                "role": "School Board Member",
+                "thumb": "https://metadata-static.plex.tv/c/people/c289772acf83463e50d64c075d92031f.jpg"
+              },
+              {
+                "id": 288819,
+                "filter": "actor=288819",
+                "tag": "Alex Mentzel",
+                "tagKey": "5d77683b5af944001f1fb6f3",
+                "role": "Warbler #1"
+              },
+              {
+                "id": 288820,
+                "filter": "actor=288820",
+                "tag": "Parker Harris",
+                "tagKey": "5d776b1c51dd69001fe2c25f",
+                "role": "Warbler #4",
+                "thumb": "https://image.tmdb.org/t/p/original/thUSEHcAZCb2UNWGyRU3vY648gQ.jpg"
+              },
+              {
+                "id": 288821,
+                "filter": "actor=288821",
+                "tag": "Max Wilcox",
+                "tagKey": "6613dd51024068dfc3368462",
+                "role": "Warbler #5"
+              },
+              {
+                "id": 288822,
+                "filter": "actor=288822",
+                "tag": "Nick Fink",
+                "tagKey": "5d776bd296b655001fe1d3bd",
+                "role": "Warbler #6",
+                "thumb": "https://metadata-static.plex.tv/2/people/29879d1a5ae1fef8c57fc622920d5b96.jpg"
+              },
+              {
+                "id": 87977,
+                "filter": "actor=87977",
+                "tag": "Josh Groban",
+                "tagKey": "5d7768456f4521001ea9f5c0",
+                "role": "Josh Groban",
+                "thumb": "https://metadata-static.plex.tv/e/people/e5e7f1ced56f9f8179b8cb1f5c79aa2b.jpg"
+              },
+              {
+                "id": 47330,
+                "filter": "actor=47330",
+                "tag": "Eve",
+                "tagKey": "5d7768315af944001f1f9133",
+                "role": "Grace Hitchens",
+                "thumb": "https://metadata-static.plex.tv/a/people/a2fe123e9fa88975dd1daa9834ad79d7.jpg"
+              },
+              {
+                "id": 112681,
+                "filter": "actor=112681",
+                "tag": "Olivia Newton-John",
+                "tagKey": "5d776827880197001ec90a2c",
+                "role": "Olivia Newton-John",
+                "thumb": "https://metadata-static.plex.tv/e/people/e9b8d7d3ad92514f24bcbad054991541.jpg"
+              },
+              {
+                "id": 288823,
+                "filter": "actor=288823",
+                "tag": "Jessica Sanchez",
+                "tagKey": "5d776dd5ad5437001f7e206d",
+                "role": "Frida Romero"
+              },
+              {
+                "id": 3580,
+                "filter": "actor=3580",
+                "tag": "Kenneth Choi",
+                "tagKey": "5d776827eb5d26001f1dd88c",
+                "role": "Dr. Wu",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e00f7ba84ccccb43feddf45b73b1181.jpg"
+              },
+              {
+                "id": 39139,
+                "filter": "actor=39139",
+                "tag": "Molly Shannon",
+                "tagKey": "5d77682b999c64001ec2d4e0",
+                "role": "Brenda Castle",
+                "thumb": "https://metadata-static.plex.tv/2/people/25f39829a93d85bed927fdb2aafbbc40.jpg"
+              },
+              {
+                "id": 288824,
+                "filter": "actor=288824",
+                "tag": "Phoebe Strole",
+                "tagKey": "5d7768393c3c2a001fbcf2bf",
+                "role": "Penny Owen",
+                "thumb": "https://metadata-static.plex.tv/1/people/1206d5394e4665f0ee46fc48f3b9c80e.jpg"
+              },
+              {
+                "id": 103393,
+                "filter": "actor=103393",
+                "tag": "Ioan Gruffudd",
+                "tagKey": "5d776828961905001eb9167f",
+                "role": "Paolo San Pablo",
+                "thumb": "https://metadata-static.plex.tv/5/people/5266fa08e20ddadfc94154a118ec53c2.jpg"
+              },
+              {
+                "id": 67385,
+                "filter": "actor=67385",
+                "tag": "Geraldo Rivera",
+                "tagKey": "5d776883431c830024c0e163",
+                "role": "Geraldo Rivera",
+                "thumb": "https://metadata-static.plex.tv/6/people/6dc945fad056191e58e0bd979e3b229a.jpg"
+              },
+              {
+                "id": 10114,
+                "filter": "actor=10114",
+                "tag": "Carol Burnett",
+                "tagKey": "5d776829f54112001f5bc245",
+                "role": "Doris Sylvester",
+                "thumb": "https://metadata-static.plex.tv/e/people/e00bb793ce9fefe787c3a89bc23ded3a.jpg"
+              },
+              {
+                "id": 30852,
+                "filter": "actor=30852",
+                "tag": "Lindsay Pearce",
+                "tagKey": "5d776b277a53e9001e71bfd6",
+                "role": "Harmony",
+                "thumb": "https://metadata-static.plex.tv/4/people/493bbf2f41defcef01434765af39efac.jpg"
+              },
+              {
+                "id": 24977,
+                "filter": "actor=24977",
+                "tag": "Jeff Goldblum",
+                "tagKey": "5d7768258718ba001e31191c",
+                "role": "Hiram Berry",
+                "thumb": "https://metadata-static.plex.tv/1/people/1fcf854868946f01f375f2203d48e188.jpg"
+              },
+              {
+                "id": 29686,
+                "filter": "actor=29686",
+                "tag": "Kathleen M. Darcy",
+                "tagKey": "5d776834e6d55c002040d00c",
+                "role": "Eleanor Doosenbury",
+                "thumb": "https://metadata-static.plex.tv/people/5d776834e6d55c002040d00c.jpg"
+              },
+              {
+                "id": 288825,
+                "filter": "actor=288825",
+                "tag": "Dan Domenech",
+                "tagKey": "5d776dba23d5a3001f525b68",
+                "role": "Chase Madison"
+              },
+              {
+                "id": 114480,
+                "filter": "actor=114480",
+                "tag": "Christopher Curry",
+                "tagKey": "5d776827151a60001f24ac23",
+                "role": "Gunther",
+                "thumb": "https://metadata-static.plex.tv/people/5d776827151a60001f24ac23.jpg"
+              },
+              {
+                "id": 4153,
+                "filter": "actor=4153",
+                "tag": "Nicholas Kadi",
+                "tagKey": "5d77683685719b001f3a3f38",
+                "role": "Alain Marceau",
+                "thumb": "https://metadata-static.plex.tv/7/people/7d220aafe69ef30b5ebcc792de6c8448.jpg"
+              },
+              {
+                "id": 28453,
+                "filter": "actor=28453",
+                "tag": "Shirley MacLaine",
+                "tagKey": "5d77682585719b001f3a087e",
+                "role": "June Dolloway",
+                "thumb": "https://metadata-static.plex.tv/2/people/2406bed004b52d5796b0a9d13a8b296f.jpg"
+              },
+              {
+                "id": 15369,
+                "filter": "actor=15369",
+                "tag": "Jim Rash",
+                "tagKey": "5d776827f54112001f5bc089",
+                "role": "Lee Paulblatt",
+                "thumb": "https://metadata-static.plex.tv/4/people/4781d2a3cb83afa9241e9a59b4ad96c7.jpg"
+              },
+              {
+                "id": 203006,
+                "filter": "actor=203006",
+                "tag": "Perez Hilton",
+                "tagKey": "5d77683b8a7581001f12e16b",
+                "role": "Perez Hilton",
+                "thumb": "https://metadata-static.plex.tv/d/people/dfac8b0461cba23b2ad9745101f24e3c.jpg"
+              },
+              {
+                "id": 23790,
+                "filter": "actor=23790",
+                "tag": "Jennifer Coolidge",
+                "tagKey": "5d7768283c3c2a001fbcb62f",
+                "role": "Whitney Pierce",
+                "thumb": "https://metadata-static.plex.tv/f/people/fd1983dc76887b90b642cdf7556131df.jpg"
+              },
+              {
+                "id": 87997,
+                "filter": "actor=87997",
+                "tag": "Ken Jeong",
+                "tagKey": "5d776835961905001eb9406c",
+                "role": "Pierce Pierce",
+                "thumb": "https://metadata-static.plex.tv/4/people/46b7b4f66d56125c2988612d4c3954d6.jpg"
+              },
+              {
+                "id": 2864,
+                "filter": "actor=2864",
+                "tag": "Justin Prentice",
+                "tagKey": "5d776890374a5b001fec93a9",
+                "role": "Darrell",
+                "thumb": "https://metadata-static.plex.tv/3/people/3ac89281e4638266f6e15229b82019dd.jpg"
+              },
+              {
+                "id": 38851,
+                "filter": "actor=38851",
+                "tag": "Patricia Forte",
+                "tagKey": "5d77682e4de0ee001fcca347",
+                "role": "Donna Landries"
+              },
+              {
+                "id": 46879,
+                "filter": "actor=46879",
+                "tag": "Gloria Estefan",
+                "tagKey": "5d7768452e80df001ebe054e",
+                "role": "Maribel Lopez",
+                "thumb": "https://metadata-static.plex.tv/d/people/ddb511fd30146cf2ae3a3bea3d114f74.jpg"
+              },
+              {
+                "id": 30070,
+                "filter": "actor=30070",
+                "tag": "Jane Galloway Heitz",
+                "tagKey": "5d7768266f4521001ea98d1e",
+                "role": "Lillian Adler",
+                "thumb": "https://metadata-static.plex.tv/0/people/010773dfd9e9f4d2274e766ecfd500fb.jpg"
+              },
+              {
+                "id": 190717,
+                "filter": "actor=190717",
+                "tag": "John Autry II",
+                "tagKey": "5d776ba9ad5437001f7a6571",
+                "role": "Deaf Choir #1"
+              },
+              {
+                "id": 288826,
+                "filter": "actor=288826",
+                "tag": "Lexi Marman",
+                "tagKey": "5d7768b7d95456001fd2567a",
+                "role": "Deaf Choir #1"
+              },
+              {
+                "id": 260663,
+                "filter": "actor=260663",
+                "tag": "Shelby Rabara",
+                "tagKey": "5d776c989ab54400215186f2",
+                "role": "Shoshandra",
+                "thumb": "https://metadata-static.plex.tv/6/people/6741de7ef459301d16b5244b0c96034d.jpg"
+              },
+              {
+                "id": 285963,
+                "filter": "actor=285963",
+                "tag": "Michael Loeffelholz",
+                "tagKey": "5d7769cc594b2b001e6aa2c3",
+                "role": "Phil Giardi"
+              },
+              {
+                "id": 38984,
+                "filter": "actor=38984",
+                "tag": "Jodi Harris",
+                "tagKey": "5d776832f59e58002189862a",
+                "role": "Mrs. Penkala",
+                "thumb": "https://metadata-static.plex.tv/8/people/81cea94670af30158ae0033d024f73b4.jpg"
+              },
+              {
+                "id": 101576,
+                "filter": "actor=101576",
+                "tag": "Thomasina Gross",
+                "tagKey": "5d776e7bfb0d55001f5c3028",
+                "role": "Jane Adams Choir #4",
+                "thumb": "https://metadata-static.plex.tv/people/5d776e7bfb0d55001f5c3028.jpg"
+              },
+              {
+                "id": 10071,
+                "filter": "actor=10071",
+                "tag": "Hayley Holmes",
+                "tagKey": "5d776871eb5d26001f1eb9a4",
+                "role": "Liz Schneider",
+                "thumb": "https://metadata-static.plex.tv/people/5d776871eb5d26001f1eb9a4.jpg"
+              },
+              {
+                "id": 18805,
+                "filter": "actor=18805",
+                "tag": "Earnestine Phillips",
+                "tagKey": "5d7768e37a53e9001e6db7e1",
+                "role": "Nurse",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e4726d3e7bc0b37a1d356f9a2e1d3e3.jpg"
+              },
+              {
+                "id": 6395,
+                "filter": "actor=6395",
+                "tag": "Virginia Gardner",
+                "tagKey": "5d776a617a53e9001e703a8d",
+                "role": "Marissa",
+                "thumb": "https://metadata-static.plex.tv/6/people/6d94f73fd3f8fab1aa79844337dd0065.jpg"
+              },
+              {
+                "id": 2522,
+                "filter": "actor=2522",
+                "tag": "Jesse Heiman",
+                "tagKey": "5d7768273c3c2a001fbcb24f",
+                "role": "Student in the Hall",
+                "thumb": "https://metadata-static.plex.tv/9/people/97147ef7b6377385f7567663762da54c.jpg"
+              },
+              {
+                "id": 95299,
+                "filter": "actor=95299",
+                "tag": "Bradford Tatum",
+                "tagKey": "5d776833f59e58002189882e",
+                "role": "Tattoo Artist",
+                "thumb": "https://metadata-static.plex.tv/5/people/53225d4bc59a929337348dd05775509e.jpg"
+              },
+              {
+                "id": 288827,
+                "filter": "actor=288827",
+                "tag": "Cathy Jenéen Doe",
+                "tagKey": "5d7768396f4521001ea9cff8",
+                "role": "Barista"
+              },
+              {
+                "id": 6390,
+                "filter": "actor=6390",
+                "tag": "Charles Melton",
+                "tagKey": "5d77686e0ab244002006dc51",
+                "role": "Gavin",
+                "thumb": "https://metadata-static.plex.tv/7/people/7e05b30d73ea775eabedebfefe22fc37.jpg"
+              },
+              {
+                "id": 288828,
+                "filter": "actor=288828",
+                "tag": "Nilson Avalos",
+                "tagKey": "5f40062903883a0040b0d8eb",
+                "role": "Deaf Choir #2"
+              },
+              {
+                "id": 288829,
+                "filter": "actor=288829",
+                "tag": "Joshua Segovia",
+                "tagKey": "5f4005ecfea1a1003f9c6d64",
+                "role": "Deaf Choir #4"
+              },
+              {
+                "id": 288830,
+                "filter": "actor=288830",
+                "tag": "Maj Lesti",
+                "tagKey": "5f400630fea1a1003f9c7420",
+                "role": "Deaf Choir #4"
+              },
+              {
+                "id": 288831,
+                "filter": "actor=288831",
+                "tag": "Weston Mueller",
+                "tagKey": "5d776885decfcd001f2eb562",
+                "role": "Deaf Choir #5",
+                "thumb": "https://metadata-static.plex.tv/people/5d776885decfcd001f2eb562.jpg"
+              },
+              {
+                "id": 288832,
+                "filter": "actor=288832",
+                "tag": "Tommy Korn",
+                "tagKey": "5d776e8efb0d55001f5c5d87",
+                "role": "Deaf Choir #7"
+              },
+              {
+                "id": 288833,
+                "filter": "actor=288833",
+                "tag": "Gianni Manganelli",
+                "tagKey": "5d776a2223d5a3001f500c79",
+                "role": "Deaf Choir #7"
+              },
+              {
+                "id": 288834,
+                "filter": "actor=288834",
+                "tag": "Jade Fowler",
+                "tagKey": "5f40062d5a76a80042d2b972",
+                "role": "Deaf Choir #9"
+              },
+              {
+                "id": 288835,
+                "filter": "actor=288835",
+                "tag": "Neil Parker",
+                "tagKey": "5f400a4c04a86500409d2edb",
+                "role": "Sick Albert"
+              },
+              {
+                "id": 198216,
+                "filter": "actor=198216",
+                "tag": "Treshelle Edmond",
+                "tagKey": "5d776d5a96b655001fe46c44",
+                "role": "Deaf Choir #11",
+                "thumb": "https://metadata-static.plex.tv/9/people/90e04c594fe678296453bb80b43f9275.jpg"
+              },
+              {
+                "id": 27709,
+                "filter": "actor=27709",
+                "tag": "Emilee Wallace",
+                "tagKey": "5d7769e1fb0d55001f5330c7",
+                "role": "Deaf Choir #11",
+                "thumb": "https://metadata-static.plex.tv/people/5d7769e1fb0d55001f5330c7.jpg"
+              },
+              {
+                "id": 31429,
+                "filter": "actor=31429",
+                "tag": "Lauren Boles",
+                "tagKey": "5f3ffc292e2b260040ab23c9",
+                "role": "Toddler Rachel"
+              },
+              {
+                "id": 340,
+                "filter": "actor=340",
+                "tag": "Helen Mirren",
+                "tagKey": "5d7768298718ba001e312481",
+                "role": "Becky's Inner Voice (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a565a7ab72b02d8e98c36fe9203c9413.jpg"
+              },
+              {
+                "id": 12470,
+                "filter": "actor=12470",
+                "tag": "Aaron Hill",
+                "tagKey": "5d7768730ea56a001e2a563b",
+                "role": "Nick",
+                "thumb": "https://metadata-static.plex.tv/1/people/17b56d0a134767832210a9a8acc3c2c2.jpg"
+              },
+              {
+                "id": 288836,
+                "filter": "actor=288836",
+                "tag": "Ravi Smith",
+                "tagKey": "5f401f5e5a76a80042d50df8",
+                "role": "Young Blaine",
+                "thumb": "https://metadata-static.plex.tv/0/people/0336415cb76e4c2241e19de6fbc2f0ce.jpg"
+              },
+              {
+                "id": 8088,
+                "filter": "actor=8088",
+                "tag": "Ric Sarabia",
+                "tagKey": "5d77682b8718ba001e3128d2",
+                "role": "Crusty Teacher",
+                "thumb": "https://metadata-static.plex.tv/9/people/920cdf24e25aa596d18c4ec8d1935fe9.jpg"
+              },
+              {
+                "id": 18639,
+                "filter": "actor=18639",
+                "tag": "Bonnie Hellman",
+                "tagKey": "5d77682e8718ba001e313422",
+                "role": "Nurse",
+                "thumb": "https://metadata-static.plex.tv/9/people/999ef6ad6b5102f862f053841eb63fe0.jpg"
+              },
+              {
+                "id": 54070,
+                "filter": "actor=54070",
+                "tag": "Patrick Stafford",
+                "tagKey": "5e163989cd0850003b76257a",
+                "role": "Sycophant #1",
+                "thumb": "https://metadata-static.plex.tv/d/people/dee45fa6ef94283c6880a8a709d48fb6.jpg"
+              },
+              {
+                "id": 70476,
+                "filter": "actor=70476",
+                "tag": "J.D. Phillips",
+                "tagKey": "5e16447810faa500400e9ebf",
+                "role": "Bernard"
+              },
+              {
+                "id": 18219,
+                "filter": "actor=18219",
+                "tag": "Amy Aquino",
+                "tagKey": "5d77682b6f4521001ea99f75",
+                "role": "Funny Girl Producer",
+                "thumb": "https://metadata-static.plex.tv/a/people/a5ddc8856f7ee04d5edacea462bceaaf.jpg"
+              },
+              {
+                "id": 288837,
+                "filter": "actor=288837",
+                "tag": "Fred Stoverink",
+                "tagKey": "5d7768445af944001f1fd2e7",
+                "role": "Bouncer",
+                "thumb": "https://metadata-static.plex.tv/0/people/0dfd59f4f3ca5ca4e4c40d2b97edc2c3.jpg"
+              },
+              {
+                "id": 38392,
+                "filter": "actor=38392",
+                "tag": "John Ainsworth",
+                "tagKey": "5d77696096b655001fdccfe2",
+                "role": "Barclay",
+                "thumb": "https://metadata-static.plex.tv/5/people/519fab2070c28b97b9a4ba177dfcbab8.jpg"
+              },
+              {
+                "id": 14317,
+                "filter": "actor=14317",
+                "tag": "John Ross Bowie",
+                "tagKey": "5d776829103a2d001f564cd4",
+                "role": "Dennis",
+                "thumb": "https://metadata-static.plex.tv/5/people/57faf05aa0e7a99063ecec278eff7cf9.jpg"
+              },
+              {
+                "id": 42966,
+                "filter": "actor=42966",
+                "tag": "Britney Spears",
+                "tagKey": "5d776828961905001eb91765",
+                "role": "Britney Spears",
+                "thumb": "https://metadata-static.plex.tv/b/people/b0663482d33739f21ed0c6129e5188dd.jpg"
+              },
+              {
+                "id": 23748,
+                "filter": "actor=23748",
+                "tag": "Cheryl Francis Harrington",
+                "tagKey": "5d7768307e9a3c0020c6bd48",
+                "role": "Nurse",
+                "thumb": "https://metadata-static.plex.tv/d/people/dc4f0f295ecf2a64419b0f0eb817fad6.jpg"
+              },
+              {
+                "id": 17657,
+                "filter": "actor=17657",
+                "tag": "Kurt Fuller",
+                "tagKey": "5d776828999c64001ec2cc1b",
+                "role": "Mr. McClung",
+                "thumb": "https://metadata-static.plex.tv/8/people/8deda060a57405689b5a0256515f71cd.jpg"
+              },
+              {
+                "id": 3587,
+                "filter": "actor=3587",
+                "tag": "Gregg Henry",
+                "tagKey": "5d7768262e80df001ebdce33",
+                "role": "Russell Fabray",
+                "thumb": "https://metadata-static.plex.tv/5/people/55dd0b4369301cf8772905128d84b905.jpg"
+              },
+              {
+                "id": 7032,
+                "filter": "actor=7032",
+                "tag": "Debra Monk",
+                "tagKey": "5d7768278718ba001e311e74",
+                "role": "Mrs. Schuester",
+                "thumb": "https://metadata-static.plex.tv/f/people/f31f508f53cc5cba899f549dfd0d62a8.jpg"
+              },
+              {
+                "id": 29608,
+                "filter": "actor=29608",
+                "tag": "Sarah Drew",
+                "tagKey": "5d77683b54c0f0001f304147",
+                "role": "Suzy Pepper",
+                "thumb": "https://metadata-static.plex.tv/f/people/f60f9105ebbcd5717bfd7a31f9b4c2da.jpg"
+              },
+              {
+                "id": 18230,
+                "filter": "actor=18230",
+                "tag": "Amy Hill",
+                "tagKey": "5d77682aeb5d26001f1de578",
+                "role": "Dr. Chin",
+                "thumb": "https://metadata-static.plex.tv/b/people/b8741dabc5b4c07416ba80042945d536.jpg"
+              },
+              {
+                "id": 38226,
+                "filter": "actor=38226",
+                "tag": "Paul Vogt",
+                "tagKey": "5d776837999c64001ec2fa17",
+                "role": "Herb Duncan",
+                "thumb": "https://metadata-static.plex.tv/people/5d776837999c64001ec2fa17.jpg"
+              },
+              {
+                "id": 47447,
+                "filter": "actor=47447",
+                "tag": "Ben Bledsoe",
+                "tagKey": "5d776a2f7a53e9001e6fcc30",
+                "role": "Hank Saunders",
+                "thumb": "https://metadata-static.plex.tv/1/people/1be4583f1439f5f141042a13a259df64.jpg"
+              },
+              {
+                "id": 6513,
+                "filter": "actor=6513",
+                "tag": "Victor Garber",
+                "tagKey": "5d776827eb5d26001f1dd907",
+                "role": "Mr. Schuester",
+                "thumb": "https://metadata-static.plex.tv/2/people/21b6daafc4400977006e4f3db400ff42.jpg"
+              },
+              {
+                "id": 47441,
+                "filter": "actor=47441",
+                "tag": "John Michael Higgins",
+                "tagKey": "5d776828a091de001f2e641c",
+                "role": "Russell",
+                "thumb": "https://metadata-static.plex.tv/a/people/a7cb03169d8c47fd981450466595f3ba.jpg"
+              },
+              {
+                "id": 43712,
+                "filter": "actor=43712",
+                "tag": "Rizwan Manji",
+                "tagKey": "5d7768603ab0e7001f4ff8c4",
+                "role": "Dr. Gidwani",
+                "thumb": "https://metadata-static.plex.tv/3/people/36695c0b90564bad8393e0142f9e1795.jpg"
+              },
+              {
+                "id": 288838,
+                "filter": "actor=288838",
+                "tag": "John Lloyd Young",
+                "tagKey": "5d776a3d7a53e9001e6febac",
+                "role": "Henri St. Pierre",
+                "thumb": "https://metadata-static.plex.tv/people/5d776a3d7a53e9001e6febac.jpg"
+              },
+              {
+                "id": 108070,
+                "filter": "actor=108070",
+                "tag": "Aaron Hendry",
+                "tagKey": "5d77682f6f4521001ea9af78",
+                "role": "Darren",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682f6f4521001ea9af78.jpg"
+              },
+              {
+                "id": 7873,
+                "filter": "actor=7873",
+                "tag": "Neil Patrick Harris",
+                "tagKey": "5d776827151a60001f24ac13",
+                "role": "Bryan Ryan",
+                "thumb": "https://metadata-static.plex.tv/c/people/c234b8e0e26f5a28dd1170248be6f3bc.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Glee (2009) {tvdb-83610}"
               }
             ]
           },
           {
-            ratingKey: "57195",
-            key: "/library/metadata/57195",
-            guid: "plex://movie/5d77683c3c3c2a001fbcf68f",
-            slug: "mickeys-christmas-carol",
-            studio: "Walt Disney Pictures",
-            type: "movie",
-            title: "Mickey's Christmas Carol",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "It's the same old classic Charles Dickens story with an all star Disney cast. Uncle Scrooge McDuck is appropriately enough Scrooge and is visited by his dead partner and 3 spirits one night to remember the joys of Christmas.",
-            rating: 10.0,
-            audienceRating: 9.1,
-            year: 1983,
-            tagline:
-              "All your Disney pals star in this retelling of a Dickens Christmas classic.",
-            thumb: "/library/metadata/57195/thumb/1737376102",
-            art: "/library/metadata/57195/art/1737376102",
-            duration: 1539626,
-            originallyAvailableAt: "1983-10-20",
-            addedAt: 1737376099,
-            updatedAt: 1737376102,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            primaryExtraKey: "/library/metadata/57196",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108486",
+            "key": "/library/metadata/108486",
+            "parentRatingKey": "103870",
+            "grandparentRatingKey": "15053",
+            "guid": "plex://episode/673f46972e8dc40b88af22ad",
+            "parentGuid": "plex://season/63e683473abf06cf83a08e21",
+            "grandparentGuid": "plex://show/5e69c6f6874db7003e2dd59b",
+            "grandparentSlug": "the-last-of-us",
+            "type": "episode",
+            "title": "Convergence",
+            "grandparentKey": "/library/metadata/15053",
+            "parentKey": "/library/metadata/103870",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Last of Us",
+            "parentTitle": "Season 2",
+            "contentRating": "TV-MA",
+            "summary": "As the Wolves and the Scars prepare for a battle that could potentially end their longstanding feud, Ellie's search draws her away from her friends and toward a devastating confrontation.",
+            "index": 7,
+            "parentIndex": 2,
+            "audienceRating": 5.8,
+            "year": 2025,
+            "thumb": "/library/metadata/108486/thumb/1748656784",
+            "art": "/library/metadata/15053/art/1748704280",
+            "parentThumb": "/library/metadata/103870/thumb/1745376036",
+            "grandparentThumb": "/library/metadata/15053/thumb/1748704280",
+            "grandparentArt": "/library/metadata/15053/art/1748704280",
+            "grandparentTheme": "/library/metadata/15053/theme/1748704280",
+            "duration": 2978816,
+            "originallyAvailableAt": "2025-05-25",
+            "addedAt": 1748222927,
+            "updatedAt": 1748656784,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
               {
-                id: 61326,
-                duration: 1539626,
-                bitrate: 2725,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 2,
-                audioCodec: "aac",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mp4",
-                videoFrameRate: "24p",
-                optimizedForStreaming: 0,
-                audioProfile: "lc",
-                has64bitOffsets: false,
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130939,
+                "duration": 2978816,
+                "bitrate": 8445,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92372,
-                    key: "/library/parts/92372/1702493099/file.mp4",
-                    duration: 1539626,
-                    file: "/Movies (Kids)/Mickey's Christmas Carol (1983)/Mickey's Christmas Carol (1983) Bluray-1080p.mp4",
-                    size: 525422627,
-                    audioProfile: "lc",
-                    container: "mp4",
-                    has64bitOffsets: false,
-                    indexes: "sd",
-                    optimizedForStreaming: false,
-                    videoProfile: "high"
+                    "id": 447975,
+                    "key": "/library/parts/447975/1748222869/file.mkv",
+                    "duration": 2978816,
+                    "file": "/data/Media/Tv Shows/The Last of Us/Season 02/The Last of Us (2023) - S02E07 - Convergence [WEBDL-1080p][EAC3 5.1][h264]-ETHEL.mkv",
+                    "size": 3145720284,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1038056,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7804,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1038057,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1038058,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1038059,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English (SDH)",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SDH) (SRT)"
+                      },
+                      {
+                        "id": 1038060,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 4,
+                        "bitrate": 0,
+                        "language": "Bulgarian",
+                        "languageTag": "bg",
+                        "languageCode": "bul",
+                        "title": "Български",
+                        "displayTitle": "Bulgarian (SRT)",
+                        "extendedDisplayTitle": "Български (Bulgarian SRT)"
+                      },
+                      {
+                        "id": 1038061,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 5,
+                        "bitrate": 0,
+                        "language": "Czech",
+                        "languageTag": "cs",
+                        "languageCode": "ces",
+                        "title": "Čeština",
+                        "displayTitle": "Czech (SRT)",
+                        "extendedDisplayTitle": "Čeština (SRT)"
+                      },
+                      {
+                        "id": 1038062,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 6,
+                        "bitrate": 0,
+                        "language": "Danish",
+                        "languageTag": "da",
+                        "languageCode": "dan",
+                        "title": "Dansk",
+                        "displayTitle": "Danish (SRT)",
+                        "extendedDisplayTitle": "Dansk (SRT)"
+                      },
+                      {
+                        "id": 1038063,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 7,
+                        "bitrate": 0,
+                        "title": "Ekk",
+                        "displayTitle": "Unknown (SRT)",
+                        "extendedDisplayTitle": "Ekk (SRT)"
+                      },
+                      {
+                        "id": 1038064,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 8,
+                        "bitrate": 0,
+                        "language": "Greek",
+                        "languageTag": "el",
+                        "languageCode": "ell",
+                        "title": "Ελληνικά",
+                        "displayTitle": "Greek (SRT)",
+                        "extendedDisplayTitle": "Ελληνικά (SRT)"
+                      },
+                      {
+                        "id": 1038065,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 9,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Español (Latinoamérica)",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Español (Latinoamérica) (SRT)"
+                      },
+                      {
+                        "id": 1038066,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 10,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Español (España)",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Español (España) (SRT)"
+                      },
+                      {
+                        "id": 1038067,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 11,
+                        "bitrate": 0,
+                        "language": "Finnish",
+                        "languageTag": "fi",
+                        "languageCode": "fin",
+                        "title": "Suomi",
+                        "displayTitle": "Finnish (SRT)",
+                        "extendedDisplayTitle": "Suomi (SRT)"
+                      },
+                      {
+                        "id": 1038068,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 12,
+                        "bitrate": 0,
+                        "language": "French",
+                        "languageTag": "fr",
+                        "languageCode": "fra",
+                        "title": "Français",
+                        "displayTitle": "French (SRT)",
+                        "extendedDisplayTitle": "Français (SRT)"
+                      },
+                      {
+                        "id": 1038069,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 13,
+                        "bitrate": 0,
+                        "language": "Croatian",
+                        "languageTag": "hr",
+                        "languageCode": "hrv",
+                        "title": "Hrvatski",
+                        "displayTitle": "Croatian (SRT)",
+                        "extendedDisplayTitle": "Hrvatski (SRT)"
+                      },
+                      {
+                        "id": 1038070,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 14,
+                        "bitrate": 0,
+                        "language": "Hungarian",
+                        "languageTag": "hu",
+                        "languageCode": "hun",
+                        "title": "Magyar",
+                        "displayTitle": "Hungarian (SRT)",
+                        "extendedDisplayTitle": "Magyar (SRT)"
+                      },
+                      {
+                        "id": 1038071,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 15,
+                        "bitrate": 0,
+                        "language": "Indonesian",
+                        "languageTag": "id",
+                        "languageCode": "ind",
+                        "title": "Indonesia",
+                        "displayTitle": "Indonesian (SRT)",
+                        "extendedDisplayTitle": "Indonesia (SRT)"
+                      },
+                      {
+                        "id": 1038072,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 16,
+                        "bitrate": 0,
+                        "language": "Icelandic",
+                        "languageTag": "is",
+                        "languageCode": "isl",
+                        "title": "Íslenska",
+                        "displayTitle": "Icelandic (SRT)",
+                        "extendedDisplayTitle": "Íslenska (Icelandic SRT)"
+                      },
+                      {
+                        "id": 1038073,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 17,
+                        "bitrate": 0,
+                        "language": "Lithuanian",
+                        "languageTag": "lt",
+                        "languageCode": "lit",
+                        "title": "Lietuvių",
+                        "displayTitle": "Lithuanian (SRT)",
+                        "extendedDisplayTitle": "Lietuvių (SRT)"
+                      },
+                      {
+                        "id": 1038074,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 18,
+                        "bitrate": 0,
+                        "language": "Latvian",
+                        "languageTag": "lv",
+                        "languageCode": "lav",
+                        "title": "Lvs",
+                        "displayTitle": "Latvian (SRT)",
+                        "extendedDisplayTitle": "Lvs (Latvian SRT)"
+                      },
+                      {
+                        "id": 1038075,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 19,
+                        "bitrate": 0,
+                        "language": "Macedonian",
+                        "languageTag": "mk",
+                        "languageCode": "mkd",
+                        "title": "Македонски",
+                        "displayTitle": "Macedonian (SRT)",
+                        "extendedDisplayTitle": "Македонски (Macedonian SRT)"
+                      },
+                      {
+                        "id": 1038076,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 20,
+                        "bitrate": 0,
+                        "language": "Norwegian Bokmål",
+                        "languageTag": "nb",
+                        "languageCode": "nob",
+                        "title": "Norsk Bokmål",
+                        "displayTitle": "Norwegian Bokmål (SRT)",
+                        "extendedDisplayTitle": "Norsk Bokmål (Norwegian Bokmål SRT)"
+                      },
+                      {
+                        "id": 1038077,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 21,
+                        "bitrate": 0,
+                        "language": "Dutch",
+                        "languageTag": "nl",
+                        "languageCode": "nld",
+                        "title": "Nederlands",
+                        "displayTitle": "Dutch (SRT)",
+                        "extendedDisplayTitle": "Nederlands (SRT)"
+                      },
+                      {
+                        "id": 1038078,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 22,
+                        "bitrate": 0,
+                        "language": "Polish",
+                        "languageTag": "pl",
+                        "languageCode": "pol",
+                        "title": "Polski",
+                        "displayTitle": "Polish (SRT)",
+                        "extendedDisplayTitle": "Polski (SRT)"
+                      },
+                      {
+                        "id": 1038079,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 23,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Português (Portugal)",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Português (Portugal) (SRT)"
+                      },
+                      {
+                        "id": 1038080,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 24,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Português (Brasil)",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Português (Brasil) (SRT)"
+                      },
+                      {
+                        "id": 1038081,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 25,
+                        "bitrate": 0,
+                        "language": "Romanian",
+                        "languageTag": "ro",
+                        "languageCode": "ron",
+                        "title": "Română",
+                        "displayTitle": "Romanian (SRT)",
+                        "extendedDisplayTitle": "Română (SRT)"
+                      },
+                      {
+                        "id": 1038082,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 26,
+                        "bitrate": 0,
+                        "language": "Slovak",
+                        "languageTag": "sk",
+                        "languageCode": "slk",
+                        "title": "Slovenčina",
+                        "displayTitle": "Slovak (SRT)",
+                        "extendedDisplayTitle": "Slovenčina (SRT)"
+                      },
+                      {
+                        "id": 1038083,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 27,
+                        "bitrate": 0,
+                        "language": "Slovenian",
+                        "languageTag": "sl",
+                        "languageCode": "slv",
+                        "title": "Slovenščina",
+                        "displayTitle": "Slovenian (SRT)",
+                        "extendedDisplayTitle": "Slovenščina (SRT)"
+                      },
+                      {
+                        "id": 1038084,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 28,
+                        "bitrate": 0,
+                        "language": "Serbian",
+                        "languageTag": "sr",
+                        "languageCode": "srp",
+                        "title": "Srpski (Latinica)",
+                        "displayTitle": "Serbian (SRT)",
+                        "extendedDisplayTitle": "Srpski (Latinica) (Serbian SRT)"
+                      },
+                      {
+                        "id": 1038085,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 29,
+                        "bitrate": 0,
+                        "language": "Swedish",
+                        "languageTag": "sv",
+                        "languageCode": "swe",
+                        "title": "Svenska",
+                        "displayTitle": "Swedish (SRT)",
+                        "extendedDisplayTitle": "Svenska (SRT)"
+                      },
+                      {
+                        "id": 1038086,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 30,
+                        "bitrate": 0,
+                        "language": "Thai",
+                        "languageTag": "th",
+                        "languageCode": "tha",
+                        "title": "ไทย",
+                        "displayTitle": "Thai (SRT)",
+                        "extendedDisplayTitle": "ไทย (SRT)"
+                      },
+                      {
+                        "id": 1038087,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 31,
+                        "bitrate": 0,
+                        "language": "Turkish",
+                        "languageTag": "tr",
+                        "languageCode": "tur",
+                        "title": "Türkçe",
+                        "displayTitle": "Turkish (SRT)",
+                        "extendedDisplayTitle": "Türkçe (SRT)"
+                      },
+                      {
+                        "id": 1038088,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 32,
+                        "bitrate": 0,
+                        "language": "Malay",
+                        "languageTag": "ms",
+                        "languageCode": "msa",
+                        "title": "Zsm",
+                        "displayTitle": "Malay (SRT)",
+                        "extendedDisplayTitle": "Zsm (Malay SRT)"
+                      },
+                      {
+                        "id": 1038089,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 33,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Español (Latinoamérica) (SDH)",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Español (Latinoamérica) (SDH) (SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Mickey's Christmas Carol",
-                type: "coverPoster",
-                url: "/library/metadata/57195/thumb/1737376102"
+                "alt": "Convergence",
+                "type": "coverPoster",
+                "url": "/library/metadata/15053/thumb/1748704280"
               },
               {
-                alt: "Mickey's Christmas Carol",
-                type: "background",
-                url: "/library/metadata/57195/art/1737376102"
+                "alt": "Convergence",
+                "type": "snapshot",
+                "url": "/library/metadata/108486/thumb/1748656784"
               },
               {
-                alt: "Mickey's Christmas Carol",
-                type: "clearLogo",
-                url: "/library/metadata/57195/clearLogo/1737376102"
+                "alt": "Convergence",
+                "type": "background",
+                "url": "/library/metadata/15053/art/1748704280"
+              },
+              {
+                "alt": "Convergence",
+                "type": "clearLogo",
+                "url": "/library/metadata/15053/clearLogo/1748704280"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "152957",
-              topRight: "222d61",
-              bottomRight: "296192",
-              bottomLeft: "2e5789"
+            "UltraBlurColors": {
+              "topLeft": "4c1a2a",
+              "topRight": "163d3f",
+              "bottomRight": "081c14",
+              "bottomLeft": "123127"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Family"
+                "id": "imdb://tt32550887"
               },
               {
-                tag: "Animation"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Burny Mattinson"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Burny Mattinson"
+                "id": "tmdb://5994273"
               },
               {
-                tag: "Tony Marino"
+                "id": "tvdb://10972145"
               }
             ],
-            Role: [
+            "Rating": [
               {
-                tag: "Alan Young"
+                "image": "imdb://image.rating",
+                "value": 6.4,
+                "type": "audience"
               },
               {
-                tag: "Wayne Allwine"
+                "image": "themoviedb://image.rating",
+                "value": 5.8,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 83727,
+                "filter": "director=83727",
+                "tag": "Nina Lopez-Corrado",
+                "tagKey": "5d7769b49ab54400214f5a09",
+                "thumb": "https://metadata-static.plex.tv/f/people/f87b5869a51afb4c0b3846a3184df220.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 198906,
+                "filter": "writer=198906",
+                "tag": "Neil Druckmann",
+                "tagKey": "5d776a41fb0d55001f53fc66",
+                "thumb": "https://metadata-static.plex.tv/a/people/a8a366dfaf3ed638d9d1579db1e440e6.jpg"
               },
               {
-                tag: "Clarence Nash"
+                "id": 132532,
+                "filter": "writer=132532",
+                "tag": "Craig Mazin",
+                "tagKey": "5d77682e103a2d001f565eb9",
+                "thumb": "https://metadata-static.plex.tv/2/people/2672c04c981b6f8c53fece26c0699d9e.jpg"
+              },
+              {
+                "id": 95520,
+                "filter": "writer=95520",
+                "tag": "Halley Wegryn Gross",
+                "tagKey": "5d77683a2e80df001ebded4d",
+                "thumb": "https://metadata-static.plex.tv/0/people/0d2ee8d88bec3127e27ce4fca6b467c2.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 86941,
+                "filter": "actor=86941",
+                "tag": "Bella Ramsey",
+                "tagKey": "5d776c8d96b655001fe346ba",
+                "role": "Ellie Williams",
+                "thumb": "https://metadata-static.plex.tv/5/people/5999f65b09deaa93b928f5c0d95ae258.jpg"
+              },
+              {
+                "id": 86947,
+                "filter": "actor=86947",
+                "tag": "Gabriel Luna",
+                "tagKey": "5d77686351dd69001fe0b661",
+                "role": "Tommy Miller",
+                "thumb": "https://metadata-static.plex.tv/e/people/e41daea895213133535f91a9c6c566a9.jpg"
+              },
+              {
+                "id": 101164,
+                "filter": "actor=101164",
+                "tag": "Isabela Merced",
+                "tagKey": "5d776a2996b655001fde519d",
+                "role": "Dina",
+                "thumb": "https://metadata-static.plex.tv/8/people/8d93dadf9dfff5ebaeb68dd2f01014f5.jpg"
+              },
+              {
+                "id": 270817,
+                "filter": "actor=270817",
+                "tag": "Young Mazino",
+                "tagKey": "5d776d99fb0d55001f5a5096",
+                "role": "Jesse",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e3f2d05837d29e48ee98269e3b942d7.jpg"
+              },
+              {
+                "id": 48100,
+                "filter": "actor=48100",
+                "tag": "Kaitlyn Dever",
+                "tagKey": "5d77684261141d001fb16fe5",
+                "role": "Abby",
+                "thumb": "https://metadata-static.plex.tv/e/people/e6696ef3f81e5e62b8b40f3c2f5d44a3.jpg"
+              },
+              {
+                "id": 11137,
+                "filter": "actor=11137",
+                "tag": "Danny Ramirez",
+                "tagKey": "5d776be17a53e9001e732aee",
+                "role": "Manny",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e9b6fedc76a5963de05493e76ae8ce9.jpg"
+              },
+              {
+                "id": 66328,
+                "filter": "actor=66328",
+                "tag": "Spencer Lord",
+                "tagKey": "601d473dd682bb002d76d1af",
+                "role": "Owen",
+                "thumb": "https://metadata-static.plex.tv/9/people/9e790a4551625dd3a2bd97d743d396a8.jpg"
+              },
+              {
+                "id": 32041,
+                "filter": "actor=32041",
+                "tag": "Ariela Barer",
+                "tagKey": "5d77684261141d001fb16fe4",
+                "role": "Mel",
+                "thumb": "https://metadata-static.plex.tv/6/people/697a0fe0ef29e84be21a991e842a5237.jpg"
+              },
+              {
+                "id": 95277,
+                "filter": "actor=95277",
+                "tag": "Jeffrey Wright",
+                "tagKey": "5d7768253c3c2a001fbca992",
+                "role": "Isaac Dixon",
+                "thumb": "https://metadata-static.plex.tv/6/people/6f2f304f837c7fcf0eb3c41ff93b042c.jpg"
+              },
+              {
+                "id": 272196,
+                "filter": "actor=272196",
+                "tag": "Ben Ahlers",
+                "tagKey": "5ec75eab66440600416f57f3",
+                "role": "Burton",
+                "thumb": "https://metadata-static.plex.tv/1/people/14cc5dafb8a450312bef5b5a65d61699.jpg"
+              },
+              {
+                "id": 5306,
+                "filter": "actor=5306",
+                "tag": "Hettienne Park",
+                "tagKey": "5d776835999c64001ec2f4f9",
+                "role": "Elise Park",
+                "thumb": "https://metadata-static.plex.tv/a/people/afe9366dec0e07ce8698f72a5260fa43.jpg"
+              },
+              {
+                "id": 289481,
+                "filter": "actor=289481",
+                "tag": "Kendra Anderson",
+                "tagKey": "5d7769be51dd69001fe1b057",
+                "role": "The Priestess"
+              },
+              {
+                "id": 22763,
+                "filter": "actor=22763",
+                "tag": "Sean Kuling",
+                "tagKey": "5d7770e231d95e001f1ac092",
+                "role": "Seraphite Man with Rope",
+                "thumb": "https://metadata-static.plex.tv/people/5d7770e231d95e001f1ac092.jpg"
+              },
+              {
+                "id": 86254,
+                "filter": "actor=86254",
+                "tag": "Joel Eskildsen",
+                "tagKey": "5f405e39c63b480040e5a90d",
+                "role": "Seraphite Man"
+              },
+              {
+                "id": 84092,
+                "filter": "actor=84092",
+                "tag": "Panta Mosleh",
+                "tagKey": "5d776c50fb0d55001f5840f9",
+                "role": "Seraphite Woman",
+                "thumb": "https://metadata-static.plex.tv/3/people/35170f6400371c13c0d03a8dc8922063.jpg"
+              },
+              {
+                "id": 289482,
+                "filter": "actor=289482",
+                "tag": "Beau McConnell",
+                "tagKey": "67a20dafb26c3d54bfcd199d",
+                "role": "Seraphite Boy"
+              },
+              {
+                "id": 267414,
+                "filter": "actor=267414",
+                "tag": "Huxley Fisher",
+                "tagKey": "63106acd87e2af3e3d6d8183",
+                "role": "Young Seraphite Boy",
+                "thumb": "https://metadata-static.plex.tv/1/people/16a93866103d278af9dde888efca6c20.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 5969,
+                "filter": "producer=5969",
+                "tag": "Julie Herrin",
+                "tagKey": "5dce6a0b90bd5d002033318c",
+                "thumb": "https://metadata-static.plex.tv/3/people/32f55807c911e7e20e034fd418491f99.jpg"
+              },
+              {
+                "id": 199827,
+                "filter": "producer=199827",
+                "tag": "Allen Marshall Palmer",
+                "tagKey": "5f3fed6f86422500427e4ad3"
               }
             ]
           },
           {
-            ratingKey: "57191",
-            key: "/library/metadata/57191",
-            guid: "plex://movie/5d7768285af944001f1f7092",
-            slug: "meet-me-in-st-louis",
-            studio: "Metro-Goldwyn-Mayer",
-            type: "movie",
-            title: "Meet Me in St. Louis",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "Not Rated",
-            summary:
-              "St. Louis 1903. The well-off Smith family has four beautiful daughters, including Esther and little Tootie. 17-year old Esther has fallen in love with the boy next door who has just moved in, John. He however barely notices her at first. The family is shocked when Mr. Smith reveals that he has been transfered to a nice position in New York, which means that the family has to leave St. Louis and the St. Louis Fair.",
-            rating: 10.0,
-            audienceRating: 8.7,
-            year: 1944,
-            tagline: "Glorious love story with music!",
-            thumb: "/library/metadata/57191/thumb/1737376098",
-            art: "/library/metadata/57191/art/1737376098",
-            duration: 6778068,
-            originallyAvailableAt: "1944-11-28",
-            addedAt: 1737376095,
-            updatedAt: 1737376098,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            primaryExtraKey: "/library/metadata/57192",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108482",
+            "key": "/library/metadata/108482",
+            "parentRatingKey": "100013",
+            "grandparentRatingKey": "99979",
+            "guid": "plex://episode/5d9c0f2346115600200c3d6a",
+            "parentGuid": "plex://season/602e60bfb59d8d002d1216e2",
+            "grandparentGuid": "plex://show/5d9c082ae98e47001eb0946f",
+            "grandparentSlug": "the-vampire-diaries",
+            "type": "episode",
+            "title": "What Are You?",
+            "grandparentKey": "/library/metadata/99979",
+            "parentKey": "/library/metadata/100013",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Vampire Diaries",
+            "parentTitle": "Season 8",
+            "contentRating": "TV-14",
+            "summary": "In order to save Stefan’s soul, Damon makes a deal with Cade to retrieve the Maxwell journal. Alaric and Matt refuse to hand the journal over as it may contain the key to destroying Cade. Caroline desperately tries to connect with Stefan before Cade goes through with his plan.",
+            "index": 12,
+            "parentIndex": 8,
+            "audienceRating": 7.2,
+            "year": 2017,
+            "thumb": "/library/metadata/108482/thumb/1748023834",
+            "art": "/library/metadata/99979/art/1748186970",
+            "parentThumb": "/library/metadata/100013/thumb/1748023833",
+            "grandparentThumb": "/library/metadata/99979/thumb/1748186970",
+            "grandparentArt": "/library/metadata/99979/art/1748186970",
+            "grandparentTheme": "/library/metadata/99979/theme/1748186970",
+            "duration": 2518272,
+            "originallyAvailableAt": "2017-02-10",
+            "addedAt": 1748023831,
+            "updatedAt": 1748023834,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "chapterSource": "media",
+            "Media": [
               {
-                id: 61319,
-                duration: 6778068,
-                bitrate: 2724,
-                width: 1488,
-                height: 1080,
-                aspectRatio: 1.33,
-                audioChannels: 2,
-                audioCodec: "aac",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mp4",
-                videoFrameRate: "24p",
-                optimizedForStreaming: 0,
-                audioProfile: "lc",
-                has64bitOffsets: false,
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130921,
+                "duration": 2518272,
+                "bitrate": 2312,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "hevc",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "main 10",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92365,
-                    key: "/library/parts/92365/1702493117/file.mp4",
-                    duration: 6778068,
-                    file: "/Movies (Kids)/Meet Me in St. Louis (1944)/Meet Me in St. Louis (1944) Bluray-1080p.mp4",
-                    size: 2313890011,
-                    audioProfile: "lc",
-                    container: "mp4",
-                    has64bitOffsets: false,
-                    indexes: "sd",
-                    optimizedForStreaming: false,
-                    videoProfile: "high"
+                    "id": 447957,
+                    "key": "/library/parts/447957/1745563361/file.mkv",
+                    "duration": 2518272,
+                    "file": "/data/Media/Tv Shows/The Vampire Diaries/Season 08/The Vampire Diaries (2009) - S08E12 - What Are You [Bluray-1080p][EAC3 5.1][x265]-iVy.mkv",
+                    "size": 729127242,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "main 10",
+                    "Stream": [
+                      {
+                        "id": 1037992,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "hevc",
+                        "index": 0,
+                        "bitrate": 1337,
+                        "bitDepth": 10,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1080,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "height": 1080,
+                        "level": 120,
+                        "profile": "main 10",
+                        "refFrames": 1,
+                        "width": 1920,
+                        "displayTitle": "1080p (HEVC Main 10)",
+                        "extendedDisplayTitle": "1080p (HEVC Main 10)"
+                      },
+                      {
+                        "id": 1037993,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037994,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 2,
+                        "bitrate": 36,
+                        "language": "Danish",
+                        "languageTag": "da",
+                        "languageCode": "dan",
+                        "title": "Danish",
+                        "displayTitle": "Danish (PGS)",
+                        "extendedDisplayTitle": "Danish (Danish PGS)"
+                      },
+                      {
+                        "id": 1037995,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 3,
+                        "bitrate": 36,
+                        "language": "Dutch",
+                        "languageTag": "nl",
+                        "languageCode": "nld",
+                        "title": "Dutch",
+                        "displayTitle": "Dutch (PGS)",
+                        "extendedDisplayTitle": "Dutch (Dutch PGS)"
+                      },
+                      {
+                        "id": 1037996,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 4,
+                        "bitrate": 44,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English (SDH)",
+                        "displayTitle": "English (PGS)",
+                        "extendedDisplayTitle": "English (SDH) (PGS)"
+                      },
+                      {
+                        "id": 1037997,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 5,
+                        "bitrate": 38,
+                        "language": "Finnish",
+                        "languageTag": "fi",
+                        "languageCode": "fin",
+                        "title": "Finnish",
+                        "displayTitle": "Finnish (PGS)",
+                        "extendedDisplayTitle": "Finnish (Finnish PGS)"
+                      },
+                      {
+                        "id": 1037998,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 6,
+                        "bitrate": 34,
+                        "language": "French",
+                        "languageTag": "fr",
+                        "languageCode": "fra",
+                        "title": "French",
+                        "displayTitle": "French (PGS)",
+                        "extendedDisplayTitle": "French (French PGS)"
+                      },
+                      {
+                        "id": 1037999,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 7,
+                        "bitrate": 34,
+                        "language": "Norwegian",
+                        "languageTag": "no",
+                        "languageCode": "nor",
+                        "title": "Norwegian",
+                        "displayTitle": "Norwegian (PGS)",
+                        "extendedDisplayTitle": "Norwegian (Norwegian PGS)"
+                      },
+                      {
+                        "id": 1038000,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 8,
+                        "bitrate": 38,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Portuguese",
+                        "displayTitle": "Portuguese (PGS)",
+                        "extendedDisplayTitle": "Portuguese (Portuguese PGS)"
+                      },
+                      {
+                        "id": 1038001,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 9,
+                        "bitrate": 38,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (PGS)",
+                        "extendedDisplayTitle": "Spanish (Spanish PGS)"
+                      },
+                      {
+                        "id": 1038002,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "pgs",
+                        "index": 10,
+                        "bitrate": 36,
+                        "language": "Swedish",
+                        "languageTag": "sv",
+                        "languageCode": "swe",
+                        "title": "Swedish",
+                        "displayTitle": "Swedish (PGS)",
+                        "extendedDisplayTitle": "Swedish (Swedish PGS)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Meet Me in St. Louis",
-                type: "coverPoster",
-                url: "/library/metadata/57191/thumb/1737376098"
+                "alt": "What Are You?",
+                "type": "coverPoster",
+                "url": "/library/metadata/99979/thumb/1748186970"
               },
               {
-                alt: "Meet Me in St. Louis",
-                type: "background",
-                url: "/library/metadata/57191/art/1737376098"
+                "alt": "What Are You?",
+                "type": "snapshot",
+                "url": "/library/metadata/108482/thumb/1748023834"
+              },
+              {
+                "alt": "What Are You?",
+                "type": "background",
+                "url": "/library/metadata/99979/art/1748186970"
+              },
+              {
+                "alt": "What Are You?",
+                "type": "clearLogo",
+                "url": "/library/metadata/99979/clearLogo/1748186970"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "570e10",
-              topRight: "710403",
-              bottomRight: "205e97",
-              bottomLeft: "8a4b20"
+            "UltraBlurColors": {
+              "topLeft": "123143",
+              "topRight": "316091",
+              "bottomRight": "182d52",
+              "bottomLeft": "2e6386"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Comedy"
+                "id": "imdb://tt5668526"
               },
               {
-                tag: "Romance"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Vincente Minnelli"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Irving Brecher"
+                "id": "tmdb://1260952"
               },
               {
-                tag: "Fred F. Finklehoffe"
+                "id": "tvdb://5937412"
               }
             ],
-            Role: [
+            "Rating": [
               {
-                tag: "Judy Garland"
+                "image": "imdb://image.rating",
+                "value": 8.1,
+                "type": "audience"
               },
               {
-                tag: "Margaret O'Brien"
+                "image": "themoviedb://image.rating",
+                "value": 7.2,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 242366,
+                "filter": "director=242366",
+                "tag": "Darren Genet",
+                "tagKey": "5ddba8719ac83c001d5af46e",
+                "thumb": "https://metadata-static.plex.tv/e/people/e238cf96f9f69c886dbaa2dce1715572.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 242329,
+                "filter": "writer=242329",
+                "tag": "Chad Fiveash",
+                "tagKey": "5d77683aeb5d26001f1e1de2"
               },
               {
-                tag: "Mary Astor"
+                "id": 242330,
+                "filter": "writer=242330",
+                "tag": "James Patrick Stoteraux",
+                "tagKey": "5d77683aeb5d26001f1e1de7",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683aeb5d26001f1e1de7.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 3571,
+                "filter": "actor=3571",
+                "tag": "Paul Wesley",
+                "tagKey": "5d77683585719b001f3a396c",
+                "role": "Stefan Salvatore",
+                "thumb": "https://metadata-static.plex.tv/f/people/f0b43bd95e0a95ed2ba87933e713fcc1.jpg"
+              },
+              {
+                "id": 48746,
+                "filter": "actor=48746",
+                "tag": "Ian Somerhalder",
+                "tagKey": "5d776833880197001ec92fed",
+                "role": "Damon Salvatore",
+                "thumb": "https://metadata-static.plex.tv/f/people/fecdb12994ae926a0f7f8eb2c5d7204f.jpg"
+              },
+              {
+                "id": 41170,
+                "filter": "actor=41170",
+                "tag": "Kat Graham",
+                "tagKey": "5d7768343c3c2a001fbce0a0",
+                "role": "Bonnie Bennett",
+                "thumb": "https://metadata-static.plex.tv/2/people/29b4a60b9a88766fa8b262745d94ec5f.jpg"
+              },
+              {
+                "id": 43649,
+                "filter": "actor=43649",
+                "tag": "Candice King",
+                "tagKey": "5d77683161141d001fb14bb1",
+                "role": "Caroline Forbes",
+                "thumb": "https://metadata-static.plex.tv/6/people/6c3270141e1b2dedf3f93400e1f25072.jpg"
+              },
+              {
+                "id": 242017,
+                "filter": "actor=242017",
+                "tag": "Zach Roerig",
+                "tagKey": "5d7768422ec6b5001f6be48f",
+                "role": "Matt Donovan",
+                "thumb": "https://metadata-static.plex.tv/3/people/3f0eb4b2d9d0c5f93ca39c0f2808c648.jpg"
+              },
+              {
+                "id": 95293,
+                "filter": "actor=95293",
+                "tag": "Michael Malarkey",
+                "tagKey": "5d776c459ab5440021514d02",
+                "role": "Enzo St. John",
+                "thumb": "https://metadata-static.plex.tv/e/people/ee6f61294e7ec013a51c98e2e82a8967.jpg"
+              },
+              {
+                "id": 239911,
+                "filter": "actor=239911",
+                "tag": "Matthew Davis",
+                "tagKey": "5d77682785719b001f3a0ebf",
+                "role": "Alaric Saltzman",
+                "thumb": "https://metadata-static.plex.tv/4/people/4ec0c799275142c6a24ac0412b4c9dc0.jpg"
+              },
+              {
+                "id": 83699,
+                "filter": "actor=83699",
+                "tag": "Chris Wood",
+                "tagKey": "5d776c4647dd6e001f6e9090",
+                "role": "Kai Parker",
+                "thumb": "https://metadata-static.plex.tv/6/people/61aa5b9ed4ab5ffa5d7befb93230b2c1.jpg"
+              },
+              {
+                "id": 86627,
+                "filter": "actor=86627",
+                "tag": "Kristen Gutoskie",
+                "tagKey": "5d7768ac2d18a4001ff108f1",
+                "role": "Seline",
+                "thumb": "https://metadata-static.plex.tv/c/people/c27e20337cbff5e82b408b9ed36f0cdc.jpg"
+              },
+              {
+                "id": 26701,
+                "filter": "actor=26701",
+                "tag": "Jaz Sinclair",
+                "tagKey": "5d776b0dad5437001f7916d8",
+                "role": "Beatrice Bennett",
+                "thumb": "https://metadata-static.plex.tv/6/people/6e454ffa7e7836698512c684d3106090.jpg"
+              },
+              {
+                "id": 242023,
+                "filter": "actor=242023",
+                "tag": "Demetrius Bridges",
+                "tagKey": "5d7768b8374a5b001fece5e2",
+                "role": "Dorian Williams",
+                "thumb": "https://metadata-static.plex.tv/0/people/0b70a585cfc8b8ce74279126a7d4c7f7.jpg"
+              },
+              {
+                "id": 131599,
+                "filter": "actor=131599",
+                "tag": "Nathalie Kelley",
+                "tagKey": "5d7768332ec6b5001f6bba13",
+                "role": "Sybil",
+                "thumb": "https://metadata-static.plex.tv/f/people/f9d25caf84f507b17933af4190ac0989.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 242376,
+                "filter": "producer=242376",
+                "tag": "Ian Somerhalder",
+                "tagKey": "5d776833880197001ec92fed",
+                "thumb": "https://metadata-static.plex.tv/f/people/fecdb12994ae926a0f7f8eb2c5d7204f.jpg"
+              },
+              {
+                "id": 242377,
+                "filter": "producer=242377",
+                "tag": "Paul Wesley",
+                "tagKey": "5d77683585719b001f3a396c",
+                "thumb": "https://metadata-static.plex.tv/f/people/f0b43bd95e0a95ed2ba87933e713fcc1.jpg"
               }
             ]
           },
           {
-            ratingKey: "57186",
-            key: "/library/metadata/57186",
-            guid: "plex://movie/5d776b1847dd6e001f6db0c5",
-            slug: "jingle-all-the-way-2",
-            studio: "WWE Studios",
-            type: "movie",
-            title: "Jingle All the Way 2",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "PG",
-            summary:
-              "Larry's daughter Noel wants only one thing for Christmas: a talking bear. Her stepdad Victor intends to make sure that Larry can't get one.",
-            audienceRating: 3.1,
-            year: 2014,
-            tagline: "Two Dads. One Mission. Double the Holiday Fun!",
-            thumb: "/library/metadata/57186/thumb/1737376027",
-            art: "/library/metadata/57186/art/1737376027",
-            duration: 5609608,
-            originallyAvailableAt: "2014-10-29",
-            addedAt: 1737376024,
-            updatedAt: 1737376027,
-            audienceRatingImage: "rottentomatoes://image.rating.spilled",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57187",
-            Media: [
+            "ratingKey": "108479",
+            "key": "/library/metadata/108479",
+            "parentRatingKey": "100099",
+            "grandparentRatingKey": "100098",
+            "guid": "plex://episode/66be2f3030aa94f8f715fbb5",
+            "parentGuid": "plex://season/662502d6f7a3875403af10ec",
+            "grandparentGuid": "plex://show/656ba4b93be6bea0491333ad",
+            "grandparentSlug": "very-important-people-2023",
+            "type": "episode",
+            "title": "Candice",
+            "grandparentKey": "/library/metadata/100098",
+            "parentKey": "/library/metadata/100099",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Very Important People (2023)",
+            "parentTitle": "Season 2",
+            "summary": "Vic interviews Candice (Nicole Byer) and gets a lesson on teen culture.",
+            "index": 15,
+            "parentIndex": 2,
+            "year": 2025,
+            "thumb": "/library/metadata/108479/thumb/1748186905",
+            "art": "/library/metadata/100098/art/1748298489",
+            "parentThumb": "/library/metadata/100099/thumb/1740707996",
+            "grandparentThumb": "/library/metadata/100098/thumb/1748298489",
+            "grandparentArt": "/library/metadata/100098/art/1748298489",
+            "duration": 1132565,
+            "originallyAvailableAt": "2025-05-22",
+            "addedAt": 1747964514,
+            "updatedAt": 1748186905,
+            "Media": [
               {
-                id: 61306,
-                duration: 5609608,
-                bitrate: 3967,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "eac3",
-                videoCodec: "hevc",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "main",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130919,
+                "duration": 1132565,
+                "bitrate": 5535,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92352,
-                    key: "/library/parts/92352/1705431235/file.mkv",
-                    duration: 5609608,
-                    file: "/Movies (Kids)/Jingle All the Way 2 (2014)/Jingle All the Way 2 (2014) Bluray-1080p.mkv",
-                    size: 2784600510,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "main"
+                    "id": 447955,
+                    "key": "/library/parts/447955/1747971769/file.mkv",
+                    "duration": 1132565,
+                    "file": "/data/Media/Tv Shows/Very Important People (2023)/Season 02/Very Important People (2023) - S02E15 - TBA [WEBDL-1080p][AAC 2.0][x264]-NTb.mkv",
+                    "size": 783951726,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037922,
+                        "streamType": 1,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 5345,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 50,
+                        "profile": "high",
+                        "refFrames": 5,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037923,
+                        "streamType": 2,
+                        "selected": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 189,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1037924,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037925,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "SDH",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Jingle All the Way 2",
-                type: "coverPoster",
-                url: "/library/metadata/57186/thumb/1737376027"
+                "alt": "Candice",
+                "type": "coverPoster",
+                "url": "/library/metadata/100098/thumb/1748298489"
               },
               {
-                alt: "Jingle All the Way 2",
-                type: "background",
-                url: "/library/metadata/57186/art/1737376027"
+                "alt": "Candice",
+                "type": "snapshot",
+                "url": "/library/metadata/108479/thumb/1748186905"
               },
               {
-                alt: "Jingle All the Way 2",
-                type: "clearLogo",
-                url: "/library/metadata/57186/clearLogo/1737376027"
+                "alt": "Candice",
+                "type": "background",
+                "url": "/library/metadata/100098/art/1748298489"
+              },
+              {
+                "alt": "Candice",
+                "type": "clearLogo",
+                "url": "/library/metadata/100098/clearLogo/1748298489"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "54140e",
-              topRight: "2d5888",
-              bottomRight: "963b28",
-              bottomLeft: "325821"
+            "UltraBlurColors": {
+              "topLeft": "4a1f16",
+              "topRight": "6f2c34",
+              "bottomRight": "742d3a",
+              "bottomLeft": "4b2003"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Comedy"
+                "id": "tmdb://5530367"
               },
               {
-                tag: "Family"
+                "id": "tvdb://10635492"
               }
             ],
-            Country: [
+            "Role": [
               {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Alex Zamm"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Stephen Mazur"
-              }
-            ],
-            Role: [
-              {
-                tag: "Larry the Cable Guy"
+                "id": 20222,
+                "filter": "actor=20222",
+                "tag": "Vic Michaelis",
+                "tagKey": "5f403aeace2564003f9036d5",
+                "role": "Vic Michaelis",
+                "thumb": "https://metadata-static.plex.tv/4/people/4760a205c3e9e53c583a105fd24cc896.jpg"
               },
               {
-                tag: "Brian Stepanek"
-              },
-              {
-                tag: "Lauren K. Robek"
+                "id": 14261,
+                "filter": "actor=14261",
+                "tag": "Nicole Byer",
+                "tagKey": "5d7768c0ebdf2200209c8057",
+                "role": "Candice",
+                "thumb": "https://metadata-static.plex.tv/e/people/ee21bdae1a9e022035d946b305c32c8b.jpg"
               }
             ]
           },
           {
-            ratingKey: "57183",
-            key: "/library/metadata/57183",
-            guid: "plex://movie/5d776aa747dd6e001f6d57aa",
-            slug: "toy-story-that-time-forgot",
-            studio: "Pixar",
-            type: "movie",
-            title: "Toy Story That Time Forgot",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "The story takes place after a Christmas holiday with the regular toys finding themselves trapped in unusual territory with a group of new and delusional action figures. Together they must find their way back to their child's bedroom and to safety.",
-            rating: 9.2,
-            audienceRating: 8.2,
-            year: 2014,
-            thumb: "/library/metadata/57183/thumb/1737375480",
-            art: "/library/metadata/57183/art/1737375480",
-            duration: 1296587,
-            originallyAvailableAt: "2014-12-02",
-            addedAt: 1737375475,
-            updatedAt: 1737375480,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57184",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108478",
+            "key": "/library/metadata/108478",
+            "parentRatingKey": "99778",
+            "grandparentRatingKey": "97707",
+            "guid": "plex://episode/67f3e8f2325efc7ca553798c",
+            "parentGuid": "plex://season/668e7e67f408245793ead834",
+            "grandparentGuid": "plex://show/5d9c08683c3f87001f34eb20",
+            "grandparentSlug": "chicago-med",
+            "type": "episode",
+            "title": "...Don't You Cry",
+            "titleSort": "Don't You Cry",
+            "grandparentKey": "/library/metadata/97707",
+            "parentKey": "/library/metadata/99778",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Chicago Med",
+            "parentTitle": "Season 10",
+            "contentRating": "TV-14",
+            "summary": "Goodwin is tasked with enforcing difficult cuts to hospital personnel. Charles' daughter is hospitalized after a car accident. A transplant patient makes a life-changing decision.",
+            "index": 22,
+            "parentIndex": 10,
+            "audienceRating": 8.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108478/thumb/1748283522",
+            "art": "/library/metadata/97707/art/1748298488",
+            "parentThumb": "/library/metadata/99778/thumb/1747372778",
+            "grandparentThumb": "/library/metadata/97707/thumb/1748298488",
+            "grandparentArt": "/library/metadata/97707/art/1748298488",
+            "grandparentTheme": "/library/metadata/97707/theme/1748298488",
+            "duration": 2557221,
+            "originallyAvailableAt": "2025-05-21",
+            "addedAt": 1747906134,
+            "updatedAt": 1748283522,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
               {
-                id: 61301,
-                duration: 1296587,
-                bitrate: 13225,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mp4",
-                videoFrameRate: "24p",
-                optimizedForStreaming: 0,
-                has64bitOffsets: false,
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130916,
+                "duration": 2557221,
+                "bitrate": 16021,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92347,
-                    key: "/library/parts/92347/1497662265/file.mp4",
-                    duration: 1296587,
-                    file: "/Movies (Kids)/Toy Story That Time Forgot (2014)/Toy.Story.That.Time.Forgot.2014.1080p.BluRay.x264.AC3.mp4",
-                    size: 2144296964,
-                    container: "mp4",
-                    has64bitOffsets: false,
-                    hasThumbnail: "1",
-                    indexes: "sd",
-                    optimizedForStreaming: false,
-                    videoProfile: "high"
+                    "id": 447952,
+                    "key": "/library/parts/447952/1747906064/file.mkv",
+                    "duration": 2557221,
+                    "file": "/data/Media/Tv Shows/Chicago Med/Season 10/Chicago Med (2015) - S10E22 - Dont You Cry [WEBDL-1080p][EAC3 5.1][x264]-ETHEL.mkv",
+                    "size": 2622706170,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037861,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7819,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037863,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037862,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7819,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037864,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037865,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Toy Story That Time Forgot",
-                type: "coverPoster",
-                url: "/library/metadata/57183/thumb/1737375480"
+                "alt": "...Don't You Cry",
+                "type": "coverPoster",
+                "url": "/library/metadata/97707/thumb/1748298488"
               },
               {
-                alt: "Toy Story That Time Forgot",
-                type: "background",
-                url: "/library/metadata/57183/art/1737375480"
+                "alt": "...Don't You Cry",
+                "type": "snapshot",
+                "url": "/library/metadata/108478/thumb/1748283522"
               },
               {
-                alt: "Toy Story That Time Forgot",
-                type: "clearLogo",
-                url: "/library/metadata/57183/clearLogo/1737375480"
+                "alt": "...Don't You Cry",
+                "type": "background",
+                "url": "/library/metadata/97707/art/1748298488"
+              },
+              {
+                "alt": "...Don't You Cry",
+                "type": "clearLogo",
+                "url": "/library/metadata/97707/clearLogo/1748298488"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "14092a",
-              topRight: "2d0a06",
-              bottomRight: "2c2322",
-              bottomLeft: "140305"
+            "UltraBlurColors": {
+              "topLeft": "4c1b22",
+              "topRight": "413e85",
+              "bottomRight": "4d1721",
+              "bottomLeft": "39121b"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Animation"
+                "id": "imdb://tt36374938"
               },
               {
-                tag: "Family"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Steve Purcell"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Steve Purcell"
-              }
-            ],
-            Role: [
-              {
-                tag: "Kristen Schaal"
+                "id": "tmdb://6108933"
               },
               {
-                tag: "Kevin McKidd"
+                "id": "tvdb://11058075"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.4,
+                "type": "audience"
               },
               {
-                tag: "Tom Hanks"
+                "image": "themoviedb://image.rating",
+                "value": 8.0,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 48192,
+                "filter": "director=48192",
+                "tag": "Anna Dokoza",
+                "tagKey": "5d9c080a7b5c2e001e652cc6"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 3114,
+                "filter": "writer=3114",
+                "tag": "Allen MacDonald",
+                "tagKey": "5e163556ef1040003f24b6f2"
+              }
+            ],
+            "Role": [
+              {
+                "id": 2875,
+                "filter": "actor=2875",
+                "tag": "Steven Weber",
+                "tagKey": "5d776826eb5d26001f1dd4cc",
+                "role": "Dr. Dean Archer",
+                "thumb": "https://metadata-static.plex.tv/d/people/d2338af5d54aa25f02c60490b0ac45dd.jpg"
+              },
+              {
+                "id": 29393,
+                "filter": "actor=29393",
+                "tag": "Marlyne Barrett",
+                "tagKey": "5d77683261141d001fb14e5f",
+                "role": "Maggie Lockwood",
+                "thumb": "https://metadata-static.plex.tv/f/people/fd0674613b72f986532f19c38cf6eb7e.jpg"
+              },
+              {
+                "id": 20770,
+                "filter": "actor=20770",
+                "tag": "Jessy Schram",
+                "tagKey": "5d77683254c0f0001f3031f2",
+                "role": "Dr. Hannah Asher",
+                "thumb": "https://metadata-static.plex.tv/3/people/3c8b898f0b1c4ee2e74523c7ffc0dc55.jpg"
+              },
+              {
+                "id": 221537,
+                "filter": "actor=221537",
+                "tag": "Luke Mitchell",
+                "tagKey": "5d776926ad5437001f759643",
+                "role": "Dr. Mitchell 'Mitch' Ripley",
+                "thumb": "https://metadata-static.plex.tv/d/people/d51ddddb767333598d1f594f2683a2aa.jpg"
+              },
+              {
+                "id": 26951,
+                "filter": "actor=26951",
+                "tag": "Sarah Ramos",
+                "tagKey": "5d7768d2fb0d55001f51a2bc",
+                "role": "Dr. Caitlin Lenox",
+                "thumb": "https://metadata-static.plex.tv/c/people/c3d6067a52d91c2ce007187788ced676.jpg"
+              },
+              {
+                "id": 102412,
+                "filter": "actor=102412",
+                "tag": "Darren Barnet",
+                "tagKey": "5d77709031d95e001f1a48ef",
+                "role": "Dr. John Frost",
+                "thumb": "https://metadata-static.plex.tv/a/cc68393fae/people/a23a165208d6de9551f2165eb0a68ffe.jpg"
+              },
+              {
+                "id": 221521,
+                "filter": "actor=221521",
+                "tag": "S. Epatha Merkerson",
+                "tagKey": "5d7768258718ba001e3118d6",
+                "role": "Sharon Goodwin",
+                "thumb": "https://metadata-static.plex.tv/7/people/780849f90afd5c444d07cfb9e99d4e38.jpg"
+              },
+              {
+                "id": 53577,
+                "filter": "actor=53577",
+                "tag": "Oliver Platt",
+                "tagKey": "5d776829103a2d001f564eed",
+                "role": "Dr. Daniel Charles",
+                "thumb": "https://metadata-static.plex.tv/4/people/426ed5572b7465239d36b5f53ab00f45.jpg"
+              },
+              {
+                "id": 46591,
+                "filter": "actor=46591",
+                "tag": "Rachel DiPillo",
+                "tagKey": "5d77699751dd69001fe18f21",
+                "role": "Dr. Sarah Reese",
+                "thumb": "https://metadata-static.plex.tv/d/people/d2f0b8ac0894c5e53af80c8cc6e60d94.jpg"
+              },
+              {
+                "id": 222412,
+                "filter": "actor=222412",
+                "tag": "Hanako Greensmith",
+                "tagKey": "5d7770e5ad5437001f82d5e5",
+                "role": "Violet Mikami",
+                "thumb": "https://metadata-static.plex.tv/people/5d7770e5ad5437001f82d5e5.jpg"
+              },
+              {
+                "id": 84999,
+                "filter": "actor=84999",
+                "tag": "Gregory Alan Williams",
+                "tagKey": "5d77682e85719b001f3a240e",
+                "role": "Bert Goodwin",
+                "thumb": "https://metadata-static.plex.tv/iva/person/54213/57392e482797881a4e1789e283fa794e.jpg"
+              },
+              {
+                "id": 221529,
+                "filter": "actor=221529",
+                "tag": "Marc Grapey",
+                "tagKey": "5d77682a54f42c001f8c318f",
+                "role": "Peter Kalmick",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a54f42c001f8c318f.jpg"
+              },
+              {
+                "id": 101292,
+                "filter": "actor=101292",
+                "tag": "Hannah Riley",
+                "tagKey": "5d776abdfb0d55001f54f6f2",
+                "role": "Anna Charles",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3aa82b8a7c26e54c36d6e6597cceac0.jpg"
+              },
+              {
+                "id": 221553,
+                "filter": "actor=221553",
+                "tag": "John Earl Jelks",
+                "tagKey": "5d776bedfb0d55001f577662",
+                "role": "Dr. Dennis Washington",
+                "thumb": "https://metadata-static.plex.tv/a/people/a1352b0661ce13ffcff049fa2e3ced9f.jpg"
+              },
+              {
+                "id": 237120,
+                "filter": "actor=237120",
+                "tag": "Tiff Abreu",
+                "tagKey": "64c0d530876ff3e6364546aa",
+                "role": "Cassidy",
+                "thumb": "https://metadata-static.plex.tv/f/people/f10d3c5d0ee63b3fedf6545740c46e60.jpg"
+              },
+              {
+                "id": 90833,
+                "filter": "actor=90833",
+                "tag": "Logan Miller",
+                "tagKey": "5d77683a2ec6b5001f6bcdab",
+                "role": "Kip Lenox",
+                "thumb": "https://image.tmdb.org/t/p/original/xa62ZRSMFUUk4KS9kkKYZkNDlKi.jpg"
+              },
+              {
+                "id": 115575,
+                "filter": "actor=115575",
+                "tag": "Erin Anderson",
+                "tagKey": "5d776afa47dd6e001f6d9929",
+                "role": "Lizzy Asher",
+                "thumb": "https://metadata-static.plex.tv/people/5d776afa47dd6e001f6d9929.jpg"
+              },
+              {
+                "id": 80420,
+                "filter": "actor=80420",
+                "tag": "Holly Curran",
+                "tagKey": "5d77706a81ba41001faefbe6",
+                "role": "Sadie Smith",
+                "thumb": "https://metadata-static.plex.tv/a/people/a81f71dbd2265008985d2e932b729019.jpg"
+              },
+              {
+                "id": 10353,
+                "filter": "actor=10353",
+                "tag": "Orlagh Cassidy",
+                "tagKey": "5d776a3796b655001fde6e7b",
+                "role": "Miranda Lewis",
+                "thumb": "https://metadata-static.plex.tv/a/people/a0982bed724dfc58e4bf289624b99694.jpg"
+              },
+              {
+                "id": 31008,
+                "filter": "actor=31008",
+                "tag": "Mekia Cox",
+                "tagKey": "5d77683bf54112001f5be25f",
+                "role": "Robin Charles",
+                "thumb": "https://metadata-static.plex.tv/e/people/e6851fd3f1a9c96557e4e9d31bf7a7a0.jpg"
+              },
+              {
+                "id": 19270,
+                "filter": "actor=19270",
+                "tag": "Sam Trammell",
+                "tagKey": "5d77682685719b001f3a0b02",
+                "role": "Walter Macron",
+                "thumb": "https://metadata-static.plex.tv/2/people/277a335b5a73751cd177f46274b936c5.jpg"
+              },
+              {
+                "id": 51521,
+                "filter": "actor=51521",
+                "tag": "Tonya Glanz",
+                "tagKey": "5d776ae8594b2b001e6c946f",
+                "role": "Kate Macron",
+                "thumb": "https://metadata-static.plex.tv/b/people/bb7a4c9233fc8d4bf66212bdcd115f03.jpg"
+              },
+              {
+                "id": 287242,
+                "filter": "actor=287242",
+                "tag": "Connor Esterson",
+                "tagKey": "5f3fd49fc63b480040d7e328",
+                "role": "Noah Macron",
+                "thumb": "https://metadata-static.plex.tv/a/people/aee875d66f964192c58ba1dd1c9c00bb.jpg"
+              },
+              {
+                "id": 21848,
+                "filter": "actor=21848",
+                "tag": "Brooklyn Shuck",
+                "tagKey": "5d776aa1594b2b001e6c1a68",
+                "role": "Alea Lancer",
+                "thumb": "https://metadata-static.plex.tv/c/people/c103424b9152cb4a329f1a5590a73c36.jpg"
+              },
+              {
+                "id": 24958,
+                "filter": "actor=24958",
+                "tag": "Tim DeKay",
+                "tagKey": "5d776833880197001ec92ffc",
+                "role": "Griffin Lancer",
+                "thumb": "https://metadata-static.plex.tv/c/people/c28c9970405120fe9465401e43810314.jpg"
+              },
+              {
+                "id": 222765,
+                "filter": "actor=222765",
+                "tag": "Marcus Hendricks",
+                "tagKey": "602a8271433b10002cf6a873",
+                "role": "Lancer Security Guard"
+              },
+              {
+                "id": 89335,
+                "filter": "actor=89335",
+                "tag": "Jocelyn Hudon",
+                "tagKey": "5d776aa996b655001fdf5501",
+                "role": "Lyla 'Lizzie' Novak",
+                "thumb": "https://metadata-static.plex.tv/b/people/b413d4d44f1336504961506b33ed5b08.jpg"
+              },
+              {
+                "id": 288108,
+                "filter": "actor=288108",
+                "tag": "Bobbye Boatright",
+                "tagKey": "67f3d20086389c3cfec4a81e",
+                "role": "Prison Guard"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 240877,
+                "filter": "producer=240877",
+                "tag": "Leigh Cousins",
+                "tagKey": "5f3ff3b4cae2c60042eb981e"
+              },
+              {
+                "id": 48250,
+                "filter": "producer=48250",
+                "tag": "Anna Dokoza",
+                "tagKey": "5d9c080a7b5c2e001e652cc6"
+              },
+              {
+                "id": 240878,
+                "filter": "producer=240878",
+                "tag": "Meridith Friedman",
+                "tagKey": "5f4017a9cae2c60042eeebdc"
+              },
+              {
+                "id": 241325,
+                "filter": "producer=241325",
+                "tag": "Andrew Gettens",
+                "tagKey": "5ddc5684ed36f9001d9bdc92"
+              },
+              {
+                "id": 241357,
+                "filter": "producer=241357",
+                "tag": "Stephen Hootstein",
+                "tagKey": "5e164829316a39003ef91c5f"
               }
             ]
           },
           {
-            ratingKey: "57159",
-            key: "/library/metadata/57159",
-            guid: "plex://movie/5d9f3c7f6fc551001ef89219",
-            slug: "toy-story-4",
-            studio: "Walt Disney Pictures",
-            type: "movie",
-            title: "Toy Story 4",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "Woody, Buzz Lightyear and the rest of the gang embark on a road trip with Bonnie and a new toy named Forky. The adventurous journey turns into an unexpected reunion as Woody's slight detour leads him to his long-lost friend Bo Peep. As Woody and Bo discuss the old days, they soon start to realize that they're two worlds apart when it comes to what they want from life as a toy.",
-            rating: 9.7,
-            audienceRating: 9.4,
-            year: 2019,
-            tagline: "Get Ready to Hit the Road",
-            thumb: "/library/metadata/57159/thumb/1737375452",
-            art: "/library/metadata/57159/art/1737375452",
-            duration: 6003465,
-            originallyAvailableAt: "2019-06-20",
-            addedAt: 1737375444,
-            updatedAt: 1737375452,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57160",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108477",
+            "key": "/library/metadata/108477",
+            "parentRatingKey": "98594",
+            "grandparentRatingKey": "97989",
+            "guid": "plex://episode/67f3e8598893141c718f2cbd",
+            "parentGuid": "plex://season/668e7e31a3dd2ba9bfbd8b9c",
+            "grandparentGuid": "plex://show/5d9c08482df347001e3aed3c",
+            "grandparentSlug": "chicago-p-d",
+            "type": "episode",
+            "title": "Vows",
+            "grandparentKey": "/library/metadata/97989",
+            "parentKey": "/library/metadata/98594",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Chicago P.D.",
+            "parentTitle": "Season 12",
+            "contentRating": "TV-14",
+            "summary": "Forced to cease operations while under investigation by Internal Affairs, Intelligence goes off-book to bring down Reid once and for all. Ruzek and Burgess consider delaying their nuptials amid the uncertainty.",
+            "index": 22,
+            "parentIndex": 12,
+            "year": 2025,
+            "thumb": "/library/metadata/108477/thumb/1748186902",
+            "art": "/library/metadata/97989/art/1748298488",
+            "parentThumb": "/library/metadata/98594/thumb/1736396828",
+            "grandparentThumb": "/library/metadata/97989/thumb/1748298488",
+            "grandparentArt": "/library/metadata/97989/art/1748298488",
+            "grandparentTheme": "/library/metadata/97989/theme/1748298488",
+            "duration": 2557056,
+            "originallyAvailableAt": "2025-05-21",
+            "addedAt": 1747906134,
+            "updatedAt": 1748186902,
+            "Media": [
               {
-                id: 61231,
-                duration: 6003465,
-                bitrate: 7816,
-                width: 1920,
-                height: 808,
-                aspectRatio: 2.35,
-                audioChannels: 6,
-                audioCodec: "dca",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                audioProfile: "dts",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130915,
+                "duration": 2557056,
+                "bitrate": 16012,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92277,
-                    key: "/library/parts/92277/1569469633/file.mkv",
-                    duration: 6003465,
-                    file: "/Movies (Kids)/Toy Story 4 (2019)/Toy.Story.4.2019.1080p.BluRay.x264-SPARKS en.mkv",
-                    size: 5867362099,
-                    audioProfile: "dts",
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 447951,
+                    "key": "/library/parts/447951/1747906110/file.mkv",
+                    "duration": 2557056,
+                    "file": "/data/Media/Tv Shows/Chicago P.D/Season 12/Chicago P.D. (2014) - S12E22 - Vows 2 [WEBDL-1080p][EAC3 5.1][x264]-successfulcrab.mkv",
+                    "size": 2621050756,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037856,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7814,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037858,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037857,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7814,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037859,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037860,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Toy Story 4",
-                type: "coverPoster",
-                url: "/library/metadata/57159/thumb/1737375452"
+                "alt": "Vows",
+                "type": "coverPoster",
+                "url": "/library/metadata/97989/thumb/1748298488"
               },
               {
-                alt: "Toy Story 4",
-                type: "background",
-                url: "/library/metadata/57159/art/1737375452"
+                "alt": "Vows",
+                "type": "snapshot",
+                "url": "/library/metadata/108477/thumb/1748186902"
               },
               {
-                alt: "Toy Story 4",
-                type: "clearLogo",
-                url: "/library/metadata/57159/clearLogo/1737375452"
+                "alt": "Vows",
+                "type": "background",
+                "url": "/library/metadata/97989/art/1748298488"
+              },
+              {
+                "alt": "Vows",
+                "type": "clearLogo",
+                "url": "/library/metadata/97989/clearLogo/1748298488"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "361e4e",
-              topRight: "9a3546",
-              bottomRight: "aa2217",
-              bottomLeft: "3b3b7e"
+            "UltraBlurColors": {
+              "topLeft": "412710",
+              "topRight": "1d1917",
+              "bottomRight": "1c1a1d",
+              "bottomLeft": "795620"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Family"
+                "id": "imdb://tt36592978"
               },
               {
-                tag: "Animation"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Josh Cooley"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Rashida Jones"
+                "id": "tmdb://6108931"
               },
               {
-                tag: "Stephany Folsom"
+                "id": "tvdb://11058077"
               }
             ],
-            Role: [
+            "Rating": [
               {
-                tag: "Tom Hanks"
+                "image": "imdb://image.rating",
+                "value": 8.8,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 228139,
+                "filter": "director=228139",
+                "tag": "Chad Saxton",
+                "tagKey": "5f3fcfbbc63b480040d77fa5"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 223433,
+                "filter": "writer=223433",
+                "tag": "Gwen Sigan",
+                "tagKey": "5e16480561c6140040d7dcfd",
+                "thumb": "https://metadata-static.plex.tv/e/people/e0b60561ad32e2871c6485e94ad6fc31.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 27483,
+                "filter": "actor=27483",
+                "tag": "Jason Beghe",
+                "tagKey": "5d7768288718ba001e312181",
+                "role": "Hank Voight",
+                "thumb": "https://metadata-static.plex.tv/iva/person/15260/ee396ed71effe0ef88b7fd49f2d688a8.jpg"
               },
               {
-                tag: "Tim Allen"
+                "id": 28898,
+                "filter": "actor=28898",
+                "tag": "Marina Squerciati",
+                "tagKey": "5d77692696b655001fdcb856",
+                "role": "Kim Burgess",
+                "thumb": "https://metadata-static.plex.tv/8/people/8051a7b1d5aec7f12e57df6f91dd7198.jpg"
               },
               {
-                tag: "Annie Potts"
+                "id": 134723,
+                "filter": "actor=134723",
+                "tag": "Patrick John Flueger",
+                "tagKey": "5d776831999c64001ec2e911",
+                "role": "Adam Ruzek",
+                "thumb": "https://metadata-static.plex.tv/2/people/2e4deedc9d547594030faf285208b5ce.jpg"
+              },
+              {
+                "id": 221568,
+                "filter": "actor=221568",
+                "tag": "LaRoyce Hawkins",
+                "tagKey": "5d777055594b2b001e749179",
+                "role": "Kevin Atwater",
+                "thumb": "https://metadata-static.plex.tv/9/people/9c7d310b67f96d52c8d5eb1a4d6d675c.jpg"
+              },
+              {
+                "id": 222744,
+                "filter": "actor=222744",
+                "tag": "Benjamin Levy Aguilar",
+                "tagKey": "5d776b167a53e9001e719be9",
+                "role": "Officer Dante Torres",
+                "thumb": "https://metadata-static.plex.tv/8/people/8b4720d6e6e0a7f7791de74a05fbce8d.jpg"
+              },
+              {
+                "id": 34751,
+                "filter": "actor=34751",
+                "tag": "Toya Turner",
+                "tagKey": "5d77689debdf2200209c3bd2",
+                "role": "Kiana Cook",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e873713c88d5e69f0be275d57b3d14d.jpg"
+              },
+              {
+                "id": 77868,
+                "filter": "actor=77868",
+                "tag": "Amy Morton",
+                "tagKey": "5d7768324de0ee001fccabaf",
+                "role": "Trudy Platt",
+                "thumb": "https://metadata-static.plex.tv/c/people/c622a6072a56f22ecaf1f74c7d8ce340.jpg"
+              },
+              {
+                "id": 64066,
+                "filter": "actor=64066",
+                "tag": "Christian Stolte",
+                "tagKey": "5d776829151a60001f24b163",
+                "role": "Randall 'Mouch' McHolland",
+                "thumb": "https://metadata-static.plex.tv/8/people/8210a81652440f3b6c4d36fb94d56a84.jpg"
+              },
+              {
+                "id": 39611,
+                "filter": "actor=39611",
+                "tag": "Jack Coleman",
+                "tagKey": "5d77684e6f4521001eaa0a74",
+                "role": "Bob Ruzek",
+                "thumb": "https://metadata-static.plex.tv/people/5d77684e6f4521001eaa0a74.jpg"
+              },
+              {
+                "id": 222745,
+                "filter": "actor=222745",
+                "tag": "Ramona Edith Williams",
+                "tagKey": "5d7770b67a53e9001e7a96bc",
+                "role": "Makayla Burgess",
+                "thumb": "https://metadata-static.plex.tv/0/people/0c1c584f805f56da8d05c9147507e417.jpg"
+              },
+              {
+                "id": 222747,
+                "filter": "actor=222747",
+                "tag": "Sara Bues",
+                "tagKey": "5f400d85bf3e560040b6c415",
+                "role": "ASA Nina Chapman",
+                "thumb": "https://metadata-static.plex.tv/9/people/95af0877b6790ca55d08e52f0ccd9491.jpg"
+              },
+              {
+                "id": 51887,
+                "filter": "actor=51887",
+                "tag": "Brandon Gill",
+                "tagKey": "5d77686deb5d26001f1eb096",
+                "role": "Rabbit",
+                "thumb": "https://metadata-static.plex.tv/f/people/ff9e6d9fda64804ee12c4679142d3689.jpg"
+              },
+              {
+                "id": 19246,
+                "filter": "actor=19246",
+                "tag": "Shawn Hatosy",
+                "tagKey": "5d7768325af944001f1f91ae",
+                "role": "DC Charlie Reid",
+                "thumb": "https://metadata-static.plex.tv/f/people/f4f978af31e29685e79ff021fed14ac1.jpg"
+              },
+              {
+                "id": 288094,
+                "filter": "actor=288094",
+                "tag": "Jason Sanchez",
+                "tagKey": "5f3fd8bc86422500427c9caa",
+                "role": "Reinerio 'Rennie' Otero"
+              },
+              {
+                "id": 202056,
+                "filter": "actor=202056",
+                "tag": "Randy Gonzalez",
+                "tagKey": "5d776b25ad5437001f794fe1",
+                "role": "Silva",
+                "thumb": "https://metadata-static.plex.tv/f/people/fe33bf9924cae81923cd7e8311e84043.jpg"
+              },
+              {
+                "id": 5002,
+                "filter": "actor=5002",
+                "tag": "Christopher Rivas",
+                "tagKey": "5e1647d8bc1372003ea7ce1e",
+                "role": "Joseph Caldera",
+                "thumb": "https://metadata-static.plex.tv/people/5e1647d8bc1372003ea7ce1e.jpg"
+              },
+              {
+                "id": 288100,
+                "filter": "actor=288100",
+                "tag": "David Feliz",
+                "tagKey": "5f47705184cd00004232972f",
+                "role": "Juan Turlo"
+              },
+              {
+                "id": 288101,
+                "filter": "actor=288101",
+                "tag": "Ryan Jacobucci",
+                "tagKey": "67ee78f3f0713340d31a19d3",
+                "role": "Patrol Officer Pogue",
+                "thumb": "https://image.tmdb.org/t/p/original/2soZAOoPDP0rNu2s0vFIIcH1OGT.jpg"
+              },
+              {
+                "id": 288102,
+                "filter": "actor=288102",
+                "tag": "Luke Daigle",
+                "tagKey": "5f40117002101b0040f3367c",
+                "role": "IAD Officer"
+              },
+              {
+                "id": 288103,
+                "filter": "actor=288103",
+                "tag": "Tom Dacey Carr",
+                "tagKey": "5f40409ecae2c60042f336e3",
+                "role": "Brass 1",
+                "thumb": "https://metadata-static.plex.tv/4/people/4235ee3615a1bc37637176c839026468.jpg"
+              },
+              {
+                "id": 288104,
+                "filter": "actor=288104",
+                "tag": "Kiev C. Brownlee",
+                "tagKey": "671a3ba89503003bb6d65232",
+                "role": "Brass 2"
+              },
+              {
+                "id": 222808,
+                "filter": "actor=222808",
+                "tag": "Elizabeth Kline",
+                "tagKey": "5f404da602101b0040fa0251",
+                "role": "Brass 3"
+              },
+              {
+                "id": 223311,
+                "filter": "actor=223311",
+                "tag": "Lisa Roti",
+                "tagKey": "5f404a2204a8650040a38f48",
+                "role": "Detective",
+                "thumb": "https://metadata-static.plex.tv/1/people/1b8999563cce8dde280f9eb46b4cd3d4.jpg"
+              },
+              {
+                "id": 288105,
+                "filter": "actor=288105",
+                "tag": "Oliver Wesley McClean",
+                "tagKey": "66644efb85d3d301b33d8647",
+                "role": "Officer 1"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 228904,
+                "filter": "producer=228904",
+                "tag": "Laura A. Garcia",
+                "tagKey": "5f3ffc1de065380042ed5d15"
+              },
+              {
+                "id": 227917,
+                "filter": "producer=227917",
+                "tag": "Gavin Harris",
+                "tagKey": "5e163556316a39003ef7e7a6"
+              },
+              {
+                "id": 227918,
+                "filter": "producer=227918",
+                "tag": "Peter Jankowski",
+                "tagKey": "5d9c08542df347001e3afd23",
+                "thumb": "https://metadata-static.plex.tv/4/people/4d3c2a0b2c90d04b72e7cec3f666f5bf.jpg"
+              },
+              {
+                "id": 284990,
+                "filter": "producer=284990",
+                "tag": "Chad Saxton",
+                "tagKey": "5f3fcfbbc63b480040d77fa5"
+              },
+              {
+                "id": 287888,
+                "filter": "producer=287888",
+                "tag": "Gwen Sigan",
+                "tagKey": "5e16480561c6140040d7dcfd",
+                "thumb": "https://metadata-static.plex.tv/e/people/e0b60561ad32e2871c6485e94ad6fc31.jpg"
               }
             ]
           },
           {
-            ratingKey: "57141",
-            key: "/library/metadata/57141",
-            guid: "plex://movie/5d77683454f42c001f8c435e",
-            slug: "toy-story-3",
-            studio: "Pixar",
-            type: "movie",
-            title: "Toy Story 3",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.",
-            rating: 9.8,
-            audienceRating: 9.0,
-            year: 2010,
-            tagline: "No toy gets left behind.",
-            thumb: "/library/metadata/57141/thumb/1737375359",
-            art: "/library/metadata/57141/art/1737375359",
-            duration: 6183360,
-            originallyAvailableAt: "2010-06-16",
-            addedAt: 1737375352,
-            updatedAt: 1737375359,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57142",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108476",
+            "key": "/library/metadata/108476",
+            "parentRatingKey": "98434",
+            "grandparentRatingKey": "98213",
+            "guid": "plex://episode/67f3e53c38177c51737835fb",
+            "parentGuid": "plex://season/668e7d8838868365e79390e8",
+            "grandparentGuid": "plex://show/5d9c084208fddd001f29602a",
+            "grandparentSlug": "chicago-fire",
+            "type": "episode",
+            "title": "It Had to End This Way",
+            "grandparentKey": "/library/metadata/98213",
+            "parentKey": "/library/metadata/98434",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Chicago Fire",
+            "parentTitle": "Season 13",
+            "contentRating": "TV-14",
+            "summary": "Severide puts his job on the line to help out one of their own. Kidd navigates Natalie’s complicated relationship with her sister. Herrmann prepares to take the Chief test.",
+            "index": 22,
+            "parentIndex": 13,
+            "audienceRating": 8.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108476/thumb/1748270042",
+            "art": "/library/metadata/98213/art/1748298489",
+            "parentThumb": "/library/metadata/98434/thumb/1735829503",
+            "grandparentThumb": "/library/metadata/98213/thumb/1748298489",
+            "grandparentArt": "/library/metadata/98213/art/1748298489",
+            "grandparentTheme": "/library/metadata/98213/theme/1748298489",
+            "duration": 2526732,
+            "originallyAvailableAt": "2025-05-21",
+            "addedAt": 1747906132,
+            "updatedAt": 1748270042,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
               {
-                id: 61187,
-                duration: 6183360,
-                bitrate: 12225,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130914,
+                "duration": 2526732,
+                "bitrate": 15981,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92233,
-                    key: "/library/parts/92233/1563643266/file.mkv",
-                    duration: 6183360,
-                    file: "/Movies (Kids)/Toy Story 3 (2010)/Toy.Story.3.2010.1080p.BluRay.HEBDUB.Also.English.DD5.1.x264-ZionHD.mkv",
-                    size: 9450950905,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 447950,
+                    "key": "/library/parts/447950/1747906087/file.mkv",
+                    "duration": 2526732,
+                    "file": "/data/Media/Tv Shows/Chicago Fire/Season 13/Chicago Fire (2012) - S13E22 - It Had to End This Way [WEBDL-1080p][EAC3 5.1][x264]-ETHEL.mkv",
+                    "size": 2585107054,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037851,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7799,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037853,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037852,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7799,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037854,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037855,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Toy Story 3",
-                type: "coverPoster",
-                url: "/library/metadata/57141/thumb/1737375359"
+                "alt": "It Had to End This Way",
+                "type": "coverPoster",
+                "url": "/library/metadata/98213/thumb/1748298489"
               },
               {
-                alt: "Toy Story 3",
-                type: "background",
-                url: "/library/metadata/57141/art/1737375359"
+                "alt": "It Had to End This Way",
+                "type": "snapshot",
+                "url": "/library/metadata/108476/thumb/1748270042"
               },
               {
-                alt: "Toy Story 3",
-                type: "clearLogo",
-                url: "/library/metadata/57141/clearLogo/1737375359"
+                "alt": "It Had to End This Way",
+                "type": "background",
+                "url": "/library/metadata/98213/art/1748298489"
+              },
+              {
+                "alt": "It Had to End This Way",
+                "type": "clearLogo",
+                "url": "/library/metadata/98213/clearLogo/1748298489"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "541313",
-              topRight: "306091",
-              bottomRight: "96394f",
-              bottomLeft: "35306d"
+            "UltraBlurColors": {
+              "topLeft": "241d20",
+              "topRight": "4d1c20",
+              "bottomRight": "1a171c",
+              "bottomLeft": "413838"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Animation"
+                "id": "imdb://tt36592990"
               },
               {
-                tag: "Family"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "Lee Unkrich"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Nick Sung"
+                "id": "tmdb://6108935"
               },
               {
-                tag: "Michael Arndt"
+                "id": "tvdb://11058082"
               }
             ],
-            Role: [
+            "Rating": [
               {
-                tag: "Tom Hanks"
+                "image": "imdb://image.rating",
+                "value": 8.3,
+                "type": "audience"
               },
               {
-                tag: "Tim Allen"
+                "image": "themoviedb://image.rating",
+                "value": 8.0,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 223171,
+                "filter": "director=223171",
+                "tag": "Reza Tabrizi",
+                "tagKey": "5e163aac1493cd003f0e1b53"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 3810,
+                "filter": "writer=3810",
+                "tag": "Andrea Newman",
+                "tagKey": "5e163518cd0850003b75e6c1"
               },
               {
-                tag: "Joan Cusack"
+                "id": 227717,
+                "filter": "writer=227717",
+                "tag": "Alec Wells",
+                "tagKey": "5e1646404c78f7003e805242"
+              }
+            ],
+            "Role": [
+              {
+                "id": 69425,
+                "filter": "actor=69425",
+                "tag": "Taylor Kinney",
+                "tagKey": "5d77683ef59e580021899b7b",
+                "role": "Kelly Severide",
+                "thumb": "https://metadata-static.plex.tv/5/people/53a4f83976200503ace4c3869074a677.jpg"
+              },
+              {
+                "id": 27026,
+                "filter": "actor=27026",
+                "tag": "David Eigenberg",
+                "tagKey": "5d77682c151a60001f24bf31",
+                "role": "Christopher Herrmann",
+                "thumb": "https://metadata-static.plex.tv/0/people/00ea302f74b411f4174faa2f9797d212.jpg"
+              },
+              {
+                "id": 64107,
+                "filter": "actor=64107",
+                "tag": "Joe Miñoso",
+                "tagKey": "5d776a4951dd69001fe21dbb",
+                "role": "Joe Cruz",
+                "thumb": "https://metadata-static.plex.tv/e/people/e282c958346686e138ab8d4b85399062.jpg"
+              },
+              {
+                "id": 64066,
+                "filter": "actor=64066",
+                "tag": "Christian Stolte",
+                "tagKey": "5d776829151a60001f24b163",
+                "role": "Randy 'Mouch' McHolland",
+                "thumb": "https://metadata-static.plex.tv/8/people/8210a81652440f3b6c4d36fb94d56a84.jpg"
+              },
+              {
+                "id": 63663,
+                "filter": "actor=63663",
+                "tag": "Miranda Rae Mayo",
+                "tagKey": "5d776b3cfb0d55001f561047",
+                "role": "Stella Kidd",
+                "thumb": "https://metadata-static.plex.tv/5/people/5c10b509be8e38ff0497c704fbff01ec.jpg"
+              },
+              {
+                "id": 222084,
+                "filter": "actor=222084",
+                "tag": "Daniel Kyri",
+                "tagKey": "5d776b49fb0d55001f562ae1",
+                "role": "Darren Ritter",
+                "thumb": "https://metadata-static.plex.tv/people/5d776b49fb0d55001f562ae1.jpg"
+              },
+              {
+                "id": 222412,
+                "filter": "actor=222412",
+                "tag": "Hanako Greensmith",
+                "tagKey": "5d7770e5ad5437001f82d5e5",
+                "role": "Violet Mikami",
+                "thumb": "https://metadata-static.plex.tv/people/5d7770e5ad5437001f82d5e5.jpg"
+              },
+              {
+                "id": 89335,
+                "filter": "actor=89335",
+                "tag": "Jocelyn Hudon",
+                "tagKey": "5d776aa996b655001fdf5501",
+                "role": "Paramedic Lyla 'Lizzie' Novak",
+                "thumb": "https://metadata-static.plex.tv/b/people/b413d4d44f1336504961506b33ed5b08.jpg"
+              },
+              {
+                "id": 14627,
+                "filter": "actor=14627",
+                "tag": "Jake Lockett",
+                "tagKey": "5d77697551dd69001fe1743c",
+                "role": "Sam Carver",
+                "thumb": "https://metadata-static.plex.tv/e/people/e618eeaa4522034cd73b7a3a64d0998c.jpg"
+              },
+              {
+                "id": 7061,
+                "filter": "actor=7061",
+                "tag": "Dermot Mulroney",
+                "tagKey": "5d77682a151a60001f24b4f5",
+                "role": "Battalion Chief Dom Pascal",
+                "thumb": "https://metadata-static.plex.tv/a/people/aa6a15fe3e4b07cab008994a1c3f8d31.jpg"
+              },
+              {
+                "id": 37256,
+                "filter": "actor=37256",
+                "tag": "Tim Hopper",
+                "tagKey": "5d776827151a60001f24ab1c",
+                "role": "Captain Tom Van Meter",
+                "thumb": "https://metadata-static.plex.tv/2/people/29581d3b7a489b7487194b51520c537d.jpg"
+              },
+              {
+                "id": 221601,
+                "filter": "actor=221601",
+                "tag": "Anthony Ferraris",
+                "tagKey": "5e1647d3cd0850003b77053a",
+                "role": "Tony"
+              },
+              {
+                "id": 226375,
+                "filter": "actor=226375",
+                "tag": "Steve Chikerotis",
+                "tagKey": "5e163a5f91c2030041215353",
+                "role": "Chief Walker"
+              },
+              {
+                "id": 221600,
+                "filter": "actor=221600",
+                "tag": "Randy Flagler",
+                "tagKey": "5d9c0815705e7a001e6d20c0",
+                "role": "Harold Capp",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3b8ccc72002b0b8d813414204e5cba4.jpg"
+              },
+              {
+                "id": 226393,
+                "filter": "actor=226393",
+                "tag": "Michael Bradway",
+                "tagKey": "5f40739303883a0040bddf68",
+                "role": "Jack Damon",
+                "thumb": "https://metadata-static.plex.tv/1/people/11e1ad297574634017029e9368a2dc9b.jpg"
+              },
+              {
+                "id": 226425,
+                "filter": "actor=226425",
+                "tag": "Phil Donlon",
+                "tagKey": "5d776a9bad5437001f782f28",
+                "role": "Lt. Stephen Vale",
+                "thumb": "https://metadata-static.plex.tv/6/people/67713fd50268b93f1afed343be537876.jpg"
+              },
+              {
+                "id": 77949,
+                "filter": "actor=77949",
+                "tag": "Keith Kupferer",
+                "tagKey": "5d7768267e9a3c0020c6aa48",
+                "role": "Captain Robert Bishop",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768267e9a3c0020c6aa48.jpg"
+              },
+              {
+                "id": 37315,
+                "filter": "actor=37315",
+                "tag": "Amy Sloan",
+                "tagKey": "5d776826961905001eb90dc6",
+                "role": "Captain Sydney Vonn",
+                "thumb": "https://metadata-static.plex.tv/4/people/477a0192984111bdd0b91c320ff20ff4.jpg"
+              },
+              {
+                "id": 256019,
+                "filter": "actor=256019",
+                "tag": "Mattico David",
+                "tagKey": "617e4f0ecb7287c21d3d1b2d",
+                "role": "Officer Powell"
+              },
+              {
+                "id": 270952,
+                "filter": "actor=270952",
+                "tag": "Ava Torres",
+                "tagKey": "5f3fc81352f200004148edf5",
+                "role": "Natalie Evans",
+                "thumb": "https://metadata-static.plex.tv/4/people/44ae720eb858dc0ec2fffccc9454ffb7.jpg"
+              },
+              {
+                "id": 228683,
+                "filter": "actor=228683",
+                "tag": "Erica Mendez",
+                "tagKey": "5f8aa518ace3f1002d8fcb73",
+                "role": "Julia Evans"
+              },
+              {
+                "id": 46791,
+                "filter": "actor=46791",
+                "tag": "Isaac Stephen Montgomery",
+                "tagKey": "5d776dea594b2b001e71593d",
+                "role": "Detective Gerard",
+                "thumb": "https://metadata-static.plex.tv/c/people/ca7686ff2cde1add19882e5211281a73.jpg"
+              },
+              {
+                "id": 288089,
+                "filter": "actor=288089",
+                "tag": "Birdy",
+                "tagKey": "65ddcf067c56c2790a9ad16b",
+                "role": "Haley",
+                "thumb": "https://metadata-static.plex.tv/c/people/cb90fb63e1da01ed672e3d7573fe3981.jpg"
+              },
+              {
+                "id": 222446,
+                "filter": "actor=222446",
+                "tag": "Wendye Clarendon",
+                "tagKey": "5f3f93e9bf3e560040adc313",
+                "role": "Abby"
+              },
+              {
+                "id": 228223,
+                "filter": "actor=228223",
+                "tag": "Lucinda Johnston",
+                "tagKey": "5f404be1bf3e560040bdb7f1",
+                "role": "Principal Mercado"
+              },
+              {
+                "id": 288090,
+                "filter": "actor=288090",
+                "tag": "Matt Lamson",
+                "tagKey": "5d776a669ab54400214fecb4",
+                "role": "Store Employee"
+              },
+              {
+                "id": 288091,
+                "filter": "actor=288091",
+                "tag": "Michelle Shupe",
+                "tagKey": "683096de263f69c6ff103623",
+                "role": "Gayle"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 226780,
+                "filter": "producer=226780",
+                "tag": "Michael Brandt",
+                "tagKey": "5d7768275af944001f1f6ade",
+                "thumb": "https://metadata-static.plex.tv/f/people/f6e92771096d2370bae4fe459f312018.jpg"
+              },
+              {
+                "id": 228904,
+                "filter": "producer=228904",
+                "tag": "Laura A. Garcia",
+                "tagKey": "5f3ffc1de065380042ed5d15"
+              },
+              {
+                "id": 246683,
+                "filter": "producer=246683",
+                "tag": "Derek Haas",
+                "tagKey": "5d7768275af944001f1f6adf",
+                "thumb": "https://metadata-static.plex.tv/c/people/c745f5b9daf411f2982045fbfed97d1f.jpg"
+              },
+              {
+                "id": 227918,
+                "filter": "producer=227918",
+                "tag": "Peter Jankowski",
+                "tagKey": "5d9c08542df347001e3afd23",
+                "thumb": "https://metadata-static.plex.tv/4/people/4d3c2a0b2c90d04b72e7cec3f666f5bf.jpg"
+              },
+              {
+                "id": 3785,
+                "filter": "producer=3785",
+                "tag": "Andrea Newman",
+                "tagKey": "5e163518cd0850003b75e6c1"
               }
             ]
           },
           {
-            ratingKey: "57136",
-            key: "/library/metadata/57136",
-            guid: "plex://movie/5d77682885719b001f3a124d",
-            slug: "toy-story-2",
-            studio: "Pixar",
-            type: "movie",
-            title: "Toy Story 2",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "While Andy is away at summer camp Woody has been toynapped by Al McWiggin, a greedy collector and proprietor of \"Al's Toy Barn\". In this all-out rescue mission, Buzz and his friends Mr. Potato Head, Slinky Dog, Rex and Hamm spring into action to rescue Woody from winding up as a museum piece. They must find a way to save him before he gets sold in Japan forever and they'll never see him again.",
-            rating: 10.0,
-            audienceRating: 8.7,
-            year: 1999,
-            tagline: "The toys are back!",
-            thumb: "/library/metadata/57136/thumb/1738466481",
-            art: "/library/metadata/57136/art/1738466481",
-            duration: 5895015,
-            originallyAvailableAt: "1999-11-24",
-            addedAt: 1737375284,
-            updatedAt: 1738466481,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108475",
+            "key": "/library/metadata/108475",
+            "parentRatingKey": "108474",
+            "grandparentRatingKey": "8462",
+            "guid": "plex://episode/680b81cee6b87f5a7f070c16",
+            "parentGuid": "plex://season/680b81cde6b87f5a7f070c12",
+            "grandparentGuid": "plex://show/5d9c085508fddd001f297a07",
+            "grandparentSlug": "masterchef-us",
+            "type": "episode",
+            "title": "The Audition Battles",
+            "titleSort": "Audition Battles",
+            "grandparentKey": "/library/metadata/8462",
+            "parentKey": "/library/metadata/108474",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "MasterChef (US)",
+            "parentTitle": "Season 15",
+            "contentRating": "TV-14",
+            "summary": "Gordon Ramsay and Joe Bastianich welcome new judge, Award winning chef Tiffany Derry, as they embark on their search for America’s best home cook duos. And it all starts with Audition Battles, as eight pairs of home cooks go head-to-head fighting to win legendary white aprons.",
+            "index": 1,
+            "parentIndex": 15,
+            "audienceRating": 7.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108475/thumb/1748904303",
+            "art": "/library/metadata/8462/art/1748905442",
+            "parentThumb": "/library/metadata/108474/thumb/1748186908",
+            "grandparentThumb": "/library/metadata/8462/thumb/1748905442",
+            "grandparentArt": "/library/metadata/8462/art/1748905442",
+            "grandparentTheme": "/library/metadata/8462/theme/1748905442",
+            "duration": 2532064,
+            "originallyAvailableAt": "2025-05-21",
+            "addedAt": 1747900551,
+            "updatedAt": 1748904303,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
               {
-                id: 61174,
-                duration: 5895015,
-                bitrate: 12034,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130913,
+                "duration": 2532064,
+                "bitrate": 7347,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92220,
-                    key: "/library/parts/92220/1563643261/file.mkv",
-                    duration: 5895015,
-                    file: "/Movies (Kids)/Toy Story 2 (1999)/Toy.Story.2.1999.1080p.BluRay.HEBDUB.Also.English.DTS-ES.x264-ZionHD.mkv",
-                    size: 8869852529,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 447949,
+                    "key": "/library/parts/447949/1747900480/file.mkv",
+                    "duration": 2532064,
+                    "file": "/data/Media/Tv Shows/MasterChef (US)/Season 15/MasterChef (US) (2010) - S15E01 - The Audition Battles [WEBDL-1080p][EAC3 5.1][h264]-EDITH.mkv",
+                    "size": 2326169047,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037848,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7091,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037849,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 256,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037850,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Toy Story 2",
-                type: "coverPoster",
-                url: "/library/metadata/57136/thumb/1738466481"
+                "alt": "The Audition Battles",
+                "type": "coverPoster",
+                "url": "/library/metadata/8462/thumb/1748905442"
               },
               {
-                alt: "Toy Story 2",
-                type: "background",
-                url: "/library/metadata/57136/art/1738466481"
+                "alt": "The Audition Battles",
+                "type": "snapshot",
+                "url": "/library/metadata/108475/thumb/1748904303"
               },
               {
-                alt: "Toy Story 2",
-                type: "clearLogo",
-                url: "/library/metadata/57136/clearLogo/1738466481"
+                "alt": "The Audition Battles",
+                "type": "background",
+                "url": "/library/metadata/8462/art/1748905442"
+              },
+              {
+                "alt": "The Audition Battles",
+                "type": "clearLogo",
+                "url": "/library/metadata/8462/clearLogo/1748905442"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "570f05",
-              topRight: "65170b",
-              bottomRight: "83210a",
-              bottomLeft: "83471e"
+            "UltraBlurColors": {
+              "topLeft": "152666",
+              "topRight": "6a2628",
+              "bottomRight": "823932",
+              "bottomLeft": "101940"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Animation"
+                "id": "imdb://tt36469199"
               },
               {
-                tag: "Comedy"
-              }
-            ],
-            Country: [
-              {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "John Lasseter"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Andrew Stanton"
+                "id": "tmdb://6170160"
               },
               {
-                tag: "Doug Chamberlin"
+                "id": "tvdb://11102378"
               }
             ],
-            Role: [
+            "Rating": [
               {
-                tag: "Tom Hanks"
+                "image": "imdb://image.rating",
+                "value": 7.1,
+                "type": "audience"
               },
               {
-                tag: "Tim Allen"
-              },
+                "image": "themoviedb://image.rating",
+                "value": 7.0,
+                "type": "audience"
+              }
+            ],
+            "Role": [
               {
-                tag: "Joan Cusack"
+                "id": 28742,
+                "filter": "actor=28742",
+                "tag": "Gordon Ramsay",
+                "tagKey": "5d7768aa374a5b001fecc9c4",
+                "role": "Self - Judge",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd20a681247c97c89d9aa32747028ba3.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 41529,
+                "filter": "producer=41529",
+                "tag": "Gordon Ramsay",
+                "tagKey": "5d7768aa374a5b001fecc9c4",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd20a681247c97c89d9aa32747028ba3.jpg"
               }
             ]
           },
           {
-            ratingKey: "57134",
-            key: "/library/metadata/57134",
-            guid: "plex://movie/5d776828880197001ec90d44",
-            slug: "toy-story",
-            studio: "Pixar",
-            type: "movie",
-            title: "Toy Story",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "G",
-            summary:
-              "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-            rating: 10.0,
-            audienceRating: 9.2,
-            year: 1995,
-            tagline: "Hang on for the comedy that goes to infinity and beyond!",
-            thumb: "/library/metadata/57134/thumb/1737375227",
-            art: "/library/metadata/57134/art/1737375227",
-            duration: 4888092,
-            originallyAvailableAt: "1995-11-22",
-            addedAt: 1737375221,
-            updatedAt: 1737375227,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57135",
-            ratingImage: "rottentomatoes://image.rating.ripe",
-            Media: [
+            "ratingKey": "108473",
+            "key": "/library/metadata/108473",
+            "parentRatingKey": "103851",
+            "grandparentRatingKey": "103157",
+            "guid": "plex://episode/67fdffaa4f6b113382822cc0",
+            "parentGuid": "plex://season/67ee8b94f094e9eab1fac3bd",
+            "grandparentGuid": "plex://show/5d9c0867ba6eb9001fba2e1e",
+            "grandparentSlug": "guys-grocery-games",
+            "type": "episode",
+            "title": "The G.O.A.T. Tournament Pt 3",
+            "titleSort": "G.O.A.T. Tournament Pt 3",
+            "grandparentKey": "/library/metadata/103157",
+            "parentKey": "/library/metadata/103851",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Guy's Grocery Games",
+            "parentTitle": "Season 39",
+            "contentRating": "TV-G",
+            "summary": "Five chefs remain in the competition for a $70,000 prize and the title of GGG Greatest of All Time. A double spin of Guy Fieri's dish and game wheels determines that the chefs must make a champagne brunch using only 8 lbs. of ingredients. In the elimination round, the bottom two chefs fight for their survival by creating a seafood feast featuring the mandatory items on Guy's grocery list",
+            "index": 9,
+            "parentIndex": 39,
+            "year": 2025,
+            "thumb": "/library/metadata/108473/thumb/1748538517",
+            "art": "/library/metadata/103157/art/1748821044",
+            "grandparentThumb": "/library/metadata/103157/thumb/1748821044",
+            "grandparentArt": "/library/metadata/103157/art/1748821044",
+            "grandparentTheme": "/library/metadata/103157/theme/1748821044",
+            "duration": 2521151,
+            "originallyAvailableAt": "2025-05-21",
+            "addedAt": 1747885724,
+            "updatedAt": 1748538517,
+            "Media": [
               {
-                id: 61172,
-                duration: 4888092,
-                bitrate: 16749,
-                width: 1920,
-                height: 1080,
-                aspectRatio: 1.78,
-                audioChannels: 6,
-                audioCodec: "ac3",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "id": 130912,
+                "duration": 2521151,
+                "bitrate": 9987,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "main",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92218,
-                    key: "/library/parts/92218/1563643161/file.mkv",
-                    duration: 4888092,
-                    file: "/Movies (Kids)/Toy Story (1995)/Toy.Story.1995.1080p.BluRay.HEBDUB.Also.English.DTS-ES.x264-ZionHD.mkv",
-                    size: 10235442134,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 447948,
+                    "key": "/library/parts/447948/1747885659/file.mkv",
+                    "duration": 2521151,
+                    "file": "/data/Media/Tv Shows/Guy's Grocery Games (2013) {tvdb-274453}/Season 39/Guy's Grocery Games (2013) - S39E09 - The G.O.A.T. Tournament Pt 3 [WEBDL-1080p][AAC 2.0][h264]-FREQUENCY.mkv",
+                    "size": 3148066861,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "main",
+                    "Stream": [
+                      {
+                        "id": 1037845,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9861,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "main",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037846,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 125,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1037847,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Toy Story",
-                type: "coverPoster",
-                url: "/library/metadata/57134/thumb/1737375227"
+                "alt": "The G.O.A.T. Tournament Pt 3",
+                "type": "coverPoster",
+                "url": "/library/metadata/103157/thumb/1748821044"
               },
               {
-                alt: "Toy Story",
-                type: "background",
-                url: "/library/metadata/57134/art/1737375227"
+                "alt": "The G.O.A.T. Tournament Pt 3",
+                "type": "snapshot",
+                "url": "/library/metadata/108473/thumb/1748538517"
               },
               {
-                alt: "Toy Story",
-                type: "clearLogo",
-                url: "/library/metadata/57134/clearLogo/1737375227"
+                "alt": "The G.O.A.T. Tournament Pt 3",
+                "type": "background",
+                "url": "/library/metadata/103157/art/1748821044"
+              },
+              {
+                "alt": "The G.O.A.T. Tournament Pt 3",
+                "type": "clearLogo",
+                "url": "/library/metadata/103157/clearLogo/1748821044"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "371110",
-              topRight: "602119",
-              bottomRight: "623ac5",
-              bottomLeft: "6a2844"
+            "UltraBlurColors": {
+              "topLeft": "160515",
+              "topRight": "0a093c",
+              "bottomRight": "a12b1d",
+              "bottomLeft": "410f15"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Animation"
+                "id": "tmdb://6240445"
               },
               {
-                tag: "Comedy"
+                "id": "tvdb://11071487"
               }
             ],
-            Country: [
+            "Role": [
               {
-                tag: "United States of America"
-              }
-            ],
-            Director: [
-              {
-                tag: "John Lasseter"
-              }
-            ],
-            Writer: [
-              {
-                tag: "Alec Sokolow"
-              },
-              {
-                tag: "Joel Cohen"
-              }
-            ],
-            Role: [
-              {
-                tag: "Tom Hanks"
-              },
-              {
-                tag: "Tim Allen"
-              },
-              {
-                tag: "Don Rickles"
+                "id": 267515,
+                "filter": "actor=267515",
+                "tag": "Guy Fieri",
+                "tagKey": "5d776d6f96b655001fe48bbb",
+                "role": "Host",
+                "thumb": "https://metadata-static.plex.tv/2/people/25e37fe3b20cefd9d76186cdc0f99b8e.jpg"
               }
             ]
           },
           {
-            ratingKey: "57132",
-            key: "/library/metadata/57132",
-            guid: "plex://movie/5d776852eb5d26001f1e5fde",
-            slug: "jack-frost-1979",
-            studio: "Rankin/Bass Productions",
-            type: "movie",
-            title: "Jack Frost",
-            librarySectionTitle: "Movies (Kids)",
-            librarySectionID: 13,
-            librarySectionKey: "/library/sections/13",
-            contentRating: "TV-G",
-            summary:
-              "Pardon-me Pete, the official groundhog of Groundhog Day, tells the story of Jack Frost, who falls in love with a beautiful young woman and begs Father Winter to make him human so that she can see him. His request is granted, but only on the condition that by the Spring he has a house, a bag of gold, a horse and a wife. But Jack finds that life as a human is more complicated than he thought.",
-            rating: 5.7,
-            audienceRating: 6.1,
-            year: 1979,
-            thumb: "/library/metadata/57132/thumb/1737375149",
-            art: "/library/metadata/57132/art/1737375149",
-            duration: 2904788,
-            originallyAvailableAt: "1979-12-13",
-            addedAt: 1737375146,
-            updatedAt: 1737375149,
-            audienceRatingImage: "rottentomatoes://image.rating.upright",
-            chapterSource: "media",
-            primaryExtraKey: "/library/metadata/57133",
-            ratingImage: "rottentomatoes://image.rating.rotten",
-            Media: [
+            "ratingKey": "17108",
+            "key": "/library/metadata/17108/children",
+            "parentRatingKey": "17107",
+            "guid": "plex://season/602e72c4b2c087002d0d90ff",
+            "parentGuid": "plex://show/5d9c08ea08fddd001f2a3d53",
+            "parentSlug": "you",
+            "parentStudio": "Berlanti Productions",
+            "type": "season",
+            "title": "Season 1",
+            "titleSort": "Season 1",
+            "parentKey": "/library/metadata/17107",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "You",
+            "summary": "Obsessed with an aspiring writer, a brilliant bookstore manager begins quietly and strategically removing all obstacles that keep her from him.",
+            "index": 1,
+            "parentIndex": 1,
+            "year": 2018,
+            "thumb": "/library/metadata/17108/thumb/1747841296",
+            "art": "/library/metadata/17107/art/1748704281",
+            "parentThumb": "/library/metadata/17107/thumb/1748704281",
+            "parentTheme": "/library/metadata/17107/theme/1748704281",
+            "leafCount": 10,
+            "viewedLeafCount": 0,
+            "addedAt": 1747842235,
+            "updatedAt": 1747841296,
+            "Image": [
               {
-                id: 61169,
-                duration: 2904788,
-                bitrate: 16729,
-                width: 1482,
-                height: 1080,
-                aspectRatio: 1.33,
-                audioChannels: 2,
-                audioCodec: "flac",
-                videoCodec: "h264",
-                videoResolution: "1080",
-                container: "mkv",
-                videoFrameRate: "24p",
-                videoProfile: "high",
-                hasVoiceActivity: false,
-                Part: [
+                "alt": "Season 1",
+                "type": "coverPoster",
+                "url": "/library/metadata/17108/thumb/1747841296"
+              },
+              {
+                "alt": "Season 1",
+                "type": "background",
+                "url": "/library/metadata/17107/art/1748704281"
+              },
+              {
+                "alt": "Season 1",
+                "type": "clearLogo",
+                "url": "/library/metadata/17107/clearLogo/1748704281"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "462406",
+              "topRight": "60390a",
+              "bottomRight": "422508",
+              "bottomLeft": "724115"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://101109"
+              },
+              {
+                "id": "tvdb://735298"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108366",
+            "key": "/library/metadata/108366/children",
+            "guid": "plex://show/5d9c084e2192ba001f30c6e1",
+            "slug": "mr-young",
+            "studio": "Nelvana",
+            "type": "show",
+            "title": "Mr. Young",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-Y7",
+            "summary": "A 14-year-old kid named Adam Young went to college when he was nine. He got a job at Finnegan High School as the science teacher. His best friend Derby and older sister Ivy go to the same school. He develops a crush on Echo Zizzleswift, one of his own students. Echo secretly loves science as much as Adam does. Another of his students, Jordan \"Slab\" Slabinski, often bullies nerds. Derby is his best friend and always falls asleep in science class.",
+            "index": 1,
+            "audienceRating": 7.3,
+            "year": 2011,
+            "thumb": "/library/metadata/108366/thumb/1747833246",
+            "art": "/library/metadata/108366/art/1747833246",
+            "theme": "/library/metadata/108366/theme/1747833246",
+            "duration": 1320000,
+            "originallyAvailableAt": "2011-03-01",
+            "leafCount": 80,
+            "viewedLeafCount": 0,
+            "childCount": 3,
+            "addedAt": 1747833245,
+            "updatedAt": 1747833246,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Image": [
+              {
+                "alt": "Mr. Young",
+                "type": "coverPoster",
+                "url": "/library/metadata/108366/thumb/1747833246"
+              },
+              {
+                "alt": "Mr. Young",
+                "type": "background",
+                "url": "/library/metadata/108366/art/1747833246"
+              },
+              {
+                "alt": "Mr. Young",
+                "type": "clearLogo",
+                "url": "/library/metadata/108366/clearLogo/1747833246"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "231d1e",
+              "topRight": "82502a",
+              "bottomRight": "924041",
+              "bottomLeft": "ac1826"
+            },
+            "Genre": [
+              {
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
+              },
+              {
+                "id": 1403,
+                "filter": "genre=1403",
+                "tag": "Family"
+              },
+              {
+                "id": 93,
+                "filter": "genre=93",
+                "tag": "Fantasy"
+              },
+              {
+                "id": 1495,
+                "filter": "genre=1495",
+                "tag": "Children"
+              },
+              {
+                "id": 161,
+                "filter": "genre=161",
+                "tag": "Drama"
+              }
+            ],
+            "Country": [
+              {
+                "id": 662,
+                "filter": "country=662",
+                "tag": "Canada"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "imdb://tt1763751"
+              },
+              {
+                "id": "tmdb://37731"
+              },
+              {
+                "id": "tvdb://253078"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 6.0,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.3,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 77096,
+                "filter": "actor=77096",
+                "tag": "Brendan Meyer",
+                "tagKey": "5d77684c7228e5001f1e18c0",
+                "role": "Adam Young",
+                "thumb": "https://metadata-static.plex.tv/0/people/03ebb2425ca4a35b79111beeecce1355.jpg"
+              },
+              {
+                "id": 96697,
+                "filter": "actor=96697",
+                "tag": "Gig Morton",
+                "tagKey": "5d77683b151a60001f24f292",
+                "role": "Derby",
+                "thumb": "https://metadata-static.plex.tv/a/people/acbf217b13f49000d6645794b51d2891.jpg"
+              },
+              {
+                "id": 75212,
+                "filter": "actor=75212",
+                "tag": "Matreya Fedor",
+                "tagKey": "5d776839999c64001ec30224",
+                "role": "Echo",
+                "thumb": "https://metadata-static.plex.tv/3/people/3d056e94998ed70cd23d6fb012bf6d4b.jpg"
+              },
+              {
+                "id": 3362,
+                "filter": "actor=3362",
+                "tag": "Paula Shaw",
+                "tagKey": "5d7768263c3c2a001fbcad29",
+                "role": "",
+                "thumb": "https://image.tmdb.org/t/p/original/xngscmuXRXhEjGnYhsHG1zHhUrM.jpg"
+              },
+              {
+                "id": 108131,
+                "filter": "actor=108131",
+                "tag": "Raugi Yu",
+                "tagKey": "5d77686223d5a3001f4eb3d9",
+                "role": "",
+                "thumb": "https://image.tmdb.org/t/p/original/sXmc91jxMJpP9wNHMV6m7ugp0P9.jpg"
+              },
+              {
+                "id": 75601,
+                "filter": "actor=75601",
+                "tag": "Anna Galvin",
+                "tagKey": "5d7768adad5437001f74cd3c",
+                "role": "",
+                "thumb": "https://metadata-static.plex.tv/3/people/39fba8d7372ffb53862d81f929b088e1.jpg"
+              },
+              {
+                "id": 66298,
+                "filter": "actor=66298",
+                "tag": "Emily Tennant",
+                "tagKey": "5d77682a54f42c001f8c315c",
+                "role": "",
+                "thumb": "https://metadata-static.plex.tv/5/people/5ee0c2b9c1d770f6b7d2f7537694cab0.jpg"
+              },
+              {
+                "id": 21105,
+                "filter": "actor=21105",
+                "tag": "Nathan Kress",
+                "tagKey": "5d7768335af944001f1f9636",
+                "role": "Pete",
+                "thumb": "https://metadata-static.plex.tv/2/people/2ca81f53cad653abaffc21ed589e9309.jpg"
+              },
+              {
+                "id": 184151,
+                "filter": "actor=184151",
+                "tag": "Travis Turner",
+                "tagKey": "5d7768f9fb0d55001f51e6b0",
+                "role": "Raccoon (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768f9fb0d55001f51e6b0.jpg"
+              },
+              {
+                "id": 22688,
+                "filter": "actor=22688",
+                "tag": "Seth Isaac Johnson",
+                "tagKey": "5d7768b61999bc0020dcecd6",
+                "role": "Burlap Sack E.T.",
+                "thumb": "https://metadata-static.plex.tv/d/people/d07dfbef5ca51e28eb9d6d48aa607e1a.jpg"
+              },
+              {
+                "id": 77134,
+                "filter": "actor=77134",
+                "tag": "Spencer Drever",
+                "tagKey": "5d77689f3ab0e7001f505e76",
+                "role": "Young Adam",
+                "thumb": "https://metadata-static.plex.tv/people/5d77689f3ab0e7001f505e76.jpg"
+              },
+              {
+                "id": 90534,
+                "filter": "actor=90534",
+                "tag": "Jacob Tremblay",
+                "tagKey": "5d7768bd431c830024c14f38",
+                "role": "",
+                "thumb": "https://metadata-static.plex.tv/b/people/b91b1add4c483c7d38ce282930cc09a5.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Mr. Young (2011) {tvdb-253078}"
+              }
+            ]
+          },
+          {
+            "ratingKey": "3616",
+            "key": "/library/metadata/3616/children",
+            "parentRatingKey": "3594",
+            "guid": "plex://season/6655d6e1e8871338e795d761",
+            "parentGuid": "plex://show/62584329468dd3e68229a924",
+            "parentSlug": "dirty-laundry-2022",
+            "parentStudio": "Dropout",
+            "type": "season",
+            "title": "Season 4",
+            "parentKey": "/library/metadata/3594",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "Dirty Laundry (2022)",
+            "summary": "Join host Lily Du and bartender Grant O'Brien for a new season of secrets, drinks, and ridiculous stories.",
+            "index": 4,
+            "parentIndex": 1,
+            "parentYear": 2022,
+            "thumb": "/library/metadata/3616/thumb/1732578443",
+            "art": "/library/metadata/3594/art/1747168681",
+            "parentThumb": "/library/metadata/3594/thumb/1747168681",
+            "leafCount": 12,
+            "viewedLeafCount": 0,
+            "addedAt": 1747796711,
+            "updatedAt": 1732578443,
+            "Image": [
+              {
+                "alt": "Season 4",
+                "type": "coverPoster",
+                "url": "/library/metadata/3616/thumb/1732578443"
+              },
+              {
+                "alt": "Season 4",
+                "type": "background",
+                "url": "/library/metadata/3594/art/1747168681"
+              },
+              {
+                "alt": "Season 4",
+                "type": "clearLogo",
+                "url": "/library/metadata/3594/clearLogo/1747168681"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "2d0c1d",
+              "topRight": "7b3d98",
+              "bottomRight": "9b296a",
+              "bottomLeft": "9f0089"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://395826"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108360",
+            "key": "/library/metadata/108360",
+            "parentRatingKey": "99802",
+            "grandparentRatingKey": "16503",
+            "guid": "plex://episode/66b75acec5e61439e665210f",
+            "parentGuid": "plex://season/66b4b49c96602e455f9394af",
+            "grandparentGuid": "plex://show/606f14840e2e2c002c81f5b1",
+            "grandparentSlug": "um-actually",
+            "type": "episode",
+            "title": "SlayerFest '25",
+            "grandparentKey": "/library/metadata/16503",
+            "parentKey": "/library/metadata/99802",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Um, Actually...",
+            "parentTitle": "Season 10",
+            "contentRating": "TV-PG",
+            "summary": "Beth, Ruha, and Jeremy become Slayers and discuss why Xander is the worst.",
+            "index": 9,
+            "parentIndex": 10,
+            "year": 2025,
+            "thumb": "/library/metadata/108360/thumb/1748076106",
+            "art": "/library/metadata/16503/art/1748186951",
+            "parentThumb": "/library/metadata/99802/thumb/1740704422",
+            "grandparentThumb": "/library/metadata/16503/thumb/1748186951",
+            "grandparentArt": "/library/metadata/16503/art/1748186951",
+            "duration": 1848853,
+            "originallyAvailableAt": "2025-05-20",
+            "addedAt": 1747785726,
+            "updatedAt": 1748076106,
+            "Media": [
+              {
+                "id": 130752,
+                "duration": 1848853,
+                "bitrate": 4035,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
                   {
-                    id: 92215,
-                    key: "/library/parts/92215/1703409376/file.mkv",
-                    duration: 2904788,
-                    file: "/Movies (Kids)/Jack Frost (1979)/Jack Frost (1979) Bluray-1080p.mkv",
-                    size: 6067612421,
-                    container: "mkv",
-                    indexes: "sd",
-                    videoProfile: "high"
+                    "id": 447788,
+                    "key": "/library/parts/447788/1747785637/file.mkv",
+                    "duration": 1848853,
+                    "file": "/data/Media/Tv Shows/Um, Actually/Season 10/Um, Actually. (2018) - S10E09 - Episode 9 [WEBDL-1080p][AAC 2.0][x264]-NTb.mkv",
+                    "size": 933101799,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037505,
+                        "streamType": 1,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 3845,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 50,
+                        "profile": "high",
+                        "refFrames": 5,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037506,
+                        "streamType": 2,
+                        "selected": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 189,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1037507,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037508,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "SDH",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
                   }
                 ]
               }
             ],
-            Image: [
+            "Image": [
               {
-                alt: "Jack Frost",
-                type: "coverPoster",
-                url: "/library/metadata/57132/thumb/1737375149"
+                "alt": "SlayerFest '25",
+                "type": "coverPoster",
+                "url": "/library/metadata/16503/thumb/1748186951"
               },
               {
-                alt: "Jack Frost",
-                type: "background",
-                url: "/library/metadata/57132/art/1737375149"
+                "alt": "SlayerFest '25",
+                "type": "snapshot",
+                "url": "/library/metadata/108360/thumb/1748076106"
               },
               {
-                alt: "Jack Frost",
-                type: "clearLogo",
-                url: "/library/metadata/57132/clearLogo/1737375149"
+                "alt": "SlayerFest '25",
+                "type": "background",
+                "url": "/library/metadata/16503/art/1748186951"
+              },
+              {
+                "alt": "SlayerFest '25",
+                "type": "clearLogo",
+                "url": "/library/metadata/16503/clearLogo/1748186951"
               }
             ],
-            UltraBlurColors: {
-              topLeft: "590617",
-              topRight: "091c13",
-              bottomRight: "2f628c",
-              bottomLeft: "243f6e"
+            "UltraBlurColors": {
+              "topLeft": "52141c",
+              "topRight": "4b190c",
+              "bottomRight": "a40f34",
+              "bottomLeft": "7f5227"
             },
-            Genre: [
+            "Guid": [
               {
-                tag: "Family"
+                "id": "tmdb://5522490"
               },
               {
-                tag: "Animation"
+                "id": "tvdb://11072885"
               }
             ],
-            Country: [
+            "Role": [
               {
-                tag: "United States of America"
+                "id": 287427,
+                "filter": "actor=287427",
+                "tag": "Ify Nwadiwe",
+                "tagKey": "5d776c73fb0d55001f5884ef",
+                "role": "Self - Host",
+                "thumb": "https://metadata-static.plex.tv/3/people/3a7cd605d3293944b37e9f9e2d274138.jpg"
               },
               {
-                tag: "Japan"
+                "id": 20205,
+                "filter": "actor=20205",
+                "tag": "Brian David Gilbert",
+                "tagKey": "5f3fc7dcce2564003f85b46f",
+                "role": "Self - Fact Checker",
+                "thumb": "https://metadata-static.plex.tv/7/people/73d2c45d6b88228d8d5a9f1102cd9d3e.jpg"
+              },
+              {
+                "id": 20265,
+                "filter": "actor=20265",
+                "tag": "Beth May",
+                "tagKey": "64ce3a5f36a86a2d8f784a96",
+                "role": "Self - Contestant"
+              },
+              {
+                "id": 20300,
+                "filter": "actor=20300",
+                "tag": "Ruha Taslimi",
+                "tagKey": "5e92d15b3cd2be004053bcc4",
+                "role": "Self - Contestant",
+                "thumb": "https://metadata-static.plex.tv/people/5e92d15b3cd2be004053bcc4.jpg"
+              },
+              {
+                "id": 287854,
+                "filter": "actor=287854",
+                "tag": "Jeremy Lambert",
+                "tagKey": "5d77703e90a8de002032715b",
+                "role": "Self - Contestant"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108358",
+            "key": "/library/metadata/108358",
+            "parentRatingKey": "103108",
+            "grandparentRatingKey": "14968",
+            "guid": "plex://episode/67adf818d10fdd1250401ecc",
+            "parentGuid": "plex://season/6586dfa92a1be8d158d96d5c",
+            "grandparentGuid": "plex://show/5d9c0815e9d5a1001f4d7202",
+            "grandparentSlug": "the-handmaids-tale",
+            "type": "episode",
+            "title": "Execution",
+            "grandparentKey": "/library/metadata/14968",
+            "parentKey": "/library/metadata/103108",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Handmaid's Tale",
+            "parentTitle": "Season 6",
+            "contentRating": "TV-MA",
+            "summary": "June faces her biggest challenge as Gilead cracks down on the rebels.",
+            "index": 9,
+            "parentIndex": 6,
+            "audienceRating": 5.8,
+            "year": 2025,
+            "thumb": "/library/metadata/108358/thumb/1748903168",
+            "art": "/library/metadata/14968/art/1748905442",
+            "parentThumb": "/library/metadata/103108/thumb/1748538515",
+            "grandparentThumb": "/library/metadata/14968/thumb/1748905442",
+            "grandparentArt": "/library/metadata/14968/art/1748905442",
+            "grandparentTheme": "/library/metadata/14968/theme/1748905442",
+            "duration": 3431232,
+            "originallyAvailableAt": "2025-05-20",
+            "addedAt": 1747715223,
+            "updatedAt": 1748903168,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130750,
+                "duration": 3431232,
+                "bitrate": 4058,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447786,
+                    "key": "/library/parts/447786/1747715146/file.mkv",
+                    "duration": 3431232,
+                    "file": "/data/Media/Tv Shows/The Handmaid's Tale/Season 06/The Handmaid's Tale (2017) - S06E09 - Execution [WEBDL-1080p][EAC3 5.1][h264]-successfulcrab.mkv",
+                    "size": 1741510098,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037500,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 3802,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037501,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 256,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037502,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English [SDH]",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English [SDH] (SRT)"
+                      },
+                      {
+                        "id": 1037503,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish [SDH]",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish [SDH] (Spanish SRT)"
+                      }
+                    ]
+                  }
+                ]
               }
             ],
-            Director: [
+            "Image": [
               {
-                tag: "Jules Bass"
+                "alt": "Execution",
+                "type": "coverPoster",
+                "url": "/library/metadata/14968/thumb/1748905442"
               },
               {
-                tag: "Arthur Rankin, Jr."
+                "alt": "Execution",
+                "type": "snapshot",
+                "url": "/library/metadata/108358/thumb/1748903168"
+              },
+              {
+                "alt": "Execution",
+                "type": "background",
+                "url": "/library/metadata/14968/art/1748905442"
+              },
+              {
+                "alt": "Execution",
+                "type": "clearLogo",
+                "url": "/library/metadata/14968/clearLogo/1748905442"
               }
             ],
-            Writer: [
+            "UltraBlurColors": {
+              "topLeft": "03181c",
+              "topRight": "0c2831",
+              "bottomRight": "0d2a33",
+              "bottomLeft": "04121c"
+            },
+            "Guid": [
               {
-                tag: "Romeo Muller"
+                "id": "imdb://tt35707174"
+              },
+              {
+                "id": "tmdb://5978371"
+              },
+              {
+                "id": "tvdb://10964392"
               }
             ],
-            Role: [
+            "Rating": [
               {
-                tag: "Buddy Hackett"
+                "image": "imdb://image.rating",
+                "value": 9.2,
+                "type": "audience"
               },
               {
-                tag: "Robert Morse"
+                "image": "themoviedb://image.rating",
+                "value": 5.8,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 197290,
+                "filter": "director=197290",
+                "tag": "Elisabeth Moss",
+                "tagKey": "5d77682d4de0ee001fcc9e52",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1d43b4314a903ce160a53617cf1d755.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 197209,
+                "filter": "writer=197209",
+                "tag": "Eric Tuchman",
+                "tagKey": "5d7769897a53e9001e6e8f24"
+              }
+            ],
+            "Role": [
+              {
+                "id": 27353,
+                "filter": "actor=27353",
+                "tag": "Elisabeth Moss",
+                "tagKey": "5d77682d4de0ee001fcc9e52",
+                "role": "June Osborne / Offred / Ofjoseph",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1d43b4314a903ce160a53617cf1d755.jpg"
               },
               {
-                tag: "Paul Frees"
+                "id": 3469,
+                "filter": "actor=3469",
+                "tag": "Yvonne Strahovski",
+                "tagKey": "5d77683585719b001f3a39e4",
+                "role": "Serena Joy Waterford",
+                "thumb": "https://metadata-static.plex.tv/9/people/9b0ac8ae5d6af304b31c1a63f7f8e71d.jpg"
+              },
+              {
+                "id": 58413,
+                "filter": "actor=58413",
+                "tag": "Samira Wiley",
+                "tagKey": "5d77689a1999bc0020dcaca0",
+                "role": "Moira Strand",
+                "thumb": "https://metadata-static.plex.tv/6/people/65e95b642de7da2e9e1d8f238cdf0823.jpg"
+              },
+              {
+                "id": 86619,
+                "filter": "actor=86619",
+                "tag": "Max Minghella",
+                "tagKey": "5d7768253c3c2a001fbca9a7",
+                "role": "Nick Blaine",
+                "thumb": "https://metadata-static.plex.tv/a/people/aeed7df8ea5b79a8e7b91436ee65df65.jpg"
+              },
+              {
+                "id": 86620,
+                "filter": "actor=86620",
+                "tag": "Amanda Brugel",
+                "tagKey": "5d77684d5af944001f1fe881",
+                "role": "Rita Blue",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e71c2df5787249eb0dbca9ade814cf8.jpg"
+              },
+              {
+                "id": 20594,
+                "filter": "actor=20594",
+                "tag": "O-T Fagbenle",
+                "tagKey": "5d776829999c64001ec2cf20",
+                "role": "Luke Bankole",
+                "thumb": "https://metadata-static.plex.tv/7/people/78ffc53eb78f92af0fc2ccb5d0e605da.jpg"
+              },
+              {
+                "id": 86621,
+                "filter": "actor=86621",
+                "tag": "Sam Jaeger",
+                "tagKey": "5d776826e6d55c002040b010",
+                "role": "Mark Tuello",
+                "thumb": "https://image.tmdb.org/t/p/original/8t4wSekn6vUyEmg9etTnvTaGJEV.jpg"
+              },
+              {
+                "id": 86668,
+                "filter": "actor=86668",
+                "tag": "Carey Cox",
+                "tagKey": "6300cd0fe4eace1e5729babd",
+                "role": "Rose Blaine",
+                "thumb": "https://metadata-static.plex.tv/a/people/ac57265fc72f5ec17b905249b75636dc.jpg"
+              },
+              {
+                "id": 75486,
+                "filter": "actor=75486",
+                "tag": "Jonathan Watton",
+                "tagKey": "5d77682d3c3c2a001fbcc75e",
+                "role": "Matthew Calhoun",
+                "thumb": "https://metadata-static.plex.tv/7/people/7d7e78137b7feb09c81a7ed790434b30.jpg"
+              },
+              {
+                "id": 42525,
+                "filter": "actor=42525",
+                "tag": "Athena Karkanis",
+                "tagKey": "5d7768276f4521001ea990bb",
+                "role": "Ellen",
+                "thumb": "https://metadata-static.plex.tv/1/people/1718c9ea2867c7da9955454be34ff4ad.jpg"
+              },
+              {
+                "id": 191917,
+                "filter": "actor=191917",
+                "tag": "Tim Campbell",
+                "tagKey": "5d776974f617c9002015fea2",
+                "role": "Commander Reynolds",
+                "thumb": "https://metadata-static.plex.tv/7/people/78b1d2ca0cc8e8b1f84860d29195a7b9.jpg"
+              },
+              {
+                "id": 289766,
+                "filter": "actor=289766",
+                "tag": "Matthew Worku",
+                "tagKey": "5fa96863b3697b002fd9dd2c",
+                "role": "Charlie",
+                "thumb": "https://metadata-static.plex.tv/6/people/60061e07ec34037de9f203673e782461.jpg"
+              },
+              {
+                "id": 13433,
+                "filter": "actor=13433",
+                "tag": "D'Arcy Carden",
+                "tagKey": "5d776a087a53e9001e6f82ae",
+                "role": "Aunt Phoebe",
+                "thumb": "https://metadata-static.plex.tv/c/people/cd6539d1f977165573f505c9f3269e81.jpg"
+              },
+              {
+                "id": 11051,
+                "filter": "actor=11051",
+                "tag": "Madeline Brewer",
+                "tagKey": "5d776c95ad5437001f7c2842",
+                "role": "Janine Lindo",
+                "thumb": "https://metadata-static.plex.tv/7/people/7b401a66273a60a1c3e161aab3cda68f.jpg"
+              },
+              {
+                "id": 66923,
+                "filter": "actor=66923",
+                "tag": "Ann Dowd",
+                "tagKey": "5d7768266f4521001ea98d43",
+                "role": "Aunt Lydia Clements",
+                "thumb": "https://metadata-static.plex.tv/7/people/76c88306b1506d7d3ab49179c4771e72.jpg"
+              },
+              {
+                "id": 14246,
+                "filter": "actor=14246",
+                "tag": "Bradley Whitford",
+                "tagKey": "5d77682c8718ba001e312a10",
+                "role": "Joseph Lawrence",
+                "thumb": "https://metadata-static.plex.tv/1/people/1aa33d24aa05279480c5480e032c722a.jpg"
+              },
+              {
+                "id": 289767,
+                "filter": "actor=289767",
+                "tag": "Lori O'Connell",
+                "tagKey": "6838621d4222d55b8002cb16",
+                "role": "Frantic Wife"
+              },
+              {
+                "id": 289768,
+                "filter": "actor=289768",
+                "tag": "Christine Cleary",
+                "tagKey": "5e1647cd27d563003ed6172c",
+                "role": "Handmaid Nora"
+              },
+              {
+                "id": 65353,
+                "filter": "actor=65353",
+                "tag": "David MacInnis",
+                "tagKey": "5d776839f59e5800218992be",
+                "role": "Guardian Rudd",
+                "thumb": "https://metadata-static.plex.tv/people/5d776839f59e5800218992be.jpg"
+              },
+              {
+                "id": 289769,
+                "filter": "actor=289769",
+                "tag": "Sam Wexler",
+                "tagKey": "63209390315d02c7320782c0",
+                "role": "Ambush Guardian"
+              },
+              {
+                "id": 289770,
+                "filter": "actor=289770",
+                "tag": "Riley Monaghan",
+                "tagKey": "5e164787275947003dc66c28",
+                "role": "Jail Guardian",
+                "thumb": "https://metadata-static.plex.tv/people/5e164787275947003dc66c28.jpg"
+              },
+              {
+                "id": 289771,
+                "filter": "actor=289771",
+                "tag": "Charlotte Cattell",
+                "tagKey": "5d776d86594b2b001e70b2e9",
+                "role": "Susan",
+                "thumb": "https://image.tmdb.org/t/p/original/312yKTC5mLjSUXMygPHLpALWk6.jpg"
+              },
+              {
+                "id": 289772,
+                "filter": "actor=289772",
+                "tag": "Kwaku Adu-Poku",
+                "tagKey": "68274fc993031b4ffeec9e8d",
+                "role": "Ralph",
+                "thumb": "https://metadata-static.plex.tv/6/people/6cf9623ea6cd1e88ea41b3cfacd28342.jpg"
+              },
+              {
+                "id": 289752,
+                "filter": "actor=289752",
+                "tag": "Rosali Annikie",
+                "tagKey": "5f406e9a1ae71000410eb50d",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289753,
+                "filter": "actor=289753",
+                "tag": "Pooja Bhandari",
+                "tagKey": "626e96ec95b382ef56a34adc",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289754,
+                "filter": "actor=289754",
+                "tag": "Chloe Coyle",
+                "tagKey": "5d776f2a9ab544002152f3dd",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289755,
+                "filter": "actor=289755",
+                "tag": "Keren Edelist",
+                "tagKey": "65609076e533317df90f8712",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289756,
+                "filter": "actor=289756",
+                "tag": "Maggie May",
+                "tagKey": "5d9c090402391c001f593fe8",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289757,
+                "filter": "actor=289757",
+                "tag": "Rojan Molanian",
+                "tagKey": "5e624c4da57b06003ed535a1",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289758,
+                "filter": "actor=289758",
+                "tag": "Lily-Fay Mowbray",
+                "tagKey": "5d776a6796b655001fdedfc0",
+                "role": "Handmaid"
+              },
+              {
+                "id": 3556,
+                "filter": "actor=3556",
+                "tag": "Ever Carradine",
+                "tagKey": "5d77682c880197001ec91de1",
+                "role": "Naomi Lawrence",
+                "thumb": "https://metadata-static.plex.tv/6/people/67417b5358a2c7f5092413040e8b584f.jpg"
+              },
+              {
+                "id": 120761,
+                "filter": "actor=120761",
+                "tag": "Josh Charles",
+                "tagKey": "5d7768267e9a3c0020c6aa10",
+                "role": "Gabriel Wharton",
+                "thumb": "https://metadata-static.plex.tv/d/people/d53ff34cde556a858e0cfc2f3a67088d.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 197327,
+                "filter": "producer=197327",
+                "tag": "Nika Castillo",
+                "tagKey": "5f40140102101b0040f362c2"
+              },
+              {
+                "id": 197328,
+                "filter": "producer=197328",
+                "tag": "Michael Stoyanov",
+                "tagKey": "5ec40f4b0d2c2c0040bca5a6"
+              },
+              {
+                "id": 197329,
+                "filter": "producer=197329",
+                "tag": "Élisabeth Williams",
+                "tagKey": "5d77688a308bca002032cb9f"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108357",
+            "key": "/library/metadata/108357",
+            "parentRatingKey": "101061",
+            "grandparentRatingKey": "101001",
+            "guid": "plex://episode/67ad23913018a69f4445e9cf",
+            "parentGuid": "plex://season/677e6a5bc634ffdd2e09637d",
+            "grandparentGuid": "plex://show/609ff8297702ff002cf15b20",
+            "grandparentSlug": "below-deck-down-under",
+            "type": "episode",
+            "title": "Come Swell or High Water",
+            "grandparentKey": "/library/metadata/101001",
+            "parentKey": "/library/metadata/101061",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Below Deck Down Under",
+            "parentTitle": "Season 3",
+            "contentRating": "TV-14",
+            "summary": "Bri and Harry try to define their relationship; the crew picks up their last charter guests who can't keep their food down during a swelly charter; during the last beach excursion, the deck team commits their biggest error of the season.",
+            "index": 16,
+            "parentIndex": 3,
+            "year": 2025,
+            "thumb": "/library/metadata/108357/thumb/1748076108",
+            "art": "/library/metadata/101001/art/1748538525",
+            "parentThumb": "/library/metadata/101061/thumb/1740254294",
+            "grandparentThumb": "/library/metadata/101001/thumb/1748538525",
+            "grandparentArt": "/library/metadata/101001/art/1748538525",
+            "grandparentTheme": "/library/metadata/101001/theme/1748538525",
+            "duration": 2555232,
+            "originallyAvailableAt": "2025-05-19",
+            "addedAt": 1747703179,
+            "updatedAt": 1748076108,
+            "Media": [
+              {
+                "id": 130749,
+                "duration": 2555232,
+                "bitrate": 9785,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447785,
+                    "key": "/library/parts/447785/1747703115/file.mkv",
+                    "duration": 2555232,
+                    "file": "/data/Media/Tv Shows/Below Deck Down Under/Season 03/Below Deck Down Under (2022) - S03E16 - Come Swell of High Water [WEBDL-1080p][EAC3 2.0][h264]-Kitsune.mkv",
+                    "size": 3126227031,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037496,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9561,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037497,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 224,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 Stereo)",
+                        "extendedDisplayTitle": "English (EAC3 Stereo)"
+                      },
+                      {
+                        "id": 1037498,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037499,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "default": true,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Come Swell or High Water",
+                "type": "coverPoster",
+                "url": "/library/metadata/101001/thumb/1748538525"
+              },
+              {
+                "alt": "Come Swell or High Water",
+                "type": "snapshot",
+                "url": "/library/metadata/108357/thumb/1748076108"
+              },
+              {
+                "alt": "Come Swell or High Water",
+                "type": "background",
+                "url": "/library/metadata/101001/art/1748538525"
+              },
+              {
+                "alt": "Come Swell or High Water",
+                "type": "clearLogo",
+                "url": "/library/metadata/101001/clearLogo/1748538525"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "162469",
+              "topRight": "2d399d",
+              "bottomRight": "213595",
+              "bottomLeft": "1c53c4"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://6200109"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108356",
+            "key": "/library/metadata/108356",
+            "parentRatingKey": "103105",
+            "grandparentRatingKey": "4698",
+            "guid": "plex://episode/67b8c01b2a9d96fd61ecd977",
+            "parentGuid": "plex://season/67b8c01a2a9d96fd61ecd96f",
+            "grandparentGuid": "plex://show/606ef4be8736e5002c8f5c17",
+            "grandparentSlug": "game-changer",
+            "type": "episode",
+            "title": "Crowd Control",
+            "grandparentKey": "/library/metadata/4698",
+            "parentKey": "/library/metadata/103105",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Game Changer",
+            "parentTitle": "Season 7",
+            "summary": "Jeff, Gianmarco, and Josh do some crowd work.",
+            "index": 4,
+            "parentIndex": 7,
+            "audienceRating": 7.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108356/thumb/1748908721",
+            "art": "/library/metadata/4698/art/1748186936",
+            "parentThumb": "/library/metadata/103105/thumb/1745376038",
+            "grandparentThumb": "/library/metadata/4698/thumb/1748186936",
+            "grandparentArt": "/library/metadata/4698/art/1748186936",
+            "grandparentTheme": "/library/metadata/4698/theme/1748186936",
+            "duration": 2405119,
+            "originallyAvailableAt": "2025-05-19",
+            "addedAt": 1747696726,
+            "updatedAt": 1748908721,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130748,
+                "duration": 2405119,
+                "bitrate": 4743,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447784,
+                    "key": "/library/parts/447784/1747696646/file.mkv",
+                    "duration": 2405119,
+                    "file": "/data/Media/Tv Shows/Game Changer/Season 07/Game Changer (2019) - S07E04 - TBA [WEBDL-1080p][AAC 2.0][x264]-MuTT.mkv",
+                    "size": 1426622833,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037492,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 4553,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 50,
+                        "original": true,
+                        "profile": "high",
+                        "refFrames": 5,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037493,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 189,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "original": true,
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1037494,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "original": true,
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037495,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Crowd Control",
+                "type": "coverPoster",
+                "url": "/library/metadata/4698/thumb/1748186936"
+              },
+              {
+                "alt": "Crowd Control",
+                "type": "snapshot",
+                "url": "/library/metadata/108356/thumb/1748908721"
+              },
+              {
+                "alt": "Crowd Control",
+                "type": "background",
+                "url": "/library/metadata/4698/art/1748186936"
+              },
+              {
+                "alt": "Crowd Control",
+                "type": "clearLogo",
+                "url": "/library/metadata/4698/clearLogo/1748186936"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "5b040d",
+              "topRight": "11475c",
+              "bottomRight": "7d202b",
+              "bottomLeft": "ab1b2a"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://5995158"
+              },
+              {
+                "id": "tvdb://11096703"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.0,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 20075,
+                "filter": "actor=20075",
+                "tag": "Sam Reich",
+                "tagKey": "5d7769a2f617c900201628a0",
+                "role": "Self - Host",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e2c891b3cedad0ed91929e7ed98bfc5.jpg"
+              },
+              {
+                "id": 287857,
+                "filter": "actor=287857",
+                "tag": "Jeff Arcuri",
+                "tagKey": "5f403769768fc7004056ca44",
+                "role": "Self - Contestant",
+                "thumb": "https://metadata-static.plex.tv/f/people/f66c469ffdd0f7eeed96d7e2715fb858.jpg"
+              },
+              {
+                "id": 114731,
+                "filter": "actor=114731",
+                "tag": "Gianmarco Soresi",
+                "tagKey": "5e16256cfef2d4003e88a949",
+                "role": "Self - Contestant",
+                "thumb": "https://metadata-static.plex.tv/people/5e16256cfef2d4003e88a949.jpg"
+              },
+              {
+                "id": 287858,
+                "filter": "actor=287858",
+                "tag": "Josh Johnson",
+                "tagKey": "5f403f798642250042862cc7",
+                "role": "Self - Contestant",
+                "thumb": "https://metadata-static.plex.tv/3/people/310758c4c49ed4f86439f433fefe119f.jpg"
+              },
+              {
+                "id": 13941,
+                "filter": "actor=13941",
+                "tag": "Chris Grace",
+                "tagKey": "5e62496cae4f6e003e30191d",
+                "role": "Self - Warm-Up Comic",
+                "thumb": "https://metadata-static.plex.tv/1/people/1a0783529c8c900712f51e15e2fc6872.jpg"
+              },
+              {
+                "id": 20245,
+                "filter": "actor=20245",
+                "tag": "Paul Robalino",
+                "tagKey": "5f402ef9e065380042f01b70",
+                "role": "Self - Guest",
+                "thumb": "https://metadata-static.plex.tv/1/people/13b1b96968dbaeb9a95aef702c277f15.jpg"
+              },
+              {
+                "id": 293212,
+                "filter": "actor=293212",
+                "tag": "Ranboo",
+                "tagKey": "6835d46d605b5820750862ec",
+                "role": "Self - Interesting Audience Member"
+              }
+            ]
+          },
+          {
+            "ratingKey": "1234",
+            "key": "/library/metadata/1234/children",
+            "parentRatingKey": "1181",
+            "guid": "plex://season/66900bb56068a612725071bc",
+            "parentGuid": "plex://show/60a69b7811abb9002d7adbb8",
+            "parentSlug": "abbott-elementary",
+            "parentStudio": "Warner Bros. Television",
+            "type": "season",
+            "title": "Season 4",
+            "parentKey": "/library/metadata/1181",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "Abbott Elementary",
+            "summary": "",
+            "index": 4,
+            "parentIndex": 1,
+            "parentYear": 2021,
+            "thumb": "/library/metadata/1234/thumb/1732578149",
+            "art": "/library/metadata/1181/art/1747377409",
+            "parentThumb": "/library/metadata/1181/thumb/1747377409",
+            "parentTheme": "/library/metadata/1181/theme/1747377409",
+            "leafCount": 22,
+            "viewedLeafCount": 0,
+            "addedAt": 1747690299,
+            "updatedAt": 1732578149,
+            "Image": [
+              {
+                "alt": "Season 4",
+                "type": "coverPoster",
+                "url": "/library/metadata/1234/thumb/1732578149"
+              },
+              {
+                "alt": "Season 4",
+                "type": "background",
+                "url": "/library/metadata/1181/art/1747377409"
+              },
+              {
+                "alt": "Season 4",
+                "type": "clearLogo",
+                "url": "/library/metadata/1181/clearLogo/1747377409"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "4f181f",
+              "topRight": "1d4b52",
+              "bottomRight": "ab1541",
+              "bottomLeft": "1b2122"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://401697"
+              },
+              {
+                "id": "tvdb://2136486"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108350",
+            "key": "/library/metadata/108350",
+            "parentRatingKey": "101855",
+            "grandparentRatingKey": "101854",
+            "guid": "plex://episode/6803ee549c0bd989a5e65044",
+            "parentGuid": "plex://season/669bac4bc1cd84be5a118e4b",
+            "grandparentGuid": "plex://show/669bac4bc1cd84be5a118e34",
+            "grandparentSlug": "suits-la",
+            "type": "episode",
+            "title": "Freedom",
+            "grandparentKey": "/library/metadata/101854",
+            "parentKey": "/library/metadata/101855",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Suits LA",
+            "parentTitle": "Season 1",
+            "contentRating": "TV-14",
+            "summary": "The relationships at the two firms are complicated as Ted and Samantha join forces to take down Rosalyn's former boss. Erica and Rick work against each other as they finalize Dylan Pryor's deal. Stuart recruits Kevin for a special task in New York.",
+            "index": 13,
+            "parentIndex": 1,
+            "year": 2025,
+            "thumb": "/library/metadata/108350/thumb/1748076109",
+            "art": "/library/metadata/101854/art/1747873118",
+            "parentThumb": "/library/metadata/101855/thumb/1741005692",
+            "grandparentThumb": "/library/metadata/101854/thumb/1747873118",
+            "grandparentArt": "/library/metadata/101854/art/1747873118",
+            "duration": 2547040,
+            "originallyAvailableAt": "2025-05-18",
+            "addedAt": 1747621743,
+            "updatedAt": 1748076109,
+            "Media": [
+              {
+                "id": 130742,
+                "duration": 2547040,
+                "bitrate": 6674,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447778,
+                    "key": "/library/parts/447778/1747632770/file.mkv",
+                    "duration": 2547040,
+                    "file": "/data/Media/Tv Shows/Suits LA/Season 01/Suits LA (2025) - S01E13 - Freedom [WEBDL-1080p][EAC3 5.1][h264]-Kitsune.mkv",
+                    "size": 2125467780,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037431,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 6033,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037432,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037433,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037434,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Freedom",
+                "type": "coverPoster",
+                "url": "/library/metadata/101854/thumb/1747873118"
+              },
+              {
+                "alt": "Freedom",
+                "type": "snapshot",
+                "url": "/library/metadata/108350/thumb/1748076109"
+              },
+              {
+                "alt": "Freedom",
+                "type": "background",
+                "url": "/library/metadata/101854/art/1747873118"
+              },
+              {
+                "alt": "Freedom",
+                "type": "clearLogo",
+                "url": "/library/metadata/101854/clearLogo/1747873118"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "0f0204",
+              "topRight": "050311",
+              "bottomRight": "060310",
+              "bottomLeft": "273d1d"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36594516"
+              },
+              {
+                "id": "tmdb://6187141"
+              },
+              {
+                "id": "tvdb://11108973"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.0,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 203771,
+                "filter": "director=203771",
+                "tag": "Michael Smith",
+                "tagKey": "5e16358bbc1372003ea6b259",
+                "thumb": "https://metadata-static.plex.tv/a/people/a6a5832955a6ff21de202879150e8584.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 203714,
+                "filter": "writer=203714",
+                "tag": "Aaron Korsh",
+                "tagKey": "5e16363727d563003ed5a21b",
+                "thumb": "https://metadata-static.plex.tv/8/people/8b8c20303af1901c9ebe930600cadf33.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 11300,
+                "filter": "actor=11300",
+                "tag": "Stephen Amell",
+                "tagKey": "5d77683b8718ba001e3161a4",
+                "role": "Ted Black",
+                "thumb": "https://metadata-static.plex.tv/6/people/6215267e12160f6c7e53fafbb6e00b88.jpg"
+              },
+              {
+                "id": 131801,
+                "filter": "actor=131801",
+                "tag": "Lex Scott Davis",
+                "tagKey": "5d776c11594b2b001e6ea3a7",
+                "role": "Erica Rollins",
+                "thumb": "https://metadata-static.plex.tv/2/people/210af4935e41d8f3b88ed71d69d97fbb.jpg"
+              },
+              {
+                "id": 41694,
+                "filter": "actor=41694",
+                "tag": "Josh McDermitt",
+                "tagKey": "5d776b7296b655001fe11581",
+                "role": "Stuart Lane",
+                "thumb": "https://metadata-static.plex.tv/iva/person/115363/fedac94f2585f9e42397f12f3691070e.jpg"
+              },
+              {
+                "id": 202845,
+                "filter": "actor=202845",
+                "tag": "Bryan Greenberg",
+                "tagKey": "5d77682b8a7581001f12c4ec",
+                "role": "Rick Dodsen",
+                "thumb": "https://metadata-static.plex.tv/e/people/e0e2104f1ef9bdbe230d00c75e03c80d.jpg"
+              },
+              {
+                "id": 44105,
+                "filter": "actor=44105",
+                "tag": "Victoria Justice",
+                "tagKey": "5d776842880197001ec95eb6",
+                "role": "Dylan Pryor",
+                "thumb": "https://metadata-static.plex.tv/e/people/e98b9686ae683f657a2557a923908b61.jpg"
+              },
+              {
+                "id": 48742,
+                "filter": "actor=48742",
+                "tag": "Maggie Grace",
+                "tagKey": "5d7768275af944001f1f6ed6",
+                "role": "Amanda Stevens",
+                "thumb": "https://metadata-static.plex.tv/f/people/fa871d955663ca2f06601a5231008f17.jpg"
+              },
+              {
+                "id": 259681,
+                "filter": "actor=259681",
+                "tag": "Alice Lee",
+                "tagKey": "5d776845999c64001ec32331",
+                "role": "Leah Power",
+                "thumb": "https://metadata-static.plex.tv/e/people/e4fbdf51a5d9f04e7b0d9d0395edd7f6.jpg"
+              },
+              {
+                "id": 22690,
+                "filter": "actor=22690",
+                "tag": "Rachelle Goulding",
+                "tagKey": "5e164c9661c6140040d823ee",
+                "role": "Samantha Railsback",
+                "thumb": "https://metadata-static.plex.tv/c/people/c6536343a7230eb0a104f96022330893.jpg"
+              },
+              {
+                "id": 253769,
+                "filter": "actor=253769",
+                "tag": "Carson A. Egan",
+                "tagKey": "670f785850af7cab1be55313",
+                "role": "Eddie Black",
+                "thumb": "https://metadata-static.plex.tv/3/people/3cb4153dc18cf9ea7cfe3be92e57d103.jpg"
+              },
+              {
+                "id": 46587,
+                "filter": "actor=46587",
+                "tag": "Sofia Pernas",
+                "tagKey": "5d776868eb5d26001f1ea127",
+                "role": "Elizabeth Smith",
+                "thumb": "https://metadata-static.plex.tv/8/people/887e520c80811daff099d6dc6c43b8cf.jpg"
+              },
+              {
+                "id": 31337,
+                "filter": "actor=31337",
+                "tag": "Rich Sommer",
+                "tagKey": "5d7768265af944001f1f668e",
+                "role": "Marvin Semple",
+                "thumb": "https://metadata-static.plex.tv/6/people/6ed0d7f27dff22addfbc0d983fb63e74.jpg"
+              },
+              {
+                "id": 19102,
+                "filter": "actor=19102",
+                "tag": "Stephanie Erb",
+                "tagKey": "5d776827151a60001f24ac37",
+                "role": "Melissa Johnson",
+                "thumb": "https://metadata-static.plex.tv/6/people/63bd37058b0cead5eb9017a8873894f6.jpg"
+              },
+              {
+                "id": 4904,
+                "filter": "actor=4904",
+                "tag": "Troy Winbush",
+                "tagKey": "5d7768313c3c2a001fbcd414",
+                "role": "Kevin",
+                "thumb": "https://metadata-static.plex.tv/a/people/a9c790848ac57c75975abed22a5d7cf1.jpg"
+              },
+              {
+                "id": 41783,
+                "filter": "actor=41783",
+                "tag": "Matt Letscher",
+                "tagKey": "5d77682c54f42c001f8c343f",
+                "role": "Edward 'Teddy' Brooks",
+                "thumb": "https://metadata-static.plex.tv/5/people/5d92ec184eeeeb5fb5056eb3d0a18c3b.jpg"
+              },
+              {
+                "id": 4604,
+                "filter": "actor=4604",
+                "tag": "Spencer Garrett",
+                "tagKey": "5d776832961905001eb9345c",
+                "role": "Bill",
+                "thumb": "https://metadata-static.plex.tv/d/people/d59edf4d39da0b83ab0e368cbe2ec224.jpg"
+              },
+              {
+                "id": 36916,
+                "filter": "actor=36916",
+                "tag": "Tim Chiou",
+                "tagKey": "5d77683bf54112001f5be320",
+                "role": "Jeffers' Lawyer",
+                "thumb": "https://metadata-static.plex.tv/1/people/1c9cf83b353462a9473306fec3741eae.jpg"
+              },
+              {
+                "id": 5124,
+                "filter": "actor=5124",
+                "tag": "Mike O'Malley",
+                "tagKey": "5d77682eeb5d26001f1df599",
+                "role": "Avery Jeffers",
+                "thumb": "https://metadata-static.plex.tv/4/people/41ad8c4b85ba040cac24150ccac6962d.jpg"
+              },
+              {
+                "id": 287856,
+                "filter": "actor=287856",
+                "tag": "Laura Julian",
+                "tagKey": "5f40273752f2000041515262",
+                "role": "Judge",
+                "thumb": "https://image.tmdb.org/t/p/original/mrLJselSCJInnF7sMitZKDyoOav.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 287082,
+                "filter": "producer=287082",
+                "tag": "Christopher J. Molnar",
+                "tagKey": "5dcfc932da78f70020159c1e"
+              },
+              {
+                "id": 287083,
+                "filter": "producer=287083",
+                "tag": "Caitlin Tyler",
+                "tagKey": "5f400e5a03883a0040b18e83"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108348",
+            "key": "/library/metadata/108348",
+            "parentRatingKey": "103870",
+            "grandparentRatingKey": "15053",
+            "guid": "plex://episode/673f46972e8dc40b88af229a",
+            "parentGuid": "plex://season/63e683473abf06cf83a08e21",
+            "grandparentGuid": "plex://show/5e69c6f6874db7003e2dd59b",
+            "grandparentSlug": "the-last-of-us",
+            "type": "episode",
+            "title": "The Price",
+            "titleSort": "Price",
+            "grandparentKey": "/library/metadata/15053",
+            "parentKey": "/library/metadata/103870",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Last of Us",
+            "parentTitle": "Season 2",
+            "contentRating": "TV-MA",
+            "summary": "Joel surprises Ellie for her birthday. Years later, Ellie prepares to confront Joel about her past.",
+            "index": 6,
+            "parentIndex": 2,
+            "audienceRating": 6.3,
+            "year": 2025,
+            "thumb": "/library/metadata/108348/thumb/1748656784",
+            "art": "/library/metadata/15053/art/1748704280",
+            "parentThumb": "/library/metadata/103870/thumb/1745376036",
+            "grandparentThumb": "/library/metadata/15053/thumb/1748704280",
+            "grandparentArt": "/library/metadata/15053/art/1748704280",
+            "grandparentTheme": "/library/metadata/15053/theme/1748704280",
+            "duration": 3569152,
+            "originallyAvailableAt": "2025-05-18",
+            "addedAt": 1747617208,
+            "updatedAt": 1748656784,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130738,
+                "duration": 3569152,
+                "bitrate": 9214,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447774,
+                    "key": "/library/parts/447774/1747617116/file.mkv",
+                    "duration": 3569152,
+                    "file": "/data/Media/Tv Shows/The Last of Us/Season 02/The Last of Us (2023) - S02E06 - The Price [WEBDL-1080p][EAC3 5.1][h264]-successfulcrab.mkv",
+                    "size": 4112416737,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037389,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 8573,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037390,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037391,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037392,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English [SDH]",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English [SDH] (SRT)"
+                      },
+                      {
+                        "id": 1037393,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 4,
+                        "bitrate": 0,
+                        "language": "Bulgarian",
+                        "languageTag": "bg",
+                        "languageCode": "bul",
+                        "title": "Bulgarian",
+                        "displayTitle": "Bulgarian (SRT)",
+                        "extendedDisplayTitle": "Bulgarian (Bulgarian SRT)"
+                      },
+                      {
+                        "id": 1037394,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 5,
+                        "bitrate": 0,
+                        "language": "Croatian",
+                        "languageTag": "hr",
+                        "languageCode": "hrv",
+                        "title": "Croatian",
+                        "displayTitle": "Croatian (SRT)",
+                        "extendedDisplayTitle": "Croatian (Croatian SRT)"
+                      },
+                      {
+                        "id": 1037395,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 6,
+                        "bitrate": 0,
+                        "language": "Czech",
+                        "languageTag": "cs",
+                        "languageCode": "ces",
+                        "title": "Czech (Czechia)",
+                        "displayTitle": "Czech (SRT)",
+                        "extendedDisplayTitle": "Czech (Czechia) (Czech SRT)"
+                      },
+                      {
+                        "id": 1037396,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 7,
+                        "bitrate": 0,
+                        "language": "Danish",
+                        "languageTag": "da",
+                        "languageCode": "dan",
+                        "title": "Danish",
+                        "displayTitle": "Danish (SRT)",
+                        "extendedDisplayTitle": "Danish (Danish SRT)"
+                      },
+                      {
+                        "id": 1037397,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 8,
+                        "bitrate": 0,
+                        "language": "Dutch",
+                        "languageTag": "nl",
+                        "languageCode": "nld",
+                        "title": "Dutch",
+                        "displayTitle": "Dutch (SRT)",
+                        "extendedDisplayTitle": "Dutch (Dutch SRT)"
+                      },
+                      {
+                        "id": 1037398,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 9,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "European Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "European Spanish (Spanish SRT)"
+                      },
+                      {
+                        "id": 1037399,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 10,
+                        "bitrate": 0,
+                        "language": "Finnish",
+                        "languageTag": "fi",
+                        "languageCode": "fin",
+                        "title": "Finnish",
+                        "displayTitle": "Finnish (SRT)",
+                        "extendedDisplayTitle": "Finnish (Finnish SRT)"
+                      },
+                      {
+                        "id": 1037400,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 11,
+                        "bitrate": 0,
+                        "language": "French",
+                        "languageTag": "fr",
+                        "languageCode": "fra",
+                        "title": "French",
+                        "displayTitle": "French (SRT)",
+                        "extendedDisplayTitle": "French (French SRT)"
+                      },
+                      {
+                        "id": 1037401,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 12,
+                        "bitrate": 0,
+                        "language": "Greek",
+                        "languageTag": "el",
+                        "languageCode": "ell",
+                        "title": "Greek",
+                        "displayTitle": "Greek (SRT)",
+                        "extendedDisplayTitle": "Greek (Greek SRT)"
+                      },
+                      {
+                        "id": 1037402,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 13,
+                        "bitrate": 0,
+                        "language": "Hungarian",
+                        "languageTag": "hu",
+                        "languageCode": "hun",
+                        "title": "Hungarian",
+                        "displayTitle": "Hungarian (SRT)",
+                        "extendedDisplayTitle": "Hungarian (Hungarian SRT)"
+                      },
+                      {
+                        "id": 1037403,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 14,
+                        "bitrate": 0,
+                        "language": "Icelandic",
+                        "languageTag": "is",
+                        "languageCode": "isl",
+                        "title": "Icelandic (Iceland)",
+                        "displayTitle": "Icelandic (SRT)",
+                        "extendedDisplayTitle": "Icelandic (Iceland) (Icelandic SRT)"
+                      },
+                      {
+                        "id": 1037404,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 15,
+                        "bitrate": 0,
+                        "language": "Indonesian",
+                        "languageTag": "id",
+                        "languageCode": "ind",
+                        "title": "Indonesian",
+                        "displayTitle": "Indonesian (SRT)",
+                        "extendedDisplayTitle": "Indonesian (Indonesian SRT)"
+                      },
+                      {
+                        "id": 1037405,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 16,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Latin America Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Latin America Spanish (Spanish SRT)"
+                      },
+                      {
+                        "id": 1037406,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 17,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Latin America Spanish [SDH]",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Latin America Spanish [SDH] (Spanish SRT)"
+                      },
+                      {
+                        "id": 1037407,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 18,
+                        "bitrate": 0,
+                        "language": "Lithuanian",
+                        "languageTag": "lt",
+                        "languageCode": "lit",
+                        "title": "Lithuanian",
+                        "displayTitle": "Lithuanian (SRT)",
+                        "extendedDisplayTitle": "Lithuanian (Lithuanian SRT)"
+                      },
+                      {
+                        "id": 1037408,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 19,
+                        "bitrate": 0,
+                        "language": "Macedonian",
+                        "languageTag": "mk",
+                        "languageCode": "mkd",
+                        "title": "Macedonian",
+                        "displayTitle": "Macedonian (SRT)",
+                        "extendedDisplayTitle": "Macedonian (Macedonian SRT)"
+                      },
+                      {
+                        "id": 1037409,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 20,
+                        "bitrate": 0,
+                        "language": "Norwegian",
+                        "languageTag": "no",
+                        "languageCode": "nor",
+                        "title": "Norwegian",
+                        "displayTitle": "Norwegian (SRT)",
+                        "extendedDisplayTitle": "Norwegian (Norwegian SRT)"
+                      },
+                      {
+                        "id": 1037410,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 21,
+                        "bitrate": 0,
+                        "language": "Polish",
+                        "languageTag": "pl",
+                        "languageCode": "pol",
+                        "title": "Polish",
+                        "displayTitle": "Polish (SRT)",
+                        "extendedDisplayTitle": "Polish (Polish SRT)"
+                      },
+                      {
+                        "id": 1037411,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 22,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Portuguese",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Portuguese (Portuguese SRT)"
+                      },
+                      {
+                        "id": 1037412,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 23,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Portuguese Brazilian",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Portuguese Brazilian (Portuguese SRT)"
+                      },
+                      {
+                        "id": 1037413,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 24,
+                        "bitrate": 0,
+                        "language": "Romanian",
+                        "languageTag": "ro",
+                        "languageCode": "ron",
+                        "title": "Romanian (Romania)",
+                        "displayTitle": "Romanian (SRT)",
+                        "extendedDisplayTitle": "Romanian (Romania) (Romanian SRT)"
+                      },
+                      {
+                        "id": 1037414,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 25,
+                        "bitrate": 0,
+                        "language": "Serbian",
+                        "languageTag": "sr",
+                        "languageCode": "srp",
+                        "title": "Serbian (Latin)",
+                        "displayTitle": "Serbian (SRT)",
+                        "extendedDisplayTitle": "Serbian (Latin) (Serbian SRT)"
+                      },
+                      {
+                        "id": 1037415,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 26,
+                        "bitrate": 0,
+                        "language": "Slovak",
+                        "languageTag": "sk",
+                        "languageCode": "slk",
+                        "title": "Slovak (Slovakia)",
+                        "displayTitle": "Slovak (SRT)",
+                        "extendedDisplayTitle": "Slovak (Slovakia) (Slovak SRT)"
+                      },
+                      {
+                        "id": 1037416,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 27,
+                        "bitrate": 0,
+                        "language": "Slovenian",
+                        "languageTag": "sl",
+                        "languageCode": "slv",
+                        "title": "Slovenian",
+                        "displayTitle": "Slovenian (SRT)",
+                        "extendedDisplayTitle": "Slovenian (Slovenian SRT)"
+                      },
+                      {
+                        "id": 1037417,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 28,
+                        "bitrate": 0,
+                        "title": "Standard Estonian",
+                        "displayTitle": "Unknown (SRT)",
+                        "extendedDisplayTitle": "Standard Estonian (SRT)"
+                      },
+                      {
+                        "id": 1037418,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 29,
+                        "bitrate": 0,
+                        "language": "Latvian",
+                        "languageTag": "lv",
+                        "languageCode": "lav",
+                        "title": "Standard Latvian",
+                        "displayTitle": "Latvian (SRT)",
+                        "extendedDisplayTitle": "Standard Latvian (Latvian SRT)"
+                      },
+                      {
+                        "id": 1037419,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 30,
+                        "bitrate": 0,
+                        "language": "Malay",
+                        "languageTag": "ms",
+                        "languageCode": "msa",
+                        "title": "Standard Malay",
+                        "displayTitle": "Malay (SRT)",
+                        "extendedDisplayTitle": "Standard Malay (Malay SRT)"
+                      },
+                      {
+                        "id": 1037420,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 31,
+                        "bitrate": 0,
+                        "language": "Swedish",
+                        "languageTag": "sv",
+                        "languageCode": "swe",
+                        "title": "Swedish",
+                        "displayTitle": "Swedish (SRT)",
+                        "extendedDisplayTitle": "Swedish (Swedish SRT)"
+                      },
+                      {
+                        "id": 1037421,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 32,
+                        "bitrate": 0,
+                        "language": "Thai",
+                        "languageTag": "th",
+                        "languageCode": "tha",
+                        "title": "Thai",
+                        "displayTitle": "Thai (SRT)",
+                        "extendedDisplayTitle": "Thai (Thai SRT)"
+                      },
+                      {
+                        "id": 1037422,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 33,
+                        "bitrate": 0,
+                        "language": "Turkish",
+                        "languageTag": "tr",
+                        "languageCode": "tur",
+                        "title": "Turkish",
+                        "displayTitle": "Turkish (SRT)",
+                        "extendedDisplayTitle": "Turkish (Turkish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "The Price",
+                "type": "coverPoster",
+                "url": "/library/metadata/15053/thumb/1748704280"
+              },
+              {
+                "alt": "The Price",
+                "type": "snapshot",
+                "url": "/library/metadata/108348/thumb/1748656784"
+              },
+              {
+                "alt": "The Price",
+                "type": "background",
+                "url": "/library/metadata/15053/art/1748704280"
+              },
+              {
+                "alt": "The Price",
+                "type": "clearLogo",
+                "url": "/library/metadata/15053/clearLogo/1748704280"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "312d29",
+              "topRight": "3c3c43",
+              "bottomRight": "393e3b",
+              "bottomLeft": "35302b"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt32550886"
+              },
+              {
+                "id": "tmdb://5994272"
+              },
+              {
+                "id": "tvdb://10972144"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.6,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 6.3,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 198911,
+                "filter": "director=198911",
+                "tag": "Neil Druckmann",
+                "tagKey": "5d776a41fb0d55001f53fc66",
+                "thumb": "https://metadata-static.plex.tv/a/people/a8a366dfaf3ed638d9d1579db1e440e6.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 198906,
+                "filter": "writer=198906",
+                "tag": "Neil Druckmann",
+                "tagKey": "5d776a41fb0d55001f53fc66",
+                "thumb": "https://metadata-static.plex.tv/a/people/a8a366dfaf3ed638d9d1579db1e440e6.jpg"
+              },
+              {
+                "id": 132532,
+                "filter": "writer=132532",
+                "tag": "Craig Mazin",
+                "tagKey": "5d77682e103a2d001f565eb9",
+                "thumb": "https://metadata-static.plex.tv/2/people/2672c04c981b6f8c53fece26c0699d9e.jpg"
+              },
+              {
+                "id": 95520,
+                "filter": "writer=95520",
+                "tag": "Halley Wegryn Gross",
+                "tagKey": "5d77683a2e80df001ebded4d",
+                "thumb": "https://metadata-static.plex.tv/0/people/0d2ee8d88bec3127e27ce4fca6b467c2.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 86941,
+                "filter": "actor=86941",
+                "tag": "Bella Ramsey",
+                "tagKey": "5d776c8d96b655001fe346ba",
+                "role": "Ellie Williams",
+                "thumb": "https://metadata-static.plex.tv/5/people/5999f65b09deaa93b928f5c0d95ae258.jpg"
+              },
+              {
+                "id": 86947,
+                "filter": "actor=86947",
+                "tag": "Gabriel Luna",
+                "tagKey": "5d77686351dd69001fe0b661",
+                "role": "Tommy Miller",
+                "thumb": "https://metadata-static.plex.tv/e/people/e41daea895213133535f91a9c6c566a9.jpg"
+              },
+              {
+                "id": 101164,
+                "filter": "actor=101164",
+                "tag": "Isabela Merced",
+                "tagKey": "5d776a2996b655001fde519d",
+                "role": "Dina",
+                "thumb": "https://metadata-static.plex.tv/8/people/8d93dadf9dfff5ebaeb68dd2f01014f5.jpg"
+              },
+              {
+                "id": 270817,
+                "filter": "actor=270817",
+                "tag": "Young Mazino",
+                "tagKey": "5d776d99fb0d55001f5a5096",
+                "role": "Jesse",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e3f2d05837d29e48ee98269e3b942d7.jpg"
+              },
+              {
+                "id": 26139,
+                "filter": "actor=26139",
+                "tag": "Pedro Pascal",
+                "tagKey": "5d77686d8718ba001e31bb7e",
+                "role": "Joel Miller",
+                "thumb": "https://metadata-static.plex.tv/c/people/c7a8a55631f762003c6d11796f04a8e0.jpg"
+              },
+              {
+                "id": 39100,
+                "filter": "actor=39100",
+                "tag": "Rutina Wesley",
+                "tagKey": "5d7769c97a53e9001e6f064c",
+                "role": "Maria",
+                "thumb": "https://metadata-static.plex.tv/3/people/352e0d8fb06ba33f3f2f3a0b8df78511.jpg"
+              },
+              {
+                "id": 28576,
+                "filter": "actor=28576",
+                "tag": "Catherine O'Hara",
+                "tagKey": "5d7768275af944001f1f6e83",
+                "role": "Gail",
+                "thumb": "https://metadata-static.plex.tv/6/people/6b73120eb1a0765e26356505a3b513af.jpg"
+              },
+              {
+                "id": 2638,
+                "filter": "actor=2638",
+                "tag": "Robert John Burke",
+                "tagKey": "5d77682d8718ba001e3131ac",
+                "role": "Seth",
+                "thumb": "https://metadata-static.plex.tv/2/people/250d747c0fef13e9e59bec44eeb33b3a.jpg"
+              },
+              {
+                "id": 212521,
+                "filter": "actor=212521",
+                "tag": "Ezra Benedict Agbonkhese",
+                "tagKey": "66b7227d677e6dca57975afe",
+                "role": "Benji"
+              },
+              {
+                "id": 67114,
+                "filter": "actor=67114",
+                "tag": "Noah Lamanna",
+                "tagKey": "5d7769b5fb0d55001f52d977",
+                "role": "Kat",
+                "thumb": "https://metadata-static.plex.tv/a/people/a3099ae27ff0a07a6a59219e0e0f4eb2.jpg"
+              },
+              {
+                "id": 127227,
+                "filter": "actor=127227",
+                "tag": "Keiran Bohay",
+                "tagKey": "5f405ca1bf3e560040c0f87c",
+                "role": "Dina's Dance Partner",
+                "thumb": "https://metadata-static.plex.tv/4/people/4d66387889687bd3aeac164987b2542d.jpg"
+              },
+              {
+                "id": 270820,
+                "filter": "actor=270820",
+                "tag": "Victor Lau",
+                "tagKey": "6807cc826fe98e38726e03e1",
+                "role": "Dina's Dance Partner"
+              },
+              {
+                "id": 2072,
+                "filter": "actor=2072",
+                "tag": "Joe Pantoliano",
+                "tagKey": "5d7768252ec6b5001f6ba1f6",
+                "role": "Eugene Lynden",
+                "thumb": "https://metadata-static.plex.tv/6/people/60035a99721d569fa04d8a8b6c8292c0.jpg"
+              },
+              {
+                "id": 10049,
+                "filter": "actor=10049",
+                "tag": "Tony Dalton",
+                "tagKey": "5d77683c961905001eb95683",
+                "role": "Javier Miller",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e7ef919426a6aa18e09c7fa6a710662.jpg"
+              },
+              {
+                "id": 287860,
+                "filter": "actor=287860",
+                "tag": "Andrew Díaz",
+                "tagKey": "5d776b75ad5437001f7a03e1",
+                "role": "Young Joel",
+                "thumb": "https://metadata-static.plex.tv/1/people/14624df8bb6153a9a013a8d300fd5864.jpg"
+              },
+              {
+                "id": 287861,
+                "filter": "actor=287861",
+                "tag": "David Miranda",
+                "tagKey": "5f40651352f200004158f25e",
+                "role": "Young Tommy",
+                "thumb": "https://metadata-static.plex.tv/f/people/fd99986e92947fe14cd6699e0472dd80.jpg"
+              },
+              {
+                "id": 74891,
+                "filter": "actor=74891",
+                "tag": "Michael Teigen",
+                "tagKey": "5d77682e85719b001f3a243d",
+                "role": "Double",
+                "thumb": "https://metadata-static.plex.tv/6/people/65276420008b64563848274c61e4605e.jpg"
+              },
+              {
+                "id": 65746,
+                "filter": "actor=65746",
+                "tag": "William MacDonald",
+                "tagKey": "5d7768315af944001f1f8e5f",
+                "role": "Double",
+                "thumb": "https://metadata-static.plex.tv/7/people/76e4dc10acbdbb90b783cff938c587bb.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 5969,
+                "filter": "producer=5969",
+                "tag": "Julie Herrin",
+                "tagKey": "5dce6a0b90bd5d002033318c",
+                "thumb": "https://metadata-static.plex.tv/3/people/32f55807c911e7e20e034fd418491f99.jpg"
+              },
+              {
+                "id": 199827,
+                "filter": "producer=199827",
+                "tag": "Allen Marshall Palmer",
+                "tagKey": "5f3fed6f86422500427e4ad3"
+              }
+            ]
+          },
+          {
+            "ratingKey": "10394",
+            "key": "/library/metadata/10394/children",
+            "parentRatingKey": "10393",
+            "guid": "plex://season/602e677ade471d002d06f32e",
+            "parentGuid": "plex://show/5d9c086b08fddd001f29a1df",
+            "parentSlug": "planet-earth",
+            "parentStudio": "BBC",
+            "type": "season",
+            "title": "Season 1",
+            "parentKey": "/library/metadata/10393",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "Planet Earth",
+            "summary": "",
+            "index": 1,
+            "parentIndex": 1,
+            "parentYear": 2006,
+            "thumb": "/library/metadata/10394/thumb/1732579775",
+            "art": "/library/metadata/10393/art/1747332712",
+            "parentThumb": "/library/metadata/10393/thumb/1747332712",
+            "parentTheme": "/library/metadata/10393/theme/1747332712",
+            "leafCount": 11,
+            "viewedLeafCount": 0,
+            "addedAt": 1747527402,
+            "updatedAt": 1732579775,
+            "Image": [
+              {
+                "alt": "Season 1",
+                "type": "coverPoster",
+                "url": "/library/metadata/10394/thumb/1732579775"
+              },
+              {
+                "alt": "Season 1",
+                "type": "background",
+                "url": "/library/metadata/10393/art/1747332712"
+              },
+              {
+                "alt": "Season 1",
+                "type": "clearLogo",
+                "url": "/library/metadata/10393/clearLogo/1747332712"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "01314d",
+              "topRight": "054675",
+              "bottomRight": "1f2728",
+              "bottomLeft": "0f2c3b"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://2974"
+              },
+              {
+                "id": "tvdb://16219"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108322",
+            "key": "/library/metadata/108322",
+            "parentRatingKey": "12016",
+            "grandparentRatingKey": "11854",
+            "guid": "plex://episode/6814b8f7005d0a71cff65296",
+            "parentGuid": "plex://season/6696d12597fe2d2cc75d7d65",
+            "grandparentGuid": "plex://show/5d9c0813e264b7001fc3b4c4",
+            "grandparentSlug": "shark-tank",
+            "type": "episode",
+            "title": "Big Ass Luxuries, Deviled Egg Co., TiCK MiTT, Stringys",
+            "grandparentKey": "/library/metadata/11854",
+            "parentKey": "/library/metadata/12016",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Shark Tank",
+            "parentTitle": "Season 16",
+            "originalTitle": "Episode #16.20",
+            "contentRating": "TV-PG",
+            "summary": "Mark Cuban's farewell episode; oversized luxury candles; gourmet deviled eggs; a tick-removal mitten; seamless, invisible undergarments.",
+            "index": 20,
+            "parentIndex": 16,
+            "year": 2025,
+            "thumb": "/library/metadata/108322/thumb/1747873099",
+            "art": "/library/metadata/11854/art/1747873114",
+            "parentThumb": "/library/metadata/12016/thumb/1732579997",
+            "grandparentThumb": "/library/metadata/11854/thumb/1747873114",
+            "grandparentArt": "/library/metadata/11854/art/1747873114",
+            "grandparentTheme": "/library/metadata/11854/theme/1747873114",
+            "duration": 2575656,
+            "originallyAvailableAt": "2025-05-16",
+            "addedAt": 1747459675,
+            "updatedAt": 1747873099,
+            "chapterSource": "media",
+            "Media": [
+              {
+                "id": 130704,
+                "duration": 2575656,
+                "bitrate": 10407,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447740,
+                    "key": "/library/parts/447740/1747459613/file.mkv",
+                    "duration": 2575656,
+                    "file": "/data/Media/Tv Shows/Shark Tank/Season 16/Shark Tank (2009) - S16E20 - Big Ass Luxuries Deviled Egg Co. TiCK MiTT Stringys [WEBDL-1080p][EAC3 5.1][h264]-FLUX.mkv",
+                    "size": 3351299022,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037297,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9767,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "original": true,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037298,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "original": true,
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037299,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "original": true,
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037300,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Big Ass Luxuries, Deviled Egg Co., TiCK MiTT, Stringys",
+                "type": "coverPoster",
+                "url": "/library/metadata/11854/thumb/1747873114"
+              },
+              {
+                "alt": "Big Ass Luxuries, Deviled Egg Co., TiCK MiTT, Stringys",
+                "type": "snapshot",
+                "url": "/library/metadata/108322/thumb/1747873099"
+              },
+              {
+                "alt": "Big Ass Luxuries, Deviled Egg Co., TiCK MiTT, Stringys",
+                "type": "background",
+                "url": "/library/metadata/11854/art/1747873114"
+              },
+              {
+                "alt": "Big Ass Luxuries, Deviled Egg Co., TiCK MiTT, Stringys",
+                "type": "clearLogo",
+                "url": "/library/metadata/11854/clearLogo/1747873114"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "1a050a",
+              "topRight": "29050e",
+              "bottomRight": "450d24",
+              "bottomLeft": "0a1a53"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36820850"
+              },
+              {
+                "id": "tmdb://6201706"
+              },
+              {
+                "id": "tvdb://11117202"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.2,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 10909,
+                "filter": "actor=10909",
+                "tag": "Mark Cuban",
+                "tagKey": "5d77683361141d001fb1526f",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683361141d001fb1526f.jpg"
+              },
+              {
+                "id": 70555,
+                "filter": "actor=70555",
+                "tag": "Daymond John",
+                "tagKey": "5d776840961905001eb96378",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/f/people/f5148e7d03c9cfab049ae70e3f9b491c.jpg"
+              },
+              {
+                "id": 70556,
+                "filter": "actor=70556",
+                "tag": "Barbara Corcoran",
+                "tagKey": "5d7769e47a53e9001e6f3a75",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd3fcf636c5f464d1318402780f75105.jpg"
+              },
+              {
+                "id": 70557,
+                "filter": "actor=70557",
+                "tag": "Robert Herjavec",
+                "tagKey": "5d9c0813e264b7001fc3b503",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3dce9342dbce9126bad9cabc1aa2bbe.jpg"
+              },
+              {
+                "id": 70558,
+                "filter": "actor=70558",
+                "tag": "Kevin O'Leary",
+                "tagKey": "5d9c07f2705e7a001e6cd46c",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/people/5d9c07f2705e7a001e6cd46c.jpg"
+              },
+              {
+                "id": 57447,
+                "filter": "actor=57447",
+                "tag": "Lori Greiner",
+                "tagKey": "5d9c0813e264b7001fc3b509",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/e/people/eca88762265f9d92fc3d7ff9f8a795a8.jpg"
+              },
+              {
+                "id": 70560,
+                "filter": "actor=70560",
+                "tag": "Daniel Lubetzky",
+                "tagKey": "5f405f08fea1a1003fa6771d",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/8/people/899e0632a06737170b977577f92f89ee.jpg"
+              },
+              {
+                "id": 70559,
+                "filter": "actor=70559",
+                "tag": "Phil Crowley",
+                "tagKey": "5d7768e3594b2b001e69772b",
+                "role": "Self - Announcer (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2e588843c0dc6bec80a7a036a0337281.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 287849,
+                "filter": "producer=287849",
+                "tag": "Barbara Corcoran",
+                "tagKey": "5d7769e47a53e9001e6f3a75",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd3fcf636c5f464d1318402780f75105.jpg"
+              },
+              {
+                "id": 70915,
+                "filter": "producer=70915",
+                "tag": "Mark Cuban",
+                "tagKey": "5d77683361141d001fb1526f",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683361141d001fb1526f.jpg"
+              },
+              {
+                "id": 70837,
+                "filter": "producer=70837",
+                "tag": "Lori Greiner",
+                "tagKey": "5d9c0813e264b7001fc3b509",
+                "thumb": "https://metadata-static.plex.tv/e/people/eca88762265f9d92fc3d7ff9f8a795a8.jpg"
+              },
+              {
+                "id": 287850,
+                "filter": "producer=287850",
+                "tag": "Robert Herjavec",
+                "tagKey": "5d9c0813e264b7001fc3b503",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3dce9342dbce9126bad9cabc1aa2bbe.jpg"
+              },
+              {
+                "id": 287851,
+                "filter": "producer=287851",
+                "tag": "Daymond John",
+                "tagKey": "5d776840961905001eb96378",
+                "thumb": "https://metadata-static.plex.tv/f/people/f5148e7d03c9cfab049ae70e3f9b491c.jpg"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108317",
+            "key": "/library/metadata/108317",
+            "parentRatingKey": "101539",
+            "grandparentRatingKey": "101190",
+            "guid": "plex://episode/67f66bcb23877d82e836e80a",
+            "parentGuid": "plex://season/668e7cafca47b7d106afb778",
+            "grandparentGuid": "plex://show/5d9c0875e98e47001eb10c6a",
+            "grandparentSlug": "law-and-order-special-victims-unit",
+            "type": "episode",
+            "title": "Post-Rage",
+            "grandparentKey": "/library/metadata/101190",
+            "parentKey": "/library/metadata/101539",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Law & Order: Special Victims Unit",
+            "parentTitle": "Season 26",
+            "contentRating": "TV-14",
+            "summary": "Benson investigates a string of sexual assaults targeting local female psychiatrists. The squad celebrates a promotion.",
+            "index": 22,
+            "parentIndex": 26,
+            "audienceRating": 8.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108317/thumb/1747873106",
+            "art": "/library/metadata/101190/art/1747873118",
+            "parentThumb": "/library/metadata/101539/thumb/1740796746",
+            "grandparentThumb": "/library/metadata/101190/thumb/1747873118",
+            "grandparentArt": "/library/metadata/101190/art/1747873118",
+            "grandparentTheme": "/library/metadata/101190/theme/1747873118",
+            "duration": 2530444,
+            "originallyAvailableAt": "2025-05-15",
+            "addedAt": 1747363358,
+            "updatedAt": 1747873106,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130699,
+                "duration": 2530444,
+                "bitrate": 15983,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447735,
+                    "key": "/library/parts/447735/1747403204/file.mkv",
+                    "duration": 2530444,
+                    "file": "/data/Media/Tv Shows/Law & Order - Special Victims Unit/Season 26/Law & Order - Special Victims Unit (1999) - S26E22 - Post-Rage [WEBDL-1080p][EAC3 5.1][x264]-ETHEL.mkv",
+                    "size": 2589216677,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037288,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7800,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037290,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037289,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7800,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037291,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037292,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Post-Rage",
+                "type": "coverPoster",
+                "url": "/library/metadata/101190/thumb/1747873118"
+              },
+              {
+                "alt": "Post-Rage",
+                "type": "snapshot",
+                "url": "/library/metadata/108317/thumb/1747873106"
+              },
+              {
+                "alt": "Post-Rage",
+                "type": "background",
+                "url": "/library/metadata/101190/art/1747873118"
+              },
+              {
+                "alt": "Post-Rage",
+                "type": "clearLogo",
+                "url": "/library/metadata/101190/clearLogo/1747873118"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "492015",
+              "topRight": "494d45",
+              "bottomRight": "91423b",
+              "bottomLeft": "466635"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36341311"
+              },
+              {
+                "id": "tmdb://6114965"
+              },
+              {
+                "id": "tvdb://11051313"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.6,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 8.0,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 65590,
+                "filter": "director=65590",
+                "tag": "Norberto Barba",
+                "tagKey": "5d776859961905001eb99b4d",
+                "thumb": "https://metadata-static.plex.tv/2/people/245274b4828e2d7d602ad23c0d1293f6.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 266988,
+                "filter": "writer=266988",
+                "tag": "Julie Martin",
+                "tagKey": "67f7dd7eefe99b10e2455a56",
+                "thumb": "https://metadata-static.plex.tv/f/people/f2d7755729965cf08626d953db1bd1be.jpg"
+              },
+              {
+                "id": 287855,
+                "filter": "writer=287855",
+                "tag": "David Graziano",
+                "tagKey": "682dee7b23c8a04e5feafddd"
+              },
+              {
+                "id": 287257,
+                "filter": "writer=287257",
+                "tag": "Kelly Minster",
+                "tagKey": "682752fcd7400916ef0c73ee"
+              }
+            ],
+            "Role": [
+              {
+                "id": 67359,
+                "filter": "actor=67359",
+                "tag": "Mariska Hargitay",
+                "tagKey": "5d776826eb5d26001f1dd4db",
+                "role": "Olivia Benson",
+                "thumb": "https://metadata-static.plex.tv/c/people/cc6a7eeb32e778fba5d61333a7cf5df3.jpg"
+              },
+              {
+                "id": 185526,
+                "filter": "actor=185526",
+                "tag": "Ice-T",
+                "tagKey": "5d77682af54112001f5bc47f",
+                "role": "Odafin 'Fin' Tutuola",
+                "thumb": "https://metadata-static.plex.tv/b/people/b349989148767f38af40c48f6c306fc3.jpg"
+              },
+              {
+                "id": 61214,
+                "filter": "actor=61214",
+                "tag": "Peter Scanavino",
+                "tagKey": "5d7768847e5fa10020bf120c",
+                "role": "Dominick 'Sonny' Carisi Jr.",
+                "thumb": "https://metadata-static.plex.tv/d/people/dc3957255cbbf6d86f1af03d21ca8c9f.jpg"
+              },
+              {
+                "id": 248182,
+                "filter": "actor=248182",
+                "tag": "Octavio Pisano",
+                "tagKey": "5d776d56fb0d55001f59d8da",
+                "role": "Joe Velasco",
+                "thumb": "https://metadata-static.plex.tv/3/people/331527e5cc987db5eef7ebf730ae7d20.jpg"
+              },
+              {
+                "id": 118105,
+                "filter": "actor=118105",
+                "tag": "Kevin Kane",
+                "tagKey": "5d776b359ab5440021508b8a",
+                "role": "Terry Bruno",
+                "thumb": "https://metadata-static.plex.tv/d/people/d36ebaaf41e20072fe2f89933d32ba2e.jpg"
+              },
+              {
+                "id": 80954,
+                "filter": "actor=80954",
+                "tag": "Juliana Aidén Martinez",
+                "tagKey": "6022b64334df58002c6e830f",
+                "role": "Kate Silva",
+                "thumb": "https://metadata-static.plex.tv/6/people/67370f2b68130a0b1a265387692e5791.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 266968,
+                "filter": "producer=266968",
+                "tag": "Kathy Dobie",
+                "tagKey": "5ddba9e963af99001de44a96"
+              },
+              {
+                "id": 251188,
+                "filter": "producer=251188",
+                "tag": "Candice Sanchez McFarlane",
+                "tagKey": "5d7768829ab54400214e6ec5"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108316",
+            "key": "/library/metadata/108316",
+            "parentRatingKey": "5582",
+            "grandparentRatingKey": "5297",
+            "guid": "plex://episode/67c83fdf8faab9b3c2ff2565",
+            "parentGuid": "plex://season/66900f73726b3f54cdf6693a",
+            "grandparentGuid": "plex://show/5d9c086c02391c001f5891bb",
+            "grandparentSlug": "greys-anatomy",
+            "type": "episode",
+            "title": "How Do I Live",
+            "grandparentKey": "/library/metadata/5297",
+            "parentKey": "/library/metadata/5582",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Grey's Anatomy",
+            "parentTitle": "Season 21",
+            "contentRating": "TV-14",
+            "summary": "While the interns are excited to transition to second-year residency, an ordinary day at Grey Sloan takes an unexpected turn when a medical emergency unfolds in the operating room, endangering lives inside the hospital.",
+            "index": 18,
+            "parentIndex": 21,
+            "year": 2025,
+            "thumb": "/library/metadata/108316/thumb/1747873097",
+            "art": "/library/metadata/5297/art/1747873113",
+            "parentThumb": "/library/metadata/5582/thumb/1747445902",
+            "grandparentThumb": "/library/metadata/5297/thumb/1747873113",
+            "grandparentArt": "/library/metadata/5297/art/1747873113",
+            "grandparentTheme": "/library/metadata/5297/theme/1747873113",
+            "duration": 2570272,
+            "originallyAvailableAt": "2025-05-15",
+            "addedAt": 1747354987,
+            "updatedAt": 1747873097,
+            "Media": [
+              {
+                "id": 130698,
+                "duration": 2570272,
+                "bitrate": 9736,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447734,
+                    "key": "/library/parts/447734/1747373497/file.mkv",
+                    "duration": 2570272,
+                    "file": "/data/Media/Tv Shows/Grey's Anatomy/Season 21/Grey's Anatomy (2005) - S21E18 - How Do I Live [WEBDL-1080p][EAC3 5.1][h264]-Kitsune.mkv",
+                    "size": 3128813417,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037271,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9096,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037272,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037273,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037274,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      },
+                      {
+                        "id": 1037275,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 4,
+                        "bitrate": 0,
+                        "language": "German",
+                        "languageTag": "de",
+                        "languageCode": "deu",
+                        "displayTitle": "German (SRT)",
+                        "extendedDisplayTitle": "German (SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "How Do I Live",
+                "type": "coverPoster",
+                "url": "/library/metadata/5297/thumb/1747873113"
+              },
+              {
+                "alt": "How Do I Live",
+                "type": "snapshot",
+                "url": "/library/metadata/108316/thumb/1747873097"
+              },
+              {
+                "alt": "How Do I Live",
+                "type": "background",
+                "url": "/library/metadata/5297/art/1747873113"
+              },
+              {
+                "alt": "How Do I Live",
+                "type": "clearLogo",
+                "url": "/library/metadata/5297/clearLogo/1747873113"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "151212",
+              "topRight": "92413f",
+              "bottomRight": "193b58",
+              "bottomLeft": "242e60"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt33528553"
+              },
+              {
+                "id": "tmdb://6022281"
+              },
+              {
+                "id": "tvdb://11002136"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.1,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 30685,
+                "filter": "director=30685",
+                "tag": "Debbie Allen",
+                "tagKey": "5d776832961905001eb93450",
+                "thumb": "https://metadata-static.plex.tv/1/people/1ca55c551fd2c43fe89d5afe6ace123f.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 257129,
+                "filter": "writer=257129",
+                "tag": "Meg Marinis",
+                "tagKey": "5e1639e3ef1040003f24fe08",
+                "thumb": "https://metadata-static.plex.tv/e/people/e451747a3a25720efc75dd4aa563021a.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 2412,
+                "filter": "actor=2412",
+                "tag": "Ellen Pompeo",
+                "tagKey": "5d7768273c3c2a001fbcb1ef",
+                "role": "Meredith Grey",
+                "thumb": "https://metadata-static.plex.tv/e/people/e417779f696305c3b62ff7b3ba279f30.jpg"
+              },
+              {
+                "id": 29598,
+                "filter": "actor=29598",
+                "tag": "Chandra Wilson",
+                "tagKey": "5d7768342e80df001ebde2b8",
+                "role": "Miranda Bailey",
+                "thumb": "https://metadata-static.plex.tv/d/people/dff4c2e2cd947f49e42b71a03de9407b.jpg"
+              },
+              {
+                "id": 29599,
+                "filter": "actor=29599",
+                "tag": "James Pickens Jr.",
+                "tagKey": "5d7768283c3c2a001fbcb6a0",
+                "role": "Richard Webber",
+                "thumb": "https://metadata-static.plex.tv/2/people/23a98b8aace343a666b70d00ca2868cf.jpg"
+              },
+              {
+                "id": 29601,
+                "filter": "actor=29601",
+                "tag": "Kevin McKidd",
+                "tagKey": "5d7768276f4521001ea990ab",
+                "role": "Owen Hunt",
+                "thumb": "https://metadata-static.plex.tv/3/people/394e1f2fba89a55ce07c6ef95d61ae68.jpg"
+              },
+              {
+                "id": 29607,
+                "filter": "actor=29607",
+                "tag": "Caterina Scorsone",
+                "tagKey": "5d7768394de0ee001fccc49a",
+                "role": "Amelia Shepherd",
+                "thumb": "https://metadata-static.plex.tv/b/people/be4064eb9f774c1c1f8e23a4eb10a0f2.jpg"
+              },
+              {
+                "id": 29603,
+                "filter": "actor=29603",
+                "tag": "Camilla Luddington",
+                "tagKey": "5d7768a423d5a3001f4ef6a2",
+                "role": "Jo Wilson",
+                "thumb": "https://metadata-static.plex.tv/4/people/45b2fd3ac7083feed71d92e013c201fa.jpg"
+              },
+              {
+                "id": 3415,
+                "filter": "actor=3415",
+                "tag": "Kim Raver",
+                "tagKey": "5d77682a151a60001f24b487",
+                "role": "Teddy Altman",
+                "thumb": "https://metadata-static.plex.tv/1/people/12a4ac4da57bac6f45677bafe935366a.jpg"
+              },
+              {
+                "id": 19052,
+                "filter": "actor=19052",
+                "tag": "Jason George",
+                "tagKey": "5d776836880197001ec93763",
+                "role": "Ben Warren",
+                "thumb": "https://metadata-static.plex.tv/people/5d776836880197001ec93763.jpg"
+              },
+              {
+                "id": 18442,
+                "filter": "actor=18442",
+                "tag": "Chris Carmack",
+                "tagKey": "5d77683a2ec6b5001f6bcd6a",
+                "role": "Atticus Lincoln",
+                "thumb": "https://metadata-static.plex.tv/4/people/4c05a2446332756ac536546e40f060c4.jpg"
+              },
+              {
+                "id": 25253,
+                "filter": "actor=25253",
+                "tag": "Anthony Hill",
+                "tagKey": "5d776bf79ab5440021511494",
+                "role": "Winston Ndugu",
+                "thumb": "https://metadata-static.plex.tv/3/people/3aa56226dc3500a529934fff78586a7d.jpg"
+              },
+              {
+                "id": 29624,
+                "filter": "actor=29624",
+                "tag": "Adelaide Kane",
+                "tagKey": "5d77687febdf2200209c08b0",
+                "role": "Jules Millin",
+                "thumb": "https://metadata-static.plex.tv/2/people/2eaf59847db8e3221c68b486105f9579.jpg"
+              },
+              {
+                "id": 29625,
+                "filter": "actor=29625",
+                "tag": "Alexis Floyd",
+                "tagKey": "5d7770de6afb3d0020623d30",
+                "role": "Simone Griffith",
+                "thumb": "https://metadata-static.plex.tv/4/people/4eb2988b1039051074dff4b62002334e.jpg"
+              },
+              {
+                "id": 29626,
+                "filter": "actor=29626",
+                "tag": "Niko Terho",
+                "tagKey": "5ddba9fac97b5b001f481959",
+                "role": "Lucas Adams",
+                "thumb": "https://metadata-static.plex.tv/b/people/b6cdda9004a9b4d2025872f3acb45494.jpg"
+              },
+              {
+                "id": 29627,
+                "filter": "actor=29627",
+                "tag": "Harry Shum Jr.",
+                "tagKey": "5d776831151a60001f24d03b",
+                "role": "Benson 'Blue' Kwan",
+                "thumb": "https://metadata-static.plex.tv/b/people/b6d31a8df7ff46e091c17eac9cb7ef69.jpg"
+              },
+              {
+                "id": 29621,
+                "filter": "actor=29621",
+                "tag": "Payton Silver",
+                "tagKey": "5f3fb65c03883a0040a9745a",
+                "role": "Dr. Knox"
+              },
+              {
+                "id": 29639,
+                "filter": "actor=29639",
+                "tag": "Frances Nichols",
+                "tagKey": "5d776dd2ad5437001f7e195e",
+                "role": "Nurse Karen",
+                "thumb": "https://image.tmdb.org/t/p/original/nHPGoUrtfG34jfSyDt4oq4Y1Lo6.jpg"
+              },
+              {
+                "id": 29615,
+                "filter": "actor=29615",
+                "tag": "Debbie Allen",
+                "tagKey": "5d776832961905001eb93450",
+                "role": "Catherine Fox",
+                "thumb": "https://metadata-static.plex.tv/1/people/1ca55c551fd2c43fe89d5afe6ace123f.jpg"
+              },
+              {
+                "id": 29695,
+                "filter": "actor=29695",
+                "tag": "Natalie Morales",
+                "tagKey": "5d776864eb5d26001f1e92ac",
+                "role": "Monica Beltran",
+                "thumb": "https://metadata-static.plex.tv/8/people/82b6fa7268acc762f91b209d9b547b3f.jpg"
+              },
+              {
+                "id": 27545,
+                "filter": "actor=27545",
+                "tag": "Floriana Lima",
+                "tagKey": "5d776b637a53e9001e72434f",
+                "role": "Nora Young",
+                "thumb": "https://metadata-static.plex.tv/5/people/540230ace02ec87e9844c9befb8e9547.jpg"
+              },
+              {
+                "id": 10273,
+                "filter": "actor=10273",
+                "tag": "Piper Perabo",
+                "tagKey": "5d776829999c64001ec2cef6",
+                "role": "Jenna Gatlin",
+                "thumb": "https://metadata-static.plex.tv/9/people/9ec99313a2d3480bce8a318e9ddb7c7c.jpg"
+              },
+              {
+                "id": 62698,
+                "filter": "actor=62698",
+                "tag": "Andy Bean",
+                "tagKey": "5d776abdfb0d55001f54f6ed",
+                "role": "Aaron Gatlin",
+                "thumb": "https://metadata-static.plex.tv/d/people/d17ce258adf79a0ad5281f4789fcdad9.jpg"
+              },
+              {
+                "id": 279433,
+                "filter": "actor=279433",
+                "tag": "Sophia Kopera",
+                "tagKey": "6125faebad4995002c38d586",
+                "role": "Dylan Gatlin",
+                "thumb": "https://metadata-static.plex.tv/7/people/721a474045aa15753244f86b1589c53d.jpg"
+              },
+              {
+                "id": 285266,
+                "filter": "actor=285266",
+                "tag": "Trevor Jackson",
+                "tagKey": "5d776964ad5437001f75b811",
+                "role": "",
+                "thumb": "https://metadata-static.plex.tv/1/people/19c76a4012c0a3eadc68ef91db495e01.jpg"
+              },
+              {
+                "id": 20013,
+                "filter": "actor=20013",
+                "tag": "Jared Farid Ward",
+                "tagKey": "5d776db17a53e9001e7602c3",
+                "role": "Officer Bruno",
+                "thumb": "https://metadata-static.plex.tv/people/5d776db17a53e9001e7602c3.jpg"
+              },
+              {
+                "id": 47303,
+                "filter": "actor=47303",
+                "tag": "Jacqueline Mazarella",
+                "tagKey": "5d776a3d7a53e9001e6febbf",
+                "role": "Sarah",
+                "thumb": "https://metadata-static.plex.tv/e/people/ed43bb98c37f68b82b00b3b112ab1af7.jpg"
+              },
+              {
+                "id": 287344,
+                "filter": "actor=287344",
+                "tag": "Charleigh Jordan-Ortega",
+                "tagKey": "6828abe84eaa2ecdb61deca8",
+                "role": "Miles Young"
+              },
+              {
+                "id": 287345,
+                "filter": "actor=287345",
+                "tag": "Bronson Arrivillaga",
+                "tagKey": "67f7b370d615b2a9b4dd6bfd",
+                "role": "Max Young"
+              },
+              {
+                "id": 287346,
+                "filter": "actor=287346",
+                "tag": "Hannah Hurst",
+                "tagKey": "6828abead7400916ef15dc1d",
+                "role": "Lucy Young"
+              },
+              {
+                "id": 287347,
+                "filter": "actor=287347",
+                "tag": "Scarlette Cosio",
+                "tagKey": "6828abea224bcdebd73c2be0",
+                "role": "Emily Young"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 34771,
+                "filter": "producer=34771",
+                "tag": "Naser Alazari",
+                "tagKey": "5f4049e11ae71000410994bb"
+              },
+              {
+                "id": 32053,
+                "filter": "producer=32053",
+                "tag": "Vanessa Delgado",
+                "tagKey": "5f403006ce2564003f8f28f5"
+              },
+              {
+                "id": 7876,
+                "filter": "producer=7876",
+                "tag": "James E. Williams",
+                "tagKey": "5f3fb8a5864225004279c793"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108300",
+            "key": "/library/metadata/108300",
+            "parentRatingKey": "103851",
+            "grandparentRatingKey": "103157",
+            "guid": "plex://episode/67ee501df5a8669c029225b4",
+            "parentGuid": "plex://season/67ee8b94f094e9eab1fac3bd",
+            "grandparentGuid": "plex://show/5d9c0867ba6eb9001fba2e1e",
+            "grandparentSlug": "guys-grocery-games",
+            "type": "episode",
+            "title": "GGG G.O.A.T. Part 2",
+            "grandparentKey": "/library/metadata/103157",
+            "parentKey": "/library/metadata/103851",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Guy's Grocery Games",
+            "parentTitle": "Season 39",
+            "contentRating": "TV-G",
+            "summary": "Six all-star chefs are still in the running for the title of GGG Greatest of All Time and the $70,000 prize. Guy Fieri surprises the competitors with double wheels that pick their dish and game at random. First, they must make a vegetarian dinner while observing the express lane's strict ingredient limit. In the sudden death elimination round, the bottom two chefs must make their best noodle dish using only ingredients from the even aisles of the store.",
+            "index": 8,
+            "parentIndex": 39,
+            "year": 2025,
+            "thumb": "/library/metadata/108300/thumb/1747592116",
+            "art": "/library/metadata/103157/art/1748821044",
+            "grandparentThumb": "/library/metadata/103157/thumb/1748821044",
+            "grandparentArt": "/library/metadata/103157/art/1748821044",
+            "grandparentTheme": "/library/metadata/103157/theme/1748821044",
+            "duration": 2520895,
+            "originallyAvailableAt": "2025-05-14",
+            "addedAt": 1747288377,
+            "updatedAt": 1747592116,
+            "Media": [
+              {
+                "id": 130672,
+                "duration": 2520895,
+                "bitrate": 9930,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "aac",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "audioProfile": "lc",
+                "videoProfile": "main",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447708,
+                    "key": "/library/parts/447708/1747288312/file.mkv",
+                    "duration": 2520895,
+                    "file": "/data/Media/Tv Shows/Guy's Grocery Games (2013) {tvdb-274453}/Season 39/Guy's Grocery Games (2013) - S39E08 - GGG G.O.A.T. Part 2 [WEBDL-1080p][AAC 2.0][h264]-FREQUENCY.mkv",
+                    "size": 3130016942,
+                    "audioProfile": "lc",
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "main",
+                    "Stream": [
+                      {
+                        "id": 1036859,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9805,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "main",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1036860,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "aac",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 125,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "profile": "lc",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (AAC Stereo)",
+                        "extendedDisplayTitle": "English (AAC Stereo)"
+                      },
+                      {
+                        "id": 1036861,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "GGG G.O.A.T. Part 2",
+                "type": "coverPoster",
+                "url": "/library/metadata/103157/thumb/1748821044"
+              },
+              {
+                "alt": "GGG G.O.A.T. Part 2",
+                "type": "snapshot",
+                "url": "/library/metadata/108300/thumb/1747592116"
+              },
+              {
+                "alt": "GGG G.O.A.T. Part 2",
+                "type": "background",
+                "url": "/library/metadata/103157/art/1748821044"
+              },
+              {
+                "alt": "GGG G.O.A.T. Part 2",
+                "type": "clearLogo",
+                "url": "/library/metadata/103157/clearLogo/1748821044"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "531417",
+              "topRight": "504345",
+              "bottomRight": "5f2725",
+              "bottomLeft": "733032"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://6093833"
+              }
+            ],
+            "Role": [
+              {
+                "id": 267515,
+                "filter": "actor=267515",
+                "tag": "Guy Fieri",
+                "tagKey": "5d776d6f96b655001fe48bbb",
+                "role": "Host",
+                "thumb": "https://metadata-static.plex.tv/2/people/25e37fe3b20cefd9d76186cdc0f99b8e.jpg"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108298",
+            "key": "/library/metadata/108298",
+            "parentRatingKey": "98594",
+            "grandparentRatingKey": "97989",
+            "guid": "plex://episode/67c486eb969f848c139f3b11",
+            "parentGuid": "plex://season/668e7e31a3dd2ba9bfbd8b9c",
+            "grandparentGuid": "plex://show/5d9c08482df347001e3aed3c",
+            "grandparentSlug": "chicago-p-d",
+            "type": "episode",
+            "title": "Open Casket",
+            "grandparentKey": "/library/metadata/97989",
+            "parentKey": "/library/metadata/98594",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Chicago P.D.",
+            "parentTitle": "Season 12",
+            "contentRating": "TV-14",
+            "summary": "The showdown with Deputy Chief Reid intensifies when Intelligence narrows in on Otero.",
+            "index": 21,
+            "parentIndex": 12,
+            "audienceRating": 7.3,
+            "year": 2025,
+            "thumb": "/library/metadata/108298/thumb/1748076104",
+            "art": "/library/metadata/97989/art/1748298488",
+            "parentThumb": "/library/metadata/98594/thumb/1736396828",
+            "grandparentThumb": "/library/metadata/97989/thumb/1748298488",
+            "grandparentArt": "/library/metadata/97989/art/1748298488",
+            "grandparentTheme": "/library/metadata/97989/theme/1748298488",
+            "duration": 2532780,
+            "originallyAvailableAt": "2025-05-14",
+            "addedAt": 1747281977,
+            "updatedAt": 1748076104,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130688,
+                "duration": 2532780,
+                "bitrate": 15994,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447724,
+                    "key": "/library/parts/447724/1747301309/file.mkv",
+                    "duration": 2532780,
+                    "file": "/data/Media/Tv Shows/Chicago P.D/Season 12/Chicago P.D. (2014) - S12E21 - Open Casket 1 [WEBDL-1080p][EAC3 5.1][x264]-ETHEL.mkv",
+                    "size": 2593245872,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037194,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7805,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037196,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037195,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7805,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037197,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037198,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Open Casket",
+                "type": "coverPoster",
+                "url": "/library/metadata/97989/thumb/1748298488"
+              },
+              {
+                "alt": "Open Casket",
+                "type": "snapshot",
+                "url": "/library/metadata/108298/thumb/1748076104"
+              },
+              {
+                "alt": "Open Casket",
+                "type": "background",
+                "url": "/library/metadata/97989/art/1748298488"
+              },
+              {
+                "alt": "Open Casket",
+                "type": "clearLogo",
+                "url": "/library/metadata/97989/clearLogo/1748298488"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "46240a",
+              "topRight": "5e311c",
+              "bottomRight": "1d1818",
+              "bottomLeft": "704123"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36460318"
+              },
+              {
+                "id": "tmdb://6108929"
+              },
+              {
+                "id": "tvdb://11058076"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.6,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.3,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 228752,
+                "filter": "director=228752",
+                "tag": "Victor Macias",
+                "tagKey": "5d776826961905001eb90d60"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 227790,
+                "filter": "writer=227790",
+                "tag": "Gavin Harris",
+                "tagKey": "5e163556316a39003ef7e7a6"
+              }
+            ],
+            "Role": [
+              {
+                "id": 27483,
+                "filter": "actor=27483",
+                "tag": "Jason Beghe",
+                "tagKey": "5d7768288718ba001e312181",
+                "role": "Hank Voight",
+                "thumb": "https://metadata-static.plex.tv/iva/person/15260/ee396ed71effe0ef88b7fd49f2d688a8.jpg"
+              },
+              {
+                "id": 28898,
+                "filter": "actor=28898",
+                "tag": "Marina Squerciati",
+                "tagKey": "5d77692696b655001fdcb856",
+                "role": "Kim Burgess",
+                "thumb": "https://metadata-static.plex.tv/8/people/8051a7b1d5aec7f12e57df6f91dd7198.jpg"
+              },
+              {
+                "id": 134723,
+                "filter": "actor=134723",
+                "tag": "Patrick John Flueger",
+                "tagKey": "5d776831999c64001ec2e911",
+                "role": "Adam Ruzek",
+                "thumb": "https://metadata-static.plex.tv/2/people/2e4deedc9d547594030faf285208b5ce.jpg"
+              },
+              {
+                "id": 221568,
+                "filter": "actor=221568",
+                "tag": "LaRoyce Hawkins",
+                "tagKey": "5d777055594b2b001e749179",
+                "role": "Kevin Atwater",
+                "thumb": "https://metadata-static.plex.tv/9/people/9c7d310b67f96d52c8d5eb1a4d6d675c.jpg"
+              },
+              {
+                "id": 222744,
+                "filter": "actor=222744",
+                "tag": "Benjamin Levy Aguilar",
+                "tagKey": "5d776b167a53e9001e719be9",
+                "role": "Officer Dante Torres",
+                "thumb": "https://metadata-static.plex.tv/8/people/8b4720d6e6e0a7f7791de74a05fbce8d.jpg"
+              },
+              {
+                "id": 34751,
+                "filter": "actor=34751",
+                "tag": "Toya Turner",
+                "tagKey": "5d77689debdf2200209c3bd2",
+                "role": "Kiana Cook",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e873713c88d5e69f0be275d57b3d14d.jpg"
+              },
+              {
+                "id": 77868,
+                "filter": "actor=77868",
+                "tag": "Amy Morton",
+                "tagKey": "5d7768324de0ee001fccabaf",
+                "role": "Trudy Platt",
+                "thumb": "https://metadata-static.plex.tv/c/people/c622a6072a56f22ecaf1f74c7d8ce340.jpg"
+              },
+              {
+                "id": 222747,
+                "filter": "actor=222747",
+                "tag": "Sara Bues",
+                "tagKey": "5f400d85bf3e560040b6c415",
+                "role": "ASA Nina Chapman",
+                "thumb": "https://metadata-static.plex.tv/9/people/95af0877b6790ca55d08e52f0ccd9491.jpg"
+              },
+              {
+                "id": 19246,
+                "filter": "actor=19246",
+                "tag": "Shawn Hatosy",
+                "tagKey": "5d7768325af944001f1f91ae",
+                "role": "DC Charlie Reid",
+                "thumb": "https://metadata-static.plex.tv/f/people/f4f978af31e29685e79ff021fed14ac1.jpg"
+              },
+              {
+                "id": 72189,
+                "filter": "actor=72189",
+                "tag": "Juan Javier Cardenas",
+                "tagKey": "5d77706cad5437001f821dcf",
+                "role": "Jesus Otero",
+                "thumb": "https://metadata-static.plex.tv/people/5d77706cad5437001f821dcf.jpg"
+              },
+              {
+                "id": 288094,
+                "filter": "actor=288094",
+                "tag": "Jason Sanchez",
+                "tagKey": "5f3fd8bc86422500427c9caa",
+                "role": "Reinerio 'Rennie' Otero"
+              },
+              {
+                "id": 288095,
+                "filter": "actor=288095",
+                "tag": "Jason Omar Henry",
+                "tagKey": "627f648ff2d628f48e451cb5",
+                "role": "Narcotics Officer Vince Lanahan"
+              },
+              {
+                "id": 202056,
+                "filter": "actor=202056",
+                "tag": "Randy Gonzalez",
+                "tagKey": "5d776b25ad5437001f794fe1",
+                "role": "Silva",
+                "thumb": "https://metadata-static.plex.tv/f/people/fe33bf9924cae81923cd7e8311e84043.jpg"
+              },
+              {
+                "id": 288096,
+                "filter": "actor=288096",
+                "tag": "Jandel Camilo",
+                "tagKey": "5f406f2204a8650040a8b364",
+                "role": "Joey Mazo"
+              },
+              {
+                "id": 77933,
+                "filter": "actor=77933",
+                "tag": "Miguel Lepe Jr.",
+                "tagKey": "60ad20d3c502e8002c00c344",
+                "role": "Priest",
+                "thumb": "https://metadata-static.plex.tv/0/people/06455f2fc17e934060db92ce269a2cd3.jpg"
+              },
+              {
+                "id": 288097,
+                "filter": "actor=288097",
+                "tag": "Brad Ozbolt",
+                "tagKey": "63f0881760c3c5c5d78c040a",
+                "role": "IAD Officer 1"
+              },
+              {
+                "id": 288098,
+                "filter": "actor=288098",
+                "tag": "Letitia Murray",
+                "tagKey": "5eda8aa5924e6100410cb138",
+                "role": "IAD Officer 2"
+              },
+              {
+                "id": 288099,
+                "filter": "actor=288099",
+                "tag": "Emer Gomez",
+                "tagKey": "607712e55a91ba00358f37ae",
+                "role": "Employee"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 228378,
+                "filter": "producer=228378",
+                "tag": "Brian Luce",
+                "tagKey": "5dd874b33fea82001da56439"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108297",
+            "key": "/library/metadata/108297",
+            "parentRatingKey": "99778",
+            "grandparentRatingKey": "97707",
+            "guid": "plex://episode/67f3e8f2325efc7ca5537995",
+            "parentGuid": "plex://season/668e7e67f408245793ead834",
+            "grandparentGuid": "plex://show/5d9c08683c3f87001f34eb20",
+            "grandparentSlug": "chicago-med",
+            "type": "episode",
+            "title": "Baby Mine...",
+            "grandparentKey": "/library/metadata/97707",
+            "parentKey": "/library/metadata/99778",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Chicago Med",
+            "parentTitle": "Season 10",
+            "contentRating": "TV-14",
+            "summary": "Maggie and Frost fight to get a pair of lungs for a young cystic fibrosis patient. Asher learns whether she can become a surrogate. Ripley and Morris treat a tech billionaire's daughter as she battles leukemia.",
+            "index": 21,
+            "parentIndex": 10,
+            "audienceRating": 7.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108297/thumb/1748283522",
+            "art": "/library/metadata/97707/art/1748298488",
+            "parentThumb": "/library/metadata/99778/thumb/1747372778",
+            "grandparentThumb": "/library/metadata/97707/thumb/1748298488",
+            "grandparentArt": "/library/metadata/97707/art/1748298488",
+            "grandparentTheme": "/library/metadata/97707/theme/1748298488",
+            "duration": 2546048,
+            "originallyAvailableAt": "2025-05-14",
+            "addedAt": 1747281048,
+            "updatedAt": 1748283522,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130685,
+                "duration": 2546048,
+                "bitrate": 16028,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447721,
+                    "key": "/library/parts/447721/1747300377/file.mkv",
+                    "duration": 2546048,
+                    "file": "/data/Media/Tv Shows/Chicago Med/Season 10/Chicago Med (2015) - S10E21 - Baby Mine [WEBDL-1080p][EAC3 5.1][x264]-ETHEL.mkv",
+                    "size": 2612353062,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037181,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7822,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037183,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037182,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "bitrate": 7822,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037184,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037185,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Baby Mine...",
+                "type": "coverPoster",
+                "url": "/library/metadata/97707/thumb/1748298488"
+              },
+              {
+                "alt": "Baby Mine...",
+                "type": "snapshot",
+                "url": "/library/metadata/108297/thumb/1748283522"
+              },
+              {
+                "alt": "Baby Mine...",
+                "type": "background",
+                "url": "/library/metadata/97707/art/1748298488"
+              },
+              {
+                "alt": "Baby Mine...",
+                "type": "clearLogo",
+                "url": "/library/metadata/97707/clearLogo/1748298488"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "31272a",
+              "topRight": "5e2723",
+              "bottomRight": "933d4a",
+              "bottomLeft": "5a1b24"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36285336"
+              },
+              {
+                "id": "tmdb://6108932"
+              },
+              {
+                "id": "tvdb://11058074"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.6,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.0,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 59799,
+                "filter": "director=59799",
+                "tag": "Gonzalo Amat",
+                "tagKey": "5d776e9fad5437001f7fb71f",
+                "thumb": "https://metadata-static.plex.tv/e/people/e32304a6d3a7e46f1da933ccbddd0222.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 241332,
+                "filter": "writer=241332",
+                "tag": "Lauren MacKenzie",
+                "tagKey": "5f3fed4552f20000414c2a23"
+              },
+              {
+                "id": 241333,
+                "filter": "writer=241333",
+                "tag": "Andrew Gettens",
+                "tagKey": "5ddc5684ed36f9001d9bdc92"
+              }
+            ],
+            "Role": [
+              {
+                "id": 2875,
+                "filter": "actor=2875",
+                "tag": "Steven Weber",
+                "tagKey": "5d776826eb5d26001f1dd4cc",
+                "role": "Dr. Dean Archer",
+                "thumb": "https://metadata-static.plex.tv/d/people/d2338af5d54aa25f02c60490b0ac45dd.jpg"
+              },
+              {
+                "id": 29393,
+                "filter": "actor=29393",
+                "tag": "Marlyne Barrett",
+                "tagKey": "5d77683261141d001fb14e5f",
+                "role": "Maggie Lockwood",
+                "thumb": "https://metadata-static.plex.tv/f/people/fd0674613b72f986532f19c38cf6eb7e.jpg"
+              },
+              {
+                "id": 20770,
+                "filter": "actor=20770",
+                "tag": "Jessy Schram",
+                "tagKey": "5d77683254c0f0001f3031f2",
+                "role": "Dr. Hannah Asher",
+                "thumb": "https://metadata-static.plex.tv/3/people/3c8b898f0b1c4ee2e74523c7ffc0dc55.jpg"
+              },
+              {
+                "id": 221537,
+                "filter": "actor=221537",
+                "tag": "Luke Mitchell",
+                "tagKey": "5d776926ad5437001f759643",
+                "role": "Dr. Mitchell 'Mitch' Ripley",
+                "thumb": "https://metadata-static.plex.tv/d/people/d51ddddb767333598d1f594f2683a2aa.jpg"
+              },
+              {
+                "id": 26951,
+                "filter": "actor=26951",
+                "tag": "Sarah Ramos",
+                "tagKey": "5d7768d2fb0d55001f51a2bc",
+                "role": "Dr. Caitlin Lenox",
+                "thumb": "https://metadata-static.plex.tv/c/people/c3d6067a52d91c2ce007187788ced676.jpg"
+              },
+              {
+                "id": 102412,
+                "filter": "actor=102412",
+                "tag": "Darren Barnet",
+                "tagKey": "5d77709031d95e001f1a48ef",
+                "role": "Dr. John Frost",
+                "thumb": "https://metadata-static.plex.tv/a/cc68393fae/people/a23a165208d6de9551f2165eb0a68ffe.jpg"
+              },
+              {
+                "id": 221521,
+                "filter": "actor=221521",
+                "tag": "S. Epatha Merkerson",
+                "tagKey": "5d7768258718ba001e3118d6",
+                "role": "Sharon Goodwin",
+                "thumb": "https://metadata-static.plex.tv/7/people/780849f90afd5c444d07cfb9e99d4e38.jpg"
+              },
+              {
+                "id": 53577,
+                "filter": "actor=53577",
+                "tag": "Oliver Platt",
+                "tagKey": "5d776829103a2d001f564eed",
+                "role": "Dr. Daniel Charles",
+                "thumb": "https://metadata-static.plex.tv/4/people/426ed5572b7465239d36b5f53ab00f45.jpg"
+              },
+              {
+                "id": 221571,
+                "filter": "actor=221571",
+                "tag": "Lee Jones",
+                "tagKey": "5d7769877a53e9001e6e8c83",
+                "role": "Dr. Justin Morris",
+                "thumb": "https://metadata-static.plex.tv/6/people/69531068d7eb7e111c8e86ac9771a49a.jpg"
+              },
+              {
+                "id": 221522,
+                "filter": "actor=221522",
+                "tag": "Lorena Diaz",
+                "tagKey": "5d776c4cf617c9002017fe2f",
+                "role": "Nurse Doris",
+                "thumb": "https://metadata-static.plex.tv/d/people/dc8576913ada831c9f8be734248db293.jpg"
+              },
+              {
+                "id": 221529,
+                "filter": "actor=221529",
+                "tag": "Marc Grapey",
+                "tagKey": "5d77682a54f42c001f8c318f",
+                "role": "Peter Kalmick",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a54f42c001f8c318f.jpg"
+              },
+              {
+                "id": 101292,
+                "filter": "actor=101292",
+                "tag": "Hannah Riley",
+                "tagKey": "5d776abdfb0d55001f54f6f2",
+                "role": "Anna Charles",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3aa82b8a7c26e54c36d6e6597cceac0.jpg"
+              },
+              {
+                "id": 221526,
+                "filter": "actor=221526",
+                "tag": "Marie Tredway",
+                "tagKey": "5fb001e1e45a8a002d0811d0",
+                "role": "Nurse Trini",
+                "thumb": "https://image.tmdb.org/t/p/original/joj7I2StGEML36ip2ESC0s9BELC.jpg"
+              },
+              {
+                "id": 222175,
+                "filter": "actor=222175",
+                "tag": "Sia A. Moody",
+                "tagKey": "5d776829151a60001f24b186",
+                "role": "Dr. Ivy Davis",
+                "thumb": "https://metadata-static.plex.tv/people/5d776829151a60001f24b186.jpg"
+              },
+              {
+                "id": 221561,
+                "filter": "actor=221561",
+                "tag": "Ashlei Sharpe Chestnut",
+                "tagKey": "5dd8797b2247ae001d766b0d",
+                "role": "Student Doctor Naomi Howard",
+                "thumb": "https://metadata-static.plex.tv/d/people/d6d2f9f1aa699e4a9eaaa68524ba5274.jpg"
+              },
+              {
+                "id": 241367,
+                "filter": "actor=241367",
+                "tag": "Kelly A. Cooper",
+                "tagKey": "5f3ffda6cc4920003b2d55db",
+                "role": "Nurse Abby"
+              },
+              {
+                "id": 90833,
+                "filter": "actor=90833",
+                "tag": "Logan Miller",
+                "tagKey": "5d77683a2ec6b5001f6bcdab",
+                "role": "Kip Lenox",
+                "thumb": "https://image.tmdb.org/t/p/original/xa62ZRSMFUUk4KS9kkKYZkNDlKi.jpg"
+              },
+              {
+                "id": 50352,
+                "filter": "actor=50352",
+                "tag": "Brendan Hines",
+                "tagKey": "5d77684885719b001f3a74ae",
+                "role": "Dr. Nicholas Hayes",
+                "thumb": "https://metadata-static.plex.tv/6/people/6027144a7cfe4a6934a0efefffe906b9.jpg"
+              },
+              {
+                "id": 41589,
+                "filter": "actor=41589",
+                "tag": "French Stewart",
+                "tagKey": "5d776826eb5d26001f1dd4d6",
+                "role": "Frederick Lambert",
+                "thumb": "https://metadata-static.plex.tv/c/people/c7b834574e61210ed486f6c3f8e7ad52.jpg"
+              },
+              {
+                "id": 31008,
+                "filter": "actor=31008",
+                "tag": "Mekia Cox",
+                "tagKey": "5d77683bf54112001f5be25f",
+                "role": "Robin Charles",
+                "thumb": "https://metadata-static.plex.tv/e/people/e6851fd3f1a9c96557e4e9d31bf7a7a0.jpg"
+              },
+              {
+                "id": 19270,
+                "filter": "actor=19270",
+                "tag": "Sam Trammell",
+                "tagKey": "5d77682685719b001f3a0b02",
+                "role": "Walter Macron",
+                "thumb": "https://metadata-static.plex.tv/2/people/277a335b5a73751cd177f46274b936c5.jpg"
+              },
+              {
+                "id": 51521,
+                "filter": "actor=51521",
+                "tag": "Tonya Glanz",
+                "tagKey": "5d776ae8594b2b001e6c946f",
+                "role": "Kate Macron",
+                "thumb": "https://metadata-static.plex.tv/b/people/bb7a4c9233fc8d4bf66212bdcd115f03.jpg"
+              },
+              {
+                "id": 287242,
+                "filter": "actor=287242",
+                "tag": "Connor Esterson",
+                "tagKey": "5f3fd49fc63b480040d7e328",
+                "role": "Noah Macron",
+                "thumb": "https://metadata-static.plex.tv/a/people/aee875d66f964192c58ba1dd1c9c00bb.jpg"
+              },
+              {
+                "id": 21848,
+                "filter": "actor=21848",
+                "tag": "Brooklyn Shuck",
+                "tagKey": "5d776aa1594b2b001e6c1a68",
+                "role": "Alea Lancer",
+                "thumb": "https://metadata-static.plex.tv/c/people/c103424b9152cb4a329f1a5590a73c36.jpg"
+              },
+              {
+                "id": 287243,
+                "filter": "actor=287243",
+                "tag": "Lillian Fitzmaurice",
+                "tagKey": "682752bb4eaa2ecdb6141335",
+                "role": "Paramedic Olivia"
+              },
+              {
+                "id": 287244,
+                "filter": "actor=287244",
+                "tag": "Lauren Powell",
+                "tagKey": "5e204240065879003f22216e",
+                "role": "Paramedic Evie"
+              },
+              {
+                "id": 24958,
+                "filter": "actor=24958",
+                "tag": "Tim DeKay",
+                "tagKey": "5d776833880197001ec92ffc",
+                "role": "Griffin Lancer",
+                "thumb": "https://metadata-static.plex.tv/c/people/c28c9970405120fe9465401e43810314.jpg"
+              },
+              {
+                "id": 222765,
+                "filter": "actor=222765",
+                "tag": "Marcus Hendricks",
+                "tagKey": "602a8271433b10002cf6a873",
+                "role": "Lancer Security Guard"
+              },
+              {
+                "id": 30813,
+                "filter": "actor=30813",
+                "tag": "Charlotte Alexis White",
+                "tagKey": "5d776bc67a53e9001e72f887",
+                "role": "Nurse Brittany Shields"
+              },
+              {
+                "id": 287245,
+                "filter": "actor=287245",
+                "tag": "Sarah Malfara",
+                "tagKey": "5e624d455dd74b003de87493",
+                "role": "Caroline Wilds",
+                "thumb": "https://metadata-static.plex.tv/a/people/a9db72107f7955fad8f48b84e7490048.jpg"
+              },
+              {
+                "id": 287246,
+                "filter": "actor=287246",
+                "tag": "Shelby Bradley",
+                "tagKey": "5ef15427946f580041b3dd2e",
+                "role": "Dr. Dawn Hammond"
+              },
+              {
+                "id": 287348,
+                "filter": "actor=287348",
+                "tag": "Brian Breau",
+                "tagKey": "5e1656d2d92d86003d371516",
+                "role": "Dr. Anthony Barton"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 241301,
+                "filter": "producer=241301",
+                "tag": "Lauren Glover",
+                "tagKey": "5f3fdad903883a0040acda87",
+                "thumb": "https://metadata-static.plex.tv/7/people/7931c753b2916edb71e463871dae0103.jpg"
+              },
+              {
+                "id": 241302,
+                "filter": "producer=241302",
+                "tag": "David Siegel",
+                "tagKey": "5dcd3778c0a4cd001f680d0c"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108296",
+            "key": "/library/metadata/108296",
+            "parentRatingKey": "98434",
+            "grandparentRatingKey": "98213",
+            "guid": "plex://episode/67f3e53c38177c5173783606",
+            "parentGuid": "plex://season/668e7d8838868365e79390e8",
+            "grandparentGuid": "plex://show/5d9c084208fddd001f29602a",
+            "grandparentSlug": "chicago-fire",
+            "type": "episode",
+            "title": "The Bad Guy",
+            "titleSort": "Bad Guy",
+            "grandparentKey": "/library/metadata/98213",
+            "parentKey": "/library/metadata/98434",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Chicago Fire",
+            "parentTitle": "Season 13",
+            "contentRating": "TV-14",
+            "summary": "Kidd strengthens her bond with Natalie during a road trip. Severide investigates a car fire and uncovers surprising evidence. Violet receives a career opportunity after being featured in a local newspaper.",
+            "index": 21,
+            "parentIndex": 13,
+            "audienceRating": 6.5,
+            "year": 2025,
+            "thumb": "/library/metadata/108296/thumb/1748186901",
+            "art": "/library/metadata/98213/art/1748298489",
+            "parentThumb": "/library/metadata/98434/thumb/1735829503",
+            "grandparentThumb": "/library/metadata/98213/thumb/1748298489",
+            "grandparentArt": "/library/metadata/98213/art/1748298489",
+            "grandparentTheme": "/library/metadata/98213/theme/1748298489",
+            "duration": 2527744,
+            "originallyAvailableAt": "2025-05-14",
+            "addedAt": 1747281047,
+            "updatedAt": 1748186901,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130686,
+                "duration": 2527744,
+                "bitrate": 8185,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447722,
+                    "key": "/library/parts/447722/1747300399/file.mkv",
+                    "duration": 2527744,
+                    "file": "/data/Media/Tv Shows/Chicago Fire/Season 13/Chicago Fire (2012) - S13E21 - The Bad Guy [WEBDL-1080p][EAC3 5.1][x264]-ETHEL.mkv",
+                    "size": 2586059174,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1037186,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 8185,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "closedCaptions": true,
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 3,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1037188,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 384,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1037187,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "eia_608",
+                        "index": 0,
+                        "embeddedInVideo": "1",
+                        "displayTitle": "Unknown (Closed Captions)",
+                        "extendedDisplayTitle": "Unknown (Closed Captions)"
+                      },
+                      {
+                        "id": 1037189,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1037190,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish (Spanish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "The Bad Guy",
+                "type": "coverPoster",
+                "url": "/library/metadata/98213/thumb/1748298489"
+              },
+              {
+                "alt": "The Bad Guy",
+                "type": "snapshot",
+                "url": "/library/metadata/108296/thumb/1748186901"
+              },
+              {
+                "alt": "The Bad Guy",
+                "type": "background",
+                "url": "/library/metadata/98213/art/1748298489"
+              },
+              {
+                "alt": "The Bad Guy",
+                "type": "clearLogo",
+                "url": "/library/metadata/98213/clearLogo/1748298489"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "1e1d47",
+              "topRight": "2f316b",
+              "bottomRight": "1e2955",
+              "bottomLeft": "a4273d"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36460334"
+              },
+              {
+                "id": "tmdb://6108934"
+              },
+              {
+                "id": "tvdb://11058081"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.2,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 6.5,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 49774,
+                "filter": "director=49774",
+                "tag": "Lisa Demaine",
+                "tagKey": "5d776ed29ab544002152c43f",
+                "thumb": "https://metadata-static.plex.tv/c/people/c37b8381c71f2b11e6908ed5aab40612.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 227221,
+                "filter": "writer=227221",
+                "tag": "Victor Teran",
+                "tagKey": "5d7768a447dd6e001f6bcb78"
+              }
+            ],
+            "Role": [
+              {
+                "id": 69425,
+                "filter": "actor=69425",
+                "tag": "Taylor Kinney",
+                "tagKey": "5d77683ef59e580021899b7b",
+                "role": "Kelly Severide",
+                "thumb": "https://metadata-static.plex.tv/5/people/53a4f83976200503ace4c3869074a677.jpg"
+              },
+              {
+                "id": 27026,
+                "filter": "actor=27026",
+                "tag": "David Eigenberg",
+                "tagKey": "5d77682c151a60001f24bf31",
+                "role": "Christopher Herrmann",
+                "thumb": "https://metadata-static.plex.tv/0/people/00ea302f74b411f4174faa2f9797d212.jpg"
+              },
+              {
+                "id": 64107,
+                "filter": "actor=64107",
+                "tag": "Joe Miñoso",
+                "tagKey": "5d776a4951dd69001fe21dbb",
+                "role": "Joe Cruz",
+                "thumb": "https://metadata-static.plex.tv/e/people/e282c958346686e138ab8d4b85399062.jpg"
+              },
+              {
+                "id": 64066,
+                "filter": "actor=64066",
+                "tag": "Christian Stolte",
+                "tagKey": "5d776829151a60001f24b163",
+                "role": "Randy 'Mouch' McHolland",
+                "thumb": "https://metadata-static.plex.tv/8/people/8210a81652440f3b6c4d36fb94d56a84.jpg"
+              },
+              {
+                "id": 63663,
+                "filter": "actor=63663",
+                "tag": "Miranda Rae Mayo",
+                "tagKey": "5d776b3cfb0d55001f561047",
+                "role": "Stella Kidd",
+                "thumb": "https://metadata-static.plex.tv/5/people/5c10b509be8e38ff0497c704fbff01ec.jpg"
+              },
+              {
+                "id": 222084,
+                "filter": "actor=222084",
+                "tag": "Daniel Kyri",
+                "tagKey": "5d776b49fb0d55001f562ae1",
+                "role": "Darren Ritter",
+                "thumb": "https://metadata-static.plex.tv/people/5d776b49fb0d55001f562ae1.jpg"
+              },
+              {
+                "id": 222412,
+                "filter": "actor=222412",
+                "tag": "Hanako Greensmith",
+                "tagKey": "5d7770e5ad5437001f82d5e5",
+                "role": "Violet Mikami",
+                "thumb": "https://metadata-static.plex.tv/people/5d7770e5ad5437001f82d5e5.jpg"
+              },
+              {
+                "id": 89335,
+                "filter": "actor=89335",
+                "tag": "Jocelyn Hudon",
+                "tagKey": "5d776aa996b655001fdf5501",
+                "role": "Paramedic Lyla 'Lizzie' Novak",
+                "thumb": "https://metadata-static.plex.tv/b/people/b413d4d44f1336504961506b33ed5b08.jpg"
+              },
+              {
+                "id": 14627,
+                "filter": "actor=14627",
+                "tag": "Jake Lockett",
+                "tagKey": "5d77697551dd69001fe1743c",
+                "role": "Sam Carver",
+                "thumb": "https://metadata-static.plex.tv/e/people/e618eeaa4522034cd73b7a3a64d0998c.jpg"
+              },
+              {
+                "id": 7061,
+                "filter": "actor=7061",
+                "tag": "Dermot Mulroney",
+                "tagKey": "5d77682a151a60001f24b4f5",
+                "role": "Battalion Chief Dom Pascal",
+                "thumb": "https://metadata-static.plex.tv/a/people/aa6a15fe3e4b07cab008994a1c3f8d31.jpg"
+              },
+              {
+                "id": 37256,
+                "filter": "actor=37256",
+                "tag": "Tim Hopper",
+                "tagKey": "5d776827151a60001f24ab1c",
+                "role": "Captain Tom Van Meter",
+                "thumb": "https://metadata-static.plex.tv/2/people/29581d3b7a489b7487194b51520c537d.jpg"
+              },
+              {
+                "id": 221601,
+                "filter": "actor=221601",
+                "tag": "Anthony Ferraris",
+                "tagKey": "5e1647d3cd0850003b77053a",
+                "role": "Tony"
+              },
+              {
+                "id": 221600,
+                "filter": "actor=221600",
+                "tag": "Randy Flagler",
+                "tagKey": "5d9c0815705e7a001e6d20c0",
+                "role": "Harold Capp",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3b8ccc72002b0b8d813414204e5cba4.jpg"
+              },
+              {
+                "id": 226393,
+                "filter": "actor=226393",
+                "tag": "Michael Bradway",
+                "tagKey": "5f40739303883a0040bddf68",
+                "role": "Jack Damon",
+                "thumb": "https://metadata-static.plex.tv/1/people/11e1ad297574634017029e9368a2dc9b.jpg"
+              },
+              {
+                "id": 112093,
+                "filter": "actor=112093",
+                "tag": "KaDee Strickland",
+                "tagKey": "5d7768274de0ee001fcc8daa",
+                "role": "Monica Pascal",
+                "thumb": "https://metadata-static.plex.tv/8/people/8031fba47e027048ad5f695f52cf66b7.jpg"
+              },
+              {
+                "id": 226425,
+                "filter": "actor=226425",
+                "tag": "Phil Donlon",
+                "tagKey": "5d776a9bad5437001f782f28",
+                "role": "Lt. Stephen Vale",
+                "thumb": "https://metadata-static.plex.tv/6/people/67713fd50268b93f1afed343be537876.jpg"
+              },
+              {
+                "id": 226426,
+                "filter": "actor=226426",
+                "tag": "Steven Strait",
+                "tagKey": "5d776832a091de001f2e77a7",
+                "role": "Flynn Calhoun",
+                "thumb": "https://metadata-static.plex.tv/1/people/1763060337ccc7a9c94373ed9b345fb2.jpg"
+              },
+              {
+                "id": 77949,
+                "filter": "actor=77949",
+                "tag": "Keith Kupferer",
+                "tagKey": "5d7768267e9a3c0020c6aa48",
+                "role": "Captain Robert Bishop",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768267e9a3c0020c6aa48.jpg"
+              },
+              {
+                "id": 221741,
+                "filter": "actor=221741",
+                "tag": "Matthew Collins",
+                "tagKey": "5e164869d92d86003d362ceb",
+                "role": "Robert Franklin",
+                "thumb": "https://metadata-static.plex.tv/people/5e164869d92d86003d362ceb.jpg"
+              },
+              {
+                "id": 270952,
+                "filter": "actor=270952",
+                "tag": "Ava Torres",
+                "tagKey": "5f3fc81352f200004148edf5",
+                "role": "Natalie Evans",
+                "thumb": "https://metadata-static.plex.tv/4/people/44ae720eb858dc0ec2fffccc9454ffb7.jpg"
+              },
+              {
+                "id": 53567,
+                "filter": "actor=53567",
+                "tag": "Philip Anthony-Rodriguez",
+                "tagKey": "5d776888d11dd30020227568",
+                "role": "Chief Nate Hendricks",
+                "thumb": "https://metadata-static.plex.tv/a/people/ad18c9ea2cb7adc54a9f4e4b92c675a1.jpg"
+              },
+              {
+                "id": 19171,
+                "filter": "actor=19171",
+                "tag": "Rya Kihlstedt",
+                "tagKey": "5d776834961905001eb93a7e",
+                "role": "Dr. McClain",
+                "thumb": "https://metadata-static.plex.tv/5/people/5e601f35b091051b0389580a08c95ad8.jpg"
+              },
+              {
+                "id": 222328,
+                "filter": "actor=222328",
+                "tag": "Brenna DiStasio",
+                "tagKey": "5f402a85427eeb0041e9c442",
+                "role": "Jennifer Hendricks"
+              },
+              {
+                "id": 288086,
+                "filter": "actor=288086",
+                "tag": "Joseph Aaron Johnson",
+                "tagKey": "6828b32537da3d230cf8ec0b",
+                "role": "Marty"
+              },
+              {
+                "id": 288087,
+                "filter": "actor=288087",
+                "tag": "Lily Kennedy",
+                "tagKey": "5f4068adcae2c60042f8f007",
+                "role": "Witness"
+              },
+              {
+                "id": 288088,
+                "filter": "actor=288088",
+                "tag": "Tanya Thai McBride",
+                "tagKey": "5d776af5ad5437001f78e0c5",
+                "role": "Nurse",
+                "thumb": "https://metadata-static.plex.tv/1/people/1b969884eeefe6add1a4ee852bb4e5bb.jpg"
+              },
+              {
+                "id": 228355,
+                "filter": "actor=228355",
+                "tag": "Sean Rickert",
+                "tagKey": "609e3012dd0bad002cbb2353",
+                "role": "Quarterback"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 226781,
+                "filter": "producer=226781",
+                "tag": "Steve Chikerotis",
+                "tagKey": "5e163a5f91c2030041215353"
+              },
+              {
+                "id": 227381,
+                "filter": "producer=227381",
+                "tag": "Eric Matsumoto",
+                "tagKey": "605228abdecc17002ccfa54c"
+              },
+              {
+                "id": 227697,
+                "filter": "producer=227697",
+                "tag": "Victor Teran",
+                "tagKey": "5d7768a447dd6e001f6bcb78"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108291",
+            "key": "/library/metadata/108291",
+            "parentRatingKey": "99198",
+            "grandparentRatingKey": "15519",
+            "guid": "plex://episode/67bf32cbd91e0c732bd9d2d7",
+            "parentGuid": "plex://season/6734729488e11dfd70cd63fc",
+            "grandparentGuid": "plex://show/5d9c08ffe264b7001fc4d397",
+            "grandparentSlug": "the-rookie",
+            "type": "episode",
+            "title": "The Good, The Bad & The Oscar",
+            "titleSort": "Good, The Bad & The Oscar",
+            "grandparentKey": "/library/metadata/15519",
+            "parentKey": "/library/metadata/99198",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Rookie",
+            "parentTitle": "Season 7",
+            "contentRating": "TV-14",
+            "summary": "John and Harper work together to catch Oscar. Angela investigates a bank robbery. Lucy and Tim learn to adapt to her new schedule, and Miles' first date takes an unexpected turn.",
+            "index": 18,
+            "parentIndex": 7,
+            "audienceRating": 9.3,
+            "year": 2025,
+            "thumb": "/library/metadata/108291/thumb/1747592111",
+            "art": "/library/metadata/15519/art/1747592136",
+            "parentThumb": "/library/metadata/99198/thumb/1740907710",
+            "grandparentThumb": "/library/metadata/15519/thumb/1747592136",
+            "grandparentArt": "/library/metadata/15519/art/1747592136",
+            "grandparentTheme": "/library/metadata/15519/theme/1747592136",
+            "duration": 2576000,
+            "originallyAvailableAt": "2025-05-13",
+            "addedAt": 1747189449,
+            "updatedAt": 1747592111,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130663,
+                "duration": 2576000,
+                "bitrate": 10094,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447699,
+                    "key": "/library/parts/447699/1747209847/file.mkv",
+                    "duration": 2576000,
+                    "file": "/data/Media/Tv Shows/The Rookie/Season 07/The Rookie (2018) - S07E18 - The Good the Bad and the Oscar [WEBDL-1080p][EAC3 5.1][h264]-Kitsune.mkv",
+                    "size": 3250967426,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1036843,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9454,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1036844,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1036845,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1036846,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "The Good, The Bad & The Oscar",
+                "type": "coverPoster",
+                "url": "/library/metadata/15519/thumb/1747592136"
+              },
+              {
+                "alt": "The Good, The Bad & The Oscar",
+                "type": "snapshot",
+                "url": "/library/metadata/108291/thumb/1747592111"
+              },
+              {
+                "alt": "The Good, The Bad & The Oscar",
+                "type": "background",
+                "url": "/library/metadata/15519/art/1747592136"
+              },
+              {
+                "alt": "The Good, The Bad & The Oscar",
+                "type": "clearLogo",
+                "url": "/library/metadata/15519/clearLogo/1747592136"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "462312",
+              "topRight": "352e2f",
+              "bottomRight": "39180f",
+              "bottomLeft": "1a5ea5"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36331898"
+              },
+              {
+                "id": "tmdb://6134265"
+              },
+              {
+                "id": "tvdb://10985428"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.9,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 9.3,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 80121,
+                "filter": "director=80121",
+                "tag": "Bill Roe",
+                "tagKey": "5ddba91f010dbc00213f6f9c",
+                "thumb": "https://metadata-static.plex.tv/6/people/61a92ab81c032d00b4899a2fa5703be5.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 89488,
+                "filter": "writer=89488",
+                "tag": "Alexi Hawley",
+                "tagKey": "5d77683654c0f0001f303bf1",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683654c0f0001f303bf1.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 15181,
+                "filter": "actor=15181",
+                "tag": "Nathan Fillion",
+                "tagKey": "5d7768286f4521001ea9945c",
+                "role": "John Nolan",
+                "thumb": "https://metadata-static.plex.tv/6/people/65b16aa3405e6dec0c7c96ea4f83872e.jpg"
+              },
+              {
+                "id": 89245,
+                "filter": "actor=89245",
+                "tag": "Melissa O'Neil",
+                "tagKey": "5d7770839ab5440021535ca6",
+                "role": "Lucy Chen",
+                "thumb": "https://metadata-static.plex.tv/e/people/e1f478b3616882ab32134f7931e66257.jpg"
+              },
+              {
+                "id": 49290,
+                "filter": "actor=49290",
+                "tag": "Alyssa Diaz",
+                "tagKey": "5d776838151a60001f24e937",
+                "role": "Angela Lopez",
+                "thumb": "https://metadata-static.plex.tv/1/people/1287186618cdd01a9ce5833ff69cf659.jpg"
+              },
+              {
+                "id": 85363,
+                "filter": "actor=85363",
+                "tag": "Eric Winter",
+                "tagKey": "5d77683b961905001eb95211",
+                "role": "Tim Bradford",
+                "thumb": "https://metadata-static.plex.tv/6/people/608edaae611040ecfe1307726d5b5803.jpg"
+              },
+              {
+                "id": 31008,
+                "filter": "actor=31008",
+                "tag": "Mekia Cox",
+                "tagKey": "5d77683bf54112001f5be25f",
+                "role": "Nyla Harper",
+                "thumb": "https://metadata-static.plex.tv/e/people/e6851fd3f1a9c96557e4e9d31bf7a7a0.jpg"
+              },
+              {
+                "id": 6983,
+                "filter": "actor=6983",
+                "tag": "Richard T. Jones",
+                "tagKey": "5d77682a85719b001f3a1663",
+                "role": "Wade Grey",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682a85719b001f3a1663.jpg"
+              },
+              {
+                "id": 81976,
+                "filter": "actor=81976",
+                "tag": "Shawn Ashmore",
+                "tagKey": "5d7768346f4521001ea9bd38",
+                "role": "Wesley Evers",
+                "thumb": "https://metadata-static.plex.tv/8/people/861699f6ee2e10bf4317d85fc3e05f1b.jpg"
+              },
+              {
+                "id": 7434,
+                "filter": "actor=7434",
+                "tag": "Jenna Dewan",
+                "tagKey": "5d77682a4de0ee001fcc9564",
+                "role": "Bailey Nune",
+                "thumb": "https://metadata-static.plex.tv/7/people/7cb8f1ce821b2c1b0a9605328dd1e017.jpg"
+              },
+              {
+                "id": 31400,
+                "filter": "actor=31400",
+                "tag": "Lisseth Chavez",
+                "tagKey": "5d776cc17a53e9001e74bef7",
+                "role": "Celina Juarez",
+                "thumb": "https://metadata-static.plex.tv/d/people/de910951ce958cef24fc9c47d605893d.jpg"
+              },
+              {
+                "id": 39617,
+                "filter": "actor=39617",
+                "tag": "Felix Solis",
+                "tagKey": "5d77682f151a60001f24c62b",
+                "role": "Special Agent Matthew Garza",
+                "thumb": "https://metadata-static.plex.tv/9/people/9b59be387f27cb3e35958f99256c0f46.jpg"
+              },
+              {
+                "id": 31276,
+                "filter": "actor=31276",
+                "tag": "Bridget Regan",
+                "tagKey": "5d77682e5af944001f1f86e3",
+                "role": "Monica Stevens",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682e5af944001f1f86e3.jpg"
+              },
+              {
+                "id": 7867,
+                "filter": "actor=7867",
+                "tag": "Matthew Glave",
+                "tagKey": "5d776837a091de001f2e848e",
+                "role": "Oscar Hutchinson",
+                "thumb": "https://metadata-static.plex.tv/d/people/daf33433fe1874eef51d86a6c01ca77e.jpg"
+              },
+              {
+                "id": 69786,
+                "filter": "actor=69786",
+                "tag": "Deric Augustine",
+                "tagKey": "5d776a6bfb0d55001f545d3b",
+                "role": "Miles Penn",
+                "thumb": "https://metadata-static.plex.tv/a/cc68393fae/people/a07bb18c723b6f43431e3b1241fd882a.jpg"
+              },
+              {
+                "id": 4534,
+                "filter": "actor=4534",
+                "tag": "Scott Michael Campbell",
+                "tagKey": "5d776825eb5d26001f1dd131",
+                "role": "Julius",
+                "thumb": "https://metadata-static.plex.tv/f/people/ffa00df5ca846d989eef408686b8f276.jpg"
+              },
+              {
+                "id": 83489,
+                "filter": "actor=83489",
+                "tag": "Kelly Frye",
+                "tagKey": "5d77685f6f4521001eaa403b",
+                "role": "Heidi",
+                "thumb": "https://metadata-static.plex.tv/9/people/99a5f091065b0f6778665271c55c207b.jpg"
+              },
+              {
+                "id": 4925,
+                "filter": "actor=4925",
+                "tag": "Mercedes Colon",
+                "tagKey": "5d7768903ab0e7001f5044f8",
+                "role": "Watch Commander",
+                "thumb": "https://metadata-static.plex.tv/7/people/7793327c42ad03e5fc7c4810fa8f7516.jpg"
+              },
+              {
+                "id": 72908,
+                "filter": "actor=72908",
+                "tag": "Ness Bautista",
+                "tagKey": "5d776ddd47dd6e001f6f70c3",
+                "role": "Hall",
+                "thumb": "https://metadata-static.plex.tv/3/people/36cab4dd5c936fc5a36a38e561521a2e.jpg"
+              },
+              {
+                "id": 27413,
+                "filter": "actor=27413",
+                "tag": "Katherine Kamhi",
+                "tagKey": "5d77683beb5d26001f1e210d",
+                "role": "Drone kid's mom",
+                "thumb": "https://image.tmdb.org/t/p/original/lqtNpf8V3enu0nvufC2j3oQ3iUE.jpg"
+              },
+              {
+                "id": 70641,
+                "filter": "actor=70641",
+                "tag": "Stevie Lynn Jones",
+                "tagKey": "5d776bb147dd6e001f6e2099",
+                "role": "Rina Davitt",
+                "thumb": "https://metadata-static.plex.tv/e/people/eabc69ca71f21c9b348297e0fa38e074.jpg"
+              },
+              {
+                "id": 287079,
+                "filter": "actor=287079",
+                "tag": "Avery Bagenstos",
+                "tagKey": "5f4056cbcae2c60042f716ee",
+                "role": "Deputy Moore",
+                "thumb": "https://metadata-static.plex.tv/e/people/ed7200918c644a2e826cebc682d9a612.jpg"
+              },
+              {
+                "id": 287080,
+                "filter": "actor=287080",
+                "tag": "Beckett Hawley",
+                "tagKey": "6825fa9590f83ed7df2947ec",
+                "role": "Drone kid",
+                "thumb": "https://metadata-static.plex.tv/c/people/ced927dff4d9c8a4df5e00c309d300e8.jpg"
+              },
+              {
+                "id": 57769,
+                "filter": "actor=57769",
+                "tag": "Keith Walker",
+                "tagKey": "5d776a60fb0d55001f544532",
+                "role": "Waiter"
+              },
+              {
+                "id": 287081,
+                "filter": "actor=287081",
+                "tag": "Andrew Biernat",
+                "tagKey": "5f40664603883a0040bc7ba3",
+                "role": "Herman",
+                "thumb": "https://metadata-static.plex.tv/a/people/a7a6d6995559d7310730a8b3cfefd3e9.jpg"
+              },
+              {
+                "id": 230680,
+                "filter": "actor=230680",
+                "tag": "Seth Allyn Austin",
+                "tagKey": "5d776a6a96b655001fdee53e",
+                "role": "Ace",
+                "thumb": "https://metadata-static.plex.tv/3/people/3fd80e30ac1797a7927a4978b47f531e.jpg"
+              },
+              {
+                "id": 118233,
+                "filter": "actor=118233",
+                "tag": "Chris Palermo",
+                "tagKey": "5d77682a61141d001fb13b0a",
+                "role": "Don",
+                "thumb": "https://metadata-static.plex.tv/6/people/6e5f3522686fb4ad3600231875b4d468.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 201506,
+                "filter": "producer=201506",
+                "tag": "Marco Black",
+                "tagKey": "5dcd390845de43001e453120"
+              },
+              {
+                "id": 240712,
+                "filter": "producer=240712",
+                "tag": "Natalie Callaghan",
+                "tagKey": "5e1652f0316a39003ef9df53"
+              }
+            ]
+          },
+          {
+            "ratingKey": "103901",
+            "key": "/library/metadata/103901/children",
+            "parentRatingKey": "1471",
+            "guid": "plex://season/6730f2f8e672c8f91cb47fe9",
+            "parentGuid": "plex://show/5d9c09123c3f87001f35b9ca",
+            "parentSlug": "andor",
+            "parentStudio": "Lucasfilm Ltd.",
+            "type": "season",
+            "title": "Season 2",
+            "titleSort": "Season 2",
+            "parentKey": "/library/metadata/1471",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "Andor",
+            "summary": "In season 2, Cassian Andor transforms from soldier to leader to hero on the way to his epic destiny. His story has activated an ever-widening ensemble of allies and enemies. These relationships will intensify as the horizon of galactic war draws near.Everyone will be tested and, as the stakes rise, the betrayals, sacrifices, and conflicting agendas will become profound. Who will live to see their dream realized? Who will realize what that dream cost?",
+            "index": 2,
+            "parentIndex": 1,
+            "year": 2025,
+            "thumb": "/library/metadata/103901/thumb/1747332618",
+            "art": "/library/metadata/1471/art/1747592134",
+            "parentThumb": "/library/metadata/1471/thumb/1747592134",
+            "parentTheme": "/library/metadata/1471/theme/1747592134",
+            "leafCount": 12,
+            "viewedLeafCount": 0,
+            "addedAt": 1747186775,
+            "updatedAt": 1747332618,
+            "Image": [
+              {
+                "alt": "Season 2",
+                "type": "coverPoster",
+                "url": "/library/metadata/103901/thumb/1747332618"
+              },
+              {
+                "alt": "Season 2",
+                "type": "background",
+                "url": "/library/metadata/1471/art/1747592134"
+              },
+              {
+                "alt": "Season 2",
+                "type": "clearLogo",
+                "url": "/library/metadata/1471/clearLogo/1747592134"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "13304a",
+              "topRight": "274073",
+              "bottomRight": "592e10",
+              "bottomLeft": "411e0c"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://427323"
+              },
+              {
+                "id": "tvdb://2155011"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108192",
+            "key": "/library/metadata/108192/children",
+            "guid": "plex://show/5d9c090e705e7a001e6e95f9",
+            "slug": "the-great-north",
+            "studio": "Bento Box Entertainment",
+            "type": "show",
+            "title": "The Great North",
+            "titleSort": "Great North",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-14",
+            "summary": "Follow the Alaskan adventures of the Tobin family as a single dad does his best to keep his weird bunch of kids close, especially as the artistic dreams of his only daughter lead her away from the family fishing boat and into the glamorous world of the local mall.",
+            "index": 1,
+            "audienceRating": 6.9,
+            "year": 2021,
+            "tagline": "It's great up here.",
+            "thumb": "/library/metadata/108192/thumb/1748821045",
+            "art": "/library/metadata/108192/art/1748821045",
+            "theme": "/library/metadata/108192/theme/1748821045",
+            "duration": 1380000,
+            "originallyAvailableAt": "2021-01-03",
+            "leafCount": 83,
+            "viewedLeafCount": 0,
+            "childCount": 5,
+            "addedAt": 1747179841,
+            "updatedAt": 1748821045,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "primaryExtraKey": "/library/metadata/108209",
+            "Image": [
+              {
+                "alt": "The Great North",
+                "type": "coverPoster",
+                "url": "/library/metadata/108192/thumb/1748821045"
+              },
+              {
+                "alt": "The Great North",
+                "type": "background",
+                "url": "/library/metadata/108192/art/1748821045"
+              },
+              {
+                "alt": "The Great North",
+                "type": "clearLogo",
+                "url": "/library/metadata/108192/clearLogo/1748821045"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "032967",
+              "topRight": "973f13",
+              "bottomRight": "96320d",
+              "bottomLeft": "226877"
+            },
+            "Genre": [
+              {
+                "id": 1402,
+                "filter": "genre=1402",
+                "tag": "Animation"
+              },
+              {
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
+              }
+            ],
+            "Country": [
+              {
+                "id": 128,
+                "filter": "country=128",
+                "tag": "United States of America"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "imdb://tt9140632"
+              },
+              {
+                "id": "tmdb://93221"
+              },
+              {
+                "id": "tvdb://353887"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 6.9,
+                "type": "audience"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 8.6,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 6.9,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 3603,
+                "filter": "actor=3603",
+                "tag": "Nick Offerman",
+                "tagKey": "5d7768272ec6b5001f6ba430",
+                "role": "Beef Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/50cc00d2fadb7e3654c8897c68c9fa04.jpg"
+              },
+              {
+                "id": 14439,
+                "filter": "actor=14439",
+                "tag": "Jenny Slate",
+                "tagKey": "5d776896431c830024c100cd",
+                "role": "Judy Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/333646e1d2e58d829ad21dfd9c1364f5.jpg"
+              },
+              {
+                "id": 25261,
+                "filter": "actor=25261",
+                "tag": "Will Forte",
+                "tagKey": "5d7768322ec6b5001f6bb737",
+                "role": "Wolf Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/400f25053044ae906567fe3644d16b44.jpg"
+              },
+              {
+                "id": 5671,
+                "filter": "actor=5671",
+                "tag": "Aparna Nancherla",
+                "tagKey": "5d776c4396b655001fe2b61f",
+                "role": "Moon Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/45fc6ce249bf70d3d69d63bd541cb8c5.jpg"
+              },
+              {
+                "id": 14385,
+                "filter": "actor=14385",
+                "tag": "Paul Rust",
+                "tagKey": "5d77683f880197001ec95a12",
+                "role": "Ham Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/88158aeb6c5f7bf345a76e6b264f1b02.jpg"
+              },
+              {
+                "id": 286168,
+                "filter": "actor=286168",
+                "tag": "Dulcé Sloan",
+                "tagKey": "5f0086917638690041f6a5c1",
+                "role": "Honeybee Shaw (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/8ba2cc45016c8e52fa775d4c566eefee.jpg"
+              },
+              {
+                "id": 43471,
+                "filter": "actor=43471",
+                "tag": "Megan Mullally",
+                "tagKey": "5d776830103a2d001f566744",
+                "role": "Alyson Lefebvrere (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2822d1c7583d9b08a80d62bd2cf9bb4f.jpg"
+              },
+              {
+                "id": 4110,
+                "filter": "actor=4110",
+                "tag": "David Herman",
+                "tagKey": "5d77682a961905001eb91e4a",
+                "role": "Santiago Carpaccio (voice)"
+              },
+              {
+                "id": 864,
+                "filter": "actor=864",
+                "tag": "Brooke Dillman",
+                "tagKey": "5d7768327228e5001f1de160",
+                "role": "Zoya (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/dca899b1f1dff8f41868d5ef83110ccb.jpg"
+              },
+              {
+                "id": 6098,
+                "filter": "actor=6098",
+                "tag": "Andy Daly",
+                "tagKey": "5d776832151a60001f24d33d",
+                "role": "Cheesecake (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a9fe2b57d31485a119aa7cf9a6ba888f.jpg"
+              },
+              {
+                "id": 24940,
+                "filter": "actor=24940",
+                "tag": "Ron Funches",
+                "tagKey": "5d7769a17a53e9001e6ebafa",
+                "role": "Jerry Shaw (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f0d6e7413b9c894bfd20a02eff5be6ca.jpg"
+              },
+              {
+                "id": 286169,
+                "filter": "actor=286169",
+                "tag": "Alanis Morissette",
+                "tagKey": "5d77682aeb5d26001f1de529",
+                "role": "Alanis Morissette (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/838b72b834e0d926dbb02bd205ea43e2.jpg"
+              },
+              {
+                "id": 6240,
+                "filter": "actor=6240",
+                "tag": "Martha Kelly",
+                "tagKey": "5d776b5f7a53e9001e723974",
+                "role": "Bethany (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776b5f7a53e9001e723974.jpg"
+              },
+              {
+                "id": 66886,
+                "filter": "actor=66886",
+                "tag": "John Early",
+                "tagKey": "5d776a9c594b2b001e6c0e80",
+                "role": "Henry Tuntley (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/bd5cd2600f87175828be32bbd34e4469.jpg"
+              },
+              {
+                "id": 94563,
+                "filter": "actor=94563",
+                "tag": "Charlie Kelly",
+                "tagKey": "5f3fe68a537293003d37e9f8",
+                "role": "Drama John (voice)"
+              },
+              {
+                "id": 286170,
+                "filter": "actor=286170",
+                "tag": "Ariel Tweto",
+                "tagKey": "5d776ed97a53e9001e7844f7",
+                "role": "Kima Brewper (voice)"
+              },
+              {
+                "id": 68423,
+                "filter": "actor=68423",
+                "tag": "Judith Shelton",
+                "tagKey": "5d77698cad5437001f76030e",
+                "role": "Londra Pennypacker (voice)"
+              },
+              {
+                "id": 286171,
+                "filter": "actor=286171",
+                "tag": "Aloysius Hootch",
+                "tagKey": "60487e9d5490f3002cb23214",
+                "role": "Delmer (voice)",
+                "thumb": "https://artworks.thetvdb.com/banners/v4/actor/9134565/photo/67f56157c4cff.jpg"
+              },
+              {
+                "id": 181124,
+                "filter": "actor=181124",
+                "tag": "Julio Torres",
+                "tagKey": "5ec423c63b12ac0041fb7e6b",
+                "role": "Crispin Cienfuegos (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/593b49890c0fcfbd3afa1e930a497795.jpg"
+              },
+              {
+                "id": 48205,
+                "filter": "actor=48205",
+                "tag": "Daniele Gaither",
+                "tagKey": "5d77684c6f4521001eaa0640",
+                "role": "Ruth Shaw (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a342e5c9bc9033ac2a14a783dbc14425.jpg"
+              },
+              {
+                "id": 14685,
+                "filter": "actor=14685",
+                "tag": "Paul F. Tompkins",
+                "tagKey": "5d7768253c3c2a001fbcac6e",
+                "role": "Mr. Golovkin (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768253c3c2a001fbcac6e.jpg"
+              },
+              {
+                "id": 6087,
+                "filter": "actor=6087",
+                "tag": "Tim Bagley",
+                "tagKey": "5d7768286f4521001ea993ff",
+                "role": "Principal Gibbons (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f753f22b23dc008ee8a4ccd0e4debc4b.jpg"
+              },
+              {
+                "id": 15608,
+                "filter": "actor=15608",
+                "tag": "Mindy Sterling",
+                "tagKey": "5d7768283c3c2a001fbcb623",
+                "role": "Junkyard Kyle (voice)",
+                "thumb": "https://metadata-static.plex.tv/1/people/160f830083e340b441aa6387c067a24f.jpg"
+              },
+              {
+                "id": 286172,
+                "filter": "actor=286172",
+                "tag": "Ray J. Dewilde",
+                "tagKey": "5f405abdfea1a1003fa5fb86",
+                "role": "Mayor Peppers (voice)"
+              },
+              {
+                "id": 88001,
+                "filter": "actor=88001",
+                "tag": "Wyatt Cenac",
+                "tagKey": "5d77684e961905001eb9860a",
+                "role": "Ted Folly IV (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/fbe81e842602111b52525011a7932aef.jpg"
+              },
+              {
+                "id": 13426,
+                "filter": "actor=13426",
+                "tag": "John Gemberling",
+                "tagKey": "5d77683954f42c001f8c5261",
+                "role": "Russell (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/9a1daa6453c5a9806f12b9502a18c96c.jpg"
+              },
+              {
+                "id": 13993,
+                "filter": "actor=13993",
+                "tag": "Patti Harrison",
+                "tagKey": "5ec422029864f400432848b7",
+                "role": "Debbie (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e2a57cf969c7df0f7f918f5756a191a2.jpg"
+              },
+              {
+                "id": 18104,
+                "filter": "actor=18104",
+                "tag": "Jane Lynch",
+                "tagKey": "5d77682f2ec6b5001f6bb185",
+                "role": "Aunt Dirt (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/5a154f824ece178afe60d9bcb874972a.jpg"
+              },
+              {
+                "id": 22637,
+                "filter": "actor=22637",
+                "tag": "Robin Thede",
+                "tagKey": "5d7769a67a53e9001e6ec440",
+                "role": "Diondra Tundra (voice)",
+                "thumb": "https://metadata-static.plex.tv/7/people/7591bbeaa850f3752bff155292d72540.jpg"
+              },
+              {
+                "id": 285285,
+                "filter": "actor=285285",
+                "tag": "Ziwe",
+                "tagKey": "5f40645b02101b0040fd43ad",
+                "role": "Amelia (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/4f128658cc30f8c648ba5d54f5c8ee3f.jpg"
+              },
+              {
+                "id": 14299,
+                "filter": "actor=14299",
+                "tag": "Sarah Baker",
+                "tagKey": "5d776836961905001eb9480b",
+                "role": "Chief Edna (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/4357432f20e2dcc154a602ebf3ae94af.jpg"
+              },
+              {
+                "id": 27344,
+                "filter": "actor=27344",
+                "tag": "Kelvin Yu",
+                "tagKey": "5d77683154c0f0001f302ff1",
+                "role": "Steven Huang (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/c228d887a728152dda48a9d3299d438d.jpg"
+              },
+              {
+                "id": 14877,
+                "filter": "actor=14877",
+                "tag": "Gabe Delahaye",
+                "tagKey": "5f40120dcae2c60042ee6413",
+                "role": "Old Jody Jr. (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d3cf1adabe4dd3ee2fffd9c3700f1487.jpg"
+              },
+              {
+                "id": 286173,
+                "filter": "actor=286173",
+                "tag": "Princess Daazhraii Johnson",
+                "tagKey": "5d7768698718ba001e31b420",
+                "role": "Esther (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768698718ba001e31b420.jpg"
+              },
+              {
+                "id": 286174,
+                "filter": "actor=286174",
+                "tag": "Brian Wescott",
+                "tagKey": "5d77683b880197001ec94da6",
+                "role": "Walt (voice)"
+              },
+              {
+                "id": 109994,
+                "filter": "actor=109994",
+                "tag": "Juan Castano",
+                "tagKey": "5d776c6e47dd6e001f6eb16f",
+                "role": "Crispin Cienfuegos (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/410d1ac91c1fc992a7386d21d26d8b38.jpg"
+              },
+              {
+                "id": 286175,
+                "filter": "actor=286175",
+                "tag": "Jenny Yang",
+                "tagKey": "5f40233f5a76a80042d57dd1",
+                "role": "Carissa (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/053982bb239d968306694595fb1e5b29.jpg"
+              },
+              {
+                "id": 286176,
+                "filter": "actor=286176",
+                "tag": "Ruby Nicazio",
+                "tagKey": "634bbc4d4f1b50691c4c397e",
+                "role": "Quinn (voice)"
+              },
+              {
+                "id": 123022,
+                "filter": "actor=123022",
+                "tag": "Reggie Watts",
+                "tagKey": "5d776843961905001eb96c8d",
+                "role": "Quay (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/92edb37fa2d96ef2f9c8629ff73c2bd1.jpg"
+              },
+              {
+                "id": 286177,
+                "filter": "actor=286177",
+                "tag": "Tim Jennings",
+                "tagKey": "5f3fe5a0e4fc61003701bb9b",
+                "role": "Sebastian (voice)"
+              },
+              {
+                "id": 10099,
+                "filter": "actor=10099",
+                "tag": "Mark Proksch",
+                "tagKey": "5d7769d696b655001fddaf5d",
+                "role": "Roy (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a1d32aa74c1ee157a10300a950ea5d8e.jpg"
+              },
+              {
+                "id": 14261,
+                "filter": "actor=14261",
+                "tag": "Nicole Byer",
+                "tagKey": "5d7768c0ebdf2200209c8057",
+                "role": "Coach Kiely (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/ee21bdae1a9e022035d946b305c32c8b.jpg"
+              },
+              {
+                "id": 206733,
+                "filter": "actor=206733",
+                "tag": "Kevin Avery",
+                "tagKey": "5d776af9594b2b001e6cb22f",
+                "role": "Jarvis Dufraine (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e3a1263bb5b0ed66df41ce9fd8119a72.jpg"
+              },
+              {
+                "id": 14242,
+                "filter": "actor=14242",
+                "tag": "Ken Marino",
+                "tagKey": "5d7768285af944001f1f6f20",
+                "role": "Reggie (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/0764a3fde1fb02c5528f10ed63d8f87b.jpg"
+              },
+              {
+                "id": 17642,
+                "filter": "actor=17642",
+                "tag": "Tuc Watkins",
+                "tagKey": "5d7768274de0ee001fcc89d6",
+                "role": "Danny Vroom (voice)",
+                "thumb": "https://metadata-static.plex.tv/7/cc68393fae/people/7d61910b139bd36e8026d9dbc3446da5.jpg"
+              },
+              {
+                "id": 48204,
+                "filter": "actor=48204",
+                "tag": "Drew Droege",
+                "tagKey": "5d77686a6f4521001eaa6047",
+                "role": "Cal (voice)",
+                "thumb": "https://metadata-static.plex.tv/1/people/1975579d92d846ea98ca82d37d2d7f75.jpg"
+              },
+              {
+                "id": 117209,
+                "filter": "actor=117209",
+                "tag": "Edi Patterson",
+                "tagKey": "5d77684161141d001fb16f3e",
+                "role": "Stacy B (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/6cc8ec167a0fa3e73d839a4bf3dbf947.jpg"
+              },
+              {
+                "id": 13861,
+                "filter": "actor=13861",
+                "tag": "Jana Schmieding",
+                "tagKey": "5f324a6e051f110040a4ff55",
+                "role": "Zelda (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/6b61a126d354ac33ee1154080d836241.jpg"
+              },
+              {
+                "id": 48197,
+                "filter": "actor=48197",
+                "tag": "Rob Delaney",
+                "tagKey": "5d776992fb0d55001f529c97",
+                "role": "Brian Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/361e036dbca124268bc9616f26ce86e9.jpg"
+              },
+              {
+                "id": 14233,
+                "filter": "actor=14233",
+                "tag": "Chelsea Peretti",
+                "tagKey": "5d776b17ad5437001f792c75",
+                "role": "Lara Silverblatt (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd8cc5753b4aee938c2e03305bab1b52.jpg"
+              },
+              {
+                "id": 25225,
+                "filter": "actor=25225",
+                "tag": "Jaime Moyer",
+                "tagKey": "5d776856e6d55c0020411128",
+                "role": "Jennifer (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776856e6d55c0020411128.jpg"
+              },
+              {
+                "id": 12495,
+                "filter": "actor=12495",
+                "tag": "Adam Godley",
+                "tagKey": "5d7768243c3c2a001fbca929",
+                "role": "Dick Chateau (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/cc19b5df0607ef6dae7d7b7a4e469ca1.jpg"
+              },
+              {
+                "id": 181118,
+                "filter": "actor=181118",
+                "tag": "Ashley Nicole Black",
+                "tagKey": "5f3ff7b8ce2564003f8a0bb8",
+                "role": "Maja (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e77bb76755b0cb2ed5a76d115e3be878.jpg"
+              },
+              {
+                "id": 286178,
+                "filter": "actor=286178",
+                "tag": "Monique Moreau",
+                "tagKey": "62bc663aa048df317fb4bb78",
+                "role": "Dr. French (voice)"
+              },
+              {
+                "id": 23374,
+                "filter": "actor=23374",
+                "tag": "Phil LaMarr",
+                "tagKey": "5d776827103a2d001f564619",
+                "role": "Louis Shaw (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e37f3a5764a078ff3c3ecbb18b32b5c8.jpg"
+              },
+              {
+                "id": 286179,
+                "filter": "actor=286179",
+                "tag": "Sean Clements",
+                "tagKey": "5e16437d2d4d84003e49cc97",
+                "role": "John Johnson (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/847131bdc003e5bdbaf8cc1f72d2fb23.jpg"
+              },
+              {
+                "id": 267515,
+                "filter": "actor=267515",
+                "tag": "Guy Fieri",
+                "tagKey": "5d776d6f96b655001fe48bbb",
+                "role": "Guy Fieri (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/25e37fe3b20cefd9d76186cdc0f99b8e.jpg"
+              },
+              {
+                "id": 15332,
+                "filter": "actor=15332",
+                "tag": "Eugene Cordero",
+                "tagKey": "5d77686761141d001fb19f3c",
+                "role": "Craig Ptarmigan (voice)",
+                "thumb": "https://metadata-static.plex.tv/7/people/74b288569f667b6b5ce0609b3ee8dad9.jpg"
+              },
+              {
+                "id": 66897,
+                "filter": "actor=66897",
+                "tag": "Michelle Badillo",
+                "tagKey": "5f40473703883a0040b7af32",
+                "role": "(voice)"
+              },
+              {
+                "id": 43949,
+                "filter": "actor=43949",
+                "tag": "Lennon Parham",
+                "tagKey": "5d776846f59e58002189ab57",
+                "role": "Marie (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/cc68393fae/people/951c841a58362f8a8ffe3f27b52d1273.jpg"
+              },
+              {
+                "id": 15621,
+                "filter": "actor=15621",
+                "tag": "Carlos Alazraqui",
+                "tagKey": "5d77683485719b001f3a3663",
+                "role": "Mr. Cienfuegos (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/c45b8e23019b67cade287efb4cd14dda.jpg"
+              },
+              {
+                "id": 13560,
+                "filter": "actor=13560",
+                "tag": "Jo Firestone",
+                "tagKey": "5d7770c8f617c900201a04ca",
+                "role": "Greta Meatweep (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f06f35832e837cd9bbb764a40f27b826.jpg"
+              },
+              {
+                "id": 23672,
+                "filter": "actor=23672",
+                "tag": "Paget Brewster",
+                "tagKey": "5d77683b961905001eb95223",
+                "role": "Ms. Anderson (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e62a1fd8daa22f3b8b31d0b413e723c4.jpg"
+              },
+              {
+                "id": 286180,
+                "filter": "actor=286180",
+                "tag": "Grace Freud",
+                "tagKey": "62bc65f6dedd778a78b41ca9",
+                "role": "Maude (voice)"
+              },
+              {
+                "id": 15454,
+                "filter": "actor=15454",
+                "tag": "J.K. Simmons",
+                "tagKey": "5d7768268718ba001e311bec",
+                "role": "Tusk Johnson (voice)",
+                "thumb": "https://metadata-static.plex.tv/7/people/7ec7f7673ef9ae2dccd4e3a3fd98c34e.jpg"
+              },
+              {
+                "id": 10122,
+                "filter": "actor=10122",
+                "tag": "Mel Rodriguez",
+                "tagKey": "5d776828961905001eb916fe",
+                "role": "Game Warden Burt (voice)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776828961905001eb916fe.jpg"
+              },
+              {
+                "id": 2916,
+                "filter": "actor=2916",
+                "tag": "Keiko Agena",
+                "tagKey": "5d77682d3c3c2a001fbcc7a0",
+                "role": "Butler (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/ad021d17a3fb7e37f0bd6e28a72519e3.jpg"
+              },
+              {
+                "id": 75276,
+                "filter": "actor=75276",
+                "tag": "Mark McKinney",
+                "tagKey": "5f40460cbf3e560040bcce7e",
+                "role": "Morris (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/9dd2769e4656c24e04b23709653bb1a0.jpg"
+              },
+              {
+                "id": 23788,
+                "filter": "actor=23788",
+                "tag": "Missi Pyle",
+                "tagKey": "5d7768243c3c2a001fbca922",
+                "role": "Ms. McNamara (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d8d3930d5a235c86fab2f32be4adb4d8.jpg"
+              },
+              {
+                "id": 286181,
+                "filter": "actor=286181",
+                "tag": "Karen Chee",
+                "tagKey": "5f4072f552f20000415a29f6",
+                "role": "Chrissy (voice)"
+              },
+              {
+                "id": 54268,
+                "filter": "actor=54268",
+                "tag": "Andrea Savage",
+                "tagKey": "5d77683d54f42c001f8c5e66",
+                "role": "Chief Elba (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/9bbcfa1d579512eb62701cfdbbff8964.jpg"
+              },
+              {
+                "id": 42994,
+                "filter": "actor=42994",
+                "tag": "Lindsey Stoddart",
+                "tagKey": "5d776828a091de001f2e64ad",
+                "role": "Danica (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/422efa8de8a6ea6776014aeb99b23120.jpg"
+              },
+              {
+                "id": 286182,
+                "filter": "actor=286182",
+                "tag": "Colin O'Donoghue",
+                "tagKey": "5d77688661141d001fb1c97f",
+                "role": "Dr. Callahan (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f47d58b224c3f67c6d2ec52f804ade59.jpg"
+              },
+              {
+                "id": 104114,
+                "filter": "actor=104114",
+                "tag": "Katie Crown",
+                "tagKey": "5d77689c0ea56a001e2a7d54",
+                "role": "Possessed patsy (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/4b1e06bfca8a599a0a5e9fa3e65a21c4.jpg"
+              },
+              {
+                "id": 18576,
+                "filter": "actor=18576",
+                "tag": "Gary Anthony Williams",
+                "tagKey": "5d7768398718ba001e315adb",
+                "role": "Captain Fisher (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/af466d346286d095456b9fc2640f98c0.jpg"
+              },
+              {
+                "id": 286183,
+                "filter": "actor=286183",
+                "tag": "Qituvituaq Litchard",
+                "tagKey": "5f3fdc0fc63b480040d87532",
+                "role": "Dane (voice)"
+              },
+              {
+                "id": 286184,
+                "filter": "actor=286184",
+                "tag": "David Huntsberger",
+                "tagKey": "5d776bef96b655001fe20a35",
+                "role": "Kurt (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a0debf5ade4d0f195b9997c310e79a1e.jpg"
+              },
+              {
+                "id": 19419,
+                "filter": "actor=19419",
+                "tag": "Brian Gattas",
+                "tagKey": "5d7768358718ba001e31492c",
+                "role": "Little Clown (voice)",
+                "thumb": "https://metadata-static.plex.tv/1/people/114a910e3e3a62d3aa41abe68d59329e.jpg"
+              },
+              {
+                "id": 75425,
+                "filter": "actor=75425",
+                "tag": "Michael Coleman",
+                "tagKey": "5d77685ceb5d26001f1e7c22",
+                "role": "Mr. Tuntley (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1e827e5efcc2da1980d2619857d58fa.jpg"
+              },
+              {
+                "id": 86959,
+                "filter": "actor=86959",
+                "tag": "Murray Bartlett",
+                "tagKey": "5d776867594b2b001e68aeea",
+                "role": "Crocodile Rob (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/caa127cb7caec750c6af6c1578e9fe43.jpg"
+              },
+              {
+                "id": 25265,
+                "filter": "actor=25265",
+                "tag": "Kerri Kenney",
+                "tagKey": "5d77683d61141d001fb16776",
+                "role": "Regina (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/33d2e01d2924448dd870ba2dbbfb9386.jpg"
+              },
+              {
+                "id": 13497,
+                "filter": "actor=13497",
+                "tag": "Connor Ratliff",
+                "tagKey": "5d776ae7fb0d55001f555189",
+                "role": "Looney Louie (voice)",
+                "thumb": "https://metadata-static.plex.tv/1/people/15e2df53086fd67b9e4ea08f25c933ec.jpg"
+              },
+              {
+                "id": 286185,
+                "filter": "actor=286185",
+                "tag": "Kal Bacon",
+                "tagKey": "6481a64fe8dca0fa35ea783c",
+                "role": "Eli (voice)"
+              },
+              {
+                "id": 286186,
+                "filter": "actor=286186",
+                "tag": "Elias Saylor",
+                "tagKey": "6481a64ebaefa9b44059086a",
+                "role": "Laird (voice)"
+              },
+              {
+                "id": 286187,
+                "filter": "actor=286187",
+                "tag": "Jessica Childress",
+                "tagKey": "5f402a6104a8650040a0106b",
+                "role": "Chandace Wisdom (voice)"
+              },
+              {
+                "id": 748,
+                "filter": "actor=748",
+                "tag": "Jon Hamm",
+                "tagKey": "5d77682f54f42c001f8c382b",
+                "role": "Dennis (voice)",
+                "thumb": "https://metadata-static.plex.tv/7/people/78cc678fcd4861dbfa4e52db4a2c8e42.jpg"
+              },
+              {
+                "id": 12279,
+                "filter": "actor=12279",
+                "tag": "Laraine Newman",
+                "tagKey": "5d776827151a60001f24ab0d",
+                "role": "Vera (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2ad6a8d89b817cc4027d5fe766626a07.jpg"
+              },
+              {
+                "id": 21723,
+                "filter": "actor=21723",
+                "tag": "Nat Faxon",
+                "tagKey": "5d776831961905001eb931c2",
+                "role": "Calvin Prescott (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/53ab626d41b9b0c8134f3b75d4d1b877.jpg"
+              },
+              {
+                "id": 27962,
+                "filter": "actor=27962",
+                "tag": "Rose Abdoo",
+                "tagKey": "5d77682d8718ba001e3131aa",
+                "role": "Belva (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d96bba3454d3b50d0a5420b68d938f1f.jpg"
+              },
+              {
+                "id": 6964,
+                "filter": "actor=6964",
+                "tag": "Leslie Jordan",
+                "tagKey": "5d77682e8a7581001f12ca0b",
+                "role": "Thomas Wintersbone (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/019a6623956d8ff6bd8b3899e956a812.jpg"
+              },
+              {
+                "id": 87598,
+                "filter": "actor=87598",
+                "tag": "Shannon Woodward",
+                "tagKey": "5d776835eb5d26001f1e0b14",
+                "role": "Becca Tobin (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/35dc03928816cffd72a73bbe4b680efe.jpg"
+              },
+              {
+                "id": 21537,
+                "filter": "actor=21537",
+                "tag": "Timm Sharp",
+                "tagKey": "5d776831999c64001ec2e95f",
+                "role": "Greg (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/bc2b2a4f502aca4dfd2c8039de535369.jpg"
+              },
+              {
+                "id": 857,
+                "filter": "actor=857",
+                "tag": "Kurt Braunohler",
+                "tagKey": "5d7769d947dd6e001f6cb581",
+                "role": "Hayward (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/cc6a9a695c5c23ec5384056d2c2d6439.jpg"
+              },
+              {
+                "id": 44370,
+                "filter": "actor=44370",
+                "tag": "Rhys Darby",
+                "tagKey": "5d776835961905001eb94141",
+                "role": "Snowflake (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/48df887a31d135ec9e0ba93731ae82f3.jpg"
+              },
+              {
+                "id": 11012,
+                "filter": "actor=11012",
+                "tag": "Holland Taylor",
+                "tagKey": "5d776826999c64001ec2c5d6",
+                "role": "Goldie (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/aa60c5fa955d4cd4d03694b4a277a34b.jpg"
+              },
+              {
+                "id": 48095,
+                "filter": "actor=48095",
+                "tag": "Timothy Olyphant",
+                "tagKey": "5d77682aeb5d26001f1de417",
+                "role": "Wade (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/c8ce27a2cac06603cb12ddb2ee160fb7.jpg"
+              },
+              {
+                "id": 24941,
+                "filter": "actor=24941",
+                "tag": "Margaret Cho",
+                "tagKey": "5d776828151a60001f24ae5d",
+                "role": "Jan (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/8af5bd566d9f55717b8b63926c0f297e.jpg"
+              },
+              {
+                "id": 286188,
+                "filter": "actor=286188",
+                "tag": "Lizzie Molyneux-Logelin",
+                "tagKey": "5e1636252d4d84003e491a6c",
+                "role": "Tooth 4 (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f644baba70e6ba4716ed885d8e884977.jpg"
+              },
+              {
+                "id": 286189,
+                "filter": "actor=286189",
+                "tag": "Karen Kilgariff",
+                "tagKey": "5d776bd07a53e9001e730b7e",
+                "role": "Ronda (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/3bba175ab0b1cd7b139c6f8bcc15df61.jpg"
+              },
+              {
+                "id": 43082,
+                "filter": "actor=43082",
+                "tag": "Krizia Bajos",
+                "tagKey": "5d776ccffb0d55001f5924d8",
+                "role": "Ruthina (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/459d623a2e4cfbd6df73aa23da1700b4.jpg"
+              },
+              {
+                "id": 47213,
+                "filter": "actor=47213",
+                "tag": "Tiffany Smith",
+                "tagKey": "5f401ccf5a76a80042d4cd63",
+                "role": "Dabbie (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/0c9ed36290af9403c21a68ca9ce6e441.jpg"
+              },
+              {
+                "id": 286190,
+                "filter": "actor=286190",
+                "tag": "Chris Garcia",
+                "tagKey": "5ec415e04c5e17003eb8b8e5",
+                "role": "Dan (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/da7fbf76b6de6c6f1a2641ab937a6472.jpg"
+              },
+              {
+                "id": 6491,
+                "filter": "actor=6491",
+                "tag": "Lisa Rinna",
+                "tagKey": "5d776851103a2d001f56d3df",
+                "role": "Lisa Rinna (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e795423f3da755cef9379609bc91275f.jpg"
+              },
+              {
+                "id": 23373,
+                "filter": "actor=23373",
+                "tag": "Keith Ferguson",
+                "tagKey": "5d77683af54112001f5be0fe",
+                "role": "Niles (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e51faccaaa7dd3126500ae1e6b648824.jpg"
+              },
+              {
+                "id": 84535,
+                "filter": "actor=84535",
+                "tag": "Pam Grier",
+                "tagKey": "5d7768255af944001f1f638d",
+                "role": "Neckbone (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a4dcb6b78b718c8d9c407a0c096a35b8.jpg"
+              },
+              {
+                "id": 17691,
+                "filter": "actor=17691",
+                "tag": "Gary Cole",
+                "tagKey": "5d77682a961905001eb91e4b",
+                "role": "Elwin Kreb (voice)",
+                "thumb": "https://metadata-static.plex.tv/5/people/514ed7d32aebd3124b3920ec9196b9d6.jpg"
+              },
+              {
+                "id": 5126,
+                "filter": "actor=5126",
+                "tag": "Karan Soni",
+                "tagKey": "5d77687b23d5a3001f4ecda2",
+                "role": "Gavin (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/08fba059c75dd43dc9c0bd2b69435050.jpg"
+              },
+              {
+                "id": 58099,
+                "filter": "actor=58099",
+                "tag": "Jaboukie Young-White",
+                "tagKey": "5d776c1ffb0d55001f57d868",
+                "role": "Holden (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f5b33f925d6a6d19fede8eef88d6f814.jpg"
+              },
+              {
+                "id": 49240,
+                "filter": "actor=49240",
+                "tag": "Tom Ellis",
+                "tagKey": "5d776855594b2b001e688d15",
+                "role": "Rick Chateau (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/377f13205a93282fd3aefb89e8aaf835.jpg"
+              },
+              {
+                "id": 216965,
+                "filter": "actor=216965",
+                "tag": "Megan Stalter",
+                "tagKey": "5f3fcd965a76a80042ce261f",
+                "role": "Jill (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/248170c49864f12f666c60f1099f8520.jpg"
+              },
+              {
+                "id": 286191,
+                "filter": "actor=286191",
+                "tag": "Rich Rinaldi",
+                "tagKey": "5e16362591c203004121074c",
+                "role": "Italian Crew Member (voice)"
+              },
+              {
+                "id": 114627,
+                "filter": "actor=114627",
+                "tag": "Julia Lea Wolov",
+                "tagKey": "5d776834880197001ec931eb",
+                "role": "Bev (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/b92395b2a6a697f182ef3566aef176b7.jpg"
+              },
+              {
+                "id": 138890,
+                "filter": "actor=138890",
+                "tag": "Dana Goodman",
+                "tagKey": "5d776834880197001ec931ec",
+                "role": "Paula (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/9dce3ea073f420b270b81bf8cde3cb63.jpg"
+              },
+              {
+                "id": 121919,
+                "filter": "actor=121919",
+                "tag": "Kyle Mooney",
+                "tagKey": "5d776aa17a53e9001e70acc8",
+                "role": "Cody (voice)",
+                "thumb": "https://metadata-static.plex.tv/b/people/b2f528ee3f71fa6642be2d5cf2fe8aaf.jpg"
+              },
+              {
+                "id": 14287,
+                "filter": "actor=14287",
+                "tag": "Phil Augusta Jackson",
+                "tagKey": "5d7770afad5437001f828840",
+                "role": "Barry (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/6829ade7de5dca8cefc10f5982932239.jpg"
+              },
+              {
+                "id": 43013,
+                "filter": "actor=43013",
+                "tag": "Andrew Rannells",
+                "tagKey": "5d776891308bca002032d137",
+                "role": "Rocky Ritz (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/c7cd1cfccca777e3ad4bd5748a52d5b6.jpg"
+              },
+              {
+                "id": 130581,
+                "filter": "actor=130581",
+                "tag": "John Roberts",
+                "tagKey": "5d776d82ad5437001f7d7fc6",
+                "role": "Bear (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2a87749d0f777a686ecaa94a4f932cc7.jpg"
+              },
+              {
+                "id": 15048,
+                "filter": "actor=15048",
+                "tag": "Rob Huebel",
+                "tagKey": "5d77683c2e80df001ebdefbf",
+                "role": "Dalton (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/af4c1b034ce64762c8120c156bf12be1.jpg"
+              },
+              {
+                "id": 34898,
+                "filter": "actor=34898",
+                "tag": "Jack McBrayer",
+                "tagKey": "5d776831961905001eb931c5",
+                "role": "Beef's Penis (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/4e61b2797cef3ae422f11732767e9131.jpg"
+              },
+              {
+                "id": 286192,
+                "filter": "actor=286192",
+                "tag": "Ever Mainard",
+                "tagKey": "5d776d8efb0d55001f5a3bcd",
+                "role": "Gwen (voice)",
+                "thumb": "https://metadata-static.plex.tv/f/people/f99e874841a01b4c1b2a034d889d5a3a.jpg"
+              },
+              {
+                "id": 286193,
+                "filter": "actor=286193",
+                "tag": "Erin Xáalnook Tripp",
+                "tagKey": "64269563a15335c01462c9be",
+                "role": "Beth (voice)",
+                "thumb": "https://metadata-static.plex.tv/1/people/1ec823d5bcb13635f4754413e39794bf.jpg"
+              },
+              {
+                "id": 66937,
+                "filter": "actor=66937",
+                "tag": "Joel Kim Booster",
+                "tagKey": "5d776d9f7a53e9001e75e653",
+                "role": "Rayne (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/35ce8991ae810f414d9382b1a1ff084c.jpg"
+              },
+              {
+                "id": 75324,
+                "filter": "actor=75324",
+                "tag": "Tim Baltz",
+                "tagKey": "5d776b5e7a53e9001e72383f",
+                "role": "Graham (voice)",
+                "thumb": "https://metadata-static.plex.tv/9/people/9cc6b1ae8000463ff9581510676e28e8.jpg"
+              },
+              {
+                "id": 14464,
+                "filter": "actor=14464",
+                "tag": "Jon Daly",
+                "tagKey": "5d776835999c64001ec2f501",
+                "role": "Tyler (voice)",
+                "thumb": "https://metadata-static.plex.tv/8/people/865ef4e535241cdff716418f6d7caa9f.jpg"
+              },
+              {
+                "id": 47437,
+                "filter": "actor=47437",
+                "tag": "Cheri Oteri",
+                "tagKey": "5d7768253c3c2a001fbcac1c",
+                "role": "Sherry (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/c22940674595b54be7ccf25918136577.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/The Great North (2021) {tvdb-353887}"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108184",
+            "key": "/library/metadata/108184",
+            "parentRatingKey": "101061",
+            "grandparentRatingKey": "101001",
+            "guid": "plex://episode/67ad23913018a69f4445e9ce",
+            "parentGuid": "plex://season/677e6a5bc634ffdd2e09637d",
+            "grandparentGuid": "plex://show/609ff8297702ff002cf15b20",
+            "grandparentSlug": "below-deck-down-under",
+            "type": "episode",
+            "title": "Smoochies",
+            "grandparentKey": "/library/metadata/101001",
+            "parentKey": "/library/metadata/101061",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Below Deck Down Under",
+            "parentTitle": "Season 3",
+            "contentRating": "TV-14",
+            "summary": "Bri starts to worry about her relationship off the yacht; Alesia gets a sudden \"ick\" from baby talk; Marina puts her walls down, but worries feelings aren't reciprocated; Tzarina and Lara come to a stalemate with neither of them ready to apologize.",
+            "index": 15,
+            "parentIndex": 3,
+            "year": 2025,
+            "thumb": "/library/metadata/108184/thumb/1747592114",
+            "art": "/library/metadata/101001/art/1748538525",
+            "parentThumb": "/library/metadata/101061/thumb/1740254294",
+            "grandparentThumb": "/library/metadata/101001/thumb/1748538525",
+            "grandparentArt": "/library/metadata/101001/art/1748538525",
+            "grandparentTheme": "/library/metadata/101001/theme/1748538525",
+            "duration": 2555296,
+            "originallyAvailableAt": "2025-05-12",
+            "addedAt": 1747113658,
+            "updatedAt": 1747592114,
+            "Media": [
+              {
+                "id": 130542,
+                "duration": 2555296,
+                "bitrate": 9871,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 2,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447578,
+                    "key": "/library/parts/447578/1747113593/file.mkv",
+                    "duration": 2555296,
+                    "file": "/data/Media/Tv Shows/Below Deck Down Under/Season 03/Below Deck Down Under (2022) - S03E15 - Smoochies [WEBDL-1080p][EAC3 2.0][h264]-Kitsune.mkv",
+                    "size": 3153666555,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1035343,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9647,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1035344,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 2,
+                        "bitrate": 224,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "stereo",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 Stereo)",
+                        "extendedDisplayTitle": "English (EAC3 Stereo)"
+                      },
+                      {
+                        "id": 1035345,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1035346,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Smoochies",
+                "type": "coverPoster",
+                "url": "/library/metadata/101001/thumb/1748538525"
+              },
+              {
+                "alt": "Smoochies",
+                "type": "snapshot",
+                "url": "/library/metadata/108184/thumb/1747592114"
+              },
+              {
+                "alt": "Smoochies",
+                "type": "background",
+                "url": "/library/metadata/101001/art/1748538525"
+              },
+              {
+                "alt": "Smoochies",
+                "type": "clearLogo",
+                "url": "/library/metadata/101001/clearLogo/1748538525"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "0f3627",
+              "topRight": "244d34",
+              "bottomRight": "2d6b54",
+              "bottomLeft": "096f49"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://6200107"
+              },
+              {
+                "id": "tvdb://11088415"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108183",
+            "key": "/library/metadata/108183",
+            "parentRatingKey": "103108",
+            "grandparentRatingKey": "14968",
+            "guid": "plex://episode/67adf819d10fdd1250401edb",
+            "parentGuid": "plex://season/6586dfa92a1be8d158d96d5c",
+            "grandparentGuid": "plex://show/5d9c0815e9d5a1001f4d7202",
+            "grandparentSlug": "the-handmaids-tale",
+            "type": "episode",
+            "title": "Exodus",
+            "grandparentKey": "/library/metadata/14968",
+            "parentKey": "/library/metadata/103108",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Handmaid's Tale",
+            "parentTitle": "Season 6",
+            "contentRating": "TV-MA",
+            "summary": "June and Moira execute their dangerous plan. Serena makes a big commitment.",
+            "index": 8,
+            "parentIndex": 6,
+            "audienceRating": 6.0,
+            "year": 2025,
+            "thumb": "/library/metadata/108183/thumb/1748903168",
+            "art": "/library/metadata/14968/art/1748905442",
+            "parentThumb": "/library/metadata/103108/thumb/1748538515",
+            "grandparentThumb": "/library/metadata/14968/thumb/1748905442",
+            "grandparentArt": "/library/metadata/14968/art/1748905442",
+            "grandparentTheme": "/library/metadata/14968/theme/1748905442",
+            "duration": 2887808,
+            "originallyAvailableAt": "2025-05-13",
+            "addedAt": 1747110866,
+            "updatedAt": 1748903168,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130541,
+                "duration": 2887808,
+                "bitrate": 4020,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447577,
+                    "key": "/library/parts/447577/1747110787/file.mkv",
+                    "duration": 2887808,
+                    "file": "/data/Media/Tv Shows/The Handmaid's Tale/Season 06/The Handmaid's Tale (2017) - S06E08 - Exodus [WEBDL-1080p][EAC3 5.1][h264]-SuccessfulCrab.mkv",
+                    "size": 1451658018,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1035339,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 3763,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1035340,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 256,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1035341,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English [SDH]",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English [SDH] (SRT)"
+                      },
+                      {
+                        "id": 1035342,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Spanish [SDH]",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Spanish [SDH] (Spanish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Exodus",
+                "type": "coverPoster",
+                "url": "/library/metadata/14968/thumb/1748905442"
+              },
+              {
+                "alt": "Exodus",
+                "type": "snapshot",
+                "url": "/library/metadata/108183/thumb/1748903168"
+              },
+              {
+                "alt": "Exodus",
+                "type": "background",
+                "url": "/library/metadata/14968/art/1748905442"
+              },
+              {
+                "alt": "Exodus",
+                "type": "clearLogo",
+                "url": "/library/metadata/14968/clearLogo/1748905442"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "3e151a",
+              "topRight": "4d0f1c",
+              "bottomRight": "3d0c18",
+              "bottomLeft": "641928"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt35707172"
+              },
+              {
+                "id": "tmdb://5978370"
+              },
+              {
+                "id": "tvdb://10964391"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.6,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 6.0,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 197251,
+                "filter": "director=197251",
+                "tag": "Daina Reid",
+                "tagKey": "5d77688351dd69001fe0d68e",
+                "thumb": "https://metadata-static.plex.tv/d/people/d61060d548446a98e1dd690b1bf6eb1d.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 197186,
+                "filter": "writer=197186",
+                "tag": "Yahlin Chang",
+                "tagKey": "5d9c086f3c3f87001f34fda1",
+                "thumb": "https://metadata-static.plex.tv/b/people/b1db2f2ac4bb13d3b5d10dbbfe35ab2e.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 27353,
+                "filter": "actor=27353",
+                "tag": "Elisabeth Moss",
+                "tagKey": "5d77682d4de0ee001fcc9e52",
+                "role": "June Osborne / Offred / Ofjoseph",
+                "thumb": "https://metadata-static.plex.tv/d/people/d1d43b4314a903ce160a53617cf1d755.jpg"
+              },
+              {
+                "id": 3469,
+                "filter": "actor=3469",
+                "tag": "Yvonne Strahovski",
+                "tagKey": "5d77683585719b001f3a39e4",
+                "role": "Serena Joy Waterford",
+                "thumb": "https://metadata-static.plex.tv/9/people/9b0ac8ae5d6af304b31c1a63f7f8e71d.jpg"
+              },
+              {
+                "id": 58413,
+                "filter": "actor=58413",
+                "tag": "Samira Wiley",
+                "tagKey": "5d77689a1999bc0020dcaca0",
+                "role": "Moira Strand",
+                "thumb": "https://metadata-static.plex.tv/6/people/65e95b642de7da2e9e1d8f238cdf0823.jpg"
+              },
+              {
+                "id": 86619,
+                "filter": "actor=86619",
+                "tag": "Max Minghella",
+                "tagKey": "5d7768253c3c2a001fbca9a7",
+                "role": "Nick Blaine",
+                "thumb": "https://metadata-static.plex.tv/a/people/aeed7df8ea5b79a8e7b91436ee65df65.jpg"
+              },
+              {
+                "id": 86620,
+                "filter": "actor=86620",
+                "tag": "Amanda Brugel",
+                "tagKey": "5d77684d5af944001f1fe881",
+                "role": "Rita Blue",
+                "thumb": "https://metadata-static.plex.tv/0/people/0e71c2df5787249eb0dbca9ade814cf8.jpg"
+              },
+              {
+                "id": 86668,
+                "filter": "actor=86668",
+                "tag": "Carey Cox",
+                "tagKey": "6300cd0fe4eace1e5729babd",
+                "role": "Rose Blaine",
+                "thumb": "https://metadata-static.plex.tv/a/people/ac57265fc72f5ec17b905249b75636dc.jpg"
+              },
+              {
+                "id": 11090,
+                "filter": "actor=11090",
+                "tag": "Angela Vint",
+                "tagKey": "5d7768348718ba001e31445d",
+                "role": "Leah",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768348718ba001e31445d.jpg"
+              },
+              {
+                "id": 75486,
+                "filter": "actor=75486",
+                "tag": "Jonathan Watton",
+                "tagKey": "5d77682d3c3c2a001fbcc75e",
+                "role": "Matthew Calhoun",
+                "thumb": "https://metadata-static.plex.tv/7/people/7d7e78137b7feb09c81a7ed790434b30.jpg"
+              },
+              {
+                "id": 285349,
+                "filter": "actor=285349",
+                "tag": "Patricia Vanstone",
+                "tagKey": "5d776a4b594b2b001e6b887e",
+                "role": "Helen",
+                "thumb": "https://metadata-static.plex.tv/c/people/c29204549dd235239cbb61d31adcac37.jpg"
+              },
+              {
+                "id": 25227,
+                "filter": "actor=25227",
+                "tag": "Timothy Simons",
+                "tagKey": "5d7769ea594b2b001e6add48",
+                "role": "Commander Bell",
+                "thumb": "https://metadata-static.plex.tv/5/people/5e67a75914d9291adf69ea46d03f9d79.jpg"
+              },
+              {
+                "id": 191917,
+                "filter": "actor=191917",
+                "tag": "Tim Campbell",
+                "tagKey": "5d776974f617c9002015fea2",
+                "role": "Commander Reynolds",
+                "thumb": "https://metadata-static.plex.tv/7/people/78b1d2ca0cc8e8b1f84860d29195a7b9.jpg"
+              },
+              {
+                "id": 13433,
+                "filter": "actor=13433",
+                "tag": "D'Arcy Carden",
+                "tagKey": "5d776a087a53e9001e6f82ae",
+                "role": "Aunt Phoebe",
+                "thumb": "https://metadata-static.plex.tv/c/people/cd6539d1f977165573f505c9f3269e81.jpg"
+              },
+              {
+                "id": 193716,
+                "filter": "actor=193716",
+                "tag": "Vanessa Burns",
+                "tagKey": "5d77685833f255001e8535a2",
+                "role": "Mrs. Calhoun",
+                "thumb": "https://metadata-static.plex.tv/people/5d77685833f255001e8535a2.jpg"
+              },
+              {
+                "id": 285364,
+                "filter": "actor=285364",
+                "tag": "Diana Bentley",
+                "tagKey": "5d776b3f594b2b001e6d433f",
+                "role": "Mrs. Bell",
+                "thumb": "https://metadata-static.plex.tv/c/people/c3dcae8262492e9646260facca5ecd8c.jpg"
+              },
+              {
+                "id": 11051,
+                "filter": "actor=11051",
+                "tag": "Madeline Brewer",
+                "tagKey": "5d776c95ad5437001f7c2842",
+                "role": "Janine Lindo",
+                "thumb": "https://metadata-static.plex.tv/7/people/7b401a66273a60a1c3e161aab3cda68f.jpg"
+              },
+              {
+                "id": 66923,
+                "filter": "actor=66923",
+                "tag": "Ann Dowd",
+                "tagKey": "5d7768266f4521001ea98d43",
+                "role": "Aunt Lydia Clements",
+                "thumb": "https://metadata-static.plex.tv/7/people/76c88306b1506d7d3ab49179c4771e72.jpg"
+              },
+              {
+                "id": 14246,
+                "filter": "actor=14246",
+                "tag": "Bradley Whitford",
+                "tagKey": "5d77682c8718ba001e312a10",
+                "role": "Joseph Lawrence",
+                "thumb": "https://metadata-static.plex.tv/1/people/1aa33d24aa05279480c5480e032c722a.jpg"
+              },
+              {
+                "id": 289752,
+                "filter": "actor=289752",
+                "tag": "Rosali Annikie",
+                "tagKey": "5f406e9a1ae71000410eb50d",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289753,
+                "filter": "actor=289753",
+                "tag": "Pooja Bhandari",
+                "tagKey": "626e96ec95b382ef56a34adc",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289754,
+                "filter": "actor=289754",
+                "tag": "Chloe Coyle",
+                "tagKey": "5d776f2a9ab544002152f3dd",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289755,
+                "filter": "actor=289755",
+                "tag": "Keren Edelist",
+                "tagKey": "65609076e533317df90f8712",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289756,
+                "filter": "actor=289756",
+                "tag": "Maggie May",
+                "tagKey": "5d9c090402391c001f593fe8",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289757,
+                "filter": "actor=289757",
+                "tag": "Rojan Molanian",
+                "tagKey": "5e624c4da57b06003ed535a1",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289758,
+                "filter": "actor=289758",
+                "tag": "Lily-Fay Mowbray",
+                "tagKey": "5d776a6796b655001fdedfc0",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289759,
+                "filter": "actor=289759",
+                "tag": "Ryan Ali",
+                "tagKey": "5e16486061c6140040d7e61d",
+                "role": "Guardian Harry"
+              },
+              {
+                "id": 289760,
+                "filter": "actor=289760",
+                "tag": "Dylan Hawco",
+                "tagKey": "663cbb9fce07204fd6067511",
+                "role": "Guardian Peter"
+              },
+              {
+                "id": 289761,
+                "filter": "actor=289761",
+                "tag": "Annika Ferronato",
+                "tagKey": "65857a6ffeeb856bff25ad10",
+                "role": "Handmaid"
+              },
+              {
+                "id": 27947,
+                "filter": "actor=27947",
+                "tag": "Madison Hayes-Crook",
+                "tagKey": "5f406bc7c63b480040e6edfd",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289762,
+                "filter": "actor=289762",
+                "tag": "Sabrina Jade",
+                "tagKey": "65b75d696ca7273c830fb89c",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289763,
+                "filter": "actor=289763",
+                "tag": "Lisa Malanie Pryce",
+                "tagKey": "682b5479d36daccfb4409d9c",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289764,
+                "filter": "actor=289764",
+                "tag": "Nayo",
+                "tagKey": "5ef5e7cc6da2880042e6950c",
+                "role": "Handmaid"
+              },
+              {
+                "id": 242513,
+                "filter": "actor=242513",
+                "tag": "Shantel Angela Vailloo",
+                "tagKey": "63209672ca2e5616ff4d145c",
+                "role": "Handmaid"
+              },
+              {
+                "id": 289765,
+                "filter": "actor=289765",
+                "tag": "Jazlyn Wong-lee",
+                "tagKey": "60326b4187ef24002d539b48",
+                "role": "Handmaid",
+                "thumb": "https://metadata-static.plex.tv/4/people/4ef95bf3db56dd673a83d3d88247888b.jpg"
+              },
+              {
+                "id": 3556,
+                "filter": "actor=3556",
+                "tag": "Ever Carradine",
+                "tagKey": "5d77682c880197001ec91de1",
+                "role": "Naomi Lawrence",
+                "thumb": "https://metadata-static.plex.tv/6/people/67417b5358a2c7f5092413040e8b584f.jpg"
+              },
+              {
+                "id": 120761,
+                "filter": "actor=120761",
+                "tag": "Josh Charles",
+                "tagKey": "5d7768267e9a3c0020c6aa10",
+                "role": "Gabriel Wharton",
+                "thumb": "https://metadata-static.plex.tv/d/people/d53ff34cde556a858e0cfc2f3a67088d.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 197327,
+                "filter": "producer=197327",
+                "tag": "Nika Castillo",
+                "tagKey": "5f40140102101b0040f362c2"
+              },
+              {
+                "id": 197328,
+                "filter": "producer=197328",
+                "tag": "Michael Stoyanov",
+                "tagKey": "5ec40f4b0d2c2c0040bca5a6"
+              },
+              {
+                "id": 197329,
+                "filter": "producer=197329",
+                "tag": "Élisabeth Williams",
+                "tagKey": "5d77688a308bca002032cb9f"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108159",
+            "key": "/library/metadata/108159/children",
+            "parentRatingKey": "108158",
+            "guid": "plex://season/61dd97c364b2acfab575e1cc",
+            "parentGuid": "plex://show/61dd97c364b2acfab575e1c3",
+            "parentSlug": "scott-pilgrim-takes-off",
+            "parentStudio": "Science SARU",
+            "type": "season",
+            "title": "Season 1",
+            "parentKey": "/library/metadata/108158",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "Scott Pilgrim Takes Off",
+            "summary": "",
+            "index": 1,
+            "parentIndex": 1,
+            "parentYear": 2023,
+            "thumb": "/library/metadata/108159/thumb/1747100930",
+            "art": "/library/metadata/108158/art/1747100930",
+            "parentThumb": "/library/metadata/108158/thumb/1747100930",
+            "parentTheme": "/library/metadata/108158/theme/1747100930",
+            "leafCount": 8,
+            "viewedLeafCount": 0,
+            "addedAt": 1747100929,
+            "updatedAt": 1747100930,
+            "Image": [
+              {
+                "alt": "Season 1",
+                "type": "coverPoster",
+                "url": "/library/metadata/108159/thumb/1747100930"
+              },
+              {
+                "alt": "Season 1",
+                "type": "background",
+                "url": "/library/metadata/108158/art/1747100930"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "051a32",
+              "topRight": "0b305b",
+              "bottomRight": "103c6e",
+              "bottomLeft": "2e5c8d"
+            },
+            "Guid": [
+              {
+                "id": "tmdb://239343"
+              },
+              {
+                "id": "tvdb://2055893"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108110",
+            "key": "/library/metadata/108110/children",
+            "guid": "plex://show/5d9c0817e264b7001fc3bbb1",
+            "slug": "atlanta",
+            "studio": "FX Productions",
+            "type": "show",
+            "title": "Atlanta",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-MA",
+            "summary": "Earn and his cousin, Alfred, try to make their way in the world through Atlanta's rap scene. Along the way they come face-to-face with social and economic issues touching on race, relationships, poverty, status and parenthood.",
+            "index": 1,
+            "audienceRating": 8.0,
+            "year": 2016,
+            "thumb": "/library/metadata/108110/thumb/1747098431",
+            "art": "/library/metadata/108110/art/1747098431",
+            "theme": "/library/metadata/108110/theme/1747098431",
+            "duration": 1800000,
+            "originallyAvailableAt": "2016-09-06",
+            "leafCount": 41,
+            "viewedLeafCount": 0,
+            "childCount": 4,
+            "addedAt": 1747099665,
+            "updatedAt": 1747098431,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "primaryExtraKey": "/library/metadata/108113",
+            "Image": [
+              {
+                "alt": "Atlanta",
+                "type": "coverPoster",
+                "url": "/library/metadata/108110/thumb/1747098431"
+              },
+              {
+                "alt": "Atlanta",
+                "type": "background",
+                "url": "/library/metadata/108110/art/1747098431"
+              },
+              {
+                "alt": "Atlanta",
+                "type": "clearLogo",
+                "url": "/library/metadata/108110/clearLogo/1747098431"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "510807",
+              "topRight": "9e190a",
+              "bottomRight": "700907",
+              "bottomLeft": "73160f"
+            },
+            "Genre": [
+              {
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
+              },
+              {
+                "id": 161,
+                "filter": "genre=161",
+                "tag": "Drama"
+              },
+              {
+                "id": 742,
+                "filter": "genre=742",
+                "tag": "Music"
+              }
+            ],
+            "Country": [
+              {
+                "id": 128,
+                "filter": "country=128",
+                "tag": "United States of America"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "imdb://tt4288182"
+              },
+              {
+                "id": "tmdb://65495"
+              },
+              {
+                "id": "tvdb://313999"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 8.6,
+                "type": "audience"
+              },
+              {
+                "image": "rottentomatoes://image.rating.ripe",
+                "value": 9.8,
+                "type": "critic"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 8.5,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 8.0,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 55888,
+                "filter": "actor=55888",
+                "tag": "Donald Glover",
+                "tagKey": "5d77686d6f4521001eaa6797",
+                "role": "Earnest 'Earn' Marks",
+                "thumb": "https://metadata-static.plex.tv/5/people/50b2d0b715625e2ec16b6a276452821b.jpg"
+              },
+              {
+                "id": 109951,
+                "filter": "actor=109951",
+                "tag": "Brian Tyree Henry",
+                "tagKey": "5d776afa96b655001fdff7a0",
+                "role": "Alfred 'Paper Boi' Miles",
+                "thumb": "https://metadata-static.plex.tv/2/people/284192af3eed363c6291d504eaaba8db.jpg"
+              },
+              {
+                "id": 111921,
+                "filter": "actor=111921",
+                "tag": "LaKeith Stanfield",
+                "tagKey": "5d77698496b655001fdd0ecc",
+                "role": "Darius Epps",
+                "thumb": "https://metadata-static.plex.tv/0/people/053d4bbc3a47c6453a8d1a3af7878cec.jpg"
+              },
+              {
+                "id": 2808,
+                "filter": "actor=2808",
+                "tag": "Zazie Beetz",
+                "tagKey": "5d776ae9594b2b001e6c9682",
+                "role": "Vanessa 'Van' Keefer",
+                "thumb": "https://metadata-static.plex.tv/c/people/c6f194be045ce83ae14b27ad9b535bbb.jpg"
+              },
+              {
+                "id": 197645,
+                "filter": "actor=197645",
+                "tag": "Diane Sellers",
+                "tagKey": "5d7768366f4521001ea9c2f3",
+                "role": "Lorraine",
+                "thumb": "https://metadata-static.plex.tv/2/people/2b91fcb8287bb10cb8cc038950f967bb.jpg"
+              },
+              {
+                "id": 51882,
+                "filter": "actor=51882",
+                "tag": "Rick Holmes",
+                "tagKey": "5d776c87fb0d55001f58a3b7",
+                "role": "Craig Allen",
+                "thumb": "https://metadata-static.plex.tv/f/people/f79662651b7271a8238e3baf7ee868e6.jpg"
+              },
+              {
+                "id": 8569,
+                "filter": "actor=8569",
+                "tag": "Hugh Coles",
+                "tagKey": "5d776efd51dd69001fe51083",
+                "role": "Socks",
+                "thumb": "https://metadata-static.plex.tv/6/people/6539ae59a5a10832edad8f8673b3c41a.jpg"
+              },
+              {
+                "id": 226382,
+                "filter": "actor=226382",
+                "tag": "Adriyan Rae",
+                "tagKey": "5d776d9d594b2b001e70d85b",
+                "role": "Candice",
+                "thumb": "https://metadata-static.plex.tv/3/people/35d113e449b7514b6914572f0d3edc9a.jpg"
+              },
+              {
+                "id": 53400,
+                "filter": "actor=53400",
+                "tag": "Tobias Segal",
+                "tagKey": "5d7768757a53e9001e6cf523",
+                "role": "E",
+                "thumb": "https://metadata-static.plex.tv/e/people/e21f9318b5725e952f2ac100395779d2.jpg"
+              },
+              {
+                "id": 285614,
+                "filter": "actor=285614",
+                "tag": "Joshua Gallup",
+                "tagKey": "604e370c33732c002c9a6541",
+                "role": "Additional Voices",
+                "thumb": "https://metadata-static.plex.tv/3/people/37b3e0506e01053b3e28ac13190bf83d.jpg"
+              },
+              {
+                "id": 22410,
+                "filter": "actor=22410",
+                "tag": "Austin Elle Fisher",
+                "tagKey": "618f73083309884b8c4e5938",
+                "role": "Lottie",
+                "thumb": "https://image.tmdb.org/t/p/original/pRrYsipdZHGl8ofkIg1AEhDbRfG.jpg"
+              },
+              {
+                "id": 285615,
+                "filter": "actor=285615",
+                "tag": "Aaron Tyler",
+                "tagKey": "6323d6077ced2ab196aa51b3",
+                "role": "Event Staff (uncredited)",
+                "thumb": "https://metadata-static.plex.tv/2/people/26e90e194960a51ae9bba1ee206bc965.jpg"
+              },
+              {
+                "id": 101491,
+                "filter": "actor=101491",
+                "tag": "Candace B. Harris",
+                "tagKey": "5d776aad7a53e9001e70c407",
+                "role": "Fast Food Cashier",
+                "thumb": "https://metadata-static.plex.tv/people/5d776aad7a53e9001e70c407.jpg"
+              },
+              {
+                "id": 48481,
+                "filter": "actor=48481",
+                "tag": "Keena Ferguson",
+                "tagKey": "5d7768af9ab54400214ea1a6",
+                "role": "Crystal",
+                "thumb": "https://metadata-static.plex.tv/3/people/3a749860b01b22d1996d6941b75cbaf0.jpg"
+              },
+              {
+                "id": 81600,
+                "filter": "actor=81600",
+                "tag": "Katt Williams",
+                "tagKey": "5d77682ee6d55c002040be41",
+                "role": "Uncle Willy",
+                "thumb": "https://metadata-static.plex.tv/5/people/535d2ff934be631c8a4b876e3e4fcb8e.jpg"
+              },
+              {
+                "id": 285616,
+                "filter": "actor=285616",
+                "tag": "Austin Lowe",
+                "tagKey": "5e164d2ea71f54003dbb497a",
+                "role": "Chris",
+                "thumb": "https://metadata-static.plex.tv/people/5e164d2ea71f54003dbb497a.jpg"
+              },
+              {
+                "id": 46295,
+                "filter": "actor=46295",
+                "tag": "Nadjah Dabney",
+                "tagKey": "5d776a3423d5a3001f501a86",
+                "role": "Driver",
+                "thumb": "https://metadata-static.plex.tv/c/people/cf25d7ea3bc5f1548894fd7baa9f5c4e.jpg"
+              },
+              {
+                "id": 285617,
+                "filter": "actor=285617",
+                "tag": "Grady Port",
+                "tagKey": "5d7770819ab5440021535c11",
+                "role": "Alex",
+                "thumb": "https://metadata-static.plex.tv/people/5d7770819ab5440021535c11.jpg"
+              },
+              {
+                "id": 51489,
+                "filter": "actor=51489",
+                "tag": "Hye Jin Jang",
+                "tagKey": "5d776b37fb0d55001f560535",
+                "role": "Nail Technician",
+                "thumb": "https://metadata-static.plex.tv/people/5d776b37fb0d55001f560535.jpg"
+              },
+              {
+                "id": 60121,
+                "filter": "actor=60121",
+                "tag": "Tiffany Denise Hobbs",
+                "tagKey": "5e164f85a71f54003dbb5940",
+                "role": "Keisha",
+                "thumb": "https://metadata-static.plex.tv/people/5e164f85a71f54003dbb5940.jpg"
+              },
+              {
+                "id": 276493,
+                "filter": "actor=276493",
+                "tag": "Milton Saul",
+                "tagKey": "5d776c9596b655001fe354e8",
+                "role": "Strip Club Patron (uncredited)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776c9596b655001fe354e8.jpg"
+              },
+              {
+                "id": 104978,
+                "filter": "actor=104978",
+                "tag": "Abraham Clinkscales",
+                "tagKey": "5d776c937a53e9001e746c98",
+                "role": "Young Alfred",
+                "thumb": "https://metadata-static.plex.tv/4/people/4951ffda9e0338e0d59e4e377ad4c995.jpg"
+              },
+              {
+                "id": 73901,
+                "filter": "actor=73901",
+                "tag": "Myles Truitt",
+                "tagKey": "5d776c8a594b2b001e6f655c",
+                "role": "Devin",
+                "thumb": "https://metadata-static.plex.tv/f/people/f27b8ad343b3a5a182c44a0b45e32b6c.jpg"
+              },
+              {
+                "id": 285618,
+                "filter": "actor=285618",
+                "tag": "Alkoya Brunson",
+                "tagKey": "5d776b2d594b2b001e6d1d31",
+                "role": "Young Earn",
+                "thumb": "https://metadata-static.plex.tv/9/people/996ba8a0b26549a49f2118653d4182e9.jpg"
+              },
+              {
+                "id": 120561,
+                "filter": "actor=120561",
+                "tag": "Shariff Earp",
+                "tagKey": "5d776c0b96b655001fe242d6",
+                "role": "Teen 3",
+                "thumb": "https://metadata-static.plex.tv/1/people/1bb69cb6b604e47ec1f765bfe679bf35.jpg"
+              },
+              {
+                "id": 60177,
+                "filter": "actor=60177",
+                "tag": "Christian Gabriel Anderson",
+                "tagKey": "5e165a9d27d563003ed6bae3",
+                "role": "Dexter",
+                "thumb": "https://metadata-static.plex.tv/9/people/91d1a3bb76e49f942b5e2daa5f1fe7d9.jpg"
+              },
+              {
+                "id": 48621,
+                "filter": "actor=48621",
+                "tag": "Eric Jepson",
+                "tagKey": "5d776e6dfb0d55001f5c1183",
+                "role": "Greg",
+                "thumb": "https://metadata-static.plex.tv/6/people/6b8c523c5eacf2cb292c1b66c3816cdb.jpg"
+              },
+              {
+                "id": 279480,
+                "filter": "actor=279480",
+                "tag": "Aaron Heffernan",
+                "tagKey": "5d7769f87a53e9001e6f6398",
+                "role": "Demarco",
+                "thumb": "https://metadata-static.plex.tv/5/people/5bf051d1b18c4cd11688edd325f42881.jpg"
+              },
+              {
+                "id": 11130,
+                "filter": "actor=11130",
+                "tag": "Samuel Blenkin",
+                "tagKey": "5e165b3acd0850003b783abe",
+                "role": "Wiley",
+                "thumb": "https://metadata-static.plex.tv/d/people/decca1f9fcfc6191b181f4df6d30f052.jpg"
+              },
+              {
+                "id": 195328,
+                "filter": "actor=195328",
+                "tag": "Sean Gilder",
+                "tagKey": "5d77682d999c64001ec2db8f",
+                "role": "Folk",
+                "thumb": "https://metadata-static.plex.tv/people/5d77682d999c64001ec2db8f.jpg"
+              },
+              {
+                "id": 43266,
+                "filter": "actor=43266",
+                "tag": "Toby Dixon",
+                "tagKey": "5dd87b318f63c5001db90a69",
+                "role": "Cancer Kid",
+                "thumb": "https://metadata-static.plex.tv/f/people/f3bd4efb157fb5218de477d2da3ee1f0.jpg"
+              },
+              {
+                "id": 132498,
+                "filter": "actor=132498",
+                "tag": "Justin Bartha",
+                "tagKey": "5d77682a54f42c001f8c3160",
+                "role": "Marshall Johnson",
+                "thumb": "https://metadata-static.plex.tv/2/people/273b35c4fb52d80c484d494f77952a3e.jpg"
+              },
+              {
+                "id": 6340,
+                "filter": "actor=6340",
+                "tag": "Conphidance",
+                "tagKey": "5d776bb4fb0d55001f570347",
+                "role": "Owner",
+                "thumb": "https://metadata-static.plex.tv/a/people/a5764ee94bae0985cde65c66a24c53a5.jpg"
+              },
+              {
+                "id": 17443,
+                "filter": "actor=17443",
+                "tag": "Liam Neeson",
+                "tagKey": "5d776825880197001ec90392",
+                "role": "Liam Neeson",
+                "thumb": "https://metadata-static.plex.tv/6/people/6f927390d8b7e2502231db6062be2715.jpg"
+              },
+              {
+                "id": 55894,
+                "filter": "actor=55894",
+                "tag": "Alexander Skarsgård",
+                "tagKey": "5d77682c880197001ec91dc1",
+                "role": "Alexander Skarsgård",
+                "thumb": "https://metadata-static.plex.tv/c/people/caed9c69cdfaacc8b9447ea242cad555.jpg"
+              },
+              {
+                "id": 58729,
+                "filter": "actor=58729",
+                "tag": "Rachel Resheff",
+                "tagKey": "5d7768ac374a5b001fecce62",
+                "role": "Kate",
+                "thumb": "https://metadata-static.plex.tv/5/people/544878a1eaa10227dddabc4e6f95d09e.jpg"
+              },
+              {
+                "id": 285619,
+                "filter": "actor=285619",
+                "tag": "Tyriq Withers",
+                "tagKey": "5f3fc5f703883a0040aadcf4",
+                "role": "Aaron",
+                "thumb": "https://metadata-static.plex.tv/c/people/cd2d3a058632e59d3be11d02ae73d210.jpg"
+              },
+              {
+                "id": 285620,
+                "filter": "actor=285620",
+                "tag": "Lorenzo Yearby",
+                "tagKey": "5e24f0065e2e99003eef6c69",
+                "role": "Photographer",
+                "thumb": "https://metadata-static.plex.tv/d/people/dc3475e20008496054428b9992214a5c.jpg"
+              },
+              {
+                "id": 50389,
+                "filter": "actor=50389",
+                "tag": "Alan T. Coleman",
+                "tagKey": "5e16478acd0850003b7702b0",
+                "role": "Prince",
+                "thumb": "https://image.tmdb.org/t/p/original/hI48DUd3WyfbmsaPFztgeg7w5vo.jpg"
+              },
+              {
+                "id": 285621,
+                "filter": "actor=285621",
+                "tag": "Jerome Beazer",
+                "tagKey": "5f3fca1903883a0040ab486b",
+                "role": "Black Customer",
+                "thumb": "https://metadata-static.plex.tv/a/people/a0e5b790255d7580bb9ddaa61bc87665.jpg"
+              },
+              {
+                "id": 60360,
+                "filter": "actor=60360",
+                "tag": "Renell Gibbs",
+                "tagKey": "5d7769ed47dd6e001f6cc6b9",
+                "role": "Dude",
+                "thumb": "https://metadata-static.plex.tv/0/people/04d50bc9128a7ec9efa8f41dbf2095e0.jpg"
+              },
+              {
+                "id": 285622,
+                "filter": "actor=285622",
+                "tag": "Nijah Brenea",
+                "tagKey": "5f280bafbd68d8003fc7fe88",
+                "role": "Black Girl #1",
+                "thumb": "https://metadata-static.plex.tv/0/people/04535a10bbb4fc656acf2f16e3d4a668.jpg"
+              },
+              {
+                "id": 285623,
+                "filter": "actor=285623",
+                "tag": "Teisha Speight",
+                "tagKey": "5d776e167a53e9001e76c7b6",
+                "role": "Elise",
+                "thumb": "https://metadata-static.plex.tv/a/people/a4fdad15975ef036214deff050b254c7.jpg"
+              },
+              {
+                "id": 285624,
+                "filter": "actor=285624",
+                "tag": "Jamie Neumann",
+                "tagKey": "5d776cbf9ab544002151a446",
+                "role": "Gayle",
+                "thumb": "https://metadata-static.plex.tv/8/people/8aab8f5062a6efe3f9984477bc4b8947.jpg"
+              },
+              {
+                "id": 5828,
+                "filter": "actor=5828",
+                "tag": "Christopher Farrar",
+                "tagKey": "5dd879e5f14101001ea3b3e4",
+                "role": "Loquareeous",
+                "thumb": "https://metadata-static.plex.tv/1/people/12b49f05b67ec6d24cc94b24978dfd23.jpg"
+              },
+              {
+                "id": 285625,
+                "filter": "actor=285625",
+                "tag": "Laura Dreyfuss",
+                "tagKey": "5d776f21594b2b001e737b34",
+                "role": "Amber",
+                "thumb": "https://metadata-static.plex.tv/5/people/52c4865703b8331e4dcbc607ccf2bd98.jpg"
+              },
+              {
+                "id": 285626,
+                "filter": "actor=285626",
+                "tag": "Nicole Lockley",
+                "tagKey": "5f4035be5a76a80042d7206e",
+                "role": "Mom",
+                "thumb": "https://metadata-static.plex.tv/d/people/d3c1e31839e4dae1e36f9c55e8f2c8c5.jpg"
+              },
+              {
+                "id": 92984,
+                "filter": "actor=92984",
+                "tag": "Princess Elmore",
+                "tagKey": "5e17be83cd0850003b81906d",
+                "role": "Principal Miller",
+                "thumb": "https://metadata-static.plex.tv/1/people/1a6d631766b828e166cdcd5d8714c172.jpg"
+              },
+              {
+                "id": 92467,
+                "filter": "actor=92467",
+                "tag": "Jenne Kang",
+                "tagKey": "5d77689e1999bc0020dcb47d",
+                "role": "Asian Social Worker",
+                "thumb": "https://metadata-static.plex.tv/a/people/ab0be9981508359e6a972cebaef5836d.jpg"
+              },
+              {
+                "id": 46343,
+                "filter": "actor=46343",
+                "tag": "Lauren Halperin",
+                "tagKey": "5d776d4e594b2b001e706014",
+                "role": "Counselor Grier",
+                "thumb": "https://metadata-static.plex.tv/b/people/bebaa293632830de509188ec7d4e22a8.jpg"
+              },
+              {
+                "id": 123420,
+                "filter": "actor=123420",
+                "tag": "Xosha Roquemore",
+                "tagKey": "5d776850103a2d001f56d257",
+                "role": "Xosha",
+                "thumb": "https://metadata-static.plex.tv/f/people/f13537e754bc80e01a9165c3f5b48e19.jpg"
+              },
+              {
+                "id": 285627,
+                "filter": "actor=285627",
+                "tag": "Ronald Kalter",
+                "tagKey": "5f3fc6ffc63b480040d6c795",
+                "role": "Teen 3",
+                "thumb": "https://metadata-static.plex.tv/0/people/0d98543b062154cf316ff5609b82e6c9.jpg"
+              },
+              {
+                "id": 32074,
+                "filter": "actor=32074",
+                "tag": "Gail Bean",
+                "tagKey": "5d776b49fb0d55001f562ae0",
+                "role": "Nadine",
+                "thumb": "https://metadata-static.plex.tv/b/people/bbb332f8278ecc6c6a9da8945c20d126.jpg"
+              },
+              {
+                "id": 285628,
+                "filter": "actor=285628",
+                "tag": "Kevin Samuels",
+                "tagKey": "5f4040d25a76a80042d89d6e",
+                "role": "Robert S. Lee",
+                "thumb": "https://metadata-static.plex.tv/e/people/ef03b3d4899eea5f8b7c5ffda863cfe4.jpg"
+              },
+              {
+                "id": 285629,
+                "filter": "actor=285629",
+                "tag": "Don Woods",
+                "tagKey": "5d776e09fb0d55001f5b389d",
+                "role": "James"
+              },
+              {
+                "id": 285283,
+                "filter": "actor=285283",
+                "tag": "Jaxon McHan",
+                "tagKey": "5f404a891ae710004109a966",
+                "role": "Chad",
+                "thumb": "https://metadata-static.plex.tv/3/people/36cf5c8c45d829930d57946cc7715815.jpg"
+              },
+              {
+                "id": 47947,
+                "filter": "actor=47947",
+                "tag": "Triston Dye",
+                "tagKey": "5d77708696b655001fe9855e",
+                "role": "Lionel",
+                "thumb": "https://metadata-static.plex.tv/1/people/1e8cbc85f3b97c159ca4b71b9da4dcdd.jpg"
+              },
+              {
+                "id": 285630,
+                "filter": "actor=285630",
+                "tag": "Dawn Cooper",
+                "tagKey": "5f3fbcfc5a76a80042cccceb",
+                "role": "Student"
+              },
+              {
+                "id": 285631,
+                "filter": "actor=285631",
+                "tag": "Lisa Shatterly Boyd",
+                "tagKey": "5f407165fea1a1003fa8395a",
+                "role": "Betsy",
+                "thumb": "https://metadata-static.plex.tv/8/people/8496756df854e08bc24b74d7ddfa2c6e.jpg"
+              },
+              {
+                "id": 285632,
+                "filter": "actor=285632",
+                "tag": "Anthony Daughtery",
+                "tagKey": "5f40567d1ae71000410c6af3",
+                "role": "Jay",
+                "thumb": "https://metadata-static.plex.tv/1/people/1a7bc391fffde8948458546eb2bcc8d8.jpg"
+              },
+              {
+                "id": 285633,
+                "filter": "actor=285633",
+                "tag": "Alex Nobles",
+                "tagKey": "5f3fcdb703883a0040ab9660",
+                "role": "Black Student",
+                "thumb": "https://image.tmdb.org/t/p/original/hUqOiDcQR1l158kM5QuSIQWvdmT.jpg"
+              },
+              {
+                "id": 285634,
+                "filter": "actor=285634",
+                "tag": "Moriah Gaither",
+                "tagKey": "5f405e3ecae2c60042f7d7ee",
+                "role": "Black Girl #2"
+              },
+              {
+                "id": 285635,
+                "filter": "actor=285635",
+                "tag": "Ali Bhamani",
+                "tagKey": "6282076912c5e619a98c7030",
+                "role": "Middle Eastern Singer #1",
+                "thumb": "https://metadata-static.plex.tv/4/people/4c165efeaa4d57ac01728acc4e6ab5e2.jpg"
+              },
+              {
+                "id": 252981,
+                "filter": "actor=252981",
+                "tag": "Justin Hagan",
+                "tagKey": "5d77682a6f4521001ea99bc9",
+                "role": "Miles Warner",
+                "thumb": "https://metadata-static.plex.tv/6/people/61238dff6b9e2ce1941c5fe631ce3860.jpg"
+              },
+              {
+                "id": 69374,
+                "filter": "actor=69374",
+                "tag": "Chet Hanks",
+                "tagKey": "5d776825880197001ec902f6",
+                "role": "Curtis",
+                "thumb": "https://metadata-static.plex.tv/4/people/48ebac23b0178ce9eafd256f82801953.jpg"
+              },
+              {
+                "id": 61907,
+                "filter": "actor=61907",
+                "tag": "Christina Bennett Lind",
+                "tagKey": "5d776d59f617c900201884e4",
+                "role": "Bronwyn",
+                "thumb": "https://metadata-static.plex.tv/people/5d776d59f617c900201884e4.jpg"
+              },
+              {
+                "id": 285636,
+                "filter": "actor=285636",
+                "tag": "Indy Sullivan Groudis",
+                "tagKey": "626cef9d51a849bda8e677c7",
+                "role": "Sebastian"
+              },
+              {
+                "id": 285637,
+                "filter": "actor=285637",
+                "tag": "Khadija Speer",
+                "tagKey": "5fa25fc6c2825d002db32810",
+                "role": "Khadija",
+                "thumb": "https://image.tmdb.org/t/p/original/em9UQu0c7aKpY86avEm55B32PBB.jpg"
+              },
+              {
+                "id": 285638,
+                "filter": "actor=285638",
+                "tag": "Osei Anom",
+                "tagKey": "5f3fc2d102101b0040ec31e6",
+                "role": "Guy 1",
+                "thumb": "https://metadata-static.plex.tv/5/people/52f18382571bf15688c6cda162bbe325.jpg"
+              },
+              {
+                "id": 285639,
+                "filter": "actor=285639",
+                "tag": "Armeen Acy",
+                "tagKey": "5f400918fea1a1003f9cbb31",
+                "role": "Guy 2",
+                "thumb": "https://metadata-static.plex.tv/d/people/dbc5dcf9df626e14bf5eab0822b4028b.jpg"
+              },
+              {
+                "id": 285640,
+                "filter": "actor=285640",
+                "tag": "Sheylon Haywood",
+                "tagKey": "5f3fd30203883a0040ac0f4d",
+                "role": "Older Woman",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e28dfa3e1f9c1b07bcb026daf5cf42d.jpg"
+              },
+              {
+                "id": 30424,
+                "filter": "actor=30424",
+                "tag": "Noel Arthur",
+                "tagKey": "5d776839880197001ec9444c",
+                "role": "Preacher",
+                "thumb": "https://metadata-static.plex.tv/d/people/d75292064bc2013e0ebe66495c5fc96d.jpg"
+              },
+              {
+                "id": 285641,
+                "filter": "actor=285641",
+                "tag": "Alia Raquel",
+                "tagKey": "5f3fca60c63b480040d70d3a",
+                "role": "Princess",
+                "thumb": "https://metadata-static.plex.tv/9/people/936e15b310fa3753360dd42fde7c564b.jpg"
+              },
+              {
+                "id": 285642,
+                "filter": "actor=285642",
+                "tag": "Kamel Goffin",
+                "tagKey": "5d776e1996b655001fe5c97e",
+                "role": "Steven"
+              },
+              {
+                "id": 285643,
+                "filter": "actor=285643",
+                "tag": "Greg Wattkis",
+                "tagKey": "5d7768312ec6b5001f6bb45b",
+                "role": "Cousin 1",
+                "thumb": "https://metadata-static.plex.tv/0/people/0ef6c97f9909c6c6dc25825dd3dde22a.jpg"
+              },
+              {
+                "id": 115335,
+                "filter": "actor=115335",
+                "tag": "Diego Ward",
+                "tagKey": "5d776c9efb0d55001f58d581",
+                "role": "Cousin 2"
+              },
+              {
+                "id": 250113,
+                "filter": "actor=250113",
+                "tag": "Brian Richardson",
+                "tagKey": "5f403e3ba4f07a004214d196",
+                "role": "Devon",
+                "thumb": "https://metadata-static.plex.tv/5/people/54fec6b2b5fcf41b7760775770dfec6f.jpg"
+              },
+              {
+                "id": 91962,
+                "filter": "actor=91962",
+                "tag": "Ashlyn Stallings",
+                "tagKey": "5e16553491c2030041231d45",
+                "role": "White Barista",
+                "thumb": "https://metadata-static.plex.tv/people/5e16553491c2030041231d45.jpg"
+              },
+              {
+                "id": 90794,
+                "filter": "actor=90794",
+                "tag": "Dahlia Legault",
+                "tagKey": "5d776b5496b655001fe0cffd",
+                "role": "Natalie",
+                "thumb": "https://image.tmdb.org/t/p/original/raxgVgscXXpWcKZKKzHHMKzh2zG.jpg"
+              },
+              {
+                "id": 91959,
+                "filter": "actor=91959",
+                "tag": "Scarlett Blum",
+                "tagKey": "5ddba904bbd432001f50728f",
+                "role": "Katie",
+                "thumb": "https://metadata-static.plex.tv/7/people/7036b259fa8e85cfeb5c19f1f16c38bb.jpg"
+              },
+              {
+                "id": 25256,
+                "filter": "actor=25256",
+                "tag": "Randall Taylor",
+                "tagKey": "5d77685285719b001f3a8b5c",
+                "role": "Marshall's Boss",
+                "thumb": "https://metadata-static.plex.tv/people/5d77685285719b001f3a8b5c.jpg"
+              },
+              {
+                "id": 25259,
+                "filter": "actor=25259",
+                "tag": "Megan Hayes",
+                "tagKey": "5d7768bb1999bc0020dcf73f",
+                "role": "Pink-Faced Woman",
+                "thumb": "https://metadata-static.plex.tv/3/people/38bb3fe938b44343d201ca34730cff42.jpg"
+              },
+              {
+                "id": 241173,
+                "filter": "actor=241173",
+                "tag": "Madison Hatfield",
+                "tagKey": "5de03e79bc0e87001e059ab3",
+                "role": "Paula",
+                "thumb": "https://metadata-static.plex.tv/people/5de03e79bc0e87001e059ab3.jpg"
+              },
+              {
+                "id": 285644,
+                "filter": "actor=285644",
+                "tag": "Mary Emily Deal",
+                "tagKey": "5d776eb57a53e9001e77fdac",
+                "role": "Sobbing Woman",
+                "thumb": "https://image.tmdb.org/t/p/original/bgvu8RQdG5FIuZe8Ewh9p67nT0X.jpg"
+              },
+              {
+                "id": 285645,
+                "filter": "actor=285645",
+                "tag": "Gus Allen",
+                "tagKey": "619df3bd57a8e35c3bd0dbeb",
+                "role": "White Man in A Suit",
+                "thumb": "https://metadata-static.plex.tv/0/people/0ab5456251ceeaf35474ff0ab75b1c11.jpg"
+              },
+              {
+                "id": 285646,
+                "filter": "actor=285646",
+                "tag": "Melissa Youngblood",
+                "tagKey": "5ec4142c37cda30040901851",
+                "role": "Sheniqua",
+                "thumb": "https://metadata-static.plex.tv/2/people/21177b800b8d08b3958317013365c2bf.jpg"
+              },
+              {
+                "id": 72658,
+                "filter": "actor=72658",
+                "tag": "DJames Jones",
+                "tagKey": "5d776b8cad5437001f7a3039",
+                "role": "Willy",
+                "thumb": "https://metadata-static.plex.tv/people/5d776b8cad5437001f7a3039.jpg"
+              },
+              {
+                "id": 285647,
+                "filter": "actor=285647",
+                "tag": "Madison Keaton",
+                "tagKey": "62441061cbf6bdef465ec798",
+                "role": "Fatima",
+                "thumb": "https://image.tmdb.org/t/p/original/aSU6HD1ka2NqyMWpAT2TPVyveEP.jpg"
+              },
+              {
+                "id": 285648,
+                "filter": "actor=285648",
+                "tag": "Kaleel Harrison",
+                "tagKey": "5f3fd0a603883a0040abdef4",
+                "role": "Yves",
+                "thumb": "https://metadata-static.plex.tv/7/people/7c050086bcada51e5c723efbca110495.jpg"
+              },
+              {
+                "id": 285649,
+                "filter": "actor=285649",
+                "tag": "Sean Jay",
+                "tagKey": "618638085df7955fbe25683f",
+                "role": "Lanre",
+                "thumb": "https://metadata-static.plex.tv/c/people/cc03d052c98ffb7f1390978f4f74f0e2.jpg"
+              },
+              {
+                "id": 285650,
+                "filter": "actor=285650",
+                "tag": "Timothy Tinker Sr.",
+                "tagKey": "5e17c2b4dd619f003d657237",
+                "role": "Grandpa",
+                "thumb": "https://metadata-static.plex.tv/0/people/06e322aae983715d45db3430c3938a1d.jpg"
+              },
+              {
+                "id": 285651,
+                "filter": "actor=285651",
+                "tag": "Tyrell Munn",
+                "tagKey": "5f3fbb1e03883a0040a9d80e",
+                "role": "Black",
+                "thumb": "https://metadata-static.plex.tv/7/people/74fb8c3b71b421d28b767e36d33f8689.jpg"
+              },
+              {
+                "id": 73945,
+                "filter": "actor=73945",
+                "tag": "Greta Glenn",
+                "tagKey": "5eb519525d5c6a0040e96c71",
+                "role": "Mrs. Granger",
+                "thumb": "https://metadata-static.plex.tv/2/people/2923f1e7834bb23b3f642e0bdbd3738e.jpg"
+              },
+              {
+                "id": 53483,
+                "filter": "actor=53483",
+                "tag": "Perris Drew",
+                "tagKey": "5f40092dc63b480040dc4d4f",
+                "role": "Male Friend",
+                "thumb": "https://metadata-static.plex.tv/7/people/7af8b2ea44ff422f30deef7543272aa2.jpg"
+              },
+              {
+                "id": 285652,
+                "filter": "actor=285652",
+                "tag": "Jillian Batherson",
+                "tagKey": "5d776839880197001ec9445d",
+                "role": "Mrs. Conner",
+                "thumb": "https://metadata-static.plex.tv/c/people/c9a5da5087332abd0ac3797aeb8c7033.jpg"
+              },
+              {
+                "id": 14894,
+                "filter": "actor=14894",
+                "tag": "Ilana Kohanchi",
+                "tagKey": "5d776cb351dd69001fe3e53f",
+                "role": "Customer",
+                "thumb": "https://image.tmdb.org/t/p/original/ubbSmcjHjoigC3V2tgFYmqtoL3S.jpg"
+              },
+              {
+                "id": 262279,
+                "filter": "actor=262279",
+                "tag": "Sean Hankinson",
+                "tagKey": "5d7768f9fb0d55001f51e79d",
+                "role": "Man In Glasses",
+                "thumb": "https://metadata-static.plex.tv/people/5d7768f9fb0d55001f51e79d.jpg"
+              },
+              {
+                "id": 249764,
+                "filter": "actor=249764",
+                "tag": "Marc LeVasseur",
+                "tagKey": "5f4030c7c63b480040dfd4a8",
+                "role": "Police Officer",
+                "thumb": "https://metadata-static.plex.tv/0/people/0774cb4f56fe8183ac5be8273a1946a7.jpg"
+              },
+              {
+                "id": 285653,
+                "filter": "actor=285653",
+                "tag": "Canecia Gordon",
+                "tagKey": "62441062ab118cfe96af1990",
+                "role": "Black Social Worker",
+                "thumb": "https://metadata-static.plex.tv/c/people/ce08afdc48dc81cfe5e59275080f2dff.jpg"
+              },
+              {
+                "id": 80836,
+                "filter": "actor=80836",
+                "tag": "Sullivan Jones",
+                "tagKey": "5d776e5cfb0d55001f5bed02",
+                "role": "Dr. Everette Tillman",
+                "thumb": "https://metadata-static.plex.tv/d/people/d390571af2b8a792f350dbabd7dba16b.jpg"
+              },
+              {
+                "id": 285654,
+                "filter": "actor=285654",
+                "tag": "Myrthe Boersma",
+                "tagKey": "616c2f4e5ec77fba7d88c35c",
+                "role": "Female Security Officer",
+                "thumb": "https://metadata-static.plex.tv/3/people/3848975b5c3a64504198857c6dec1567.jpg"
+              },
+              {
+                "id": 285655,
+                "filter": "actor=285655",
+                "tag": "Tim Olivier Somer",
+                "tagKey": "6787c65f8ebfd6d438dbb3e1",
+                "role": "Male Security Officer",
+                "thumb": "https://metadata-static.plex.tv/4/people/4c3fdbaa5a8c6925ef0de15440720d6c.jpg"
+              },
+              {
+                "id": 285656,
+                "filter": "actor=285656",
+                "tag": "Arthur Veen",
+                "tagKey": "5d776a8296b655001fdf0a44",
+                "role": "Ambroos",
+                "thumb": "https://metadata-static.plex.tv/2/people/2ca7a7e70342cb114ab47ab5bbebb396.jpg"
+              },
+              {
+                "id": 285657,
+                "filter": "actor=285657",
+                "tag": "Matteo Simoni",
+                "tagKey": "5d7768a233f255001e85b754",
+                "role": "Dirk",
+                "thumb": "https://metadata-static.plex.tv/c/people/cc719da303d9eac45455516e60cbd028.jpg"
+              },
+              {
+                "id": 285658,
+                "filter": "actor=285658",
+                "tag": "Jonathan Huisman",
+                "tagKey": "5d776cb123d5a3001f51e4b4",
+                "role": "Dutch Cop",
+                "thumb": "https://metadata-static.plex.tv/people/5d776cb123d5a3001f51e4b4.jpg"
+              },
+              {
+                "id": 285659,
+                "filter": "actor=285659",
+                "tag": "Ruben van der Meer",
+                "tagKey": "5d7768288718ba001e3121b6",
+                "role": "Driver",
+                "thumb": "https://image.tmdb.org/t/p/original/93zSUBMW63ACJhm2TyF7uE3zrmh.jpg"
+              },
+              {
+                "id": 285660,
+                "filter": "actor=285660",
+                "tag": "Anniek Pheifer",
+                "tagKey": "5d7768288718ba001e3121bf",
+                "role": "Feena",
+                "thumb": "https://metadata-static.plex.tv/d/people/d6171b5cccb529383f28e67befca602c.jpg"
+              },
+              {
+                "id": 59923,
+                "filter": "actor=59923",
+                "tag": "Jon Tarcy",
+                "tagKey": "5de03c3b5799e4001fa57c2a",
+                "role": "Bell Boy",
+                "thumb": "https://metadata-static.plex.tv/f/people/f16aede0ced8b0fcb166e0b9485842e2.jpg"
+              },
+              {
+                "id": 285661,
+                "filter": "actor=285661",
+                "tag": "Rachel Coutinho",
+                "tagKey": "5f6a2666eba5d200415da117",
+                "role": "Ida",
+                "thumb": "https://metadata-static.plex.tv/6/people/6e2b5165a18798881b6b985e7f88a05e.jpg"
+              },
+              {
+                "id": 285662,
+                "filter": "actor=285662",
+                "tag": "Elisa van Riessen",
+                "tagKey": "5d7770b181ba41001faf5e63",
+                "role": "Death Doula",
+                "thumb": "https://metadata-static.plex.tv/b/people/b5858a5264294848d37fe521a7ae9fac.jpg"
+              },
+              {
+                "id": 285663,
+                "filter": "actor=285663",
+                "tag": "Philip van Ees",
+                "tagKey": "5fbbde3210339a002da5e047",
+                "role": "Dutch Man",
+                "thumb": "https://metadata-static.plex.tv/5/people/51e32d4bbe21bd49c4ebff2cbd910a77.jpg"
+              },
+              {
+                "id": 285664,
+                "filter": "actor=285664",
+                "tag": "Jessica Temple",
+                "tagKey": "5f3fbacc1ae7100041fc239a",
+                "role": "Mom",
+                "thumb": "https://metadata-static.plex.tv/b/people/bb3d1e00bb26f832e0339ada8afecd6d.jpg"
+              },
+              {
+                "id": 62155,
+                "filter": "actor=62155",
+                "tag": "Patrick Kennedy",
+                "tagKey": "5d77682e8a7581001f12cc36",
+                "role": "Will",
+                "thumb": "https://metadata-static.plex.tv/0/people/087fd5aa135e4c4e74f6ded9a1007e61.jpg"
+              },
+              {
+                "id": 285665,
+                "filter": "actor=285665",
+                "tag": "Natalie Quarry",
+                "tagKey": "6146f0363358af9ae616ff4e",
+                "role": "Worker",
+                "thumb": "https://metadata-static.plex.tv/0/people/083fee5ec8d349adbf8b8a79c3ea39bc.jpg"
+              },
+              {
+                "id": 43247,
+                "filter": "actor=43247",
+                "tag": "Daniel Fathers",
+                "tagKey": "5d77684d2e80df001ebe0f88",
+                "role": "Fernando",
+                "thumb": "https://metadata-static.plex.tv/e/people/e2fa6cb297390859c3b3285d92dec3a2.jpg"
+              },
+              {
+                "id": 129081,
+                "filter": "actor=129081",
+                "tag": "Jasmine Leung",
+                "tagKey": "5f6b0131d45b0f00409432f8",
+                "role": "MK",
+                "thumb": "https://metadata-static.plex.tv/c/people/cf5f89206060aa35f56e865b8f44bc10.jpg"
+              },
+              {
+                "id": 285666,
+                "filter": "actor=285666",
+                "tag": "Heather Jayne",
+                "tagKey": "5f405a5558b26e0042645351",
+                "role": "Dealer",
+                "thumb": "https://metadata-static.plex.tv/f/people/f7922f54077423fdbfa83e956f7d39c3.jpg"
+              },
+              {
+                "id": 196725,
+                "filter": "actor=196725",
+                "tag": "Darrell D'Silva",
+                "tagKey": "5d776892308bca002032d412",
+                "role": "Bruce",
+                "thumb": "https://metadata-static.plex.tv/5/people/53bbc1a6380c49c20bec88c0cb058e80.jpg"
+              },
+              {
+                "id": 285667,
+                "filter": "actor=285667",
+                "tag": "Daniel De Bourg",
+                "tagKey": "6230b03ed8d87886b7826e7b",
+                "role": "Yonathan"
+              },
+              {
+                "id": 285668,
+                "filter": "actor=285668",
+                "tag": "Sheyi Cole",
+                "tagKey": "6325d27e9344c7143aca5410",
+                "role": "TJ",
+                "thumb": "https://metadata-static.plex.tv/d/people/d7e3f706dacdea9d2af45d108683f9e6.jpg"
+              },
+              {
+                "id": 87186,
+                "filter": "actor=87186",
+                "tag": "Celeste Dodwell",
+                "tagKey": "5d776918fb0d55001f5218e3",
+                "role": "Joanne",
+                "thumb": "https://metadata-static.plex.tv/people/5d776918fb0d55001f5218e3.jpg"
+              },
+              {
+                "id": 285669,
+                "filter": "actor=285669",
+                "tag": "Jai Paul",
+                "tagKey": "624aa78d65f1fc362c1710ba",
+                "role": "Jai Paul"
+              },
+              {
+                "id": 7958,
+                "filter": "actor=7958",
+                "tag": "Exie Booker",
+                "tagKey": "5d776a3451dd69001fe20cbe",
+                "role": "Lester",
+                "thumb": "https://metadata-static.plex.tv/f/people/f64fe8accf8c7c41a6f908e847762c73.jpg"
+              },
+              {
+                "id": 115340,
+                "filter": "actor=115340",
+                "tag": "Candi VandiZandi",
+                "tagKey": "5e166beafef2d4003e8c8b9f",
+                "role": "Blonde",
+                "thumb": "https://image.tmdb.org/t/p/original/2Nk56tHKUYsIldkcFpMaqzfMbWc.jpg"
+              },
+              {
+                "id": 285670,
+                "filter": "actor=285670",
+                "tag": "Tyler Rainey",
+                "tagKey": "5f405f4504a8650040a73aaa",
+                "role": "Black Jason"
+              },
+              {
+                "id": 119323,
+                "filter": "actor=119323",
+                "tag": "Joan Reilly",
+                "tagKey": "5d776bfbf617c9002017c62e",
+                "role": "Hotel Employee",
+                "thumb": "https://metadata-static.plex.tv/8/people/8079cbb588bee2e1e03122e9e9ca6de0.jpg"
+              },
+              {
+                "id": 48610,
+                "filter": "actor=48610",
+                "tag": "Jon Levine",
+                "tagKey": "5f4062971ae71000410d9576",
+                "role": "Jewish Lawyer",
+                "thumb": "https://metadata-static.plex.tv/0/people/0668930cd3b28e07f6f0bd835e76d558.jpg"
+              },
+              {
+                "id": 228697,
+                "filter": "actor=228697",
+                "tag": "Regie Cashaw",
+                "tagKey": "5d77707447dd6e001f70a0c9",
+                "role": "Black Lawyer",
+                "thumb": "https://metadata-static.plex.tv/1/people/120114cc9819efd9cd1ef233e6a4d4f7.jpg"
+              },
+              {
+                "id": 285671,
+                "filter": "actor=285671",
+                "tag": "Jarren Mebane",
+                "tagKey": "6024e43c8a8f5b002d61f231",
+                "role": "Black Kid"
+              },
+              {
+                "id": 285672,
+                "filter": "actor=285672",
+                "tag": "Kyle Potter",
+                "tagKey": "5f406cffbf3e560040c2ad15",
+                "role": "Orientation Leader",
+                "thumb": "https://metadata-static.plex.tv/d/people/dee756178c51fe84bb7c76f45a65af31.jpg"
+              },
+              {
+                "id": 285673,
+                "filter": "actor=285673",
+                "tag": "Kevin Pocasangre",
+                "tagKey": "613871431a25dcfba1e0faaf",
+                "role": "Cruz"
+              },
+              {
+                "id": 285674,
+                "filter": "actor=285674",
+                "tag": "Hristo Lolov",
+                "tagKey": "63dcf7a54dfd994d1f0a52b6",
+                "role": "2nd Runner"
+              },
+              {
+                "id": 285675,
+                "filter": "actor=285675",
+                "tag": "John Ramm",
+                "tagKey": "5d77682a5af944001f1f7939",
+                "role": "Guard",
+                "thumb": "https://metadata-static.plex.tv/2/people/2c8f1dc522d768d06a6f7b0a49f6d348.jpg"
+              },
+              {
+                "id": 127651,
+                "filter": "actor=127651",
+                "tag": "Sokol Cahani",
+                "tagKey": "5d776c67fb0d55001f5870a1",
+                "role": "Security Guard Officer",
+                "thumb": "https://metadata-static.plex.tv/b/people/bf2f05427e160b89c6a9c8ded3213b00.jpg"
+              },
+              {
+                "id": 285676,
+                "filter": "actor=285676",
+                "tag": "Lev Levermore",
+                "tagKey": "5e7362e73d078e0041fffa1c",
+                "role": "Paramedic"
+              },
+              {
+                "id": 285677,
+                "filter": "actor=285677",
+                "tag": "Eddie Toll",
+                "tagKey": "6320944093f9bde08fc25060",
+                "role": "Kid's Dad",
+                "thumb": "https://metadata-static.plex.tv/2/people/2c20ee3d564944f4ee99bfbf2c4ae6e0.jpg"
+              },
+              {
+                "id": 285678,
+                "filter": "actor=285678",
+                "tag": "Beatrice Engel",
+                "tagKey": "5f031a22d2e4630041318fa4",
+                "role": "Kid's Mom"
+              },
+              {
+                "id": 285679,
+                "filter": "actor=285679",
+                "tag": "Gabriel Lo Giudice",
+                "tagKey": "5d776a329ab54400214fbf9b",
+                "role": "Marcelo",
+                "thumb": "https://image.tmdb.org/t/p/original/cF5stqdKaVyqD9EZ1fJPYopwQlA.jpg"
+              },
+              {
+                "id": 60564,
+                "filter": "actor=60564",
+                "tag": "Kate Phillips",
+                "tagKey": "5d776832f59e58002189864e",
+                "role": "Wendy",
+                "thumb": "https://metadata-static.plex.tv/2/people/29fe35063f34af9ff3a31d9e230f83bc.jpg"
+              },
+              {
+                "id": 82284,
+                "filter": "actor=82284",
+                "tag": "Richard Clifford",
+                "tagKey": "5d7768353c3c2a001fbce52b",
+                "role": "Bouchet",
+                "thumb": "https://metadata-static.plex.tv/5/people/568e15e9bad0cb631d3098b395b4cc69.jpg"
+              },
+              {
+                "id": 285680,
+                "filter": "actor=285680",
+                "tag": "Thomas Langridge",
+                "tagKey": "5f40662cc63b480040e6660a",
+                "role": "French Boy"
+              },
+              {
+                "id": 285681,
+                "filter": "actor=285681",
+                "tag": "Anita-Joy Uwajeh",
+                "tagKey": "5d777053594b2b001e748f35",
+                "role": "Eniola",
+                "thumb": "https://metadata-static.plex.tv/f/people/f105c38d0e023e8701ac2157d1ec50dc.jpg"
+              },
+              {
+                "id": 92163,
+                "filter": "actor=92163",
+                "tag": "Imogen Daines",
+                "tagKey": "5d776bf096b655001fe20dec",
+                "role": "Francesca",
+                "thumb": "https://metadata-static.plex.tv/5/people/54aa669ecd71cdd962656f6b8e63b870.jpg"
+              },
+              {
+                "id": 138193,
+                "filter": "actor=138193",
+                "tag": "Tamsin Topolski",
+                "tagKey": "5d776c2ead5437001f7b60fe",
+                "role": "Sharon",
+                "thumb": "https://metadata-static.plex.tv/b/people/b6db5b6df5491a5c6adc5e1a04b846b3.jpg"
+              },
+              {
+                "id": 40932,
+                "filter": "actor=40932",
+                "tag": "Fisayo Akinade",
+                "tagKey": "5d776c077a53e9001e7376c0",
+                "role": "Khalil",
+                "thumb": "https://metadata-static.plex.tv/4/people/4b5a3046daddbc0443bbf26e4c7f86eb.jpg"
+              },
+              {
+                "id": 285682,
+                "filter": "actor=285682",
+                "tag": "Selina Youngerman",
+                "tagKey": "61c33639e34e6b8347ddd4a3",
+                "role": "Foreign Reporter"
+              },
+              {
+                "id": 285683,
+                "filter": "actor=285683",
+                "tag": "Rozanne McKenzie",
+                "tagKey": "63dcf7a506bed96480617162",
+                "role": "Rose"
+              },
+              {
+                "id": 285684,
+                "filter": "actor=285684",
+                "tag": "Yvonne",
+                "tagKey": "5d776b98fb0d55001f56cb0f",
+                "role": "Mimi"
+              },
+              {
+                "id": 285685,
+                "filter": "actor=285685",
+                "tag": "Steve H. Li",
+                "tagKey": "5e16545f4c78f7003e812980",
+                "role": "Employee"
+              },
+              {
+                "id": 285686,
+                "filter": "actor=285686",
+                "tag": "Hannah Bourne",
+                "tagKey": "63220bd851b36fc4381aac14",
+                "role": "Jogger",
+                "thumb": "https://metadata-static.plex.tv/c/people/c540ff1d8b6605b4222410db440249d0.jpg"
+              },
+              {
+                "id": 61690,
+                "filter": "actor=61690",
+                "tag": "Reginald Huc",
+                "tagKey": "5d776b927a53e9001e729ced",
+                "role": "Concierge"
+              },
+              {
+                "id": 94194,
+                "filter": "actor=94194",
+                "tag": "Gina Costigan",
+                "tagKey": "5d7768352e80df001ebde707",
+                "role": "Woman",
+                "thumb": "https://metadata-static.plex.tv/8/people/80f0cdcb0a219c2107b75a88480af5a9.jpg"
+              },
+              {
+                "id": 285687,
+                "filter": "actor=285687",
+                "tag": "Diane D. Carter",
+                "tagKey": "5e20421440070d003fd03c12",
+                "role": "Second Older Woman",
+                "thumb": "https://metadata-static.plex.tv/people/5e20421440070d003fd03c12.jpg"
+              },
+              {
+                "id": 88904,
+                "filter": "actor=88904",
+                "tag": "Ava Grey",
+                "tagKey": "5d77706296b655001fe94e3f",
+                "role": "Lorraine",
+                "thumb": "https://metadata-static.plex.tv/b/people/b1f69aa1656f4413d65b85c3c7cd4eda.jpg"
+              },
+              {
+                "id": 285688,
+                "filter": "actor=285688",
+                "tag": "Dries Alkemade",
+                "tagKey": "5e5d3b4286c751003d09c306",
+                "role": "Cashier"
+              },
+              {
+                "id": 285689,
+                "filter": "actor=285689",
+                "tag": "Bram Klappe",
+                "tagKey": "60e72621b4602d002c3427c2",
+                "role": "Teen 1",
+                "thumb": "https://metadata-static.plex.tv/1/people/12f82d6d3a0aeba4ca7ca5ee6856171f.jpg"
+              },
+              {
+                "id": 285690,
+                "filter": "actor=285690",
+                "tag": "Ziggy Durieux",
+                "tagKey": "629282449ced59a11180ea85",
+                "role": "Teen 2"
+              },
+              {
+                "id": 285691,
+                "filter": "actor=285691",
+                "tag": "Hanne Arendzen",
+                "tagKey": "5d776b2551dd69001fe2cb9e",
+                "role": "Woman",
+                "thumb": "https://metadata-static.plex.tv/7/people/72e0b9061096319d2abec3b29d129579.jpg"
+              },
+              {
+                "id": 69000,
+                "filter": "actor=69000",
+                "tag": "Chaneil Kular",
+                "tagKey": "5e1651a2bc1372003ea87a37",
+                "role": "Cammy",
+                "thumb": "https://metadata-static.plex.tv/3/people/3025d32454379ea5680cdaa6889167f2.jpg"
+              },
+              {
+                "id": 285692,
+                "filter": "actor=285692",
+                "tag": "Aude des Pallieres",
+                "tagKey": "5d776ec0fb0d55001f5ccee7",
+                "role": "Flo"
+              },
+              {
+                "id": 285693,
+                "filter": "actor=285693",
+                "tag": "Momar Diagne",
+                "tagKey": "5e165a06cd0850003b782497",
+                "role": "Man"
+              },
+              {
+                "id": 285694,
+                "filter": "actor=285694",
+                "tag": "Mathijs Swarte",
+                "tagKey": "610505b17a55f3002ccfe55c",
+                "role": "Waiter"
+              },
+              {
+                "id": 68495,
+                "filter": "actor=68495",
+                "tag": "George Wallace",
+                "tagKey": "5d776827f54112001f5bc073",
+                "role": "Greg",
+                "thumb": "https://metadata-static.plex.tv/0/people/092f9ddf3478b244f5b7b6502638871c.jpg"
+              },
+              {
+                "id": 285695,
+                "filter": "actor=285695",
+                "tag": "Yash Gajera",
+                "tagKey": "5f3fdb44bf3e560040b22b0c",
+                "role": "Middle Eastern Singer #2"
+              },
+              {
+                "id": 285696,
+                "filter": "actor=285696",
+                "tag": "Arish Jamil",
+                "tagKey": "5f4064c2cae2c60042f8867a",
+                "role": "Middle Eastern Singer #3"
+              },
+              {
+                "id": 46399,
+                "filter": "actor=46399",
+                "tag": "Anoop Surya",
+                "tagKey": "6020efa2c22d79002c7fc3fd",
+                "role": "Middle Eastern Singer #4"
+              },
+              {
+                "id": 285697,
+                "filter": "actor=285697",
+                "tag": "Vishnu Prasad Rao",
+                "tagKey": "5f3fc84304a8650040974e9d",
+                "role": "Indian Kid"
+              },
+              {
+                "id": 285698,
+                "filter": "actor=285698",
+                "tag": "Da'Jon A. Porter",
+                "tagKey": "61a23d54b252eccc5a1f39f2",
+                "role": "Flamboyant Kid"
+              },
+              {
+                "id": 228688,
+                "filter": "actor=228688",
+                "tag": "Tireni Oyenusi",
+                "tagKey": "5e6244f6a57b06003ed5047c",
+                "role": "Felix"
+              },
+              {
+                "id": 285699,
+                "filter": "actor=285699",
+                "tag": "Mark Law",
+                "tagKey": "6323e8ec53c331b9fabcb465",
+                "role": "Police Officer"
+              },
+              {
+                "id": 285700,
+                "filter": "actor=285700",
+                "tag": "Sean Hinckle",
+                "tagKey": "5d776ee696b655001fe77ef8",
+                "role": "Paramedic"
+              },
+              {
+                "id": 285701,
+                "filter": "actor=285701",
+                "tag": "Aaron Goodson",
+                "tagKey": "5f3fe92203883a0040ae35bf",
+                "role": "Man",
+                "thumb": "https://metadata-static.plex.tv/c/people/c329883af7e775fe33603ba300e69eea.jpg"
+              },
+              {
+                "id": 285702,
+                "filter": "actor=285702",
+                "tag": "Jade Dodd Shojgreen",
+                "tagKey": "627f64951db368c853d019d3",
+                "role": "Attractive Black Girl"
+              },
+              {
+                "id": 285703,
+                "filter": "actor=285703",
+                "tag": "Shanice Castro",
+                "tagKey": "6293d3b394fb391158e180dc",
+                "role": "Shanice"
+              },
+              {
+                "id": 285704,
+                "filter": "actor=285704",
+                "tag": "Odysseas Konstantinou",
+                "tagKey": "5f403c2c02101b0040f718a7",
+                "role": "Carlos"
+              },
+              {
+                "id": 285705,
+                "filter": "actor=285705",
+                "tag": "Yoli Fuller",
+                "tagKey": "5d77699b96b655001fdd3ba6",
+                "role": "Emilio",
+                "thumb": "https://metadata-static.plex.tv/c/people/c087be4fe6900f412d3afbe490433069.jpg"
+              },
+              {
+                "id": 285706,
+                "filter": "actor=285706",
+                "tag": "Soraya Garlenq",
+                "tagKey": "5d776f0d7a53e9001e78a2b1",
+                "role": "The Host",
+                "thumb": "https://metadata-static.plex.tv/3/people/33cc214f60dcfa86f9407cf58045dd94.jpg"
+              },
+              {
+                "id": 285707,
+                "filter": "actor=285707",
+                "tag": "Guillaume Royer",
+                "tagKey": "6292824505d94affe0d293eb",
+                "role": "Sous Chef"
+              },
+              {
+                "id": 285708,
+                "filter": "actor=285708",
+                "tag": "Maël Besnard",
+                "tagKey": "5f3fd2c4c63b480040d7bc5f",
+                "role": "Marcel"
+              },
+              {
+                "id": 285709,
+                "filter": "actor=285709",
+                "tag": "Frédéric Deleersnyder",
+                "tagKey": "5d776c4b594b2b001e6f00c3",
+                "role": "Busboy",
+                "thumb": "https://metadata-static.plex.tv/people/5d776c4b594b2b001e6f00c3.jpg"
+              },
+              {
+                "id": 285710,
+                "filter": "actor=285710",
+                "tag": "Florian Bresler",
+                "tagKey": "5d777060ad5437001f8206ed",
+                "role": "Second Waiter"
+              },
+              {
+                "id": 285711,
+                "filter": "actor=285711",
+                "tag": "Tony Zarouel",
+                "tagKey": "5d776ed37a53e9001e7837ea",
+                "role": "Businessman",
+                "thumb": "https://metadata-static.plex.tv/people/5d776ed37a53e9001e7837ea.jpg"
+              },
+              {
+                "id": 218986,
+                "filter": "actor=218986",
+                "tag": "Daniel Rashid",
+                "tagKey": "5d776c7e594b2b001e6f5174",
+                "role": "Benny",
+                "thumb": "https://metadata-static.plex.tv/0/people/026a787c454a52962c8fd32428fd258a.jpg"
+              },
+              {
+                "id": 285712,
+                "filter": "actor=285712",
+                "tag": "Edon Rizvanolli",
+                "tagKey": "5d7768a62d18a4001ff102f2",
+                "role": "Taxi Driver",
+                "thumb": "https://metadata-static.plex.tv/d/people/d46a5cbee97659e258cefd571da31b48.jpg"
+              },
+              {
+                "id": 91961,
+                "filter": "actor=91961",
+                "tag": "Quinn Bozza",
+                "tagKey": "5d7768bc23d5a3001f4f0b14",
+                "role": "Engineer",
+                "thumb": "https://image.tmdb.org/t/p/original/551SxpQd4PmrQIZlQ85kXOoSRWl.jpg"
+              },
+              {
+                "id": 199286,
+                "filter": "actor=199286",
+                "tag": "Moses Das",
+                "tagKey": "5e16539119f29500377b864c",
+                "role": "Engineer",
+                "thumb": "https://metadata-static.plex.tv/0/people/074885b84bef4e90cb7fb3c5a072cf42.jpg"
+              },
+              {
+                "id": 260732,
+                "filter": "actor=260732",
+                "tag": "Tatiana Neva",
+                "tagKey": "5d776c219ab5440021513355",
+                "role": "Vendor",
+                "thumb": "https://metadata-static.plex.tv/e/people/e6086c9bb608a2dfb2df19ed8ac502da.jpg"
+              },
+              {
+                "id": 209195,
+                "filter": "actor=209195",
+                "tag": "Sinbad",
+                "tagKey": "5d77683361141d001fb153a7",
+                "role": "Sinbad",
+                "thumb": "https://metadata-static.plex.tv/d/people/dedff3adbacf8d05ff9f8a73cab4210b.jpg"
+              },
+              {
+                "id": 112020,
+                "filter": "actor=112020",
+                "tag": "Ashley Lauren Thomas",
+                "tagKey": "6324116753c331b9fabf65b8",
+                "role": "Assistant",
+                "thumb": "https://metadata-static.plex.tv/4/people/4271547a4853f98478d03ac97339c276.jpg"
+              },
+              {
+                "id": 285713,
+                "filter": "actor=285713",
+                "tag": "Carl Andersson",
+                "tagKey": "62fb7cd9c77a48bef2eec126",
+                "role": "Sam",
+                "thumb": "https://metadata-static.plex.tv/5/people/59b3d6adfd3a4e036c52967a9ea8bb15.jpg"
+              },
+              {
+                "id": 285714,
+                "filter": "actor=285714",
+                "tag": "Amalie Gissel",
+                "tagKey": "62441062ab118cfe96af1991",
+                "role": "Hedy"
+              },
+              {
+                "id": 285715,
+                "filter": "actor=285715",
+                "tag": "A'Nya Schofield",
+                "tagKey": "5f402a0b1ae71000410600a9",
+                "role": "Racheal"
+              },
+              {
+                "id": 285716,
+                "filter": "actor=285716",
+                "tag": "Gerard Mikell",
+                "tagKey": "5f872a61d08fa40042918794",
+                "role": "Terrance",
+                "thumb": "https://metadata-static.plex.tv/7/people/7d0ca12f15ee32141fac5f2d147f3cb4.jpg"
+              },
+              {
+                "id": 285717,
+                "filter": "actor=285717",
+                "tag": "Dajour Ashwood",
+                "tagKey": "5e1659e046aceb003cef2269",
+                "role": "Random Stranger 1"
+              },
+              {
+                "id": 285718,
+                "filter": "actor=285718",
+                "tag": "David Watts",
+                "tagKey": "6765741dad5220b598c76b26",
+                "role": "Man"
+              },
+              {
+                "id": 285719,
+                "filter": "actor=285719",
+                "tag": "Jan Le",
+                "tagKey": "66c334b7acd6db141b068385",
+                "role": "Sam",
+                "thumb": "https://metadata-static.plex.tv/7/people/7ed9d5e220164c8a8e35d56d8deb6e6c.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Atlanta (2016) {tvdb-313999}"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108040",
+            "key": "/library/metadata/108040/children",
+            "guid": "plex://show/5d9c09152192ba001f31b6c8",
+            "slug": "solar-opposites",
+            "studio": "Justin Roiland's Solo Vanity Card Productions",
+            "type": "show",
+            "title": "Solar Opposites",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-MA",
+            "summary": "Escaping Planet Shlorp before the Asteroid hit, Terry, Korvo and their two Replicants crash land on Earth stranding them on a world that they must terraform: with their mysterious 'pet' Pupa. These aliens become a dysfunctional family stuck in suburban America and can't agree whether living on Earth is an awesome or horrible prospect.",
+            "index": 1,
+            "audienceRating": 7.8,
+            "year": 2020,
+            "tagline": "Feel the love.",
+            "thumb": "/library/metadata/108040/thumb/1747030356",
+            "art": "/library/metadata/108040/art/1747030356",
+            "theme": "/library/metadata/108040/theme/1747030356",
+            "duration": 1320000,
+            "originallyAvailableAt": "2020-05-08",
+            "leafCount": 57,
+            "viewedLeafCount": 0,
+            "childCount": 6,
+            "seasonCount": 5,
+            "addedAt": 1747030645,
+            "updatedAt": 1747030356,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "primaryExtraKey": "/library/metadata/108050",
+            "Image": [
+              {
+                "alt": "Solar Opposites",
+                "type": "coverPoster",
+                "url": "/library/metadata/108040/thumb/1747030356"
+              },
+              {
+                "alt": "Solar Opposites",
+                "type": "background",
+                "url": "/library/metadata/108040/art/1747030356"
+              },
+              {
+                "alt": "Solar Opposites",
+                "type": "clearLogo",
+                "url": "/library/metadata/108040/clearLogo/1747030356"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "312255",
+              "topRight": "a03313",
+              "bottomRight": "8c4a0f",
+              "bottomLeft": "8c491e"
+            },
+            "Genre": [
+              {
+                "id": 1402,
+                "filter": "genre=1402",
+                "tag": "Animation"
+              },
+              {
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
+              },
+              {
+                "id": 1210,
+                "filter": "genre=1210",
+                "tag": "Adventure"
+              },
+              {
+                "id": 449,
+                "filter": "genre=449",
+                "tag": "Science Fiction"
+              },
+              {
+                "id": 5785,
+                "filter": "genre=5785",
+                "tag": "Sci-Fi & Fantasy"
+              }
+            ],
+            "Country": [
+              {
+                "id": 128,
+                "filter": "country=128",
+                "tag": "United States of America"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "imdb://tt8910922"
+              },
+              {
+                "id": "tmdb://97645"
+              },
+              {
+                "id": "tvdb://375892"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.9,
+                "type": "audience"
+              },
+              {
+                "image": "rottentomatoes://image.rating.ripe",
+                "value": 9.8,
+                "type": "critic"
+              },
+              {
+                "image": "rottentomatoes://image.rating.upright",
+                "value": 8.1,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.8,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 98209,
+                "filter": "actor=98209",
+                "tag": "Sean Giambrone",
+                "tagKey": "5d776959fb0d55001f523663",
+                "role": "Yumyulack (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/6f58988eca6ae95d13d560b31bab7f73.jpg"
+              },
+              {
+                "id": 48202,
+                "filter": "actor=48202",
+                "tag": "Thomas Middleditch",
+                "tagKey": "5d77684f61141d001fb184c6",
+                "role": "Terry (voice)",
+                "thumb": "https://metadata-static.plex.tv/a/people/a3eda67357324db43eb4fd35a4c419d3.jpg"
+              },
+              {
+                "id": 285396,
+                "filter": "actor=285396",
+                "tag": "Mary Mack",
+                "tagKey": "5d7770706afb3d002061a406",
+                "role": "Jesse (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/66b7a88d7779d53a1f45c86833a3e37c.jpg"
+              },
+              {
+                "id": 98190,
+                "filter": "actor=98190",
+                "tag": "Justin Roiland",
+                "tagKey": "5d776a3447dd6e001f6cfd4d",
+                "role": "Korvo (voice)",
+                "thumb": "https://metadata-static.plex.tv/0/people/05483352eb15337be6223470544ec778.jpg"
+              },
+              {
+                "id": 100799,
+                "filter": "actor=100799",
+                "tag": "Dan Stevens",
+                "tagKey": "5d7768378718ba001e315338",
+                "role": "Korvo (voice)",
+                "thumb": "https://metadata-static.plex.tv/6/people/65f5d2f63fb9e3367e6314c70bc500fb.jpg"
+              },
+              {
+                "id": 31513,
+                "filter": "actor=31513",
+                "tag": "Spencer Grammer",
+                "tagKey": "5d776842880197001ec95ed7",
+                "role": "Lynette",
+                "thumb": "https://metadata-static.plex.tv/f/people/fb3af13b34e2aae140ce510c340b6fc0.jpg"
+              },
+              {
+                "id": 125874,
+                "filter": "actor=125874",
+                "tag": "Tim Robinson",
+                "tagKey": "5e163db54c78f7003e7fd2a1",
+                "role": "Peter (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2718b1331588800f302de97a6a1c1b9a.jpg"
+              },
+              {
+                "id": 5696,
+                "filter": "actor=5696",
+                "tag": "Langston Kerman",
+                "tagKey": "5d776c70f617c90020181850",
+                "role": "Daryl (voice)",
+                "thumb": "https://metadata-static.plex.tv/c/people/cd8c4af0f9fb44426861414ef23250e2.jpg"
+              },
+              {
+                "id": 50518,
+                "filter": "actor=50518",
+                "tag": "Christina Hendricks",
+                "tagKey": "5d776862f59e58002189cb5b",
+                "role": "Cherie",
+                "thumb": "https://metadata-static.plex.tv/4/people/4af9bb8384617bb55bd2457bb45022ea.jpg"
+              },
+              {
+                "id": 251011,
+                "filter": "actor=251011",
+                "tag": "Sutton Foster",
+                "tagKey": "5d7769c447dd6e001f6ca223",
+                "role": "Sister Sisto",
+                "thumb": "https://metadata-static.plex.tv/2/people/2a1a9b620e5044e20c5e8a830e639357.jpg"
+              },
+              {
+                "id": 53619,
+                "filter": "actor=53619",
+                "tag": "Nolan North",
+                "tagKey": "5d776829999c64001ec2cf7d",
+                "role": "Bradd's Dad (voice)",
+                "thumb": "https://metadata-static.plex.tv/4/people/447e8faf757856d4aac027127988bba3.jpg"
+              },
+              {
+                "id": 57436,
+                "filter": "actor=57436",
+                "tag": "Tiffany Haddish",
+                "tagKey": "5d77685033f255001e85298b",
+                "role": "Aisha (voice)",
+                "thumb": "https://metadata-static.plex.tv/e/people/e74c3217054ba7d416444f28607f208a.jpg"
+              },
+              {
+                "id": 6026,
+                "filter": "actor=6026",
+                "tag": "Clancy Brown",
+                "tagKey": "5d776827151a60001f24ac14",
+                "role": "Gavin (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d51ed451fab5ad9db6a1b07746fb0716.jpg"
+              },
+              {
+                "id": 11764,
+                "filter": "actor=11764",
+                "tag": "Charlotte Nicdao",
+                "tagKey": "5d776b0547dd6e001f6da1cc",
+                "role": "Sofia (voice)",
+                "thumb": "https://metadata-static.plex.tv/3/people/373d39a8efcbb6e34228e456728e006d.jpg"
+              },
+              {
+                "id": 239388,
+                "filter": "actor=239388",
+                "tag": "Mikey Day",
+                "tagKey": "5d77684ee870fd001f19dcbb",
+                "role": "Jerry (voice)",
+                "thumb": "https://metadata-static.plex.tv/d/people/d97ea4179f6508ab632c7f75dd609d2e.jpg"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Solar Opposites (2020) {tvdb-375892}"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108039",
+            "key": "/library/metadata/108039",
+            "parentRatingKey": "101855",
+            "grandparentRatingKey": "101854",
+            "guid": "plex://episode/6803ee549c0bd989a5e65043",
+            "parentGuid": "plex://season/669bac4bc1cd84be5a118e4b",
+            "grandparentGuid": "plex://show/669bac4bc1cd84be5a118e34",
+            "grandparentSlug": "suits-la",
+            "type": "episode",
+            "title": "Angry Sylvester",
+            "grandparentKey": "/library/metadata/101854",
+            "parentKey": "/library/metadata/101855",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Suits LA",
+            "parentTitle": "Season 1",
+            "contentRating": "TV-14",
+            "summary": "Erica and Ted disagree when she tries to sign a high-profile client against his wishes. Stuart meets an unexpected adversary at anger management. Rick works to secure Dylan Pryor’s dream role.",
+            "index": 12,
+            "parentIndex": 1,
+            "year": 2025,
+            "thumb": "/library/metadata/108039/thumb/1748076109",
+            "art": "/library/metadata/101854/art/1747873118",
+            "parentThumb": "/library/metadata/101855/thumb/1741005692",
+            "grandparentThumb": "/library/metadata/101854/thumb/1747873118",
+            "grandparentArt": "/library/metadata/101854/art/1747873118",
+            "duration": 2535136,
+            "originallyAvailableAt": "2025-05-11",
+            "addedAt": 1747026724,
+            "updatedAt": 1748076109,
+            "Media": [
+              {
+                "id": 130382,
+                "duration": 2535136,
+                "bitrate": 6727,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447418,
+                    "key": "/library/parts/447418/1747026568/file.mkv",
+                    "duration": 2535136,
+                    "file": "/data/Media/Tv Shows/Suits LA/Season 01/Suits LA (2025) - S01E12 - Angry Sylvester [WEBDL-1080p][EAC3 5.1][h264]-Kitsune.mkv",
+                    "size": 2132374145,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1034057,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 6087,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1034058,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1034059,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1034060,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Angry Sylvester",
+                "type": "coverPoster",
+                "url": "/library/metadata/101854/thumb/1747873118"
+              },
+              {
+                "alt": "Angry Sylvester",
+                "type": "snapshot",
+                "url": "/library/metadata/108039/thumb/1748076109"
+              },
+              {
+                "alt": "Angry Sylvester",
+                "type": "background",
+                "url": "/library/metadata/101854/art/1747873118"
+              },
+              {
+                "alt": "Angry Sylvester",
+                "type": "clearLogo",
+                "url": "/library/metadata/101854/clearLogo/1747873118"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "4b1e19",
+              "topRight": "271e1e",
+              "bottomRight": "9b3928",
+              "bottomLeft": "92413f"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36594514"
+              },
+              {
+                "id": "tmdb://6187140"
+              },
+              {
+                "id": "tvdb://11108974"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.6,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 61015,
+                "filter": "director=61015",
+                "tag": "Emile B. Levisetti",
+                "tagKey": "5d77685c33f255001e853de2",
+                "thumb": "https://metadata-static.plex.tv/e/people/e6e6c1ecf22c6f9247c76129252d2bdf.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 203833,
+                "filter": "writer=203833",
+                "tag": "Genevieve Sparling",
+                "tagKey": "5e1635b1fef2d4003e89836b"
+              }
+            ],
+            "Role": [
+              {
+                "id": 11300,
+                "filter": "actor=11300",
+                "tag": "Stephen Amell",
+                "tagKey": "5d77683b8718ba001e3161a4",
+                "role": "Ted Black",
+                "thumb": "https://metadata-static.plex.tv/6/people/6215267e12160f6c7e53fafbb6e00b88.jpg"
+              },
+              {
+                "id": 131801,
+                "filter": "actor=131801",
+                "tag": "Lex Scott Davis",
+                "tagKey": "5d776c11594b2b001e6ea3a7",
+                "role": "Erica Rollins",
+                "thumb": "https://metadata-static.plex.tv/2/people/210af4935e41d8f3b88ed71d69d97fbb.jpg"
+              },
+              {
+                "id": 41694,
+                "filter": "actor=41694",
+                "tag": "Josh McDermitt",
+                "tagKey": "5d776b7296b655001fe11581",
+                "role": "Stuart Lane",
+                "thumb": "https://metadata-static.plex.tv/iva/person/115363/fedac94f2585f9e42397f12f3691070e.jpg"
+              },
+              {
+                "id": 202845,
+                "filter": "actor=202845",
+                "tag": "Bryan Greenberg",
+                "tagKey": "5d77682b8a7581001f12c4ec",
+                "role": "Rick Dodsen",
+                "thumb": "https://metadata-static.plex.tv/e/people/e0e2104f1ef9bdbe230d00c75e03c80d.jpg"
+              },
+              {
+                "id": 44105,
+                "filter": "actor=44105",
+                "tag": "Victoria Justice",
+                "tagKey": "5d776842880197001ec95eb6",
+                "role": "Dylan Pryor",
+                "thumb": "https://metadata-static.plex.tv/e/people/e98b9686ae683f657a2557a923908b61.jpg"
+              },
+              {
+                "id": 259681,
+                "filter": "actor=259681",
+                "tag": "Alice Lee",
+                "tagKey": "5d776845999c64001ec32331",
+                "role": "Leah Power",
+                "thumb": "https://metadata-static.plex.tv/e/people/e4fbdf51a5d9f04e7b0d9d0395edd7f6.jpg"
+              },
+              {
+                "id": 22690,
+                "filter": "actor=22690",
+                "tag": "Rachelle Goulding",
+                "tagKey": "5e164c9661c6140040d823ee",
+                "role": "Samantha Railsback",
+                "thumb": "https://metadata-static.plex.tv/c/people/c6536343a7230eb0a104f96022330893.jpg"
+              },
+              {
+                "id": 41783,
+                "filter": "actor=41783",
+                "tag": "Matt Letscher",
+                "tagKey": "5d77682c54f42c001f8c343f",
+                "role": "Ted's Father",
+                "thumb": "https://metadata-static.plex.tv/5/people/5d92ec184eeeeb5fb5056eb3d0a18c3b.jpg"
+              },
+              {
+                "id": 253769,
+                "filter": "actor=253769",
+                "tag": "Carson A. Egan",
+                "tagKey": "670f785850af7cab1be55313",
+                "role": "Eddie Black",
+                "thumb": "https://metadata-static.plex.tv/3/people/3cb4153dc18cf9ea7cfe3be92e57d103.jpg"
+              },
+              {
+                "id": 10318,
+                "filter": "actor=10318",
+                "tag": "Rick Hoffman",
+                "tagKey": "5d776826961905001eb90dc3",
+                "role": "Louis Litt",
+                "thumb": "https://image.tmdb.org/t/p/original/c9CKBkLtGtW1T8GRNUid0tQHaJY.jpg"
+              },
+              {
+                "id": 5328,
+                "filter": "actor=5328",
+                "tag": "Azita Ghanizada",
+                "tagKey": "5d776846103a2d001f56bba0",
+                "role": "Roslyn",
+                "thumb": "https://metadata-static.plex.tv/b/people/b52063139b49843283a7fc4f48f5c217.jpg"
+              },
+              {
+                "id": 87733,
+                "filter": "actor=87733",
+                "tag": "Gilbert Owuor",
+                "tagKey": "5d7768f4fb0d55001f51debb",
+                "role": "Counselor",
+                "thumb": "https://metadata-static.plex.tv/d/people/d8d912035c673e51463070e014f63acf.jpg"
+              },
+              {
+                "id": 19102,
+                "filter": "actor=19102",
+                "tag": "Stephanie Erb",
+                "tagKey": "5d776827151a60001f24ac37",
+                "role": "Melissa Johnson",
+                "thumb": "https://metadata-static.plex.tv/6/people/63bd37058b0cead5eb9017a8873894f6.jpg"
+              },
+              {
+                "id": 30820,
+                "filter": "actor=30820",
+                "tag": "James McCauley",
+                "tagKey": "5d77682a7e9a3c0020c6b1be",
+                "role": "Peter",
+                "thumb": "https://metadata-static.plex.tv/8/people/885fcd1c172d433ee080bf7316f1f9f9.jpg"
+              },
+              {
+                "id": 259276,
+                "filter": "actor=259276",
+                "tag": "Frankie Kevich",
+                "tagKey": "5f3fd2b786422500427c0632",
+                "role": "Sydney",
+                "thumb": "https://metadata-static.plex.tv/7/people/7b9dbd6a1958e497e019b5986e2bd35e.jpg"
+              },
+              {
+                "id": 15149,
+                "filter": "actor=15149",
+                "tag": "Karole Foreman",
+                "tagKey": "5d776bf79ab54400215114a1",
+                "role": "Judge Wagner",
+                "thumb": "https://metadata-static.plex.tv/6/people/6521c683d4d10707f56cdf0de59c9b5c.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 253779,
+                "filter": "producer=253779",
+                "tag": "Ronald Chong",
+                "tagKey": "5e624dc5ee690b003eb60284"
+              }
+            ]
+          },
+          {
+            "ratingKey": "108035",
+            "key": "/library/metadata/108035",
+            "parentRatingKey": "103870",
+            "grandparentRatingKey": "15053",
+            "guid": "plex://episode/673f46962e8dc40b88af2287",
+            "parentGuid": "plex://season/63e683473abf06cf83a08e21",
+            "grandparentGuid": "plex://show/5e69c6f6874db7003e2dd59b",
+            "grandparentSlug": "the-last-of-us",
+            "type": "episode",
+            "title": "Feel Her Love",
+            "grandparentKey": "/library/metadata/15053",
+            "parentKey": "/library/metadata/103870",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "The Last of Us",
+            "parentTitle": "Season 2",
+            "contentRating": "TV-MA",
+            "summary": "The WLF makes a dangerous discovery... at a great cost. Later, Ellie must decide whether to continue with her plan – and risk putting Dina in danger – or give up on her quest for justice.",
+            "index": 5,
+            "parentIndex": 2,
+            "audienceRating": 6.2,
+            "year": 2025,
+            "thumb": "/library/metadata/108035/thumb/1748656784",
+            "art": "/library/metadata/15053/art/1748704280",
+            "parentThumb": "/library/metadata/103870/thumb/1745376036",
+            "grandparentThumb": "/library/metadata/15053/thumb/1748704280",
+            "grandparentArt": "/library/metadata/15053/art/1748704280",
+            "grandparentTheme": "/library/metadata/15053/theme/1748704280",
+            "duration": 2674112,
+            "originallyAvailableAt": "2025-05-11",
+            "addedAt": 1747012832,
+            "updatedAt": 1748656784,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Media": [
+              {
+                "id": 130372,
+                "duration": 2674112,
+                "bitrate": 8639,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447408,
+                    "key": "/library/parts/447408/1747012761/file.mkv",
+                    "duration": 2674112,
+                    "file": "/data/Media/Tv Shows/The Last of Us/Season 02/The Last of Us (2023) - S02E05 - Feel Her Love [WEBDL-1080p][EAC3 5.1][h264]-successfulcrab.mkv",
+                    "size": 2889050065,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1033985,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 7998,
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1033986,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1033987,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1033988,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "title": "English [SDH]",
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English [SDH] (SRT)"
+                      },
+                      {
+                        "id": 1033989,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 4,
+                        "bitrate": 0,
+                        "language": "Bulgarian",
+                        "languageTag": "bg",
+                        "languageCode": "bul",
+                        "title": "Bulgarian",
+                        "displayTitle": "Bulgarian (SRT)",
+                        "extendedDisplayTitle": "Bulgarian (Bulgarian SRT)"
+                      },
+                      {
+                        "id": 1033990,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 5,
+                        "bitrate": 0,
+                        "language": "Chinese",
+                        "languageTag": "zh",
+                        "languageCode": "zho",
+                        "title": "Chinese Simplified",
+                        "displayTitle": "Chinese (SRT)",
+                        "extendedDisplayTitle": "Chinese Simplified (Chinese SRT)"
+                      },
+                      {
+                        "id": 1033991,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 6,
+                        "bitrate": 0,
+                        "language": "Chinese",
+                        "languageTag": "zh",
+                        "languageCode": "zho",
+                        "title": "Chinese Traditional",
+                        "displayTitle": "Chinese (SRT)",
+                        "extendedDisplayTitle": "Chinese Traditional (Chinese SRT)"
+                      },
+                      {
+                        "id": 1033992,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 7,
+                        "bitrate": 0,
+                        "language": "Croatian",
+                        "languageTag": "hr",
+                        "languageCode": "hrv",
+                        "title": "Croatian",
+                        "displayTitle": "Croatian (SRT)",
+                        "extendedDisplayTitle": "Croatian (Croatian SRT)"
+                      },
+                      {
+                        "id": 1033993,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 8,
+                        "bitrate": 0,
+                        "language": "Czech",
+                        "languageTag": "cs",
+                        "languageCode": "ces",
+                        "title": "Czech (Czechia)",
+                        "displayTitle": "Czech (SRT)",
+                        "extendedDisplayTitle": "Czech (Czechia) (Czech SRT)"
+                      },
+                      {
+                        "id": 1033994,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 9,
+                        "bitrate": 0,
+                        "language": "Danish",
+                        "languageTag": "da",
+                        "languageCode": "dan",
+                        "title": "Danish",
+                        "displayTitle": "Danish (SRT)",
+                        "extendedDisplayTitle": "Danish (Danish SRT)"
+                      },
+                      {
+                        "id": 1033995,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 10,
+                        "bitrate": 0,
+                        "language": "Dutch",
+                        "languageTag": "nl",
+                        "languageCode": "nld",
+                        "title": "Dutch",
+                        "displayTitle": "Dutch (SRT)",
+                        "extendedDisplayTitle": "Dutch (Dutch SRT)"
+                      },
+                      {
+                        "id": 1033996,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 11,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "European Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "European Spanish (Spanish SRT)"
+                      },
+                      {
+                        "id": 1033997,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 12,
+                        "bitrate": 0,
+                        "language": "Finnish",
+                        "languageTag": "fi",
+                        "languageCode": "fin",
+                        "title": "Finnish",
+                        "displayTitle": "Finnish (SRT)",
+                        "extendedDisplayTitle": "Finnish (Finnish SRT)"
+                      },
+                      {
+                        "id": 1033998,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 13,
+                        "bitrate": 0,
+                        "language": "French",
+                        "languageTag": "fr",
+                        "languageCode": "fra",
+                        "title": "French",
+                        "displayTitle": "French (SRT)",
+                        "extendedDisplayTitle": "French (French SRT)"
+                      },
+                      {
+                        "id": 1033999,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 14,
+                        "bitrate": 0,
+                        "language": "Greek",
+                        "languageTag": "el",
+                        "languageCode": "ell",
+                        "title": "Greek",
+                        "displayTitle": "Greek (SRT)",
+                        "extendedDisplayTitle": "Greek (Greek SRT)"
+                      },
+                      {
+                        "id": 1034000,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 15,
+                        "bitrate": 0,
+                        "language": "Hungarian",
+                        "languageTag": "hu",
+                        "languageCode": "hun",
+                        "title": "Hungarian",
+                        "displayTitle": "Hungarian (SRT)",
+                        "extendedDisplayTitle": "Hungarian (Hungarian SRT)"
+                      },
+                      {
+                        "id": 1034001,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 16,
+                        "bitrate": 0,
+                        "language": "Icelandic",
+                        "languageTag": "is",
+                        "languageCode": "isl",
+                        "title": "Icelandic (Iceland)",
+                        "displayTitle": "Icelandic (SRT)",
+                        "extendedDisplayTitle": "Icelandic (Iceland) (Icelandic SRT)"
+                      },
+                      {
+                        "id": 1034002,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 17,
+                        "bitrate": 0,
+                        "language": "Indonesian",
+                        "languageTag": "id",
+                        "languageCode": "ind",
+                        "title": "Indonesian",
+                        "displayTitle": "Indonesian (SRT)",
+                        "extendedDisplayTitle": "Indonesian (Indonesian SRT)"
+                      },
+                      {
+                        "id": 1034003,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 18,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Latin America Spanish",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Latin America Spanish (Spanish SRT)"
+                      },
+                      {
+                        "id": 1034004,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 19,
+                        "bitrate": 0,
+                        "language": "Spanish",
+                        "languageTag": "es",
+                        "languageCode": "spa",
+                        "title": "Latin America Spanish [SDH]",
+                        "displayTitle": "Spanish (SRT)",
+                        "extendedDisplayTitle": "Latin America Spanish [SDH] (Spanish SRT)"
+                      },
+                      {
+                        "id": 1034005,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 20,
+                        "bitrate": 0,
+                        "language": "Lithuanian",
+                        "languageTag": "lt",
+                        "languageCode": "lit",
+                        "title": "Lithuanian",
+                        "displayTitle": "Lithuanian (SRT)",
+                        "extendedDisplayTitle": "Lithuanian (Lithuanian SRT)"
+                      },
+                      {
+                        "id": 1034006,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 21,
+                        "bitrate": 0,
+                        "language": "Macedonian",
+                        "languageTag": "mk",
+                        "languageCode": "mkd",
+                        "title": "Macedonian",
+                        "displayTitle": "Macedonian (SRT)",
+                        "extendedDisplayTitle": "Macedonian (Macedonian SRT)"
+                      },
+                      {
+                        "id": 1034007,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 22,
+                        "bitrate": 0,
+                        "language": "Norwegian",
+                        "languageTag": "no",
+                        "languageCode": "nor",
+                        "title": "Norwegian",
+                        "displayTitle": "Norwegian (SRT)",
+                        "extendedDisplayTitle": "Norwegian (Norwegian SRT)"
+                      },
+                      {
+                        "id": 1034008,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 23,
+                        "bitrate": 0,
+                        "language": "Polish",
+                        "languageTag": "pl",
+                        "languageCode": "pol",
+                        "title": "Polish",
+                        "displayTitle": "Polish (SRT)",
+                        "extendedDisplayTitle": "Polish (Polish SRT)"
+                      },
+                      {
+                        "id": 1034009,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 24,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Portuguese",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Portuguese (Portuguese SRT)"
+                      },
+                      {
+                        "id": 1034010,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 25,
+                        "bitrate": 0,
+                        "language": "Portuguese",
+                        "languageTag": "pt",
+                        "languageCode": "por",
+                        "title": "Portuguese Brazilian",
+                        "displayTitle": "Portuguese (SRT)",
+                        "extendedDisplayTitle": "Portuguese Brazilian (Portuguese SRT)"
+                      },
+                      {
+                        "id": 1034011,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 26,
+                        "bitrate": 0,
+                        "language": "Romanian",
+                        "languageTag": "ro",
+                        "languageCode": "ron",
+                        "title": "Romanian (Romania)",
+                        "displayTitle": "Romanian (SRT)",
+                        "extendedDisplayTitle": "Romanian (Romania) (Romanian SRT)"
+                      },
+                      {
+                        "id": 1034012,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 27,
+                        "bitrate": 0,
+                        "language": "Serbian",
+                        "languageTag": "sr",
+                        "languageCode": "srp",
+                        "title": "Serbian (Latin)",
+                        "displayTitle": "Serbian (SRT)",
+                        "extendedDisplayTitle": "Serbian (Latin) (Serbian SRT)"
+                      },
+                      {
+                        "id": 1034013,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 28,
+                        "bitrate": 0,
+                        "language": "Slovak",
+                        "languageTag": "sk",
+                        "languageCode": "slk",
+                        "title": "Slovak (Slovakia)",
+                        "displayTitle": "Slovak (SRT)",
+                        "extendedDisplayTitle": "Slovak (Slovakia) (Slovak SRT)"
+                      },
+                      {
+                        "id": 1034014,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 29,
+                        "bitrate": 0,
+                        "language": "Slovenian",
+                        "languageTag": "sl",
+                        "languageCode": "slv",
+                        "title": "Slovenian",
+                        "displayTitle": "Slovenian (SRT)",
+                        "extendedDisplayTitle": "Slovenian (Slovenian SRT)"
+                      },
+                      {
+                        "id": 1034015,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 30,
+                        "bitrate": 0,
+                        "title": "Standard Estonian",
+                        "displayTitle": "Unknown (SRT)",
+                        "extendedDisplayTitle": "Standard Estonian (SRT)"
+                      },
+                      {
+                        "id": 1034016,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 31,
+                        "bitrate": 0,
+                        "language": "Latvian",
+                        "languageTag": "lv",
+                        "languageCode": "lav",
+                        "title": "Standard Latvian",
+                        "displayTitle": "Latvian (SRT)",
+                        "extendedDisplayTitle": "Standard Latvian (Latvian SRT)"
+                      },
+                      {
+                        "id": 1034017,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 32,
+                        "bitrate": 0,
+                        "language": "Malay",
+                        "languageTag": "ms",
+                        "languageCode": "msa",
+                        "title": "Standard Malay",
+                        "displayTitle": "Malay (SRT)",
+                        "extendedDisplayTitle": "Standard Malay (Malay SRT)"
+                      },
+                      {
+                        "id": 1034018,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 33,
+                        "bitrate": 0,
+                        "language": "Swedish",
+                        "languageTag": "sv",
+                        "languageCode": "swe",
+                        "title": "Swedish",
+                        "displayTitle": "Swedish (SRT)",
+                        "extendedDisplayTitle": "Swedish (Swedish SRT)"
+                      },
+                      {
+                        "id": 1034019,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 34,
+                        "bitrate": 0,
+                        "language": "Thai",
+                        "languageTag": "th",
+                        "languageCode": "tha",
+                        "title": "Thai",
+                        "displayTitle": "Thai (SRT)",
+                        "extendedDisplayTitle": "Thai (Thai SRT)"
+                      },
+                      {
+                        "id": 1034020,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 35,
+                        "bitrate": 0,
+                        "language": "Turkish",
+                        "languageTag": "tr",
+                        "languageCode": "tur",
+                        "title": "Turkish",
+                        "displayTitle": "Turkish (SRT)",
+                        "extendedDisplayTitle": "Turkish (Turkish SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "Feel Her Love",
+                "type": "coverPoster",
+                "url": "/library/metadata/15053/thumb/1748704280"
+              },
+              {
+                "alt": "Feel Her Love",
+                "type": "snapshot",
+                "url": "/library/metadata/108035/thumb/1748656784"
+              },
+              {
+                "alt": "Feel Her Love",
+                "type": "background",
+                "url": "/library/metadata/15053/art/1748704280"
+              },
+              {
+                "alt": "Feel Her Love",
+                "type": "clearLogo",
+                "url": "/library/metadata/15053/clearLogo/1748704280"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "040b03",
+              "topRight": "400303",
+              "bottomRight": "040b03",
+              "bottomLeft": "06150b"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt32550885"
+              },
+              {
+                "id": "tmdb://5994271"
+              },
+              {
+                "id": "tvdb://10972143"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.3,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 6.2,
+                "type": "audience"
+              }
+            ],
+            "Director": [
+              {
+                "id": 48877,
+                "filter": "director=48877",
+                "tag": "Stephen Williams",
+                "tagKey": "5d7768c6f617c900201588f5",
+                "thumb": "https://metadata-static.plex.tv/9/people/906d3d452349a27fb787dfef80ceff55.jpg"
+              }
+            ],
+            "Writer": [
+              {
+                "id": 132532,
+                "filter": "writer=132532",
+                "tag": "Craig Mazin",
+                "tagKey": "5d77682e103a2d001f565eb9",
+                "thumb": "https://metadata-static.plex.tv/2/people/2672c04c981b6f8c53fece26c0699d9e.jpg"
+              }
+            ],
+            "Role": [
+              {
+                "id": 86941,
+                "filter": "actor=86941",
+                "tag": "Bella Ramsey",
+                "tagKey": "5d776c8d96b655001fe346ba",
+                "role": "Ellie Williams",
+                "thumb": "https://metadata-static.plex.tv/5/people/5999f65b09deaa93b928f5c0d95ae258.jpg"
+              },
+              {
+                "id": 86947,
+                "filter": "actor=86947",
+                "tag": "Gabriel Luna",
+                "tagKey": "5d77686351dd69001fe0b661",
+                "role": "Tommy Miller",
+                "thumb": "https://metadata-static.plex.tv/e/people/e41daea895213133535f91a9c6c566a9.jpg"
+              },
+              {
+                "id": 101164,
+                "filter": "actor=101164",
+                "tag": "Isabela Merced",
+                "tagKey": "5d776a2996b655001fde519d",
+                "role": "Dina",
+                "thumb": "https://metadata-static.plex.tv/8/people/8d93dadf9dfff5ebaeb68dd2f01014f5.jpg"
+              },
+              {
+                "id": 270817,
+                "filter": "actor=270817",
+                "tag": "Young Mazino",
+                "tagKey": "5d776d99fb0d55001f5a5096",
+                "role": "Jesse",
+                "thumb": "https://metadata-static.plex.tv/3/people/3e3f2d05837d29e48ee98269e3b942d7.jpg"
+              },
+              {
+                "id": 1797,
+                "filter": "actor=1797",
+                "tag": "Tati Gabrielle",
+                "tagKey": "5d776c0efb0d55001f57b6b0",
+                "role": "Nora",
+                "thumb": "https://metadata-static.plex.tv/7/people/78b45f104f549d39106e38f4ccdedbcc.jpg"
+              },
+              {
+                "id": 8019,
+                "filter": "actor=8019",
+                "tag": "Alanna Ubach",
+                "tagKey": "5d776827103a2d001f564673",
+                "role": "Hanrahan",
+                "thumb": "https://metadata-static.plex.tv/f/people/f207003267565f29209dc3293d938b73.jpg"
+              },
+              {
+                "id": 5306,
+                "filter": "actor=5306",
+                "tag": "Hettienne Park",
+                "tagKey": "5d776835999c64001ec2f4f9",
+                "role": "Elise Park",
+                "thumb": "https://metadata-static.plex.tv/a/people/afe9366dec0e07ce8698f72a5260fa43.jpg"
+              },
+              {
+                "id": 83586,
+                "filter": "actor=83586",
+                "tag": "Mathew Yanagiya",
+                "tagKey": "5d776ca096b655001fe369bb",
+                "role": "Captured Wolf",
+                "thumb": "https://metadata-static.plex.tv/0/people/0a21e9c1634ac12269394e0aaef07298.jpg"
+              },
+              {
+                "id": 204142,
+                "filter": "actor=204142",
+                "tag": "Maurice Dean Wint",
+                "tagKey": "5d776826961905001eb90dee",
+                "role": "Seraphite Priest",
+                "thumb": "https://metadata-static.plex.tv/d/people/d48a456b172e6fafa5a48cbcf31a694d.jpg"
+              },
+              {
+                "id": 108118,
+                "filter": "actor=108118",
+                "tag": "Laine MacNeil",
+                "tagKey": "5d7768442e80df001ebe024f",
+                "role": "Female Seraphite",
+                "thumb": "https://metadata-static.plex.tv/a/people/a0e2976092d4790a3edecfaaa4e82118.jpg"
+              },
+              {
+                "id": 286128,
+                "filter": "actor=286128",
+                "tag": "Cheonguk Park",
+                "tagKey": "6821ec0dbf35c468b8558317",
+                "role": "Leon Park"
+              },
+              {
+                "id": 83911,
+                "filter": "actor=83911",
+                "tag": "Shayn Walker",
+                "tagKey": "5d776cc19ab544002151a65d",
+                "role": "WLF Guard with Dog (Bonnie)",
+                "thumb": "https://metadata-static.plex.tv/people/5d776cc19ab544002151a65d.jpg"
+              },
+              {
+                "id": 270819,
+                "filter": "actor=270819",
+                "tag": "Molly Scarpine",
+                "tagKey": "67fd16ca90a43cae0e1a13aa",
+                "role": "Female Stalker Voice (voice)"
+              },
+              {
+                "id": 286129,
+                "filter": "actor=286129",
+                "tag": "Scott Lambright",
+                "tagKey": "5f402c7802101b0040f593a2",
+                "role": "Male Stalker Voice (voice)"
+              },
+              {
+                "id": 26139,
+                "filter": "actor=26139",
+                "tag": "Pedro Pascal",
+                "tagKey": "5d77686d8718ba001e31bb7e",
+                "role": "Joel Miller (uncredited)",
+                "thumb": "https://metadata-static.plex.tv/c/people/c7a8a55631f762003c6d11796f04a8e0.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 5969,
+                "filter": "producer=5969",
+                "tag": "Julie Herrin",
+                "tagKey": "5dce6a0b90bd5d002033318c",
+                "thumb": "https://metadata-static.plex.tv/3/people/32f55807c911e7e20e034fd418491f99.jpg"
+              },
+              {
+                "id": 199827,
+                "filter": "producer=199827",
+                "tag": "Allen Marshall Palmer",
+                "tagKey": "5f3fed6f86422500427e4ad3"
+              }
+            ]
+          },
+          {
+            "ratingKey": "107971",
+            "key": "/library/metadata/107971/children",
+            "guid": "plex://show/5d9c085408fddd001f2978b9",
+            "slug": "slugterra",
+            "studio": "Nerd Corps Entertainment",
+            "type": "show",
+            "title": "Slugterra",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "contentRating": "TV-Y7",
+            "summary": "Eli Shane aims to become the greatest Slugslinging hero by collecting and dueling with transforming slug creatures to defeat the evil Dr. Blakk, who seeks to turn slugs into mindless weapons in the luminous underground world of Slugterra.",
+            "index": 1,
+            "audienceRating": 8.4,
+            "year": 2012,
+            "tagline": "Slug it out!",
+            "thumb": "/library/metadata/107971/thumb/1746939406",
+            "art": "/library/metadata/107971/art/1746939406",
+            "theme": "/library/metadata/107971/theme/1746939406",
+            "duration": 1320000,
+            "originallyAvailableAt": "2012-09-03",
+            "leafCount": 40,
+            "viewedLeafCount": 0,
+            "childCount": 4,
+            "addedAt": 1746940613,
+            "updatedAt": 1746939406,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "Image": [
+              {
+                "alt": "Slugterra",
+                "type": "coverPoster",
+                "url": "/library/metadata/107971/thumb/1746939406"
+              },
+              {
+                "alt": "Slugterra",
+                "type": "background",
+                "url": "/library/metadata/107971/art/1746939406"
+              },
+              {
+                "alt": "Slugterra",
+                "type": "clearLogo",
+                "url": "/library/metadata/107971/clearLogo/1746939406"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "1a351d",
+              "topRight": "306c3f",
+              "bottomRight": "2c5e32",
+              "bottomLeft": "1b2b12"
+            },
+            "Genre": [
+              {
+                "id": 1402,
+                "filter": "genre=1402",
+                "tag": "Animation"
+              },
+              {
+                "id": 163,
+                "filter": "genre=163",
+                "tag": "Action"
+              },
+              {
+                "id": 1209,
+                "filter": "genre=1209",
+                "tag": "Comedy"
+              },
+              {
+                "id": 449,
+                "filter": "genre=449",
+                "tag": "Science Fiction"
+              },
+              {
+                "id": 1403,
+                "filter": "genre=1403",
+                "tag": "Family"
+              },
+              {
+                "id": 1210,
+                "filter": "genre=1210",
+                "tag": "Adventure"
+              },
+              {
+                "id": 93,
+                "filter": "genre=93",
+                "tag": "Fantasy"
+              },
+              {
+                "id": 5785,
+                "filter": "genre=5785",
+                "tag": "Sci-Fi & Fantasy"
+              },
+              {
+                "id": 1495,
+                "filter": "genre=1495",
+                "tag": "Children"
+              }
+            ],
+            "Country": [
+              {
+                "id": 662,
+                "filter": "country=662",
+                "tag": "Canada"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "imdb://tt2548200"
+              },
+              {
+                "id": "tmdb://46994"
+              },
+              {
+                "id": "tvdb://262131"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.2,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 8.4,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 3315,
+                "filter": "actor=3315",
+                "tag": "Sam Vincent",
+                "tagKey": "5d77685c33f255001e853def",
+                "role": "Eli",
+                "thumb": "https://metadata-static.plex.tv/1/people/134e2107f9c961a479ea50c6e041be0a.jpg"
+              },
+              {
+                "id": 1430,
+                "filter": "actor=1430",
+                "tag": "Shannon Chan-Kent",
+                "tagKey": "5d77689afb0d55001f5152be",
+                "role": "Trixie",
+                "thumb": "https://metadata-static.plex.tv/people/5d77689afb0d55001f5152be.jpg"
+              },
+              {
+                "id": 75343,
+                "filter": "actor=75343",
+                "tag": "Andrew Francis",
+                "tagKey": "5d7768317e9a3c0020c6c006",
+                "role": "Kord",
+                "thumb": "https://metadata-static.plex.tv/4/people/4b3edfdca1cf2dacb6eb8efe41d561d6.jpg"
+              },
+              {
+                "id": 103875,
+                "filter": "actor=103875",
+                "tag": "Lee Tockar",
+                "tagKey": "5d776844880197001ec9631a",
+                "role": "Pronto",
+                "thumb": "https://metadata-static.plex.tv/a/people/a133a839c0ec1048083b2a483ed6ec8c.jpg"
+              },
+              {
+                "id": 103765,
+                "filter": "actor=103765",
+                "tag": "Brian Drummond",
+                "tagKey": "5d776842880197001ec95eb0",
+                "role": "El Diablos Nacho",
+                "thumb": "https://metadata-static.plex.tv/people/5d776842880197001ec95eb0.jpg"
+              },
+              {
+                "id": 103701,
+                "filter": "actor=103701",
+                "tag": "Michael Dobson",
+                "tagKey": "5d77682861141d001fb137ec",
+                "role": "Drake",
+                "thumb": "https://metadata-static.plex.tv/2/people/2969551d5dd5f11615c79feaa3500d71.jpg"
+              },
+              {
+                "id": 73635,
+                "filter": "actor=73635",
+                "tag": "Trevor Devall",
+                "tagKey": "5d776842880197001ec95eaf",
+                "role": "King of Sling",
+                "thumb": "https://metadata-static.plex.tv/people/5d776842880197001ec95eaf.jpg"
+              },
+              {
+                "id": 103620,
+                "filter": "actor=103620",
+                "tag": "Mark Oliver",
+                "tagKey": "5d77683b880197001ec94a85",
+                "role": "Dr. Blakk",
+                "thumb": "https://metadata-static.plex.tv/1/people/144575b6bdd18812c8b24ed91c399d04.jpg"
+              },
+              {
+                "id": 285091,
+                "filter": "actor=285091",
+                "tag": "Tobias Diakow",
+                "tagKey": "5d7769a8f617c90020162e51",
+                "role": "Eli Shane"
+              }
+            ],
+            "Location": [
+              {
+                "path": "/data/Media/Tv Shows/Slugterra (2012) {tvdb-262131}"
+              }
+            ]
+          },
+          {
+            "ratingKey": "107970",
+            "key": "/library/metadata/107970",
+            "parentRatingKey": "12016",
+            "grandparentRatingKey": "11854",
+            "guid": "plex://episode/6810c6ba86343e0f659642d0",
+            "parentGuid": "plex://season/6696d12597fe2d2cc75d7d65",
+            "grandparentGuid": "plex://show/5d9c0813e264b7001fc3b4c4",
+            "grandparentSlug": "shark-tank",
+            "type": "episode",
+            "title": "ESAI, Mirai Clinical, Cricket's Candy Creations, Morrison Outdoors",
+            "grandparentKey": "/library/metadata/11854",
+            "parentKey": "/library/metadata/12016",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "grandparentTitle": "Shark Tank",
+            "parentTitle": "Season 16",
+            "originalTitle": "Episode #16.19",
+            "contentRating": "TV-PG",
+            "summary": "Founders seek deals for a self-cleaning dog bowl, zero-waste gift-wrap fabric, a workout-tracking smart jump rope, and gourmet mushroom jerky-testing the Sharks on pet tech, sustainability, fitness, and foodie margins.",
+            "index": 19,
+            "parentIndex": 16,
+            "audienceRating": 7.0,
+            "year": 2025,
+            "thumb": "/library/metadata/107970/thumb/1747873099",
+            "art": "/library/metadata/11854/art/1747873114",
+            "parentThumb": "/library/metadata/12016/thumb/1732579997",
+            "grandparentThumb": "/library/metadata/11854/thumb/1747873114",
+            "grandparentArt": "/library/metadata/11854/art/1747873114",
+            "grandparentTheme": "/library/metadata/11854/theme/1747873114",
+            "duration": 2575447,
+            "originallyAvailableAt": "2025-05-09",
+            "addedAt": 1746852779,
+            "updatedAt": 1747873099,
+            "audienceRatingImage": "themoviedb://image.rating",
+            "chapterSource": "media",
+            "Media": [
+              {
+                "id": 130284,
+                "duration": 2575447,
+                "bitrate": 10266,
+                "width": 1920,
+                "height": 1080,
+                "aspectRatio": 1.78,
+                "audioChannels": 6,
+                "audioCodec": "eac3",
+                "videoCodec": "h264",
+                "videoResolution": "1080",
+                "container": "mkv",
+                "videoFrameRate": "24p",
+                "videoProfile": "high",
+                "hasVoiceActivity": true,
+                "Part": [
+                  {
+                    "id": 447320,
+                    "key": "/library/parts/447320/1746852752/file.mkv",
+                    "duration": 2575447,
+                    "file": "/data/Media/Tv Shows/Shark Tank/Season 16/Shark Tank (2009) - S16E19 - ESAI Mirai Clinical Crickets Candy Creations Morrison Outdoors [WEBDL-1080p][EAC3 5.1][h264]-FLUX.mkv",
+                    "size": 3305691419,
+                    "container": "mkv",
+                    "indexes": "sd",
+                    "videoProfile": "high",
+                    "Stream": [
+                      {
+                        "id": 1033764,
+                        "streamType": 1,
+                        "default": true,
+                        "codec": "h264",
+                        "index": 0,
+                        "bitrate": 9626,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "bitDepth": 8,
+                        "chromaLocation": "left",
+                        "chromaSubsampling": "4:2:0",
+                        "codedHeight": 1088,
+                        "codedWidth": 1920,
+                        "colorPrimaries": "bt709",
+                        "colorRange": "tv",
+                        "colorSpace": "bt709",
+                        "colorTrc": "bt709",
+                        "frameRate": 23.976,
+                        "hasScalingMatrix": false,
+                        "height": 1080,
+                        "level": 40,
+                        "original": true,
+                        "profile": "high",
+                        "refFrames": 4,
+                        "scanType": "progressive",
+                        "width": 1920,
+                        "displayTitle": "1080p (H.264)",
+                        "extendedDisplayTitle": "1080p (H.264)"
+                      },
+                      {
+                        "id": 1033765,
+                        "streamType": 2,
+                        "selected": true,
+                        "default": true,
+                        "codec": "eac3",
+                        "index": 1,
+                        "channels": 6,
+                        "bitrate": 640,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "audioChannelLayout": "5.1(side)",
+                        "original": true,
+                        "samplingRate": 48000,
+                        "displayTitle": "English (EAC3 5.1)",
+                        "extendedDisplayTitle": "English (EAC3 5.1)"
+                      },
+                      {
+                        "id": 1033766,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 2,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "original": true,
+                        "displayTitle": "English (SRT)",
+                        "extendedDisplayTitle": "English (SRT)"
+                      },
+                      {
+                        "id": 1033767,
+                        "streamType": 3,
+                        "canAutoSync": false,
+                        "codec": "srt",
+                        "index": 3,
+                        "bitrate": 0,
+                        "language": "English",
+                        "languageTag": "en",
+                        "languageCode": "eng",
+                        "hearingImpaired": true,
+                        "original": true,
+                        "title": "SDH",
+                        "displayTitle": "English SDH (SRT)",
+                        "extendedDisplayTitle": "SDH (English SRT)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "Image": [
+              {
+                "alt": "ESAI, Mirai Clinical, Cricket's Candy Creations, Morrison Outdoors",
+                "type": "coverPoster",
+                "url": "/library/metadata/11854/thumb/1747873114"
+              },
+              {
+                "alt": "ESAI, Mirai Clinical, Cricket's Candy Creations, Morrison Outdoors",
+                "type": "snapshot",
+                "url": "/library/metadata/107970/thumb/1747873099"
+              },
+              {
+                "alt": "ESAI, Mirai Clinical, Cricket's Candy Creations, Morrison Outdoors",
+                "type": "background",
+                "url": "/library/metadata/11854/art/1747873114"
+              },
+              {
+                "alt": "ESAI, Mirai Clinical, Cricket's Candy Creations, Morrison Outdoors",
+                "type": "clearLogo",
+                "url": "/library/metadata/11854/clearLogo/1747873114"
+              }
+            ],
+            "UltraBlurColors": {
+              "topLeft": "4c1c1d",
+              "topRight": "862e10",
+              "bottomRight": "0e132f",
+              "bottomLeft": "033cac"
+            },
+            "Guid": [
+              {
+                "id": "imdb://tt36820799"
+              },
+              {
+                "id": "tmdb://6190296"
+              },
+              {
+                "id": "tvdb://11117201"
+              }
+            ],
+            "Rating": [
+              {
+                "image": "imdb://image.rating",
+                "value": 7.2,
+                "type": "audience"
+              },
+              {
+                "image": "themoviedb://image.rating",
+                "value": 7.0,
+                "type": "audience"
+              }
+            ],
+            "Role": [
+              {
+                "id": 10909,
+                "filter": "actor=10909",
+                "tag": "Mark Cuban",
+                "tagKey": "5d77683361141d001fb1526f",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/people/5d77683361141d001fb1526f.jpg"
+              },
+              {
+                "id": 70555,
+                "filter": "actor=70555",
+                "tag": "Daymond John",
+                "tagKey": "5d776840961905001eb96378",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/f/people/f5148e7d03c9cfab049ae70e3f9b491c.jpg"
+              },
+              {
+                "id": 70556,
+                "filter": "actor=70556",
+                "tag": "Barbara Corcoran",
+                "tagKey": "5d7769e47a53e9001e6f3a75",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/d/people/dd3fcf636c5f464d1318402780f75105.jpg"
+              },
+              {
+                "id": 70557,
+                "filter": "actor=70557",
+                "tag": "Robert Herjavec",
+                "tagKey": "5d9c0813e264b7001fc3b503",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/b/people/b3dce9342dbce9126bad9cabc1aa2bbe.jpg"
+              },
+              {
+                "id": 70558,
+                "filter": "actor=70558",
+                "tag": "Kevin O'Leary",
+                "tagKey": "5d9c07f2705e7a001e6cd46c",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/people/5d9c07f2705e7a001e6cd46c.jpg"
+              },
+              {
+                "id": 57447,
+                "filter": "actor=57447",
+                "tag": "Lori Greiner",
+                "tagKey": "5d9c0813e264b7001fc3b509",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/e/people/eca88762265f9d92fc3d7ff9f8a795a8.jpg"
+              },
+              {
+                "id": 70560,
+                "filter": "actor=70560",
+                "tag": "Daniel Lubetzky",
+                "tagKey": "5f405f08fea1a1003fa6771d",
+                "role": "Self - Shark",
+                "thumb": "https://metadata-static.plex.tv/8/people/899e0632a06737170b977577f92f89ee.jpg"
+              },
+              {
+                "id": 70559,
+                "filter": "actor=70559",
+                "tag": "Phil Crowley",
+                "tagKey": "5d7768e3594b2b001e69772b",
+                "role": "Self - Announcer (voice)",
+                "thumb": "https://metadata-static.plex.tv/2/people/2e588843c0dc6bec80a7a036a0337281.jpg"
+              }
+            ],
+            "Producer": [
+              {
+                "id": 70837,
+                "filter": "producer=70837",
+                "tag": "Lori Greiner",
+                "tagKey": "5d9c0813e264b7001fc3b509",
+                "thumb": "https://metadata-static.plex.tv/e/people/eca88762265f9d92fc3d7ff9f8a795a8.jpg"
+              },
+              {
+                "id": 71090,
+                "filter": "producer=71090",
+                "tag": "Yun Lingner",
+                "tagKey": "5e16361c4c78f7003e7f57e2",
+                "thumb": "https://metadata-static.plex.tv/f/people/f6dba19419b91d47bcd1d58e5cb51d05.jpg"
+              }
+            ]
+          },
+          {
+            "ratingKey": "107951",
+            "key": "/library/metadata/107951/children",
+            "parentRatingKey": "104031",
+            "guid": "plex://season/602e628b91bd55002cf7cc6c",
+            "parentGuid": "plex://show/5d9c0839705e7a001e6d68fb",
+            "parentSlug": "four-weddings",
+            "parentStudio": "ITV Studios",
+            "type": "season",
+            "title": "Season 2",
+            "parentKey": "/library/metadata/104031",
+            "librarySectionTitle": "TV Shows",
+            "librarySectionID": 2,
+            "librarySectionKey": "/library/sections/2",
+            "parentTitle": "Four Weddings",
+            "summary": "",
+            "index": 2,
+            "parentIndex": 1,
+            "parentYear": 2009,
+            "thumb": "/library/metadata/104031/thumb/1748538526",
+            "art": "/library/metadata/104031/art/1748538526",
+            "parentThumb": "/library/metadata/104031/thumb/1748538526",
+            "leafCount": 2,
+            "viewedLeafCount": 0,
+            "addedAt": 1746824012,
+            "updatedAt": 1746824013,
+            "Image": [
+              {
+                "alt": "Season 2",
+                "type": "coverPoster",
+                "url": "/library/metadata/104031/thumb/1748538526"
+              },
+              {
+                "alt": "Season 2",
+                "type": "background",
+                "url": "/library/metadata/104031/art/1748538526"
+              }
+            ],
+            "Guid": [
+              {
+                "id": "tmdb://32917"
               }
             ]
           }
