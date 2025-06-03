@@ -2159,18 +2159,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: includeMeta
           in: query
@@ -2834,9 +2838,13 @@ paths:
                                             - episode
                                             - artist
                                             - album
+                                            - track
+                                            - photoalbum
+                                            - photo
+                                            - collection
                                           example: movie
                                           description: |
-                                            The type of media content
+                                            The type of media content in the Plex library. This can represent videos, music, or photos.
                                           x-speakeasy-enums:
                                             - MOVIE
                                             - TV_SHOW
@@ -2844,6 +2852,10 @@ paths:
                                             - EPISODE
                                             - ARTIST
                                             - ALBUM
+                                            - TRACK
+                                            - PHOTO_ALBUM
+                                            - PHOTO
+                                            - COLLECTION
                                 - type: object
                                   properties:
                                     updatedAt:
@@ -2939,6 +2951,31 @@ paths:
                                         bottomLeft:
                                           type: string
                                           example: 1f5066
+                                - type: object
+                                  properties:
+                                    Guid:
+                                      x-speakeasy-name-override: guids
+                                      type: array
+                                      items:
+                                        type: object
+                                        required:
+                                          - id
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: |
+                                              The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
+                                            pattern: '^(imdb|tmdb|tvdb)://.+$'
+                                            example:
+                                              imdbExample:
+                                                summary: IMDB example
+                                                value: 'imdb://tt13015952'
+                                              tmdbExample:
+                                                summary: TMDB example
+                                                value: 'tmdb://2434012'
+                                              tvdbExample:
+                                                summary: TVDB example
+                                                value: 'tvdb://7945991'
                                 - type: object
                                   properties:
                                     Media:
@@ -3369,10 +3406,14 @@ paths:
                                           - type: object
                                             required:
                                               - id
-                                            description: The identifier for the genre
                                             properties:
                                               id:
+                                                description: |
+                                                  The unique identifier for the genre.
+                                                  NOTE: This is different for each Plex server and is not globally unique.
                                                 type: integer
+                                                format: int32
+                                                minimum: 1
                                                 example: 259
                                           - type: object
                                             required:
@@ -3398,11 +3439,14 @@ paths:
                                           - type: object
                                             required:
                                               - id
-                                            description: The identifier for the country
                                             properties:
                                               id:
+                                                description: |
+                                                  The unique identifier for the country.
+                                                  NOTE: This is different for each Plex server and is not globally unique.
                                                 type: integer
                                                 format: int32
+                                                minimum: 1
                                                 example: 259
                                           - type: object
                                             required:
@@ -3413,6 +3457,8 @@ paths:
                                                 description: The country of origin of this media item
                                                 example: United States of America
                                           - type: object
+                                            required:
+                                              - filter
                                             description: The filter query string for country media items.
                                             properties:
                                               filter:
@@ -3424,12 +3470,45 @@ paths:
                                         allOf:
                                           - type: object
                                             required:
+                                              - id
+                                            properties:
+                                              id:
+                                                description: Unique identifier for the director.
+                                                type: integer
+                                                format: int32
+                                                minimum: 1
+                                                example: 126522
+                                          - type: object
+                                            required:
+                                              - filter
+                                            properties:
+                                              filter:
+                                                description: The filter string used to query this director.
+                                                type: string
+                                                example: director=235876
+                                          - type: object
+                                            required:
                                               - tag
                                             properties:
                                               tag:
                                                 type: string
                                                 description: The role of Director
                                                 example: Danny Boyle
+                                          - type: object
+                                            required:
+                                              - tagKey
+                                            properties:
+                                              tagKey:
+                                                description: 'A unique 24-character hexadecimal key associated with the director''s tag, used for internal identification.'
+                                                type: string
+                                                pattern: '^[a-fA-F0-9]{24}$'
+                                                example: 5d776831151a60001f24d031
+                                          - type: object
+                                            properties:
+                                              thumb:
+                                                description: The absolute URL of the thumbnail image for the director.
+                                                type: string
+                                                example: 'https://metadata-static.plex.tv/8/people/8d65fa96804802e08f2de09fe014408e.jpg'
                                     Writer:
                                       type: array
                                       items:
@@ -3442,6 +3521,7 @@ paths:
                                                 description: Unique identifier for the writer.
                                                 type: integer
                                                 format: int32
+                                                minimum: 1
                                                 example: 126522
                                           - type: object
                                             required:
@@ -3462,10 +3542,16 @@ paths:
                                           - type: object
                                             properties:
                                               tagKey:
-                                                description: 'A unique key associated with the writers tag, used for internal identification.'
+                                                description: 'A 24-character hexadecimal unique key associated with the writer’s tag, used for internal identification.'
                                                 type: string
                                                 pattern: '^[a-fA-F0-9]{24}$'
                                                 example: 5d77683d85719b001f3a535e
+                                          - type: object
+                                            properties:
+                                              thumb:
+                                                description: The absolute URL of the thumbnail image for the writer.
+                                                type: string
+                                                example: 'https://metadata-static.plex.tv/8/people/8d65fa96804802e08f2de09fe014408e.jpg'
                                     Role:
                                       type: array
                                       items:
@@ -3475,8 +3561,12 @@ paths:
                                               - id
                                             properties:
                                               id:
-                                                description: Unique identifier for the actor or role.
+                                                description: |
+                                                  The unique identifier for the role.
+                                                  NOTE: This is different for each Plex server and is not globally unique.
                                                 type: integer
+                                                format: int32
+                                                minimum: 1
                                                 example: 126522
                                           - type: object
                                             required:
@@ -3495,10 +3585,15 @@ paths:
                                                 type: string
                                                 example: Teller
                                           - type: object
+                                            required:
+                                              - tagKey
                                             properties:
                                               tagKey:
-                                                description: 'A unique key associated with the actor''s tag, used for internal identification.'
+                                                description: |
+                                                  A 24-character hexadecimal unique key associated with the actor's tag, used for internal identification.
+                                                  NOTE: This is globally unique across all Plex Servers.
                                                 type: string
+                                                pattern: '^[a-fA-F0-9]{24}$'
                                                 example: 5d77683d85719b001f3a535e
                                           - type: object
                                             properties:
@@ -3509,7 +3604,7 @@ paths:
                                           - type: object
                                             properties:
                                               thumb:
-                                                description: The URL of the thumbnail image for the actor.
+                                                description: The absolute URL of the thumbnail image for the actor.
                                                 type: string
                                                 example: 'https://metadata-static.plex.tv/7/people/708568fd018d7aa8b1032dcf867747e8.jpg'
                                     Producer:
@@ -3524,6 +3619,7 @@ paths:
                                                 description: Unique identifier for the producer.
                                                 type: integer
                                                 format: int32
+                                                minimum: 1
                                                 example: 126522
                                           - type: object
                                             required:
@@ -3542,16 +3638,21 @@ paths:
                                                 type: string
                                                 example: Amelia Knapp
                                           - type: object
+                                            required:
+                                              - tagKey
                                             properties:
                                               tagKey:
-                                                description: 'A unique key associated with the producer''s tag, used for internal identification.'
+                                                description: |
+                                                  A 24-character hexadecimal unique key associated with the producer's tag, used for internal identification.
+                                                minLength: 24
+                                                maxLength: 24
                                                 type: string
                                                 pattern: '^[a-fA-F0-9]{24}$'
                                                 example: 5d77683d85719b001f3a535e
                                           - type: object
                                             properties:
                                               thumb:
-                                                description: The URL of the thumbnail image for the actor.
+                                                description: The absolute URL of the thumbnail image for the producer.
                                                 type: string
                                                 example: 'https://metadata-static.plex.tv/7/people/708568fd018d7aa8b1032dcf867747e8.jpg'
                                     Rating:
@@ -3561,10 +3662,10 @@ paths:
                                           - type: object
                                             required:
                                               - image
-                                            description: 'The URL for the rating image, for example from IMDb.'
                                             properties:
                                               image:
                                                 type: string
+                                                description: 'The URL for the rating image, for example from IMDb.'
                                                 example: 'imdb://image.rating'
                                           - type: object
                                             required:
@@ -3573,6 +3674,7 @@ paths:
                                             properties:
                                               value:
                                                 type: number
+                                                format: float
                                                 example: 5.1
                                           - type: object
                                             required:
@@ -3593,6 +3695,8 @@ paths:
                                             properties:
                                               id:
                                                 type: integer
+                                                format: int32
+                                                minimum: 1
                                                 example: 259
                                           - type: object
                                             required:
@@ -3622,17 +3726,6 @@ paths:
                                               path:
                                                 type: string
                                                 example: /TV Shows/Clarkson's Farm
-                                    Guid:
-                                      x-speakeasy-name-override: guids
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: |
-                                              The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
-                                            example: 'tvdb://2337'
                                     Collection:
                                       type: array
                                       items:
@@ -4396,18 +4489,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: includeMeta
           in: query
@@ -5023,9 +5120,13 @@ paths:
                                             - episode
                                             - artist
                                             - album
+                                            - track
+                                            - photoalbum
+                                            - photo
+                                            - collection
                                           example: movie
                                           description: |
-                                            The type of media content
+                                            The type of media content in the Plex library. This can represent videos, music, or photos.
                                           x-speakeasy-enums:
                                             - MOVIE
                                             - TV_SHOW
@@ -5033,6 +5134,10 @@ paths:
                                             - EPISODE
                                             - ARTIST
                                             - ALBUM
+                                            - TRACK
+                                            - PHOTO_ALBUM
+                                            - PHOTO
+                                            - COLLECTION
                                         - type: string
                                           description: The library type
                                 - type: object
@@ -5938,18 +6043,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: sectionKey
           description: |
@@ -6308,9 +6417,13 @@ paths:
                                     - episode
                                     - artist
                                     - album
+                                    - track
+                                    - photoalbum
+                                    - photo
+                                    - collection
                                   example: movie
                                   description: |
-                                    The type of media content
+                                    The type of media content in the Plex library. This can represent videos, music, or photos.
                                   x-speakeasy-enums:
                                     - MOVIE
                                     - TV_SHOW
@@ -6318,6 +6431,10 @@ paths:
                                     - EPISODE
                                     - ARTIST
                                     - ALBUM
+                                    - TRACK
+                                    - PHOTO_ALBUM
+                                    - PHOTO
+                                    - COLLECTION
                                 title:
                                   type: string
                                   example: 'Avatar: The Way of Water'
@@ -7211,8 +7328,8 @@ paths:
     get:
       tags:
         - Library
-      summary: Get all media of library
-      operationId: get-all-media-library
+      summary: Get Library section media by tag ALL
+      operationId: get-library-sections-all
       description: |
         Retrieves a list of all general media data for this library.
       parameters:
@@ -7243,18 +7360,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: includeMeta
           in: query
@@ -7724,9 +7845,13 @@ paths:
                                             - episode
                                             - artist
                                             - album
+                                            - track
+                                            - photoalbum
+                                            - photo
+                                            - collection
                                           example: movie
                                           description: |
-                                            The type of media content
+                                            The type of media content in the Plex library. This can represent videos, music, or photos.
                                           x-speakeasy-enums:
                                             - MOVIE
                                             - TV_SHOW
@@ -7734,6 +7859,10 @@ paths:
                                             - EPISODE
                                             - ARTIST
                                             - ALBUM
+                                            - TRACK
+                                            - PHOTO_ALBUM
+                                            - PHOTO
+                                            - COLLECTION
                                 - type: object
                                   required:
                                     - title
@@ -8129,6 +8258,31 @@ paths:
                                         bottomLeft:
                                           type: string
                                           example: 1f5066
+                                - type: object
+                                  properties:
+                                    Guid:
+                                      x-speakeasy-name-override: guids
+                                      type: array
+                                      items:
+                                        type: object
+                                        required:
+                                          - id
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: |
+                                              The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
+                                            pattern: '^(imdb|tmdb|tvdb)://.+$'
+                                            example:
+                                              imdbExample:
+                                                summary: IMDB example
+                                                value: 'imdb://tt13015952'
+                                              tmdbExample:
+                                                summary: TMDB example
+                                                value: 'tmdb://2434012'
+                                              tvdbExample:
+                                                summary: TVDB example
+                                                value: 'tvdb://7945991'
                                 - type: object
                                   properties:
                                     Media:
@@ -8613,17 +8767,6 @@ paths:
                                                 description: The display tag for the actor (typically the actor's name).
                                                 type: string
                                                 example: Teller
-                                    Guid:
-                                      x-speakeasy-name-override: guids
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: |
-                                              The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
-                                            example: 'tvdb://2337'
                                     Collection:
                                       type: array
                                       items:
@@ -8844,18 +8987,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
       responses:
         '200':
@@ -9063,18 +9210,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: Accept
           in: header
@@ -9316,18 +9467,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: Accept
           in: header
@@ -9565,18 +9720,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
         - name: Accept
           in: header
@@ -9943,9 +10102,13 @@ paths:
                                     - episode
                                     - artist
                                     - album
+                                    - track
+                                    - photoalbum
+                                    - photo
+                                    - collection
                                   example: movie
                                   description: |
-                                    The type of media content
+                                    The type of media content in the Plex library. This can represent videos, music, or photos.
                                   x-speakeasy-enums:
                                     - MOVIE
                                     - TV_SHOW
@@ -9953,6 +10116,10 @@ paths:
                                     - EPISODE
                                     - ARTIST
                                     - ALBUM
+                                    - TRACK
+                                    - PHOTO_ALBUM
+                                    - PHOTO
+                                    - COLLECTION
                                 title:
                                   type: string
                                   example: 'Avatar: The Way of Water'
@@ -10698,15 +10865,17 @@ paths:
         - Library
       summary: Get Media Metadata
       description: |
-        This endpoint will return all the (meta)data of a library item specified with by the ratingKey.
+        This endpoint will return all the (meta)data of one or more library items specified by the ratingKey.
+        Multiple rating keys can be provided as a comma-separated list (e.g., "21119,21617").
       operationId: get-media-meta-data
       parameters:
         - name: ratingKey
           in: path
-          description: the id of the library item to return the children of.
+          description: The id(s) of the library item(s) to return metadata for. Can be a single ID or comma-separated list of IDs.
           schema:
-            type: integer
-            example: 9518
+            type: string
+            pattern: '^[0-9]+(,[0-9]+)*$'
+            example: '21119,21617'
           required: true
         - name: includeConcerts
           in: query
@@ -10938,9 +11107,13 @@ paths:
                                             - episode
                                             - artist
                                             - album
+                                            - track
+                                            - photoalbum
+                                            - photo
+                                            - collection
                                           example: movie
                                           description: |
-                                            The type of media content
+                                            The type of media content in the Plex library. This can represent videos, music, or photos.
                                           x-speakeasy-enums:
                                             - MOVIE
                                             - TV_SHOW
@@ -10948,6 +11121,10 @@ paths:
                                             - EPISODE
                                             - ARTIST
                                             - ALBUM
+                                            - TRACK
+                                            - PHOTO_ALBUM
+                                            - PHOTO
+                                            - COLLECTION
                                 - type: object
                                   required:
                                     - title
@@ -11367,6 +11544,31 @@ paths:
                                       type: string
                                       description: The key corresponding to the library section.
                                       example: /library/sections/1
+                                - type: object
+                                  properties:
+                                    Guid:
+                                      x-speakeasy-name-override: guids
+                                      type: array
+                                      items:
+                                        type: object
+                                        required:
+                                          - id
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: |
+                                              The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
+                                            pattern: '^(imdb|tmdb|tvdb)://.+$'
+                                            example:
+                                              imdbExample:
+                                                summary: IMDB example
+                                                value: 'imdb://tt13015952'
+                                              tmdbExample:
+                                                summary: TMDB example
+                                                value: 'tmdb://2434012'
+                                              tvdbExample:
+                                                summary: TVDB example
+                                                value: 'tvdb://7945991'
                                 - type: object
                                   properties:
                                     Media:
@@ -11797,10 +11999,14 @@ paths:
                                           - type: object
                                             required:
                                               - id
-                                            description: The identifier for the genre
                                             properties:
                                               id:
+                                                description: |
+                                                  The unique identifier for the genre.
+                                                  NOTE: This is different for each Plex server and is not globally unique.
                                                 type: integer
+                                                format: int32
+                                                minimum: 1
                                                 example: 259
                                           - type: object
                                             required:
@@ -11826,11 +12032,14 @@ paths:
                                           - type: object
                                             required:
                                               - id
-                                            description: The identifier for the country
                                             properties:
                                               id:
+                                                description: |
+                                                  The unique identifier for the country.
+                                                  NOTE: This is different for each Plex server and is not globally unique.
                                                 type: integer
                                                 format: int32
+                                                minimum: 1
                                                 example: 259
                                           - type: object
                                             required:
@@ -11841,6 +12050,8 @@ paths:
                                                 description: The country of origin of this media item
                                                 example: United States of America
                                           - type: object
+                                            required:
+                                              - filter
                                             description: The filter query string for country media items.
                                             properties:
                                               filter:
@@ -11858,6 +12069,7 @@ paths:
                                                 description: Unique identifier for the director.
                                                 type: integer
                                                 format: int32
+                                                minimum: 1
                                                 example: 126522
                                           - type: object
                                             required:
@@ -11876,16 +12088,18 @@ paths:
                                                 type: string
                                                 example: director=235876
                                           - type: object
+                                            required:
+                                              - tagKey
                                             properties:
                                               tagKey:
-                                                description: 'A unique key associated with the director''s tag, used for internal identification.'
+                                                description: 'A unique 24-character hexadecimal key associated with the director''s tag, used for internal identification.'
                                                 type: string
                                                 pattern: '^[a-fA-F0-9]{24}$'
                                                 example: 5d776831151a60001f24d031
                                           - type: object
                                             properties:
                                               thumb:
-                                                description: The URL of the thumbnail image for the director.
+                                                description: The absolute URL of the thumbnail image for the director.
                                                 type: string
                                                 example: 'https://metadata-static.plex.tv/8/people/8d65fa96804802e08f2de09fe014408e.jpg'
                                     Writer:
@@ -11900,6 +12114,7 @@ paths:
                                                 description: Unique identifier for the writer.
                                                 type: integer
                                                 format: int32
+                                                minimum: 1
                                                 example: 126522
                                           - type: object
                                             required:
@@ -11920,13 +12135,13 @@ paths:
                                           - type: object
                                             properties:
                                               thumb:
-                                                description: The URL of the thumbnail image for the writer.
+                                                description: The absolute URL of the thumbnail image for the writer.
                                                 type: string
                                                 example: 'https://metadata-static.plex.tv/8/people/8d65fa96804802e08f2de09fe014408e.jpg'
                                           - type: object
                                             properties:
                                               tagKey:
-                                                description: 'A unique key associated with the writers tag, used for internal identification.'
+                                                description: 'A 24-character hexadecimal unique key associated with the writer’s tag, used for internal identification.'
                                                 type: string
                                                 pattern: '^[a-fA-F0-9]{24}$'
                                                 example: 5d77683d85719b001f3a535e
@@ -11974,8 +12189,12 @@ paths:
                                               - id
                                             properties:
                                               id:
-                                                description: Unique identifier for the actor or role.
+                                                description: |
+                                                  The unique identifier for the role.
+                                                  NOTE: This is different for each Plex server and is not globally unique.
                                                 type: integer
+                                                format: int32
+                                                minimum: 1
                                                 example: 126522
                                           - type: object
                                             required:
@@ -12000,29 +12219,22 @@ paths:
                                                 type: string
                                                 example: actor=126522
                                           - type: object
+                                            required:
+                                              - tagKey
                                             properties:
                                               tagKey:
-                                                description: 'A unique key associated with the actor''s tag, used for internal identification.'
+                                                description: |
+                                                  A 24-character hexadecimal unique key associated with the actor's tag, used for internal identification.
+                                                  NOTE: This is globally unique across all Plex Servers.
                                                 type: string
+                                                pattern: '^[a-fA-F0-9]{24}$'
                                                 example: 5d77683d85719b001f3a535e
                                           - type: object
                                             properties:
                                               thumb:
-                                                description: The URL of the thumbnail image for the actor.
+                                                description: The absolute URL of the thumbnail image for the actor.
                                                 type: string
                                                 example: 'https://metadata-static.plex.tv/7/people/708568fd018d7aa8b1032dcf867747e8.jpg'
-                                    Guid:
-                                      x-speakeasy-name-override: Guids
-                                      type: array
-                                      items:
-                                        type: object
-                                        required:
-                                          - id
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: The GUID value.
-                                            example: 'imdb://tt3032476'
                                     Rating:
                                       x-speakeasy-name-override: Ratings
                                       type: array
@@ -13173,14 +13385,6 @@ paths:
         This endpoint will return the top watched content from libraries of a certain type
       operationId: getTopWatchedContent
       parameters:
-        - name: includeGuids
-          in: query
-          description: |
-            Adds the Guids object to the response
-          schema:
-            type: integer
-          required: false
-          example: 1
         - name: type
           in: query
           description: |
@@ -13198,19 +13402,38 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
+        - name: includeGuids
+          in: query
+          description: |
+            Adds the Guid object to the response
+          schema:
+            type: integer
+            format: int32
+            enum:
+              - 0
+              - 1
+            example: 1
+            default: 0
+            x-speakeasy-enums:
+              - DISABLE
+              - ENABLE
       responses:
         '200':
           description: The metadata of the library item.
@@ -13220,189 +13443,214 @@ paths:
                 type: object
                 properties:
                   MediaContainer:
-                    type: object
-                    properties:
-                      size:
-                        type: integer
-                        format: int32
-                        example: 1
-                      allowSync:
-                        type: boolean
-                        example: true
-                      identifier:
-                        type: string
-                        example: com.plexapp.plugins.library
-                      mediaTagPrefix:
-                        type: string
-                        example: /system/bundle/media/flags/
-                      mediaTagVersion:
-                        type: integer
-                        format: int32
-                        example: 1698860922
-                      Metadata:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            ratingKey:
-                              type: string
-                              example: '17'
-                            key:
-                              type: string
-                              example: /library/metadata/17
-                            guid:
-                              type: string
-                              example: 'plex://movie/5d77683f6f4521001ea9dc53'
-                            slug:
-                              type: string
-                              example: waterloo-road
-                            studio:
-                              type: string
-                              example: Universal Pictures
-                            type:
-                              type: string
-                              example: movie
-                            title:
-                              type: string
-                              example: Serenity
-                            librarySectionTitle:
-                              type: string
-                              example: Movies
-                            librarySectionID:
-                              type: integer
-                              format: int32
-                              example: 1
-                            librarySectionKey:
-                              type: string
-                              example: /library/sections/1
-                            contentRating:
-                              type: string
-                              example: PG-13
-                            summary:
-                              type: string
-                              example: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
-                            index:
-                              type: integer
-                              example: 1
-                            audienceRating:
-                              type: number
-                              example: 9.1
-                            year:
-                              type: integer
-                              format: int32
-                              example: 2005
-                            tagline:
-                              type: string
-                              example: They aim to misbehave.
-                            thumb:
-                              type: string
-                              example: /library/metadata/17/thumb/1705637165
-                            art:
-                              type: string
-                              example: /library/metadata/17/art/1705637165
-                            duration:
-                              type: integer
-                              format: int32
-                              example: 141417
-                            originallyAvailableAt:
-                              type: string
-                              format: date
-                              example: 2005-09-29T00:00:00.000Z
-                            leafCount:
-                              type: integer
-                              example: 222
-                            viewedLeafCount:
-                              type: integer
-                              example: 100
-                            childCount:
-                              type: integer
-                              example: 13
-                            addedAt:
-                              type: integer
-                              format: int32
-                              example: 1705637164
-                            updatedAt:
-                              type: integer
-                              format: int32
-                              example: 1705637165
-                            globalViewCount:
-                              type: integer
-                              example: 80
-                            audienceRatingImage:
-                              type: string
-                              example: 'rottentomatoes://image.rating.upright'
-                            Genre:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 184
-                                  filter:
-                                    type: string
-                                    example: genre=184
-                                  tag:
-                                    type: string
-                                    example: Thriller
-                            Country:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 116
-                                  filter:
-                                    type: string
-                                    example: country=116
-                                  tag:
-                                    type: string
-                                    example: United States of America
-                            Guid:
-                              x-speakeasy-name-override: guids
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    example: 'tvdb://2337'
-                            Role:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 220
-                                  filter:
-                                    type: string
-                                    example: actor=220
-                                  tag:
-                                    type: string
-                                    example: Dennis Keiffer
-                                  tagKey:
-                                    type: string
-                                    example: 5d77683554f42c001f8c4708
-                                  role:
-                                    type: string
-                                    example: Bar Guy (uncredited)
-                                  thumb:
-                                    type: string
-                                    example: 'https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg'
-                            User:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                    format: int32
-                                    example: 220
+                    allOf:
+                      - type: object
+                        required:
+                          - size
+                        properties:
+                          size:
+                            description: Number of media items returned in this response.
+                            type: integer
+                            format: int32
+                            example: 50
+                      - type: object
+                        required:
+                          - allowSync
+                        properties:
+                          allowSync:
+                            type: boolean
+                            description: Indicates whether syncing is allowed.
+                            example: false
+                      - type: object
+                        required:
+                          - identifier
+                        properties:
+                          identifier:
+                            type: string
+                            description: An plugin identifier for the media container.
+                            example: com.plexapp.plugins.library
+                      - type: object
+                        required:
+                          - mediaTagPrefix
+                        properties:
+                          mediaTagPrefix:
+                            type: string
+                            description: The prefix used for media tag resource paths.
+                            example: /system/bundle/media/flags/
+                      - type: object
+                        required:
+                          - mediaTagVersion
+                        properties:
+                          mediaTagVersion:
+                            type: integer
+                            description: The version number for media tags.
+                            example: 1734362201
+                      - type: object
+                        properties:
+                          Metadata:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                ratingKey:
+                                  type: string
+                                  example: '17'
+                                key:
+                                  type: string
+                                  example: /library/metadata/17
+                                guid:
+                                  type: string
+                                  example: 'plex://movie/5d77683f6f4521001ea9dc53'
+                                slug:
+                                  type: string
+                                  example: waterloo-road
+                                studio:
+                                  type: string
+                                  example: Universal Pictures
+                                type:
+                                  type: string
+                                  example: movie
+                                title:
+                                  type: string
+                                  example: Serenity
+                                librarySectionTitle:
+                                  type: string
+                                  example: Movies
+                                librarySectionID:
+                                  type: integer
+                                  format: int32
+                                  example: 1
+                                librarySectionKey:
+                                  type: string
+                                  example: /library/sections/1
+                                contentRating:
+                                  type: string
+                                  example: PG-13
+                                summary:
+                                  type: string
+                                  example: 'Serenity continues the story of the TV series it was based upon ("Firefly"). River Tam had a secret - one in which she''s not even aware - so dangerous, no one''s safe, as an Alliance operative''s sent to capture her, and all others are considered irrelevant to his job.'
+                                index:
+                                  type: integer
+                                  example: 1
+                                audienceRating:
+                                  type: number
+                                  example: 9.1
+                                year:
+                                  type: integer
+                                  format: int32
+                                  example: 2005
+                                tagline:
+                                  type: string
+                                  example: They aim to misbehave.
+                                thumb:
+                                  type: string
+                                  example: /library/metadata/17/thumb/1705637165
+                                art:
+                                  type: string
+                                  example: /library/metadata/17/art/1705637165
+                                duration:
+                                  type: integer
+                                  format: int32
+                                  example: 141417
+                                originallyAvailableAt:
+                                  type: string
+                                  format: date
+                                  example: 2005-09-29T00:00:00.000Z
+                                leafCount:
+                                  type: integer
+                                  example: 222
+                                viewedLeafCount:
+                                  type: integer
+                                  example: 100
+                                childCount:
+                                  type: integer
+                                  example: 13
+                                addedAt:
+                                  type: integer
+                                  format: int32
+                                  example: 1705637164
+                                updatedAt:
+                                  type: integer
+                                  format: int32
+                                  example: 1705637165
+                                globalViewCount:
+                                  type: integer
+                                  example: 80
+                                audienceRatingImage:
+                                  type: string
+                                  example: 'rottentomatoes://image.rating.upright'
+                                Genre:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int32
+                                        example: 184
+                                      filter:
+                                        type: string
+                                        example: genre=184
+                                      tag:
+                                        type: string
+                                        example: Thriller
+                                Country:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int32
+                                        example: 116
+                                      filter:
+                                        type: string
+                                        example: country=116
+                                      tag:
+                                        type: string
+                                        example: United States of America
+                                Guid:
+                                  x-speakeasy-name-override: guids
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        example: 'tvdb://2337'
+                                Role:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int32
+                                        example: 220
+                                      filter:
+                                        type: string
+                                        example: actor=220
+                                      tag:
+                                        type: string
+                                        example: Dennis Keiffer
+                                      tagKey:
+                                        type: string
+                                        example: 5d77683554f42c001f8c4708
+                                      role:
+                                        type: string
+                                        example: Bar Guy (uncredited)
+                                      thumb:
+                                        type: string
+                                        example: 'https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg'
+                                User:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int32
+                                        example: 220
         '400':
           description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
           content:
@@ -15374,18 +15622,22 @@ paths:
               - 2
               - 3
               - 4
+              - 5
+              - 6
+              - 7
               - 8
               - 9
-              - 10
             example: 2
             x-speakeasy-enums:
               - MOVIE
               - TV_SHOW
               - SEASON
               - EPISODE
-              - AUDIO
+              - ARTIST
               - ALBUM
               - TRACK
+              - PHOTO_ALBUM
+              - PHOTO
           required: true
       responses:
         '200':
