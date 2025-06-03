@@ -1,10 +1,8 @@
-
 type: object
 required:
   - image
-description: "The URL for the rating image, for example from IMDb."
 properties:
   image:
     type: string
+    description: "The URL for the rating image, for example from IMDb."
     example: "imdb://image.rating"
-

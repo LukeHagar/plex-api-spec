@@ -110,6 +110,7 @@ get:
                             - $ref: "../../../../models/meta-data/user-rating.yaml"
                             - $ref: "../../../../models/meta-data/objects/image.yaml"
                             - $ref: "../../../../models/meta-data/objects/ultra-blur-colors.yaml"
+                            - $ref: "../../../../models/meta-data/guid/guid-array.yaml"
                             - type: object
                               properties:
                                 Media:
@@ -140,17 +141,6 @@ get:
                                   items:
                                     allOf:
                                       - $ref: "../../../../models/role/tag.yaml"
-                                Guid:
-                                  x-speakeasy-name-override: guids
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: |
-                                          The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
-                                        example: tvdb://2337
                                 Collection:
                                   type: array
                                   items:

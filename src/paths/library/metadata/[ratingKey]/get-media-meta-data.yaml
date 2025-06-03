@@ -12,7 +12,7 @@ get:
       description: The id(s) of the library item(s) to return metadata for. Can be a single ID or comma-separated list of IDs.
       schema:
         type: string
-        pattern: '^[0-9]+(,[0-9]+)*$'
+        pattern: "^[0-9]+(,[0-9]+)*$"
         example: "21119,21617"
       required: true
     - name: includeConcerts
@@ -194,6 +194,7 @@ get:
                             - $ref: "../../../../models/meta-data/library-section-id.yaml"
                             - $ref: "../../../../models/meta-data/library-section-title.yaml"
                             - $ref: "../../../../models/meta-data/library-section-key.yaml"
+                            - $ref: "../../../../models/meta-data/guid/guid-array.yaml"
                             - type: object
                               properties:
                                 Media:
@@ -246,18 +247,6 @@ get:
                                       - $ref: "../../../../models/role/filter.yaml"
                                       - $ref: "../../../../models/role/tag-key.yaml"
                                       - $ref: "../../../../models/role/thumb.yaml"
-                                Guid:
-                                  x-speakeasy-name-override: Guids
-                                  type: array
-                                  items:
-                                    type: object
-                                    required:
-                                      - id
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: "The GUID value."
-                                        example: "imdb://tt3032476"
                                 Rating:
                                   x-speakeasy-name-override: Ratings
                                   type: array
