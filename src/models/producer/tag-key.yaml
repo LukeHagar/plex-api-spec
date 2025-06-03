@@ -3,7 +3,13 @@ required:
   - tagKey
 properties:
   tagKey:
+properties:
+  tagKey:
     description: "A 24-character hexadecimal unique key associated with the producer's tag, used for internal identification."
+    minLength: 24
+    maxLength: 24
+    type: string
+    pattern: "^[a-fA-F0-9]{24}$"
     type: string
     pattern: "^[a-fA-F0-9]{24}$"
     example: "5d77683d85719b001f3a535e"
