@@ -23,9 +23,9 @@ get:
 
     > **Note**: Filters and sorts are optional; without them, no filtering controls are rendered.
   parameters:
-    - $ref: "../../../parameters/library/section-key.yaml"
-    - $ref: "../../../parameters/accept-application-json.yaml"
-    - $ref: "../../../parameters/type.yaml"
+    - $ref: "../../../../parameters/library/section-key.yaml"
+    - $ref: "../../../../parameters/accept-application-json.yaml"
+    - $ref: "../../../../parameters/type.yaml"
   responses:
     "200":
       description: The contents of the library by section and type
@@ -157,6 +157,6 @@ get:
                           format: int32
                           example: 1705636920
     "400":
-      $ref: "../../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"

@@ -1,0 +1,164 @@
+get:
+  tags:
+    - Library
+  summary: Get all media of library
+  operationId: get-library-sections-all
+  description: |
+    Retrieves a list of all general media data for this library.
+  parameters:
+    - $ref: "../../../../parameters/library/section-key.yaml"
+    - $ref: "../../../../parameters/type.yaml"
+    - $ref: "../../../../parameters/include-meta.yaml"
+    - $ref: "../../../../parameters/include-guids.yaml"
+    - $ref: "../../../../parameters/include-advanced.yaml"
+    - $ref: "../../../../parameters/include-collections.yaml"
+    - $ref: "../../../../parameters/include-external-media.yaml"
+    - $ref: "../../../../parameters/container-start.yaml"
+    - $ref: "../../../../parameters/container-size.yaml"
+    - $ref: "../../../../parameters/accept-application-json.yaml"
+  responses:
+    "200":
+      description: Successful response containing media container data.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                allOf:
+                  - $ref: "../../../../models/media-container/size.yaml"
+                  - $ref: "../../../../models/media-container/total-size.yaml"
+                  - $ref: "../../../../models/media-container/offset.yaml"
+                  - $ref: "../../../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../../../models/media-container/art.yaml"
+                  - $ref: "../../../../models/media-container/content.yaml"
+                  - $ref: "../../../../models/media-container/identifier.yaml"
+                  - $ref: "../../../../models/media-container/library-section-id.yaml"
+                  - $ref: "../../../../models/media-container/library-section-title.yaml"
+                  - $ref: "../../../../models/media-container/library-section-uuid.yaml"
+                  - $ref: "../../../../models/media-container/media-tag-prefix.yaml"
+                  - $ref: "../../../../models/media-container/media-tag-version.yaml"
+                  - $ref: "../../../../models/media-container/thumb.yaml"
+                  - $ref: "../../../../models/media-container/nocache.yaml"
+                  - $ref: "../../../../models/media-container/title1.yaml"
+                  - $ref: "../../../../models/media-container/title2.yaml"
+                  - $ref: "../../../../models/media-container/view-group.yaml"
+                  - type: object
+                    properties:
+                      Meta:
+                        $ref: "../../../../models/Meta.yaml"
+                      Metadata:
+                        type: array
+                        description: "An array of metadata items."
+                        items:
+                          required:
+                            - type
+                          allOf:
+                            - $ref: "../../../../models/meta-data/rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/key.yaml"
+                            - $ref: "../../../../models/meta-data/guid.yaml"
+                            - $ref: "../../../../models/meta-data/slug.yaml"
+                            - $ref: "../../../../models/meta-data/studio.yaml"
+                            - $ref: "../../../../models/meta-data/type.yaml"
+                            - $ref: "../../../../models/meta-data/title.yaml"
+                            - $ref: "../../../../models/meta-data/title-sort.yaml"
+                            - $ref: "../../../../models/meta-data/content-rating.yaml"
+                            - $ref: "../../../../models/meta-data/summary.yaml"
+                            - $ref: "../../../../models/meta-data/rating.yaml"
+                            - $ref: "../../../../models/meta-data/audience-rating.yaml"
+                            - $ref: "../../../../models/meta-data/year.yaml"
+                            - $ref: "../../../../models/meta-data/tagline.yaml"
+                            - $ref: "../../../../models/meta-data/thumb.yaml"
+                            - $ref: "../../../../models/meta-data/art.yaml"
+                            - $ref: "../../../../models/meta-data/theme.yaml"
+                            - $ref: "../../../../models/meta-data/index.yaml"
+                            - $ref: "../../../../models/meta-data/leaf-count.yaml"
+                            - $ref: "../../../../models/meta-data/viewed-leaf-count.yaml"
+                            - $ref: "../../../../models/meta-data/child-count.yaml"
+                            - $ref: "../../../../models/meta-data/season-count.yaml"
+                            - $ref: "../../../../models/meta-data/duration.yaml"
+                            - $ref: "../../../../models/meta-data/originally-available-at.yaml"
+                            - $ref: "../../../../models/meta-data/added-at.yaml"
+                            - $ref: "../../../../models/meta-data/updated-at.yaml"
+                            - $ref: "../../../../models/meta-data/audience-rating-image.yaml"
+                            - $ref: "../../../../models/meta-data/chapter-source.yaml"
+                            - $ref: "../../../../models/meta-data/primary-extra-key.yaml"
+                            - $ref: "../../../../models/meta-data/original-title.yaml"
+                            - $ref: "../../../../models/meta-data/parent-rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/parent-guid.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-guid.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-slug.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-key.yaml"
+                            - $ref: "../../../../models/meta-data/parent-key.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-title.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-thumb.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-theme.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-art.yaml"
+                            - $ref: "../../../../models/meta-data/parent-title.yaml"
+                            - $ref: "../../../../models/meta-data/parent-index.yaml"
+                            - $ref: "../../../../models/meta-data/parent-thumb.yaml"
+                            - $ref: "../../../../models/meta-data/rating-image.yaml"
+                            - $ref: "../../../../models/meta-data/view-count.yaml"
+                            - $ref: "../../../../models/meta-data/view-offset.yaml"
+                            - $ref: "../../../../models/meta-data/skip-count.yaml"
+                            - $ref: "../../../../models/meta-data/subtype.yaml"
+                            - $ref: "../../../../models/meta-data/last-rated-at.yaml"
+                            - $ref: "../../../../models/meta-data/created-at-accuracy.yaml"
+                            - $ref: "../../../../models/meta-data/created-at-tz-offset.yaml"
+                            - $ref: "../../../../models/meta-data/last-viewed-at.yaml"
+                            - $ref: "../../../../models/meta-data/user-rating.yaml"
+                            - $ref: "../../../../models/meta-data/objects/image.yaml"
+                            - $ref: "../../../../models/meta-data/objects/ultra-blur-colors.yaml"
+                            - type: object
+                              properties:
+                                Media:
+                                  allOf:
+                                    - $ref: "../../../../models/Media-data.yaml"
+                                Genre:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/genre/tag.yaml"
+                                Country:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/country/tag.yaml"
+                                Director:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/director/tag.yaml"
+                                Writer:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/writer/tag.yaml"
+                                Role:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/role/tag.yaml"
+                                Guid:
+                                  x-speakeasy-name-override: guids
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        description: |
+                                          The unique identifier for the Guid. Can be imdb://tt0286347, tmdb://1763, tvdb://2337
+                                        example: tvdb://2337
+                                Collection:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/collection/tag.yaml"
+    "400":
+      $ref: "../../../../responses/400.yaml"
+    "401":
+      $ref: "../../../../responses/401.yaml"
+    "404":
+      $ref: "../../../../responses/404-html.yaml"

@@ -6,9 +6,9 @@ get:
   description: |
     Retrieves a list of all the countries that are found for the media in this library.
   parameters:
-    - $ref: "../../../parameters/library/section-key.yaml"
-    - $ref: "../../../parameters/type.yaml"
-    - $ref: "../../../parameters/accept-application-json.yaml"
+    - $ref: "../../../../parameters/library/section-key.yaml"
+    - $ref: "../../../../parameters/type.yaml"
+    - $ref: "../../../../parameters/accept-application-json.yaml"
   responses:
     "200":
       description: Successful response containing media container data.
@@ -19,18 +19,18 @@ get:
             properties:
               MediaContainer:
                 allOf:
-                  - $ref: "../../../models/media-container/size.yaml"
-                  - $ref: "../../../models/media-container/allow-sync.yaml"
-                  - $ref: "../../../models/media-container/art.yaml"
-                  - $ref: "../../../models/media-container/content.yaml"
-                  - $ref: "../../../models/media-container/identifier.yaml"
-                  - $ref: "../../../models/media-container/media-tag-prefix.yaml"
-                  - $ref: "../../../models/media-container/media-tag-version.yaml"
-                  - $ref: "../../../models/media-container/nocache.yaml"
-                  - $ref: "../../../models/media-container/thumb.yaml"
-                  - $ref: "../../../models/media-container/title1.yaml"
-                  - $ref: "../../../models/media-container/title2.yaml"
-                  - $ref: "../../../models/media-container/view-group.yaml"
+                  - $ref: "../../../../models/media-container/size.yaml"
+                  - $ref: "../../../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../../../models/media-container/art.yaml"
+                  - $ref: "../../../../models/media-container/content.yaml"
+                  - $ref: "../../../../models/media-container/identifier.yaml"
+                  - $ref: "../../../../models/media-container/media-tag-prefix.yaml"
+                  - $ref: "../../../../models/media-container/media-tag-version.yaml"
+                  - $ref: "../../../../models/media-container/nocache.yaml"
+                  - $ref: "../../../../models/media-container/thumb.yaml"
+                  - $ref: "../../../../models/media-container/title1.yaml"
+                  - $ref: "../../../../models/media-container/title2.yaml"
+                  - $ref: "../../../../models/media-container/view-group.yaml"
                   - type: object
                     properties:
                       Directory:
@@ -52,8 +52,8 @@ get:
                               type: string
                               example: "Japan"
     "400":
-      $ref: "../../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"
     "404":
-      $ref: "../../../responses/404-html.yaml"
+      $ref: "../../../../responses/404-html.yaml"

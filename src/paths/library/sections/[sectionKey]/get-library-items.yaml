@@ -55,14 +55,14 @@ get:
       description: |
         Adds the Guids object to the response
       schema:
-        $ref: "../../../models/common/PlexBoolean.yaml"
+        $ref: "../../../../models/common/PlexBoolean.yaml"
 
-    - $ref: "../../../parameters/type.yaml"
-    - $ref: "../../../parameters/library/section-key.yaml"
-    - $ref: "../../../parameters/include-meta.yaml"
-    - $ref: "../../../parameters/container-start.yaml"
-    - $ref: "../../../parameters/container-size.yaml"
-    - $ref: "../../../parameters/accept-application-json.yaml"
+    - $ref: "../../../../parameters/type.yaml"
+    - $ref: "../../../../parameters/library/section-key.yaml"
+    - $ref: "../../../../parameters/include-meta.yaml"
+    - $ref: "../../../../parameters/container-start.yaml"
+    - $ref: "../../../../parameters/container-size.yaml"
+    - $ref: "../../../../parameters/accept-application-json.yaml"
   responses:
     "200":
       description: The contents of the library by section and tag
@@ -73,7 +73,7 @@ get:
             properties:
               MediaContainer:
                 allOf:
-                  - $ref: "../../../models/Meta.yaml"
+                  - $ref: "../../../../models/Meta.yaml"
                   - type: object
                     required:
                       - size
@@ -160,7 +160,7 @@ get:
                       Metadata:
                         type: array
                         items:
-                          $ref: "../../../models/MetaData.yaml"
+                          $ref: "../../../../models/MetaData.yaml"
                       Meta:
                         description: |
                           The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.
@@ -230,9 +230,9 @@ get:
                                         type: boolean
                                         example: false
                                       activeDirection:
-                                        $ref: "../../../models/common/PlexSortDirection.yaml"
+                                        $ref: "../../../../models/common/PlexSortDirection.yaml"
                                       defaultDirection:
-                                        $ref: "../../../models/common/PlexSortDirection.yaml"
+                                        $ref: "../../../../models/common/PlexSortDirection.yaml"
                                       descKey:
                                         type: string
                                         example: "titleSort:desc"
@@ -293,6 +293,6 @@ get:
                                         example: "is"
 
     "400":
-      $ref: "../../../responses/400.yaml"
+      $ref: "../../../../responses/400.yaml"
     "401":
-      $ref: "../../../responses/401.yaml"
+      $ref: "../../../../responses/401.yaml"
