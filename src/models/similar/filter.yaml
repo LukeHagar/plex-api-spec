@@ -1,4 +1,3 @@
-
 type: object
 required:
   - filter
@@ -7,4 +6,3 @@ properties:
   filter:
     type: string
     example: "similar=259"
-

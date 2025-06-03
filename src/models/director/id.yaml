@@ -6,4 +6,5 @@ properties:
     description: "Unique identifier for the director."
     type: integer
     format: int32
+    minimum: 1
     example: 126522

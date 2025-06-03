@@ -1,19 +1,23 @@
 type: integer
 x-speakeasy-unknown-values: allow
 enum:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 8
-  - 9
-  - 10
+  - 1 # MOVIE
+  - 2 # TV_SHOW
+  - 3 # SEASON
+  - 4 # EPISODE
+  - 5 # ARTIST
+  - 6 # ALBUM
+  - 7 # TRACK
+  - 8 # PHOTO_ALBUM
+  - 9 # PHOTO
 example: 2
 x-speakeasy-enums:
   - MOVIE
   - TV_SHOW
   - SEASON
   - EPISODE
-  - AUDIO
+  - ARTIST
   - ALBUM
   - TRACK
+  - PHOTO_ALBUM
+  - PHOTO

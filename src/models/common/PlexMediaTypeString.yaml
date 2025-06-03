@@ -7,9 +7,13 @@ enum:
   - episode
   - artist
   - album
+  - track
+  - photoalbum
+  - photo
+  - collection
 example: "movie"
 description: |
-  The type of media content
+  The type of media content in the Plex library. This can represent videos, music, or photos.
 x-speakeasy-enums:
   - MOVIE
   - TV_SHOW
@@ -17,3 +21,7 @@ x-speakeasy-enums:
   - EPISODE
   - ARTIST
   - ALBUM
+  - TRACK
+  - PHOTO_ALBUM
+  - PHOTO
+  - COLLECTION

@@ -1,4 +1,6 @@
 type: object
+required:
+  - filter
 description: "The filter query string for country media items."
 properties:
   filter:
