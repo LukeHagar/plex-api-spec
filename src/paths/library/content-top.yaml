@@ -6,15 +6,8 @@ get:
     This endpoint will return the top watched content from libraries of a certain type
   operationId: getTopWatchedContent
   parameters:
-    - name: includeGuids
-      in: query
-      description: |
-        Adds the Guids object to the response
-      schema:
-        type: integer
-      required: false
-      example: 1
     - $ref: "../../parameters/type.yaml"
+    - $ref: "../../parameters/include-guids.yaml"
   responses:
     "200":
       description: The metadata of the library item.
@@ -24,194 +17,183 @@ get:
             type: object
             properties:
               MediaContainer:
-                type: object
-                properties:
-                  size:
-                    type: integer
-                    format: int32
-                    example: 1
-                  allowSync:
-                    type: boolean
-                    example: true
-                  identifier:
-                    type: string
-                    example: com.plexapp.plugins.library
-                  mediaTagPrefix:
-                    type: string
-                    example: /system/bundle/media/flags/
-                  mediaTagVersion:
-                    type: integer
-                    format: int32
-                    example: 1698860922
-                  Metadata:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        ratingKey:
-                          type: string
-                          example: "17"
-                        key:
-                          type: string
-                          example: /library/metadata/17
-                        guid:
-                          type: string
-                          example: plex://movie/5d77683f6f4521001ea9dc53
-                        slug:
-                          type: string
-                          example: waterloo-road
-                        studio:
-                          type: string
-                          example: Universal Pictures
-                        type:
-                          type: string
-                          example: movie
-                        title:
-                          type: string
-                          example: Serenity
-                        librarySectionTitle:
-                          type: string
-                          example: Movies
-                        librarySectionID:
-                          type: integer
-                          format: int32
-                          example: 1
-                        librarySectionKey:
-                          type: string
-                          example: /library/sections/1
-                        contentRating:
-                          type: string
-                          example: PG-13
-                        summary:
-                          type: string
-                          example:
-                            Serenity continues the story of the TV series it was based upon
-                            ("Firefly"). River Tam had a secret - one in which she's not
-                            even aware - so dangerous, no one's safe, as an Alliance
-                            operative's sent to capture her, and all others are considered
-                            irrelevant to his job.
-                        index:
-                          type: integer
-                          example: 1
-                        audienceRating:
-                          type: number
-                          example: 9.1
-                        year:
-                          type: integer
-                          format: int32
-                          example: 2005
-                        tagline:
-                          type: string
-                          example: They aim to misbehave.
-                        thumb:
-                          type: string
-                          example: /library/metadata/17/thumb/1705637165
-                        art:
-                          type: string
-                          example: /library/metadata/17/art/1705637165
-                        duration:
-                          type: integer
-                          format: int32
-                          example: 141417
-                        originallyAvailableAt:
-                          type: string
-                          format: date
-                          example: 2005-09-29
-                        leafCount:
-                          type: integer
-                          example: 222
-                        viewedLeafCount:
-                          type: integer
-                          example: 100
-                        childCount:
-                          type: integer
-                          example: 13
-                        addedAt:
-                          type: integer
-                          format: int32
-                          example: 1705637164
-                        updatedAt:
-                          type: integer
-                          format: int32
-                          example: 1705637165
-                        globalViewCount:
-                          type: integer
-                          example: 80
-                        audienceRatingImage:
-                          type: string
-                          example: rottentomatoes://image.rating.upright
-                        Genre:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                format: int32
-                                example: 184
-                              filter:
-                                type: string
-                                example: genre=184
-                              tag:
-                                type: string
-                                example: Thriller
-                        Country:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                format: int32
-                                example: 116
-                              filter:
-                                type: string
-                                example: country=116
-                              tag:
-                                type: string
-                                example: United States of America
-                        Guid:
-                          x-speakeasy-name-override: guids
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                example: tvdb://2337
-                        Role:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                format: int32
-                                example: 220
-                              filter:
-                                type: string
-                                example: actor=220
-                              tag:
-                                type: string
-                                example: Dennis Keiffer
-                              tagKey:
-                                type: string
-                                example: 5d77683554f42c001f8c4708
-                              role:
-                                type: string
-                                example: Bar Guy (uncredited)
-                              thumb:
-                                type: string
-                                example: https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg
-                        User:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                                format: int32
-                                example: 220
+                allOf:
+                  - $ref: "../../models/media-container/size.yaml"
+                  - $ref: "../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../models/media-container/identifier.yaml"
+                  - $ref: "../../models/media-container/media-tag-prefix.yaml"
+                  - $ref: "../../models/media-container/media-tag-version.yaml"
+                  - type: object
+                    properties:
+                      Metadata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ratingKey:
+                              type: string
+                              example: "17"
+                            key:
+                              type: string
+                              example: /library/metadata/17
+                            guid:
+                              type: string
+                              example: plex://movie/5d77683f6f4521001ea9dc53
+                            slug:
+                              type: string
+                              example: waterloo-road
+                            studio:
+                              type: string
+                              example: Universal Pictures
+                            type:
+                              type: string
+                              example: movie
+                            title:
+                              type: string
+                              example: Serenity
+                            librarySectionTitle:
+                              type: string
+                              example: Movies
+                            librarySectionID:
+                              type: integer
+                              format: int32
+                              example: 1
+                            librarySectionKey:
+                              type: string
+                              example: /library/sections/1
+                            contentRating:
+                              type: string
+                              example: PG-13
+                            summary:
+                              type: string
+                              example:
+                                Serenity continues the story of the TV series it was based upon
+                                ("Firefly"). River Tam had a secret - one in which she's not
+                                even aware - so dangerous, no one's safe, as an Alliance
+                                operative's sent to capture her, and all others are considered
+                                irrelevant to his job.
+                            index:
+                              type: integer
+                              example: 1
+                            audienceRating:
+                              type: number
+                              example: 9.1
+                            year:
+                              type: integer
+                              format: int32
+                              example: 2005
+                            tagline:
+                              type: string
+                              example: They aim to misbehave.
+                            thumb:
+                              type: string
+                              example: /library/metadata/17/thumb/1705637165
+                            art:
+                              type: string
+                              example: /library/metadata/17/art/1705637165
+                            duration:
+                              type: integer
+                              format: int32
+                              example: 141417
+                            originallyAvailableAt:
+                              type: string
+                              format: date
+                              example: 2005-09-29
+                            leafCount:
+                              type: integer
+                              example: 222
+                            viewedLeafCount:
+                              type: integer
+                              example: 100
+                            childCount:
+                              type: integer
+                              example: 13
+                            addedAt:
+                              type: integer
+                              format: int32
+                              example: 1705637164
+                            updatedAt:
+                              type: integer
+                              format: int32
+                              example: 1705637165
+                            globalViewCount:
+                              type: integer
+                              example: 80
+                            audienceRatingImage:
+                              type: string
+                              example: rottentomatoes://image.rating.upright
+                            Genre:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 184
+                                  filter:
+                                    type: string
+                                    example: genre=184
+                                  tag:
+                                    type: string
+                                    example: Thriller
+                            Country:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 116
+                                  filter:
+                                    type: string
+                                    example: country=116
+                                  tag:
+                                    type: string
+                                    example: United States of America
+                            Guid:
+                              x-speakeasy-name-override: guids
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                    example: tvdb://2337
+                            Role:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 220
+                                  filter:
+                                    type: string
+                                    example: actor=220
+                                  tag:
+                                    type: string
+                                    example: Dennis Keiffer
+                                  tagKey:
+                                    type: string
+                                    example: 5d77683554f42c001f8c4708
+                                  role:
+                                    type: string
+                                    example: Bar Guy (uncredited)
+                                  thumb:
+                                    type: string
+                                    example: https://metadata-static.plex.tv/6/people/648e9a7ea1d537bccfcd7615134b78ce.jpg
+                            User:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int32
+                                    example: 220
     "400":
       $ref: "../../responses/400.yaml"
     "401":
