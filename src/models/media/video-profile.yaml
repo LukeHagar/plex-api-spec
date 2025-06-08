@@ -1,6 +1,4 @@
 type: object
-required:
-  - videoProfile
 properties:
   videoProfile:
     type: string

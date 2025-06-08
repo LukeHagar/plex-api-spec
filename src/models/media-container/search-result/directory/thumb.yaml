@@ -1,0 +1,7 @@
+type: object
+properties:
+  thumb:
+    description: "The URL to the thumbnail image associated with this search result."
+    type: string
+    format: uri
+    example: "https://metadata-static.plex.tv/5/people/57bd7c7d6c5c9e2881251b30e5603d3d.jpg" 

@@ -1,0 +1,6 @@
+type: object
+properties:
+  key:
+    description: "The unique identifier path for the search result item."
+    type: string
+    example: "/library/sections/3/all?actor=197429" 

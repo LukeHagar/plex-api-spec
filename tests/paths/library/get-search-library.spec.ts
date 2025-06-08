@@ -35301,4 +35301,73 @@ describe("GET /library/search", () => {
 
     validateResponseSpec("/library/search", "get", 200, response)
   })
+
+  it("SAMPLE #4 - should validate the 200 response when the API spec is valid", () => {
+    const response = {
+      MediaContainer: {
+        size: 3,
+        SearchResult: [
+          {
+            score: 0.92,
+            Directory: {
+              key: "/library/sections/3/all?actor=197429",
+              librarySectionID: 3,
+              librarySectionKey: "/library/sections/3",
+              librarySectionTitle: "Movies",
+              librarySectionType: 1,
+              type: "tag",
+              id: 197429,
+              filter: "actor=197429",
+              tag: "Ben Stiller",
+              tagType: 6,
+              tagKey: "5d776826999c64001ec2c606",
+              thumb:
+                "https://metadata-static.plex.tv/5/people/57bd7c7d6c5c9e2881251b30e5603d3d.jpg",
+              count: 10
+            }
+          },
+          {
+            score: 0.92,
+            Directory: {
+              key: "/library/sections/1/all?actor=197429",
+              librarySectionID: 1,
+              librarySectionKey: "/library/sections/1",
+              librarySectionTitle: "TV Shows",
+              librarySectionType: 2,
+              type: "tag",
+              id: 197429,
+              filter: "actor=197429",
+              tag: "Ben Stiller",
+              tagType: 6,
+              tagKey: "5d776826999c64001ec2c606",
+              thumb:
+                "https://metadata-static.plex.tv/5/people/57bd7c7d6c5c9e2881251b30e5603d3d.jpg",
+              count: 4
+            }
+          },
+          {
+            score: 0.92,
+            Directory: {
+              key: "/library/sections/3/all?director=227480",
+              librarySectionID: 3,
+              librarySectionKey: "/library/sections/3",
+              librarySectionTitle: "Movies",
+              librarySectionType: 1,
+              type: "tag",
+              id: 227480,
+              filter: "director=227480",
+              tag: "Ben Stiller",
+              tagType: 4,
+              tagKey: "5d776826999c64001ec2c606",
+              thumb:
+                "https://metadata-static.plex.tv/5/people/57bd7c7d6c5c9e2881251b30e5603d3d.jpg",
+              count: 1
+            }
+          }
+        ]
+      }
+    }
+
+    validateResponseSpec("/library/search", "get", 200, response)
+  })
 })

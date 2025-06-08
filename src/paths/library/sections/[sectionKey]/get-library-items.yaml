@@ -303,14 +303,11 @@ get:
                                 Location:
                                   type: array
                                   items:
-                                    type: object
-                                    required:
-                                      - path
-                                    properties:
-                                      path:
-                                        type: string
-                                        description: "The file path for the location."
-                                        example: "/TV Shows/Better Call Saul"
+                                    allOf:
+                                      - type: object
+                                        required:
+                                          - path
+                                      - $ref: "../../../../models/meta-data/location/path.yaml"
                                 Chapter:
                                   type: array
                                   items:

@@ -56,26 +56,209 @@ get:
               - MediaContainer
             properties:
               MediaContainer:
-                type: object
-                required:
-                  - size
-                  - SearchResult
-                properties:
-                  size:
-                    type: number
-                  SearchResult:
-                    type: array
-                    items:
-                      type: object
-                      required:
-                        - score
-                        - Metadata
-                      properties:
-                        score:
-                          type: number
-                          format: float # This is correct for 32-bit floating-point numbers
-                        Metadata:
-                          $ref: "../../models/MetaData.yaml"
+                allOf:
+                  - $ref: "../../models/media-container/size.yaml"
+                  - $ref: "../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../models/media-container/identifier.yaml"
+                  - $ref: "../../models/media-container/library-section-id.yaml"
+                  - $ref: "../../models/media-container/library-section-title.yaml"
+                  - $ref: "../../models/media-container/library-section-uuid.yaml"
+                  - $ref: "../../models/media-container/media-tag-prefix.yaml"
+                  - $ref: "../../models/media-container/media-tag-version.yaml"
+                  - type: object
+                    required:
+                      - SearchResult
+                    properties:
+                      SearchResult:
+                        type: array
+                        items:
+                          allOf:
+                            - type: object
+                              required:
+                                - score
+                            - $ref: "../../models/media-container/search-result/score.yaml"
+                            - type: object
+                              properties:
+                                Directory:
+                                  allOf:
+                                    - type: object
+                                      required:
+                                        - key
+                                        - librarySectionID
+                                        - librarySectionKey
+                                        - librarySectionTitle
+                                        - type
+                                        - id
+                                        - tag
+                                    - $ref: "../../models/media-container/search-result/directory/key.yaml"
+                                    - $ref: "../../models/meta-data/library-section-id.yaml"
+                                    - $ref: "../../models/meta-data/library-section-key.yaml"
+                                    - $ref: "../../models/meta-data/library-section-title.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/library-section-type.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/type.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/id.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/filter.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/tag.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/tag-type.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/tag-key.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/thumb.yaml"
+                                    - $ref: "../../models/media-container/search-result/directory/count.yaml"
+                                Metadata:
+                                  type: object
+                                  allOf:
+                                    - $ref: "../../models/meta-data/rating-key.yaml"
+                                    - $ref: "../../models/meta-data/key.yaml"
+                                    - $ref: "../../models/meta-data/guid.yaml"
+                                    - $ref: "../../models/meta-data/slug.yaml"
+                                    - $ref: "../../models/meta-data/studio.yaml"
+                                    - $ref: "../../models/meta-data/type.yaml"
+                                    - $ref: "../../models/meta-data/title.yaml"
+                                    - $ref: "../../models/meta-data/banner.yaml"
+                                    - $ref: "../../models/meta-data/title-sort.yaml"
+                                    - $ref: "../../models/meta-data/content-rating.yaml"
+                                    - $ref: "../../models/meta-data/summary.yaml"
+                                    - $ref: "../../models/meta-data/rating.yaml"
+                                    - $ref: "../../models/meta-data/audience-rating.yaml"
+                                    - $ref: "../../models/meta-data/year.yaml"
+                                    - $ref: "../../models/meta-data/tagline.yaml"
+                                    - $ref: "../../models/meta-data/thumb.yaml"
+                                    - $ref: "../../models/meta-data/art.yaml"
+                                    - $ref: "../../models/meta-data/theme.yaml"
+                                    - $ref: "../../models/meta-data/index.yaml"
+                                    - $ref: "../../models/meta-data/leaf-count.yaml"
+                                    - $ref: "../../models/meta-data/viewed-leaf-count.yaml"
+                                    - $ref: "../../models/meta-data/child-count.yaml"
+                                    - $ref: "../../models/meta-data/season-count.yaml"
+                                    - $ref: "../../models/meta-data/duration.yaml"
+                                    - $ref: "../../models/meta-data/originally-available-at.yaml"
+                                    - $ref: "../../models/meta-data/added-at.yaml"
+                                    - $ref: "../../models/meta-data/updated-at.yaml"
+                                    - $ref: "../../models/meta-data/parent-year.yaml"
+                                    - $ref: "../../models/meta-data/audience-rating-image.yaml"
+                                    - $ref: "../../models/meta-data/chapter-source.yaml"
+                                    - $ref: "../../models/meta-data/primary-extra-key.yaml"
+                                    - $ref: "../../models/meta-data/original-title.yaml"
+                                    - $ref: "../../models/meta-data/parent-rating-key.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-rating-key.yaml"
+                                    - $ref: "../../models/meta-data/parent-guid.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-guid.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-slug.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-key.yaml"
+                                    - $ref: "../../models/meta-data/parent-key.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-title.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-thumb.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-theme.yaml"
+                                    - $ref: "../../models/meta-data/grandparent-art.yaml"
+                                    - $ref: "../../models/meta-data/parent-title.yaml"
+                                    - $ref: "../../models/meta-data/parent-index.yaml"
+                                    - $ref: "../../models/meta-data/parent-thumb.yaml"
+                                    - $ref: "../../models/meta-data/rating-image.yaml"
+                                    - $ref: "../../models/meta-data/view-count.yaml"
+                                    - $ref: "../../models/meta-data/view-offset.yaml"
+                                    - $ref: "../../models/meta-data/skip-count.yaml"
+                                    - $ref: "../../models/meta-data/subtype.yaml"
+                                    - $ref: "../../models/meta-data/last-rated-at.yaml"
+                                    - $ref: "../../models/meta-data/created-at-accuracy.yaml"
+                                    - $ref: "../../models/meta-data/created-at-tz-offset.yaml"
+                                    - $ref: "../../models/meta-data/last-viewed-at.yaml"
+                                    - $ref: "../../models/meta-data/user-rating.yaml"
+                                    - $ref: "../../models/meta-data/objects/image.yaml"
+                                    - $ref: "../../models/meta-data/objects/ultra-blur-colors.yaml"
+                                    - $ref: "../../models/meta-data/guid/guid-array.yaml"
+                                    - $ref: "../../models/meta-data/library-section-id.yaml"
+                                    - $ref: "../../models/meta-data/library-section-title.yaml"
+                                    - $ref: "../../models/meta-data/library-section-key.yaml"
+                                    - $ref: "../../models/meta-data/show-ordering.yaml"
+                                    - $ref: "../../models/meta-data/flatten-seasons.yaml"
+                                    - $ref: "../../models/meta-data/skip-children.yaml"
+                                    - type: object
+                                      properties:
+                                        Media:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - $ref: "../../models/media/id.yaml"
+                                              - $ref: "../../models/media/duration.yaml"
+                                              - $ref: "../../models/media/bitrate.yaml"
+                                              - $ref: "../../models/media/width.yaml"
+                                              - $ref: "../../models/media/height.yaml"
+                                              - $ref: "../../models/media/aspect-ratio.yaml"
+                                              - $ref: "../../models/media/audio-channels.yaml"
+                                              - $ref: "../../models/media/display-offset.yaml"
+                                              - $ref: "../../models/media/audio-codec.yaml"
+                                              - $ref: "../../models/media/video-codec.yaml"
+                                              - $ref: "../../models/media/video-resolution.yaml"
+                                              - $ref: "../../models/media/container.yaml"
+                                              - $ref: "../../models/media/video-frame-rate.yaml"
+                                              - $ref: "../../models/media/video-profile.yaml"
+                                              - $ref: "../../models/media/has-voice-activity.yaml"
+                                              - $ref: "../../models/media/audio-profile.yaml"
+                                              - $ref: "../../models/media/optimized-for-streaming.yaml"
+                                              - $ref: "../../models/media/has-64bit-offsets.yaml"
+                                              - type: object
+                                                properties:
+                                                  Part:
+                                                    type: array
+                                                    items:
+                                                      allOf:
+                                                        - $ref: "../../models/media/part/accessible.yaml"
+                                                        - $ref: "../../models/media/part/exists.yaml"
+                                                        - $ref: "../../models/media/part/id.yaml"
+                                                        - $ref: "../../models/media/part/key.yaml"
+                                                        - $ref: "../../models/media/part/indexes.yaml"
+                                                        - $ref: "../../models/media/part/duration.yaml"
+                                                        - $ref: "../../models/media/part/file.yaml"
+                                                        - $ref: "../../models/media/part/size.yaml"
+                                                        - $ref: "../../models/media/part/packet-length.yaml"
+                                                        - $ref: "../../models/media/part/container.yaml"
+                                                        - $ref: "../../models/media/part/video-profile.yaml"
+                                                        - $ref: "../../models/media/part/audio-profile.yaml"
+                                                        - $ref: "../../models/media/part/has-64bit-offsets.yaml"
+                                                        - $ref: "../../models/media/part/optimized-for-streaming.yaml"
+                                                        - $ref: "../../models/media/part/has-thumbnail.yaml"
+                                        Genre:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - $ref: "../../models/genre/id.yaml"
+                                              - $ref: "../../models/genre/tag.yaml"
+                                        Country:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - $ref: "../../models/country/id.yaml"
+                                              - $ref: "../../models/country/tag.yaml"
+                                        Director:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - $ref: "../../models/director/id.yaml"
+                                              - $ref: "../../models/director/tag.yaml"
+                                              - $ref: "../../models/director/thumb.yaml"
+                                        Writer:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - $ref: "../../models/writer/id.yaml"
+                                              - $ref: "../../models/writer/tag.yaml"
+                                              - $ref: "../../models/writer/thumb.yaml"
+                                        Role:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - $ref: "../../models/role/id.yaml"
+                                              - $ref: "../../models/role/tag.yaml"
+                                              - $ref: "../../models/role/role.yaml"
+                                              - $ref: "../../models/role/thumb.yaml"
+                                        Location:
+                                          type: array
+                                          items:
+                                            allOf:
+                                              - type: object
+                                                required:
+                                                  - path
+                                              - $ref: "../../models/meta-data/location/path.yaml"
+
     "400":
       $ref: "../../responses/400.yaml"
     "401":

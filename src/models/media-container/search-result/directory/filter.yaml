@@ -1,0 +1,6 @@
+type: object
+properties:
+  filter:
+    description: "The filter string used to query this specific item in the library."
+    type: string
+    example: "actor=197429" 
