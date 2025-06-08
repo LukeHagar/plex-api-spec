@@ -11647,10 +11647,14 @@ paths:
                                                 type: boolean
                                                 description: Indicates whether voice activity is detected.
                                                 example: false
+                                          - type: object
+                                            properties:
                                               audioProfile:
                                                 type: string
                                                 description: 'The audio profile used for the media (e.g., DTS, Dolby Digital, etc.).'
                                                 example: dts
+                                          - type: object
+                                            properties:
                                               optimizedForStreaming:
                                                 description: 'Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true'
                                                 oneOf:
@@ -11663,335 +11667,485 @@ paths:
                                                     enum:
                                                       - true
                                                       - false
+                                          - type: object
+                                            properties:
                                               has64bitOffsets:
+                                                description: |
+                                                  Indicates whether the media has 64-bit offsets.
+                                                  This is relevant for media files that may require larger offsets than what 32-bit integers can provide.
                                                 type: boolean
                                                 example: false
+                                          - type: object
+                                            properties:
                                               Part:
                                                 type: array
-                                                description: An array of parts for this media item.
                                                 items:
-                                                  type: object
-                                                  required:
-                                                    - id
-                                                    - key
-                                                    - file
-                                                    - size
-                                                  properties:
-                                                    accessible:
-                                                      type: boolean
-                                                      description: Indicates if the part is accessible.
-                                                      example: true
-                                                    exists:
-                                                      type: boolean
-                                                      description: Indicates if the part exists.
-                                                      example: true
-                                                    id:
-                                                      type: integer
-                                                      description: Unique part identifier.
-                                                      example: 418385
-                                                    key:
-                                                      type: string
-                                                      description: Key to access this part.
-                                                      example: /library/parts/418385/1735864239/file.mkv
-                                                    indexes:
-                                                      type: string
-                                                      example: sd
-                                                    duration:
-                                                      type: integer
-                                                      format: int32
-                                                      description: Duration of the part in milliseconds.
-                                                      example: 9610350
-                                                    file:
-                                                      type: string
-                                                      description: File path for the part.
-                                                      example: /mnt/Movies_1/W/Wicked (2024).mkv
-                                                    size:
-                                                      description: File size in bytes.
-                                                      type: integer
-                                                      example: 30649952104
-                                                    packetLength:
-                                                      type: integer
-                                                      format: int32
-                                                      example: 188
-                                                    container:
-                                                      type: string
-                                                      description: Container format of the part.
-                                                      example: mkv
-                                                    videoProfile:
-                                                      type: string
-                                                      description: Video profile for the part.
-                                                      example: main 10
-                                                    audioProfile:
-                                                      type: string
-                                                      description: 'The audio profile used for the media (e.g., DTS, Dolby Digital, etc.).'
-                                                      example: dts
-                                                    has64bitOffsets:
-                                                      type: boolean
-                                                      example: false
-                                                    optimizedForStreaming:
-                                                      description: 'Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true'
-                                                      oneOf:
-                                                        - type: integer
+                                                  allOf:
+                                                    - type: object
+                                                      required:
+                                                        - accessible
+                                                      properties:
+                                                        accessible:
+                                                          type: boolean
+                                                          description: Indicates if the part is accessible.
+                                                          example: true
+                                                    - type: object
+                                                      properties:
+                                                        exists:
+                                                          type: boolean
+                                                          description: Indicates if the part exists.
+                                                          example: true
+                                                    - type: object
+                                                      required:
+                                                        - id
+                                                      properties:
+                                                        id:
+                                                          type: integer
+                                                          description: Unique part identifier.
+                                                          example: 418385
+                                                    - type: object
+                                                      required:
+                                                        - key
+                                                      properties:
+                                                        key:
+                                                          type: string
+                                                          description: Key to access this part.
+                                                          example: /library/parts/418385/1735864239/file.mkv
+                                                    - type: object
+                                                      required:
+                                                        - indexes
+                                                      properties:
+                                                        indexes:
+                                                          type: string
+                                                          example: sd
+                                                    - type: object
+                                                      required:
+                                                        - duration
+                                                      properties:
+                                                        duration:
+                                                          type: integer
                                                           format: int32
-                                                          enum:
-                                                            - 0
-                                                            - 1
-                                                        - type: boolean
-                                                          enum:
-                                                            - true
-                                                            - false
-                                                    hasThumbnail:
-                                                      allOf:
-                                                        - description: Indicates if the part has a thumbnail.
-                                                        - type: string
-                                                          enum:
-                                                            - '0'
-                                                            - '1'
-                                                          example: '1'
-                                                          default: '0'
-                                                          x-speakeasy-enums:
-                                                            - false
-                                                            - true
-                                                    Stream:
-                                                      type: array
-                                                      description: An array of streams for this part.
-                                                      items:
-                                                        type: object
-                                                        required:
-                                                          - id
-                                                          - streamType
-                                                          - codec
-                                                          - displayTitle
-                                                          - extendedDisplayTitle
-                                                        properties:
-                                                          id:
-                                                            type: integer
-                                                            description: Unique stream identifier.
-                                                            example: 1002625
-                                                          streamType:
-                                                            type: integer
-                                                            format: int32
-                                                            description: |
-                                                              Stream type:
-                                                                - 1 = video
-                                                                - 2 = audio
-                                                                - 3 = subtitle
-                                                            enum:
-                                                              - 1
-                                                              - 2
-                                                              - 3
-                                                            example: 1
-                                                            x-speakeasy-unknown-values: allow
-                                                            x-speakeasy-enums:
-                                                              - VIDEO
-                                                              - AUDIO
-                                                              - SUBTITLE
-                                                          format:
-                                                            type: string
-                                                            description: 'Format of the stream (e.g., srt).'
-                                                            example: srt
-                                                          default:
-                                                            type: boolean
-                                                            description: Indicates if this stream is default.
-                                                            example: true
-                                                          codec:
-                                                            type: string
-                                                            description: Codec used by the stream.
-                                                            example: hevc
-                                                          index:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Index of the stream.
-                                                            example: 0
-                                                          bitrate:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Bitrate of the stream.
-                                                            example: 24743
-                                                          language:
-                                                            type: string
-                                                            description: Language of the stream.
-                                                            example: English
-                                                          languageTag:
-                                                            type: string
-                                                            description: 'Language tag (e.g., en).'
-                                                            example: en
-                                                          languageCode:
-                                                            type: string
-                                                            description: ISO language code.
-                                                            example: eng
-                                                          headerCompression:
-                                                            type: boolean
-                                                            description: Indicates whether header compression is enabled.
-                                                            example: true
-                                                          DOVIBLCompatID:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Dolby Vision BL compatibility ID.
-                                                            example: 1
-                                                          DOVIBLPresent:
-                                                            type: boolean
-                                                            description: Indicates if Dolby Vision BL is present.
-                                                            example: true
-                                                          DOVIELPresent:
-                                                            type: boolean
-                                                            description: Indicates if Dolby Vision EL is present.
-                                                            example: false
-                                                          DOVILevel:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Dolby Vision level.
-                                                            example: 6
-                                                          DOVIPresent:
-                                                            type: boolean
-                                                            description: Indicates if Dolby Vision is present.
-                                                            example: true
-                                                          DOVIProfile:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Dolby Vision profile.
-                                                            example: 8
-                                                          DOVIRPUPresent:
-                                                            type: boolean
-                                                            description: Indicates if Dolby Vision RPU is present.
-                                                            example: true
-                                                          DOVIVersion:
-                                                            type: string
-                                                            description: Dolby Vision version.
-                                                            example: '1.0'
-                                                          bitDepth:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Bit depth of the video stream.
-                                                            example: 10
-                                                          chromaLocation:
-                                                            type: string
-                                                            description: Chroma sample location.
-                                                            example: topleft
-                                                          chromaSubsampling:
-                                                            type: string
-                                                            description: Chroma subsampling format.
-                                                            example: '4:2:0'
-                                                          codedHeight:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Coded video height.
-                                                            example: 1608
-                                                          codedWidth:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Coded video width.
-                                                            example: 3840
-                                                          closedCaptions:
-                                                            type: boolean
-                                                            example: true
-                                                          colorPrimaries:
-                                                            type: string
-                                                            description: Color primaries used.
-                                                            example: bt2020
-                                                          colorRange:
-                                                            type: string
-                                                            description: 'Color range (e.g., tv).'
-                                                            example: tv
-                                                          colorSpace:
-                                                            type: string
-                                                            description: Color space.
-                                                            example: bt2020nc
-                                                          colorTrc:
-                                                            type: string
-                                                            description: Color transfer characteristics.
-                                                            example: smpte2084
-                                                          frameRate:
-                                                            type: number
-                                                            format: float
-                                                            description: Frame rate of the stream.
-                                                            example: 23.976
-                                                          key:
-                                                            type: string
-                                                            description: Key to access this stream part.
-                                                            example: /library/streams/216389
-                                                          height:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Height of the video stream.
-                                                            example: 1602
-                                                          level:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Video level.
-                                                            example: 150
-                                                          original:
-                                                            type: boolean
-                                                            description: Indicates if this is the original stream.
-                                                            example: true
-                                                          hasScalingMatrix:
-                                                            type: boolean
-                                                            example: false
-                                                          profile:
-                                                            type: string
-                                                            description: Video profile.
-                                                            example: main 10
-                                                          scanType:
-                                                            type: string
-                                                            example: progressive
-                                                          embeddedInVideo:
-                                                            type: string
-                                                            example: progressive
-                                                          refFrames:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Number of reference frames.
-                                                            example: 1
-                                                          width:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Width of the video stream.
-                                                            example: 3840
-                                                          displayTitle:
-                                                            type: string
-                                                            description: Display title for the stream.
-                                                            example: 4K DoVi/HDR10 (HEVC Main 10)
-                                                          extendedDisplayTitle:
-                                                            type: string
-                                                            description: Extended display title for the stream.
-                                                            example: 4K DoVi/HDR10 (HEVC Main 10)
-                                                          selected:
-                                                            type: boolean
-                                                            description: Indicates if this stream is selected (applicable for audio streams).
-                                                            example: true
-                                                          forced:
-                                                            type: boolean
-                                                            example: true
-                                                          channels:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Number of audio channels (for audio streams).
-                                                            example: 6
-                                                          audioChannelLayout:
-                                                            type: string
-                                                            description: Audio channel layout.
-                                                            example: 5.1(side)
-                                                          samplingRate:
-                                                            type: integer
-                                                            format: int32
-                                                            description: Sampling rate for the audio stream.
-                                                            example: 48000
-                                                          canAutoSync:
-                                                            type: boolean
-                                                            description: Indicates if the stream can auto-sync.
-                                                            example: false
-                                                          hearingImpaired:
-                                                            type: boolean
-                                                            description: Indicates if the stream is for the hearing impaired.
-                                                            example: true
-                                                          dub:
-                                                            type: boolean
-                                                            description: Indicates if the stream is a dub.
-                                                            example: true
-                                                          title:
-                                                            type: string
-                                                            description: 'Optional title for the stream (e.g., language variant).'
-                                                            example: SDH
+                                                          description: Duration of the part in milliseconds.
+                                                          example: 9610350
+                                                    - type: object
+                                                      required:
+                                                        - file
+                                                      properties:
+                                                        file:
+                                                          type: string
+                                                          description: File path for the part.
+                                                          example: /mnt/Movies_1/W/Wicked (2024).mkv
+                                                    - type: object
+                                                      required:
+                                                        - size
+                                                      properties:
+                                                        size:
+                                                          description: File size in bytes.
+                                                          type: integer
+                                                          example: 30649952104
+                                                    - type: object
+                                                      required:
+                                                        - packetLength
+                                                      properties:
+                                                        packetLength:
+                                                          type: integer
+                                                          format: int32
+                                                          example: 188
+                                                    - type: object
+                                                      required:
+                                                        - container
+                                                      properties:
+                                                        container:
+                                                          type: string
+                                                          description: Container format of the part.
+                                                          example: mkv
+                                                    - type: object
+                                                      properties:
+                                                        videoProfile:
+                                                          type: string
+                                                          description: Video profile for the part.
+                                                          example: main 10
+                                                    - type: object
+                                                      properties:
+                                                        audioProfile:
+                                                          type: string
+                                                          description: 'The audio profile used for the media (e.g., DTS, Dolby Digital, etc.).'
+                                                          example: dts
+                                                    - type: object
+                                                      properties:
+                                                        has64bitOffsets:
+                                                          type: boolean
+                                                          example: false
+                                                    - type: object
+                                                      properties:
+                                                        optimizedForStreaming:
+                                                          description: |
+                                                            Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true
+                                                          oneOf:
+                                                            - type: integer
+                                                              format: int32
+                                                              enum:
+                                                                - 0
+                                                                - 1
+                                                            - type: boolean
+                                                              enum:
+                                                                - true
+                                                                - false
+                                                    - type: object
+                                                      properties:
+                                                        hasThumbnail:
+                                                          allOf:
+                                                            - description: |
+                                                                Indicates if the part has a thumbnail.
+                                                            - type: string
+                                                              enum:
+                                                                - '0'
+                                                                - '1'
+                                                              example: '1'
+                                                              default: '0'
+                                                              x-speakeasy-enums:
+                                                                - false
+                                                                - true
+                                                    - type: object
+                                                      properties:
+                                                        Stream:
+                                                          type: array
+                                                          items:
+                                                            allOf:
+                                                              - type: object
+                                                                required:
+                                                                  - id
+                                                                properties:
+                                                                  id:
+                                                                    type: integer
+                                                                    description: Unique stream identifier.
+                                                                    example: 1002625
+                                                              - type: object
+                                                                required:
+                                                                  - streamType
+                                                                properties:
+                                                                  streamType:
+                                                                    type: integer
+                                                                    oneOf:
+                                                                      - title: VIDEO
+                                                                        const: 1
+                                                                        description: Video stream
+                                                                      - title: AUDIO
+                                                                        const: 2
+                                                                        description: Audio stream
+                                                                      - title: SUBTITLE
+                                                                        const: 3
+                                                                        description: Subtitle stream
+                                                                    example: 1
+                                                                    description: |
+                                                                      Stream type:
+                                                                        - VIDEO = 1
+                                                                        - AUDIO = 2
+                                                                        - SUBTITLE = 3
+                                                              - type: object
+                                                                properties:
+                                                                  format:
+                                                                    type: string
+                                                                    description: 'Format of the stream (e.g., srt).'
+                                                                    example: srt
+                                                              - type: object
+                                                                properties:
+                                                                  default:
+                                                                    type: boolean
+                                                                    description: Indicates if this stream is default.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  codec:
+                                                                    type: string
+                                                                    description: Codec used by the stream.
+                                                                    example: hevc
+                                                              - type: object
+                                                                properties:
+                                                                  index:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Index of the stream.
+                                                                    example: 0
+                                                              - type: object
+                                                                properties:
+                                                                  bitrate:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Bitrate of the stream.
+                                                                    example: 24743
+                                                              - type: object
+                                                                properties:
+                                                                  language:
+                                                                    type: string
+                                                                    description: Language of the stream.
+                                                                    example: English
+                                                              - type: object
+                                                                properties:
+                                                                  languageTag:
+                                                                    type: string
+                                                                    description: 'Language tag (e.g., en).'
+                                                                    example: en
+                                                              - type: object
+                                                                properties:
+                                                                  languageCode:
+                                                                    type: string
+                                                                    description: ISO language code.
+                                                                    example: eng
+                                                              - type: object
+                                                                properties:
+                                                                  headerCompression:
+                                                                    type: boolean
+                                                                    description: Indicates whether header compression is enabled.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIBLCompatID:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Dolby Vision BL compatibility ID.
+                                                                    example: 1
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIBLPresent:
+                                                                    type: boolean
+                                                                    description: Indicates if Dolby Vision BL is present.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIELPresent:
+                                                                    type: boolean
+                                                                    description: Indicates if Dolby Vision EL is present.
+                                                                    example: false
+                                                              - type: object
+                                                                properties:
+                                                                  DOVILevel:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Dolby Vision level.
+                                                                    example: 6
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIPresent:
+                                                                    type: boolean
+                                                                    description: Indicates if Dolby Vision is present.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIProfile:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Dolby Vision profile.
+                                                                    example: 8
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIRPUPresent:
+                                                                    type: boolean
+                                                                    description: Indicates if Dolby Vision RPU is present.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  DOVIVersion:
+                                                                    type: string
+                                                                    description: Dolby Vision version.
+                                                                    example: '1.0'
+                                                              - type: object
+                                                                properties:
+                                                                  bitDepth:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Bit depth of the video stream.
+                                                                    example: 10
+                                                              - type: object
+                                                                properties:
+                                                                  chromaLocation:
+                                                                    type: string
+                                                                    description: Chroma sample location.
+                                                                    example: topleft
+                                                              - type: object
+                                                                properties:
+                                                                  chromaSubsampling:
+                                                                    type: string
+                                                                    description: Chroma subsampling format.
+                                                                    example: '4:2:0'
+                                                              - type: object
+                                                                properties:
+                                                                  codedHeight:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Coded video height.
+                                                                    example: 1608
+                                                              - type: object
+                                                                properties:
+                                                                  codedWidth:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Coded video width.
+                                                                    example: 3840
+                                                              - type: object
+                                                                properties:
+                                                                  closedCaptions:
+                                                                    type: boolean
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  colorPrimaries:
+                                                                    type: string
+                                                                    description: Color primaries used.
+                                                                    example: bt2020
+                                                              - type: object
+                                                                properties:
+                                                                  colorRange:
+                                                                    type: string
+                                                                    description: 'Color range (e.g., tv).'
+                                                                    example: tv
+                                                              - type: object
+                                                                properties:
+                                                                  colorSpace:
+                                                                    type: string
+                                                                    description: Color space.
+                                                                    example: bt2020nc
+                                                              - type: object
+                                                                properties:
+                                                                  colorTrc:
+                                                                    type: string
+                                                                    description: Color transfer characteristics.
+                                                                    example: smpte2084
+                                                              - type: object
+                                                                properties:
+                                                                  frameRate:
+                                                                    type: number
+                                                                    format: float
+                                                                    description: Frame rate of the stream.
+                                                                    example: 23.976
+                                                              - type: object
+                                                                properties:
+                                                                  key:
+                                                                    type: string
+                                                                    description: Key to access this stream part.
+                                                                    example: /library/streams/216389
+                                                              - type: object
+                                                                properties:
+                                                                  height:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Height of the video stream.
+                                                                    example: 1602
+                                                              - type: object
+                                                                properties:
+                                                                  level:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Video level.
+                                                                    example: 150
+                                                              - type: object
+                                                                properties:
+                                                                  original:
+                                                                    type: boolean
+                                                                    description: Indicates if this is the original stream.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  hasScalingMatrix:
+                                                                    type: boolean
+                                                                    example: false
+                                                              - type: object
+                                                                properties:
+                                                                  profile:
+                                                                    type: string
+                                                                    description: Video profile.
+                                                                    example: main 10
+                                                              - type: object
+                                                                properties:
+                                                                  scanType:
+                                                                    type: string
+                                                                    example: progressive
+                                                              - type: object
+                                                                properties:
+                                                                  embeddedInVideo:
+                                                                    type: string
+                                                                    example: progressive
+                                                              - type: object
+                                                                properties:
+                                                                  refFrames:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Number of reference frames.
+                                                                    example: 1
+                                                              - type: object
+                                                                properties:
+                                                                  width:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Width of the video stream.
+                                                                    example: 3840
+                                                              - type: object
+                                                                properties:
+                                                                  displayTitle:
+                                                                    type: string
+                                                                    description: Display title for the stream.
+                                                                    example: 4K DoVi/HDR10 (HEVC Main 10)
+                                                              - type: object
+                                                                properties:
+                                                                  extendedDisplayTitle:
+                                                                    type: string
+                                                                    description: Extended display title for the stream.
+                                                                    example: 4K DoVi/HDR10 (HEVC Main 10)
+                                                              - type: object
+                                                                properties:
+                                                                  selected:
+                                                                    type: boolean
+                                                                    description: Indicates if this stream is selected (applicable for audio streams).
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  forced:
+                                                                    type: boolean
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  channels:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Number of audio channels (for audio streams).
+                                                                    example: 6
+                                                              - type: object
+                                                                properties:
+                                                                  audioChannelLayout:
+                                                                    type: string
+                                                                    description: Audio channel layout.
+                                                                    example: 5.1(side)
+                                                              - type: object
+                                                                properties:
+                                                                  samplingRate:
+                                                                    type: integer
+                                                                    format: int32
+                                                                    description: Sampling rate for the audio stream.
+                                                                    example: 48000
+                                                              - type: object
+                                                                properties:
+                                                                  canAutoSync:
+                                                                    type: boolean
+                                                                    description: Indicates if the stream can auto-sync.
+                                                                    example: false
+                                                              - type: object
+                                                                properties:
+                                                                  hearingImpaired:
+                                                                    type: boolean
+                                                                    description: Indicates if the stream is for the hearing impaired.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  dub:
+                                                                    type: boolean
+                                                                    description: Indicates if the stream is a dub.
+                                                                    example: true
+                                                              - type: object
+                                                                properties:
+                                                                  title:
+                                                                    type: string
+                                                                    description: 'Optional title for the stream (e.g., language variant).'
+                                                                    example: SDH
                                     Genre:
                                       type: array
                                       items:

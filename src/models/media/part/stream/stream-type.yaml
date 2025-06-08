@@ -1,4 +1,6 @@
 type: object
+required:
+  - streamType
 properties:
   streamType:
     type: integer

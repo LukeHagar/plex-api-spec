@@ -1,6 +1,4 @@
 type: object
-required:
-  - has64bitOffsets
 properties:
   has64bitOffsets:
     type: boolean

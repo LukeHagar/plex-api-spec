@@ -1,8 +1,7 @@
 type: object
-required:
-  - hasThumbnail
 properties:
   hasThumbnail:
     allOf:
-      - description: "Indicates if the part has a thumbnail."
-      - $ref: "../models/common/PlexBooleanString.yaml"
+      - description: |
+          Indicates if the part has a thumbnail.
+      - $ref: "../../../models/common/PlexBooleanString.yaml"

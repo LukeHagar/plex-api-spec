@@ -1,6 +1,4 @@
 type: object
-required:
-  - audioProfile
 properties:
   audioProfile:
     type: string
