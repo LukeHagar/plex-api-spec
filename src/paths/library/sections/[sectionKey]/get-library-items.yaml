@@ -73,94 +73,274 @@ get:
             properties:
               MediaContainer:
                 allOf:
-                  - $ref: "../../../../models/Meta.yaml"
+                  - $ref: "../../../../models/media-container/size.yaml"
+                  - $ref: "../../../../models/media-container/total-size.yaml"
+                  - $ref: "../../../../models/media-container/offset.yaml"
+                  - $ref: "../../../../models/media-container/content.yaml"
+                  - $ref: "../../../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../../../models/media-container/nocache.yaml"
+                  - $ref: "../../../../models/media-container/art.yaml"
+                  - $ref: "../../../../models/media-container/identifier.yaml"
+                  - $ref: "../../../../models/media-container/library-section-id.yaml"
+                  - $ref: "../../../../models/media-container/library-section-title.yaml"
+                  - $ref: "../../../../models/media-container/library-section-uuid.yaml"
+                  - $ref: "../../../../models/media-container/media-tag-prefix.yaml"
+                  - $ref: "../../../../models/media-container/media-tag-version.yaml"
+                  - $ref: "../../../../models/media-container/thumb.yaml"
+                  - $ref: "../../../../models/media-container/title1.yaml"
+                  - $ref: "../../../../models/media-container/title2.yaml"
+                  - $ref: "../../../../models/media-container/view-group.yaml"
+                  - $ref: "../../../../models/media-container/view-mode.yaml"
+                  - $ref: "../../../../models/media-container/mixed-parents.yaml"
                   - type: object
                     required:
-                      - size
-                      - totalSize
-                      - offset
-                      - content
-                      - allowSync
-                      - art
-                      - content
-                      - identifier
-                      - librarySectionID
-                      - librarySectionTitle
-                      - librarySectionUUID
-                      - mediaTagPrefix
-                      - mediaTagVersion
-                      - thumb
-                      - title1
-                      - title2
-                      - viewGroup
+                      - Metadata
                     properties:
-                      size:
-                        type: integer
-                        format: int32
-                        example: 70
-                      totalSize:
-                        type: integer
-                        format: int32
-                        example: 170
-                      offset:
-                        type: integer
-                        format: int32
-                        example: 0
-                      content:
-                        type: string
-                        example: secondary
-                      allowSync:
-                        type: boolean
-                        example: true
-                      nocache:
-                        type: boolean
-                        example: true
-                      art:
-                        type: string
-                        example: /:/resources/movie-fanart.jpg
-                      identifier:
-                        type: string
-                        example: com.plexapp.plugins.library
-                      librarySectionID:
-                        type: integer
-                        examples:
-                          - 1
-                      librarySectionTitle:
-                        type: string
-                        example: Movies
-                      librarySectionUUID:
-                        type: string
-                        example: 322a231a-b7f7-49f5-920f-14c61199cd30
-                      mediaTagPrefix:
-                        type: string
-                        example: /system/bundle/media/flags/
-                      mediaTagVersion:
-                        type: integer
-                        format: int32
-                        example: 1701731894
-                      thumb:
-                        type: string
-                        example: /:/resources/movie.png
-                      title1:
-                        type: string
-                        example: Movies
-                      title2:
-                        type: string
-                        example: Recently Released
-                      viewGroup:
-                        type: string
-                        example: movie
-                      viewMode:
-                        type: integer
-                        format: int32
-                        example: 65592
-                      mixedParents:
-                        type: boolean
-                        example: true
                       Metadata:
                         type: array
+                        description: "An array of metadata items."
                         items:
-                          $ref: "../../../../models/MetaData.yaml"
+                          required:
+                            - type
+                          allOf:
+                            - $ref: "../../../../models/meta-data/rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/key.yaml"
+                            - $ref: "../../../../models/meta-data/guid.yaml"
+                            - $ref: "../../../../models/meta-data/slug.yaml"
+                            - $ref: "../../../../models/meta-data/studio.yaml"
+                            - $ref: "../../../../models/meta-data/type.yaml"
+                            - $ref: "../../../../models/meta-data/title.yaml"
+                            - $ref: "../../../../models/meta-data/banner.yaml"
+                            - $ref: "../../../../models/meta-data/title-sort.yaml"
+                            - $ref: "../../../../models/meta-data/content-rating.yaml"
+                            - $ref: "../../../../models/meta-data/summary.yaml"
+                            - $ref: "../../../../models/meta-data/rating.yaml"
+                            - $ref: "../../../../models/meta-data/audience-rating.yaml"
+                            - $ref: "../../../../models/meta-data/year.yaml"
+                            - $ref: "../../../../models/meta-data/tagline.yaml"
+                            - $ref: "../../../../models/meta-data/thumb.yaml"
+                            - $ref: "../../../../models/meta-data/art.yaml"
+                            - $ref: "../../../../models/meta-data/theme.yaml"
+                            - $ref: "../../../../models/meta-data/index.yaml"
+                            - $ref: "../../../../models/meta-data/leaf-count.yaml"
+                            - $ref: "../../../../models/meta-data/viewed-leaf-count.yaml"
+                            - $ref: "../../../../models/meta-data/child-count.yaml"
+                            - $ref: "../../../../models/meta-data/season-count.yaml"
+                            - $ref: "../../../../models/meta-data/duration.yaml"
+                            - $ref: "../../../../models/meta-data/originally-available-at.yaml"
+                            - $ref: "../../../../models/meta-data/added-at.yaml"
+                            - $ref: "../../../../models/meta-data/updated-at.yaml"
+                            - $ref: "../../../../models/meta-data/audience-rating-image.yaml"
+                            - $ref: "../../../../models/meta-data/chapter-source.yaml"
+                            - $ref: "../../../../models/meta-data/primary-extra-key.yaml"
+                            - $ref: "../../../../models/meta-data/original-title.yaml"
+                            - $ref: "../../../../models/meta-data/parent-rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-rating-key.yaml"
+                            - $ref: "../../../../models/meta-data/parent-guid.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-guid.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-slug.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-key.yaml"
+                            - $ref: "../../../../models/meta-data/parent-key.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-title.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-thumb.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-theme.yaml"
+                            - $ref: "../../../../models/meta-data/grandparent-art.yaml"
+                            - $ref: "../../../../models/meta-data/parent-title.yaml"
+                            - $ref: "../../../../models/meta-data/parent-index.yaml"
+                            - $ref: "../../../../models/meta-data/parent-thumb.yaml"
+                            - $ref: "../../../../models/meta-data/rating-image.yaml"
+                            - $ref: "../../../../models/meta-data/view-count.yaml"
+                            - $ref: "../../../../models/meta-data/view-offset.yaml"
+                            - $ref: "../../../../models/meta-data/skip-count.yaml"
+                            - $ref: "../../../../models/meta-data/subtype.yaml"
+                            - $ref: "../../../../models/meta-data/last-rated-at.yaml"
+                            - $ref: "../../../../models/meta-data/created-at-accuracy.yaml"
+                            - $ref: "../../../../models/meta-data/created-at-tz-offset.yaml"
+                            - $ref: "../../../../models/meta-data/last-viewed-at.yaml"
+                            - $ref: "../../../../models/meta-data/user-rating.yaml"
+                            - $ref: "../../../../models/meta-data/objects/image.yaml"
+                            - $ref: "../../../../models/meta-data/objects/ultra-blur-colors.yaml"
+                            - $ref: "../../../../models/meta-data/guid/guid-array.yaml"
+                            - $ref: "../../../../models/meta-data/library-section-id.yaml"
+                            - $ref: "../../../../models/meta-data/library-section-title.yaml"
+                            - $ref: "../../../../models/meta-data/library-section-key.yaml"
+                            - $ref: "../../../../models/meta-data/show-ordering.yaml"
+                            - $ref: "../../../../models/meta-data/flatten-seasons.yaml"
+                            - $ref: "../../../../models/meta-data/skip-children.yaml"
+                            - type: object
+                              properties:
+                                Media:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/media/id.yaml"
+                                      - $ref: "../../../../models/media/duration.yaml"
+                                      - $ref: "../../../../models/media/bitrate.yaml"
+                                      - $ref: "../../../../models/media/width.yaml"
+                                      - $ref: "../../../../models/media/height.yaml"
+                                      - $ref: "../../../../models/media/aspect-ratio.yaml"
+                                      - $ref: "../../../../models/media/audio-channels.yaml"
+                                      - $ref: "../../../../models/media/display-offset.yaml"
+                                      - $ref: "../../../../models/media/audio-codec.yaml"
+                                      - $ref: "../../../../models/media/video-codec.yaml"
+                                      - $ref: "../../../../models/media/video-resolution.yaml"
+                                      - $ref: "../../../../models/media/container.yaml"
+                                      - $ref: "../../../../models/media/video-frame-rate.yaml"
+                                      - $ref: "../../../../models/media/video-profile.yaml"
+                                      - $ref: "../../../../models/media/has-voice-activity.yaml"
+                                      - $ref: "../../../../models/media/audio-profile.yaml"
+                                      - $ref: "../../../../models/media/optimized-for-streaming.yaml"
+                                      - $ref: "../../../../models/media/has-64bit-offsets.yaml"
+                                      - type: object
+                                        properties:
+                                          Part:
+                                            type: array
+                                            items:
+                                              allOf:
+                                                - $ref: "../../../../models/media/part/accessible.yaml"
+                                                - $ref: "../../../../models/media/part/exists.yaml"
+                                                - $ref: "../../../../models/media/part/id.yaml"
+                                                - $ref: "../../../../models/media/part/key.yaml"
+                                                - $ref: "../../../../models/media/part/indexes.yaml"
+                                                - $ref: "../../../../models/media/part/duration.yaml"
+                                                - $ref: "../../../../models/media/part/file.yaml"
+                                                - $ref: "../../../../models/media/part/size.yaml"
+                                                - $ref: "../../../../models/media/part/packet-length.yaml"
+                                                - $ref: "../../../../models/media/part/container.yaml"
+                                                - $ref: "../../../../models/media/part/video-profile.yaml"
+                                                - $ref: "../../../../models/media/part/audio-profile.yaml"
+                                                - $ref: "../../../../models/media/part/has-64bit-offsets.yaml"
+                                                - $ref: "../../../../models/media/part/optimized-for-streaming.yaml"
+                                                - $ref: "../../../../models/media/part/has-thumbnail.yaml"
+                                Genre:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/genre/id.yaml"
+                                      - $ref: "../../../../models/genre/tag.yaml"
+                                Country:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/country/id.yaml"
+                                      - $ref: "../../../../models/country/tag.yaml"
+                                Director:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/director/id.yaml"
+                                      - $ref: "../../../../models/director/tag.yaml"
+                                      - $ref: "../../../../models/director/thumb.yaml"
+                                Writer:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/writer/id.yaml"
+                                      - $ref: "../../../../models/writer/tag.yaml"
+                                      - $ref: "../../../../models/writer/thumb.yaml"
+                                Producer:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/meta-data/role.yaml"
+                                Collection:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/collection/tag.yaml"
+                                Role:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/role/id.yaml"
+                                      - $ref: "../../../../models/role/tag.yaml"
+                                      - $ref: "../../../../models/role/role.yaml"
+                                      - $ref: "../../../../models/role/thumb.yaml"
+                                Rating:
+                                  x-speakeasy-name-override: Ratings
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - image
+                                      - value
+                                      - type
+                                    properties:
+                                      image:
+                                        type: string
+                                        description: "The image or reference for the rating."
+                                        example: "imdb://image.rating"
+                                      value:
+                                        type: number
+                                        format: float
+                                        description: "The rating value."
+                                        example: 9.0
+                                      type:
+                                        type: string
+                                        description: "The type of rating (e.g., audience, critic)."
+                                        example: "audience"
+                                Similar:
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - id
+                                      - filter
+                                      - tag
+                                    properties:
+                                      id:
+                                        type: integer
+                                        description: "The unique similar item identifier."
+                                        example: 26
+                                      filter:
+                                        type: string
+                                        description: "The filter string for similar items."
+                                        example: "similar=26"
+                                      tag:
+                                        type: string
+                                        description: "The tag or title of the similar content."
+                                        example: "Breaking Bad"
+                                Location:
+                                  type: array
+                                  items:
+                                    type: object
+                                    required:
+                                      - path
+                                    properties:
+                                      path:
+                                        type: string
+                                        description: "The file path for the location."
+                                        example: "/TV Shows/Better Call Saul"
+                                Chapter:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/chapter/id.yaml"
+                                      - $ref: "../../../../models/chapter/filter.yaml"
+                                      - $ref: "../../../../models/chapter/index.yaml"
+                                      - $ref: "../../../../models/chapter/start-time-offset.yaml"
+                                      - $ref: "../../../../models/chapter/end-time-offset.yaml"
+                                      - $ref: "../../../../models/chapter/thumb.yaml"
+                                Marker:
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/marker/id.yaml"
+                                      - $ref: "../../../../models/marker/type.yaml"
+                                      - $ref: "../../../../models/marker/start-time-offset.yaml"
+                                      - $ref: "../../../../models/marker/end-time-offset.yaml"
+                                      - $ref: "../../../../models/marker/final.yaml"
+                                      - type: object
+                                        properties:
+                                          Attributes:
+                                            $ref: "../../../../models/marker/attributes.yaml"
+                                Extras:
+                                  type: object
+                                  properties:
+                                    size:
+                                      type: integer
+                                      description: "The size of the extras."
+                                      example: 1
                       Meta:
                         description: |
                           The Meta object is only included in the response if the `includeMeta` parameter is set to `1`.

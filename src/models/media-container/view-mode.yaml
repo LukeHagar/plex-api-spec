@@ -1,6 +1,4 @@
 type: object
-required:
-  - viewMode
 properties:
   viewMode:
     type: string

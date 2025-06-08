@@ -1,6 +1,4 @@
 type: object
-required:
-  - skipChildren
 properties:
   skipChildren:
     type: boolean

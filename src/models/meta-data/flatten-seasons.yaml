@@ -1,6 +1,4 @@
 type: object
-required:
-  - flattenSeasons
 properties:
   flattenSeasons:
     type: string

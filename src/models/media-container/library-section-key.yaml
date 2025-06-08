@@ -1,6 +1,8 @@
 type: object
+required:
+  - librarySectionKey
 properties:
-  librarySectionID:
+  librarySectionKey:
     type: integer
     description: "The unique identifier for the library section."
     example: 2
