@@ -1,0 +1,8 @@
+type: object
+description: "Dolby Vision level information."
+properties:
+  DOVILevel:
+    type: integer
+    format: int32
+    description: "Dolby Vision level."
+    example: 6 

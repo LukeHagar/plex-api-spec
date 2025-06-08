@@ -1,0 +1,6 @@
+type: object
+properties:
+  title:
+    type: string
+    description: "Optional title for the stream (e.g., language variant)."
+    example: "SDH"

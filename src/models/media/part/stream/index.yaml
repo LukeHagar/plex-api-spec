@@ -1,0 +1,8 @@
+type: object
+description: "Stream index information."
+properties:
+  index:
+    type: integer
+    format: int32
+    description: "Index of the stream."
+    example: 0 

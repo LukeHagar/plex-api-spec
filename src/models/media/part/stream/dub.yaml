@@ -1,0 +1,7 @@
+type: object
+description: "Dub information."
+properties:
+  dub:
+    type: boolean
+    description: "Indicates if the stream is a dub."
+    example: true 

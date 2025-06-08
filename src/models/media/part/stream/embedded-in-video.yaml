@@ -1,0 +1,6 @@
+type: object
+description: "Embedded in video information."
+properties:
+  embeddedInVideo:
+    type: string
+    example: "progressive" 

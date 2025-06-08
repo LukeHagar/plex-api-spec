@@ -1,0 +1,9 @@
+type: object
+required:
+  - packetLength
+description: "Packet length for the part."
+properties:
+  packetLength:
+    type: integer
+    format: int32
+    example: 188 

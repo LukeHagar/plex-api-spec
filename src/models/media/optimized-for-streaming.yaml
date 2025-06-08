@@ -1,0 +1,13 @@
+type: object
+required:
+  - optimizedForStreaming
+description: "Has this media been optimized for streaming."
+properties:
+  optimizedForStreaming:
+    description: "Has this media been optimized for streaming. NOTE: This can be 0, 1, false or true"
+    oneOf:
+      - type: integer
+        format: int32
+        enum: [0, 1]
+      - type: boolean
+        enum: [true, false] 

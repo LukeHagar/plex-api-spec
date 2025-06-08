@@ -1,0 +1,8 @@
+type: object
+description: "Stream width information."
+properties:
+  width:
+    type: integer
+    format: int32
+    description: "Width of the video stream."
+    example: 3840 

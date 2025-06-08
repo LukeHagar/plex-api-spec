@@ -1,0 +1,7 @@
+type: object
+description: "Video profile information."
+properties:
+  profile:
+    type: string
+    description: "Video profile."
+    example: "main 10" 

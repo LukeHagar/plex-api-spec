@@ -1,0 +1,7 @@
+type: object
+description: "Color range information."
+properties:
+  colorRange:
+    type: string
+    description: "Color range (e.g., tv)."
+    example: "tv" 

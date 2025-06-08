@@ -1,0 +1,8 @@
+type: object
+description: "Dolby Vision BL compatibility ID information."
+properties:
+  DOVIBLCompatID:
+    type: integer
+    format: int32
+    description: "Dolby Vision BL compatibility ID."
+    example: 1 

@@ -1,0 +1,7 @@
+type: object
+description: "Color primaries information."
+properties:
+  colorPrimaries:
+    type: string
+    description: "Color primaries used."
+    example: "bt2020" 

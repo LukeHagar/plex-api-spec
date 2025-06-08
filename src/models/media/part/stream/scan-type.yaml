@@ -1,0 +1,6 @@
+type: object
+description: "Scan type information."
+properties:
+  scanType:
+    type: string
+    example: "progressive" 

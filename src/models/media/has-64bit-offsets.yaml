@@ -1,0 +1,8 @@
+type: object
+required:
+  - has64bitOffsets
+description: "Indicates whether the media has 64-bit offsets."
+properties:
+  has64bitOffsets:
+    type: boolean
+    example: false 

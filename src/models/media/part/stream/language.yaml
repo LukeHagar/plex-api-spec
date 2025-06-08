@@ -1,0 +1,7 @@
+type: object
+description: "Stream language information."
+properties:
+  language:
+    type: string
+    description: "Language of the stream."
+    example: "English" 

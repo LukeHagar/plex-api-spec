@@ -1,0 +1,6 @@
+type: object
+description: "Closed captions information."
+properties:
+  closedCaptions:
+    type: boolean
+    example: true 

@@ -1,0 +1,7 @@
+type: object
+description: "Chroma subsampling information."
+properties:
+  chromaSubsampling:
+    type: string
+    description: "Chroma subsampling format."
+    example: "4:2:0" 

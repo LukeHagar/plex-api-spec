@@ -1,0 +1,9 @@
+type: object
+required:
+  - accessible
+description: "Indicates if the part is accessible."
+properties:
+  accessible:
+    type: boolean
+    description: "Indicates if the part is accessible."
+    example: true 

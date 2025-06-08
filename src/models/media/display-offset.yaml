@@ -1,0 +1,9 @@
+type: object
+required:
+  - displayOffset
+description: "Display offset value."
+properties:
+  displayOffset:
+    type: integer
+    format: int32
+    example: 50 

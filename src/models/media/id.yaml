@@ -1,0 +1,9 @@
+type: object
+required:
+  - id
+description: "Unique media identifier."
+properties:
+  id:
+    type: integer
+    description: "Unique media identifier."
+    example: 387322 

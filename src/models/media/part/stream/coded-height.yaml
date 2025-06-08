@@ -1,0 +1,8 @@
+type: object
+description: "Coded height information."
+properties:
+  codedHeight:
+    type: integer
+    format: int32
+    description: "Coded video height."
+    example: 1608 

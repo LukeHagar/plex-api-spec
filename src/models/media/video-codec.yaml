@@ -1,0 +1,9 @@
+type: object
+required:
+  - videoCodec
+description: "Video codec used."
+properties:
+  videoCodec:
+    type: string
+    description: "Video codec used."
+    example: "hevc" 

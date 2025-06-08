@@ -1,0 +1,8 @@
+type: object
+description: "Bit depth information."
+properties:
+  bitDepth:
+    type: integer
+    format: int32
+    description: "Bit depth of the video stream."
+    example: 10 

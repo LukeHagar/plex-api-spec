@@ -1,0 +1,7 @@
+type: object
+description: "Dolby Vision presence information."
+properties:
+  DOVIPresent:
+    type: boolean
+    description: "Indicates if Dolby Vision is present."
+    example: true 

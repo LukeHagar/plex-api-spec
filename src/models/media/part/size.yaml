@@ -1,0 +1,9 @@
+type: object
+required:
+  - size
+description: "File size in bytes."
+properties:
+  size:
+    description: "File size in bytes."
+    type: integer
+    example: 30649952104 

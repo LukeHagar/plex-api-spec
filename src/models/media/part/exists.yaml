@@ -1,0 +1,6 @@
+type: object
+properties:
+  exists:
+    type: boolean
+    description: "Indicates if the part exists."
+    example: true
