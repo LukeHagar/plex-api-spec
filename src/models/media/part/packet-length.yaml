@@ -1,6 +1,4 @@
 type: object
-required:
-  - packetLength
 properties:
   packetLength:
     type: integer

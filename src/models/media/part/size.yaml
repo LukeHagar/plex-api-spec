@@ -1,6 +1,4 @@
 type: object
-required:
-  - size
 properties:
   size:
     description: "File size in bytes."

@@ -1,6 +1,4 @@
 type: object
-required:
-  - width
 properties:
   width:
     type: integer

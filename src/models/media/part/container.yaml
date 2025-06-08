@@ -1,6 +1,4 @@
 type: object
-required:
-  - container
 properties:
   container:
     type: string

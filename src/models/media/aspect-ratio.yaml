@@ -1,9 +1,7 @@
 type: object
-required:
-  - aspectRatio
 properties:
   aspectRatio:
     type: number
     format: float
     description: "Aspect ratio of the video."
-    example: 2.35 
+    example: 2.35

@@ -1,6 +1,4 @@
 type: object
-required:
-  - indexes
 properties:
   indexes:
     type: string

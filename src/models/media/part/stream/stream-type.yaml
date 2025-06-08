@@ -4,6 +4,7 @@ required:
 properties:
   streamType:
     type: integer
+    format: int32
     oneOf:
       - title: VIDEO
         const: 1

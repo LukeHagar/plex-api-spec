@@ -1,6 +1,4 @@
 type: object
-required:
-  - videoResolution
 properties:
   videoResolution:
     type: string
