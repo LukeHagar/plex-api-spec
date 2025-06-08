@@ -1,9 +1,8 @@
 type: object
 required:
   - file
-description: "File path for the part."
 properties:
   file:
     type: string
     description: "File path for the part."
-    example: "/mnt/Movies_1/W/Wicked (2024).mkv" 
+    example: "/mnt/Movies_1/W/Wicked (2024).mkv"

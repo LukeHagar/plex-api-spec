@@ -1,10 +1,9 @@
 type: object
 required:
   - videoFrameRate
-description: "Frame rate of the video."
 properties:
   videoFrameRate:
     type: string
     description: |
       Frame rate of the video. Values found include NTSC, PAL, 24p
-    example: "24p" 
+    example: "24p"

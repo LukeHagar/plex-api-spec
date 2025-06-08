@@ -1,9 +1,8 @@
 type: object
 required:
   - hasVoiceActivity
-description: "Indicates whether voice activity is detected."
 properties:
   hasVoiceActivity:
     type: boolean
     description: "Indicates whether voice activity is detected."
-    example: false 
+    example: false

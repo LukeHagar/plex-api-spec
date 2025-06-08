@@ -1,7 +1,6 @@
 type: object
-description: "Format of the stream."
 properties:
   format:
     type: string
     description: "Format of the stream (e.g., srt)."
-    example: "srt" 
+    example: "srt"

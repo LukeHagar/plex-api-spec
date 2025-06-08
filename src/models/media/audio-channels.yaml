@@ -1,7 +1,6 @@
 type: object
 required:
   - audioChannels
-description: "Number of audio channels."
 properties:
   audioChannels:
     type: integer

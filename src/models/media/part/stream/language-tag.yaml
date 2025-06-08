@@ -1,7 +1,6 @@
 type: object
-description: "Stream language tag information."
 properties:
   languageTag:
     type: string
     description: "Language tag (e.g., en)."
-    example: "en" 
+    example: "en"

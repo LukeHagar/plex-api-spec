@@ -1,7 +1,6 @@
 type: object
-description: "Audio channel layout information."
 properties:
   audioChannelLayout:
     type: string
     description: "Audio channel layout."
-    example: "5.1(side)" 
+    example: "5.1(side)"

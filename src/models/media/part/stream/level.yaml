@@ -1,8 +1,7 @@
 type: object
-description: "Video level information."
 properties:
   level:
     type: integer
     format: int32
     description: "Video level."
-    example: 150 
+    example: 150

@@ -1,8 +1,7 @@
 type: object
 required:
   - indexes
-description: "Indexes for the part."
 properties:
   indexes:
     type: string
-    example: "sd" 
+    example: "sd"

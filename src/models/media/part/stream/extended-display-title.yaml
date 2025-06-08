@@ -1,7 +1,6 @@
 type: object
-description: "Extended display title information."
 properties:
   extendedDisplayTitle:
     type: string
     description: "Extended display title for the stream."
-    example: "4K DoVi/HDR10 (HEVC Main 10)" 
+    example: "4K DoVi/HDR10 (HEVC Main 10)"

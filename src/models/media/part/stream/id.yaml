@@ -1,7 +1,6 @@
 type: object
-description: "Unique stream identifier."
 properties:
   id:
     type: integer
     description: "Unique stream identifier."
-    example: 1002625 
+    example: 1002625

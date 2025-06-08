@@ -1,7 +1,6 @@
 type: object
-description: "Color space information."
 properties:
   colorSpace:
     type: string
     description: "Color space."
-    example: "bt2020nc" 
+    example: "bt2020nc"

@@ -1,9 +1,8 @@
 type: object
 required:
   - container
-description: "File container type."
 properties:
   container:
     type: string
-    description: "File container type."
-    example: "mkv" 
+    description: "Container format of the media."
+    example: "mp4" 

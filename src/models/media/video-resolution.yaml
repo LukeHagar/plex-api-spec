@@ -1,9 +1,8 @@
 type: object
 required:
   - videoResolution
-description: "Video resolution (e.g., 4k)."
 properties:
   videoResolution:
     type: string
     description: "Video resolution (e.g., 4k)."
-    example: "4k" 
+    example: "4k"

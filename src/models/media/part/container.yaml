@@ -1,9 +1,8 @@
 type: object
 required:
   - container
-description: "Container format of the part."
 properties:
   container:
     type: string
     description: "Container format of the part."
-    example: "mkv" 
+    example: "mkv"

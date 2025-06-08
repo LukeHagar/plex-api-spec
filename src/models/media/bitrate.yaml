@@ -1,10 +1,9 @@
 type: object
 required:
   - bitrate
-description: "Bitrate in bits per second."
 properties:
   bitrate:
     type: integer
     format: int32
     description: "Bitrate in bits per second."
-    example: 25512 
+    example: 25512

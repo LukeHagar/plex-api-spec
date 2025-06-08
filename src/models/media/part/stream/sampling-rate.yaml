@@ -1,8 +1,7 @@
 type: object
-description: "Sampling rate information."
 properties:
   samplingRate:
     type: integer
     format: int32
     description: "Sampling rate for the audio stream."
-    example: 48000 
+    example: 48000

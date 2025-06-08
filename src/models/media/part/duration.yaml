@@ -1,10 +1,9 @@
 type: object
 required:
   - duration
-description: "Duration of the part in milliseconds."
 properties:
   duration:
     type: integer
     format: int32
     description: "Duration of the part in milliseconds."
-    example: 9610350 
+    example: 9610350

@@ -1,10 +1,9 @@
 type: object
 required:
   - width
-description: "Video width in pixels."
 properties:
   width:
     type: integer
     format: int32
     description: "Video width in pixels."
-    example: 3840 
+    example: 3840

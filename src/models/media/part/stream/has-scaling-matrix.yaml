@@ -1,6 +1,5 @@
 type: object
-description: "Scaling matrix information."
 properties:
   hasScalingMatrix:
     type: boolean
-    example: false 
+    example: false

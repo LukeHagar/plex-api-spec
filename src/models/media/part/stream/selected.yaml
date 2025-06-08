@@ -1,7 +1,6 @@
 type: object
-description: "Stream selection information."
 properties:
   selected:
     type: boolean
     description: "Indicates if this stream is selected (applicable for audio streams)."
-    example: true 
+    example: true

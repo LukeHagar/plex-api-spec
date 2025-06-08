@@ -1,7 +1,6 @@
 type: object
 required:
   - aspectRatio
-description: "Aspect ratio of the video."
 properties:
   aspectRatio:
     type: number

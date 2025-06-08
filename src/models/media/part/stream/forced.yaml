@@ -1,6 +1,5 @@
 type: object
-description: "Forced stream information."
 properties:
   forced:
     type: boolean
-    example: true 
+    example: true

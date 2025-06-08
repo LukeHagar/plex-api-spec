@@ -1,8 +1,7 @@
 type: object
-description: "Dolby Vision profile information."
 properties:
   DOVIProfile:
     type: integer
     format: int32
     description: "Dolby Vision profile."
-    example: 8 
+    example: 8

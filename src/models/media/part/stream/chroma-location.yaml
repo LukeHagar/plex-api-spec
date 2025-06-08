@@ -1,7 +1,6 @@
 type: object
-description: "Chroma location information."
 properties:
   chromaLocation:
     type: string
     description: "Chroma sample location."
-    example: "topleft" 
+    example: "topleft"

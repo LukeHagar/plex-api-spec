@@ -1,7 +1,6 @@
 type: object
-description: "Codec information."
 properties:
   codec:
     type: string
     description: "Codec used by the stream."
-    example: "hevc" 
+    example: "hevc"

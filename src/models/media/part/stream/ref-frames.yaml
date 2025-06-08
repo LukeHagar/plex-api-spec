@@ -1,8 +1,7 @@
 type: object
-description: "Reference frames information."
 properties:
   refFrames:
     type: integer
     format: int32
     description: "Number of reference frames."
-    example: 1 
+    example: 1

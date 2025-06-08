@@ -1,7 +1,6 @@
 type: object
-description: "Stream language code information."
 properties:
   languageCode:
     type: string
     description: "ISO language code."
-    example: "eng" 
+    example: "eng"

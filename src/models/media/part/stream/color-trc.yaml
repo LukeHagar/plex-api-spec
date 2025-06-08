@@ -1,7 +1,6 @@
 type: object
-description: "Color transfer characteristics information."
 properties:
   colorTrc:
     type: string
     description: "Color transfer characteristics."
-    example: "smpte2084" 
+    example: "smpte2084"

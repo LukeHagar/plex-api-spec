@@ -1,5 +1,4 @@
 type: object
-description: "Stream type definition."
 properties:
   streamType:
     type: integer
@@ -18,4 +17,4 @@ properties:
       Stream type:
         - VIDEO = 1
         - AUDIO = 2
-        - SUBTITLE = 3 
+        - SUBTITLE = 3
