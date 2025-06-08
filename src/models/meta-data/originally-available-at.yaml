@@ -1,6 +1,4 @@
 type: object
-required:
-  - originallyAvailableAt
 properties:
   originallyAvailableAt:
     type: string

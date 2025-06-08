@@ -1,0 +1,7 @@
+type: object
+properties:
+  bitrate:
+    type: integer
+    format: int32
+    description: "Bitrate in bits per second."
+    example: 25512

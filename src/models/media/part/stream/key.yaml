@@ -1,0 +1,6 @@
+type: object
+properties:
+  key:
+    type: string
+    description: "Key to access this stream part."
+    example: "/library/streams/216389"

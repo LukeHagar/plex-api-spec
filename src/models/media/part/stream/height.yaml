@@ -1,0 +1,7 @@
+type: object
+properties:
+  height:
+    type: integer
+    format: int32
+    description: "Height of the video stream."
+    example: 1602

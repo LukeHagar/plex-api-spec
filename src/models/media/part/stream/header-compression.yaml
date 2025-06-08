@@ -1,0 +1,6 @@
+type: object
+properties:
+  headerCompression:
+    type: boolean
+    description: "Indicates whether header compression is enabled."
+    example: true

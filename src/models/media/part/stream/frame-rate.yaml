@@ -1,0 +1,7 @@
+type: object
+properties:
+  frameRate:
+    type: number
+    format: float
+    description: "Frame rate of the stream."
+    example: 23.976

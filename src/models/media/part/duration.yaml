@@ -1,0 +1,7 @@
+type: object
+properties:
+  duration:
+    type: integer
+    format: int32
+    description: "Duration of the part in milliseconds."
+    example: 9610350

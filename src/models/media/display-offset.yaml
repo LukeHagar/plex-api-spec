@@ -1,0 +1,6 @@
+type: object
+properties:
+  displayOffset:
+    type: integer
+    format: int32
+    example: 50

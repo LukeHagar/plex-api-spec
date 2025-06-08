@@ -1,0 +1,6 @@
+type: object
+properties:
+  colorTrc:
+    type: string
+    description: "Color transfer characteristics."
+    example: "smpte2084"

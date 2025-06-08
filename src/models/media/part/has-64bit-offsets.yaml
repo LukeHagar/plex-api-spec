@@ -1,0 +1,5 @@
+type: object
+properties:
+  has64bitOffsets:
+    type: boolean
+    example: false

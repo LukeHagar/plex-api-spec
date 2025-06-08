@@ -1,0 +1,6 @@
+type: object
+properties:
+  DOVIRPUPresent:
+    type: boolean
+    description: "Indicates if Dolby Vision RPU is present."
+    example: true

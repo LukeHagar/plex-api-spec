@@ -1,0 +1,6 @@
+type: object
+properties:
+  videoResolution:
+    type: string
+    description: "Video resolution (e.g., 4k)."
+    example: "4k"

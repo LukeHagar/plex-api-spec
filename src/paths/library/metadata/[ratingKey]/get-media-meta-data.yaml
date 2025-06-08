@@ -198,8 +198,105 @@ get:
                             - type: object
                               properties:
                                 Media:
-                                  allOf:
-                                    - $ref: "../../../../models/Media-data.yaml"
+                                  type: array
+                                  items:
+                                    allOf:
+                                      - $ref: "../../../../models/media/id.yaml"
+                                      - $ref: "../../../../models/media/duration.yaml"
+                                      - $ref: "../../../../models/media/bitrate.yaml"
+                                      - $ref: "../../../../models/media/width.yaml"
+                                      - $ref: "../../../../models/media/height.yaml"
+                                      - $ref: "../../../../models/media/aspect-ratio.yaml"
+                                      - $ref: "../../../../models/media/audio-channels.yaml"
+                                      - $ref: "../../../../models/media/display-offset.yaml"
+                                      - $ref: "../../../../models/media/audio-codec.yaml"
+                                      - $ref: "../../../../models/media/video-codec.yaml"
+                                      - $ref: "../../../../models/media/video-resolution.yaml"
+                                      - $ref: "../../../../models/media/container.yaml"
+                                      - $ref: "../../../../models/media/video-frame-rate.yaml"
+                                      - $ref: "../../../../models/media/video-profile.yaml"
+                                      - $ref: "../../../../models/media/has-voice-activity.yaml"
+                                      - $ref: "../../../../models/media/audio-profile.yaml"
+                                      - $ref: "../../../../models/media/optimized-for-streaming.yaml"
+                                      - $ref: "../../../../models/media/has-64bit-offsets.yaml"
+                                      - type: object
+                                        properties:
+                                          Part:
+                                            type: array
+                                            items:
+                                              allOf:
+                                                - $ref: "../../../../models/media/part/accessible.yaml"
+                                                - $ref: "../../../../models/media/part/exists.yaml"
+                                                - $ref: "../../../../models/media/part/id.yaml"
+                                                - $ref: "../../../../models/media/part/key.yaml"
+                                                - $ref: "../../../../models/media/part/indexes.yaml"
+                                                - $ref: "../../../../models/media/part/duration.yaml"
+                                                - $ref: "../../../../models/media/part/file.yaml"
+                                                - $ref: "../../../../models/media/part/size.yaml"
+                                                - $ref: "../../../../models/media/part/packet-length.yaml"
+                                                - $ref: "../../../../models/media/part/container.yaml"
+                                                - $ref: "../../../../models/media/part/video-profile.yaml"
+                                                - $ref: "../../../../models/media/part/audio-profile.yaml"
+                                                - $ref: "../../../../models/media/part/has-64bit-offsets.yaml"
+                                                - $ref: "../../../../models/media/part/optimized-for-streaming.yaml"
+                                                - $ref: "../../../../models/media/part/has-thumbnail.yaml"
+                                                - type: object
+                                                  properties:
+                                                    Stream:
+                                                      type: array
+                                                      items:
+                                                        allOf:
+                                                          - $ref: "../../../../models/media/part/stream/id.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/stream-type.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/format.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/default.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/codec.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/index.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/bitrate.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/language.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/language-tag.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/language-code.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/header-compression.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-bl-compat-id.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-bl-present.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-el-present.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-level.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-present.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-profile.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-rpu-present.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dovi-version.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/bit-depth.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/chroma-location.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/chroma-subsampling.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/coded-height.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/coded-width.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/closed-captions.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/color-primaries.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/color-range.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/color-space.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/color-trc.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/frame-rate.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/key.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/height.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/level.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/original.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/has-scaling-matrix.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/profile.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/scan-type.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/embedded-in-video.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/ref-frames.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/width.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/display-title.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/extended-display-title.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/selected.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/forced.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/channels.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/audio-channel-layout.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/sampling-rate.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/can-auto-sync.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/hearing-impaired.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/dub.yaml"
+                                                          - $ref: "../../../../models/media/part/stream/title.yaml"
                                 Genre:
                                   type: array
                                   items:

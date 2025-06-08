@@ -1,6 +1,4 @@
 type: object
-required:
-  - librarySectionKey
 properties:
   librarySectionKey:
     type: string

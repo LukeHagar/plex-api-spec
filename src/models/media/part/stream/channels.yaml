@@ -1,0 +1,7 @@
+type: object
+properties:
+  channels:
+    type: integer
+    format: int32
+    description: "Number of audio channels (for audio streams)."
+    example: 6

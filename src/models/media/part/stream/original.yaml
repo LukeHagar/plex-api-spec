@@ -1,0 +1,6 @@
+type: object
+properties:
+  original:
+    type: boolean
+    description: "Indicates if this is the original stream."
+    example: true

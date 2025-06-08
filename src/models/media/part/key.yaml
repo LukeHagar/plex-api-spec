@@ -1,0 +1,6 @@
+type: object
+properties:
+  key:
+    type: string
+    description: "Key to access this part."
+    example: "/library/parts/418385/1735864239/file.mkv"

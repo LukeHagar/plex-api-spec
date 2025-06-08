@@ -1,0 +1,6 @@
+type: object
+properties:
+  count:
+    description: "The number of items associated with this search result."
+    type: integer
+    example: 10 

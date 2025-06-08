@@ -1,0 +1,5 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 197429 

@@ -179,19 +179,22 @@ items:
                   example: 1002625
                 streamType:
                   type: integer
-                  format: int32
+                  oneOf:
+                    - title: VIDEO
+                      const: 1
+                      description: Video stream
+                    - title: AUDIO
+                      const: 2
+                      description: Audio stream
+                    - title: SUBTITLE
+                      const: 3
+                      description: Subtitle stream
+                  example: 1
                   description: |
                     Stream type:
-                      - 1 = video
-                      - 2 = audio
-                      - 3 = subtitle
-                  enum: [1, 2, 3]
-                  example: 1
-                  x-speakeasy-unknown-values: allow
-                  x-speakeasy-enums:
-                    - VIDEO
-                    - AUDIO
-                    - SUBTITLE
+                      - VIDEO = 1
+                      - AUDIO = 2
+                      - SUBTITLE = 3
                 format:
                   type: string
                   description: "Format of the stream (e.g., srt)."

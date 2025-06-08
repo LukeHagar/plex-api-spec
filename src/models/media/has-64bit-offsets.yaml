@@ -1,0 +1,8 @@
+type: object
+properties:
+  has64bitOffsets:
+    description: |
+      Indicates whether the media has 64-bit offsets.
+      This is relevant for media files that may require larger offsets than what 32-bit integers can provide.
+    type: boolean
+    example: false

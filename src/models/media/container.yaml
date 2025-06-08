@@ -1,0 +1,6 @@
+type: object
+properties:
+  container:
+    type: string
+    description: "Container format of the media."
+    example: "mp4"

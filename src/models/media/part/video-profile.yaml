@@ -1,0 +1,6 @@
+type: object
+properties:
+  videoProfile:
+    type: string
+    description: "Video profile for the part."
+    example: "main 10"

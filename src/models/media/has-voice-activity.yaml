@@ -1,0 +1,6 @@
+type: object
+properties:
+  hasVoiceActivity:
+    type: boolean
+    description: "Indicates whether voice activity is detected."
+    example: false

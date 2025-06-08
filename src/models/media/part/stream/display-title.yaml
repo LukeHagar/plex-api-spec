@@ -1,0 +1,6 @@
+type: object
+properties:
+  displayTitle:
+    type: string
+    description: "Display title for the stream."
+    example: "4K DoVi/HDR10 (HEVC Main 10)"

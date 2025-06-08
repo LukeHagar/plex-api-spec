@@ -1,0 +1,10 @@
+type: object
+properties:
+  tagType:
+    description: "The type of tag associated with this search result (e.g., Director, Actor)."
+    type: integer
+    oneOf:
+      - const: 4
+        title: Director
+      - const: 6
+        title: Actor 

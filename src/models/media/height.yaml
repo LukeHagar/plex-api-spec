@@ -1,0 +1,7 @@
+type: object
+properties:
+  height:
+    type: integer
+    format: int32
+    description: "Video height in pixels."
+    example: 1602

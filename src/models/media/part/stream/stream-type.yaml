@@ -1,0 +1,23 @@
+type: object
+required:
+  - streamType
+properties:
+  streamType:
+    type: integer
+    format: int32
+    oneOf:
+      - title: VIDEO
+        const: 1
+        description: Video stream
+      - title: AUDIO
+        const: 2
+        description: Audio stream
+      - title: SUBTITLE
+        const: 3
+        description: Subtitle stream
+    example: 1
+    description: |
+      Stream type:
+        - VIDEO = 1
+        - AUDIO = 2
+        - SUBTITLE = 3

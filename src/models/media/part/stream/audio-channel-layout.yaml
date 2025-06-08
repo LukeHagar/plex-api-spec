@@ -1,0 +1,6 @@
+type: object
+properties:
+  audioChannelLayout:
+    type: string
+    description: "Audio channel layout."
+    example: "5.1(side)"

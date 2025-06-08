@@ -1,0 +1,6 @@
+type: object
+properties:
+  tagKey:
+    description: "The unique identifier for the tag associated with this search result."
+    type: string
+    example: "5d776826999c64001ec2c606" 

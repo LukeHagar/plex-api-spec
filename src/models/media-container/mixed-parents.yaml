@@ -1,0 +1,6 @@
+type: object
+properties:
+  mixedParents:
+    type: boolean
+    description: "Indicates if the media container has mixed parents."
+    example: true

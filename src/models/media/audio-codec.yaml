@@ -1,0 +1,6 @@
+type: object
+properties:
+  audioCodec:
+    type: string
+    description: "Audio codec used."
+    example: "aac"
