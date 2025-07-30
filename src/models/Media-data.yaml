@@ -171,7 +171,7 @@ items:
                 - streamType
                 - codec
                 - displayTitle
-                - extendedDisplayTitle                
+                - extendedDisplayTitle
               properties:
                 id:
                   type: integer
