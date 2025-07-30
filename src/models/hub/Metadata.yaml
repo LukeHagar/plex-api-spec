@@ -1,0 +1,73 @@
+type: array
+items:
+  allOf:
+    - $ref: "../search/score.yaml"
+    - $ref: "../search/section.yaml"
+    - $ref: "../meta-data/rating-key.yaml"
+    - $ref: "../meta-data/key.yaml"
+    - $ref: "../meta-data/parent-rating-key.yaml"
+    - $ref: "../meta-data/grandparent-rating-key.yaml"
+    - $ref: "../meta-data/guid.yaml"
+    - $ref: "../meta-data/parent-guid.yaml"
+    - $ref: "../meta-data/grandparent-guid.yaml"
+    - $ref: "../meta-data/grandparent-slug.yaml"
+    - $ref: "../meta-data/type.yaml"
+    - $ref: "../meta-data/title.yaml"
+    - $ref: "../meta-data/grandparent-key.yaml"
+    - $ref: "../meta-data/parent-key.yaml"
+    - $ref: "../meta-data/grandparent-title.yaml"
+    - $ref: "../meta-data/parent-title.yaml"
+    - $ref: "../meta-data/content-rating.yaml"
+    - $ref: "../meta-data/summary.yaml"
+    - $ref: "../meta-data/index.yaml"
+    - $ref: "../meta-data/parent-index.yaml"
+    - $ref: "../meta-data/audience-rating.yaml"
+    - $ref: "../meta-data/thumb.yaml"
+    - $ref: "../meta-data/art.yaml"
+    - $ref: "../meta-data/parent-thumb.yaml"
+    - $ref: "../meta-data/grandparent-thumb.yaml"
+    - $ref: "../meta-data/grandparent-art.yaml"
+    - $ref: "../meta-data/grandparent-theme.yaml"
+    - $ref: "../meta-data/duration.yaml"
+    - $ref: "../meta-data/originally-available-at.yaml"
+    - $ref: "../meta-data/added-at.yaml"
+    - $ref: "../meta-data/updated-at.yaml"
+    - $ref: "../meta-data/audience-rating-image.yaml"
+    - $ref: "../meta-data/primary-extra-key.yaml"
+    - $ref: "../meta-data/rating-image.yaml"
+    - $ref: "../meta-data/studio.yaml"
+    - $ref: "../meta-data/tagline.yaml"
+    - $ref: "../meta-data/year.yaml"
+    - type: object
+      properties:
+        Media:
+          $ref: "./Media.yaml"
+        Director:
+          type: array
+          items:
+            $ref: "../director/tag.yaml"
+          maxItems: 3
+        Writer:
+          type: array
+          items:
+            $ref: "../writer/tag.yaml"
+          maxItems: 3
+        Role:
+          type: array
+          items:
+            $ref: "../role/tag.yaml"
+          maxItems: 3
+        Genre:
+          type: array
+          items:
+            $ref: "../genre/tag.yaml"
+          maxItems: 3
+        Country:
+          type: array
+          items:
+            $ref: "../country/tag.yaml"
+          maxItems: 3
+minItems: 1
+description: |
+  An array of metadata objects containing contextual information relevant to the item in the hub.
+  A non-exhaustive (maximum of 3) list of items may be present for each of the associated media links such as Directors, Writers, Roles, Genres and Countries.

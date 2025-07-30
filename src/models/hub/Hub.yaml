@@ -1,0 +1,35 @@
+type: object
+properties:
+  title:
+    type: string
+    description: Title of the hub
+  type:
+    type: string
+    description: Type of content in the hub (e.g., genre, show, movie)
+  hubIdentifier:
+    type: string
+    description: Unique identifier for the hub
+  context:
+    type: string
+    description: Context of the hub
+  size:
+    type: integer
+    description: The number of matching items in the hub, details of which can be found in either the `Directory` or the `Metadata` arrays.
+    example: 0
+  more:
+    type: boolean
+    description: Indicates if more items are available
+    example: false
+  style:
+    type: string
+    description: Display style of the hub
+    example: shelf
+  Directory:
+    $ref: ./Directory.yaml
+  Metadata:
+    $ref: ./Metadata.yaml
+description: |
+  A collection of items, logically grouped by their content type.
+  `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
+required:
+  - size

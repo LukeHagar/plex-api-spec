@@ -1,0 +1,28 @@
+type: array
+items:
+  allOf:
+    - $ref: "../search/score.yaml"
+    - $ref: "../search/reason.yaml"
+    - $ref: "../search/section.yaml"
+    - $ref: "../directory/type.yaml"
+    - type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the item
+        filter:
+          type: string
+          description: Filter applied (e.g., genre=146)
+        tag:
+          type: string
+          description: Tag name (e.g., Action)
+        tagType:
+          type: integer
+          description: Type of tag
+        count:
+          type: integer
+          description: Number of items matching the tag
+minItems: 1
+description: |
+  An array of items or sections which aren't actual media items, but are related to the search query.
+  For example, this may contain a list of matching Genres, and their associated lookup keys.

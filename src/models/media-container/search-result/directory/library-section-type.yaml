@@ -2,8 +2,9 @@ type: object
 properties:
   librarySectionType:
     type: integer
-    oneOf:
-      - const: 1
-        title: Movie
-      - const: 2
-        title: TV Show 
+    enum:
+      - 1
+      - 2
+    description: |
+      1 - Movie
+      2 - TV Show

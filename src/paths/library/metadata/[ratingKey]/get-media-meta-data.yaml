@@ -247,7 +247,6 @@ get:
                                                       items:
                                                         allOf:
                                                           - $ref: "../../../../models/media/part/stream/id.yaml"
-                                                          - $ref: "../../../../models/media/part/stream/stream-type.yaml"
                                                           - $ref: "../../../../models/media/part/stream/format.yaml"
                                                           - $ref: "../../../../models/media/part/stream/default.yaml"
                                                           - $ref: "../../../../models/media/part/stream/codec.yaml"
@@ -297,6 +296,10 @@ get:
                                                           - $ref: "../../../../models/media/part/stream/hearing-impaired.yaml"
                                                           - $ref: "../../../../models/media/part/stream/dub.yaml"
                                                           - $ref: "../../../../models/media/part/stream/title.yaml"
+                                                          - type: object
+                                                            properties:
+                                                              streamType:
+                                                                $ref: "../../../../models/media/part/stream/stream-type.yaml"
                                 Genre:
                                   type: array
                                   items:

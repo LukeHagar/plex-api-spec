@@ -1,0 +1,7 @@
+type: object
+description: "The library section the search results were found in."
+allOf:
+  - $ref: "../meta-data/library-section-id.yaml"
+  - $ref: "../meta-data/library-section-key.yaml"
+  - $ref: "../meta-data/library-section-title.yaml"
+  - $ref: "../media-container/search-result/directory/library-section-type.yaml"

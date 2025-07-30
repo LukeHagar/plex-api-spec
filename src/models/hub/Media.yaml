@@ -1,0 +1,35 @@
+type: array
+items:
+  allOf:
+    - $ref: "../media/id.yaml"
+    - $ref: "../media/duration.yaml"
+    - $ref: "../media/bitrate.yaml"
+    - $ref: "../media/width.yaml"
+    - $ref: "../media/height.yaml"
+    - $ref: "../media/aspect-ratio.yaml"
+    - $ref: "../media/audio-channels.yaml"
+    - $ref: "../media/display-offset.yaml"
+    - $ref: "../media/audio-codec.yaml"
+    - $ref: "../media/video-codec.yaml"
+    - $ref: "../media/video-resolution.yaml"
+    - $ref: "../media/container.yaml"
+    - $ref: "../media/video-frame-rate.yaml"
+    - $ref: "../media/video-profile.yaml"
+    - $ref: "../media/has-voice-activity.yaml"
+    - $ref: "../media/audio-profile.yaml"
+    - $ref: "../media/optimized-for-streaming.yaml"
+    - type: object
+      properties:
+        Part:
+          type: array
+          description: "An array of parts for this media item."
+          items:
+            allOf:
+              - $ref: "../media/part/id.yaml"
+              - $ref: "../media/part/key.yaml"
+              - $ref: "../media/part/duration.yaml"
+              - $ref: "../media/part/file.yaml"
+              - $ref: "../media/part/size.yaml"
+              - $ref: "../media/part/audio-profile.yaml"
+              - $ref: "../media/part/container.yaml"
+              - $ref: "../media/part/video-profile.yaml"

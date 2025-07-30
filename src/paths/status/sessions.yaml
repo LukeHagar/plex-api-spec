@@ -265,9 +265,7 @@ get:
                                             type: boolean
                                             example: true
                                           streamType:
-                                            type: integer
-                                            format: int32
-                                            example: 2
+                                            $ref: "../../models/media/part/stream/stream-type.yaml"
                                           location:
                                             type: string
                                             example: direct

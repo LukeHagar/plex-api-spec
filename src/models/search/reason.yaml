@@ -1,0 +1,16 @@
+type: object
+description: The reason an item was included as part of a search query.
+properties:
+  reason:
+    type: string
+    description: |
+      The reason for the inclusion in the search result, if not because of a direct search term match; can be either:
+      - `section`: There are multiple identical results from different sections.
+      - `originalTitle`: There was a search term match from the original title field (sometimes those can be very different or in a foreign language).
+      - `<hub identifier>`: If the reason for the result is due to a result in another hub, the source hub identifier is returned. For example, if the search is for "dylan" then Bob Dylan may be returned as an artist result, an a few of his albums returned as album results with a reason code of `artist` (the identifier of that particular hub). Or if the search is for "arnold", there might be movie results returned with a reason of `actor`
+  reasonID:
+    type: integer
+    description: The ID of the item associated with the reason for the result. This might be a section ID, a tag ID, an artist ID, or a show ID.
+  reasonTitle:
+    type: string
+    description: The string associated with the reason code. For a section reason, it'll be the section name; For a hub identifier, it'll be a string associated with the match (e.g. `Arnold Schwarzenegger` for movies which were returned because the search was for "arnold").
