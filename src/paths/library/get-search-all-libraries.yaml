@@ -74,22 +74,14 @@ get:
                         items:
                           allOf:
                             - type: object
+                            - $ref: "../../models/search/score.yaml"
                               required:
                                 - score
-                            - $ref: "../../models/media-container/search-result/score.yaml"
                             - type: object
                               properties:
                                 Directory:
                                   allOf:
                                     - type: object
-                                      required:
-                                        - key
-                                        - librarySectionID
-                                        - librarySectionKey
-                                        - librarySectionTitle
-                                        - type
-                                        - id
-                                        - tag
                                     - $ref: "../../models/media-container/search-result/directory/key.yaml"
                                     - $ref: "../../models/meta-data/library-section-id.yaml"
                                     - $ref: "../../models/meta-data/library-section-key.yaml"
@@ -103,6 +95,14 @@ get:
                                     - $ref: "../../models/media-container/search-result/directory/tag-key.yaml"
                                     - $ref: "../../models/media-container/search-result/directory/thumb.yaml"
                                     - $ref: "../../models/media-container/search-result/directory/count.yaml"
+                                      required:
+                                      - key
+                                      - librarySectionID
+                                      - librarySectionKey
+                                      - librarySectionTitle
+                                      - type
+                                      - id
+                                      - tag
                                 Metadata:
                                   type: object
                                   allOf:
@@ -255,9 +255,9 @@ get:
                                           items:
                                             allOf:
                                               - type: object
+                                              - $ref: "../../models/meta-data/location/path.yaml"
                                                 required:
                                                   - path
-                                              - $ref: "../../models/meta-data/location/path.yaml"
 
     "400":
       $ref: "../../responses/400.yaml"

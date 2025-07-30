@@ -305,9 +305,10 @@ get:
                                   items:
                                     allOf:
                                       - type: object
+                                      - $ref: "../../../../models/meta-data/location/path.yaml"
                                         required:
                                           - path
-                                      - $ref: "../../../../models/meta-data/location/path.yaml"
+
                                 Chapter:
                                   type: array
                                   items:

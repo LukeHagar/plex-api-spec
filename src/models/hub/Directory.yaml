@@ -1,0 +1,24 @@
+type: array
+items:
+  allOf:
+    - $ref: "../search/score.yaml"
+    - $ref: "../search/reason.yaml"
+    - $ref: "../search/section.yaml"
+    - $ref: "../directory/type.yaml"
+    - type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the item
+        filter:
+          type: string
+          description: Filter applied (e.g., genre=146)
+        tag:
+          type: string
+          description: Tag name (e.g., Action)
+        tagType:
+          type: integer
+          description: Type of tag
+        count:
+          type: integer
+          description: Number of items matching the tag

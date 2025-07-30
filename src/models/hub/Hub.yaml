@@ -1,0 +1,27 @@
+type: object
+properties:
+  title:
+    type: string
+    description: Title of the hub
+  type:
+    type: string
+    description: Type of content in the hub (e.g., genre, show, movie)
+  hubIdentifier:
+    type: string
+    description: Unique identifier for the hub
+  context:
+    type: string
+    description: Context of the hub
+  size:
+    type: integer
+    description: Number of items in the hub
+  more:
+    type: boolean
+    description: Indicates if more items are available
+  style:
+    type: string
+    description: Display style of the hub (e.g., shelf)
+  Directory:
+    $ref: ./Directory.yaml
+  Metadata:
+    $ref: ./Metadata.yaml

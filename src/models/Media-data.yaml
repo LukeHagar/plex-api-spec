@@ -171,30 +171,14 @@ items:
                 - streamType
                 - codec
                 - displayTitle
-                - extendedDisplayTitle
+                - extendedDisplayTitle                
               properties:
                 id:
                   type: integer
                   description: "Unique stream identifier."
                   example: 1002625
                 streamType:
-                  type: integer
-                  oneOf:
-                    - title: VIDEO
-                      const: 1
-                      description: Video stream
-                    - title: AUDIO
-                      const: 2
-                      description: Audio stream
-                    - title: SUBTITLE
-                      const: 3
-                      description: Subtitle stream
-                  example: 1
-                  description: |
-                    Stream type:
-                      - VIDEO = 1
-                      - AUDIO = 2
-                      - SUBTITLE = 3
+                  $ref: "./media/part/stream/stream-type.yaml"
                 format:
                   type: string
                   description: "Format of the stream (e.g., srt)."

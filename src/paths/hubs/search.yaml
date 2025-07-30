@@ -42,7 +42,23 @@ get:
 
   responses:
     "200":
-      description: The search results
+      description: A collection of hubs containing search results relevant to the query
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              MediaContainer:
+                allOf:
+                  - $ref: "../../models/media-container/size.yaml"
+                  - $ref: "../../models/media-container/allow-sync.yaml"
+                  - $ref: "../../models/media-container/identifier.yaml"
+                  - type: object
+                    properties:
+                      Hub:
+                        type: array
+                        items:
+                          $ref: "../../models/hub/Hub.yaml"
     "400":
       $ref: "../../responses/400.yaml"
     "401":
