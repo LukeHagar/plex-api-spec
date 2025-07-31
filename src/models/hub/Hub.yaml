@@ -15,14 +15,21 @@ properties:
   size:
     type: integer
     description: The number of matching items in the hub, details of which can be found in either the `Directory` or the `Metadata` arrays.
+    example: 0
   more:
     type: boolean
     description: Indicates if more items are available
+    example: false
   style:
     type: string
-    description: Display style of the hub (e.g., shelf)
+    description: Display style of the hub
+    example: shelf
   Directory:
     $ref: ./Directory.yaml
   Metadata:
     $ref: ./Metadata.yaml
-description: A collection of items, logically grouped by their content type.
+description: |
+  A collection of items, logically grouped by their content type.
+  `Directory` and `Metadata` are mutually exclusive, and if `size` is 0, neither will be present.
+required:
+  - size

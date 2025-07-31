@@ -22,6 +22,7 @@ items:
         count:
           type: integer
           description: Number of items matching the tag
+minItems: 1
 description: |
   An array of items or sections which aren't actual media items, but are related to the search query.  
   For example, this may contain a list of matching Genres, and their associated lookup keys.
