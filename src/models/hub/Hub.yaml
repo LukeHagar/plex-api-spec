@@ -14,7 +14,7 @@ properties:
     description: Context of the hub
   size:
     type: integer
-    description: Number of items in the hub
+    description: The number of matching items in the hub, details of which can be found in either the `Directory` or the `Metadata` arrays.
   more:
     type: boolean
     description: Indicates if more items are available
@@ -25,3 +25,4 @@ properties:
     $ref: ./Directory.yaml
   Metadata:
     $ref: ./Metadata.yaml
+description: A collection of items, logically grouped by their content type.
