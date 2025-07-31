@@ -46,19 +46,27 @@ items:
           type: array
           items:
             $ref: "../director/tag.yaml"
+          maxItems: 3
         Writer:
           type: array
           items:
             $ref: "../writer/tag.yaml"
+          maxItems: 3
         Role:
           type: array
           items:
             $ref: "../role/tag.yaml"
+          maxItems: 3
         Genre:
           type: array
           items:
             $ref: "../genre/tag.yaml"
+          maxItems: 3
         Country:
           type: array
           items:
             $ref: "../country/tag.yaml"
+          maxItems: 3
+description: |
+  An array of metadata objects containing contextual information relevant to the item in the hub.
+  A non-exhaustive (maximum of 3) list of items may be present for each of the associated media links such as Directors, Writers, Roles, Genres and Countries.
