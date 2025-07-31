@@ -15,6 +15,7 @@ properties:
   size:
     type: integer
     description: The number of matching items in the hub, details of which can be found in either the `Directory` or the `Metadata` arrays.
+    minimum: 0
     example: 0
   more:
     type: boolean

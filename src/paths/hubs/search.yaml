@@ -61,7 +61,7 @@ get:
                           $ref: "../../models/hub/Hub.yaml"
                         description: |
                           A collection of items, logically grouped by their content type.
-                          `Directory` and `Metadata` are mutually exclusive, and if `size` is 0, neither will be present.
+                          `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
     "400":
       $ref: "../../responses/400.yaml"
     "401":
