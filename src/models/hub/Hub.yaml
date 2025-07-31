@@ -30,6 +30,6 @@ properties:
     $ref: ./Metadata.yaml
 description: |
   A collection of items, logically grouped by their content type.
-  `Directory` and `Metadata` are mutually exclusive, and if `size` is 0, neither will be present.
+  `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
 required:
   - size
