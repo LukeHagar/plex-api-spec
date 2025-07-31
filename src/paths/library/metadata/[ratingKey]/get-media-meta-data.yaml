@@ -298,7 +298,7 @@ get:
                                                           - $ref: "../../../../models/media/part/stream/title.yaml"
                                                           - type: object
                                                             properties:
-                                                              StreamType:                                                           
+                                                              streamType:
                                                                 $ref: "../../../../models/media/part/stream/stream-type.yaml"
                                 Genre:
                                   type: array
