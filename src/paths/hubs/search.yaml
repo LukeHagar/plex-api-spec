@@ -60,6 +60,7 @@ get:
                           `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
                         items:
                           $ref: "../../models/hub/Hub.yaml"
+                    additionalProperties: true
     "400":
       $ref: "../../responses/400.yaml"
     "401":

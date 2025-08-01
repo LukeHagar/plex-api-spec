@@ -1344,14 +1344,16 @@ paths:
                   MediaContainer:
                     allOf:
                       - $ref: '#/components/schemas/size'
-                      - $ref: '#/components/schemas/allow-sync'
-                      - $ref: '#/components/schemas/identifier'
                       - type: object
                         properties:
                           Hub:
                             type: array
+                            description: |
+                              A collection of items, logically grouped by their content type.
+                              `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
                             items:
                               $ref: '#/components/schemas/Hub'
+                        additionalProperties: true
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -3673,7 +3675,7 @@ paths:
                             items:
                               allOf:
                                 - type: object
-                                - $ref: '#/components/schemas/score-2'
+                                - $ref: '#/components/schemas/score'
                                   required:
                                     - score
                                 - type: object
@@ -4162,7 +4164,7 @@ paths:
                                                               - $ref: '#/components/schemas/title-3'
                                                               - type: object
                                                                 properties:
-                                                                  StreamType:
+                                                                  streamType:
                                                                     $ref: '#/components/schemas/stream-type'
                                     Genre:
                                       type: array
@@ -4365,6 +4367,7 @@ paths:
                                   type: string
                                   description: The URL of the artwork thumbnail.
                                   example: https://images.plex.tv/photo?height=270&width=480&minSize=1&upscale=1&url=https%3A%2F%2Fimage%2Etmdb%2Eorg%2Ft%2Fp%2Foriginal%2FixgFmf1X59PUZam2qbAfskx2gQr%2Ejpg
+                              additionalProperties: true
         '404':
           $ref: '#/components/responses/404-html'
     post:
@@ -8921,8 +8924,7 @@ components:
                       type: string
                       example: is
     PlexDateTime:
-      type:
-        - integer
+      type: integer
       example: 1556281940
       description: Unix epoch datetime in seconds
       format: int64
@@ -10273,6 +10275,15 @@ components:
           type: string
           description: The user-made collection this media item belongs to
           example: My Awesome Collection
+    score:
+      type: object
+      properties:
+        score:
+          description: The score of the search result, typically a float value between 0 and 1.
+          type: number
+          format: float
+          example: 0.92
+      additionalProperties: true
     reason:
       type: object
       description: The reason an item was included as part of a search query.
@@ -10290,10 +10301,7 @@ components:
         reasonTitle:
           type: string
           description: The string associated with the reason code. For a section reason, it'll be the section name; For a hub identifier, it'll be a string associated with the match (e.g. `Arnold Schwarzenegger` for movies which were returned because the search was for "arnold").
-    score:
-      type: string
-      description: Relevance score between 0 and 1
-      example: '0.7'
+      additionalProperties: true
     library-section-type:
       type: object
       properties:
@@ -10313,6 +10321,7 @@ components:
         - $ref: '#/components/schemas/library-section-key'
         - $ref: '#/components/schemas/library-section-title'
         - $ref: '#/components/schemas/library-section-type'
+      additionalProperties: true
     type-3:
       type: object
       required:
@@ -10323,12 +10332,16 @@ components:
             - $ref: '#/components/schemas/PlexMediaTypeString'
             - type: string
               description: The library type
+      additionalProperties: true
     Directory:
       type: array
+      description: |
+        An array of items or sections which aren't actual media items, but are related to the search query.
+        For example, this may contain a list of matching Genres, and their associated lookup keys.
       items:
         allOf:
-          - $ref: '#/components/schemas/reason'
           - $ref: '#/components/schemas/score'
+          - $ref: '#/components/schemas/reason'
           - $ref: '#/components/schemas/section'
           - $ref: '#/components/schemas/type-3'
           - type: object
@@ -10348,6 +10361,8 @@ components:
               count:
                 type: integer
                 description: Number of items matching the tag
+            additionalProperties: true
+      minItems: 1
     id-8:
       type: object
       required:
@@ -10537,112 +10552,122 @@ components:
           description: Video profile for the part.
           example: main 10
     Media:
-      type: object
-      properties:
-        Media:
-          allOf:
-            - $ref: '#/components/schemas/id-8'
-            - $ref: '#/components/schemas/duration-2'
-            - $ref: '#/components/schemas/bitrate'
-            - $ref: '#/components/schemas/width'
-            - $ref: '#/components/schemas/height'
-            - $ref: '#/components/schemas/aspect-ratio'
-            - $ref: '#/components/schemas/audio-channels'
-            - $ref: '#/components/schemas/display-offset'
-            - $ref: '#/components/schemas/audio-codec'
-            - $ref: '#/components/schemas/video-codec'
-            - $ref: '#/components/schemas/video-resolution'
-            - $ref: '#/components/schemas/container'
-            - $ref: '#/components/schemas/video-frame-rate'
-            - $ref: '#/components/schemas/video-profile'
-            - $ref: '#/components/schemas/has-voice-activity'
-            - $ref: '#/components/schemas/audio-profile'
-            - $ref: '#/components/schemas/optimized-for-streaming'
-            - type: object
-              properties:
-                Part:
-                  type: array
-                  description: An array of parts for this media item.
-                  items:
-                    allOf:
-                      - $ref: '#/components/schemas/id-9'
-                      - $ref: '#/components/schemas/key-2'
-                      - $ref: '#/components/schemas/duration-3'
-                      - $ref: '#/components/schemas/file'
-                      - $ref: '#/components/schemas/size-2'
-                      - $ref: '#/components/schemas/audio-profile'
-                      - $ref: '#/components/schemas/container-2'
-                      - $ref: '#/components/schemas/video-profile-2'
+      type: array
+      items:
+        allOf:
+          - $ref: '#/components/schemas/id-8'
+          - $ref: '#/components/schemas/duration-2'
+          - $ref: '#/components/schemas/bitrate'
+          - $ref: '#/components/schemas/width'
+          - $ref: '#/components/schemas/height'
+          - $ref: '#/components/schemas/aspect-ratio'
+          - $ref: '#/components/schemas/audio-channels'
+          - $ref: '#/components/schemas/display-offset'
+          - $ref: '#/components/schemas/audio-codec'
+          - $ref: '#/components/schemas/video-codec'
+          - $ref: '#/components/schemas/video-resolution'
+          - $ref: '#/components/schemas/container'
+          - $ref: '#/components/schemas/video-frame-rate'
+          - $ref: '#/components/schemas/video-profile'
+          - $ref: '#/components/schemas/has-voice-activity'
+          - $ref: '#/components/schemas/audio-profile'
+          - $ref: '#/components/schemas/optimized-for-streaming'
+          - type: object
+            properties:
+              Part:
+                type: array
+                description: An array of parts for this media item.
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/id-9'
+                    - $ref: '#/components/schemas/key-2'
+                    - $ref: '#/components/schemas/duration-3'
+                    - $ref: '#/components/schemas/file'
+                    - $ref: '#/components/schemas/size-2'
+                    - $ref: '#/components/schemas/audio-profile'
+                    - $ref: '#/components/schemas/container-2'
+                    - $ref: '#/components/schemas/video-profile-2'
+            additionalProperties: true
     Metadata:
-      type: object
-      properties:
-        Metadata:
-          allOf:
-            - $ref: '#/components/schemas/section'
-            - $ref: '#/components/schemas/score'
-            - $ref: '#/components/schemas/rating-key'
-            - $ref: '#/components/schemas/key'
-            - $ref: '#/components/schemas/parent-rating-key'
-            - $ref: '#/components/schemas/grandparent-rating-key'
-            - $ref: '#/components/schemas/guid'
-            - $ref: '#/components/schemas/parent-guid'
-            - $ref: '#/components/schemas/grandparent-guid'
-            - $ref: '#/components/schemas/grandparent-slug'
-            - $ref: '#/components/schemas/type'
-            - $ref: '#/components/schemas/title'
-            - $ref: '#/components/schemas/grandparent-key'
-            - $ref: '#/components/schemas/parent-key'
-            - $ref: '#/components/schemas/grandparent-title'
-            - $ref: '#/components/schemas/parent-title'
-            - $ref: '#/components/schemas/content-rating'
-            - $ref: '#/components/schemas/summary'
-            - $ref: '#/components/schemas/index'
-            - $ref: '#/components/schemas/parent-index'
-            - $ref: '#/components/schemas/audience-rating'
-            - $ref: '#/components/schemas/thumb'
-            - $ref: '#/components/schemas/art'
-            - $ref: '#/components/schemas/parent-thumb'
-            - $ref: '#/components/schemas/grandparent-thumb'
-            - $ref: '#/components/schemas/grandparent-art'
-            - $ref: '#/components/schemas/grandparent-theme'
-            - $ref: '#/components/schemas/duration'
-            - $ref: '#/components/schemas/originally-available-at'
-            - $ref: '#/components/schemas/added-at'
-            - $ref: '#/components/schemas/updated-at'
-            - $ref: '#/components/schemas/audience-rating-image'
-            - $ref: '#/components/schemas/primary-extra-key'
-            - $ref: '#/components/schemas/rating-image'
-            - $ref: '#/components/schemas/studio'
-            - $ref: '#/components/schemas/tagline'
-            - $ref: '#/components/schemas/year'
-            - type: object
-              properties:
-                Media:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Media'
-                Director:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/tag-3'
-                Writer:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/tag-4'
-                Role:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/tag-5'
-                Genre:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/tag'
-                Country:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/tag-2'
+      type: array
+      description: |
+        An array of metadata objects containing contextual information relevant to the item in the hub.
+        A non-exhaustive (maximum of 3) list of items may be present for each of the associated media links such as Directors, Writers, Roles, Genres and Countries.
+      items:
+        allOf:
+          - $ref: '#/components/schemas/score'
+          - $ref: '#/components/schemas/section'
+          - $ref: '#/components/schemas/rating-key'
+          - $ref: '#/components/schemas/key'
+          - $ref: '#/components/schemas/parent-rating-key'
+          - $ref: '#/components/schemas/grandparent-rating-key'
+          - $ref: '#/components/schemas/guid'
+          - $ref: '#/components/schemas/parent-guid'
+          - $ref: '#/components/schemas/grandparent-guid'
+          - $ref: '#/components/schemas/grandparent-slug'
+          - $ref: '#/components/schemas/type'
+          - $ref: '#/components/schemas/title'
+          - $ref: '#/components/schemas/grandparent-key'
+          - $ref: '#/components/schemas/parent-key'
+          - $ref: '#/components/schemas/grandparent-title'
+          - $ref: '#/components/schemas/parent-title'
+          - $ref: '#/components/schemas/content-rating'
+          - $ref: '#/components/schemas/summary'
+          - $ref: '#/components/schemas/index'
+          - $ref: '#/components/schemas/parent-index'
+          - $ref: '#/components/schemas/audience-rating'
+          - $ref: '#/components/schemas/thumb'
+          - $ref: '#/components/schemas/art'
+          - $ref: '#/components/schemas/parent-thumb'
+          - $ref: '#/components/schemas/grandparent-thumb'
+          - $ref: '#/components/schemas/grandparent-art'
+          - $ref: '#/components/schemas/grandparent-theme'
+          - $ref: '#/components/schemas/duration'
+          - $ref: '#/components/schemas/originally-available-at'
+          - $ref: '#/components/schemas/added-at'
+          - $ref: '#/components/schemas/updated-at'
+          - $ref: '#/components/schemas/audience-rating-image'
+          - $ref: '#/components/schemas/primary-extra-key'
+          - $ref: '#/components/schemas/rating-image'
+          - $ref: '#/components/schemas/studio'
+          - $ref: '#/components/schemas/tagline'
+          - $ref: '#/components/schemas/year'
+          - type: object
+            properties:
+              Media:
+                $ref: '#/components/schemas/Media'
+              Director:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tag-3'
+                maxItems: 3
+              Writer:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tag-4'
+                maxItems: 3
+              Role:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tag-5'
+                maxItems: 3
+              Genre:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tag'
+                maxItems: 3
+              Country:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tag-2'
+                maxItems: 3
+            additionalProperties: true
+      minItems: 1
     Hub:
       type: object
+      description: |
+        A collection of items, logically grouped by their content type.
+        `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
       properties:
         title:
           type: string
@@ -10658,21 +10683,24 @@ components:
           description: Context of the hub
         size:
           type: integer
-          description: Number of items in the hub
+          description: The number of matching items in the hub, details of which can be found in either the `Directory` or the `Metadata` arrays.
+          minimum: 0
+          example: 0
         more:
           type: boolean
           description: Indicates if more items are available
+          example: false
         style:
           type: string
-          description: Display style of the hub (e.g., shelf)
+          description: Display style of the hub
+          example: shelf
         Directory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Directory'
+          $ref: '#/components/schemas/Directory'
         Metadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/Metadata'
+          $ref: '#/components/schemas/Metadata'
+      required:
+        - size
+      additionalProperties: true
     title1:
       type: object
       required:
@@ -11211,14 +11239,6 @@ components:
           type: integer
           description: The version number of the marker attributes.
           example: 4
-    score-2:
-      type: object
-      properties:
-        score:
-          description: The score of the search result, typically a float value between 0 and 1.
-          type: number
-          format: float
-          example: 0.92
     key-4:
       type: object
       properties:

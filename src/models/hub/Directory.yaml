@@ -1,4 +1,7 @@
 type: array
+description: |
+  An array of items or sections which aren't actual media items, but are related to the search query.
+  For example, this may contain a list of matching Genres, and their associated lookup keys.
 items:
   allOf:
     - $ref: "../search/score.yaml"
@@ -22,7 +25,5 @@ items:
         count:
           type: integer
           description: Number of items matching the tag
+      additionalProperties: true
 minItems: 1
-description: |
-  An array of items or sections which aren't actual media items, but are related to the search query.
-  For example, this may contain a list of matching Genres, and their associated lookup keys.

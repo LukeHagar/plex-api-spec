@@ -1,4 +1,7 @@
 type: object
+description: |
+  A collection of items, logically grouped by their content type.
+  `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
 properties:
   title:
     type: string
@@ -29,8 +32,6 @@ properties:
     $ref: ./Directory.yaml
   Metadata:
     $ref: ./Metadata.yaml
-description: |
-  A collection of items, logically grouped by their content type.
-  `Directory` and `Metadata` are mutually exclusive or nullable, (if `size` is 0, neither will be present).
 required:
   - size
+additionalProperties: true

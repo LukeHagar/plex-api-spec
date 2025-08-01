@@ -33,3 +33,4 @@ items:
               - $ref: "../media/part/audio-profile.yaml"
               - $ref: "../media/part/container.yaml"
               - $ref: "../media/part/video-profile.yaml"
+      additionalProperties: true

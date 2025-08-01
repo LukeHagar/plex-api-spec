@@ -59,6 +59,6 @@ responses:
                             type: string
                             description: The URL of the artwork thumbnail.
                             example: https://images.plex.tv/photo?height=270&width=480&minSize=1&upscale=1&url=https%3A%2F%2Fimage%2Etmdb%2Eorg%2Ft%2Fp%2Foriginal%2FixgFmf1X59PUZam2qbAfskx2gQr%2Ejpg
-
+                        additionalProperties: true
   "404":
     $ref: "../../../../../responses/404-html.yaml"
