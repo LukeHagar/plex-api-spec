@@ -5,3 +5,4 @@ properties:
     type: number
     format: float
     example: 0.92
+additionalProperties: true

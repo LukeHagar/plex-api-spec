@@ -7,3 +7,4 @@ properties:
       - $ref: "../common/PlexMediaTypeString.yaml"
       - type: string
         description: "The library type"
+additionalProperties: true

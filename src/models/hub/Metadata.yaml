@@ -1,4 +1,7 @@
 type: array
+description: |
+  An array of metadata objects containing contextual information relevant to the item in the hub.
+  A non-exhaustive (maximum of 3) list of items may be present for each of the associated media links such as Directors, Writers, Roles, Genres and Countries.
 items:
   allOf:
     - $ref: "../search/score.yaml"
@@ -67,7 +70,5 @@ items:
           items:
             $ref: "../country/tag.yaml"
           maxItems: 3
+      additionalProperties: true
 minItems: 1
-description: |
-  An array of metadata objects containing contextual information relevant to the item in the hub.
-  A non-exhaustive (maximum of 3) list of items may be present for each of the associated media links such as Directors, Writers, Roles, Genres and Countries.

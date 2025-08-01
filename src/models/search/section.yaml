@@ -5,3 +5,4 @@ allOf:
   - $ref: "../meta-data/library-section-key.yaml"
   - $ref: "../meta-data/library-section-title.yaml"
   - $ref: "../media-container/search-result/directory/library-section-type.yaml"
+additionalProperties: true

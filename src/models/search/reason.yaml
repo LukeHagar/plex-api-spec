@@ -14,3 +14,4 @@ properties:
   reasonTitle:
     type: string
     description: The string associated with the reason code. For a section reason, it'll be the section name; For a hub identifier, it'll be a string associated with the match (e.g. `Arnold Schwarzenegger` for movies which were returned because the search was for "arnold").
+additionalProperties: true
