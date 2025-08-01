@@ -51,8 +51,6 @@ get:
               MediaContainer:
                 allOf:
                   - $ref: "../../models/media-container/size.yaml"
-                  - $ref: "../../models/media-container/allow-sync.yaml"
-                  - $ref: "../../models/media-container/identifier.yaml"
                   - type: object
                     properties:
                       Hub:
