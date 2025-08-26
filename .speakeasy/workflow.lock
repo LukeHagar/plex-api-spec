@@ -13,7 +13,7 @@ sources:
         sourceBlobDigest: sha256:d4aa71cbbe9d59504eaa35062dcd61aebed91ab3fdf46a18965fa2f51f43c172
         tags:
             - latest
-            - speakeasy-sdk-regen-1756220820
+            - speakeasy-sdk-regen-1756224445
             - 0.0.3
 targets: {}
 workflow:
