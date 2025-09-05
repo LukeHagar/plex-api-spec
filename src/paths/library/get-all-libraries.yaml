@@ -34,11 +34,8 @@ get:
                             - Location
                           allOf:
                             - $ref: "../../models/media-container/allow-sync.yaml"
-                            - $ref: "../../models/media-container/art.yaml"
-                            - $ref: "../../models/directory/composite.yaml"
                             - $ref: "../../models/directory/filters.yaml"
                             - $ref: "../../models/directory/refreshing.yaml"
-                            - $ref: "../../models/media-container/thumb.yaml"
                             - $ref: "../../models/directory/key.yaml"
                             - $ref: "../../models/directory/type.yaml"
                             - $ref: "../../models/directory/title.yaml"
