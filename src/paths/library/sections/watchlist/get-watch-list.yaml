@@ -1,6 +1,6 @@
 servers:
-  - url: "https://metadata.provider.plex.tv"
-    description: The plex metadata provider server
+  - url: "https://discover.provider.plex.tv"
+    description: The plex discover provider server
 get:
   tags:
     - Watchlist
