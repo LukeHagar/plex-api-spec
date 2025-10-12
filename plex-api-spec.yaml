@@ -13089,6 +13089,7 @@ components:
       example: 1080x1080
     X-Plex-Client-Identifier:
       name: X-Plex-Client-Identifier
+      x-speakeasy-name-override: Client-Identifier
       in: header
       description: An opaque identifier unique to the client
       required: true
@@ -13098,6 +13099,7 @@ components:
       example: abc123
     X-Plex-Client-Profile-Extra:
       name: X-Plex-Client-Profile-Extra
+      x-speakeasy-name-override: Client-Profile-Extra
       description: See [Profile Augmentations](#section/API-Info/Profile-Augmentations) .
       in: header
       schema:
@@ -13106,6 +13108,7 @@ components:
       example: add-limitation(scope=videoCodec&scopeName=*&type=upperBound&name=video.frameRate&value=60&replace=true)+append-transcode-target-codec(type=videoProfile&context=streaming&videoCodec=h264%2Chevc&audioCodec=aac&protocol=dash)
     X-Plex-Client-Profile-Name:
       name: X-Plex-Client-Profile-Name
+      x-speakeasy-name-override: Client-Profile-Name
       description: Which built in Client Profile to use in the decision. Generally should only be used to specify the Generic profile.
       in: header
       schema:
@@ -13114,6 +13117,7 @@ components:
       example: generic
     X-Plex-Session-Identifier:
       name: X-Plex-Session-Identifier
+      x-speakeasy-name-override: Session-Identifier
       description: Unique per client playback session.  Used if a client can playback multiple items at a time (such as a browser with multiple tabs)
       in: header
       schema:
@@ -13122,6 +13126,7 @@ components:
       example: abc123
     X-Plex-Product:
       name: X-Plex-Product
+      x-speakeasy-name-override: Product
       in: header
       description: The name of the client product
       schema:
@@ -13130,6 +13135,7 @@ components:
       example: Plex for Roku
     X-Plex-Version:
       name: X-Plex-Version
+      x-speakeasy-name-override: Version
       in: header
       description: The version of the client application
       schema:
@@ -13138,6 +13144,7 @@ components:
       example: 2.4.1
     X-Plex-Platform:
       name: X-Plex-Platform
+      x-speakeasy-name-override: Platform
       in: header
       description: The platform of the client
       schema:
@@ -13146,6 +13153,7 @@ components:
       example: Roku
     X-Plex-Platform-Version:
       name: X-Plex-Platform-Version
+      x-speakeasy-name-override: Platform-Version
       in: header
       description: The version of the platform
       schema:
@@ -13154,6 +13162,7 @@ components:
       example: 4.3 build 1057
     X-Plex-Device:
       name: X-Plex-Device
+      x-speakeasy-name-override: Device
       in: header
       description: A relatively friendly name for the client device
       schema:
@@ -13162,6 +13171,7 @@ components:
       example: Roku 3
     X-Plex-Model:
       name: X-Plex-Model
+      x-speakeasy-name-override: Model
       in: header
       description: A potentially less friendly identifier for the device model
       schema:
@@ -13170,6 +13180,7 @@ components:
       example: 4200X
     X-Plex-Device-Vendor:
       name: X-Plex-Device-Vendor
+      x-speakeasy-name-override: Device-Vendor
       in: header
       description: The device vendor
       schema:
@@ -13178,6 +13189,7 @@ components:
       example: Roku
     X-Plex-Device-Name:
       name: X-Plex-Device-Name
+      x-speakeasy-name-override: Device-Name
       in: header
       description: A friendly name for the client
       schema:
@@ -13186,6 +13198,7 @@ components:
       example: Living Room TV
     X-Plex-Marketplace:
       name: X-Plex-Marketplace
+      x-speakeasy-name-override: Marketplace
       in: header
       description: The marketplace on which the client application is distributed
       schema:
