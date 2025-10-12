@@ -7014,9 +7014,7 @@ paths:
           in: path
           required: true
           schema:
-            oneOf:
-              - type: integer
-              - type: string
+            type: string
       responses:
         '200':
           description: OK
@@ -7059,9 +7057,7 @@ paths:
           in: path
           required: true
           schema:
-            oneOf:
-              - type: integer
-              - type: string
+            type: string
       responses:
         '200':
           description: OK
