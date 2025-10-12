@@ -39,6 +39,7 @@ security:
       - admin
 x-speakeasy-globals:
   parameters:
+    - $ref: "#/components/parameters/accepts"
     - $ref: "#/components/parameters/X-Plex-Client-Identifier"
     - $ref: "#/components/parameters/X-Plex-Product"
     - $ref: "#/components/parameters/X-Plex-Version"
@@ -205,6 +206,7 @@ paths:
       tags:
         - General
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -230,6 +232,7 @@ paths:
       tags:
         - Events
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -282,6 +285,7 @@ paths:
       tags:
         - Preferences
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -320,6 +324,7 @@ paths:
       tags:
         - Preferences
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -356,6 +361,7 @@ paths:
       tags:
         - Rate
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -413,6 +419,7 @@ paths:
       tags:
         - Timeline
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -461,6 +468,7 @@ paths:
       tags:
         - Timeline
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -620,6 +628,7 @@ paths:
       tags:
         - Timeline
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -667,6 +676,7 @@ paths:
       tags:
         - Events
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -882,6 +892,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -935,6 +946,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -976,6 +988,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1022,6 +1035,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1077,6 +1091,7 @@ paths:
       tags:
         - Search
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1147,6 +1162,7 @@ paths:
       tags:
         - Search
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1234,6 +1250,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1295,6 +1312,7 @@ paths:
       tags:
         - Collections
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1340,6 +1358,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1404,6 +1423,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1503,6 +1523,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1532,6 +1553,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1606,6 +1628,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1710,6 +1733,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1749,6 +1773,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1779,6 +1804,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1881,6 +1907,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1922,6 +1949,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -1997,6 +2025,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2151,6 +2180,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2197,6 +2227,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2300,6 +2331,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2354,6 +2386,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2384,6 +2417,7 @@ paths:
       tags:
         - Devices
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2469,6 +2503,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2565,6 +2600,7 @@ paths:
       tags:
         - Provider
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2604,6 +2640,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2651,6 +2688,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2808,6 +2846,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -2891,6 +2930,7 @@ paths:
       tags:
         - Transcoder
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3037,6 +3077,7 @@ paths:
       tags:
         - Playlist
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3080,6 +3121,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3120,6 +3162,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3160,6 +3203,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3284,6 +3328,7 @@ paths:
       tags:
         - General
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3364,6 +3409,7 @@ paths:
       tags:
         - General
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3422,6 +3468,7 @@ paths:
       tags:
         - UltraBlur
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3484,6 +3531,7 @@ paths:
       tags:
         - UltraBlur
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3665,6 +3713,7 @@ paths:
       tags:
         - Status
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3774,6 +3823,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3823,6 +3873,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3867,6 +3918,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -3974,6 +4026,7 @@ paths:
       tags:
         - Transcoder
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4228,6 +4281,7 @@ paths:
       tags:
         - Transcoder
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4263,6 +4317,7 @@ paths:
       tags:
         - Transcoder
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4525,6 +4580,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4565,6 +4621,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4622,6 +4679,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4685,6 +4743,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4748,6 +4807,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4836,6 +4896,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4932,6 +4993,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -4969,6 +5031,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5006,6 +5069,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5043,6 +5107,7 @@ paths:
       tags:
         - Hubs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5106,6 +5171,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5141,6 +5207,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5246,6 +5313,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5307,6 +5375,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5351,6 +5420,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5388,6 +5458,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5432,6 +5503,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5466,6 +5538,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5549,6 +5622,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5589,6 +5663,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5615,6 +5690,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5657,6 +5733,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5698,6 +5775,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5732,6 +5810,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5768,6 +5847,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5806,6 +5886,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5848,6 +5929,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5891,6 +5973,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5925,6 +6008,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -5963,6 +6047,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6050,6 +6135,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6093,6 +6179,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6155,6 +6242,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6188,6 +6276,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6241,6 +6330,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6274,6 +6364,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6310,6 +6401,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6350,6 +6442,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6384,6 +6477,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6413,6 +6507,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6475,6 +6570,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6508,6 +6604,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6537,6 +6634,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6585,6 +6683,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6623,6 +6722,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6663,6 +6763,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6709,6 +6810,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6752,6 +6854,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6788,6 +6891,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6819,6 +6923,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6895,6 +7000,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -6971,6 +7077,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7047,6 +7154,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7132,6 +7240,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7235,6 +7344,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7348,6 +7458,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7375,6 +7486,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7408,6 +7520,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7463,6 +7576,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7494,6 +7608,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7525,6 +7640,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7568,6 +7684,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7618,6 +7735,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7670,6 +7788,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7700,6 +7819,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7741,6 +7861,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7804,6 +7925,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7834,6 +7956,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7861,6 +7984,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7909,6 +8033,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7940,6 +8065,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -7997,6 +8123,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8034,6 +8161,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8072,6 +8200,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8101,6 +8230,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8138,6 +8268,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8179,6 +8310,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8236,6 +8368,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8283,6 +8416,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8309,6 +8443,7 @@ paths:
       tags:
         - DVRs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8375,6 +8510,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8446,6 +8582,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8518,6 +8655,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8589,6 +8727,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8618,6 +8757,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8652,6 +8792,7 @@ paths:
       tags:
         - Live TV
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8695,6 +8836,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8751,6 +8893,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8788,6 +8931,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8847,6 +8991,7 @@ paths:
       tags:
         - Devices
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8907,6 +9052,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -8982,6 +9128,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9014,6 +9161,7 @@ paths:
       tags:
         - Devices
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9044,6 +9192,7 @@ paths:
       tags:
         - Devices
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9088,6 +9237,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9121,6 +9271,7 @@ paths:
       tags:
         - Provider
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9154,6 +9305,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9187,6 +9339,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9234,6 +9387,7 @@ paths:
       tags:
         - Subscriptions
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9282,6 +9436,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9325,6 +9480,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9357,6 +9513,7 @@ paths:
       tags:
         - Playlist
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9391,6 +9548,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9422,6 +9580,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9491,6 +9650,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9523,6 +9683,7 @@ paths:
       tags:
         - Playlist
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9574,6 +9735,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9617,6 +9779,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9674,6 +9837,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9722,6 +9886,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9753,6 +9918,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9786,6 +9952,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9823,6 +9990,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9859,6 +10027,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9905,6 +10074,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -9936,6 +10106,7 @@ paths:
       tags:
         - Transcoder
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10242,6 +10413,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10287,6 +10459,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10331,6 +10504,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10373,6 +10547,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10485,6 +10660,7 @@ paths:
       tags:
         - Download Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10528,6 +10704,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10573,6 +10750,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10627,6 +10805,7 @@ paths:
       tags:
         - Content
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10673,6 +10852,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10721,6 +10901,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10771,6 +10952,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10815,6 +10997,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10859,6 +11042,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10902,6 +11086,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -10940,6 +11125,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11006,6 +11192,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11050,6 +11237,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11102,6 +11290,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11142,6 +11331,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11177,6 +11367,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11217,6 +11408,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11279,6 +11471,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11322,6 +11515,7 @@ paths:
       tags:
         - DVRs
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11376,6 +11570,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11447,6 +11642,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11516,6 +11712,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11562,6 +11759,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11631,6 +11829,7 @@ paths:
       tags:
         - Live TV
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11671,6 +11870,7 @@ paths:
         - api_key:
             - admin
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11710,6 +11910,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11748,6 +11949,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -11923,6 +12125,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12012,6 +12215,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12092,6 +12296,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12136,6 +12341,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12175,6 +12381,7 @@ paths:
       tags:
         - Play Queue
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12219,6 +12426,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12275,6 +12483,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12340,6 +12549,7 @@ paths:
       tags:
         - Library
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12390,6 +12600,7 @@ paths:
       tags:
         - EPG
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12446,6 +12657,7 @@ paths:
       tags:
         - Live TV
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12487,6 +12699,7 @@ paths:
       tags:
         - Library Playlists
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - $ref: "#/components/parameters/X-Plex-Product"
         - $ref: "#/components/parameters/X-Plex-Version"
@@ -12551,6 +12764,16 @@ components:
       type: apiKey
       in: header
   parameters:
+    accepts:
+      name: accepts
+      description: Indicates the client accepts the indicated media types
+      in: header
+      schema:
+        type: string
+        default: application/xml
+        enum:
+          - application/json
+          - application/xml
     advancedSubtitles:
       name: advancedSubtitles
       description: |
