@@ -5610,7 +5610,7 @@ paths:
   /library/metadata/{ids}/allLeaves:
     get:
       summary: Get the leaves of an item
-      operationId: getAllLeaves
+      operationId: getAllItemLeaves
       description: Get the leaves for a metadata item such as the episodes in a show
       tags:
         - Library
@@ -8899,7 +8899,7 @@ paths:
   /media/grabbers/devices/{deviceId}/channels:
     get:
       summary: Get a device's channels
-      operationId: getChannels
+      operationId: getDevicesChannels
       description: Get a device's channels by its id
       tags:
         - Devices
