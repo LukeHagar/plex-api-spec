@@ -10102,6 +10102,7 @@ paths:
     get:
       summary: Start A Transcoding Session
       operationId: startTranscodeSession
+      x-speakeasy-usage-example: true
       description: Starts the transcoder and returns the corresponding streaming resource document.
       tags:
         - Transcoder
