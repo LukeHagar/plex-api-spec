@@ -200,7 +200,7 @@ paths:
   /:
     get:
       summary: Get PMS info
-      operationId: getInfo
+      operationId: getServerInfo
       description: Information about this PMS setup and configuration
       tags:
         - General
@@ -264,7 +264,7 @@ paths:
   /:/prefs:
     get:
       summary: Get all preferences
-      operationId: getAll
+      operationId: getAllPreferences
       description: Get the list of all preferences
       tags:
         - Preferences
@@ -277,7 +277,7 @@ paths:
                 $ref: '#/components/schemas/MediaContainerWithSettings'
     put:
       summary: Set preferences
-      operationId: set
+      operationId: setPreferences
       description: Set a set of preferences in query parameters
       tags:
         - Preferences
@@ -315,7 +315,7 @@ paths:
   /:/prefs/get:
     get:
       summary: Get a preferences
-      operationId: get
+      operationId: getPreference
       description: Get a single preference and value
       tags:
         - Preferences
@@ -701,7 +701,7 @@ paths:
   /activities:
     get:
       summary: Get all activities
-      operationId: list
+      operationId: listActivities
       description: List all activities on the server.  Admins can see all activities but other users can only see their own
       tags:
         - Activities
@@ -812,7 +812,7 @@ paths:
                 type: object
     post:
       summary: Start all Butler tasks
-      operationId: post
+      operationId: startTasks
       description: |
         This endpoint will attempt to start all Butler tasks that are enabled in the settings. Butler tasks normally run automatically during a time window configured on the server's Settings page but can be manually started using this endpoint. Tasks will run with the following criteria:
 
@@ -831,7 +831,7 @@ paths:
   /downloadQueue:
     post:
       summary: Create download queue
-      operationId: create
+      operationId: createDownloadQueue
       description: |
         Available: 0.2.0
 
@@ -877,7 +877,7 @@ paths:
   /hubs:
     get:
       summary: Get global hubs
-      operationId: getAll
+      operationId: getAllHubs
       description: Get the global hubs in this PMS
       tags:
         - Hubs
@@ -971,7 +971,7 @@ paths:
   /hubs/items:
     get:
       summary: Get a hub's items
-      operationId: getItems
+      operationId: getHubItems
       description: Get the items within a single hub specified by identifier
       tags:
         - Hubs
@@ -1017,7 +1017,7 @@ paths:
   /hubs/promoted:
     get:
       summary: Get the hubs which are promoted
-      operationId: getPromoted
+      operationId: getPromotedHubs
       description: Get the global hubs which are promoted (should be displayed on the home screen)
       tags:
         - Hubs
@@ -1058,7 +1058,7 @@ paths:
   /hubs/search:
     get:
       summary: Search Hub
-      operationId: hubs
+      operationId: searchHubs
       description: |
         Perform a search and get the result as hubs
 
@@ -1137,7 +1137,7 @@ paths:
   /hubs/search/voice:
     get:
       summary: Voice Search Hub
-      operationId: getVoice
+      operationId: voiceSearchHubs
       description: |
         Perform a search tailored to voice input and get the result as hubs
 
@@ -1229,7 +1229,7 @@ paths:
   /library/all:
     get:
       summary: Get all items in library
-      operationId: getAllItems
+      operationId: getLibraryItems
       description: Request all metadata items according to a query.
       tags:
         - Library
@@ -1278,7 +1278,7 @@ paths:
     put:
       summary: Clean bundles
       operationId: cleanBundles
-      description: Clean out any now unused bundles.  Bundles can become unused when media is deleted
+      description: Clean out any now unused bundles. Bundles can become unused when media is deleted
       tags:
         - Library
       security:
@@ -1290,7 +1290,7 @@ paths:
   /library/collections:
     post:
       summary: Create collection
-      operationId: create
+      operationId: createCollection
       description: Create a collection in the library
       tags:
         - Collections
@@ -1333,7 +1333,7 @@ paths:
   /library/file:
     post:
       summary: Ingest a transient item
-      operationId: postFile
+      operationId: ingestTransientItem
       description: |-
         This endpoint takes a file path specified in the `url` parameter, matches it using the scanner's match mechanism, downloads rich metadata, and then ingests the item as a transient item (without a library section). In the case where the file represents an episode, the entire tree (show, season, and episode) is added as transient items. At this time, movies and episodes are the only supported types, which are gleaned automatically from the file path.
         Note that any of the parameters passed to the metadata details endpoint (e.g. `includeExtras=1`) work here.
@@ -1394,7 +1394,7 @@ paths:
   /library/matches:
     get:
       summary: Get library matches
-      operationId: getMatches
+      operationId: getLibraryMatches
       description: |-
         The matches endpoint is used to match content external to the library with content inside the library. This is done by passing a series of semantic "hints" about the content (its type, name, or release year). Each type (e.g. movie) has a canonical set of minimal required hints.
         This ability to match content is useful in a variety of scenarios. For example, in the DVR, the EPG uses the endpoint to match recording rules against airing content. And in the cloud, the UMP uses the endpoint to match up a piece of media with rich metadata.
@@ -1495,7 +1495,7 @@ paths:
   /library/optimize:
     put:
       summary: Optimize the Database
-      operationId: optimize
+      operationId: optimizeDatabase
       description: Initiate optimize on the database.
       tags:
         - Library
@@ -1741,7 +1741,7 @@ paths:
   /library/sections/refresh:
     post:
       summary: Refresh all sections
-      operationId: refreshSections
+      operationId: refreshSectionsMetadata
       description: Tell PMS to refresh all section metadata
       tags:
         - Library
@@ -1828,7 +1828,7 @@ paths:
   /livetv/dvrs:
     get:
       summary: Get DVRs
-      operationId: list
+      operationId: listDVRs
       description: Get the list of all available DVRs
       tags:
         - DVRs
@@ -1873,7 +1873,7 @@ paths:
                 type: object
     post:
       summary: Create a DVR
-      operationId: create
+      operationId: createDVR
       description: Creation of a DVR, after creation of a devcie and a lineup is selected
       tags:
         - DVRs
@@ -2269,7 +2269,7 @@ paths:
   /log:
     post:
       summary: Logging a multi-line message to the Plex Media Server log
-      operationId: write
+      operationId: writeLog
       description: |
         This endpoint will write multiple lines to the main Plex Media Server log in a single request. It takes a set of query strings as would normally sent to the above PUT endpoint as a linefeed-separated block of POST data. The parameters for each query string match as above.
       tags:
@@ -2343,9 +2343,9 @@ paths:
   /log/networked:
     post:
       summary: Enabling Papertrail
-      operationId: postNetworked
+      operationId: enablePapertrail
       description: |
-        This endpoint will enable all Plex Media Serverlogs to be sent to the Papertrail networked logging site for a period of time
+        This endpoint will enable all Plex Media Server logs to be sent to the Papertrail networked logging site for a period of time
 
         Note: This endpoint responds to all HTTP verbs but POST is preferred
       tags:
@@ -2379,7 +2379,7 @@ paths:
   /media/grabbers:
     get:
       summary: Get available grabbers
-      operationId: getGrabbers
+      operationId: getAvailableGrabbers
       description: Get available grabbers visible to the server
       tags:
         - Devices
@@ -2436,7 +2436,7 @@ paths:
   /media/grabbers/devices:
     get:
       summary: Get all devices
-      operationId: getAll
+      operationId: listDevices
       description: Get the list of all devices present
       tags:
         - Devices
@@ -2461,7 +2461,7 @@ paths:
                 $ref: '#/components/schemas/MediaContainerWithDevice'
     post:
       summary: Add a device
-      operationId: add
+      operationId: addDevice
       description: This endpoint adds a device to an existing grabber. The device is identified, and added to the correct grabber.
       tags:
         - Devices
@@ -2497,7 +2497,7 @@ paths:
   /media/grabbers/devices/discover:
     post:
       summary: Tell grabbers to discover devices
-      operationId: discover
+      operationId: discoverDevices
       description: Tell grabbers to discover devices
       tags:
         - Devices
@@ -2514,7 +2514,7 @@ paths:
   /media/providers:
     get:
       summary: Get the list of available media providers
-      operationId: getProviders
+      operationId: listProviders
       description: Get the list of all available media providers for this PMS.  This will generally include the library provider and possibly EPG if DVR is set up.
       tags:
         - Provider
@@ -2560,7 +2560,7 @@ paths:
                 type: object
     post:
       summary: Add a media provider
-      operationId: add
+      operationId: addProvider
       description: This endpoint registers a media provider with the server. Once registered, the media server acts as a reverse proxy to the provider, allowing both local and remote providers to work.
       tags:
         - Provider
@@ -2589,7 +2589,7 @@ paths:
   /media/providers/refresh:
     post:
       summary: Refresh media providers
-      operationId: refresh
+      operationId: refreshProviders
       description: Refresh all known media providers. This is useful in case a provider has updated features.
       tags:
         - Provider
@@ -2599,7 +2599,7 @@ paths:
   /media/subscriptions:
     get:
       summary: Get all subscriptions
-      operationId: getAll
+      operationId: getAllSubscriptions
       description: Get all subscriptions and potentially the grabs too
       tags:
         - Subscriptions
@@ -2646,8 +2646,8 @@ paths:
             text/html: {}
     post:
       summary: Create a subscription
-      operationId: create
-      description: Create a subscription.  The query parameters should be mostly derived from the [template](#tag/Subscriptions/operation/mediaSubscriptionsGetTemplate)
+      operationId: createSubscription
+      description: Create a subscription. The query parameters should be mostly derived from the [template](#tag/Subscriptions/operation/mediaSubscriptionsGetTemplate)
       tags:
         - Subscriptions
       parameters:
@@ -2745,7 +2745,7 @@ paths:
   /media/subscriptions/process:
     post:
       summary: Process all subscriptions
-      operationId: process
+      operationId: processSubscriptions
       description: Process all subscriptions asynchronously
       tags:
         - Subscriptions
@@ -2766,7 +2766,7 @@ paths:
   /media/subscriptions/scheduled:
     get:
       summary: Get all scheduled recordings
-      operationId: getScheduled
+      operationId: getScheduledRecordings
       description: Get all scheduled recordings across all subscriptions
       tags:
         - Subscriptions
@@ -2886,7 +2886,7 @@ paths:
   /photo/:/transcode:
     get:
       summary: Transcode an image
-      operationId: transcode
+      operationId: transcodeImage
       description: Transcode an image, possibly changing format or size
       tags:
         - Transcoder
@@ -3032,7 +3032,7 @@ paths:
   /playlists:
     get:
       summary: List playlists
-      operationId: list
+      operationId: listPlaylists
       description: Gets a list of playlists and playlist folders for a user. General filters are permitted, such as `sort=lastViewedAt:desc`. A flat playlist list can be retrieved using `type=15` to limit the collection to just playlists.
       tags:
         - Playlist
@@ -3075,7 +3075,7 @@ paths:
                 $ref: '#/components/schemas/MediaContainerWithPlaylistMetadata'
     post:
       summary: Create a Playlist
-      operationId: create
+      operationId: createPlaylist
       description: Create a new playlist. By default the playlist is blank.
       tags:
         - Library Playlists
@@ -3112,7 +3112,7 @@ paths:
   /playlists/upload:
     post:
       summary: Upload
-      operationId: upload
+      operationId: uploadPlaylist
       description: Imports m3u playlists by passing a path on the server to scan for m3u-formatted playlist files, or a path to a single playlist file.
       tags:
         - Library Playlists
@@ -3153,7 +3153,7 @@ paths:
   /playQueues:
     post:
       summary: Create a play queue
-      operationId: create
+      operationId: createPlayQueue
       description: |-
         Makes a new play queue for a device. The source of the playqueue can either be a URI, or a playlist. The response is a media container with the initial items in the queue. Each item in the queue will be a regular item but with `playQueueItemID` - a unique ID since the queue could have repeated items with the same `ratingKey`.
         Note: Either `uri` or `playlistID` must be specified
@@ -3279,7 +3279,7 @@ paths:
   /security/resources:
     get:
       summary: Get Source Connection Information
-      operationId: getResources
+      operationId: getSourceConnectionInformation
       description: If a caller requires connection details and a transient token for a source that is known to the server, for example a cloud media provider or shared PMS, then this endpoint can be called. This endpoint is only accessible with either an admin token or a valid transient token generated from an admin token.
       tags:
         - General
@@ -3357,7 +3357,7 @@ paths:
   /security/token:
     post:
       summary: Get Transient Tokens
-      operationId: createToken
+      operationId: getTransientToken
       description: |-
         This endpoint provides the caller with a temporary token with the same access level as the caller's token. These tokens are valid for up to 48 hours and are destroyed if the server instance is restarted.
         Note: This endpoint responds to all HTTP verbs but POST in preferred
@@ -3815,7 +3815,7 @@ paths:
   /updater/apply:
     put:
       summary: Applying updates
-      operationId: apply
+      operationId: applyUpdates
       description: Apply any downloaded updates.  Note that the two parameters `tonight` and `skip` are effectively mutually exclusive. The `tonight` parameter takes precedence and `skip` will be ignored if `tonight` is also passed.
       tags:
         - Updater
@@ -3859,7 +3859,7 @@ paths:
   /updater/check:
     put:
       summary: Checking for updates
-      operationId: check
+      operationId: checkUpdates
       description: Perform an update check and potentially download
       tags:
         - Updater
@@ -3888,7 +3888,7 @@ paths:
   /updater/status:
     get:
       summary: Querying status of updates
-      operationId: getStatus
+      operationId: getUpdatesStatus
       description: Get the status of updating the server
       tags:
         - Updater
@@ -4258,7 +4258,7 @@ paths:
   /{transcodeType}/:/transcode/universal/subtitles:
     get:
       summary: Transcode subtitles
-      operationId: getSubtitles
+      operationId: transcodeSubtitles
       description: Only transcode subtitle streams.
       tags:
         - Transcoder
@@ -4517,7 +4517,7 @@ paths:
   /activities/{activityId}:
     delete:
       summary: Cancel a running activity
-      operationId: delete
+      operationId: cancelActivity
       description: Cancel a running activity.  Admins can cancel all activities but other users can only cancel their own
       tags:
         - Activities
@@ -4556,7 +4556,7 @@ paths:
   /butler/{task}:
     delete:
       summary: Stop a single Butler task
-      operationId: deleteTask
+      operationId: stopTask
       description: |
         This endpoint will stop a currently running task by name, or remove it from the list of scheduled tasks if it exists
       tags:
@@ -4677,7 +4677,7 @@ paths:
   /downloadQueue/{queueId}:
     get:
       summary: Get a download queue
-      operationId: get
+      operationId: getDownloadQueue
       description: |
         Available: 0.2.0
 
@@ -4740,7 +4740,7 @@ paths:
   /downloadQueue/{queueId}/add:
     post:
       summary: Add to download queue
-      operationId: add
+      operationId: addDownloadQueueItems
       description: |
         Available: 0.2.0
 
@@ -4828,7 +4828,7 @@ paths:
   /downloadQueue/{queueId}/items:
     get:
       summary: Get download queue items
-      operationId: getItems
+      operationId: listDownloadQueueItems
       description: |
         Available: 0.2.0
 
@@ -4927,7 +4927,7 @@ paths:
   /hubs/metadata/{metadataId}:
     get:
       summary: Get hubs for section by metadata item
-      operationId: getMetadata
+      operationId: getMetadataHubs
       description: Get the hubs for a section by metadata item.  Currently only for music sections
       tags:
         - Hubs
@@ -4964,7 +4964,7 @@ paths:
   /hubs/metadata/{metadataId}/postplay:
     get:
       summary: Get postplay hubs
-      operationId: getPostplay
+      operationId: getPostplayHubs
       description: Get the hubs for a metadata to be displayed in post play
       tags:
         - Hubs
@@ -5001,7 +5001,7 @@ paths:
   /hubs/metadata/{metadataId}/related:
     get:
       summary: Get related hubs
-      operationId: getRelated
+      operationId: getRelatedHubs
       description: Get the hubs for a metadata related to the provided metadata item
       tags:
         - Hubs
@@ -5038,7 +5038,7 @@ paths:
   /hubs/sections/{sectionId}:
     get:
       summary: Get section hubs
-      operationId: getSection
+      operationId: getSectionHubs
       description: Get the hubs for a single section
       tags:
         - Hubs
@@ -5133,7 +5133,7 @@ paths:
             text/html: {}
     get:
       summary: Get hubs
-      operationId: manageSections
+      operationId: listHubs
       description: Get the list of hubs including both built-in and custom
       tags:
         - Hubs
@@ -5299,7 +5299,7 @@ paths:
   /hubs/sections/{sectionId}/manage/move:
     put:
       summary: Move Hub
-      operationId: move
+      operationId: moveHub
       description: Changed the ordering of a hub among others hubs
       tags:
         - Hubs
@@ -5380,7 +5380,7 @@ paths:
             text/html: {}
     put:
       summary: Add items to a collection
-      operationId: addItems
+      operationId: addCollectionItems
       description: Add items to a collection by uri
       tags:
         - Library Collections
@@ -5424,7 +5424,7 @@ paths:
   /library/metadata/{ids}:
     delete:
       summary: Delete a metadata item
-      operationId: delete
+      operationId: deleteMetadataItem
       description: Delete a single metadata item from the library, deleting media as well
       tags:
         - Library
@@ -5461,7 +5461,7 @@ paths:
             text/html: {}
     get:
       summary: Get a metadata item
-      operationId: getMetadata
+      operationId: getMetadataItem
       description: Get one or more metadata items.
       tags:
         - Content
@@ -5541,7 +5541,7 @@ paths:
                 $ref: '#/components/schemas/MediaContainerWithMetadata'
     put:
       summary: Edit a metadata item
-      operationId: editMetadata
+      operationId: editMetadataItem
       description: Edit metadata items setting fields
       tags:
         - Library
@@ -5690,7 +5690,7 @@ paths:
   /library/metadata/{ids}/chapterThumbs:
     put:
       summary: Generate thumbs of chapters for an item
-      operationId: putChapterThumbs
+      operationId: generateThumbs
       description: Start the chapter thumb generation for an item
       tags:
         - Library
@@ -5724,7 +5724,7 @@ paths:
   /library/metadata/{ids}/credits:
     put:
       summary: Credit detect a metadata item
-      operationId: startCreditDetection
+      operationId: detectCredits
       description: Start credit detection on a metadata item
       tags:
         - Library
@@ -5917,7 +5917,7 @@ paths:
   /library/metadata/{ids}/intro:
     put:
       summary: Intro detect an item
-      operationId: putMetadataIntro
+      operationId: detectIntros
       description: Start the detection of intros in a metadata item
       tags:
         - Library
@@ -6042,7 +6042,7 @@ paths:
   /library/metadata/{ids}/match:
     put:
       summary: Match a metadata item
-      operationId: matchMetadata
+      operationId: matchItem
       description: Match a metadata item to a guid
       tags:
         - Library
@@ -6085,7 +6085,7 @@ paths:
   /library/metadata/{ids}/matches:
     put:
       summary: Get metadata matches for an item
-      operationId: putMetadataMatches
+      operationId: listMatches
       description: Get the list of metadata matches for a metadata item
       tags:
         - Library
@@ -6147,7 +6147,7 @@ paths:
   /library/metadata/{ids}/merge:
     put:
       summary: Merge a metadata item
-      operationId: mergeMetadata
+      operationId: mergeItems
       description: Merge a metadata item with other items
       tags:
         - Library
@@ -6183,7 +6183,7 @@ paths:
   /library/metadata/{ids}/nearest:
     get:
       summary: Get nearest tracks to metadata item
-      operationId: getNearest
+      operationId: listSonicallySimilar
       description: Get the nearest tracks, sonically, to the provided track
       tags:
         - Library
@@ -6233,7 +6233,7 @@ paths:
   /library/metadata/{ids}/prefs:
     put:
       summary: Set metadata preferences
-      operationId: setMetadataPrefs
+      operationId: setItemPreferences
       description: Set the preferences on a metadata item
       tags:
         - Library
@@ -6266,7 +6266,7 @@ paths:
   /library/metadata/{ids}/refresh:
     put:
       summary: Refresh a metadata item
-      operationId: refreshMetadata
+      operationId: refreshItemsMetadata
       description: Refresh a metadata item from the agent
       tags:
         - Library
@@ -6305,7 +6305,7 @@ paths:
   /library/metadata/{ids}/related:
     get:
       summary: Get related items
-      operationId: getRelated
+      operationId: getRelatedItems
       description: Get a hub of related items to a metadata item
       tags:
         - Library
@@ -6345,7 +6345,7 @@ paths:
   /library/metadata/{ids}/similar:
     get:
       summary: Get similar items
-      operationId: getSimilar
+      operationId: listSimilar
       description: Get a list of similar items to a metadata item
       tags:
         - Library
@@ -6376,7 +6376,7 @@ paths:
   /library/metadata/{ids}/split:
     put:
       summary: Split a metadata item
-      operationId: splitMetadata
+      operationId: splitItem
       description: Split a metadata item into multiple items
       tags:
         - Library
@@ -6470,7 +6470,7 @@ paths:
   /library/metadata/{ids}/tree:
     get:
       summary: Get metadata items as a tree
-      operationId: tree
+      operationId: getItemTree
       description: Get a tree of metadata items, such as the seasons/episodes of a show
       tags:
         - Library
@@ -6529,7 +6529,7 @@ paths:
   /library/metadata/{ids}/users/top:
     get:
       summary: Get metadata top users
-      operationId: getMetadataTopUsers
+      operationId: listTopUsers
       description: Get the list of users which have played this item starting with the most
       tags:
         - Library
@@ -6704,7 +6704,7 @@ paths:
   /library/people/{personId}:
     get:
       summary: Get person details
-      operationId: getPeople
+      operationId: getPerson
       description: Get details for a single actor.
       tags:
         - Library
@@ -6747,7 +6747,7 @@ paths:
   /library/people/{personId}/media:
     get:
       summary: Get media for a person
-      operationId: getPersonMedia
+      operationId: listPersonMedia
       description: Get all the media for a single actor.
       tags:
         - Library
@@ -6780,7 +6780,7 @@ paths:
   /library/sections/{sectionId}:
     delete:
       summary: Delete a library section
-      operationId: deleteSection
+      operationId: deleteLibrarySection
       description: Delete a library section by id
       tags:
         - Library
@@ -6814,7 +6814,7 @@ paths:
           $ref: '#/components/responses/200'
     get:
       summary: Get a library section by id
-      operationId: getSection
+      operationId: getLibraryDetails
       description: 'Returns details for the library. This can be thought of as an interstitial endpoint because it contains information about the library, rather than content itself. It often contains a list of `Directory` metadata objects: These used to be used by clients to build a menuing system.'
       tags:
         - Library
@@ -7042,7 +7042,7 @@ paths:
   /library/sections/{sectionId}/all:
     get:
       summary: Get items in the section
-      operationId: getSectionAll
+      operationId: listContent
       description: Get the items in a section, potentially filtering them
       tags:
         - Content
@@ -7082,7 +7082,7 @@ paths:
                 $ref: '#/components/schemas/MediaContainerWithMetadata'
     put:
       summary: Set the fields of the filtered items
-      operationId: putSectionAll
+      operationId: updateItems
       description: |-
         This endpoint takes an large possible set of values.  Here are some examples.
         - **Parameters, extra documentation**
@@ -7340,7 +7340,7 @@ paths:
   /library/sections/{sectionId}/analyze:
     put:
       summary: Analyze a section
-      operationId: putSectionAnalyze
+      operationId: startAnalysis
       description: Start analysis of all items in a section.  If BIF generation is enabled, this will also be started on this section
       tags:
         - Library
@@ -7489,7 +7489,7 @@ paths:
   /library/sections/{sectionId}/cluster:
     get:
       summary: Set section clusters
-      operationId: getSectionCluster
+      operationId: getCluster
       description: Get clusters in a library section (typically for photos)
       tags:
         - Content
@@ -7613,7 +7613,7 @@ paths:
   /library/sections/{sectionId}/computePath:
     get:
       summary: Similar tracks to transition from one to another
-      operationId: getComputePath
+      operationId: getSonicPath
       description: Get a list of audio tracks starting at one and ending at another which are similar across the path
       tags:
         - Content
@@ -7856,7 +7856,7 @@ paths:
   /library/sections/{sectionId}/location:
     get:
       summary: Get all folder locations
-      operationId: getLocations
+      operationId: getFolders
       description: Get all folder locations of the media in a section
       tags:
         - Content
@@ -7904,7 +7904,7 @@ paths:
   /library/sections/{sectionId}/moment:
     get:
       summary: Set section moments
-      operationId: getMoment
+      operationId: listMoments
       description: Get moments in a library section (typically for photos)
       tags:
         - Content
@@ -7935,7 +7935,7 @@ paths:
   /library/sections/{sectionId}/nearest:
     get:
       summary: The nearest audio tracks
-      operationId: getNearest
+      operationId: getSonicallySimilar
       description: Get the nearest audio tracks to a particular analysis
       tags:
         - Content
@@ -7992,7 +7992,7 @@ paths:
   /library/sections/{sectionId}/prefs:
     get:
       summary: Get section prefs
-      operationId: getPrefs
+      operationId: getSectionPreferences
       description: Get the prefs for a section by id and potentially overriding the agent
       tags:
         - Library
@@ -8026,7 +8026,7 @@ paths:
                 $ref: '#/components/schemas/MediaContainerWithSettings'
     put:
       summary: Set section prefs
-      operationId: setSectionPrefs
+      operationId: setSectionPreferences
       description: Set the prefs for a section by id
       tags:
         - Library
@@ -8133,7 +8133,7 @@ paths:
   /library/sections/{sectionId}/sorts:
     get:
       summary: Get a section sorts
-      operationId: getSorts
+      operationId: getAvailableSorts
       description: Get the sort mechanisms available in a section
       tags:
         - Library
@@ -8275,7 +8275,7 @@ paths:
   /livetv/dvrs/{dvrId}:
     delete:
       summary: Delete a single DVR
-      operationId: delete
+      operationId: deleteDVR
       description: Delete a single DVR by its id (key)
       tags:
         - DVRs
@@ -8304,7 +8304,7 @@ paths:
           $ref: '#/components/responses/200'
     get:
       summary: Get a single DVR
-      operationId: get
+      operationId: getDVR
       description: Get a single DVR by its id (key)
       tags:
         - DVRs
@@ -8510,7 +8510,7 @@ paths:
   /livetv/dvrs/{dvrId}/prefs:
     put:
       summary: Set DVR preferences
-      operationId: setPreferences
+      operationId: setDVRPreferences
       description: Set DVR preferences by name avd value
       tags:
         - DVRs
@@ -8581,7 +8581,7 @@ paths:
   /livetv/dvrs/{dvrId}/reloadGuide:
     delete:
       summary: Tell a DVR to stop reloading program guide
-      operationId: stopReloadGuide
+      operationId: stopDVRReload
       description: Tell a DVR to stop reloading program guide
       tags:
         - DVRs
@@ -8647,7 +8647,7 @@ paths:
   /livetv/sessions/{sessionId}:
     get:
       summary: Get a single session
-      operationId: getSession
+      operationId: getLiveTVSession
       description: Get a single livetv session and metadata
       tags:
         - Live TV
@@ -8687,7 +8687,7 @@ paths:
   /media/grabbers/devices/{deviceId}:
     delete:
       summary: Remove a device
-      operationId: delete
+      operationId: removeDevice
       description: Remove a devices by its id along with its channel mappings
       tags:
         - Devices
@@ -8743,7 +8743,7 @@ paths:
             text/html: {}
     get:
       summary: Get device details
-      operationId: getDetails
+      operationId: getDeviceDetails
       description: Get a device's details by its id
       tags:
         - Devices
@@ -8974,7 +8974,7 @@ paths:
   /media/grabbers/devices/{deviceId}/prefs:
     put:
       summary: Set device preferences
-      operationId: putPreferences
+      operationId: setDevicePreferences
       description: Set device preferences by its id
       tags:
         - Devices
@@ -9116,7 +9116,7 @@ paths:
   /media/providers/{provider}:
     delete:
       summary: Delete a media provider
-      operationId: delete
+      operationId: deleteMediaProvider
       description: Deletes a media provider with the given id
       tags:
         - Provider
@@ -9149,7 +9149,7 @@ paths:
   /media/subscriptions/{subscriptionId}:
     delete:
       summary: Delete a subscription
-      operationId: delete
+      operationId: deleteSubscription
       description: Delete a subscription, cancelling all of its grabs as well
       tags:
         - Subscriptions
@@ -9182,7 +9182,7 @@ paths:
           $ref: '#/components/responses/404'
     get:
       summary: Get a single subscription
-      operationId: get
+      operationId: getSubscription
       description: Get a single subscription and potentially the grabs too
       tags:
         - Subscriptions
@@ -9229,7 +9229,7 @@ paths:
           $ref: '#/components/responses/404'
     put:
       summary: Edit a subscription
-      operationId: editPreferences
+      operationId: editSubscriptionPreferences
       description: Edit a subscription's preferences
       tags:
         - Subscriptions
@@ -9274,7 +9274,7 @@ paths:
   /media/subscriptions/{subscriptionId}/move:
     put:
       summary: Re-order a subscription
-      operationId: reorder
+      operationId: reorderSubscription
       description: Re-order a subscription to change its priority
       tags:
         - Subscriptions
@@ -9320,7 +9320,7 @@ paths:
   /playlists/{playlistId}:
     delete:
       summary: Delete a Playlist
-      operationId: delete
+      operationId: deletePlaylist
       description: Deletes a playlist by provided id
       tags:
         - Library Playlists
@@ -9350,7 +9350,7 @@ paths:
             text/html: {}
     get:
       summary: Retrieve Playlist
-      operationId: get
+      operationId: getPlaylist
       description: |-
         Gets detailed metadata for a playlist. A playlist for many purposes (rating, editing metadata, tagging), can be treated like a regular metadata item:
         Smart playlist details contain the `content` attribute. This is the content URI for the generator. This can then be parsed by a client to provide smart playlist editing.
@@ -9386,7 +9386,7 @@ paths:
             text/html: {}
     put:
       summary: Editing a Playlist
-      operationId: update
+      operationId: updatePlaylist
       description: Edits a playlist in the same manner as [editing metadata](#tag/Provider/operation/metadataPutItem)
       tags:
         - Library Playlists
@@ -9417,7 +9417,7 @@ paths:
   /playlists/{playlistId}/generators:
     get:
       summary: Get a playlist's generators
-      operationId: getGenerators
+      operationId: getPlaylistGenerators
       description: Get all the generators in a playlist
       tags:
         - Library Playlists
@@ -9486,7 +9486,7 @@ paths:
   /playlists/{playlistId}/items:
     delete:
       summary: Clearing a playlist
-      operationId: clearItems
+      operationId: clearPlaylistItems
       description: Clears a playlist, only works with dumb playlists. Returns the playlist.
       tags:
         - Library Playlists
@@ -9518,8 +9518,8 @@ paths:
             text/html: {}
     get:
       summary: Retrieve Playlist Contents
-      operationId: getItems
-      description: Gets the contents if a playlist. Should be paged by clients via standard mechanisms. By default leaves are returned (e.g. episodes, movies). In order to return other types you can use the `type` parameter. For example, you could use this to display a list of recently added albums vis a smart playlist. Note that for dumb playlists, items have a `playlistItemID` attribute which is used for deleting or moving items.
+      operationId: getPlaylistItems
+      description: Gets the contents of a playlist. Should be paged by clients via standard mechanisms. By default leaves are returned (e.g. episodes, movies). In order to return other types you can use the `type` parameter. For example, you could use this to display a list of recently added albums vis a smart playlist. Note that for dumb playlists, items have a `playlistItemID` attribute which is used for deleting or moving items.
       tags:
         - Playlist
       parameters:
@@ -9569,7 +9569,7 @@ paths:
             text/html: {}
     put:
       summary: Adding to  a Playlist
-      operationId: addItems
+      operationId: addPlaylistItems
       description: Adds a generator to a playlist, same parameters as the POST above. With a dumb playlist, this adds the specified items to the playlist. With a smart playlist, passing a new `uri` parameter replaces the rules for the playlist. Returns the playlist.
       tags:
         - Library Playlists
@@ -9612,7 +9612,7 @@ paths:
   /playQueues/{playQueueId}:
     get:
       summary: Retrieve a play queue
-      operationId: get
+      operationId: getPlayQueue
       description: Retrieves the play queue, centered at current item. This can be treated as a regular container by play queue-oblivious clients, but they may wish to request a large window onto the queue since they won't know to refresh.
       tags:
         - Play Queue
@@ -9669,7 +9669,7 @@ paths:
             text/html: {}
     put:
       summary: Add a generator or playlist to a play queue
-      operationId: addItem
+      operationId: addToPlayQueue
       description: Adds an item to a play queue (e.g. party mode). Increments the version of the play queue. Takes the following parameters (`uri` and `playlistID` are mutually exclusive). Returns the modified play queue.
       tags:
         - Play Queue
@@ -9717,7 +9717,7 @@ paths:
   /playQueues/{playQueueId}/items:
     delete:
       summary: Clear a play queue
-      operationId: clear
+      operationId: clearPlayQueue
       description: Deletes all items in the play queue, and increases the version of the play queue.
       tags:
         - Play Queue
@@ -9748,7 +9748,7 @@ paths:
   /playQueues/{playQueueId}/reset:
     put:
       summary: Reset a play queue
-      operationId: reset
+      operationId: resetPlayQueue
       description: Reset a play queue to the first item being the current item
       tags:
         - Play Queue
@@ -9931,7 +9931,7 @@ paths:
   /{transcodeType}/:/transcode/universal/start.{extension}:
     get:
       summary: Start A Transcoding Session
-      operationId: start
+      operationId: startTranscodeSession
       description: Starts the transcoder and returns the corresponding streaming resource document.
       tags:
         - Transcoder
@@ -10279,7 +10279,7 @@ paths:
   /downloadQueue/{queueId}/item/{itemId}/media:
     get:
       summary: Grab download queue media
-      operationId: getMedia
+      operationId: getDownloadQueueMedia
       description: |
         Available: 0.2.0
 
@@ -10326,7 +10326,7 @@ paths:
   /downloadQueue/{queueId}/items/{itemId}:
     delete:
       summary: Delete download queue items
-      operationId: deleteItem
+      operationId: removeDownloadQueueItems
       description: delete items from a download queue
       tags:
         - Download Queue
@@ -10365,7 +10365,7 @@ paths:
           $ref: '#/components/responses/200'
     get:
       summary: Get download queue items
-      operationId: getItems
+      operationId: getDownloadQueueItems
       description: |
         Available: 0.2.0
 
@@ -10477,7 +10477,7 @@ paths:
   /downloadQueue/{queueId}/items/{itemId}/restart:
     post:
       summary: Restart processing of items from the decision
-      operationId: restartItem
+      operationId: restartProcessingDownloadQueueItems
       description: |
         Available: 0.2.0
 
@@ -10520,7 +10520,7 @@ paths:
   /hubs/sections/{sectionId}/manage/{identifier}:
     delete:
       summary: Delete a custom hub
-      operationId: deleteCustom
+      operationId: deleteCustomHub
       description: Delete a custom hub from the server
       tags:
         - Hubs
@@ -10565,7 +10565,7 @@ paths:
             text/html: {}
     put:
       summary: Change hub visibility
-      operationId: updateVisibility
+      operationId: updateHubVisibility
       description: Changed the visibility of a hub for both the admin and shared users
       tags:
         - Hubs
@@ -10622,7 +10622,7 @@ paths:
   /library/collections/{collectionId}/composite/{updatedAt}:
     get:
       summary: Get a collection's image
-      operationId: getComposite
+      operationId: getCollectionImage
       description: Get an image for the collection based on the items within
       tags:
         - Content
@@ -10665,7 +10665,7 @@ paths:
   /library/collections/{collectionId}/items/{itemId}:
     put:
       summary: Delete an item from a collection
-      operationId: deleteItem
+      operationId: deleteCollectionItem
       description: Delete an item from a collection
       tags:
         - Library Collections
@@ -10713,7 +10713,7 @@ paths:
   /library/collections/{collectionId}/items/{itemId}/move:
     put:
       summary: Reorder an item in the collection
-      operationId: moveItem
+      operationId: moveCollectionItem
       description: Reorder items in a collection with one item after another
       tags:
         - Library Collections
@@ -10766,7 +10766,7 @@ paths:
   /library/media/{mediaId}/chapterImages/{chapter}:
     get:
       summary: Get a chapter image
-      operationId: getChapterImages
+      operationId: getChapterImage
       description: Get a single chapter image for a piece of media
       tags:
         - Library
@@ -10808,7 +10808,7 @@ paths:
   /library/metadata/{ids}/{element}:
     post:
       summary: Set an item's artwork, theme, etc
-      operationId: createElement
+      operationId: setItemArtwork
       description: |-
         Set the artwork, thumb, element for a metadata item
         Generally only the admin can perform this action.  The exception is if the metadata is a playlist created by the user
@@ -10852,7 +10852,7 @@ paths:
           $ref: '#/components/responses/200'
     put:
       summary: Set an item's artwork, theme, etc
-      operationId: setElement
+      operationId: updateItemArtwork
       description: |-
         Set the artwork, thumb, element for a metadata item
         Generally only the admin can perform this action.  The exception is if the metadata is a playlist created by the user
@@ -10935,7 +10935,7 @@ paths:
             text/html: {}
     put:
       summary: Edit a marker
-      operationId: putMarker
+      operationId: editMarker
       description: Edit a marker for this user on the metadata item
       tags:
         - Library
@@ -11134,7 +11134,7 @@ paths:
   /library/sections/{sectionId}/composite/{updatedAt}:
     get:
       summary: Get a section composite image
-      operationId: getSectionComposite
+      operationId: getSectionImage
       description: Get a composite image of images in this section
       tags:
         - Library
@@ -11213,7 +11213,7 @@ paths:
     get:
       summary: Get a stream
       operationId: getStream
-      description: Get a stream (such a a sidecar subtitle stream)
+      description: Get a stream (such as a sidecar subtitle stream)
       tags:
         - Library
       parameters:
@@ -11274,7 +11274,7 @@ paths:
             text/html: {}
     put:
       summary: Set a stream offset
-      operationId: setOffset
+      operationId: setStreamOffset
       description: Set a stream offset in ms.  This may not be respected by all clients
       tags:
         - Library
@@ -11368,7 +11368,7 @@ paths:
   /livetv/dvrs/{dvrId}/devices/{deviceId}:
     delete:
       summary: Remove a device from an existing DVR
-      operationId: removeDevice
+      operationId: removeDeviceFromDVR
       description: Remove a device from an existing DVR
       tags:
         - DVRs
@@ -11439,7 +11439,7 @@ paths:
                 type: object
     put:
       summary: Add a device to an existing DVR
-      operationId: addDevice
+      operationId: addDeviceToDVR
       description: Add a device to an existing DVR
       tags:
         - DVRs
@@ -11705,7 +11705,7 @@ paths:
   /playlists/{playlistId}/items/{generatorId}:
     delete:
       summary: Delete a Generator
-      operationId: deleteGenerator
+      operationId: deletePlaylistItem
       description: Deletes an item from a playlist. Only works with dumb playlists.
       tags:
         - Library Playlists
@@ -11743,7 +11743,7 @@ paths:
             text/html: {}
     get:
       summary: Get a playlist generator
-      operationId: getGenerator
+      operationId: getPlaylistGenerator
       description: Get a playlist's generator.  Only used for optimized versions
       tags:
         - Library Playlists
@@ -11918,7 +11918,7 @@ paths:
             text/html: {}
     put:
       summary: Modify a Generator
-      operationId: modifyGenerator
+      operationId: modifyPlaylistGenerator
       description: Modify a playlist generator.  Only used for optimizer
       tags:
         - Library Playlists
@@ -12007,7 +12007,7 @@ paths:
   /playlists/{playlistId}/items/{generatorId}/items:
     get:
       summary: Get a playlist generator's items
-      operationId: getItems
+      operationId: getPlaylistGeneratorItems
       description: Get a playlist generator's items
       tags:
         - Library Playlists
@@ -12087,7 +12087,7 @@ paths:
   /playlists/{playlistId}/items/{playlistItemId}/move:
     put:
       summary: Moving items in a playlist
-      operationId: moveItem
+      operationId: movePlaylistItem
       description: Moves an item in a playlist. Only works with dumb playlists.
       tags:
         - Library Playlists
@@ -12131,7 +12131,7 @@ paths:
   /playQueues/{playQueueId}/items/{playQueueItemId}:
     delete:
       summary: Delete an item from a play queue
-      operationId: deleteItem
+      operationId: deletePlayQueueItem
       description: Deletes an item in a play queue. Increments the version of the play queue. Returns the modified play queue.
       tags:
         - Play Queue
@@ -12170,7 +12170,7 @@ paths:
   /playQueues/{playQueueId}/items/{playQueueItemId}/move:
     put:
       summary: Move an item in a play queue
-      operationId: moveItem
+      operationId: movePlayQueueItem
       description: Moves an item in a play queue, and increases the version of the play queue. Returns the modified play queue.
       tags:
         - Play Queue
@@ -12214,7 +12214,7 @@ paths:
   /library/metadata/{ids}/{element}/{timestamp}:
     get:
       summary: Get an item's artwork, theme, etc
-      operationId: getMetadataElement
+      operationId: getItemArtwork
       description: Get the artwork, thumb, element for a metadata item
       tags:
         - Library
@@ -12385,7 +12385,7 @@ paths:
   /livetv/epg/countries/{country}/{epgId}/regions/{region}/lineups:
     get:
       summary: Get lineups for a region
-      operationId: getLineups
+      operationId: listLineups
       description: Get lineups for a region within an EPG provider
       tags:
         - EPG
@@ -12442,7 +12442,7 @@ paths:
     get:
       summary: Get a single session segment
       operationId: getSessionSegment
-      description: Get a single livetv session segment
+      description: Get a single LiveTV session segment
       tags:
         - Live TV
       parameters:
@@ -12482,7 +12482,7 @@ paths:
   /playlists/{playlistId}/items/{generatorId}/{metadataId}/{action}:
     put:
       summary: Reprocess a generator
-      operationId: reprocessGenerator
+      operationId: refreshPlaylist
       description: Make a generator reprocess (refresh)
       tags:
         - Library Playlists
