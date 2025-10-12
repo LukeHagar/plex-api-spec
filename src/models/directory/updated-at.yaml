@@ -1,6 +1,0 @@
-type: object
-required:
-  - updatedAt
-properties:
-  updatedAt:
-    $ref: "../../models/common/PlexDateTime.yaml"

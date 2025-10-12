@@ -1,8 +1,0 @@
-name: X-Plex-Device-Screen-Resolution
-x-speakeasy-name-override: DeviceScreenResolution
-description: The resolution of the device the client application is running on. This is used to track the client application and its usage. (1487x1165,2560x1440)
-in: header
-required: false
-schema:
-  type: string
-example: "1487x1165,2560x1440"

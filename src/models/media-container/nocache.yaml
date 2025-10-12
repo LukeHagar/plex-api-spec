@@ -1,8 +1,0 @@
-type: object
-required:
-  - nocache
-properties:
-  nocache:
-    type: boolean
-    description: "Specifies whether caching is disabled."
-    example: true

@@ -1,6 +1,0 @@
-type: object
-properties:
-  packetLength:
-    type: integer
-    format: int32
-    example: 188

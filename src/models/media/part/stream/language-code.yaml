@@ -1,6 +1,0 @@
-type: object
-properties:
-  languageCode:
-    type: string
-    description: "ISO language code."
-    example: "eng"

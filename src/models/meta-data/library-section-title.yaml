@@ -1,6 +1,0 @@
-type: object
-properties:
-  librarySectionTitle:
-    type: string
-    description: "The title of the library section."
-    example: "Movies"

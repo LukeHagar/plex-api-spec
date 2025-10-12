@@ -1,8 +1,0 @@
-type: object
-required:
-  - title
-properties:
-  title:
-    type: string
-    description: "The title of the media item."
-    example: "Avatar: The Way of Water"

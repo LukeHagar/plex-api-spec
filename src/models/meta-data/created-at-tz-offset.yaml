@@ -1,6 +1,0 @@
-type: object
-properties:
-  createdAtTZOffset:
-    type: string
-    description: "The time zone offset for the creation timestamp, represented as a string. This offset indicates the difference from UTC."
-    example: "0"

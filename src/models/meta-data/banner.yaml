@@ -1,8 +1,0 @@
-type: object
-required:
-  - banner
-properties:
-  banner:
-    type: string
-    description: "The banner image URL for the media item."
-    example: "/library/metadata/58683/banner/1703239236"

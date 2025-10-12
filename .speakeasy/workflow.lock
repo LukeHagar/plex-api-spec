@@ -9,12 +9,10 @@ sources:
             - main
     plexapi:
         sourceNamespace: plexapi
-        sourceRevisionDigest: sha256:64fe40513ecf067dfc73c0539155098dc6a5bdc615803089ebb9697b3d270aba
-        sourceBlobDigest: sha256:a4c8aa152d9b3f8084032bc5e2388fe9e8ba13510d796c7d88e9177ac7845500
+        sourceRevisionDigest: sha256:edf35a1fb3134c8b4075473e08d8327bc3538a75ac07e31c2aaa0c687ad209cf
+        sourceBlobDigest: sha256:f7d882c21a49905c7811067bf4e730a3a5807253b505f1a42e483121e10af150
         tags:
             - latest
-            - speakeasy-sdk-regen-1760232837
-            - 0.0.3
 targets: {}
 workflow:
     workflowVersion: 1.0.0
@@ -22,7 +20,7 @@ workflow:
     sources:
         plexapi:
             inputs:
-                - location: ./output/plex-media-server-spec-dereferenced.yaml
+                - location: ./plex-api-spec.yaml
             registry:
                 location: registry.speakeasyapi.dev/plexapi/plexapi/plexapi
     targets: {}

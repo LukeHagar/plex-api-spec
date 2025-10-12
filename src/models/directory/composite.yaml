@@ -1,8 +1,0 @@
-type: object
-required:
-  - composite
-properties:
-  composite:
-    type: string
-    description: The relative path to the composite media item.
-    example: /library/sections/1/composite/1743824484

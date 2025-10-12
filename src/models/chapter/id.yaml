@@ -1,8 +1,0 @@
-type: object
-required:
-  - id
-description: "The identifier for the chapter"
-properties:
-  id:
-    type: integer
-    example: 4 

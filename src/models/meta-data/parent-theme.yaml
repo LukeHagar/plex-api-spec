@@ -1,8 +1,0 @@
-type: object
-required:
-  - parentTheme
-properties:
-  parentTheme:
-    type: string
-    description: "The theme URL for the parent media item."
-    example: "/library/metadata/66/theme/1705716261"

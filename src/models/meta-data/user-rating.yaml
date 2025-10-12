@@ -1,7 +1,0 @@
-type: object
-properties:
-  userRating:
-    type: number
-    format: float
-    description: "The rating provided by a user for the item. This value is expressed as a decimal number."
-    example: 10.0

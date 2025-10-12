@@ -1,8 +1,0 @@
-type: object
-required:
-  - tag
-description: "The display tag for the similar item, typically the title."
-properties:
-  tag:
-    type: string
-    example: "Criss Angel Mindfreak"

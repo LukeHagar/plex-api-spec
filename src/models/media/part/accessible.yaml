@@ -1,6 +1,0 @@
-type: object
-properties:
-  accessible:
-    type: boolean
-    description: "Indicates if the part is accessible."
-    example: true

@@ -1,4 +1,0 @@
-name: includeCollections
-in: query
-schema:
-  $ref: "../models/common/PlexBoolean.yaml"

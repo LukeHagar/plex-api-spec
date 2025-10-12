@@ -1,9 +1,0 @@
-type: object
-properties:
-  librarySectionType:
-    type: integer
-    oneOf:
-      - const: 1
-        title: Movie
-      - const: 2
-        title: TV Show 

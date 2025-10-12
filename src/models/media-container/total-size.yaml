@@ -1,9 +1,0 @@
-type: object
-required:
-  - totalSize
-properties:
-  totalSize:
-    description: "Total number of media items in the library."
-    type: integer
-    format: int32
-    example: 50

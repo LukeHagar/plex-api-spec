@@ -1,8 +1,0 @@
-type: object
-required:
-  - index
-description: "The index for the chapter"
-properties:
-  index:
-    type: integer
-    example: 1 

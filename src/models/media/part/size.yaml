@@ -1,6 +1,0 @@
-type: object
-properties:
-  size:
-    description: "File size in bytes."
-    type: integer
-    example: 30649952104

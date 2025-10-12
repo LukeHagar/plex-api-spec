@@ -1,6 +1,0 @@
-type: object
-properties:
-  primaryExtraKey:
-    type: string
-    description: "The primary extra key associated with this media item."
-    example: "/library/metadata/58684"

@@ -1,7 +1,0 @@
-name: X-Plex-Session-Id
-description: The session ID of the client application. This is used to track the client application and its usage. (97e136ef-4ddd-4ff3-89a7-a5820c96c2ca)
-in: header
-required: false
-schema:
-  type: string
-example: 97e136ef-4ddd-4ff3-89a7-a5820c96c2ca

@@ -1,8 +1,0 @@
-type: object
-properties:
-  createdAt:
-    allOf:
-      - $ref: "../../models/common/PlexDateTime.yaml"
-      - description: "The date and time when the library was created."
-        type: integer
-        format: int64

@@ -1,7 +1,0 @@
-type: object
-properties:
-  parentYear:
-    type: integer
-    format: int32
-    description: "The release year of the parent media item."
-    example: 2010

@@ -1,8 +1,0 @@
-type: object
-required:
-  - identifier
-properties:
-  identifier:
-    type: string
-    description: "An plugin identifier for the media container."
-    example: "com.plexapp.plugins.library"

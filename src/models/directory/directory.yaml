@@ -1,8 +1,0 @@
-type: object
-required:
-  - directory
-properties:
-  directory:
-    type: boolean
-    description: UNKNOWN
-    example: true

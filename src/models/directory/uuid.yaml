@@ -1,8 +1,0 @@
-type: object
-required:
-  - uuid
-properties:
-  uuid:
-    type: string
-    description: "The universally unique identifier for the library."
-    example: "e69655a2-ef48-4aba-bb19-01e7d3cc34d6"

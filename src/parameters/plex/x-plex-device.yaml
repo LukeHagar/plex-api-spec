@@ -1,8 +1,0 @@
-name: X-Plex-Device
-x-speakeasy-name-override: DeviceNickname
-description: A relatively friendly name for the client device
-in: header
-required: false
-schema:
-  type: string
-example: Roku 3

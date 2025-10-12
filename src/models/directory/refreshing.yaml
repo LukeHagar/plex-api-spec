@@ -1,8 +1,0 @@
-type: object
-required:
-  - refreshing
-properties:
-  refreshing:
-    type: boolean
-    description: "Indicates whether the library is currently being refreshed or updated"
-    example: true

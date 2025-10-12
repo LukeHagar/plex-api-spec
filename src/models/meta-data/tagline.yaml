@@ -1,8 +1,0 @@
-type: object
-required:
-  - tagline
-properties:
-  tagline:
-    type: string
-    description: "A brief tagline for the media item."
-    example: "Return to Pandora."

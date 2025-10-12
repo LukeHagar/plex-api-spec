@@ -1,8 +1,0 @@
-type: object
-required:
-  - type
-description: "The type of the marker"
-properties:
-  type:
-    type: string
-    example: "credits" 

@@ -1,6 +1,0 @@
-type: object
-properties:
-  DOVIELPresent:
-    type: boolean
-    description: "Indicates if Dolby Vision EL is present."
-    example: false

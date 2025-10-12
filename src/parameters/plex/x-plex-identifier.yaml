@@ -1,8 +1,0 @@
-name: X-Plex-Client-Identifier
-x-speakeasy-name-override: ClientID
-description: An opaque identifier unique to the client (UUID, serial number, or other unique device ID)
-required: true
-in: header
-schema:
-  type: string
-example: 3381b62b-9ab7-4e37-827b-203e9809eb58

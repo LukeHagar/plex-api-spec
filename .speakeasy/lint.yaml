@@ -4,7 +4,3 @@ rulesets:
   PathParamRuleset:
     rulesets:
       - speakeasy-generation # Use the speakeasy-generation ruleset as a base
-    rules:
-      path-params: {
-          severity: warn, # drop the severity of the `path-params` rule as I don't want this to block the pipeline
-      }

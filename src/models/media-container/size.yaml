@@ -1,9 +1,0 @@
-type: object
-required:
-  - size
-properties:
-  size:
-    description: "Number of media items returned in this response."
-    type: integer
-    format: int32
-    example: 50

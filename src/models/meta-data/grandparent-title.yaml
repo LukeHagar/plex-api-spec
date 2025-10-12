@@ -1,6 +1,0 @@
-type: object
-properties:
-  grandparentTitle:
-    type: string
-    description: "The title of the grandparent media item."
-    example: "Caprica"

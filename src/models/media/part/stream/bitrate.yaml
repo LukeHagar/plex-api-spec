@@ -1,7 +1,0 @@
-type: object
-properties:
-  bitrate:
-    type: integer
-    format: int32
-    description: "Bitrate of the stream."
-    example: 24743

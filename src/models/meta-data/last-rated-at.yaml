@@ -1,7 +1,0 @@
-type: object
-properties:
-  lastRatedAt:
-    type: integer
-    format: int64
-    description: "The Unix timestamp representing the last time the item was rated."
-    example: 1721813113

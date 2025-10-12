@@ -1,6 +1,0 @@
-type: object
-properties:
-  chromaLocation:
-    type: string
-    description: "Chroma sample location."
-    example: "topleft"

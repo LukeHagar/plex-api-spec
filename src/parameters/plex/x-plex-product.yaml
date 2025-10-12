@@ -1,8 +1,0 @@
-name: X-Plex-Product
-x-speakeasy-name-override: ClientName
-description: The name of the client application. (Plex Web, Plex Media Server, etc.)
-in: header
-required: false
-schema:
-  type: string
-example: Plex for Roku

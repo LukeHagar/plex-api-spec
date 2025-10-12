@@ -1,9 +1,0 @@
-type: string
-enum:
-  - "0"
-  - "1"
-example: "1"
-default: "0"
-x-speakeasy-enums:
-  - FALSE
-  - TRUE

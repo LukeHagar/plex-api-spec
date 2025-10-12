@@ -1,8 +1,0 @@
-type: object
-required:
-  - content
-properties:
-  content:
-    type: boolean
-    description: UNKNOWN
-    example: true

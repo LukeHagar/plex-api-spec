@@ -1,6 +1,0 @@
-type: object
-properties:
-  languageTag:
-    type: string
-    description: "Language tag (e.g., en)."
-    example: "en"

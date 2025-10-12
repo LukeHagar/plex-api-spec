@@ -1,7 +1,0 @@
-type: object
-properties:
-  videoFrameRate:
-    type: string
-    description: |
-      Frame rate of the video. Values found include NTSC, PAL, 24p
-    example: "24p"

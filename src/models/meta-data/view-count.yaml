@@ -1,7 +1,0 @@
-type: object
-properties:
-  viewCount:
-    type: integer
-    format: int32
-    description: "The number of times this media item has been viewed."
-    example: 1

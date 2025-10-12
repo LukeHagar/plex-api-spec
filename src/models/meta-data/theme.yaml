@@ -1,8 +1,0 @@
-type: object
-required:
-  - theme
-properties:
-  theme:
-    type: string
-    description: "The theme URL for the media item."
-    example: "/library/metadata/1/theme/1705636920"

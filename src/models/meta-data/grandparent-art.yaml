@@ -1,6 +1,0 @@
-type: object
-properties:
-  grandparentArt:
-    type: string
-    description: "The art URL for the grandparent media item."
-    example: "/library/metadata/66/art/1705716261"

@@ -1,8 +1,0 @@
-type: object
-required:
-  - ratingKey
-properties:
-  ratingKey:
-    type: string
-    description: "The rating key (Media ID) of this media item. Note: Although this is always an integer, it is represented as a string in the API."
-    example: "58683"

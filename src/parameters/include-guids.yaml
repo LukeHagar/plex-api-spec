@@ -1,6 +1,0 @@
-name: includeGuids
-in: query
-description: |
-  Adds the Guid object to the response
-schema:
-  $ref: "../models/common/PlexBoolean.yaml"

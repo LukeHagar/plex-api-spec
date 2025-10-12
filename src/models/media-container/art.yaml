@@ -1,8 +1,0 @@
-type: object
-required:
-  - art
-properties:
-  art:
-    type: string
-    description: "URL for the background artwork of the media container."
-    example: "/:/resources/show-fanart.jpg"

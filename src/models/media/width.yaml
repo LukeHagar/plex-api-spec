@@ -1,7 +1,0 @@
-type: object
-properties:
-  width:
-    type: integer
-    format: int32
-    description: "Video width in pixels."
-    example: 3840

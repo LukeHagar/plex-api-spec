@@ -1,6 +1,0 @@
-type: object
-properties:
-  hearingImpaired:
-    type: boolean
-    description: "Indicates if the stream is for the hearing impaired."
-    example: true

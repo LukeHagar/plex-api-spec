@@ -1,6 +1,0 @@
-type: object
-properties:
-  librarySectionID:
-    description: "The unique identifier of the library section containing this item."
-    type: integer
-    example: 3 

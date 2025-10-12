@@ -1,6 +1,0 @@
-type: object
-properties:
-  chapterSource:
-    type: string
-    description: "The source from which chapter data is derived."
-    example: "media"

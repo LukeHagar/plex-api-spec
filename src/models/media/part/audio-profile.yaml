@@ -1,6 +1,0 @@
-type: object
-properties:
-  audioProfile:
-    type: string
-    description: "The audio profile used for the media (e.g., DTS, Dolby Digital, etc.)."
-    example: "dts"

@@ -1,8 +1,0 @@
-type: object
-required:
-  - allowSync
-properties:
-  allowSync:
-    type: boolean
-    description: "Indicates whether syncing is allowed."
-    example: false

@@ -1,7 +1,0 @@
-name: sectionID
-in: query
-required: false
-description: The library section ID for filtering content.
-schema:
-  type: integer
-  example: 2

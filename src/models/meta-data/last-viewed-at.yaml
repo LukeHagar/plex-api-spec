@@ -1,7 +1,0 @@
-type: object
-properties:
-  lastViewedAt:
-    type: integer
-    format: int32
-    description: "Unix timestamp for when the media item was last viewed."
-    example: 1682752242

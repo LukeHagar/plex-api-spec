@@ -1,6 +1,0 @@
-type: object
-properties:
-  contentRating:
-    type: string
-    description: "The content rating for the media item."
-    example: "PG-13"

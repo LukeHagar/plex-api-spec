@@ -1,6 +1,0 @@
-type: object
-properties:
-  skipChildren:
-    type: boolean
-    description: "Indicates whether child items should be skipped."
-    example: false

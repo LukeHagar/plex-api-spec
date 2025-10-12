@@ -1,9 +1,0 @@
-type: object
-required:
-  - index
-properties:
-  index:
-    type: integer
-    format: int32
-    description: "The index position of the media item."
-    example: 1

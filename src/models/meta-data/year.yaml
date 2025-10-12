@@ -1,7 +1,0 @@
-type: object
-properties:
-  year:
-    type: integer
-    format: int32
-    description: "The release year of the media item."
-    example: 2022

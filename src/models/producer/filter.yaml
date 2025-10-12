@@ -1,8 +1,0 @@
-type: object
-required:
-  - filter
-properties:
-  filter:
-    description: "The filter string used to query this producer."
-    type: string
-    example: "producer=126522"

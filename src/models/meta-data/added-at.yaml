@@ -1,8 +1,0 @@
-type: object
-required:
-  - addedAt
-properties:
-  addedAt:
-    allOf:
-      - description: "Unix timestamp when the item was added."
-      - $ref: "../../models/common/PlexDateTime.yaml"

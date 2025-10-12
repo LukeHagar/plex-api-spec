@@ -1,8 +1,0 @@
-name: X-Plex-Features
-x-speakeasy-name-override: ClientFeatures
-description: The features of the client application. This is used to track the client application and its usage. (external-media,indirect-media,hub-style-list)
-in: header
-required: false
-schema:
-  type: string
-example: external-media,indirect-media,hub-style-list

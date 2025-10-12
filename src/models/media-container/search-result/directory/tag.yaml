@@ -1,5 +1,0 @@
-type: object
-properties:
-  tag:
-    type: string
-    example: "Ben Stiller"

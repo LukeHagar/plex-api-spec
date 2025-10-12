@@ -1,9 +1,0 @@
-type: object
-required:
-  - childCount
-properties:
-  childCount:
-    type: integer
-    format: int32
-    description: "The number of child items associated with this media item."
-    example: 1

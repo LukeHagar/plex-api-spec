@@ -1,7 +1,0 @@
-type: object
-required:
-  - type
-properties:
-  type:
-    allOf:
-      - $ref: "../common/PlexMediaTypeString.yaml"

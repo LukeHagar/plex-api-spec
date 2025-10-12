@@ -1,7 +1,0 @@
-type: object
-properties:
-  parentIndex:
-    type: integer
-    format: int32
-    description: "The index position of the parent media item."
-    example: 1

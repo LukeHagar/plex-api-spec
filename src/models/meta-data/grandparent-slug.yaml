@@ -1,6 +1,0 @@
-type: object
-properties:
-  grandparentSlug:
-    type: string
-    description: "The slug for the grandparent media item."
-    example: "alice-in-borderland-2020"

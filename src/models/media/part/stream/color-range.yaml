@@ -1,6 +1,0 @@
-type: object
-properties:
-  colorRange:
-    type: string
-    description: "Color range (e.g., tv)."
-    example: "tv"

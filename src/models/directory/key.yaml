@@ -1,8 +1,0 @@
-type: object
-required:
-  - key
-properties:
-  key:
-    type: string
-    description: The library key representing the unique identifier
-    example: "1"

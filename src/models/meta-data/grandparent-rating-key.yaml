@@ -1,6 +1,0 @@
-type: object
-properties:
-  grandparentRatingKey:
-    type: string
-    description: "The rating key of the grandparent media item."
-    example: "66"

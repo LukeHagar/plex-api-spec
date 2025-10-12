@@ -1,6 +1,0 @@
-type: object
-properties:
-  grandparentThumb:
-    type: string
-    description: "The thumbnail URL for the grandparent media item."
-    example: "/library/metadata/66/thumb/1705716261"

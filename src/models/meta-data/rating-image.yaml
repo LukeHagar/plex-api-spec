@@ -1,6 +1,0 @@
-type: object
-properties:
-  ratingImage:
-    type: string
-    description: "The URL for the rating image."
-    example: "rottentomatoes://image.rating.ripe"

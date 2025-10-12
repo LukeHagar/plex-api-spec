@@ -1,7 +1,0 @@
-type: object
-properties:
-  leafCount:
-    type: integer
-    format: int32
-    description: "The number of leaf items (end nodes) under this media item."
-    example: 14

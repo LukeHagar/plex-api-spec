@@ -1,8 +1,0 @@
-type: object
-required:
-  - guid
-properties:
-  guid:
-    type: string
-    description: "The globally unique identifier for the media item."
-    example: "plex://movie/5d7768ba96b655001fdc0408"

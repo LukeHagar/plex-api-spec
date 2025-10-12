@@ -1,8 +1,0 @@
-type: object
-required:
-  - id
-properties:
-  id:
-    type: integer
-    description: "Unique stream identifier."
-    example: 1002625

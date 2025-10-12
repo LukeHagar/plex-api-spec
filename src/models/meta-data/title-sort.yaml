@@ -1,8 +1,0 @@
-type: object
-required:
-  - titleSort
-properties:
-  titleSort:
-    type: string
-    description: "The sort title used for ordering media items."
-    example: "Whale"

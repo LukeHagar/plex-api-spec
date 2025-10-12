@@ -1,6 +1,0 @@
-type: object
-properties:
-  createdAtAccuracy:
-    type: string
-    description: "The accuracy of the creation timestamp. This value indicates the format(s) provided (for example, 'epoch,local' means both epoch and local time formats are available)."
-    example: "epoch,local"

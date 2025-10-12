@@ -1,8 +1,0 @@
-name: X-Plex-Model
-x-speakeasy-name-override: Model
-description: A potentially less friendly identifier for the device model
-in: header
-required: false
-schema:
-  type: string
-example: 4200X

@@ -1,8 +1,0 @@
-type: object
-required:
-  - audienceRating
-properties:
-  audienceRating:
-    type: number
-    description: "The audience rating for the media item."
-    example: 9.2

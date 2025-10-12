@@ -1,6 +1,0 @@
-type: object
-properties:
-  librarySectionKey:
-    description: "The path to access the library section containing this item."
-    type: string
-    example: "/library/sections/3" 

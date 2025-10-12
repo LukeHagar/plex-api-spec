@@ -1,8 +1,0 @@
-type: object
-required:
-  - language
-properties:
-  language:
-    type: string
-    description: The Plex library language that has been set
-    example: en-US

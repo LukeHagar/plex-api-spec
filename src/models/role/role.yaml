@@ -1,6 +1,0 @@
-type: object
-properties:
-  role:
-    description: "The role played by the actor in the media item."
-    type: string
-    example: "Self - Judge"

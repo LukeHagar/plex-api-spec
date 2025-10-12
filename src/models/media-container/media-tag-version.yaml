@@ -1,8 +1,0 @@
-type: object
-required:
-  - mediaTagVersion
-properties:
-  mediaTagVersion:
-    type: integer
-    description: "The version number for media tags."
-    example: 1734362201

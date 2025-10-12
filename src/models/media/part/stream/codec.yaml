@@ -1,6 +1,0 @@
-type: object
-properties:
-  codec:
-    type: string
-    description: "Codec used by the stream."
-    example: "hevc"

@@ -1,6 +1,0 @@
-type: object
-properties:
-  originalTitle:
-    type: string
-    description: "The original title of the media item (if different)."
-    example: "映画 ブラッククローバー 魔法帝の剣"

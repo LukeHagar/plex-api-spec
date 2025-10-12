@@ -1,8 +1,0 @@
-type: object
-required:
-  - librarySectionKey
-properties:
-  librarySectionKey:
-    type: integer
-    description: "The unique identifier for the library section."
-    example: 2

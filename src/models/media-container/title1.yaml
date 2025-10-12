@@ -1,8 +1,0 @@
-type: object
-required:
-  - title1
-properties:
-  title1:
-    type: string
-    description: "The primary title of the media container."
-    example: "TV Series"

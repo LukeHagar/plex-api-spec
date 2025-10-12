@@ -1,8 +1,0 @@
-type: object
-required:
-  - path
-description: "The folder path for the media item."
-properties:
-  path:
-    type: string
-    example: "/TV Shows/Clarkson's Farm"

@@ -1,8 +1,0 @@
-type: object
-required:
-  - tag
-properties:
-  tag:
-    type: string
-    description: The role of Director
-    example: Danny Boyle

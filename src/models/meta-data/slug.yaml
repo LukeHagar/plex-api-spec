@@ -1,8 +1,0 @@
-type: object
-required:
-  - slug
-properties:
-  slug:
-    type: string
-    description: "A URL‐friendly version of the media title."
-    example: "4-for-texas"

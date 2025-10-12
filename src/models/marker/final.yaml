@@ -1,6 +1,0 @@
-type: object
-description: "The final status of the marker"
-properties:
-  final:
-    type: boolean
-    example: true

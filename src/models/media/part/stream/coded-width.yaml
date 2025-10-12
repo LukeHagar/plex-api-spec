@@ -1,7 +1,0 @@
-type: object
-properties:
-  codedWidth:
-    type: integer
-    format: int32
-    description: "Coded video width."
-    example: 3840

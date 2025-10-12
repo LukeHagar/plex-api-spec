@@ -1,6 +1,0 @@
-type: object
-properties:
-  default:
-    type: boolean
-    description: "Indicates if this stream is default."
-    example: true

@@ -1,9 +1,0 @@
-type: object
-required:
-  - rating
-properties:
-  rating:
-    type: number
-    format: float
-    description: "The critic rating for the media item."
-    example: 7.6

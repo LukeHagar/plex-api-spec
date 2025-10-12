@@ -1,8 +1,0 @@
-type: object
-required:
-  - title2
-properties:
-  title2:
-    type: string
-    description: "The secondary title of the media container."
-    example: "By Starring Actor"

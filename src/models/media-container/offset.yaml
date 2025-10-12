@@ -1,8 +1,0 @@
-type: object
-required:
-  - offset
-properties:
-  offset:
-    type: integer
-    description: "Offset value for pagination."
-    example: 0

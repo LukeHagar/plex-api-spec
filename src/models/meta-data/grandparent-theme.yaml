@@ -1,6 +1,0 @@
-type: object
-properties:
-  grandparentTheme:
-    type: string
-    description: "The theme URL for the grandparent media item."
-    example: "/library/metadata/66/theme/1705716261"

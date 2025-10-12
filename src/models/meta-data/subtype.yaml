@@ -1,6 +1,0 @@
-type: object
-properties:
-  subtype:
-    type: string
-    description: "A classification that further describes the type of media item. For example, 'clip' indicates that the item is a short video clip."
-    example: "clip"

@@ -1,9 +1,0 @@
-type: object
-required:
-  - duration
-properties:
-  duration:
-    type: integer
-    format: int32
-    description: "The duration of the media item in milliseconds."
-    example: 11558112

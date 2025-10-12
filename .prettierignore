@@ -1,5 +1,8 @@
 # Ignore artifacts:
 build
 coverage
-output
-LICENSE.md
+
+package-lock.json
+package.json
+tsconfig.json
+README.md

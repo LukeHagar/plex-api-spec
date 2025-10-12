@@ -1,8 +1,0 @@
-type: object
-required:
-  - id
-description: "The identifier for the marker"
-properties:
-  id:
-    type: integer
-    example: 306970 

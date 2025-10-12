@@ -1,8 +1,0 @@
-type: object
-required:
-  - endTimeOffset
-description: "The end time offset for the marker"
-properties:
-  endTimeOffset:
-    type: integer
-    example: 4393389 

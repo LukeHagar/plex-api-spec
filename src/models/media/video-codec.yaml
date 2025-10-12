@@ -1,6 +1,0 @@
-type: object
-properties:
-  videoCodec:
-    type: string
-    description: "Video codec used."
-    example: "hevc"

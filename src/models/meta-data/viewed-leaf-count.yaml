@@ -1,7 +1,0 @@
-type: object
-properties:
-  viewedLeafCount:
-    type: integer
-    format: int32
-    description: "The number of leaf items that have been viewed."
-    example: 0

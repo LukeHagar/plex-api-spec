@@ -1,7 +1,0 @@
-type: object
-properties:
-  level:
-    type: integer
-    format: int32
-    description: "Video level."
-    example: 150

@@ -1,6 +1,0 @@
-name: minSize
-in: query
-required: true
-schema:
-  type: integer
-  example: 1

@@ -1,6 +1,0 @@
-type: object
-properties:
-  canAutoSync:
-    type: boolean
-    description: "Indicates if the stream can auto-sync."
-    example: false

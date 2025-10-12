@@ -1,7 +1,0 @@
-name: X-Plex-Token
-in: header
-description: An authentication token, obtained from plex.tv
-required: true
-schema:
-  type: string
-  example: CV5xoxjTpFKUzBTShsaf

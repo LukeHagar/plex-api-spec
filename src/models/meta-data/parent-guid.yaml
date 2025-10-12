@@ -1,6 +1,0 @@
-type: object
-properties:
-  parentGuid:
-    type: string
-    description: "The GUID of the parent media item."
-    example: "plex://show/5d9c081b170e24001f2a7be4"

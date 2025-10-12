@@ -1,6 +1,0 @@
-type: object
-properties:
-  videoProfile:
-    type: string
-    description: "Video profile (e.g., main 10)."
-    example: "main 10"

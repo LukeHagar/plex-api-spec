@@ -1,6 +1,0 @@
-type: object
-properties:
-  DOVIVersion:
-    type: string
-    description: "Dolby Vision version."
-    example: "1.0"

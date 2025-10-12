@@ -1,7 +1,0 @@
-name: X-Plex-Language
-description: The language of the client application.
-in: header
-required: false
-schema:
-  type: string
-example: "en"

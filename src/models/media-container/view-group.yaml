@@ -1,8 +1,0 @@
-type: object
-required:
-  - viewGroup
-properties:
-  viewGroup:
-    type: string
-    description: "Identifier for the view group layout."
-    example: "secondary"

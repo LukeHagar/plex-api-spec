@@ -1,6 +1,0 @@
-type: object
-properties:
-  format:
-    type: string
-    description: "Format of the stream (e.g., srt)."
-    example: "srt"

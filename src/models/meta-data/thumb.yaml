@@ -1,8 +1,0 @@
-type: object
-required:
-  - thumb
-properties:
-  thumb:
-    type: string
-    description: "The thumbnail image URL for the media item."
-    example: "/library/metadata/58683/thumb/1703239236"

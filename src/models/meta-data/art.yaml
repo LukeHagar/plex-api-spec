@@ -1,8 +1,0 @@
-type: object
-required:
-  - art
-properties:
-  art:
-    type: string
-    description: "The art image URL for the media item."
-    example: "/library/metadata/58683/art/1703239236"

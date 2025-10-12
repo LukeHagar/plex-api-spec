@@ -1,8 +1,0 @@
-type: object
-required:
-  - tag
-properties:
-  tag:
-    description: "The display tag for the actor (typically the actor's name)."
-    type: string
-    example: "Teller"

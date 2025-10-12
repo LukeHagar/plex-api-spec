@@ -1,7 +1,0 @@
-type: object
-properties:
-  viewOffset:
-    type: integer
-    format: int32
-    description: "The current playback offset (in milliseconds)."
-    example: 5222500

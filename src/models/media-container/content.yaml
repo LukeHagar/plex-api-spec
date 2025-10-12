@@ -1,8 +1,0 @@
-type: object
-required:
-  - content
-properties:
-  content:
-    type: string
-    description: "The content type or mode."
-    example: "secondary"

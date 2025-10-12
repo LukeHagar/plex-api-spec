@@ -1,8 +1,0 @@
-name: X-Plex-Device-Name
-x-speakeasy-name-override: DeviceName
-description: The name of the device the client application is running on. This is used to track the client application and its usage. (Chrome, Safari, etc.)
-in: header
-required: false
-schema:
-  type: string
-example: "Chrome"

@@ -1,7 +1,0 @@
-type: object
-properties:
-  originallyAvailableAt:
-    type: string
-    format: date
-    description: "The original release date of the media item."
-    example: "2022-12-14"

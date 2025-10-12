@@ -1,8 +1,0 @@
-type: object
-required:
-  - key
-properties:
-  key:
-    type: string
-    description: "The unique key for the media item."
-    example: "/library/metadata/58683"

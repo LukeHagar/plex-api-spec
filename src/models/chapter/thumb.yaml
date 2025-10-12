@@ -1,8 +1,0 @@
-type: object
-required:
-  - thumb
-description: "The thumbnail for the chapter"
-properties:
-  thumb:
-    type: string
-    example: "/library/media/46883/chapterImages/1" 

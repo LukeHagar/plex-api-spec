@@ -1,8 +1,0 @@
-name: X-Plex-Device-Vendor
-x-speakeasy-name-override: DeviceVendor
-description: The device vendor
-in: header
-required: false
-schema:
-  type: string
-example: Roku

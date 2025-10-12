@@ -1,9 +1,0 @@
-type: object
-required:
-  - tagKey
-properties:
-  tagKey:
-    description: "A unique 24-character hexadecimal key associated with the director's tag, used for internal identification."
-    type: string
-    pattern: "^[a-fA-F0-9]{24}$"
-    example: "5d776831151a60001f24d031"

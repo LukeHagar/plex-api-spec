@@ -1,8 +1,0 @@
-type: object
-required:
-  - tag
-properties:
-  tag:
-    type: string
-    description: The user-made collection this media item belongs to
-    example: My Awesome Collection

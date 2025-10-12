@@ -1,8 +1,0 @@
-type: object
-required:
-  - filter
-properties:
-  filter:
-    description: "The filter string used to query this actor. For example, it may indicate that this is an actor with a given key."
-    type: string
-    example: "actor=126522"

@@ -1,9 +1,0 @@
-type: object
-required:
-  - seasonCount
-properties:
-  seasonCount:
-    type: integer
-    format: int32
-    description: "The total number of seasons (for TV shows)."
-    example: 2022

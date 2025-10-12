@@ -1,7 +1,0 @@
-type: object
-properties:
-  refFrames:
-    type: integer
-    format: int32
-    description: "Number of reference frames."
-    example: 1

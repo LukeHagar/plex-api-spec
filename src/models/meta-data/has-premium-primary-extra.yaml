@@ -1,8 +1,0 @@
-type: object
-required:
-  - hasPremiumPrimaryExtra
-properties:
-  hasPremiumPrimaryExtra:
-    type: string
-    description: "Indicates if a premium primary extra is available (as a string value)."
-    example: "1"

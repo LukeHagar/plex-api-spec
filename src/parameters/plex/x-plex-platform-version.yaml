@@ -1,8 +1,0 @@
-name: X-Plex-Platform-Version
-x-speakeasy-name-override: PlatformVersion
-description: The version of the platform
-in: header
-required: false
-schema:
-  type: string
-example: 4.3 build 1057

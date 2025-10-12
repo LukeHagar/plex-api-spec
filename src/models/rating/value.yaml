@@ -1,9 +1,0 @@
-type: object
-required:
-  - value
-description: "The numerical rating value."
-properties:
-  value:
-    type: number
-    format: float
-    example: 5.1

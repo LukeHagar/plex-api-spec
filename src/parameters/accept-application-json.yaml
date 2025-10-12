@@ -1,9 +1,0 @@
-name: Accept
-in: header
-required: false
-schema:
-  type: string
-  enum:
-    - application/json
-    - application/xml
-  example: application/json

@@ -1,8 +1,0 @@
-type: object
-required:
-  - startTimeOffset
-description: "The start time offset for the chapter"
-properties:
-  startTimeOffset:
-    type: integer
-    example: 0 

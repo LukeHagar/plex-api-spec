@@ -1,8 +1,0 @@
-type: object
-required:
-  - agent
-properties:
-  agent:
-    type: string
-    description: The Plex agent used to match and retrieve media metadata.
-    example: tv.plex.agents.movie

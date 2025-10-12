@@ -1,6 +1,0 @@
-name: unwatchedLeaves
-in: query
-description: |
-  Adds the Meta object to the response
-schema:
-  $ref: "../models/common/PlexBoolean.yaml"

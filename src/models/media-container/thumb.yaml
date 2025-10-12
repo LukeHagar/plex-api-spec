@@ -1,8 +1,0 @@
-type: object
-required:
-  - thumb
-properties:
-  thumb:
-    type: string
-    description: "URL for the thumbnail image of the media container."
-    example: "/:/resources/show.png"

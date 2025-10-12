@@ -1,8 +1,0 @@
-type: object
-required:
-  - startTimeOffset
-description: "The start time offset for the marker"
-properties:
-  startTimeOffset:
-    type: integer
-    example: 4176050 

@@ -1,6 +1,0 @@
-type: object
-properties:
-  type:
-    description: "The type of the directory."
-    type: string
-    example: tag
