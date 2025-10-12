@@ -6,7 +6,7 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: https://{IP-description}.{identifier}.plex.direct:{port}
+  - url: "https://{IP-description}.{identifier}.plex.direct:{port}"
     variables:
       identifier:
         description: The unique identifier of this particular PMS
@@ -28,7 +28,7 @@ servers:
       port:
         description: "The Port number configured on the PMS. Typically (`32400`). \nIf using a reverse proxy, this would be the port number configured on the proxy.\n"
         default: '32400'
-  - url: "{server_url}"
+  - url: "{full_server_url}"
     variables:
       server_url:
         description: The full manual URL to access the PMS
