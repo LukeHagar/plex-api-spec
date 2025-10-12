@@ -34,7 +34,7 @@ servers:
         description: The full manual URL to access the PMS
         default: http://localhost:32400
 security:
-  - api_key:
+  - token:
       - shared user
       - admin
 x-speakeasy-globals:
@@ -771,7 +771,7 @@ paths:
       tags:
         - Butler
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -784,7 +784,7 @@ paths:
       tags:
         - Butler
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -833,7 +833,7 @@ paths:
       tags:
         - Butler
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -1286,7 +1286,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -1299,7 +1299,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -1520,7 +1520,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -1625,7 +1625,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -1717,7 +1717,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -1730,7 +1730,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -1770,7 +1770,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -1904,7 +1904,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -2306,7 +2306,7 @@ paths:
       tags:
         - Log
       security:
-        - api_key:
+        - token:
             - admin
       requestBody:
         required: true
@@ -2328,7 +2328,7 @@ paths:
       tags:
         - Log
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -2383,7 +2383,7 @@ paths:
       tags:
         - Log
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -2475,7 +2475,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -2500,7 +2500,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -2537,7 +2537,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -3159,7 +3159,7 @@ paths:
       tags:
         - Library Playlists
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -3608,7 +3608,7 @@ paths:
       tags:
         - Status
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -3653,7 +3653,7 @@ paths:
       tags:
         - Status
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -3820,7 +3820,7 @@ paths:
       tags:
         - Status
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -3870,7 +3870,7 @@ paths:
       tags:
         - Updater
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -3915,7 +3915,7 @@ paths:
       tags:
         - Updater
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -3945,7 +3945,7 @@ paths:
       tags:
         - Updater
       security:
-        - api_key:
+        - token:
             - admin
       responses:
         '200':
@@ -4577,7 +4577,7 @@ paths:
       tags:
         - Activities
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -4618,7 +4618,7 @@ paths:
       tags:
         - Butler
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -4676,7 +4676,7 @@ paths:
       tags:
         - Butler
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5168,7 +5168,7 @@ paths:
       tags:
         - Hubs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5204,7 +5204,7 @@ paths:
       tags:
         - Hubs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5310,7 +5310,7 @@ paths:
       tags:
         - Hubs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5372,7 +5372,7 @@ paths:
       tags:
         - Hubs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5455,7 +5455,7 @@ paths:
       tags:
         - Library Collections
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5500,7 +5500,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5619,7 +5619,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5660,7 +5660,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5730,7 +5730,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5772,7 +5772,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5807,7 +5807,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -5970,7 +5970,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6005,7 +6005,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6132,7 +6132,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6176,7 +6176,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6239,7 +6239,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6327,7 +6327,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6361,7 +6361,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6474,7 +6474,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6504,7 +6504,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6601,7 +6601,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6631,7 +6631,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6680,7 +6680,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6888,7 +6888,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -6997,7 +6997,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -7455,7 +7455,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -7785,7 +7785,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -7816,7 +7816,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -7922,7 +7922,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -7953,7 +7953,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8158,7 +8158,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8197,7 +8197,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8227,7 +8227,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8413,7 +8413,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8507,7 +8507,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8579,7 +8579,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8652,7 +8652,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8724,7 +8724,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8754,7 +8754,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8833,7 +8833,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8890,7 +8890,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -8928,7 +8928,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -9049,7 +9049,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -9125,7 +9125,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -9433,7 +9433,7 @@ paths:
       tags:
         - Subscriptions
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -10024,7 +10024,7 @@ paths:
       tags:
         - Status
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -10071,7 +10071,7 @@ paths:
       tags:
         - Status
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -10701,7 +10701,7 @@ paths:
       tags:
         - Hubs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -10747,7 +10747,7 @@ paths:
       tags:
         - Hubs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -10849,7 +10849,7 @@ paths:
       tags:
         - Library Collections
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -10898,7 +10898,7 @@ paths:
       tags:
         - Library Collections
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -11189,7 +11189,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -11287,7 +11287,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -11328,7 +11328,7 @@ paths:
       tags:
         - Library
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -11567,7 +11567,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -11639,7 +11639,7 @@ paths:
       tags:
         - DVRs
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -11867,7 +11867,7 @@ paths:
       tags:
         - Devices
       security:
-        - api_key:
+        - token:
             - admin
       parameters:
         - $ref: "#/components/parameters/accepts"
@@ -12749,7 +12749,7 @@ paths:
             text/html: {}
 components:
   securitySchemes:
-    api_key:
+    token:
       name: X-Plex-Token
       description: |
         The token which identifies the user accessing the PMS. This can be either:
