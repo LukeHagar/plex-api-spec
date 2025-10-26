@@ -30,7 +30,7 @@ servers:
         default: '32400'
   - url: "{full_server_url}"
     variables:
-      server_url:
+      full_server_url:
         description: The full manual URL to access the PMS
         default: http://localhost:32400
 security:
