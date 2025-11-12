@@ -1721,7 +1721,7 @@ paths:
             - admin
       responses:
         '200':
-          $ref: '#/components/responses/requestHandler_slash-get-responses-200'
+          $ref: '#/components/responses/LibrarySections'
   /library/sections/prefs:
     get:
       summary: Get section prefs
@@ -1757,7 +1757,7 @@ paths:
             type: string
       responses:
         '200':
-          $ref: '#/components/responses/requestHandler_slash-get-responses-200'
+          $ref: '#/components/responses/LibrarySections'
         '400':
           description: type not provided or not an integer
           content:
@@ -13425,7 +13425,7 @@ components:
                         type: string
                     type: object
             type: object
-    requestHandler_slash-get-responses-200:
+    LibrarySections:
       description: OK
       content:
         application/json:
