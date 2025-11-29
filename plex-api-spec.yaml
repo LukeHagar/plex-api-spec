@@ -14685,24 +14685,33 @@ components:
         `Media` represents an one or more media files (parts) and is a child of a metadata item. There aren't necessarily any guaranteed attributes on media elements since the attributes will vary based on the type. The possible attributes are not documented here, but they typically have self-evident names. High-level media information that can be used for badging and flagging, such as `videoResolution` and codecs, is included on the media element.
       type: object
       additionalProperties: true
+      required:
+        - id
       properties:
         aspectRatio:
           type: number
+          format: float
           example: 2.35
         audioChannels:
           type: integer
+          format: int32
           example: 2
         audioCodec:
+          type: string
           example: aac
         audioProfile:
+          type: string
           example: lc
         bitrate:
           type: integer
+          format: int32
           example: 5612
         container:
+          type: string
           example: mov
         duration:
           type: integer
+          format: int32
           example: 150192
         has64bitOffsets:
           type: boolean
@@ -14712,9 +14721,11 @@ components:
           example: true
         height:
           type: integer
+          format: int32
           example: 544
         id:
           type: integer
+          format: int64
           example: 1
         optimizedForStreaming:
           type: boolean
@@ -14724,15 +14735,20 @@ components:
           items:
             $ref: '#/components/schemas/Part'
         videoCodec:
+          type: string
           example: h264
         videoFrameRate:
+          type: string
           example: 24p
         videoProfile:
+          type: string
           example: main
         videoResolution:
+          type: string
           example: '720'
         width:
           type: integer
+          format: int32
           example: 1280
     MediaContainer:
       description: |
@@ -15162,38 +15178,58 @@ components:
         Metadata items can often live in a hierarchy with relationships between them.  For example, the metadata item for an episodes is associated with a season metadata item which is associated with a show metadata item.  A similar hierarchy exists with track, album, and artist and photos and photo album.  The relationships may be expressed via relative terms and absolute terms.  For example, "leaves" refer to metadata items which has associated media (there is no media for a season nor show).  A show will have "children" in the form of seasons and a season will have "children" in the form of episodes and episodes have "parent" in the form of a season which has a "parent" in the form of a show.  Similarly, a show has "grandchildren" in the form of episodse and an episode has a "grandparent" in the form of a show.
       type: object
       additionalProperties: true
+      required:
+       - addedAt
       properties:
         title:
           description: The title of the item (e.g. “300” or “The Simpsons”)
+          type: string
         type:
           description: The type of the video item, such as `movie`, `episode`, or `clip`.
+          type: string
         absoluteIndex:
           description: When present, contains the disc number for a track on multi-disc albums.
           type: integer
+          format: int32
         addedAt:
           description: In units of seconds since the epoch, returns the time at which the item was added to the library.
           type: integer
+          format: int64
         art:
           description: When present, the URL for the background artwork for the item.
+          type: string
+          example: "/library/metadata/58683/art/1703239236"
         audienceRating:
           description: Some rating systems separate reviewer ratings from audience ratings
           type: number
+          format: float
           minimum: 0
           maximum: 10
         audienceRatingImage:
           description: A URI representing the image to be shown with the audience rating (e.g. rottentomatoes://image.rating.spilled).
+          type: string
         Autotag:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
         banner:
           description: When present, the URL for a banner graphic for the item.
+          type: string
         chapterSource:
           description: When present, indicates the source for the chapters in the media file. Can be media (the chapters were embedded in the media itself), agent (a metadata agent computed them), or mixed (a combination of the two).
+          type: string
+          example: "media"
+        childCount:
+          type: integer
+          format: int32
+          description: "The number of child items associated with this media item."
+          example: 1
         composite:
           description: When present, the URL for a composite image for descendent items (e.g. photo albums or playlists).
+          type: string
         contentRating:
           description: If known, the content rating (e.g. MPAA) for an item.
+          type: string
         Country:
           type: array
           items:
@@ -15205,6 +15241,7 @@ components:
         duration:
           description: When present, the duration for the item, in units of milliseconds.
           type: integer
+          format: int32
         Filter:
           description: Typically only seen in metadata at a library's top level
           type: array
@@ -15217,6 +15254,10 @@ components:
         grandparentArt:
           description: The `art` of the grandparent
           type: string
+        grandparentGuid:
+          type: string
+          description: "The GUID of the grandparent media item."
+          example: "plex://show/5d9c081b170e24001f2a7be4"
         grandparentHero:
           description: The `hero` of the grandparent
           type: string
@@ -15235,12 +15276,36 @@ components:
         grandparentTitle:
           description: The `title` of the grandparent
           type: string
+        guid:
+          type: string
+          description: "The globally unique identifier for the media item."
+          example: "plex://movie/5d7768ba96b655001fdc0408"
         Guid:
+          x-speakeasy-name-override: guids
           type: array
           items:
-            $ref: '#/components/schemas/Tag'
+            type: object
+            required:
+              - id
+            properties:
+              id:
+                type: string
+                description: |
+                  The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
+                pattern: "^(imdb|tmdb|tvdb)://.+$"
+                example:
+                  imdbExample:
+                    summary: IMDB example
+                    value: imdb://tt13015952
+                  tmdbExample:
+                    summary: TMDB example
+                    value: tmdb://2434012
+                  tvdbExample:
+                    summary: TVDB example
+                    value: tvdb://7945991
         hero:
           description: When present, the URL for a hero image for the item.
+          type: string
         Image:
           type: array
           items:
@@ -15248,28 +15313,41 @@ components:
         index:
           description: When present, this represents the episode number for episodes, season number for seasons, or track number for audio tracks.
           type: integer
+          format: int32
         key:
           description: The key at which the item's details can be fetched.  In many cases a metadata item may be passed without all the details (such as in a hub) and this key corresponds to the endpoint to fetch additional details.
+          type: string
         lastViewedAt:
-          description: When a user has watched or listened to an item, this contains a timestamp (epoch seconds) for that last consumption time.
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
+          - description: When a user has watched or listened to an item, this contains a timestamp (epoch seconds) for that last consumption time.
         leafCount:
           description: For shows and seasons, contains the number of total episodes.
           type: integer
+          format: int32
         Media:
           type: array
           items:
             $ref: '#/components/schemas/Media'
         originallyAvailableAt:
           description: When present, in the format YYYY-MM-DD [HH:MM:SS] (the hours/minutes/seconds part is not always present). The air date, or a higher resolution release date for an item, depending on type. For example, episodes usually have air date like 1979-08-10 (we don't use epoch seconds because media existed prior to 1970). In some cases, recorded over-the-air content has higher resolution air date which includes a time component. Albums and movies may have day-resolution release dates as well.
+          type: string
+          format: date
+          example: "2022-12-14"
         originalTitle:
           description: When present, used to indicate an item's original title, e.g. a movie's foreign title.
+          type: string
+        parentGuid:
+          type: string
+          description: "The GUID of the parent media item."
+          example: "plex://show/5d9c081b170e24001f2a7be4"
         parentHero:
           description: The `hero` of the parent
           type: string
         parentIndex:
           description: The `index` of the parent
           type: integer
+          format: int32
         parentKey:
           description: The `key` of the parent
           type: string
@@ -15284,12 +15362,14 @@ components:
           type: string
         primaryExtraKey:
           description: Indicates that the item has a primary extra; for a movie, this is a trailer, and for a music track it is a music video. The URL points to the metadata details endpoint for the item.
+          type: string
         prompt:
           description: Prompt to give the user for this directory (such as `Search Movies`)
           type: string
         rating:
           description: When present, the rating for the item. The exact meaning and representation depends on where the rating was sourced from.
           type: number
+          format: float
           minimum: 0
           maximum: 10
         Rating:
@@ -15300,10 +15380,13 @@ components:
         ratingCount:
           description: Number of ratings under this metadata
           type: integer
+          format: int32
         ratingImage:
           description: When present, indicates an image to be shown with the rating. This is passed back as a small set of defined URI values, e.g. rottentomatoes://image.rating.rotten.
+          type: string
         ratingKey:
           description: This is the opaque string to be passed into timeline, scrobble, and rating endpoints to identify them.  While it often appears to be numeric, this is not guaranteed.
+          type: string
         Role:
           type: array
           items:
@@ -15327,35 +15410,48 @@ components:
             $ref: '#/components/schemas/Sort'
         studio:
           description: When present, the studio or label which produced an item (e.g. movie studio for movies, record label for albums).
+          type: string
         subtype:
           description: The subtype of the video item, such as `photo` when the video item is in a photo library
+          type: string
         summary:
           description: When present, the extended textual information about the item (e.g. movie plot, artist biography, album review).
+          type: string
         tagline:
           description: When present, a pithy one-liner about the item (usually only seen for movies).
+          type: string
         theme:
           description: When present, the URL for theme music for the item (usually only for TV shows).
+          type: string
+          example: "/library/metadata/1/theme/1705636920"
         thumb:
           description: When present, the URL for the poster or thumbnail for the item. When available for types like movie, it will be the poster graphic, but fall-back to the extracted media thumbnail.
+          type: string
+          example: "/library/metadata/58683/thumb/1703239236"
         titleSort:
           description: Whene present, this is the string used for sorting the item. It's usually the title with any leading articles removed (e.g. “Simpsons”).
+          type: string
         updatedAt:
           description: In units of seconds since the epoch, returns the time at which the item was last changed (e.g. had its metadata updated).
           type: integer
         userRating:
           description: When the user has rated an item, this contains the user rating
           type: number
+          format: float
           minimum: 0
           maximum: 10
         viewCount:
           description: When a users has completed watched or listened to an item, this attribute contains the number of consumptions.
           type: integer
+          format: int32
         viewedLeafCount:
           description: For shows and seasons, contains the number of viewed episodes.
           type: integer
+          format: int32
         viewOffset:
           description: When a user is in the process of viewing or listening to this item, this attribute contains the current offset, in units of milliseconds.
           type: integer
+          format: int32
         Writer:
           type: array
           items:
@@ -15363,32 +15459,54 @@ components:
         year:
           description: When present, the year associated with the item's release (e.g. release year for a movie).
           type: integer
+          format: int32
     Part:
       description: |
         `Part` represents a particular file or "part" of a media item. The part is the playable unit of the media hierarchy. Suppose that a movie library contains a movie that is broken up into files, reminiscent of a movie split across two BDs. The metadata item represents information about the movie, the media item represents this instance of the movie at this resolution and quality, and the part items represent the two playable files.  If another media were added which contained the joining of these two parts transcoded down to a lower resolution, then this metadata would contain 2 medias, one with 2 parts and one with 1 part.
       type: object
       additionalProperties: true
+      required:
+        - id
+        - key
       properties:
+        accessible:
+          type: boolean
+          description: "Indicates if the part is accessible."
+          example: true
         audioProfile:
+          type: string
           example: lc
         container:
           description: The container of the media file, such as `mp4` or `mkv`
+          type: string
           example: mov
         duration:
           description: The duration of the media item, in milliseconds
           type: integer
+          format: int32
           example: 150192
+        exists:
+          type: boolean
+          description: "Indicates if the part exists."
+          example: true
         file:
           description: The local file path at which the part is stored on the server
+          type: string
           example: /home/schuyler/Videos/Trailers/Cloud Atlas (2012).mov
         has64bitOffsets:
           type: boolean
           example: false
         id:
           type: integer
+          format: int64
           example: 1
+        indexes:
+          type: string
+          example: "sd"
         key:
           description: The key from which the media can be streamed
+          type: integer
+          format: int32
           example: /library/parts/1/1531779263/file.mov
         optimizedForStreaming:
           type: boolean
@@ -15396,12 +15514,14 @@ components:
         size:
           description: The size of the media, in bytes
           type: integer
+          format: int64
           example: 105355654
         Stream:
           type: array
           items:
             $ref: '#/components/schemas/Stream'
         videoProfile:
+          type: string
           example: main
     Player:
       description: Information about the player being used for playback
@@ -15786,90 +15906,123 @@ components:
         `Stream` represents a particular stream from a media item, such as the video stream, audio stream, or subtitle stream. The stream may either be part of the file represented by the parent `Part` or, especially for subtitles, an external file. The stream contains more detailed information about the specific stream. For example, a video may include the `aspectRatio` at the `Media` level, but detailed information about the video stream like the color space will be included on the `Stream` for the video stream.  Note that photos do not have streams (mostly as an optimization).
       type: object
       additionalProperties: true
+      required:
+        - id
+        - key
+        - codec
+        - displayTitle
       properties:
         default:
           type: boolean
           example: true
         audioChannelLayout:
+          type: string
           example: stereo
         bitDepth:
           type: integer
+          format: int32
           example: 8
         bitrate:
           type: integer
+          format: int32
           example: 5466
         canAutoSync:
           description: For subtitle streams only. If `true` then the server can attempt to automatically sync the subtitle timestamps with the video.
           type: boolean
           example: true
         chromaLocation:
+          type: string
           example: topleft
         chromaSubsampling:
+          type: string
           example: '4:2:0'
         codec:
           description: The codec of the stream, such as `h264` or `aac`
+          type: string
           example: h264
         colorPrimaries:
+          type: string
           example: bt709
         colorRange:
+          type: string
           example: tv
         colorSpace:
+          type: string
           example: bt709
         colorTrc:
+          type: string
           example: bt709
         displayTitle:
           description: A friendly name for the stream, often comprised of the language and codec information
+          type: string
           example: English (H.264 Main)
         frameRate:
           type: number
+          format: float
           example: 23.976
         hasScalingMatrix:
+          type: boolean
           example: false
         height:
           type: integer
+          format: int32
           example: 544
         id:
           type: integer
+          format: int32
           example: 1
         index:
           description: If the stream is part of the `Part` and not an external resource, the index of the stream within that part
           type: integer
+          format: int32
           example: 0
         key:
           description: If the stream is independently streamable, the key from which it can be streamed
+          type: string
           example: /library/streams/1
         language:
+          type: string
           example: English
         languageCode:
           description: The three character language code for the stream contents
+          type: string
           example: eng
         level:
           type: integer
+          format: int32
           example: 31
         profile:
+          type: string
           example: main
         refFrames:
           type: integer
+          format: int32
           example: 2
         samplingRate:
           type: integer
+          format: int32
           example: 48000
         selected:
           type: boolean
         streamIdentifier:
           type: integer
+          format: int32
           example: 1
         streamType:
           description: A number indicating the type of the stream. `1` for video, `2` for audio, `3` for subtitles, `4` for lyrics
           type: integer
+          format: int32
           example: 1
         width:
           type: integer
+          format: int32
           example: 1280
     Tag:
       description: |
         A variety of extra information about a metadata item is included as tags. These tags use their own element names such as `Genre`, `Writer`, `Directory`, and `Role`. Individual tag types may introduce their own extra attributes.
       type: object
+      required:
+        - tag
       properties:
         confidence:
           description: Measure of the confidence of an automatic tag
@@ -15878,23 +16031,32 @@ components:
           type: string
         filter:
           description: A filter parameter that can be used to query for more content that matches this tag value.
+          type: string
           example: actor=49
         id:
           type: integer
+          format: int32
         ratingKey:
+          description: "The rating key (Media ID) of this media item. Note: Although this is always an integer, it is represented as a string in the API."
           type: string
+          example: "58683"
         role:
           description: The role this actor played
+          type: string
           example: Secretary
         tag:
           description: The value of the tag (the name)
+          type: string
           example: Shaun Lawton
         tagKey:
           description: Plex identifier for this tag which can be used to fetch additional information from plex.tv
+          type: string
           example: 5d3ee12c4cde6a001c3e0b27
         tagType:
           type: integer
+          format: int32
         thumb:
+          type: string
           example: http://image.tmdb.org/t/p/original/lcJ8qM51ClAR2UzXU1mkZGfnn3o.jpg
     Thumb:
       type: string
