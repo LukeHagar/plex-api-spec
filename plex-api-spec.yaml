@@ -7894,25 +7894,36 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Device-Vendor"
         - $ref: "#/components/parameters/X-Plex-Device-Name"
         - $ref: "#/components/parameters/X-Plex-Marketplace"
+        - $ref: "#/components/parameters/X-Plex-Container-Start"
+        - $ref: "#/components/parameters/X-Plex-Container-Size"
         - $ref: '#/components/parameters/mediaQuery'
+        - name: includeMeta
+          in: query
+          description: |
+            Adds the Meta object to the response
+          schema:
+            $ref: "#/components/schemas/BoolInt"
+        - name: includeGuids
+          in: query
+          description: |
+            Adds the Guid object to the response
+          schema:
+            $ref: "#/components/schemas/BoolInt"
         - name: sectionId
           description: The id of the section
           in: path
           required: true
           schema:
             type: string
+
       responses:
         '200':
           description: OK
           headers:
             X-Plex-Container-Start:
-              description: Provided on all MediaContainer objects indicating the offset of where this container page starts
-              schema:
-                type: integer
+              $ref: '#/components/headers/X-Plex-Container-Start'
             X-Plex-Container-Total-Size:
-              description: Provided on all MediaContainer objects indicating the total size of objects available
-              schema:
-                type: integer
+              $ref: '#/components/headers/X-Plex-Container-Total-Size'
           content:
             application/json:
               schema:
@@ -13664,10 +13675,28 @@ components:
       example: 0
     mediaQuery:
       name: mediaQuery
-      description: This is a complex query built of several parameters.  See [API Info section](#section/API-Info/Media-Queries) for information on building media queries
+      description: |
+        A querystring-based filtering language used to select subsets of media. Can be provided as an object with typed properties for type safety, or as a string for complex queries with operators and boolean logic.
+        
+        The query supports:
+        - Fields: integer, boolean, tag, string, date, language
+        - Operators: =, !=, ==, !==, <=, >=, >>=, <<= (varies by field type)
+        - Boolean operators: & (AND), , (OR), push/pop (parentheses), or=1 (explicit OR)
+        - Sorting: sort parameter with :desc, :nullsLast modifiers
+        - Grouping: group parameter
+        - Limits: limit parameter
+        
+        Examples:
+        - Object format: `{type: 4, sourceType: 2, title: "24"}` → `type=4&sourceType=2&title=24`
+        - String format: `type=4&sourceType=2&title==24` - type = 4 AND sourceType = 2 AND title = "24"
+        - Complex: `push=1&index=1&or=1&rating=2&pop=1&duration=10` - (index = 1 OR rating = 2) AND duration = 10
+        
+        See [API Info section](#section/API-Info/Media-Queries) for detailed information on building media queries.
       in: query
       schema:
-        type: object
+        $ref: '#/components/schemas/MediaQuery'
+      style: form
+      explode: true
     musicBitrate:
       name: musicBitrate
       description: Target bitrate for audio only files (in kbps, used to transcode).
@@ -13788,10 +13817,24 @@ components:
           - subtitles
     type:
       name: type
-      description: The metadata type to filter by
+      description: |
+        The type of media to retrieve or filter by.
+        
+        1 = movie
+        2 = show
+        3 = season
+        4 = episode
+        5 = artist
+        6 = album
+        7 = track
+        8 = photo_album
+        9 = photo
+        
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
       in: query
       schema:
-        type: integer
+        $ref: '#/components/schemas/MediaType'
+      example: 2
     videoBitrate:
       name: videoBitrate
       description: Target video bitrate (in kbps).
@@ -13935,6 +13978,32 @@ components:
         type: string
         example: googlePlay
       example: googlePlay
+    X-Plex-Container-Start:
+      name: X-Plex-Container-Start
+      in: query
+      description: |
+        The index of the first item to return. If not specified, the first item will be returned.
+        If the number of items exceeds the limit, the response will be paginated.
+        By default this is 0
+      schema:
+        type: integer
+        format: int32
+        default: 0
+      example: 0
+      required: false
+    X-Plex-Container-Size:
+      name: X-Plex-Container-Size
+      in: query
+      description: |
+        The number of items to return. If not specified, all items will be returned.
+        If the number of items exceeds the limit, the response will be paginated.
+        By default this is 50
+      schema:
+        type: integer
+        format: int32
+        default: 50
+      example: 50
+      required: false
   headers:
     X-Plex-Container-Start:
       description: Provided on all MediaContainer objects indicating the offset of where this container page starts
@@ -14267,6 +14336,43 @@ components:
       x-speakeasy-enums:
         - FALSE
         - TRUE
+    MediaType:
+      description: |
+        The type of media to retrieve or filter by.
+        
+        1 = movie
+        2 = show
+        3 = season
+        4 = episode
+        5 = artist
+        6 = album
+        7 = track
+        8 = photo_album
+        9 = photo
+        
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+      example: 2
+      x-speakeasy-enums:
+        - MOVIE
+        - TV_SHOW
+        - SEASON
+        - EPISODE
+        - ARTIST
+        - ALBUM
+        - TRACK
+        - PHOTO_ALBUM
+        - PHOTO
     Channel:
       type: object
       properties:
@@ -16527,6 +16633,34 @@ components:
           items:
             type: string
           example: null
+    MediaQuery:
+      description: |
+        A querystring-based filtering language used to select subsets of media. When provided as an object, properties are serialized as a querystring using form style with explode.
+        
+        Only the defined properties below are allowed. The object serializes to a querystring format like: `type=4&sourceType=2&sort=duration:desc,index`
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          description: |
+            The type of media to retrieve or filter by.
+          $ref: '#/components/schemas/MediaType'
+        sourceType:
+          description: Change the default level to which fields refer (used with type for hierarchical queries)
+          type: integer
+        sort:
+          description: Field(s) to sort by, with optional modifiers. Use comma to separate multiple fields, and :desc or :nullsLast for modifiers (e.g., "duration:desc,index")
+          type: string
+        group:
+          description: Field to group results by (similar to SQL GROUP BY)
+          type: string
+        limit:
+          description: Maximum number of results to return
+          type: integer
+      example:
+        type: 4
+        sourceType: 2
+        sort: "duration:desc,index"
     User:
       description: The user playing the content
       type: object
