@@ -4741,19 +4741,11 @@ paths:
                                 - 'null'
                             renewsAt:
                               oneOf:
-                                - type:
-                                    - integer
-                                  example: 1556281940
-                                  description: Unix epoch datetime in seconds
-                                  format: int64
+                                - $ref: '#/components/schemas/PlexDateTime'
                                 - type: 'null'
                             endsAt:
                               oneOf:
-                                - type:
-                                    - integer
-                                  example: 1556281940
-                                  description: Unix epoch datetime in seconds
-                                  format: int64
+                                - $ref: '#/components/schemas/PlexDateTime'
                                 - type: 'null'
                             canceled:
                               type: boolean
@@ -5135,13 +5127,7 @@ paths:
                                     description: Name of the Plex server of the connected user.
                                     example: ConnectedUserFlix
                                   lastSeenAt:
-                                    allOf:
-                                      - description: Timestamp of the last time the server was seen.
-                                      - type:
-                                          - integer
-                                        example: 1556281940
-                                        description: Unix epoch datetime in seconds
-                                        format: int64
+                                    $ref: '#/components/schemas/PlexDateTime'
                                   numLibraries:
                                     type: integer
                                     description: Number of libraries in the server this user has access to.
@@ -15887,19 +15873,11 @@ components:
           description: Unknown
         adsConsentReminderAt:
           oneOf:
-            - type:
-                - integer
-              example: 1556281940
-              description: Unix epoch datetime in seconds
-              format: int64
+            - $ref: '#/components/schemas/PlexDateTime'
             - type: 'null'
         adsConsentSetAt:
           oneOf:
-            - type:
-                - integer
-              example: 1556281940
-              description: Unix epoch datetime in seconds
-              format: int64
+            - $ref: '#/components/schemas/PlexDateTime'
             - type: 'null'
         anonymous:
           type:
@@ -15975,11 +15953,7 @@ components:
           example: 13692262
           format: int32
         joinedAt:
-          type:
-            - integer
-          example: 1556281940
-          description: Unix epoch datetime in seconds
-          format: int64
+          $ref: '#/components/schemas/PlexDateTime'
         locale:
           type:
             - string
@@ -16013,11 +15987,7 @@ components:
           description: If the account has a Plex Home PIN enabled
           default: false
         rememberExpiresAt:
-          type:
-            - integer
-          example: 1556281940
-          description: Unix epoch datetime in seconds
-          format: int64
+          $ref: '#/components/schemas/PlexDateTime'
         restricted:
           type: boolean
           description: If the account is a Plex Home managed user
@@ -16379,6 +16349,12 @@ components:
             - string
             - 'null'
           example: null
+    PlexDateTime:
+      type:
+        - integer
+      example: 1556281940
+      description: Unix epoch datetime in seconds
+      format: int64
     UserProfile:
       title: UserProfile
       type: object
