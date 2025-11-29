@@ -4569,6 +4569,87 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+  /user:
+    get:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      tags:
+        - Authentication
+      summary: Get Token Details
+      description: Get the User data from the provided X-Plex-Token
+      operationId: getTokenDetails
+      parameters:
+        - $ref: "#/components/parameters/accepts"
+        - $ref: "#/components/parameters/X-Plex-Client-Identifier"
+        - $ref: "#/components/parameters/X-Plex-Product"
+        - $ref: "#/components/parameters/X-Plex-Version"
+        - $ref: "#/components/parameters/X-Plex-Platform"
+        - $ref: "#/components/parameters/X-Plex-Platform-Version"
+        - $ref: "#/components/parameters/X-Plex-Device"
+        - $ref: "#/components/parameters/X-Plex-Model"
+        - $ref: "#/components/parameters/X-Plex-Device-Vendor"
+        - $ref: "#/components/parameters/X-Plex-Device-Name"
+        - $ref: "#/components/parameters/X-Plex-Marketplace"
+      security:
+        - token:
+            - admin
+      responses:
+        '200':
+          description: Logged in user details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPlexAccount'
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
   /users/signin:
     post:
       servers:
@@ -4622,640 +4703,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - title: UserPlexAccount
-                    type: object
-                    required:
-                      - adsConsent
-                      - adsConsentReminderAt
-                      - adsConsentSetAt
-                      - anonymous
-                      - authToken
-                      - backupCodesCreated
-                      - confirmed
-                      - country
-                      - email
-                      - emailOnlyAuth
-                      - experimentalFeatures
-                      - friendlyName
-                      - entitlements
-                      - guest
-                      - hasPassword
-                      - home
-                      - homeAdmin
-                      - homeSize
-                      - id
-                      - joinedAt
-                      - locale
-                      - mailingListActive
-                      - mailingListStatus
-                      - maxHomeSize
-                      - profile
-                      - protected
-                      - rememberExpiresAt
-                      - restricted
-                      - scrobbleTypes
-                      - services
-                      - subscription
-                      - subscriptionDescription
-                      - thumb
-                      - title
-                      - twoFactorEnabled
-                      - username
-                      - uuid
-                      - attributionPartner
-                    properties:
-                      adsConsent:
-                        type:
-                          - boolean
-                          - 'null'
-                        description: Unknown
-                      adsConsentReminderAt:
-                        oneOf:
-                          - type:
-                              - integer
-                            example: 1556281940
-                            description: Unix epoch datetime in seconds
-                            format: int64
-                          - type: 'null'
-                      adsConsentSetAt:
-                        oneOf:
-                          - type:
-                              - integer
-                            example: 1556281940
-                            description: Unix epoch datetime in seconds
-                            format: int64
-                          - type: 'null'
-                      anonymous:
-                        type:
-                          - boolean
-                          - 'null'
-                        description: Unknown
-                        default: false
-                      authToken:
-                        type: string
-                        description: The account token
-                        example: CxoUzBTSV5hsxjTpFKaf
-                      backupCodesCreated:
-                        type: boolean
-                        description: If the two-factor authentication backup codes have been created
-                        default: false
-                      confirmed:
-                        type: boolean
-                        description: If the account has been confirmed
-                        default: false
-                      country:
-                        type: string
-                        description: The account country
-                        example: US
-                        maxLength: 2
-                        minLength: 2
-                      email:
-                        type: string
-                        description: The account email address
-                        format: email
-                        example: username@email.com
-                      emailOnlyAuth:
-                        type: boolean
-                        description: If login with email only is enabled
-                        default: false
-                      experimentalFeatures:
-                        type: boolean
-                        description: If experimental features are enabled
-                        default: false
-                      friendlyName:
-                        type: string
-                        description: Your account full name
-                        example: friendlyUsername
-                      entitlements:
-                        type: array
-                        description: List of devices your allowed to use with this account
-                        items:
-                          type: string
-                          example: '[]'
-                      guest:
-                        type: boolean
-                        description: If the account is a Plex Home guest user
-                        default: false
-                      hasPassword:
-                        type: boolean
-                        description: If the account has a password
-                        default: true
-                      home:
-                        type: boolean
-                        description: If the account is a Plex Home user
-                        default: false
-                      homeAdmin:
-                        type: boolean
-                        description: If the account is the Plex Home admin
-                        default: false
-                      homeSize:
-                        type: integer
-                        description: The number of accounts in the Plex Home
-                        example: 1
-                        format: int32
-                      id:
-                        type: integer
-                        description: The Plex account ID
-                        example: 13692262
-                        format: int32
-                      joinedAt:
-                        type:
-                          - integer
-                        example: 1556281940
-                        description: Unix epoch datetime in seconds
-                        format: int64
-                      locale:
-                        type:
-                          - string
-                          - 'null'
-                        description: The account locale
-                      mailingListActive:
-                        type: boolean
-                        description: If you are subscribed to the Plex newsletter
-                        default: false
-                      mailingListStatus:
-                        description: Your current mailing list status (active or unsubscribed)
-                        type: string
-                        example: active
-                        x-speakeasy-unknown-values: allow
-                        enum:
-                          - active
-                          - unsubscribed
-                      maxHomeSize:
-                        type: integer
-                        description: The maximum number of accounts allowed in the Plex Home
-                        example: 15
-                        format: int32
-                      pin:
-                        type: string
-                        description: '[Might be removed] The hashed Plex Home PIN '
-                        deprecated: true
-                      profile:
-                        title: UserProfile
-                        type: object
-                        required:
-                          - autoSelectAudio
-                          - defaultAudioLanguage
-                          - defaultSubtitleLanguage
-                          - autoSelectSubtitle
-                          - defaultSubtitleAccessibility
-                          - defaultSubtitleForced
-                          - watchedIndicator
-                          - mediaReviewsVisibility
-                        properties:
-                          autoSelectAudio:
-                            description: If the account has automatically select audio and subtitle tracks enabled
-                            type: boolean
-                            example: true
-                            default: true
-                          defaultAudioLanguage:
-                            description: The preferred audio language for the account
-                            type:
-                              - string
-                              - 'null'
-                            example: ja
-                          defaultSubtitleLanguage:
-                            description: The preferred subtitle language for the account
-                            type:
-                              - string
-                              - 'null'
-                            example: en
-                          autoSelectSubtitle:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
-                          defaultSubtitleAccessibility:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only show non-SDH subtitles)'
-                          defaultSubtitleForced:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
-                          watchedIndicator:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: Whether or not media watched indicators are enabled (little orange dot on media)
-                          mediaReviewsVisibility:
-                            allOf:
-                              - type: integer
-                                format: int32
-                                enum:
-                                  - 0
-                                  - 1
-                                example: 1
-                                default: 0
-                                x-speakeasy-enums:
-                                  - DISABLE
-                                  - ENABLE
-                              - description: Whether or not the account has media reviews visibility enabled
-                      protected:
-                        type: boolean
-                        description: If the account has a Plex Home PIN enabled
-                        default: false
-                      rememberExpiresAt:
-                        type:
-                          - integer
-                        example: 1556281940
-                        description: Unix epoch datetime in seconds
-                        format: int64
-                      restricted:
-                        type: boolean
-                        description: If the account is a Plex Home managed user
-                        default: false
-                      roles:
-                        type: array
-                        description: '[Might be removed] List of account roles. Plexpass membership listed here'
-                        items:
-                          type: string
-                      scrobbleTypes:
-                        type: string
-                        description: Unknown
-                      services:
-                        type: array
-                        items:
-                          type: object
-                          required:
-                            - identifier
-                            - endpoint
-                            - token
-                            - secret
-                            - status
-                          properties:
-                            identifier:
-                              type: string
-                              example: metadata-dev
-                            endpoint:
-                              type: string
-                              example: 'https://epg.provider.plex.tv'
-                              format: uri
-                            token:
-                              type:
-                                - string
-                                - 'null'
-                              example: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
-                            secret:
-                              type:
-                                - string
-                                - 'null'
-                            status:
-                              example: online
-                              x-speakeasy-unknown-values: allow
-                              enum:
-                                - online
-                                - offline
-                      subscription:
-                        description: If the account's Plex Pass subscription is active
-                        title: Subscription
-                        type: object
-                        properties:
-                          features:
-                            description: List of features allowed on your Plex Pass subscription
-                            type: array
-                            items:
-                              type: string
-                              description: |
-                                - Android - Dolby Vision
-                                - Android - PiP
-                                - CU Sunset
-                                - HRK_enable_EUR
-                                - TREBLE-show-features
-                                - ad-countdown-timer
-                                - adaptive_bitrate
-                                - album-types
-                                - allow_dvr
-                                - amazon-loop-debug
-                                - avod-ad-analysis
-                                - avod-new-media
-                                - blacklist_get_signin
-                                - boost-voices
-                                - camera_upload
-                                - client-radio-stations
-                                - cloudflare-turnstile-required
-                                - cloudsync
-                                - collections
-                                - comments_and_replies_push_notifications
-                                - community_access_plex_tv
-                                - companions_sonos
-                                - content_filter
-                                - custom-home-removal
-                                - disable_home_user_friendships
-                                - disable_sharing_friendships
-                                - downloads-gating
-                                - drm_support
-                                - dvr
-                                - dvr-block-unsupported-countries
-                                - epg-recent-channels
-                                - exclude restrictions
-                                - federated-auth
-                                - friend_request_push_notifications
-                                - grandfather-sync
-                                - guided-upgrade
-                                - hardware_transcoding
-                                - home
-                                - hwtranscode
-                                - imagga-v2
-                                - increase-password-complexity
-                                - ios14-privacy-banner
-                                - iterable-notification-tokens
-                                - item_clusters
-                                - keep-payment-method
-                                - kevin-bacon
-                                - korea-consent
-                                - le_isrg_root_x1
-                                - lets_encrypt
-                                - lightning-dvr-pivot
-                                - live-tv-support-incomplete-segments
-                                - livetv
-                                - lyrics
-                                - metadata_search
-                                - music-analysis
-                                - music_videos
-                                - new_plex_pass_prices
-                                - news-provider-sunset-modal
-                                - nominatim
-                                - pass
-                                - photos-favorites
-                                - photos-metadata-edition
-                                - photosV6-edit
-                                - photosV6-tv-albums
-                                - pms_health
-                                - premium-dashboard
-                                - premium_music_metadata
-                                - radio
-                                - rate-limit-client-token
-                                - scrobbling-service-plex-tv
-                                - session_bandwidth_restrictions
-                                - session_kick
-                                - shared_server_notification
-                                - shared_source_notification
-                                - signin_notification
-                                - signin_with_apple
-                                - silence-removal
-                                - sleep-timer
-                                - spring_serve_ad_provider
-                                - sync
-                                - sweet-fades
-                                - transcoder_cache
-                                - trailers
-                                - tuner-sharing
-                                - two-factor-authentication
-                                - unsupportedtuners
-                                - upgrade-3ds2
-                                - visualizers
-                                - vod-schema
-                                - vod_cloudflare
-                                - volume-leveling
-                                - watch-together-invite
-                                - watchlist-rss
-                                - web_server_dashboard
-                                - webhooks
-                                - blacklist-subnets
-                                - chromecast-music-mp
-                                - Sync v3
-                                - livetv-platform-specific
-                                - nonAnonymousAccount
-                                - parental-controls
-                                - Subtitles on Demand
-                                - ultrablur
-                                - web-desktop-gracenote-banner
-                          active:
-                            description: If the account's Plex Pass subscription is active
-                            type: boolean
-                            example: true
-                          subscribedAt:
-                            description: Date the account subscribed to Plex Pass
-                            type:
-                              - string
-                              - 'null'
-                            example: '2021-04-12T18:21:12Z'
-                          status:
-                            description: String representation of subscriptionActive
-                            example: Inactive
-                            x-speakeasy-unknown-values: allow
-                            enum:
-                              - Inactive
-                              - Active
-                          paymentService:
-                            description: Payment service used for your Plex Pass subscription
-                            type:
-                              - string
-                              - 'null'
-                          plan:
-                            description: Name of Plex Pass subscription plan
-                            type:
-                              - string
-                              - 'null'
-                      subscriptionDescription:
-                        type:
-                          - string
-                          - 'null'
-                        description: Description of the Plex Pass subscription
-                      subscriptions:
-                        type: array
-                        items:
-                          title: Subscription
-                          type: object
-                          properties:
-                            features:
-                              description: List of features allowed on your Plex Pass subscription
-                              type: array
-                              items:
-                                type: string
-                                description: |
-                                  - Android - Dolby Vision
-                                  - Android - PiP
-                                  - CU Sunset
-                                  - HRK_enable_EUR
-                                  - TREBLE-show-features
-                                  - ad-countdown-timer
-                                  - adaptive_bitrate
-                                  - album-types
-                                  - allow_dvr
-                                  - amazon-loop-debug
-                                  - avod-ad-analysis
-                                  - avod-new-media
-                                  - blacklist_get_signin
-                                  - boost-voices
-                                  - camera_upload
-                                  - client-radio-stations
-                                  - cloudflare-turnstile-required
-                                  - cloudsync
-                                  - collections
-                                  - comments_and_replies_push_notifications
-                                  - community_access_plex_tv
-                                  - companions_sonos
-                                  - content_filter
-                                  - custom-home-removal
-                                  - disable_home_user_friendships
-                                  - disable_sharing_friendships
-                                  - downloads-gating
-                                  - drm_support
-                                  - dvr
-                                  - dvr-block-unsupported-countries
-                                  - epg-recent-channels
-                                  - exclude restrictions
-                                  - federated-auth
-                                  - friend_request_push_notifications
-                                  - grandfather-sync
-                                  - guided-upgrade
-                                  - hardware_transcoding
-                                  - home
-                                  - hwtranscode
-                                  - imagga-v2
-                                  - increase-password-complexity
-                                  - ios14-privacy-banner
-                                  - iterable-notification-tokens
-                                  - item_clusters
-                                  - keep-payment-method
-                                  - kevin-bacon
-                                  - korea-consent
-                                  - le_isrg_root_x1
-                                  - lets_encrypt
-                                  - lightning-dvr-pivot
-                                  - live-tv-support-incomplete-segments
-                                  - livetv
-                                  - lyrics
-                                  - metadata_search
-                                  - music-analysis
-                                  - music_videos
-                                  - new_plex_pass_prices
-                                  - news-provider-sunset-modal
-                                  - nominatim
-                                  - pass
-                                  - photos-favorites
-                                  - photos-metadata-edition
-                                  - photosV6-edit
-                                  - photosV6-tv-albums
-                                  - pms_health
-                                  - premium-dashboard
-                                  - premium_music_metadata
-                                  - radio
-                                  - rate-limit-client-token
-                                  - scrobbling-service-plex-tv
-                                  - session_bandwidth_restrictions
-                                  - session_kick
-                                  - shared_server_notification
-                                  - shared_source_notification
-                                  - signin_notification
-                                  - signin_with_apple
-                                  - silence-removal
-                                  - sleep-timer
-                                  - spring_serve_ad_provider
-                                  - sync
-                                  - sweet-fades
-                                  - transcoder_cache
-                                  - trailers
-                                  - tuner-sharing
-                                  - two-factor-authentication
-                                  - unsupportedtuners
-                                  - upgrade-3ds2
-                                  - visualizers
-                                  - vod-schema
-                                  - vod_cloudflare
-                                  - volume-leveling
-                                  - watch-together-invite
-                                  - watchlist-rss
-                                  - web_server_dashboard
-                                  - webhooks
-                                  - blacklist-subnets
-                                  - chromecast-music-mp
-                                  - Sync v3
-                                  - livetv-platform-specific
-                                  - nonAnonymousAccount
-                                  - parental-controls
-                                  - Subtitles on Demand
-                                  - ultrablur
-                                  - web-desktop-gracenote-banner
-                            active:
-                              description: If the account's Plex Pass subscription is active
-                              type: boolean
-                              example: true
-                            subscribedAt:
-                              description: Date the account subscribed to Plex Pass
-                              type:
-                                - string
-                                - 'null'
-                              example: '2021-04-12T18:21:12Z'
-                            status:
-                              description: String representation of subscriptionActive
-                              example: Inactive
-                              x-speakeasy-unknown-values: allow
-                              enum:
-                                - Inactive
-                                - Active
-                            paymentService:
-                              description: Payment service used for your Plex Pass subscription
-                              type:
-                                - string
-                                - 'null'
-                            plan:
-                              description: Name of Plex Pass subscription plan
-                              type:
-                                - string
-                                - 'null'
-                      thumb:
-                        type: string
-                        description: URL of the account thumbnail
-                        format: uri
-                        example: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
-                      title:
-                        type: string
-                        description: The title of the account (username or friendly name)
-                        example: UsernameTitle
-                      twoFactorEnabled:
-                        type: boolean
-                        description: If two-factor authentication is enabled
-                        default: false
-                      username:
-                        type: string
-                        description: The account username
-                        example: Username
-                      uuid:
-                        type: string
-                        description: The account UUID
-                        example: dae343c1f45beb4f
-                      attributionPartner:
-                        type:
-                          - string
-                          - 'null'
-                        example: null
+                  - $ref: '#/components/schemas/UserPlexAccount'
                   - type: object
                     required:
                       - pastSubscriptions
@@ -5904,7 +5352,7 @@ paths:
           description: No activity with the provided id is found
           content:
             text/html: {}
-  /butler/{task}:
+  /butler/{butlerTask}:
     delete:
       summary: Stop a single Butler task
       operationId: stopTask
@@ -5927,7 +5375,7 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Device-Vendor"
         - $ref: "#/components/parameters/X-Plex-Device-Name"
         - $ref: "#/components/parameters/X-Plex-Marketplace"
-        - name: task
+        - name: butlerTask
           description: The task name
           in: path
           required: true
@@ -5985,7 +5433,7 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Device-Vendor"
         - $ref: "#/components/parameters/X-Plex-Device-Name"
         - $ref: "#/components/parameters/X-Plex-Marketplace"
-        - name: task
+        - name: butlerTask
           description: The task name
           in: path
           required: true
@@ -16389,6 +15837,643 @@ components:
           type: boolean
     Type:
       type: string
+    UserPlexAccount:
+      title: UserPlexAccount
+      type: object
+      required:
+        - adsConsent
+        - adsConsentReminderAt
+        - adsConsentSetAt
+        - anonymous
+        - authToken
+        - backupCodesCreated
+        - confirmed
+        - country
+        - email
+        - emailOnlyAuth
+        - experimentalFeatures
+        - friendlyName
+        - entitlements
+        - guest
+        - hasPassword
+        - home
+        - homeAdmin
+        - homeSize
+        - id
+        - joinedAt
+        - locale
+        - mailingListActive
+        - mailingListStatus
+        - maxHomeSize
+        - profile
+        - protected
+        - rememberExpiresAt
+        - restricted
+        - scrobbleTypes
+        - services
+        - subscription
+        - subscriptionDescription
+        - thumb
+        - title
+        - twoFactorEnabled
+        - username
+        - uuid
+        - attributionPartner
+      properties:
+        adsConsent:
+          type:
+            - boolean
+            - 'null'
+          description: Unknown
+        adsConsentReminderAt:
+          oneOf:
+            - type:
+                - integer
+              example: 1556281940
+              description: Unix epoch datetime in seconds
+              format: int64
+            - type: 'null'
+        adsConsentSetAt:
+          oneOf:
+            - type:
+                - integer
+              example: 1556281940
+              description: Unix epoch datetime in seconds
+              format: int64
+            - type: 'null'
+        anonymous:
+          type:
+            - boolean
+            - 'null'
+          description: Unknown
+          default: false
+        authToken:
+          type: string
+          description: The account token
+          example: CxoUzBTSV5hsxjTpFKaf
+        backupCodesCreated:
+          type: boolean
+          description: If the two-factor authentication backup codes have been created
+          default: false
+        confirmed:
+          type: boolean
+          description: If the account has been confirmed
+          default: false
+        country:
+          type: string
+          description: The account country
+          example: US
+          maxLength: 2
+          minLength: 2
+        email:
+          type: string
+          description: The account email address
+          format: email
+          example: username@email.com
+        emailOnlyAuth:
+          type: boolean
+          description: If login with email only is enabled
+          default: false
+        experimentalFeatures:
+          type: boolean
+          description: If experimental features are enabled
+          default: false
+        friendlyName:
+          type: string
+          description: Your account full name
+          example: friendlyUsername
+        entitlements:
+          type: array
+          description: List of devices your allowed to use with this account
+          items:
+            type: string
+          example: '[]'
+        guest:
+          type: boolean
+          description: If the account is a Plex Home guest user
+          default: false
+        hasPassword:
+          type: boolean
+          description: If the account has a password
+          default: true
+        home:
+          type: boolean
+          description: If the account is a Plex Home user
+          default: false
+        homeAdmin:
+          type: boolean
+          description: If the account is the Plex Home admin
+          default: false
+        homeSize:
+          type: integer
+          description: The number of accounts in the Plex Home
+          example: 1
+          format: int32
+        id:
+          type: integer
+          description: The Plex account ID
+          example: 13692262
+          format: int32
+        joinedAt:
+          type:
+            - integer
+          example: 1556281940
+          description: Unix epoch datetime in seconds
+          format: int64
+        locale:
+          type:
+            - string
+            - 'null'
+          description: The account locale
+        mailingListActive:
+          type: boolean
+          description: If you are subscribed to the Plex newsletter
+          default: false
+        mailingListStatus:
+          description: Your current mailing list status (active or unsubscribed)
+          type: string
+          example: active
+          x-speakeasy-unknown-values: allow
+          enum:
+            - active
+            - unsubscribed
+        maxHomeSize:
+          type: integer
+          description: The maximum number of accounts allowed in the Plex Home
+          example: 15
+          format: int32
+        pin:
+          type: string
+          description: '[Might be removed] The hashed Plex Home PIN '
+          deprecated: true
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+        protected:
+          type: boolean
+          description: If the account has a Plex Home PIN enabled
+          default: false
+        rememberExpiresAt:
+          type:
+            - integer
+          example: 1556281940
+          description: Unix epoch datetime in seconds
+          format: int64
+        restricted:
+          type: boolean
+          description: If the account is a Plex Home managed user
+          default: false
+        roles:
+          type: array
+          description: '[Might be removed] List of account roles. Plexpass membership listed here'
+          items:
+            type: string
+        scrobbleTypes:
+          type: string
+          description: Unknown
+        services:
+          type: array
+          items:
+            type: object
+            required:
+              - identifier
+              - endpoint
+              - token
+              - secret
+              - status
+            properties:
+              identifier:
+                type: string
+                example: metadata-dev
+              endpoint:
+                type: string
+                example: 'https://epg.provider.plex.tv'
+                format: uri
+              token:
+                type:
+                  - string
+                  - 'null'
+                example: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
+              secret:
+                type:
+                  - string
+                  - 'null'
+              status:
+                example: online
+                x-speakeasy-unknown-values: allow
+                enum:
+                  - online
+                  - offline
+        subscription:
+          description: If the account's Plex Pass subscription is active
+          title: Subscription
+          type: object
+          properties:
+            features:
+              description: List of features allowed on your Plex Pass subscription
+              type: array
+              items:
+                type: string
+                description: |
+                  - Android - Dolby Vision
+                  - Android - PiP
+                  - CU Sunset
+                  - HRK_enable_EUR
+                  - TREBLE-show-features
+                  - ad-countdown-timer
+                  - adaptive_bitrate
+                  - album-types
+                  - allow_dvr
+                  - amazon-loop-debug
+                  - avod-ad-analysis
+                  - avod-new-media
+                  - blacklist_get_signin
+                  - boost-voices
+                  - camera_upload
+                  - client-radio-stations
+                  - cloudflare-turnstile-required
+                  - cloudsync
+                  - collections
+                  - comments_and_replies_push_notifications
+                  - community_access_plex_tv
+                  - companions_sonos
+                  - content_filter
+                  - custom-home-removal
+                  - disable_home_user_friendships
+                  - disable_sharing_friendships
+                  - downloads-gating
+                  - drm_support
+                  - dvr
+                  - dvr-block-unsupported-countries
+                  - epg-recent-channels
+                  - exclude restrictions
+                  - federated-auth
+                  - friend_request_push_notifications
+                  - grandfather-sync
+                  - guided-upgrade
+                  - hardware_transcoding
+                  - home
+                  - hwtranscode
+                  - imagga-v2
+                  - increase-password-complexity
+                  - ios14-privacy-banner
+                  - iterable-notification-tokens
+                  - item_clusters
+                  - keep-payment-method
+                  - kevin-bacon
+                  - korea-consent
+                  - le_isrg_root_x1
+                  - lets_encrypt
+                  - lightning-dvr-pivot
+                  - live-tv-support-incomplete-segments
+                  - livetv
+                  - lyrics
+                  - metadata_search
+                  - music-analysis
+                  - music_videos
+                  - new_plex_pass_prices
+                  - news-provider-sunset-modal
+                  - nominatim
+                  - pass
+                  - photos-favorites
+                  - photos-metadata-edition
+                  - photosV6-edit
+                  - photosV6-tv-albums
+                  - pms_health
+                  - premium-dashboard
+                  - premium_music_metadata
+                  - radio
+                  - rate-limit-client-token
+                  - scrobbling-service-plex-tv
+                  - session_bandwidth_restrictions
+                  - session_kick
+                  - shared_server_notification
+                  - shared_source_notification
+                  - signin_notification
+                  - signin_with_apple
+                  - silence-removal
+                  - sleep-timer
+                  - spring_serve_ad_provider
+                  - sync
+                  - sweet-fades
+                  - transcoder_cache
+                  - trailers
+                  - tuner-sharing
+                  - two-factor-authentication
+                  - unsupportedtuners
+                  - upgrade-3ds2
+                  - visualizers
+                  - vod-schema
+                  - vod_cloudflare
+                  - volume-leveling
+                  - watch-together-invite
+                  - watchlist-rss
+                  - web_server_dashboard
+                  - webhooks
+                  - blacklist-subnets
+                  - chromecast-music-mp
+                  - Sync v3
+                  - livetv-platform-specific
+                  - nonAnonymousAccount
+                  - parental-controls
+                  - Subtitles on Demand
+                  - ultrablur
+                  - web-desktop-gracenote-banner
+            active:
+              description: If the account's Plex Pass subscription is active
+              type: boolean
+              example: true
+            subscribedAt:
+              description: Date the account subscribed to Plex Pass
+              type:
+                - string
+                - 'null'
+              example: '2021-04-12T18:21:12Z'
+            status:
+              description: String representation of subscriptionActive
+              example: Inactive
+              x-speakeasy-unknown-values: allow
+              enum:
+                - Inactive
+                - Active
+            paymentService:
+              description: Payment service used for your Plex Pass subscription
+              type:
+                - string
+                - 'null'
+            plan:
+              description: Name of Plex Pass subscription plan
+              type:
+                - string
+                - 'null'
+        subscriptionDescription:
+          type:
+            - string
+            - 'null'
+          description: Description of the Plex Pass subscription
+        subscriptions:
+          type: array
+          items:
+            title: Subscription
+            type: object
+            properties:
+              features:
+                description: List of features allowed on your Plex Pass subscription
+                type: array
+                items:
+                  type: string
+                  description: |
+                    - Android - Dolby Vision
+                    - Android - PiP
+                    - CU Sunset
+                    - HRK_enable_EUR
+                    - TREBLE-show-features
+                    - ad-countdown-timer
+                    - adaptive_bitrate
+                    - album-types
+                    - allow_dvr
+                    - amazon-loop-debug
+                    - avod-ad-analysis
+                    - avod-new-media
+                    - blacklist_get_signin
+                    - boost-voices
+                    - camera_upload
+                    - client-radio-stations
+                    - cloudflare-turnstile-required
+                    - cloudsync
+                    - collections
+                    - comments_and_replies_push_notifications
+                    - community_access_plex_tv
+                    - companions_sonos
+                    - content_filter
+                    - custom-home-removal
+                    - disable_home_user_friendships
+                    - disable_sharing_friendships
+                    - downloads-gating
+                    - drm_support
+                    - dvr
+                    - dvr-block-unsupported-countries
+                    - epg-recent-channels
+                    - exclude restrictions
+                    - federated-auth
+                    - friend_request_push_notifications
+                    - grandfather-sync
+                    - guided-upgrade
+                    - hardware_transcoding
+                    - home
+                    - hwtranscode
+                    - imagga-v2
+                    - increase-password-complexity
+                    - ios14-privacy-banner
+                    - iterable-notification-tokens
+                    - item_clusters
+                    - keep-payment-method
+                    - kevin-bacon
+                    - korea-consent
+                    - le_isrg_root_x1
+                    - lets_encrypt
+                    - lightning-dvr-pivot
+                    - live-tv-support-incomplete-segments
+                    - livetv
+                    - lyrics
+                    - metadata_search
+                    - music-analysis
+                    - music_videos
+                    - new_plex_pass_prices
+                    - news-provider-sunset-modal
+                    - nominatim
+                    - pass
+                    - photos-favorites
+                    - photos-metadata-edition
+                    - photosV6-edit
+                    - photosV6-tv-albums
+                    - pms_health
+                    - premium-dashboard
+                    - premium_music_metadata
+                    - radio
+                    - rate-limit-client-token
+                    - scrobbling-service-plex-tv
+                    - session_bandwidth_restrictions
+                    - session_kick
+                    - shared_server_notification
+                    - shared_source_notification
+                    - signin_notification
+                    - signin_with_apple
+                    - silence-removal
+                    - sleep-timer
+                    - spring_serve_ad_provider
+                    - sync
+                    - sweet-fades
+                    - transcoder_cache
+                    - trailers
+                    - tuner-sharing
+                    - two-factor-authentication
+                    - unsupportedtuners
+                    - upgrade-3ds2
+                    - visualizers
+                    - vod-schema
+                    - vod_cloudflare
+                    - volume-leveling
+                    - watch-together-invite
+                    - watchlist-rss
+                    - web_server_dashboard
+                    - webhooks
+                    - blacklist-subnets
+                    - chromecast-music-mp
+                    - Sync v3
+                    - livetv-platform-specific
+                    - nonAnonymousAccount
+                    - parental-controls
+                    - Subtitles on Demand
+                    - ultrablur
+                    - web-desktop-gracenote-banner
+              active:
+                description: If the account's Plex Pass subscription is active
+                type: boolean
+                example: true
+              subscribedAt:
+                description: Date the account subscribed to Plex Pass
+                type:
+                  - string
+                  - 'null'
+                example: '2021-04-12T18:21:12Z'
+              status:
+                description: String representation of subscriptionActive
+                example: Inactive
+                x-speakeasy-unknown-values: allow
+                enum:
+                  - Inactive
+                  - Active
+              paymentService:
+                description: Payment service used for your Plex Pass subscription
+                type:
+                  - string
+                  - 'null'
+              plan:
+                description: Name of Plex Pass subscription plan
+                type:
+                  - string
+                  - 'null'
+        thumb:
+          type: string
+          description: URL of the account thumbnail
+          format: uri
+          example: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+        title:
+          type: string
+          description: The title of the account (username or friendly name)
+          example: UsernameTitle
+        twoFactorEnabled:
+          type: boolean
+          description: If two-factor authentication is enabled
+          default: false
+        username:
+          type: string
+          description: The account username
+          example: Username
+        uuid:
+          type: string
+          description: The account UUID
+          example: dae343c1f45beb4f
+        attributionPartner:
+          type:
+            - string
+            - 'null'
+          example: null
+    UserProfile:
+      title: UserProfile
+      type: object
+      required:
+        - autoSelectAudio
+        - defaultAudioLanguage
+        - defaultSubtitleLanguage
+        - autoSelectSubtitle
+        - defaultSubtitleAccessibility
+        - defaultSubtitleForced
+        - watchedIndicator
+        - mediaReviewsVisibility
+      properties:
+        autoSelectAudio:
+          description: If the account has automatically select audio and subtitle tracks enabled
+          type: boolean
+          example: true
+          default: true
+        defaultAudioLanguage:
+          description: The preferred audio language for the account
+          type:
+            - string
+            - 'null'
+          example: ja
+        defaultSubtitleLanguage:
+          description: The preferred subtitle language for the account
+          type:
+            - string
+            - 'null'
+          example: en
+        autoSelectSubtitle:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - DISABLE
+                - ENABLE
+            - description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+        defaultSubtitleAccessibility:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - DISABLE
+                - ENABLE
+            - description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only show non-SDH subtitles)'
+        defaultSubtitleForced:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - DISABLE
+                - ENABLE
+            - description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
+        watchedIndicator:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - DISABLE
+                - ENABLE
+            - description: Whether or not media watched indicators are enabled (little orange dot on media)
+        mediaReviewsVisibility:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - DISABLE
+                - ENABLE
+            - description: Whether or not the account has media reviews visibility enabled
     User:
       description: The user playing the content
       type: object
