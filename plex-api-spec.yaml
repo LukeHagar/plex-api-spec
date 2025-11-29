@@ -14487,6 +14487,9 @@ components:
       type: string
     LibrarySection:
       type: object
+      required:
+        - uuid
+        - language
       properties:
         title:
           $ref: '#/components/schemas/Title'
@@ -14517,6 +14520,10 @@ components:
           $ref: '#/components/schemas/Key'
         language:
           type: string
+        uuid:
+          type: string
+          description: "The universally unique identifier for the library."
+          example: "e69655a2-ef48-4aba-bb19-d3cc3401e7d6"
         Location:
           type: array
           items:
