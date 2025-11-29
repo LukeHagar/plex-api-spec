@@ -15964,13 +15964,18 @@ components:
           description: If you are subscribed to the Plex newsletter
           default: false
         mailingListStatus:
-          description: Your current mailing list status (active or unsubscribed)
+          description: Your current mailing list status
           type: string
           example: active
           x-speakeasy-unknown-values: allow
           enum:
             - active
             - unsubscribed
+            - removed
+          x-speakeasy-enums:
+            - ACTIVE
+            - UNSUBSCRIBED
+            - REMOVED
         maxHomeSize:
           type: integer
           description: The maximum number of accounts allowed in the Plex Home
@@ -16033,6 +16038,9 @@ components:
                 enum:
                   - online
                   - offline
+                x-speakeasy-enums:
+                  - ONLINE
+                  - OFFLINE
         subscription:
           description: If the account's Plex Pass subscription is active
           title: Subscription
@@ -16165,6 +16173,9 @@ components:
               enum:
                 - Inactive
                 - Active
+              x-speakeasy-enums:
+                - INACTIVE
+                - ACTIVE
             paymentService:
               description: Payment service used for your Plex Pass subscription
               type:
@@ -16379,12 +16390,45 @@ components:
             - string
             - 'null'
           example: ja
+        defaultAudioAccessibility:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+                - 3
+              example: 0
+              default: 0
+              x-speakeasy-enums:
+                - PREFER_NON_ACCESSIBILITY
+                - PREFER_ACCESSIBILITY
+                - ONLY_ACCESSIBILITY
+                - ONLY_NON_ACCESSIBILITY
+            - description: 'The audio accessibility mode (0 = Prefer non-accessibility audio, 1 = Prefer accessibility audio, 2 = Only show accessibility audio, 3 = Only show non-accessibility audio)'
+        defaultAudioLanguages:
+          description: The preferred audio languages for the account
+          type:
+            - array
+            - 'null'
+          items:
+            type: string
+          example: null
         defaultSubtitleLanguage:
           description: The preferred subtitle language for the account
           type:
             - string
             - 'null'
           example: en
+        defaultSubtitleLanguages:
+          description: The preferred subtitle languages for the account
+          type:
+            - array
+            - 'null'
+          items:
+            type: string
+          example: null
         autoSelectSubtitle:
           allOf:
             - type: integer
@@ -16392,11 +16436,13 @@ components:
               enum:
                 - 0
                 - 1
+                - 2
               example: 1
               default: 0
               x-speakeasy-enums:
-                - DISABLE
-                - ENABLE
+                - MANUALLY_SELECTED
+                - SHOWN_WITH_FOREIGN_AUDIO
+                - ALWAYS_ENABLED
             - description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
         defaultSubtitleAccessibility:
           allOf:
@@ -16405,11 +16451,15 @@ components:
               enum:
                 - 0
                 - 1
+                - 2
+                - 3
               example: 1
               default: 0
               x-speakeasy-enums:
-                - DISABLE
-                - ENABLE
+                - PREFER_NON_SDH
+                - PREFER_SDH
+                - ONLY_SDH
+                - ONLY_NON_SDH
             - description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only show non-SDH subtitles)'
         defaultSubtitleForced:
           allOf:
@@ -16418,11 +16468,15 @@ components:
               enum:
                 - 0
                 - 1
+                - 2
+                - 3
               example: 1
               default: 0
               x-speakeasy-enums:
-                - DISABLE
-                - ENABLE
+                - PREFER_NON_FORCED
+                - PREFER_FORCED
+                - ONLY_FORCED
+                - ONLY_NON_FORCED
             - description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
         watchedIndicator:
           allOf:
@@ -16431,11 +16485,15 @@ components:
               enum:
                 - 0
                 - 1
+                - 2
+                - 3
               example: 1
               default: 0
               x-speakeasy-enums:
-                - DISABLE
-                - ENABLE
+                - NONE
+                - MOVIES_AND_TV_SHOWS
+                - MOVIES
+                - TV_SHOWS
             - description: Whether or not media watched indicators are enabled (little orange dot on media)
         mediaReviewsVisibility:
           allOf:
@@ -16444,12 +16502,24 @@ components:
               enum:
                 - 0
                 - 1
+                - 2
+                - 3
               example: 1
               default: 0
               x-speakeasy-enums:
-                - DISABLE
-                - ENABLE
+                - NO_ONE
+                - CRITICS_ONLY
+                - PLEX_USERS_ONLY
+                - PLEX_USERS_AND_CRITICS
             - description: Whether or not the account has media reviews visibility enabled
+        mediaReviewsLanguages:
+          description: The languages for media reviews visibility
+          type:
+            - array
+            - 'null'
+          items:
+            type: string
+          example: null
     User:
       description: The user playing the content
       type: object
