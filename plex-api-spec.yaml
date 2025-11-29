@@ -15180,6 +15180,9 @@ components:
       additionalProperties: true
       required:
        - addedAt
+       - key
+       - title
+       - type
       properties:
         title:
           description: The title of the item (e.g. “300” or “The Simpsons”)
@@ -15505,8 +15508,7 @@ components:
           example: "sd"
         key:
           description: The key from which the media can be streamed
-          type: integer
-          format: int32
+          type: string
           example: /library/parts/1/1531779263/file.mov
         optimizedForStreaming:
           type: boolean
@@ -15911,54 +15913,123 @@ components:
         - key
         - codec
         - displayTitle
+        - streamType
       properties:
         default:
           type: boolean
+          description: Indicates if this stream is default.
           example: true
         audioChannelLayout:
           type: string
-          example: stereo
+          description: Audio channel layout.
+          example: 5.1(side)
+        channels:
+          type: integer
+          format: int32
+          description: Number of audio channels (for audio streams).
+          example: 6
         bitDepth:
           type: integer
           format: int32
+          description: Bit depth of the video stream.
+          example: 10
+        DOVIBLCompatID:
+          type: integer
+          format: int32
+          description: Dolby Vision BL compatibility ID.
+          example: 1
+        DOVIBLPresent:
+          type: boolean
+          description: Indicates if Dolby Vision BL is present.
+          example: true
+        DOVIELPresent:
+          type: boolean
+          description: Indicates if Dolby Vision EL is present.
+          example: false
+        DOVILevel:
+          type: integer
+          format: int32
+          description: Dolby Vision level.
+          example: 6
+        DOVIPresent:
+          type: boolean
+          description: Indicates if Dolby Vision is present.
+          example: true
+        DOVIProfile:
+          type: integer
+          format: int32
+          description: Dolby Vision profile.
           example: 8
+        DOVIRPUPresent:
+          type: boolean
+          description: Indicates if Dolby Vision RPU is present.
+          example: true
+        DOVIVersion:
+          type: string
+          description: Dolby Vision version.
+          example: '1.0'
         bitrate:
           type: integer
           format: int32
-          example: 5466
+          description: Bitrate of the stream.
+          example: 24743
         canAutoSync:
-          description: For subtitle streams only. If `true` then the server can attempt to automatically sync the subtitle timestamps with the video.
           type: boolean
-          example: true
+          description: Indicates if the stream can auto-sync.
+          example: false
         chromaLocation:
           type: string
+          description: Chroma sample location.
           example: topleft
         chromaSubsampling:
           type: string
+          description: Chroma subsampling format.
           example: '4:2:0'
+        codedHeight:
+          type: integer
+          format: int32
+          description: Coded video height.
+          example: 1608
+        codedWidth:
+          type: integer
+          format: int32
+          description: Coded video width.
+          example: 3840
+        closedCaptions:
+          type: boolean
+          example: true
         codec:
-          description: The codec of the stream, such as `h264` or `aac`
+          description: Codec used by the stream.
           type: string
-          example: h264
+          example: hevc
         colorPrimaries:
           type: string
-          example: bt709
+          description: Color primaries used.
+          example: bt2020
         colorRange:
           type: string
+          description: Color range (e.g., tv).
           example: tv
         colorSpace:
           type: string
-          example: bt709
+          description: Color space.
+          example: bt2020nc
         colorTrc:
           type: string
-          example: bt709
+          description: Color transfer characteristics.
+          example: smpte2084
         displayTitle:
-          description: A friendly name for the stream, often comprised of the language and codec information
+          description: Display title for the stream.
           type: string
-          example: English (H.264 Main)
+          example: 4K DoVi/HDR10 (HEVC Main 10)
+        extendedDisplayTitle:
+          type: string
+          description: Extended display title for the stream.
+          example: 4K DoVi/HDR10 (HEVC Main 10)
         frameRate:
           type: number
           format: float
+          description: Frame rate of the stream.
           example: 23.976
         hasScalingMatrix:
           type: boolean
@@ -15966,57 +16037,116 @@ components:
         height:
           type: integer
           format: int32
-          example: 544
+          description: Height of the video stream.
+          example: 1602
         id:
           type: integer
           format: int32
-          example: 1
+          description: Unique stream identifier.
+          example: 1002625
         index:
-          description: If the stream is part of the `Part` and not an external resource, the index of the stream within that part
+          description: Index of the stream.
           type: integer
           format: int32
           example: 0
         key:
-          description: If the stream is independently streamable, the key from which it can be streamed
+          description: Key to access this stream part.
           type: string
-          example: /library/streams/1
+          example: /library/streams/216389
         language:
           type: string
+          description: Language of the stream.
           example: English
         languageCode:
-          description: The three character language code for the stream contents
+          description: ISO language code.
           type: string
           example: eng
+        languageTag:
+          type: string
+          description: Language tag (e.g., en).
+          example: en
+        format:
+          type: string
+          description: Format of the stream (e.g., srt).
+          example: srt
+        headerCompression:
+          type: boolean
+          description: Indicates whether header compression is enabled.
+          example: true
         level:
           type: integer
           format: int32
-          example: 31
+          description: Video level.
+          example: 150
+        original:
+          type: boolean
+          description: Indicates if this is the original stream.
+          example: true
         profile:
           type: string
-          example: main
+          description: Video profile.
+          example: main 10
         refFrames:
           type: integer
           format: int32
-          example: 2
+          description: Number of reference frames.
+          example: 1
         samplingRate:
           type: integer
           format: int32
+          description: Sampling rate for the audio stream.
           example: 48000
+        scanType:
+          type: string
+          example: progressive
+        embeddedInVideo:
+          type: string
+          example: progressive
         selected:
           type: boolean
+          description: Indicates if this stream is selected (applicable for audio streams).
+          example: true
+        forced:
+          type: boolean
+          example: true
+        hearingImpaired:
+          type: boolean
+          description: Indicates if the stream is for the hearing impaired.
+          example: true
+        dub:
+          type: boolean
+          description: Indicates if the stream is a dub.
+          example: true
+        title:
+          type: string
+          description: Optional title for the stream (e.g., language variant).
+          example: SDH
         streamIdentifier:
           type: integer
           format: int32
           example: 1
         streamType:
-          description: A number indicating the type of the stream. `1` for video, `2` for audio, `3` for subtitles, `4` for lyrics
           type: integer
           format: int32
+          enum:
+            - 1
+            - 2
+            - 3
           example: 1
+          x-speakeasy-enums:
+            - VIDEO
+            - AUDIO
+            - SUBTITLE
+          description: |
+            Stream type:
+              - VIDEO = 1
+              - AUDIO = 2
+              - SUBTITLE = 3
         width:
           type: integer
           format: int32
-          example: 1280
+          description: Width of the video stream.
+          example: 3840
     Tag:
       description: |
         A variety of extra information about a metadata item is included as tags. These tags use their own element names such as `Genre`, `Writer`, `Directory`, and `Role`. Individual tag types may introduce their own extra attributes.
