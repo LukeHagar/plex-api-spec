@@ -5800,51 +5800,34 @@ paths:
       description: Get Plex server access tokens and server connections
       operationId: get-server-resources
       parameters:
+        - $ref: "#/components/parameters/accepts"
         - $ref: "#/components/parameters/X-Plex-Client-Identifier"
         - name: includeHttps
           in: query
           description: Include Https entries in the results
           schema:
-            type: integer
-            format: int32
-            enum:
-              - 0
-              - 1
-            example: 1
-            default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
+            allOf:
+              - $ref: "#/components/schemas/BoolInt"
+              - default: 0
+          example: 1
         - name: includeRelay
           in: query
           description: |
             Include Relay addresses in the results 
             E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
           schema:
-            type: integer
-            format: int32
-            enum:
-              - 0
-              - 1
-            example: 1
-            default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
+            allOf:
+              - $ref: "#/components/schemas/BoolInt"
+              - default: 0
+          example: 1
         - name: includeIPv6
           in: query
           description: Include IPv6 entries in the results
           schema:
-            type: integer
-            format: int32
-            enum:
-              - 0
-              - 1
-            example: 1
-            default: 0
-            x-speakeasy-enums:
-              - DISABLE
-              - ENABLE
+            allOf:
+              - $ref: "#/components/schemas/BoolInt"
+              - default: 0
+          example: 1
       responses:
         '200':
           description: List of Plex Devices. This includes Plex hosted servers and clients
@@ -14841,9 +14824,15 @@ components:
       type: string
     BoolInt:
       type: integer
+      format: int32
       enum:
         - 0
         - 1
+      example: 1
+      default: 0
+      x-speakeasy-enums:
+        - FALSE
+        - TRUE
     Channel:
       type: object
       properties:
