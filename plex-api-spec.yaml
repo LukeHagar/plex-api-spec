@@ -5439,9 +5439,9 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Marketplace"
       responses:
         '200':
-          description: Successful response with media container data in XML
+          description: Successful response with media container data in JSON
           content:
-            application/xml:
+            application/json:
               schema:
                 type: object
                 properties:
@@ -5762,6 +5762,100 @@ paths:
                           type: integer
                           format: int32
                           example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
+  /resources:
+    get:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      tags:
+        - Plex
+      security:
+        - token:
+            - admin
+      summary: Get Server Resources
+      description: Get Plex server access tokens and server connections
+      operationId: get-server-resources
+      parameters:
+        - $ref: "#/components/parameters/X-Plex-Client-Identifier"
+        - name: includeHttps
+          in: query
+          description: Include Https entries in the results
+          schema:
+            type: integer
+            format: int32
+            enum:
+              - 0
+              - 1
+            example: 1
+            default: 0
+            x-speakeasy-enums:
+              - DISABLE
+              - ENABLE
+        - name: includeRelay
+          in: query
+          description: |
+            Include Relay addresses in the results 
+            E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
+          schema:
+            type: integer
+            format: int32
+            enum:
+              - 0
+              - 1
+            example: 1
+            default: 0
+            x-speakeasy-enums:
+              - DISABLE
+              - ENABLE
+        - name: includeIPv6
+          in: query
+          description: Include IPv6 entries in the results
+          schema:
+            type: integer
+            format: int32
+            enum:
+              - 0
+              - 1
+            example: 1
+            default: 0
+            x-speakeasy-enums:
+              - DISABLE
+              - ENABLE
+      responses:
+        '200':
+          description: List of Plex Devices. This includes Plex hosted servers and clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlexDevice'
+        '400':
+          $ref: '#/components/responses/400'
         '401':
           description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
           content:
@@ -15822,6 +15916,139 @@ components:
         version:
           description: The version of the client
           type: string
+    PlexDateTimeISO:
+      type: string
+      format: date-time
+      example: '2019-06-24T11:38:02Z'
+    PlexDevice:
+      title: PlexDevice
+      type: object
+      required:
+        - name
+        - product
+        - productVersion
+        - platform
+        - platformVersion
+        - device
+        - clientIdentifier
+        - createdAt
+        - lastSeenAt
+        - provides
+        - ownerId
+        - sourceTitle
+        - publicAddress
+        - accessToken
+        - owned
+        - home
+        - synced
+        - relay
+        - presence
+        - httpsRequired
+        - publicAddressMatches
+        - dnsRebindingProtection
+        - natLoopbackSupported
+        - connections
+      properties:
+        name:
+          type: string
+        product:
+          type: string
+        productVersion:
+          type: string
+        platform:
+          type:
+            - "null"
+            - string
+        platformVersion:
+          type:
+            - "null"
+            - string
+        device:
+          type:
+            - "null"
+            - string
+        clientIdentifier:
+          type: string
+        createdAt:
+          allOf:
+            - $ref: '#/components/schemas/PlexDateTimeISO'
+            - description: The time the device was created/registered
+        lastSeenAt:
+          allOf:
+            - $ref: '#/components/schemas/PlexDateTimeISO'
+            - description: The last time the device was seen
+        provides:
+          type: string
+        ownerId:
+          description: ownerId is null when the device is owned by the token used to send the request
+          type:
+            - "null"
+            - integer
+        sourceTitle:
+          type:
+            - "null"
+            - string
+        publicAddress:
+          type: string
+        accessToken:
+          type: string
+        owned:
+          type: boolean
+        home:
+          type: boolean
+        synced:
+          type: boolean
+        relay:
+          type: boolean
+        presence:
+          type: boolean
+        httpsRequired:
+          type: boolean
+        publicAddressMatches:
+          type: boolean
+        dnsRebindingProtection:
+          type: boolean
+        natLoopbackSupported:
+          type: boolean
+        connections:
+          type: array
+          items:
+            type: object
+            required:
+              - protocol
+              - address
+              - port
+              - uri
+              - local
+              - relay
+              - IPv6
+            properties:
+              protocol:
+                description: The protocol used for the connection (http, https, etc)
+                example: "http"
+                type: string
+                enum:
+                  - http
+                  - https
+              address:
+                description: The (ip) address or domain name used for the connection
+                type: string
+              port:
+                description: The port used for the connection
+                type: integer
+                format: int32
+              uri:
+                description: The full URI of the connection
+                type: string
+              local:
+                description: If the connection is local address
+                type: boolean
+              relay:
+                description: If the connection is relayed through plex.direct
+                type: boolean
+              IPv6:
+                description: If the connection is using IPv6
+                type: boolean
     ServerConfiguration:
       allOf:
         - $ref: '#/components/schemas/MediaContainer'
