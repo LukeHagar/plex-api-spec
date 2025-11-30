@@ -4569,6 +4569,735 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+  /user:
+    get:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      tags:
+        - Authentication
+      summary: Get Token Details
+      description: Get the User data from the provided X-Plex-Token
+      operationId: getTokenDetails
+      parameters:
+        - $ref: "#/components/parameters/accepts"
+        - $ref: "#/components/parameters/X-Plex-Client-Identifier"
+        - $ref: "#/components/parameters/X-Plex-Product"
+        - $ref: "#/components/parameters/X-Plex-Version"
+        - $ref: "#/components/parameters/X-Plex-Platform"
+        - $ref: "#/components/parameters/X-Plex-Platform-Version"
+        - $ref: "#/components/parameters/X-Plex-Device"
+        - $ref: "#/components/parameters/X-Plex-Model"
+        - $ref: "#/components/parameters/X-Plex-Device-Vendor"
+        - $ref: "#/components/parameters/X-Plex-Device-Name"
+        - $ref: "#/components/parameters/X-Plex-Marketplace"
+      security:
+        - token:
+            - admin
+      responses:
+        '200':
+          description: Logged in user details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPlexAccount'
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
+  /users/signin:
+    post:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      security: []
+      tags:
+        - Authentication
+      summary: Get User Sign In Data
+      description: Sign in user with username and password and return user data with Plex authentication token
+      operationId: post-users-sign-in-data
+      parameters:
+        - $ref: "#/components/parameters/accepts"
+        - $ref: "#/components/parameters/X-Plex-Client-Identifier"
+        - $ref: "#/components/parameters/X-Plex-Product"
+        - $ref: "#/components/parameters/X-Plex-Version"
+        - $ref: "#/components/parameters/X-Plex-Platform"
+        - $ref: "#/components/parameters/X-Plex-Platform-Version"
+        - $ref: "#/components/parameters/X-Plex-Device"
+        - $ref: "#/components/parameters/X-Plex-Model"
+        - $ref: "#/components/parameters/X-Plex-Device-Vendor"
+        - $ref: "#/components/parameters/X-Plex-Device-Name"
+        - $ref: "#/components/parameters/X-Plex-Marketplace"
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - login
+                - password
+              properties:
+                login:
+                  type: string
+                  format: email
+                  example: username@email.com
+                password:
+                  type: string
+                  format: password
+                  example: password123
+                rememberMe:
+                  type: boolean
+                  default: false
+                verificationCode:
+                  type: string
+                  example: 123456
+        description: Login credentials
+      responses:
+        '201':
+          description: Returns the user account data with a valid auth token
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/UserPlexAccount'
+                  - type: object
+                    required:
+                      - pastSubscriptions
+                      - trials
+                    properties:
+                      pastSubscriptions:
+                        type: array
+                        items:
+                          title: PastSubscription
+                          type: object
+                          required:
+                            - id
+                            - mode
+                            - renewsAt
+                            - endsAt
+                            - canceled
+                            - gracePeriod
+                            - onHold
+                            - canReactivate
+                            - canUpgrade
+                            - canDowngrade
+                            - canConvert
+                            - type
+                            - transfer
+                            - state
+                            - billing
+                          properties:
+                            id:
+                              type:
+                                - string
+                                - 'null'
+                            mode:
+                              type:
+                                - string
+                                - 'null'
+                            renewsAt:
+                              oneOf:
+                                - $ref: '#/components/schemas/PlexDateTime'
+                                - type: 'null'
+                            endsAt:
+                              oneOf:
+                                - $ref: '#/components/schemas/PlexDateTime'
+                                - type: 'null'
+                            canceled:
+                              type: boolean
+                              example: false
+                              default: false
+                            gracePeriod:
+                              type: boolean
+                              example: false
+                              default: false
+                            onHold:
+                              type: boolean
+                              example: false
+                              default: false
+                            canReactivate:
+                              type: boolean
+                              example: false
+                              default: false
+                            canUpgrade:
+                              type: boolean
+                              example: false
+                              default: false
+                            canDowngrade:
+                              type: boolean
+                              example: false
+                              default: false
+                            canConvert:
+                              type: boolean
+                              example: false
+                              default: false
+                            type:
+                              type: string
+                              example: plexpass
+                            transfer:
+                              type:
+                                - string
+                                - 'null'
+                            state:
+                              example: ended
+                              x-speakeasy-unknown-values: allow
+                              enum:
+                                - ended
+                            billing:
+                              type: object
+                              required:
+                                - internalPaymentMethod
+                                - paymentMethodId
+                              properties:
+                                internalPaymentMethod:
+                                  type: object
+                                paymentMethodId:
+                                  type:
+                                    - integer
+                                    - 'null'
+                      trials:
+                        type: array
+                        items:
+                          type: object
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
+  /users:
+    get:
+      servers:
+        - url: 'https://plex.tv/api'
+      tags:
+        - Users
+      security:
+        - token:
+            - admin
+      summary: Get list of all connected users
+      description: Get list of all users that are friends and have library access with the provided Plex authentication token
+      operationId: get-users
+      parameters:
+        - $ref: "#/components/parameters/accepts"
+        - $ref: "#/components/parameters/X-Plex-Client-Identifier"
+        - $ref: "#/components/parameters/X-Plex-Product"
+        - $ref: "#/components/parameters/X-Plex-Version"
+        - $ref: "#/components/parameters/X-Plex-Platform"
+        - $ref: "#/components/parameters/X-Plex-Platform-Version"
+        - $ref: "#/components/parameters/X-Plex-Device"
+        - $ref: "#/components/parameters/X-Plex-Model"
+        - $ref: "#/components/parameters/X-Plex-Device-Vendor"
+        - $ref: "#/components/parameters/X-Plex-Device-Name"
+        - $ref: "#/components/parameters/X-Plex-Marketplace"
+      responses:
+        '200':
+          description: Successful response with media container data in JSON
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  MediaContainer:
+                    type: object
+                    description: Container holding user and server details.
+                    required:
+                      - friendlyName
+                      - identifier
+                      - machineIdentifier
+                      - totalSize
+                      - size
+                      - User
+                    properties:
+                      friendlyName:
+                        type: string
+                        description: The friendly name of the Plex instance.
+                        example: myPlex
+                      identifier:
+                        type: string
+                        example: com.plexapp.plugins.myplex
+                      machineIdentifier:
+                        type: string
+                        description: Unique Machine identifier of the Plex server.
+                        example: 3dff4c4da3b1229a649aa574a9e2b419a684a20e
+                      totalSize:
+                        type: integer
+                        description: Total number of users.
+                        example: 30
+                      size:
+                        type: integer
+                        description: Number of users in the current response.
+                        example: 30
+                      User:
+                        type: array
+                        description: List of users with access to the Plex server.
+                        items:
+                          type: object
+                          required:
+                            - id
+                            - title
+                            - username
+                            - email
+                            - thumb
+                            - protected
+                            - home
+                            - allowTuners
+                            - allowSync
+                            - allowCameraUpload
+                            - allowChannels
+                            - allowSubtitleAdmin
+                            - restricted
+                            - Server
+                          properties:
+                            id:
+                              type: integer
+                              description: User's unique ID.
+                              example: 22526914
+                            title:
+                              type: string
+                              description: User's display name.
+                              example: Plex User
+                            username:
+                              type: string
+                              description: User's username.
+                              example: zgfuc7krcqfimrmb9lsl5j
+                            email:
+                              type: string
+                              description: User's email address.
+                              example: zgfuc7krcqfimrmb9lsl5j@protonmail.com
+                            recommendationsPlaylistId:
+                              description: ID of the user's recommendation playlist.
+                              type:
+                                - 'null'
+                                - string
+                              example: ''
+                            thumb:
+                              type: string
+                              description: URL to the user's avatar image.
+                              example: 'https://plex.tv/users/3346028014e93acd/avatar?c=1731605021'
+                            protected:
+                              allOf:
+                                - description: Indicates whether the account is protected.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            home:
+                              allOf:
+                                - description: Indicates if the user is part of a home group.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowTuners:
+                              allOf:
+                                - description: Indicates if the user is allowed to use tuners.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowSync:
+                              allOf:
+                                - description: Indicates if the user is allowed to sync media.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowCameraUpload:
+                              allOf:
+                                - description: Indicates if the user is allowed to upload from a camera.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowChannels:
+                              allOf:
+                                - description: Indicates if the user has access to channels.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            allowSubtitleAdmin:
+                              allOf:
+                                - description: Indicates if the user can manage subtitles.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            filterAll:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for all content.
+                              example: ''
+                            filterMovies:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for movies.
+                              example: ''
+                            filterMusic:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for music.
+                              example: ''
+                            filterPhotos:
+                              type:
+                                - 'null'
+                                - string
+                              description: Filters applied for photos.
+                              example: ''
+                            filterTelevision:
+                              type: string
+                              description: Filters applied for television.
+                              example: ''
+                            restricted:
+                              allOf:
+                                - description: Indicates if the user has restricted access.
+                                - type: integer
+                                  format: int32
+                                  enum:
+                                    - 0
+                                    - 1
+                                  example: 1
+                                  default: 0
+                                  x-speakeasy-enums:
+                                    - DISABLE
+                                    - ENABLE
+                            Server:
+                              type: array
+                              description: List of servers owned by the user.
+                              items:
+                                type: object
+                                required:
+                                  - id
+                                  - serverId
+                                  - machineIdentifier
+                                  - name
+                                  - lastSeenAt
+                                  - numLibraries
+                                  - allLibraries
+                                  - owned
+                                  - pending
+                                properties:
+                                  id:
+                                    type: integer
+                                    description: Unique ID of the server of the connected user
+                                    example: 907759180
+                                  serverId:
+                                    type: integer
+                                    description: ID of the actual Plex server.
+                                    example: 9999999
+                                  machineIdentifier:
+                                    type: string
+                                    description: Machine identifier of the Plex server.
+                                    example: fbb8aa6be6e0c997c6268bc2b4431c8807f70a3
+                                  name:
+                                    type: string
+                                    description: Name of the Plex server of the connected user.
+                                    example: ConnectedUserFlix
+                                  lastSeenAt:
+                                    $ref: '#/components/schemas/PlexDateTime'
+                                  numLibraries:
+                                    type: integer
+                                    description: Number of libraries in the server this user has access to.
+                                    example: 16
+                                  allLibraries:
+                                    allOf:
+                                      - description: Indicates if the user has access to all libraries.
+                                      - type: integer
+                                        format: int32
+                                        enum:
+                                          - 0
+                                          - 1
+                                        example: 1
+                                        default: 0
+                                        x-speakeasy-enums:
+                                          - DISABLE
+                                          - ENABLE
+                                  owned:
+                                    allOf:
+                                      - description: Indicates if the user owns the server.
+                                      - type: integer
+                                        format: int32
+                                        enum:
+                                          - 0
+                                          - 1
+                                        example: 1
+                                        default: 0
+                                        x-speakeasy-enums:
+                                          - DISABLE
+                                          - ENABLE
+                                  pending:
+                                    allOf:
+                                      - description: Indicates if the server is pending approval.
+                                      - type: integer
+                                        format: int32
+                                        enum:
+                                          - 0
+                                          - 1
+                                        example: 1
+                                        default: 0
+                                        x-speakeasy-enums:
+                                          - DISABLE
+                                          - ENABLE
+        '400':
+          description: 'Bad Request - A parameter was not specified, or was specified incorrectly.'
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: BadRequest
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1000
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: X-Plex-Client-Identifier is missing
+                        status:
+                          type: integer
+                          format: int32
+                          example: 400
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
+  /resources:
+    get:
+      servers:
+        - url: 'https://plex.tv/api/v2'
+      tags:
+        - Plex
+      security:
+        - token:
+            - admin
+      summary: Get Server Resources
+      description: Get Plex server access tokens and server connections
+      operationId: get-server-resources
+      parameters:
+        - $ref: "#/components/parameters/accepts"
+        - $ref: "#/components/parameters/X-Plex-Client-Identifier"
+        - name: includeHttps
+          in: query
+          description: Include Https entries in the results
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/BoolInt"
+              - default: 0
+          example: 1
+        - name: includeRelay
+          in: query
+          description: |
+            Include Relay addresses in the results 
+            E.g: https://10-0-0-25.bbf8e10c7fa20447cacee74cd9914cde.plex.direct:32400
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/BoolInt"
+              - default: 0
+          example: 1
+        - name: includeIPv6
+          in: query
+          description: Include IPv6 entries in the results
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/BoolInt"
+              - default: 0
+          example: 1
+      responses:
+        '200':
+          description: List of Plex Devices. This includes Plex hosted servers and clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlexDevice'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          description: Unauthorized - Returned if the X-Plex-Token is missing from the header or query.
+          content:
+            application/json:
+              schema:
+                x-speakeasy-name-override: Unauthorized
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          format: int32
+                          example: 1001
+                        message:
+                          type: string
+                          x-speakeasy-error-message: true
+                          example: User could not be authenticated
+                        status:
+                          type: integer
+                          format: int32
+                          example: 401
   /activities/{activityId}:
     delete:
       summary: Cancel a running activity
@@ -4609,7 +5338,7 @@ paths:
           description: No activity with the provided id is found
           content:
             text/html: {}
-  /butler/{task}:
+  /butler/{butlerTask}:
     delete:
       summary: Stop a single Butler task
       operationId: stopTask
@@ -4632,7 +5361,7 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Device-Vendor"
         - $ref: "#/components/parameters/X-Plex-Device-Name"
         - $ref: "#/components/parameters/X-Plex-Marketplace"
-        - name: task
+        - name: butlerTask
           description: The task name
           in: path
           required: true
@@ -4690,7 +5419,7 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Device-Vendor"
         - $ref: "#/components/parameters/X-Plex-Device-Name"
         - $ref: "#/components/parameters/X-Plex-Marketplace"
-        - name: task
+        - name: butlerTask
           description: The task name
           in: path
           required: true
@@ -7165,25 +7894,36 @@ paths:
         - $ref: "#/components/parameters/X-Plex-Device-Vendor"
         - $ref: "#/components/parameters/X-Plex-Device-Name"
         - $ref: "#/components/parameters/X-Plex-Marketplace"
+        - $ref: "#/components/parameters/X-Plex-Container-Start"
+        - $ref: "#/components/parameters/X-Plex-Container-Size"
         - $ref: '#/components/parameters/mediaQuery'
+        - name: includeMeta
+          in: query
+          description: |
+            Adds the Meta object to the response
+          schema:
+            $ref: "#/components/schemas/BoolInt"
+        - name: includeGuids
+          in: query
+          description: |
+            Adds the Guid object to the response
+          schema:
+            $ref: "#/components/schemas/BoolInt"
         - name: sectionId
           description: The id of the section
           in: path
           required: true
           schema:
             type: string
+
       responses:
         '200':
           description: OK
           headers:
             X-Plex-Container-Start:
-              description: Provided on all MediaContainer objects indicating the offset of where this container page starts
-              schema:
-                type: integer
+              $ref: '#/components/headers/X-Plex-Container-Start'
             X-Plex-Container-Total-Size:
-              description: Provided on all MediaContainer objects indicating the total size of objects available
-              schema:
-                type: integer
+              $ref: '#/components/headers/X-Plex-Container-Total-Size'
           content:
             application/json:
               schema:
@@ -12935,10 +13675,28 @@ components:
       example: 0
     mediaQuery:
       name: mediaQuery
-      description: This is a complex query built of several parameters.  See [API Info section](#section/API-Info/Media-Queries) for information on building media queries
+      description: |
+        A querystring-based filtering language used to select subsets of media. Can be provided as an object with typed properties for type safety, or as a string for complex queries with operators and boolean logic.
+        
+        The query supports:
+        - Fields: integer, boolean, tag, string, date, language
+        - Operators: =, !=, ==, !==, <=, >=, >>=, <<= (varies by field type)
+        - Boolean operators: & (AND), , (OR), push/pop (parentheses), or=1 (explicit OR)
+        - Sorting: sort parameter with :desc, :nullsLast modifiers
+        - Grouping: group parameter
+        - Limits: limit parameter
+        
+        Examples:
+        - Object format: `{type: 4, sourceType: 2, title: "24"}` → `type=4&sourceType=2&title=24`
+        - String format: `type=4&sourceType=2&title==24` - type = 4 AND sourceType = 2 AND title = "24"
+        - Complex: `push=1&index=1&or=1&rating=2&pop=1&duration=10` - (index = 1 OR rating = 2) AND duration = 10
+        
+        See [API Info section](#section/API-Info/Media-Queries) for detailed information on building media queries.
       in: query
       schema:
-        type: object
+        $ref: '#/components/schemas/MediaQuery'
+      style: form
+      explode: true
     musicBitrate:
       name: musicBitrate
       description: Target bitrate for audio only files (in kbps, used to transcode).
@@ -13059,10 +13817,24 @@ components:
           - subtitles
     type:
       name: type
-      description: The metadata type to filter by
+      description: |
+        The type of media to retrieve or filter by.
+        
+        1 = movie
+        2 = show
+        3 = season
+        4 = episode
+        5 = artist
+        6 = album
+        7 = track
+        8 = photo_album
+        9 = photo
+        
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
       in: query
       schema:
-        type: integer
+        $ref: '#/components/schemas/MediaType'
+      example: 2
     videoBitrate:
       name: videoBitrate
       description: Target video bitrate (in kbps).
@@ -13206,6 +13978,32 @@ components:
         type: string
         example: googlePlay
       example: googlePlay
+    X-Plex-Container-Start:
+      name: X-Plex-Container-Start
+      in: query
+      description: |
+        The index of the first item to return. If not specified, the first item will be returned.
+        If the number of items exceeds the limit, the response will be paginated.
+        By default this is 0
+      schema:
+        type: integer
+        format: int32
+        default: 0
+      example: 0
+      required: false
+    X-Plex-Container-Size:
+      name: X-Plex-Container-Size
+      in: query
+      description: |
+        The number of items to return. If not specified, all items will be returned.
+        If the number of items exceeds the limit, the response will be paginated.
+        By default this is 50
+      schema:
+        type: integer
+        format: int32
+        default: 50
+      example: 50
+      required: false
   headers:
     X-Plex-Container-Start:
       description: Provided on all MediaContainer objects indicating the offset of where this container page starts
@@ -13525,13 +14323,81 @@ components:
   schemas:
     AllowSync:
       type: boolean
-    Art:
-      type: string
     BoolInt:
       type: integer
+      format: int32
       enum:
         - 0
         - 1
+      example: 1
+      default: 0
+      x-speakeasy-enums:
+        - FALSE
+        - TRUE
+    MediaType:
+      description: |
+        The type of media to retrieve or filter by.
+        
+        1 = movie
+        2 = show
+        3 = season
+        4 = episode
+        5 = artist
+        6 = album
+        7 = track
+        8 = photo_album
+        9 = photo
+        
+        E.g. A movie library will not return anything with type 3 as there are no seasons for movie libraries
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+      example: 2
+      x-speakeasy-enums:
+        - MOVIE
+        - TV_SHOW
+        - SEASON
+        - EPISODE
+        - ARTIST
+        - ALBUM
+        - TRACK
+        - PHOTO_ALBUM
+        - PHOTO
+    MediaTypeString:
+      description: |
+        The type of media content in the Plex library. This can represent videos, music, or photos.
+      type: string
+      enum:
+        - movie
+        - show
+        - season
+        - episode
+        - artist
+        - album
+        - track
+        - photoalbum
+        - photo
+        - collection
+      example: "movie"
+      x-speakeasy-enums:
+        - MOVIE
+        - TV_SHOW
+        - SEASON
+        - EPISODE
+        - ARTIST
+        - ALBUM
+        - TRACK
+        - PHOTO_ALBUM
+        - PHOTO
+        - COLLECTION
     Channel:
       type: object
       properties:
@@ -13562,8 +14428,6 @@ components:
           type: string
         lineupIdentifier:
           type: string
-    Content:
-      type: boolean
     Device:
       type: object
       properties:
@@ -13752,25 +14616,33 @@ components:
       type: string
     LibrarySection:
       type: object
+      required:
+        - uuid
+        - language
+        - type
       properties:
         title:
-          $ref: '#/components/schemas/Title'
+          type: string
+          description: "The title of the library"
+          example: "Movies"
         type:
-          $ref: '#/components/schemas/Type'
+          $ref: '#/components/schemas/MediaTypeString'
         agent:
           type: string
         allowSync:
           type: boolean
         art:
-          $ref: '#/components/schemas/Art'
+          type: string
         composite:
           type: string
         content:
-          $ref: '#/components/schemas/Content'
+          type: boolean
         contentChangedAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
         createdAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
         directory:
           type: boolean
         filters:
@@ -13782,6 +14654,10 @@ components:
           $ref: '#/components/schemas/Key'
         language:
           type: string
+        uuid:
+          type: string
+          description: "The universally unique identifier for the library."
+          example: "e69655a2-ef48-4aba-bb19-d3cc3401e7d6"
         Location:
           type: array
           items:
@@ -13796,13 +14672,15 @@ components:
           description: Indicates whether this library section is currently scanning
           type: boolean
         scannedAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
         scanner:
           type: string
         thumb:
           $ref: '#/components/schemas/Thumb'
         updatedAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
     Lineup:
       type: object
       properties:
@@ -13837,24 +14715,33 @@ components:
         `Media` represents an one or more media files (parts) and is a child of a metadata item. There aren't necessarily any guaranteed attributes on media elements since the attributes will vary based on the type. The possible attributes are not documented here, but they typically have self-evident names. High-level media information that can be used for badging and flagging, such as `videoResolution` and codecs, is included on the media element.
       type: object
       additionalProperties: true
+      required:
+        - id
       properties:
         aspectRatio:
           type: number
+          format: float
           example: 2.35
         audioChannels:
           type: integer
+          format: int32
           example: 2
         audioCodec:
+          type: string
           example: aac
         audioProfile:
+          type: string
           example: lc
         bitrate:
           type: integer
+          format: int32
           example: 5612
         container:
+          type: string
           example: mov
         duration:
           type: integer
+          format: int32
           example: 150192
         has64bitOffsets:
           type: boolean
@@ -13864,9 +14751,11 @@ components:
           example: true
         height:
           type: integer
+          format: int32
           example: 544
         id:
           type: integer
+          format: int64
           example: 1
         optimizedForStreaming:
           type: boolean
@@ -13876,15 +14765,20 @@ components:
           items:
             $ref: '#/components/schemas/Part'
         videoCodec:
+          type: string
           example: h264
         videoFrameRate:
+          type: string
           example: 24p
         videoProfile:
+          type: string
           example: main
         videoResolution:
+          type: string
           example: '720'
         width:
           type: integer
+          format: int32
           example: 1280
     MediaContainer:
       description: |
@@ -14314,38 +15208,61 @@ components:
         Metadata items can often live in a hierarchy with relationships between them.  For example, the metadata item for an episodes is associated with a season metadata item which is associated with a show metadata item.  A similar hierarchy exists with track, album, and artist and photos and photo album.  The relationships may be expressed via relative terms and absolute terms.  For example, "leaves" refer to metadata items which has associated media (there is no media for a season nor show).  A show will have "children" in the form of seasons and a season will have "children" in the form of episodes and episodes have "parent" in the form of a season which has a "parent" in the form of a show.  Similarly, a show has "grandchildren" in the form of episodse and an episode has a "grandparent" in the form of a show.
       type: object
       additionalProperties: true
+      required:
+       - addedAt
+       - key
+       - title
+       - type
       properties:
         title:
           description: The title of the item (e.g. “300” or “The Simpsons”)
+          type: string
         type:
           description: The type of the video item, such as `movie`, `episode`, or `clip`.
+          type: string
         absoluteIndex:
           description: When present, contains the disc number for a track on multi-disc albums.
           type: integer
+          format: int32
         addedAt:
           description: In units of seconds since the epoch, returns the time at which the item was added to the library.
           type: integer
+          format: int64
         art:
           description: When present, the URL for the background artwork for the item.
+          type: string
+          example: "/library/metadata/58683/art/1703239236"
         audienceRating:
           description: Some rating systems separate reviewer ratings from audience ratings
           type: number
+          format: float
           minimum: 0
           maximum: 10
         audienceRatingImage:
           description: A URI representing the image to be shown with the audience rating (e.g. rottentomatoes://image.rating.spilled).
+          type: string
         Autotag:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
         banner:
           description: When present, the URL for a banner graphic for the item.
+          type: string
         chapterSource:
           description: When present, indicates the source for the chapters in the media file. Can be media (the chapters were embedded in the media itself), agent (a metadata agent computed them), or mixed (a combination of the two).
+          type: string
+          example: "media"
+        childCount:
+          type: integer
+          format: int32
+          description: "The number of child items associated with this media item."
+          example: 1
         composite:
           description: When present, the URL for a composite image for descendent items (e.g. photo albums or playlists).
+          type: string
         contentRating:
           description: If known, the content rating (e.g. MPAA) for an item.
+          type: string
         Country:
           type: array
           items:
@@ -14357,6 +15274,7 @@ components:
         duration:
           description: When present, the duration for the item, in units of milliseconds.
           type: integer
+          format: int32
         Filter:
           description: Typically only seen in metadata at a library's top level
           type: array
@@ -14369,6 +15287,10 @@ components:
         grandparentArt:
           description: The `art` of the grandparent
           type: string
+        grandparentGuid:
+          type: string
+          description: "The GUID of the grandparent media item."
+          example: "plex://show/5d9c081b170e24001f2a7be4"
         grandparentHero:
           description: The `hero` of the grandparent
           type: string
@@ -14387,12 +15309,36 @@ components:
         grandparentTitle:
           description: The `title` of the grandparent
           type: string
+        guid:
+          type: string
+          description: "The globally unique identifier for the media item."
+          example: "plex://movie/5d7768ba96b655001fdc0408"
         Guid:
+          x-speakeasy-name-override: guids
           type: array
           items:
-            $ref: '#/components/schemas/Tag'
+            type: object
+            required:
+              - id
+            properties:
+              id:
+                type: string
+                description: |
+                  The unique identifier for the Guid. Can be prefixed with imdb://, tmdb://, tvdb://
+                pattern: "^(imdb|tmdb|tvdb)://.+$"
+                example:
+                  imdbExample:
+                    summary: IMDB example
+                    value: imdb://tt13015952
+                  tmdbExample:
+                    summary: TMDB example
+                    value: tmdb://2434012
+                  tvdbExample:
+                    summary: TVDB example
+                    value: tvdb://7945991
         hero:
           description: When present, the URL for a hero image for the item.
+          type: string
         Image:
           type: array
           items:
@@ -14400,28 +15346,41 @@ components:
         index:
           description: When present, this represents the episode number for episodes, season number for seasons, or track number for audio tracks.
           type: integer
+          format: int32
         key:
           description: The key at which the item's details can be fetched.  In many cases a metadata item may be passed without all the details (such as in a hub) and this key corresponds to the endpoint to fetch additional details.
+          type: string
         lastViewedAt:
-          description: When a user has watched or listened to an item, this contains a timestamp (epoch seconds) for that last consumption time.
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
+          - description: When a user has watched or listened to an item, this contains a timestamp (epoch seconds) for that last consumption time.
         leafCount:
           description: For shows and seasons, contains the number of total episodes.
           type: integer
+          format: int32
         Media:
           type: array
           items:
             $ref: '#/components/schemas/Media'
         originallyAvailableAt:
           description: When present, in the format YYYY-MM-DD [HH:MM:SS] (the hours/minutes/seconds part is not always present). The air date, or a higher resolution release date for an item, depending on type. For example, episodes usually have air date like 1979-08-10 (we don't use epoch seconds because media existed prior to 1970). In some cases, recorded over-the-air content has higher resolution air date which includes a time component. Albums and movies may have day-resolution release dates as well.
+          type: string
+          format: date
+          example: "2022-12-14"
         originalTitle:
           description: When present, used to indicate an item's original title, e.g. a movie's foreign title.
+          type: string
+        parentGuid:
+          type: string
+          description: "The GUID of the parent media item."
+          example: "plex://show/5d9c081b170e24001f2a7be4"
         parentHero:
           description: The `hero` of the parent
           type: string
         parentIndex:
           description: The `index` of the parent
           type: integer
+          format: int32
         parentKey:
           description: The `key` of the parent
           type: string
@@ -14436,12 +15395,14 @@ components:
           type: string
         primaryExtraKey:
           description: Indicates that the item has a primary extra; for a movie, this is a trailer, and for a music track it is a music video. The URL points to the metadata details endpoint for the item.
+          type: string
         prompt:
           description: Prompt to give the user for this directory (such as `Search Movies`)
           type: string
         rating:
           description: When present, the rating for the item. The exact meaning and representation depends on where the rating was sourced from.
           type: number
+          format: float
           minimum: 0
           maximum: 10
         Rating:
@@ -14452,10 +15413,13 @@ components:
         ratingCount:
           description: Number of ratings under this metadata
           type: integer
+          format: int32
         ratingImage:
           description: When present, indicates an image to be shown with the rating. This is passed back as a small set of defined URI values, e.g. rottentomatoes://image.rating.rotten.
+          type: string
         ratingKey:
           description: This is the opaque string to be passed into timeline, scrobble, and rating endpoints to identify them.  While it often appears to be numeric, this is not guaranteed.
+          type: string
         Role:
           type: array
           items:
@@ -14479,35 +15443,48 @@ components:
             $ref: '#/components/schemas/Sort'
         studio:
           description: When present, the studio or label which produced an item (e.g. movie studio for movies, record label for albums).
+          type: string
         subtype:
           description: The subtype of the video item, such as `photo` when the video item is in a photo library
+          type: string
         summary:
           description: When present, the extended textual information about the item (e.g. movie plot, artist biography, album review).
+          type: string
         tagline:
           description: When present, a pithy one-liner about the item (usually only seen for movies).
+          type: string
         theme:
           description: When present, the URL for theme music for the item (usually only for TV shows).
+          type: string
+          example: "/library/metadata/1/theme/1705636920"
         thumb:
           description: When present, the URL for the poster or thumbnail for the item. When available for types like movie, it will be the poster graphic, but fall-back to the extracted media thumbnail.
+          type: string
+          example: "/library/metadata/58683/thumb/1703239236"
         titleSort:
           description: Whene present, this is the string used for sorting the item. It's usually the title with any leading articles removed (e.g. “Simpsons”).
+          type: string
         updatedAt:
           description: In units of seconds since the epoch, returns the time at which the item was last changed (e.g. had its metadata updated).
           type: integer
         userRating:
           description: When the user has rated an item, this contains the user rating
           type: number
+          format: float
           minimum: 0
           maximum: 10
         viewCount:
           description: When a users has completed watched or listened to an item, this attribute contains the number of consumptions.
           type: integer
+          format: int32
         viewedLeafCount:
           description: For shows and seasons, contains the number of viewed episodes.
           type: integer
+          format: int32
         viewOffset:
           description: When a user is in the process of viewing or listening to this item, this attribute contains the current offset, in units of milliseconds.
           type: integer
+          format: int32
         Writer:
           type: array
           items:
@@ -14515,32 +15492,53 @@ components:
         year:
           description: When present, the year associated with the item's release (e.g. release year for a movie).
           type: integer
+          format: int32
     Part:
       description: |
         `Part` represents a particular file or "part" of a media item. The part is the playable unit of the media hierarchy. Suppose that a movie library contains a movie that is broken up into files, reminiscent of a movie split across two BDs. The metadata item represents information about the movie, the media item represents this instance of the movie at this resolution and quality, and the part items represent the two playable files.  If another media were added which contained the joining of these two parts transcoded down to a lower resolution, then this metadata would contain 2 medias, one with 2 parts and one with 1 part.
       type: object
       additionalProperties: true
+      required:
+        - id
+        - key
       properties:
+        accessible:
+          type: boolean
+          description: "Indicates if the part is accessible."
+          example: true
         audioProfile:
+          type: string
           example: lc
         container:
           description: The container of the media file, such as `mp4` or `mkv`
+          type: string
           example: mov
         duration:
           description: The duration of the media item, in milliseconds
           type: integer
+          format: int32
           example: 150192
+        exists:
+          type: boolean
+          description: "Indicates if the part exists."
+          example: true
         file:
           description: The local file path at which the part is stored on the server
+          type: string
           example: /home/schuyler/Videos/Trailers/Cloud Atlas (2012).mov
         has64bitOffsets:
           type: boolean
           example: false
         id:
           type: integer
+          format: int64
           example: 1
+        indexes:
+          type: string
+          example: "sd"
         key:
           description: The key from which the media can be streamed
+          type: string
           example: /library/parts/1/1531779263/file.mov
         optimizedForStreaming:
           type: boolean
@@ -14548,12 +15546,14 @@ components:
         size:
           description: The size of the media, in bytes
           type: integer
+          format: int64
           example: 105355654
         Stream:
           type: array
           items:
             $ref: '#/components/schemas/Stream'
         videoProfile:
+          type: string
           example: main
     Player:
       description: Information about the player being used for playback
@@ -14604,6 +15604,139 @@ components:
         version:
           description: The version of the client
           type: string
+    PlexDateTimeISO:
+      type: string
+      format: date-time
+      example: '2019-06-24T11:38:02Z'
+    PlexDevice:
+      title: PlexDevice
+      type: object
+      required:
+        - name
+        - product
+        - productVersion
+        - platform
+        - platformVersion
+        - device
+        - clientIdentifier
+        - createdAt
+        - lastSeenAt
+        - provides
+        - ownerId
+        - sourceTitle
+        - publicAddress
+        - accessToken
+        - owned
+        - home
+        - synced
+        - relay
+        - presence
+        - httpsRequired
+        - publicAddressMatches
+        - dnsRebindingProtection
+        - natLoopbackSupported
+        - connections
+      properties:
+        name:
+          type: string
+        product:
+          type: string
+        productVersion:
+          type: string
+        platform:
+          type:
+            - "null"
+            - string
+        platformVersion:
+          type:
+            - "null"
+            - string
+        device:
+          type:
+            - "null"
+            - string
+        clientIdentifier:
+          type: string
+        createdAt:
+          allOf:
+            - $ref: '#/components/schemas/PlexDateTimeISO'
+            - description: The time the device was created/registered
+        lastSeenAt:
+          allOf:
+            - $ref: '#/components/schemas/PlexDateTimeISO'
+            - description: The last time the device was seen
+        provides:
+          type: string
+        ownerId:
+          description: ownerId is null when the device is owned by the token used to send the request
+          type:
+            - "null"
+            - integer
+        sourceTitle:
+          type:
+            - "null"
+            - string
+        publicAddress:
+          type: string
+        accessToken:
+          type: string
+        owned:
+          type: boolean
+        home:
+          type: boolean
+        synced:
+          type: boolean
+        relay:
+          type: boolean
+        presence:
+          type: boolean
+        httpsRequired:
+          type: boolean
+        publicAddressMatches:
+          type: boolean
+        dnsRebindingProtection:
+          type: boolean
+        natLoopbackSupported:
+          type: boolean
+        connections:
+          type: array
+          items:
+            type: object
+            required:
+              - protocol
+              - address
+              - port
+              - uri
+              - local
+              - relay
+              - IPv6
+            properties:
+              protocol:
+                description: The protocol used for the connection (http, https, etc)
+                example: "http"
+                type: string
+                enum:
+                  - http
+                  - https
+              address:
+                description: The (ip) address or domain name used for the connection
+                type: string
+              port:
+                description: The port used for the connection
+                type: integer
+                format: int32
+              uri:
+                description: The full URI of the connection
+                type: string
+              local:
+                description: If the connection is local address
+                type: boolean
+              relay:
+                description: If the connection is relayed through plex.direct
+                type: boolean
+              IPv6:
+                description: If the connection is using IPv6
+                type: boolean
     ServerConfiguration:
       allOf:
         - $ref: '#/components/schemas/MediaContainer'
@@ -14805,90 +15938,253 @@ components:
         `Stream` represents a particular stream from a media item, such as the video stream, audio stream, or subtitle stream. The stream may either be part of the file represented by the parent `Part` or, especially for subtitles, an external file. The stream contains more detailed information about the specific stream. For example, a video may include the `aspectRatio` at the `Media` level, but detailed information about the video stream like the color space will be included on the `Stream` for the video stream.  Note that photos do not have streams (mostly as an optimization).
       type: object
       additionalProperties: true
+      required:
+        - id
+        - key
+        - codec
+        - displayTitle
+        - streamType
       properties:
         default:
           type: boolean
+          description: Indicates if this stream is default.
           example: true
         audioChannelLayout:
-          example: stereo
+          type: string
+          description: Audio channel layout.
+          example: 5.1(side)
+        channels:
+          type: integer
+          format: int32
+          description: Number of audio channels (for audio streams).
+          example: 6
         bitDepth:
           type: integer
+          format: int32
+          description: Bit depth of the video stream.
+          example: 10
+        DOVIBLCompatID:
+          type: integer
+          format: int32
+          description: Dolby Vision BL compatibility ID.
+          example: 1
+        DOVIBLPresent:
+          type: boolean
+          description: Indicates if Dolby Vision BL is present.
+          example: true
+        DOVIELPresent:
+          type: boolean
+          description: Indicates if Dolby Vision EL is present.
+          example: false
+        DOVILevel:
+          type: integer
+          format: int32
+          description: Dolby Vision level.
+          example: 6
+        DOVIPresent:
+          type: boolean
+          description: Indicates if Dolby Vision is present.
+          example: true
+        DOVIProfile:
+          type: integer
+          format: int32
+          description: Dolby Vision profile.
           example: 8
+        DOVIRPUPresent:
+          type: boolean
+          description: Indicates if Dolby Vision RPU is present.
+          example: true
+        DOVIVersion:
+          type: string
+          description: Dolby Vision version.
+          example: '1.0'
         bitrate:
           type: integer
-          example: 5466
+          format: int32
+          description: Bitrate of the stream.
+          example: 24743
         canAutoSync:
-          description: For subtitle streams only. If `true` then the server can attempt to automatically sync the subtitle timestamps with the video.
           type: boolean
-          example: true
+          description: Indicates if the stream can auto-sync.
+          example: false
         chromaLocation:
+          type: string
+          description: Chroma sample location.
           example: topleft
         chromaSubsampling:
+          type: string
+          description: Chroma subsampling format.
           example: '4:2:0'
+        codedHeight:
+          type: integer
+          format: int32
+          description: Coded video height.
+          example: 1608
+        codedWidth:
+          type: integer
+          format: int32
+          description: Coded video width.
+          example: 3840
+        closedCaptions:
+          type: boolean
+          example: true
         codec:
-          description: The codec of the stream, such as `h264` or `aac`
-          example: h264
+          description: Codec used by the stream.
+          type: string
+          example: hevc
         colorPrimaries:
-          example: bt709
+          type: string
+          description: Color primaries used.
+          example: bt2020
         colorRange:
+          type: string
+          description: Color range (e.g., tv).
           example: tv
         colorSpace:
-          example: bt709
+          type: string
+          description: Color space.
+          example: bt2020nc
         colorTrc:
-          example: bt709
+          type: string
+          description: Color transfer characteristics.
+          example: smpte2084
         displayTitle:
-          description: A friendly name for the stream, often comprised of the language and codec information
-          example: English (H.264 Main)
+          description: Display title for the stream.
+          type: string
+          example: 4K DoVi/HDR10 (HEVC Main 10)
+        extendedDisplayTitle:
+          type: string
+          description: Extended display title for the stream.
+          example: 4K DoVi/HDR10 (HEVC Main 10)
         frameRate:
           type: number
+          format: float
+          description: Frame rate of the stream.
           example: 23.976
         hasScalingMatrix:
+          type: boolean
           example: false
         height:
           type: integer
-          example: 544
+          format: int32
+          description: Height of the video stream.
+          example: 1602
         id:
           type: integer
-          example: 1
+          format: int32
+          description: Unique stream identifier.
+          example: 1002625
         index:
-          description: If the stream is part of the `Part` and not an external resource, the index of the stream within that part
+          description: Index of the stream.
           type: integer
+          format: int32
           example: 0
         key:
-          description: If the stream is independently streamable, the key from which it can be streamed
-          example: /library/streams/1
+          description: Key to access this stream part.
+          type: string
+          example: /library/streams/216389
         language:
+          type: string
+          description: Language of the stream.
           example: English
         languageCode:
-          description: The three character language code for the stream contents
+          description: ISO language code.
+          type: string
           example: eng
+        languageTag:
+          type: string
+          description: Language tag (e.g., en).
+          example: en
+        format:
+          type: string
+          description: Format of the stream (e.g., srt).
+          example: srt
+        headerCompression:
+          type: boolean
+          description: Indicates whether header compression is enabled.
+          example: true
         level:
           type: integer
-          example: 31
+          format: int32
+          description: Video level.
+          example: 150
+        original:
+          type: boolean
+          description: Indicates if this is the original stream.
+          example: true
         profile:
-          example: main
+          type: string
+          description: Video profile.
+          example: main 10
         refFrames:
           type: integer
-          example: 2
+          format: int32
+          description: Number of reference frames.
+          example: 1
         samplingRate:
           type: integer
+          format: int32
+          description: Sampling rate for the audio stream.
           example: 48000
+        scanType:
+          type: string
+          example: progressive
+        embeddedInVideo:
+          type: string
+          example: progressive
         selected:
           type: boolean
+          description: Indicates if this stream is selected (applicable for audio streams).
+          example: true
+        forced:
+          type: boolean
+          example: true
+        hearingImpaired:
+          type: boolean
+          description: Indicates if the stream is for the hearing impaired.
+          example: true
+        dub:
+          type: boolean
+          description: Indicates if the stream is a dub.
+          example: true
+        title:
+          type: string
+          description: Optional title for the stream (e.g., language variant).
+          example: SDH
         streamIdentifier:
           type: integer
+          format: int32
           example: 1
         streamType:
-          description: A number indicating the type of the stream. `1` for video, `2` for audio, `3` for subtitles, `4` for lyrics
           type: integer
+          format: int32
+          oneOf:
+            - title: VIDEO
+              const: 1
+              description: Video stream
+            - title: AUDIO
+              const: 2
+              description: Audio stream
+            - title: SUBTITLE
+              const: 3
+              description: Subtitle stream
           example: 1
+          description: |
+            Stream type:
+              - VIDEO = 1
+              - AUDIO = 2
+              - SUBTITLE = 3
         width:
           type: integer
-          example: 1280
+          format: int32
+          description: Width of the video stream.
+          example: 3840
     Tag:
       description: |
         A variety of extra information about a metadata item is included as tags. These tags use their own element names such as `Genre`, `Writer`, `Directory`, and `Role`. Individual tag types may introduce their own extra attributes.
       type: object
+      required:
+        - tag
       properties:
         confidence:
           description: Measure of the confidence of an automatic tag
@@ -14897,23 +16193,32 @@ components:
           type: string
         filter:
           description: A filter parameter that can be used to query for more content that matches this tag value.
+          type: string
           example: actor=49
         id:
           type: integer
+          format: int32
         ratingKey:
+          description: "The rating key (Media ID) of this media item. Note: Although this is always an integer, it is represented as a string in the API."
           type: string
+          example: "58683"
         role:
           description: The role this actor played
+          type: string
           example: Secretary
         tag:
           description: The value of the tag (the name)
+          type: string
           example: Shaun Lawton
         tagKey:
           description: Plex identifier for this tag which can be used to fetch additional information from plex.tv
+          type: string
           example: 5d3ee12c4cde6a001c3e0b27
         tagType:
           type: integer
+          format: int32
         thumb:
+          type: string
           example: http://image.tmdb.org/t/p/original/lcJ8qM51ClAR2UzXU1mkZGfnn3o.jpg
     Thumb:
       type: string
@@ -14955,6 +16260,701 @@ components:
           type: boolean
     Type:
       type: string
+    UserPlexAccount:
+      title: UserPlexAccount
+      type: object
+      required:
+        - authToken
+        - email
+        - friendlyName
+        - hasPassword
+        - id
+        - joinedAt
+        - title
+        - twoFactorEnabled
+        - username
+        - uuid
+      properties:
+        adsConsent:
+          type:
+            - boolean
+            - 'null'
+          description: Unknown
+        adsConsentReminderAt:
+          oneOf:
+            - $ref: '#/components/schemas/PlexDateTime'
+            - type: 'null'
+        adsConsentSetAt:
+          oneOf:
+            - $ref: '#/components/schemas/PlexDateTime'
+            - type: 'null'
+        anonymous:
+          type:
+            - boolean
+            - 'null'
+          description: Unknown
+          default: false
+        authToken:
+          type: string
+          description: The account token
+          example: CxoUzBTSV5hsxjTpFKaf
+        backupCodesCreated:
+          type: boolean
+          description: If the two-factor authentication backup codes have been created
+          default: false
+        confirmed:
+          type: boolean
+          description: If the account has been confirmed
+          default: false
+        country:
+          type: string
+          description: The account country
+          example: US
+          maxLength: 2
+          minLength: 2
+        email:
+          type: string
+          description: The account email address
+          format: email
+          example: username@email.com
+        emailOnlyAuth:
+          type: boolean
+          description: If login with email only is enabled
+          default: false
+        experimentalFeatures:
+          type: boolean
+          description: If experimental features are enabled
+          default: false
+        friendlyName:
+          type: string
+          description: Your account full name
+          example: friendlyUsername
+        entitlements:
+          type: array
+          description: List of devices your allowed to use with this account
+          items:
+            type: string
+          example: '[]'
+        guest:
+          type: boolean
+          description: If the account is a Plex Home guest user
+          default: false
+        hasPassword:
+          type: boolean
+          description: If the account has a password
+          default: true
+        home:
+          type: boolean
+          description: If the account is a Plex Home user
+          default: false
+        homeAdmin:
+          type: boolean
+          description: If the account is the Plex Home admin
+          default: false
+        homeSize:
+          type: integer
+          description: The number of accounts in the Plex Home
+          example: 1
+          format: int32
+        id:
+          type: integer
+          description: The Plex account ID
+          example: 13692262
+          format: int32
+        joinedAt:
+          $ref: '#/components/schemas/PlexDateTime'
+        locale:
+          type:
+            - string
+            - 'null'
+          description: The account locale
+        mailingListActive:
+          type: boolean
+          description: If you are subscribed to the Plex newsletter
+          default: false
+        mailingListStatus:
+          description: Your current mailing list status
+          enum:
+            - active
+            - unsubscribed
+            - removed
+          x-speakeasy-enums:
+            - ACTIVE
+            - UNSUBSCRIBED
+            - REMOVED
+          example: active
+        maxHomeSize:
+          type: integer
+          description: The maximum number of accounts allowed in the Plex Home
+          example: 15
+          format: int32
+        pin:
+          type: string
+          description: '[Might be removed] The hashed Plex Home PIN '
+          deprecated: true
+        profile:
+          $ref: '#/components/schemas/UserProfile'
+        protected:
+          type: boolean
+          description: If the account has a Plex Home PIN enabled
+          default: false
+        rememberExpiresAt:
+          $ref: '#/components/schemas/PlexDateTime'
+        restricted:
+          type: boolean
+          description: If the account is a Plex Home managed user
+          default: false
+        roles:
+          type: array
+          description: '[Might be removed] List of account roles. Plexpass membership listed here'
+          items:
+            type: string
+        scrobbleTypes:
+          type: string
+          description: Unknown
+        services:
+          type: array
+          items:
+            type: object
+            required:
+              - identifier
+              - endpoint
+              - token
+              - secret
+              - status
+            properties:
+              identifier:
+                type: string
+                example: metadata-dev
+              endpoint:
+                type: string
+                example: 'https://epg.provider.plex.tv'
+                format: uri
+              token:
+                type:
+                  - string
+                  - 'null'
+                example: DjoMtqFAGRL1uVtCyF1dKIorTbShJeqv
+              secret:
+                type:
+                  - string
+                  - 'null'
+              status:
+                example: online
+                x-speakeasy-unknown-values: allow
+                enum:
+                  - online
+                  - offline
+                x-speakeasy-enums:
+                  - ONLINE
+                  - OFFLINE
+        subscription:
+          description: If the account's Plex Pass subscription is active
+          title: Subscription
+          type: object
+          properties:
+            features:
+              description: List of features allowed on your Plex Pass subscription
+              type: array
+              items:
+                type: string
+                description: |
+                  - Android - Dolby Vision
+                  - Android - PiP
+                  - CU Sunset
+                  - HRK_enable_EUR
+                  - TREBLE-show-features
+                  - ad-countdown-timer
+                  - adaptive_bitrate
+                  - album-types
+                  - allow_dvr
+                  - amazon-loop-debug
+                  - avod-ad-analysis
+                  - avod-new-media
+                  - blacklist_get_signin
+                  - boost-voices
+                  - camera_upload
+                  - client-radio-stations
+                  - cloudflare-turnstile-required
+                  - cloudsync
+                  - collections
+                  - comments_and_replies_push_notifications
+                  - community_access_plex_tv
+                  - companions_sonos
+                  - content_filter
+                  - custom-home-removal
+                  - disable_home_user_friendships
+                  - disable_sharing_friendships
+                  - downloads-gating
+                  - drm_support
+                  - dvr
+                  - dvr-block-unsupported-countries
+                  - epg-recent-channels
+                  - exclude restrictions
+                  - federated-auth
+                  - friend_request_push_notifications
+                  - grandfather-sync
+                  - guided-upgrade
+                  - hardware_transcoding
+                  - home
+                  - hwtranscode
+                  - imagga-v2
+                  - increase-password-complexity
+                  - ios14-privacy-banner
+                  - iterable-notification-tokens
+                  - item_clusters
+                  - keep-payment-method
+                  - kevin-bacon
+                  - korea-consent
+                  - le_isrg_root_x1
+                  - lets_encrypt
+                  - lightning-dvr-pivot
+                  - live-tv-support-incomplete-segments
+                  - livetv
+                  - lyrics
+                  - metadata_search
+                  - music-analysis
+                  - music_videos
+                  - new_plex_pass_prices
+                  - news-provider-sunset-modal
+                  - nominatim
+                  - pass
+                  - photos-favorites
+                  - photos-metadata-edition
+                  - photosV6-edit
+                  - photosV6-tv-albums
+                  - pms_health
+                  - premium-dashboard
+                  - premium_music_metadata
+                  - radio
+                  - rate-limit-client-token
+                  - scrobbling-service-plex-tv
+                  - session_bandwidth_restrictions
+                  - session_kick
+                  - shared_server_notification
+                  - shared_source_notification
+                  - signin_notification
+                  - signin_with_apple
+                  - silence-removal
+                  - sleep-timer
+                  - spring_serve_ad_provider
+                  - sync
+                  - sweet-fades
+                  - transcoder_cache
+                  - trailers
+                  - tuner-sharing
+                  - two-factor-authentication
+                  - unsupportedtuners
+                  - upgrade-3ds2
+                  - visualizers
+                  - vod-schema
+                  - vod_cloudflare
+                  - volume-leveling
+                  - watch-together-invite
+                  - watchlist-rss
+                  - web_server_dashboard
+                  - webhooks
+                  - blacklist-subnets
+                  - chromecast-music-mp
+                  - Sync v3
+                  - livetv-platform-specific
+                  - nonAnonymousAccount
+                  - parental-controls
+                  - Subtitles on Demand
+                  - ultrablur
+                  - web-desktop-gracenote-banner
+            active:
+              description: If the account's Plex Pass subscription is active
+              type: boolean
+              example: true
+            subscribedAt:
+              description: Date the account subscribed to Plex Pass
+              type:
+                - string
+                - 'null'
+              example: '2021-04-12T18:21:12Z'
+            status:
+              description: String representation of subscriptionActive
+              example: Inactive
+              x-speakeasy-unknown-values: allow
+              enum:
+                - Inactive
+                - Active
+              x-speakeasy-enums:
+                - INACTIVE
+                - ACTIVE
+            paymentService:
+              description: Payment service used for your Plex Pass subscription
+              type:
+                - string
+                - 'null'
+            plan:
+              description: Name of Plex Pass subscription plan
+              type:
+                - string
+                - 'null'
+        subscriptionDescription:
+          type:
+            - string
+            - 'null'
+          description: Description of the Plex Pass subscription
+        subscriptions:
+          type: array
+          items:
+            title: Subscription
+            type: object
+            properties:
+              features:
+                description: List of features allowed on your Plex Pass subscription
+                type: array
+                items:
+                  type: string
+                  description: |
+                    - Android - Dolby Vision
+                    - Android - PiP
+                    - CU Sunset
+                    - HRK_enable_EUR
+                    - TREBLE-show-features
+                    - ad-countdown-timer
+                    - adaptive_bitrate
+                    - album-types
+                    - allow_dvr
+                    - amazon-loop-debug
+                    - avod-ad-analysis
+                    - avod-new-media
+                    - blacklist_get_signin
+                    - boost-voices
+                    - camera_upload
+                    - client-radio-stations
+                    - cloudflare-turnstile-required
+                    - cloudsync
+                    - collections
+                    - comments_and_replies_push_notifications
+                    - community_access_plex_tv
+                    - companions_sonos
+                    - content_filter
+                    - custom-home-removal
+                    - disable_home_user_friendships
+                    - disable_sharing_friendships
+                    - downloads-gating
+                    - drm_support
+                    - dvr
+                    - dvr-block-unsupported-countries
+                    - epg-recent-channels
+                    - exclude restrictions
+                    - federated-auth
+                    - friend_request_push_notifications
+                    - grandfather-sync
+                    - guided-upgrade
+                    - hardware_transcoding
+                    - home
+                    - hwtranscode
+                    - imagga-v2
+                    - increase-password-complexity
+                    - ios14-privacy-banner
+                    - iterable-notification-tokens
+                    - item_clusters
+                    - keep-payment-method
+                    - kevin-bacon
+                    - korea-consent
+                    - le_isrg_root_x1
+                    - lets_encrypt
+                    - lightning-dvr-pivot
+                    - live-tv-support-incomplete-segments
+                    - livetv
+                    - lyrics
+                    - metadata_search
+                    - music-analysis
+                    - music_videos
+                    - new_plex_pass_prices
+                    - news-provider-sunset-modal
+                    - nominatim
+                    - pass
+                    - photos-favorites
+                    - photos-metadata-edition
+                    - photosV6-edit
+                    - photosV6-tv-albums
+                    - pms_health
+                    - premium-dashboard
+                    - premium_music_metadata
+                    - radio
+                    - rate-limit-client-token
+                    - scrobbling-service-plex-tv
+                    - session_bandwidth_restrictions
+                    - session_kick
+                    - shared_server_notification
+                    - shared_source_notification
+                    - signin_notification
+                    - signin_with_apple
+                    - silence-removal
+                    - sleep-timer
+                    - spring_serve_ad_provider
+                    - sync
+                    - sweet-fades
+                    - transcoder_cache
+                    - trailers
+                    - tuner-sharing
+                    - two-factor-authentication
+                    - unsupportedtuners
+                    - upgrade-3ds2
+                    - visualizers
+                    - vod-schema
+                    - vod_cloudflare
+                    - volume-leveling
+                    - watch-together-invite
+                    - watchlist-rss
+                    - web_server_dashboard
+                    - webhooks
+                    - blacklist-subnets
+                    - chromecast-music-mp
+                    - Sync v3
+                    - livetv-platform-specific
+                    - nonAnonymousAccount
+                    - parental-controls
+                    - Subtitles on Demand
+                    - ultrablur
+                    - web-desktop-gracenote-banner
+              active:
+                description: If the account's Plex Pass subscription is active
+                type: boolean
+                example: true
+              subscribedAt:
+                description: Date the account subscribed to Plex Pass
+                type:
+                  - string
+                  - 'null'
+                example: '2021-04-12T18:21:12Z'
+              status:
+                description: String representation of subscriptionActive
+                example: Inactive
+                x-speakeasy-unknown-values: allow
+                enum:
+                  - Inactive
+                  - Active
+              paymentService:
+                description: Payment service used for your Plex Pass subscription
+                type:
+                  - string
+                  - 'null'
+              plan:
+                description: Name of Plex Pass subscription plan
+                type:
+                  - string
+                  - 'null'
+        thumb:
+          type: string
+          description: URL of the account thumbnail
+          format: uri
+          example: 'https://plex.tv/users/a4f43c1ebfde43a5/avatar?c=8372075101'
+        title:
+          type: string
+          description: The title of the account (username or friendly name)
+          example: UsernameTitle
+        twoFactorEnabled:
+          type: boolean
+          description: If two-factor authentication is enabled
+          default: false
+        username:
+          type: string
+          description: The account username
+          example: Username
+        uuid:
+          type: string
+          description: The account UUID
+          example: dae343c1f45beb4f
+        attributionPartner:
+          type:
+            - string
+            - 'null'
+          example: null
+    PlexDateTime:
+      type:
+        - integer
+      example: 1556281940
+      description: Unix epoch datetime in seconds
+      format: int64
+    UserProfile:
+      title: UserProfile
+      type: object
+      required:
+        - autoSelectAudio
+        - defaultAudioLanguage
+        - defaultSubtitleLanguage
+        - autoSelectSubtitle
+        - defaultSubtitleAccessibility
+        - defaultSubtitleForced
+        - watchedIndicator
+        - mediaReviewsVisibility
+      properties:
+        autoSelectAudio:
+          description: If the account has automatically select audio and subtitle tracks enabled
+          type: boolean
+          example: true
+          default: true
+        defaultAudioLanguage:
+          description: The preferred audio language for the account
+          type:
+            - string
+            - 'null'
+          example: ja
+        defaultAudioAccessibility:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+                - 3
+              example: 0
+              default: 0
+              x-speakeasy-enums:
+                - PREFER_NON_ACCESSIBILITY
+                - PREFER_ACCESSIBILITY
+                - ONLY_ACCESSIBILITY
+                - ONLY_NON_ACCESSIBILITY
+            - description: 'The audio accessibility mode (0 = Prefer non-accessibility audio, 1 = Prefer accessibility audio, 2 = Only show accessibility audio, 3 = Only show non-accessibility audio)'
+        defaultAudioLanguages:
+          description: The preferred audio languages for the account
+          type:
+            - array
+            - 'null'
+          items:
+            type: string
+          example: null
+        defaultSubtitleLanguage:
+          description: The preferred subtitle language for the account
+          type:
+            - string
+            - 'null'
+          example: en
+        defaultSubtitleLanguages:
+          description: The preferred subtitle languages for the account
+          type:
+            - array
+            - 'null'
+          items:
+            type: string
+          example: null
+        autoSelectSubtitle:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - MANUALLY_SELECTED
+                - SHOWN_WITH_FOREIGN_AUDIO
+                - ALWAYS_ENABLED
+            - description: 'The auto-select subtitle mode (0 = Manually selected, 1 = Shown with foreign audio, 2 = Always enabled)'
+        defaultSubtitleAccessibility:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+                - 3
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - PREFER_NON_SDH
+                - PREFER_SDH
+                - ONLY_SDH
+                - ONLY_NON_SDH
+            - description: 'The subtitles for the deaf or hard-of-hearing (SDH) searches mode (0 = Prefer non-SDH subtitles, 1 = Prefer SDH subtitles, 2 = Only show SDH subtitles, 3 = Only show non-SDH subtitles)'
+        defaultSubtitleForced:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+                - 3
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - PREFER_NON_FORCED
+                - PREFER_FORCED
+                - ONLY_FORCED
+                - ONLY_NON_FORCED
+            - description: 'The forced subtitles searches mode (0 = Prefer non-forced subtitles, 1 = Prefer forced subtitles, 2 = Only show forced subtitles, 3 = Only show non-forced subtitles)'
+        watchedIndicator:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+                - 3
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - NONE
+                - MOVIES_AND_TV_SHOWS
+                - MOVIES
+                - TV_SHOWS
+            - description: Whether or not media watched indicators are enabled (little orange dot on media)
+        mediaReviewsVisibility:
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 0
+                - 1
+                - 2
+                - 3
+              example: 1
+              default: 0
+              x-speakeasy-enums:
+                - NO_ONE
+                - CRITICS_ONLY
+                - PLEX_USERS_ONLY
+                - PLEX_USERS_AND_CRITICS
+            - description: Whether or not the account has media reviews visibility enabled
+        mediaReviewsLanguages:
+          description: The languages for media reviews visibility
+          type:
+            - array
+            - 'null'
+          items:
+            type: string
+          example: null
+    MediaQuery:
+      description: |
+        A querystring-based filtering language used to select subsets of media. When provided as an object, properties are serialized as a querystring using form style with explode.
+        
+        Only the defined properties below are allowed. The object serializes to a querystring format like: `type=4&sourceType=2&sort=duration:desc,index`
+      type: object
+      additionalProperties: false
+      properties:
+        type:
+          description: |
+            The type of media to retrieve or filter by.
+          $ref: '#/components/schemas/MediaType'
+        sourceType:
+          description: Change the default level to which fields refer (used with type for hierarchical queries)
+          type: integer
+        sort:
+          description: Field(s) to sort by, with optional modifiers. Use comma to separate multiple fields, and :desc or :nullsLast for modifiers (e.g., "duration:desc,index")
+          type: string
+        group:
+          description: Field to group results by (similar to SQL GROUP BY)
+          type: string
+        limit:
+          description: Maximum number of results to return
+          type: integer
+      example:
+        type: 4
+        sourceType: 2
+        sort: "duration:desc,index"
     User:
       description: The user playing the content
       type: object
