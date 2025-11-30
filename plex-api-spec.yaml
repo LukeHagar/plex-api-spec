@@ -14323,8 +14323,6 @@ components:
   schemas:
     AllowSync:
       type: boolean
-    Art:
-      type: string
     BoolInt:
       type: integer
       format: int32
@@ -14403,8 +14401,6 @@ components:
           type: string
         lineupIdentifier:
           type: string
-    Content:
-      type: boolean
     Device:
       type: object
       properties:
@@ -14596,25 +14592,30 @@ components:
       required:
         - uuid
         - language
+        - type
       properties:
         title:
-          $ref: '#/components/schemas/Title'
+          type: string
+          description: "The title of the library"
+          example: "Movies"
         type:
-          $ref: '#/components/schemas/Type'
+          $ref: '#/components/schemas/MediaType'
         agent:
           type: string
         allowSync:
           type: boolean
         art:
-          $ref: '#/components/schemas/Art'
+          type: string
         composite:
           type: string
         content:
-          $ref: '#/components/schemas/Content'
+          type: boolean
         contentChangedAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
         createdAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
         directory:
           type: boolean
         filters:
@@ -14644,13 +14645,15 @@ components:
           description: Indicates whether this library section is currently scanning
           type: boolean
         scannedAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
         scanner:
           type: string
         thumb:
           $ref: '#/components/schemas/Thumb'
         updatedAt:
-          type: integer
+          allOf:
+          - $ref: '#/components/schemas/PlexDateTime'
     Lineup:
       type: object
       properties:
@@ -16232,44 +16235,16 @@ components:
       title: UserPlexAccount
       type: object
       required:
-        - adsConsent
-        - adsConsentReminderAt
-        - adsConsentSetAt
-        - anonymous
         - authToken
-        - backupCodesCreated
-        - confirmed
-        - country
         - email
-        - emailOnlyAuth
-        - experimentalFeatures
         - friendlyName
-        - entitlements
-        - guest
         - hasPassword
-        - home
-        - homeAdmin
-        - homeSize
         - id
         - joinedAt
-        - locale
-        - mailingListActive
-        - mailingListStatus
-        - maxHomeSize
-        - profile
-        - protected
-        - rememberExpiresAt
-        - restricted
-        - scrobbleTypes
-        - services
-        - subscription
-        - subscriptionDescription
-        - thumb
         - title
         - twoFactorEnabled
         - username
         - uuid
-        - attributionPartner
       properties:
         adsConsent:
           type:
@@ -16370,9 +16345,6 @@ components:
           default: false
         mailingListStatus:
           description: Your current mailing list status
-          type: string
-          example: active
-          x-speakeasy-unknown-values: allow
           enum:
             - active
             - unsubscribed
@@ -16381,6 +16353,7 @@ components:
             - ACTIVE
             - UNSUBSCRIBED
             - REMOVED
+          example: active
         maxHomeSize:
           type: integer
           description: The maximum number of accounts allowed in the Plex Home
