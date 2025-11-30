@@ -14371,6 +14371,33 @@ components:
         - TRACK
         - PHOTO_ALBUM
         - PHOTO
+    MediaTypeString:
+      description: |
+        The type of media content in the Plex library. This can represent videos, music, or photos.
+      type: string
+      enum:
+        - movie
+        - show
+        - season
+        - episode
+        - artist
+        - album
+        - track
+        - photoalbum
+        - photo
+        - collection
+      example: "movie"
+      x-speakeasy-enums:
+        - MOVIE
+        - TV_SHOW
+        - SEASON
+        - EPISODE
+        - ARTIST
+        - ALBUM
+        - TRACK
+        - PHOTO_ALBUM
+        - PHOTO
+        - COLLECTION
     Channel:
       type: object
       properties:
@@ -14599,7 +14626,7 @@ components:
           description: "The title of the library"
           example: "Movies"
         type:
-          $ref: '#/components/schemas/MediaType'
+          $ref: '#/components/schemas/MediaTypeString'
         agent:
           type: string
         allowSync:
@@ -16131,15 +16158,17 @@ components:
         streamType:
           type: integer
           format: int32
-          enum:
-            - 1
-            - 2
-            - 3
+          oneOf:
+            - title: VIDEO
+              const: 1
+              description: Video stream
+            - title: AUDIO
+              const: 2
+              description: Audio stream
+            - title: SUBTITLE
+              const: 3
+              description: Subtitle stream
           example: 1
-          x-speakeasy-enums:
-            - VIDEO
-            - AUDIO
-            - SUBTITLE
           description: |
             Stream type:
               - VIDEO = 1
