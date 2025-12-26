@@ -14590,6 +14590,7 @@ components:
           type: string
           enum:
             - background
+            - backgroundSquare
             - banner
             - clearLogo
             - coverPoster
