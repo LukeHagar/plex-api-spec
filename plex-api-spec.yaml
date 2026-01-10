@@ -16157,24 +16157,24 @@ components:
           format: int32
           example: 1
         streamType:
-          type: integer
-          format: int32
-          oneOf:
-            - title: VIDEO
-              const: 1
-              description: Video stream
-            - title: AUDIO
-              const: 2
-              description: Audio stream
-            - title: SUBTITLE
-              const: 3
-              description: Subtitle stream
-          example: 1
-          description: |
-            Stream type:
-              - VIDEO = 1
-              - AUDIO = 2
-              - SUBTITLE = 3
+          allOf:
+            - type: integer
+              format: int32
+              enum:
+                - 1
+                - 2
+                - 3
+              example: 1
+              x-speakeasy-enums:
+                - VIDEO
+                - AUDIO
+                - SUBTITLE
+            - description: |
+                Stream type:
+                  - VIDEO = 1 (Video stream)
+                  - AUDIO = 2 (Audio stream)
+                  - SUBTITLE = 3 (Subtitle stream)
+
         width:
           type: integer
           format: int32
